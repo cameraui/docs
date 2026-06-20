@@ -5,19 +5,20 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev",
+    "audit": "npm audit fix",
     "docs:build": "vitepress build",
+    "docs:dev": "vitepress dev",
     "docs:preview": "vitepress preview",
     "install-updates": "npm i --save",
     "update": "updates --update ./"
   },
   "dependencies": {
     "medium-zoom": "^1.1.0",
-    "vitepress-plugin-llms": "^1.13.0"
+    "vitepress-plugin-llms": "^1.13.1"
   },
   "devDependencies": {
     "mermaid": "^11.15.0",
-    "updates": "^17.17.2",
+    "updates": "^17.18.0",
     "vitepress": "^1.6.4",
     "vitepress-plugin-mermaid": "^2.0.17"
   }
