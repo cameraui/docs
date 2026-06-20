@@ -1,2 +1,1 @@
-# docs
-camera.ui documentation
+# camera.ui documentation
