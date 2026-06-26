@@ -25,3 +25,8 @@ cache
 *.sw?
 *.egg-info
 .venv
+/.vitepress/cache
+/.vitepress/dist
+
+# internal pre-release notes (do not publish)
+notes.txt
