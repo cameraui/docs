@@ -51,7 +51,6 @@ Each source has a few options that trade a little memory for a faster, smoother 
 
 - **Hot mode.** Keeps the connection to the camera always active, so there's no reconnect delay when a stream is opened.
 - **Preload.** Preloads the stream so the camera view opens with minimal delay.
-- **Prebuffer.** Continuously buffers a short, rolling window of the stream, so the last few seconds are always available to access, such as the moment just before a trigger in an event recording.
 
 With hot mode and preload on, opening a stream is near-instant, whether the camera uses H.264 or H.265.
 
