@@ -46,6 +46,10 @@ chmod +x camera.ui-*.AppImage
 ./camera.ui-*.AppImage
 ```
 
+::: tip Pick the `.AppImage` if you want automatic updates
+Only the `.AppImage` updates itself. A `.deb` install stays on its version — update it by downloading and installing the new `.deb`.
+:::
+
 ## First launch: choose how to run
 
 The first time you open the app, it asks **"How should camera.ui run?"** and offers three modes:
@@ -70,6 +74,8 @@ On macOS 15 and newer, the system asks for **local network** access on first lau
 ## Updates
 
 The desktop app keeps itself up to date. It checks for updates when it starts and periodically while running, then downloads and installs them for you. In Server mode it also updates the bundled server before starting it, so the app and the server stay in sync.
+
+One exception on Linux: only the `.AppImage` updates itself. If you installed the `.deb`, update by downloading and installing the new `.deb` from the [download page](https://cameraui.com).
 
 ## Where your data lives
 

@@ -17,6 +17,8 @@ Want to try pre-release versions early? In **Settings → [System](/admin/system
 
 The [desktop app](/install/desktop) keeps itself up to date. It checks when it starts and periodically while running, then downloads and installs updates on its own. Because Server mode also updates the bundled server, the app and the server stay in sync.
 
+One exception on Linux: only the `.AppImage` updates itself. If you installed the `.deb`, update by downloading and installing the new `.deb` from the [download page](https://cameraui.com).
+
 ## Updating the Docker image
 
 Updating the server from the UI does not change the [Docker](/install/docker) image. To update the image itself (the base OS, GPU libraries, and launcher), pull the latest and recreate the container:

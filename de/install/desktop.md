@@ -46,6 +46,10 @@ chmod +x camera.ui-*.AppImage
 ./camera.ui-*.AppImage
 ```
 
+::: tip Nimm die `.AppImage`, wenn du automatische Updates willst
+Nur die `.AppImage` aktualisiert sich selbst. Eine `.deb`-Installation bleibt auf ihrer Version — aktualisiere sie, indem du die neue `.deb` herunterlädst und installierst.
+:::
+
 ## Erster Start: wählen, wie es läuft
 
 Beim ersten Öffnen fragt die App **„Wie soll camera.ui laufen?"** und bietet drei Modi:

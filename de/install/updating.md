@@ -17,6 +17,8 @@ Willst du Vorabversionen früh ausprobieren? Öffne unter **Einstellungen → [S
 
 Die [Desktop-App](/de/install/desktop) hält sich selbst aktuell. Sie prüft beim Start und regelmäßig im Betrieb, lädt Updates dann von selbst herunter und installiert sie. Da der Server-Modus auch den gebündelten Server aktualisiert, bleiben App und Server synchron.
 
+Eine Ausnahme unter Linux: Nur die `.AppImage` aktualisiert sich selbst. Wenn du die `.deb` installiert hast, aktualisiere, indem du die neue `.deb` von der [Download-Seite](https://cameraui.com) herunterlädst und installierst.
+
 ## Das Docker-Image aktualisieren
 
 Den Server über die UI zu aktualisieren ändert nicht das [Docker](/de/install/docker)-Image. Um das Image selbst zu aktualisieren (Basis-OS, GPU-Bibliotheken und Launcher), zieh die neueste Version und erstelle den Container neu:
