@@ -8,14 +8,18 @@ Objekterkennung findet **Personen, Fahrzeuge, Tiere und Pakete** im Bild und ist
 
 ## Ein Backend wählen
 
-camera.ui liefert vier KI-Backends als Plugins. Wähle das für deine Hardware und aktiviere es pro Kamera unter [Einstellungen → Plugins](/de/cameras/settings) (siehe [Sensoren einrichten](/de/sensors/setup)):
+camera.ui liefert sechs KI-Backends als Plugins. Wähle das für deine Hardware und aktiviere es pro Kamera unter [Einstellungen → Plugins](/de/cameras/settings) (siehe [Sensoren einrichten](/de/sensors/setup)):
 
 - **CoreML.** Für Apple-Silicon-Macs; nutzt GPU und Neural Engine.
 - **OpenVINO.** Für Intel-CPUs und -GPUs.
 - **ONNX.** Plattformübergreifend, auf CPU oder einer unterstützten GPU.
 - **NCNN.** Ein leichtgewichtiges Backend für unterstützte Hardware. (Keine semantische Suche.)
+- **Coral.** Für eine Coral Edge TPU, mit CPU-Fallback. Nur Linux.
+- **Hailo.** Für einen Hailo-8- / Hailo-8L-Beschleuniger. Nur Linux.
 
-Jedes Backend liefert Objekt-, Gesichts- und Kennzeichen-Erkennung. CoreML, OpenVINO und ONNX liefern zusätzlich CLIP für die [semantische Suche](/de/detection/semantic-search).
+CoreML, OpenVINO, ONNX und NCNN liefern Objekt-, Gesichts- und Kennzeichen-Erkennung. CoreML, OpenVINO und ONNX liefern zusätzlich CLIP für die [semantische Suche](/de/detection/semantic-search). Coral und Hailo sind Edge-AI-Beschleuniger-Backends, die nur Objekterkennung liefern, und das nur für **Personen, Fahrzeuge und Tiere**[^edge] (keine Pakete, keine Gesichts- oder Kennzeichen-Erkennung, kein CLIP).
+
+[^edge]: Coral und Hailo nutzen ein festes Objektmodell, das drei Klassen meldet. Die übrigen Backends erkennen die volle oben beschriebene Bandbreite an Objekttypen.
 
 ## Modelle und Confidence
 

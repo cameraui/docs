@@ -26,7 +26,15 @@ Plugins run as their own process, so one misbehaving plugin won't take down the 
 
 ## Installing a plugin
 
-Choose **Search plugins** to find ones to install. camera.ui looks up published plugins (any package on npm tagged as a camera.ui plugin), so the catalog isn't a fixed list. Pick one and install it, choosing the version if you like. Once installed, enable it and assign it where it's needed.
+![The plugin store](/img/plugins/plugin-store.png)
+
+Choose **Search plugins** to open the store. The list comes from npm, so any package published as a camera.ui plugin can appear and it isn't a fixed catalog, but camera.ui curates what you see on top of it:
+
+- **Trust.** Each plugin is marked **Official** (published by camera.ui), **Verified** (a community plugin the camera.ui team has reviewed), or **Community** (published by anyone, not reviewed). You can filter by trust level.
+- **Safety.** Plugins known to be malicious or compromised are blocked: they don't show up, can't be installed, and one you already have is disabled automatically if it's later blocked.
+- **Browsing.** Filter by category, start from the featured plugins, and sort by name, weekly downloads, or last update. Each entry shows its logo, a short description, and its download numbers.
+
+Pick a plugin and install it, choosing a specific version if you like. Once installed, enable it and assign it where it's needed.
 
 ## Settings
 

@@ -14,6 +14,6 @@ Die semantische Suche braucht ein KI-Backend, das **CLIP** bereitstellt (CoreML,
 
 ![KI-Suche-Ergebnisse in den Aufnahmen](/img/detection/ai-search.png)
 
-Öffne in den [Aufnahmen](/de/recording/browsing) die **KI-Suche** und beschreibe, was du suchst. camera.ui ordnet Ereignisse danach, wie gut sie passen, und du kannst den **Mindest-Match-Score** anheben, um nur enge Treffer zu behalten.
+Öffne in den [Aufnahmen](/de/recording/browsing) die **KI-Suche** und beschreibe, was du suchst. camera.ui ordnet Ereignisse danach, wie gut sie passen, und du kannst **Min. Übereinstimmung** erhöhen, um nur enge Treffer zu behalten.
 
 [^license]: Die semantische Suche basiert auf Aufnahmen, die ein aktives camera.ui-Abo erfordern.

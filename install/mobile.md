@@ -30,6 +30,14 @@ Unlike the [desktop app](/install/desktop), the mobile apps don't connect direct
 
 With the app installed and signed in, you can receive push notifications for events directly on your phone. See [Notifications](/notifications/) to choose what you're alerted about.[^license]
 
+## Biometric login
+
+In **Settings → Account**, turn on **Biometric login** to sign in with Face ID or Touch ID instead of your password. camera.ui saves your credentials in the device's secure storage; sign out and back in once after enabling it to store them. Turning the toggle off removes the saved credentials.
+
+## App lock
+
+For an extra layer on the device itself, turn on **App lock with Face ID / Fingerprint** in the app's settings. With it on, the app asks for biometric authentication (or your device passcode as a fallback) every time you open it, so someone holding your unlocked phone still can't see your cameras. It's separate from biometric login: login saves you typing your password, app lock re-checks who's holding the phone each time you open the app.
+
 ## Updates
 
 The apps update through the App Store and Google Play like any other app, and also receive over-the-air updates to the interface. See [Updating](/install/updating).

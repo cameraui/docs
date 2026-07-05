@@ -25,7 +25,7 @@ camera.ui alarmiert dich, wenn an einer Kamera etwas passiert, mit einem Vorscha
 
 ## Worüber jede Kamera dich alarmiert
 
-Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem gepingt wirst, was dort zählt:
+Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem gepingt wirst, was dort zählt:[^nvr]
 
 - **Objekte.** Worüber benachrichtigt wird (standardmäßig Personen und Fahrzeuge).
 - **Nur bekannte Gesichter.** Bei Personen nur bei einem erkannten [Gesicht](/de/detection/faces) alarmieren.
@@ -39,3 +39,4 @@ Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem ge
 Manche Ereignisse sind zu wichtig, um sie zurückzuhalten. **Kritische Alarme**, etwa ein Türklingel-Läuten oder ein Alarm, werden sofort zugestellt und ignorieren sowohl den Cooldown als auch die Ruhezeiten.
 
 [^license]: Push-Benachrichtigungen an die Mobile-Apps erfordern ein aktives camera.ui-Abo.
+[^nvr]: Diese Einstellungen pro Kamera stammen vom NVR-Plugin, das auch die Aufnahme übernimmt.

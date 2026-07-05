@@ -16,7 +16,7 @@ Status und Geräteinfo der Kamera, plus eine Live-Ansicht ihrer Sensoren und ihr
 
 ## Quellen
 
-Hier fügst du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera hinzu, änderst und entfernst sie, genau wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus, Vorladen und Vorpuffern. Jede Quelle zeigt außerdem ihren Live-Status, die erkannten Codecs und die Stream-URL.
+Hier fügst du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera hinzu, änderst und entfernst sie, genau wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus und Vorladen. Jede Quelle zeigt außerdem ihren Live-Status, die erkannten Codecs und die Stream-URL.
 
 ## Einstellungen
 
@@ -29,7 +29,7 @@ Das Haupt-Konfigurationsformular, gegliedert in Bereiche:
 - **Autotrack.** Eine PTZ-Kamera erkannten Objekten automatisch folgen lassen. Siehe [PTZ & Autotrack](/de/sensors/ptz).
 - **Zonen.** Erkennungszonen, Privatsphäre-Masken und Überquerungslinien zeichnen. Siehe [Zonen, Masken & Linien](/de/cameras/zones-and-masks).
 - **Snapshot.** Wie Standbilder aktualisiert und zwischengespeichert werden (Auto-Refresh, Cache-Zeit und Aktualisierungsintervall).
-- **Frame Worker.** Die für die Analyse genutzte Bildrate.
+- **Frame Worker.** Die für die Analyse genutzte Bildrate sowie ob Event-Thumbnails aus dem höchstauflösenden Stream erzeugt werden.
 
 ## Plugins
 

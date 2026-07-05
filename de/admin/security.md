@@ -16,6 +16,12 @@ Zum Einschalten wähle **2FA einrichten**, scanne den QR-Code mit deiner App (od
 
 Einmal aktiviert, kannst du **Backup-Codes neu erzeugen** oder **2FA deaktivieren**, beides verlangt einen aktuellen Code.
 
+## Biometrische Anmeldung (Mobile App)
+
+Auf einem Telefon oder Tablet mit Face ID oder Touch ID bietet die App beim ersten erfolgreichen Anmelden an, deine Zugangsdaten im sicheren Speicher des Geräts zu speichern. Bestätige den Hinweis, um sie einzuschalten, oder erledige es später unter **Einstellungen → Konto** mit dem Schalter **Face ID / Touch ID verwenden**.
+
+Einmal aktiviert, erscheint auf dem Login-Bildschirm die Schaltfläche **Mit Face ID anmelden**, sodass du auf diesem Gerät dein Passwort nicht mehr eingeben musst. Schaltest du die Option aus, werden die gespeicherten Zugangsdaten entfernt; du kannst sie beim nächsten Anmelden wieder aktivieren.
+
 ## Aktive Sitzungen
 
 Die Liste **Aktive Sitzungen** zeigt jedes an deinem Konto angemeldete Gerät, das aktuelle markiert. Du kannst ein einzelnes Gerät **abmelden** oder alle anderen auf einmal, praktisch, wenn du dich irgendwo angemeldet hast, dem du nicht mehr traust.

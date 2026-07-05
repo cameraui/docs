@@ -20,6 +20,8 @@ To share an automation, export it and send the file. The other person imports it
 
 ## Community blueprints
 
-A community blueprint store, where you can browse and copy automations others have made directly from the app, is planned.[^store]
+![The community automations store](/img/automations/blueprint-store.png)
 
-[^store]: The community blueprint store is not available yet.
+On the **Automations** list, choose **Browse community automations** to open the store. It lists blueprints shared by the camera.ui community, with search, a category filter, and a featured row.
+
+Opening a blueprint shows what it needs before you import it: required plugins (with a link to the plugin store if one is missing) and required inputs such as a camera, notification recipients, or a sensor. Choosing **Import** walks you through binding each of those to your own cameras, plugins, and users; nothing is pre-filled. If the blueprint has no references to bind, it imports directly. Either way it lands in your automations list **disabled**, same as a manually imported file.

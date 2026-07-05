@@ -14,7 +14,7 @@ camera.ui bietet mehrere Bewegungs-Plugins, sodass du die CPU-Last an deine Hard
 - **OpenCV.** Mehrere Algorithmen mit feiner Justierung.
 - **OpenCL.** GPU-beschleunigt, für sehr geringe CPU-Last.
 - **WASM Motion.** Plattformübergreifend per WebAssembly.
-- **Pam Diff** (veraltet). Leichtgewichtige Pixel-Differenz.
+- **Pam Diff.** Leichtgewichtige Pixel-Differenz.
 - **SMTP.** Für Kameras, die Bewegungsalarme per E-Mail senden, statt das Video zu analysieren.
 
 ## Empfindlichkeit justieren

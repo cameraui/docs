@@ -17,6 +17,7 @@ Narrow the list to exactly what you're after:
 - **Trigger.** Motion, a doorbell, a sensor, or an audio alarm.
 - **Attributes.** Events that contain a face or a license plate.
 - **Confidence.** Hide low-confidence detections.
+- **Grid search.** With a single camera selected, draw a region on its snapshot to only show events detected inside that part of the frame.
 
 You can also search by text across detected labels, faces, and plates.
 

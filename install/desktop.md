@@ -65,7 +65,7 @@ You can change this anytime from the tray icon (**Switch mode…**), without rei
 
 ## macOS permissions
 
-On macOS 15 and newer, the system asks for **local network** access on first launch. Allow it, otherwise the app can't reach cameras on your network. The first time you use two-way talk, macOS also asks for **microphone** access.
+On macOS 15 and newer, the system asks for **local network** access on first launch. Allow it, otherwise the app can't reach cameras on your network. The first time you use two-way talk, macOS also asks for **microphone** access, and the first time you use the geofence trigger's "My location" button in [Automations](/automations/), it asks for **location** access.
 
 ## Updates
 
@@ -73,10 +73,10 @@ The desktop app keeps itself up to date. It checks for updates when it starts an
 
 ## Where your data lives
 
-In Server mode, your settings and recordings are stored under the app's data folder:
+In Server mode, your settings and recordings are stored in a `camera.ui/volume` folder inside the app's per-user data directory:
 
-- **macOS:** `~/Library/Application Support/camera.ui`
-- **Windows:** `%APPDATA%\camera.ui`
-- **Linux:** `~/.config/camera.ui`
+- **macOS:** `~/Library/Application Support/camera.ui/camera.ui/volume`
+- **Windows:** `%APPDATA%\camera.ui\camera.ui\volume`
+- **Linux:** `~/.config/camera.ui/camera.ui/volume`
 
 See [Backup & restore](/admin/backup) to keep a copy.

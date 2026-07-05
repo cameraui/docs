@@ -23,8 +23,43 @@ Switching to an instance over plain HTTP passes your session in the address, so 
 
 ## Workers
 
-A **worker** is a second machine that takes on some of a server's processing, such as decoding and detection for busy cameras. Manage them in **Workers** (in the menu).
+![The Workers settings](/img/admin/workers.png)
 
-To connect one, copy the server's **auth token** into the worker machine's agent. Once it connects, it appears in the **Workers** list with its live CPU and memory. Then, under **Camera assignments**, you choose which camera each worker handles; cameras left as **Local** stay on the main server.
+A **worker** is a second machine that takes on some of a server's processing, such as decoding and detection for busy cameras, or hosting a plugin the main server can't run. Manage them in **Workers** (in the menu).
 
-Regenerating the auth token disconnects existing workers until they're reconfigured.
+### Enable workers
+
+Turn on **Enable Workers** and set a **Master Address**, the LAN IP or hostname other machines use to reach this server. Workers can't be enabled without an address. A **Worker Connection Port** (default `7422`) is also required; changing it later means already-paired workers must be re-paired.
+
+### Pair a worker
+
+Click **Generate Pairing Code** to create a one-time code (valid for 15 minutes). Along with it you get a ready-made configuration snippet:
+
+```yaml
+worker:
+  master: <master address>
+  apiPort: <api port>
+  pairingCode: <code>
+  name: my-worker
+  capabilities:
+    - frameDecoding
+    - pluginHost
+```
+
+Paste the snippet into the worker machine's `config.yml`, then start it with `camera.ui --worker`. The worker exchanges the code for its own credentials; nothing is shared or reused between workers, and each one can be revoked independently. The pairing code can only be used once.
+
+### The workers list
+
+Once paired, a worker appears in the **Workers** list showing its online/offline status, platform (OS/architecture), process ID, version, and live CPU and memory use. A warning is shown if a worker's version differs from the master's.
+
+### Camera and plugin assignments
+
+Under **Camera Assignments**, choose which camera each worker decodes and detects on; cameras left as **Local** stay on the main server.
+
+Under **Plugin Assignments**, an entire plugin can run on a worker instead of the main server, for example a detection backend that needs hardware the main server lacks. Only workers whose platform is compatible with the plugin are offered. The worker installs and runs the plugin; it's still configured normally in the UI.
+
+### Failover
+
+Workers send a heartbeat every 5 seconds and are considered offline after 15 seconds without one. If a worker disconnects, its assigned cameras and plugins fall back to the main server automatically (a plugin only falls back if the main server's platform can run it). When the worker reconnects, its cameras and plugins are automatically re-homed to it.
+
+Removing a worker revokes its credentials and drops the connection; its assigned cameras and plugins fall back to the main server.

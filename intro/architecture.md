@@ -49,7 +49,7 @@ A lot of what camera.ui does is delivered by **plugins**, add-ons you install fr
 Plugins provide:
 
 - **Camera sources.** ONVIF and other camera protocols.
-- **Detectors.** Motion engines and the AI backends (CoreML, ONNX, OpenVINO, NCNN).
+- **Detectors.** Motion engines and the AI backends (CoreML, ONNX, OpenVINO, NCNN, Coral, Hailo).
 - **Notifications.** The notifier.
 - **Smart-home bridges.** Apple HomeKit.
 
@@ -71,12 +71,12 @@ You can also save more than one server as an **Instance** and switch between the
 
 ## Scaling across machines
 
-For larger setups, you can add extra machines as **workers**. A worker takes over the decoding and detection for some cameras, offloading the main server. Cameras are pinned to a worker and automatically **fail back** to the main server if that worker goes offline. See [Instances & workers](/admin/instances-workers).
+For larger setups, you can add extra machines as **workers**. A worker takes over the decoding and detection for some cameras, offloading the main server, or it can run an entire plugin instead (useful for a detector that needs specific hardware the main server lacks). Cameras and plugins assigned to a worker automatically **fall back** to the main server if that worker goes offline, and move back to the worker once it reconnects. See [Instances & workers](/admin/instances-workers).
 
 ## Reaching it from outside
 
 On your local network you connect directly. To reach your server from anywhere, camera.ui offers several options: camera.ui Cloud, Cloudflare tunnels, a custom domain, or direct port-forwarding. All of them are optional and entirely your choice. See [Remote access](/remote/).
 
-[^detect]: Detection needs a detection plugin that matches your hardware (CoreML, ONNX, OpenVINO, or NCNN). See [Detection & AI](/detection/).
+[^detect]: Detection needs a detection plugin that matches your hardware (CoreML, ONNX, OpenVINO, NCNN, or an edge accelerator like Coral or Hailo). See [Detection & AI](/detection/).
 [^license]: Recording (NVR) and push notifications require an active camera.ui subscription.
 [^cloud-optional]: camera.ui Cloud is optional. On your own network everything stays local, and your server never has to connect to the cloud. See [Reaching it from outside](#reaching-it-from-outside).

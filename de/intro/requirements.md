@@ -38,8 +38,10 @@ Erkennung und Video-Verarbeitung laufen auf jeder CPU in Software, aber eine GPU
 | NVIDIA | NVENC / NVDEC + CUDA | `nvidia`-Docker-Flavor · x86-64 |
 | AMD | Mesa VA-API (+ OpenCL) | `amd`-Docker-Flavor · x86-64 |
 | Nur CPU | Software | `cpu`-Flavor · x86-64 + arm64 |
+| Coral Edge TPU | dedizierte TPU | über das Coral-Plugin · Linux · x64 + arm64 |
+| Hailo-8 / Hailo-8L | dedizierte NPU | über das Hailo-Plugin · Linux · x64 + arm64 |
 
-Wähle auf Linux den [Docker-Flavor](/de/install/docker), der zu deiner GPU passt. Auf macOS und Windows nutzt die Desktop-App automatisch deine GPU für hardware-beschleunigtes Video. Dein [KI-Erkennungs-Plugin](/de/detection/ai-backends) sollte zu deiner Hardware passen: CoreML auf Apple Silicon oder ein Intel-/NVIDIA-Backend.
+Wähle auf Linux den [Docker-Flavor](/de/install/docker), der zu deiner GPU passt. Auf macOS und Windows nutzt die Desktop-App automatisch deine GPU für hardware-beschleunigtes Video. Dein [KI-Erkennungs-Plugin](/de/detection/ai-backends) sollte zu deiner Hardware passen: CoreML auf Apple Silicon, ein Intel-/NVIDIA-Backend oder ein Coral-/Hailo-Edge-Beschleuniger unter Linux.
 
 ## Speicher für Aufnahmen
 

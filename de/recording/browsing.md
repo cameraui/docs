@@ -17,6 +17,7 @@ Grenze die Liste auf genau das ein, was du suchst:
 - **Trigger.** Bewegung, eine Türklingel, ein Sensor oder ein Alarmgeräusch.
 - **Attribute.** Ereignisse, die ein Gesicht oder ein Kennzeichen enthalten.
 - **Confidence.** Erkennungen mit niedriger Confidence ausblenden.
+- **Rastersuche.** Ist genau eine Kamera ausgewählt, kannst du einen Bereich auf ihrem Snapshot markieren, um nur Ereignisse anzuzeigen, die in diesem Teil des Bildes erkannt wurden.
 
 Du kannst außerdem per Text über erkannte Labels, Gesichter und Kennzeichen suchen.
 

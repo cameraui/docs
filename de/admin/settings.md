@@ -12,7 +12,7 @@ Für jeden verfügbar, der angemeldet ist:
 
 - **Konto.** Dein Profil, Passwort, Zwei-Faktor-Authentifizierung und aktive Sitzungen. Siehe [Sicherheit](/de/admin/security).
 - **Erscheinungsbild.** Thema, Sprache und Oberflächen-Optionen.
-- **Notifications.** Wie und wann dieses Gerät dich alarmiert. Siehe [Benachrichtigungen](/de/notifications/).
+- **Benachrichtigungen.** Wie und wann dieses Gerät dich alarmiert. Siehe [Benachrichtigungen](/de/notifications/).
 
 ## Administrator-Einstellungen
 
@@ -21,7 +21,7 @@ Für Admins verfügbar:
 - **Benutzer.** Konten und Rollen. Siehe [Benutzer](/de/admin/users).
 - **Aufnahmen.** Aufnahme- und Speicher-Optionen. Siehe [Aufnahmen](/de/recording/).
 - **Remote Access.** Den Server von außen erreichen. Siehe [Remote-Zugriff](/de/remote/).
-- **Backup.** Dein Setup sichern und wiederherstellen. Siehe [Backup](/de/admin/backup).
+- **Backup.** Dein Setup sichern und wiederherstellen, sowie wiederkehrende Backups planen. Siehe [Backup](/de/admin/backup).
 - **System.** Version, Updates und Server-Aktionen. Siehe [System](/de/admin/system).
 
 ## Admin-Werkzeuge

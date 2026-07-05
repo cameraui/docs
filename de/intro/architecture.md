@@ -49,7 +49,7 @@ Vieles von dem, was camera.ui kann, wird über **Plugins** geliefert, Erweiterun
 Plugins liefern:
 
 - **Kamera-Quellen.** ONVIF und weitere Kamera-Protokolle.
-- **Detektoren.** Bewegungs-Engines und die KI-Backends (CoreML, ONNX, OpenVINO, NCNN).
+- **Detektoren.** Bewegungs-Engines und die KI-Backends (CoreML, ONNX, OpenVINO, NCNN, Coral, Hailo).
 - **Benachrichtigungen.** Der Notifier.
 - **Smart-Home-Bridges.** Apple HomeKit.
 
@@ -71,12 +71,12 @@ Du kannst außerdem mehr als einen Server als **Instanz** speichern und in derse
 
 ## Über mehrere Maschinen skalieren
 
-Für größere Setups kannst du zusätzliche Maschinen als **Worker** hinzufügen. Ein Worker übernimmt das Dekodieren und die Erkennung für einige Kameras und entlastet so den Hauptserver. Kameras sind an einen Worker gebunden und fallen automatisch auf den Hauptserver **zurück**, falls dieser Worker offline geht. Siehe [Instanzen & Worker](/de/admin/instances-workers).
+Für größere Setups kannst du zusätzliche Maschinen als **Worker** hinzufügen. Ein Worker übernimmt das Dekodieren und die Erkennung für einige Kameras und entlastet so den Hauptserver, oder er führt stattdessen ein ganzes Plugin aus (nützlich für einen Detektor, der spezielle Hardware braucht, die dem Hauptserver fehlt). Kameras und Plugins, die einem Worker zugewiesen sind, fallen automatisch auf den Hauptserver **zurück**, falls dieser Worker offline geht, und wandern zurück zum Worker, sobald er sich wieder verbindet. Siehe [Instanzen & Worker](/de/admin/instances-workers).
 
 ## Von außen erreichen
 
 In deinem lokalen Netzwerk verbindest du dich direkt. Um deinen Server von überall zu erreichen, bietet camera.ui mehrere Optionen: camera.ui Cloud, Cloudflare-Tunnel, eine eigene Domain oder direktes Port-Forwarding. Alle sind optional und ganz deine Entscheidung. Siehe [Remote-Zugriff](/de/remote/).
 
-[^detect]: Erkennung benötigt ein Detection-Plugin, das zu deiner Hardware passt (CoreML, ONNX, OpenVINO oder NCNN). Siehe [Erkennung & KI](/de/detection/).
+[^detect]: Erkennung benötigt ein Detection-Plugin, das zu deiner Hardware passt (CoreML, ONNX, OpenVINO, NCNN oder einen Edge-Beschleuniger wie Coral oder Hailo). Siehe [Erkennung & KI](/de/detection/).
 [^license]: Aufnahmen (NVR) und Push-Benachrichtigungen erfordern ein aktives camera.ui-Abo.
 [^cloud-optional]: camera.ui Cloud ist optional. In deinem eigenen Netzwerk bleibt alles lokal, und dein Server muss sich nie mit der Cloud verbinden. Siehe [Von außen erreichen](#von-außen-erreichen).

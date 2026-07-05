@@ -12,7 +12,7 @@ When something isn't working, the **Logs** view (in the menu, admins only) shows
 
 Logs stream live. You can:
 
-- Filter by source: **All**, **Server**, **Go2RTC**, or **Other**.
+- Filter by source: **All**, a system component (**Server**, **go2rtc**, **nats**, **tunnel**), a specific **camera**, or a specific **plugin**.
 - **Search** the visible lines.
 - **Download** the log to share when asking for help, or **clear** it.
 - Zoom the text in and out.

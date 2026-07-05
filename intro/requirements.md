@@ -38,8 +38,10 @@ Detection and video processing run in software on any CPU, but a GPU, accelerato
 | NVIDIA | NVENC / NVDEC + CUDA | `nvidia` Docker flavor · x86-64 |
 | AMD | Mesa VA-API (+ OpenCL) | `amd` Docker flavor · x86-64 |
 | CPU only | software | `cpu` flavor · x86-64 + arm64 |
+| Coral Edge TPU | dedicated TPU | via the Coral plugin · Linux · x64 + arm64 |
+| Hailo-8 / Hailo-8L | dedicated NPU | via the Hailo plugin · Linux · x64 + arm64 |
 
-On Linux, pick the [Docker flavor](/install/docker) that matches your GPU. On macOS and Windows, the desktop app uses your GPU for hardware-accelerated video automatically. Your [AI detection plugin](/detection/ai-backends) should match your hardware: CoreML on Apple Silicon, or an Intel / NVIDIA backend.
+On Linux, pick the [Docker flavor](/install/docker) that matches your GPU. On macOS and Windows, the desktop app uses your GPU for hardware-accelerated video automatically. Your [AI detection plugin](/detection/ai-backends) should match your hardware: CoreML on Apple Silicon, an Intel / NVIDIA backend, or a Coral / Hailo edge accelerator on Linux.
 
 ## Storage for recordings
 

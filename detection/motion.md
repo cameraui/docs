@@ -14,7 +14,7 @@ camera.ui offers several motion plugins, so you can match CPU use to your hardwa
 - **OpenCV.** Several algorithms with fine-grained tuning.
 - **OpenCL.** GPU-accelerated, for very low CPU use.
 - **WASM Motion.** Cross-platform WebAssembly.
-- **Pam Diff** (deprecated). Lightweight pixel-difference.
+- **Pam Diff.** Lightweight pixel-difference.
 - **SMTP.** For cameras that send motion alerts by email instead of analysing the video.
 
 ## Tuning sensitivity

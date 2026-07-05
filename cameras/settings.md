@@ -29,7 +29,7 @@ The main configuration form, grouped into sections:
 - **Autotrack.** Let a PTZ camera follow detected objects automatically. See [PTZ & autotrack](/sensors/ptz).
 - **Zones.** Draw detection zones, privacy masks, and crossing lines. See [Zones, masks & lines](/cameras/zones-and-masks).
 - **Snapshot.** How still images are refreshed and cached (auto-refresh, cache time, and refresh interval).
-- **Frame Worker.** The frame rate used for analysis.
+- **Frame Worker.** The frame rate used for analysis, plus whether event thumbnails are captured from the highest-resolution stream.
 
 ## Plugins
 

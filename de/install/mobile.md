@@ -30,6 +30,14 @@ Anders als die [Desktop-App](/de/install/desktop) verbinden sich die Mobile-Apps
 
 Mit installierter und angemeldeter App erhältst du Push-Benachrichtigungen für Ereignisse direkt auf dein Handy. Unter [Benachrichtigungen](/de/notifications/) wählst du, worüber du alarmiert wirst.[^license]
 
+## Biometrische Anmeldung
+
+Aktiviere unter **Einstellungen → Konto** die **Biometrische Anmeldung**, um dich statt mit Passwort mit Face ID oder Touch ID anzumelden. camera.ui speichert deine Zugangsdaten dafür im sicheren Speicher des Geräts; melde dich nach dem Aktivieren einmal ab und wieder an, damit sie gespeichert werden. Schaltest du die Option wieder aus, werden die gespeicherten Zugangsdaten entfernt.
+
+## App-Sperre
+
+Für eine zusätzliche Ebene auf dem Gerät selbst aktivierst du in den Einstellungen der App die **App-Sperre mit Face ID / Fingerabdruck**. Ist sie aktiv, verlangt die App bei jedem Öffnen eine biometrische Authentifizierung (oder ersatzweise den Geräte-Passcode), sodass jemand mit deinem entsperrten Handy trotzdem nicht deine Kameras sieht. Das ist getrennt von der biometrischen Anmeldung: Die Anmeldung spart dir das Passwort-Tippen, die App-Sperre prüft bei jedem Öffnen erneut, wer das Handy hält.
+
 ## Updates
 
 Die Apps aktualisieren sich über den App Store und Google Play wie jede andere App und erhalten zusätzlich Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).

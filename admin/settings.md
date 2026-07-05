@@ -21,7 +21,7 @@ Available to admins:
 - **Users.** Accounts and roles. See [Users](/admin/users).
 - **Recordings.** Recording and storage options. See [Recording](/recording/).
 - **Remote access.** Reaching the server from outside. See [Remote access](/remote/).
-- **Backup.** Back up and restore your setup. See [Backup](/admin/backup).
+- **Backup.** Back up and restore your setup, and schedule recurring backups. See [Backup](/admin/backup).
 - **System.** Version, updates, and server actions. See [System](/admin/system).
 
 ## Admin tools

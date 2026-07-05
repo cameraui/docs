@@ -65,7 +65,7 @@ Du kannst das jederzeit über das Tray-Symbol ändern (**Modus wechseln…**), o
 
 ## macOS-Berechtigungen
 
-Auf macOS 15 und neuer fragt das System beim ersten Start nach Zugriff auf das **lokale Netzwerk**. Erlaube ihn, sonst kann die App deine Kameras im Netzwerk nicht erreichen. Beim ersten Gegensprechen fragt macOS zusätzlich nach **Mikrofon**-Zugriff.
+Auf macOS 15 und neuer fragt das System beim ersten Start nach Zugriff auf das **lokale Netzwerk**. Erlaube ihn, sonst kann die App deine Kameras im Netzwerk nicht erreichen. Beim ersten Gegensprechen fragt macOS zusätzlich nach **Mikrofon**-Zugriff, und beim ersten Tippen auf **„Mein Standort"** beim Geofence-Trigger in den [Automatisierungen](/de/automations/) fragt es nach **Standort**-Zugriff.
 
 ## Updates
 
@@ -73,10 +73,10 @@ Die Desktop-App hält sich selbst aktuell. Sie prüft beim Start und regelmäßi
 
 ## Wo deine Daten liegen
 
-Im Server-Modus werden deine Einstellungen und Aufnahmen im Datenordner der App gespeichert:
+Im Server-Modus werden deine Einstellungen und Aufnahmen in einem `camera.ui/volume`-Ordner innerhalb des benutzerbezogenen Datenordners der App gespeichert:
 
-- **macOS:** `~/Library/Application Support/camera.ui`
-- **Windows:** `%APPDATA%\camera.ui`
-- **Linux:** `~/.config/camera.ui`
+- **macOS:** `~/Library/Application Support/camera.ui/camera.ui/volume`
+- **Windows:** `%APPDATA%\camera.ui\camera.ui\volume`
+- **Linux:** `~/.config/camera.ui/camera.ui/volume`
 
 Siehe [Backup & Wiederherstellung](/de/admin/backup), um eine Kopie zu behalten.

@@ -27,4 +27,4 @@ Teilen setzt voraus, dass dein Server mit **camera.ui Cloud** verbunden ([Einste
 
 ## Freigaben verwalten
 
-Der **Shares**-Tab einer Kamera listet ihre aktiven Share-Links, mit Bezeichnung, Erstellzeitpunkt, Ablauf, Zuschauerlimit und der Anzahl der aktuell Zusehenden. Wähle **Widerrufen**, um eine Freigabe sofort zu beenden.
+Der **Freigaben**-Tab einer Kamera listet ihre aktiven Share-Links, mit Bezeichnung, Erstellzeitpunkt, Ablauf, Zuschauerlimit und der Anzahl der aktuell Zusehenden. Wähle **Widerrufen**, um eine Freigabe sofort zu beenden.

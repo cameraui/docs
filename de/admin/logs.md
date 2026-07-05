@@ -12,7 +12,7 @@ Wenn etwas nicht funktioniert, zeigt die **Logs**-Ansicht (im Menü, nur Admins)
 
 Logs streamen live. Du kannst:
 
-- Nach Quelle filtern: **All**, **Server**, **Go2RTC** oder **Other**.
+- Nach Quelle filtern: **All**, eine Systemkomponente (**Server**, **go2rtc**, **nats**, **tunnel**), eine bestimmte **Kamera** oder ein bestimmtes **Plugin**.
 - Die sichtbaren Zeilen **durchsuchen**.
 - Das Log **herunterladen**, um es bei einer Anfrage um Hilfe zu teilen, oder **leeren**.
 - Den Text vergrößern und verkleinern.

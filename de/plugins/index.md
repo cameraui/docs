@@ -26,7 +26,15 @@ Plugins laufen als eigener Prozess, sodass ein sich fehlverhaltendes Plugin nich
 
 ## Ein Plugin installieren
 
-Wähle **Plugins suchen**, um welche zum Installieren zu finden. camera.ui schlägt veröffentlichte Plugins nach (jedes npm-Paket, das als camera.ui-Plugin getaggt ist), sodass der Katalog keine feste Liste ist. Wähle eines und installiere es, bei Bedarf mit Versionswahl. Einmal installiert, aktiviere es und weise es zu, wo es gebraucht wird.
+![Der Plugin-Store](/img/plugins/plugin-store.png)
+
+Wähle **Plugins suchen**, um den Store zu öffnen. Die Liste stammt von npm, sodass jedes als camera.ui-Plugin veröffentlichte Paket erscheinen kann und der Katalog keine feste Liste ist, aber camera.ui kuratiert darüber, was du siehst:
+
+- **Vertrauen.** Jedes Plugin ist als **Offiziell** (von camera.ui veröffentlicht), **Verifiziert** (ein vom camera.ui-Team geprüftes Community-Plugin) oder **Community** (von beliebigen Personen veröffentlicht, nicht geprüft) gekennzeichnet. Du kannst nach Vertrauensstufe filtern.
+- **Sicherheit.** Als bösartig oder kompromittiert bekannte Plugins werden blockiert: Sie erscheinen nicht, lassen sich nicht installieren, und ein bereits installiertes wird automatisch deaktiviert, falls es später blockiert wird.
+- **Durchsuchen.** Filtere nach Kategorie, starte bei den empfohlenen Plugins und sortiere nach Name, wöchentlichen Downloads oder letzter Aktualisierung. Jeder Eintrag zeigt sein Logo, eine kurze Beschreibung und seine Download-Zahlen.
+
+Wähle ein Plugin und installiere es, bei Bedarf mit Versionswahl. Einmal installiert, aktiviere es und weise es zu, wo es gebraucht wird.
 
 ## Einstellungen
 

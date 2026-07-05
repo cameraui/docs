@@ -25,7 +25,7 @@ Open **Settings → Notifications** on a device to control its alerts:
 
 ## What each camera alerts you about
 
-Each camera has its own notification settings, so you only get pinged for what matters there:
+Each camera has its own notification settings, so you only get pinged for what matters there:[^nvr]
 
 - **Objects.** Which to notify on (people and vehicles by default).
 - **Known faces only.** For people, only alert on a recognised [face](/detection/faces).
@@ -39,3 +39,4 @@ Each camera has its own notification settings, so you only get pinged for what m
 Some events are too important to hold back. **Critical alerts**, like a doorbell ring or an alarm, are delivered immediately and ignore both the cooldown and quiet hours.
 
 [^license]: Push notifications to the mobile apps require an active camera.ui subscription.
+[^nvr]: These per-camera controls come from the NVR plugin, the same plugin that handles recording.

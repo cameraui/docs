@@ -8,14 +8,18 @@ Object detection finds **people, vehicles, animals, and packages** in the frame,
 
 ## Choosing a backend
 
-camera.ui ships four AI backends as plugins. Pick the one for your hardware and enable it per camera in [Settings → Plugins](/cameras/settings) (see [Set up sensors](/sensors/setup)):
+camera.ui ships six AI backends as plugins. Pick the one for your hardware and enable it per camera in [Settings → Plugins](/cameras/settings) (see [Set up sensors](/sensors/setup)):
 
 - **CoreML.** For Apple Silicon Macs; uses the GPU and Neural Engine.
 - **OpenVINO.** For Intel CPUs and GPUs.
 - **ONNX.** Cross-platform, on CPU or a supported GPU.
 - **NCNN.** A lightweight backend for supported hardware. (No semantic search.)
+- **Coral.** For a Coral Edge TPU, with a CPU fallback. Linux only.
+- **Hailo.** For a Hailo-8 / Hailo-8L accelerator. Linux only.
 
-Each backend provides object, face, and license-plate detection. CoreML, OpenVINO, and ONNX also provide CLIP for [semantic search](/detection/semantic-search).
+CoreML, OpenVINO, ONNX, and NCNN provide object, face, and license-plate detection. CoreML, OpenVINO, and ONNX also provide CLIP for [semantic search](/detection/semantic-search). Coral and Hailo are edge-AI accelerator backends that provide object detection only, and only for **person, vehicle, and animal**[^edge] (no packages, faces, license plates, or CLIP).
+
+[^edge]: Coral and Hailo run a fixed object model that reports three classes. The other backends detect the full set of object types described above.
 
 ## Models and confidence
 

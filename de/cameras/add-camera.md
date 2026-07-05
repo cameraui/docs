@@ -51,7 +51,6 @@ Jede Quelle hat ein paar Optionen, die etwas Speicher gegen ein schnelleres, fl�
 
 - **Hot Modus.** Hält die Verbindung zur Kamera dauerhaft aktiv, sodass es beim Öffnen eines Streams keine Reconnect-Verzögerung gibt.
 - **Vorladen.** Lädt den Stream vor, sodass die Kamera-Ansicht mit minimaler Verzögerung öffnet.
-- **Vorpuffern.** Puffert fortlaufend ein kurzes, gleitendes Fenster des Streams, sodass die letzten Sekunden jederzeit zugänglich sind, etwa der Moment kurz vor einem Auslöser in einer Event-Aufnahme.
 
 Mit aktivem Hot Modus und Vorladen öffnet ein Stream nahezu sofort, egal ob die Kamera H.264 oder H.265 nutzt.
 

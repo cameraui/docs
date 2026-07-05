@@ -8,7 +8,7 @@ You can back up your camera.ui setup and restore it later, on any platform. It's
 
 ## Creating a backup
 
-Choose **Download backup archive** to save a single archive of your camera.ui configuration, database, and user accounts. Keep it somewhere safe.
+Choose **Download backup archive** to save a single archive of your camera.ui configuration, database, and user accounts. Keep it somewhere safe.[^ignore]
 
 ## Restoring
 
@@ -16,6 +16,21 @@ Upload an archive and choose **Restore backup archive**. camera.ui restores your
 
 ## Scheduled backups
 
-Automatic, scheduled backups are planned but not available yet.[^sched]
+![The Backup scheduler card](/img/admin/backup-scheduler.png)
 
-[^sched]: The scheduled-backup option is shown in Settings but isn't functional yet.
+The **Backup scheduler** card creates backups automatically and keeps only the newest archives.
+
+Turn on the toggle, then set:
+
+- **Frequency.** Daily, Weekly, or Monthly.
+- **Time.** The time of day the backup runs, as HH:mm (default `03:00`).
+- **Weekday.** Shown only when Frequency is Weekly.
+- **Day of month.** Shown only when Frequency is Monthly, 1-28.
+- **Keep backups.** How many of the newest archives to retain, 1-60 (default 7). Older archives are deleted automatically after each run.
+- **Destination folder.** An absolute path on the server, for example a NAS mount. Leave it empty to use the default folder inside your storage directory. A relative path is rejected.
+
+Use **Run now** to trigger a backup immediately without waiting for the schedule. A **Last run** line shows the timestamp and result (success or error) of the most recent scheduled run, or "never" if none has run yet.
+
+Scheduled archives are written to the destination folder on the server, unlike a manual download, which saves the archive to your browser. Everything the scheduler has created appears under **Available backups**, with the filename, date, and size, and a Download or Remove action for each entry.
+
+[^ignore]: To exclude a folder from the backup (for example a large media folder), place an empty file named `.backupignore` in it.
