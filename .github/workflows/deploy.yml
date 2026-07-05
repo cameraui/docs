@@ -3,6 +3,13 @@ name: Deploy docs
 on:
   push:
     branches: [main]
+    paths:
+      - "**.md"
+      - ".vitepress/**"
+      - "public/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 concurrency:
