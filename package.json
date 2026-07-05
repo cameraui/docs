@@ -19,7 +19,7 @@
   "devDependencies": {
     "markdown-it-footnote": "^4.0.0",
     "mermaid": "^11.16.0",
-    "updates": "^17.18.1",
+    "updates": "^17.18.2",
     "vitepress": "^1.6.4",
     "vitepress-plugin-mermaid": "^2.0.17"
   }
