@@ -107,6 +107,8 @@ docker compose -f docker-compose.yml -f docker-compose.intel.yml up -d
 
 The NVIDIA flavor also requires the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) on the host. Ready-made compose files for every flavor are in the [`cameraui/docker`](https://github.com/cameraui/docker) repository.
 
+Host drivers, device passthrough for AI accelerators (Coral, Hailo, Intel NPU) and how to verify it all works are covered on the [Hardware acceleration](/install/hardware-acceleration) page.
+
 ## Networking
 
 Host networking (the compose default) is recommended. camera.ui uses it for mDNS / Bonjour (HomeKit pairing, ONVIF discovery) and for WebRTC live view. If you can't use host networking, publish the [ports](#ports) below explicitly instead.

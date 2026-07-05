@@ -21,6 +21,7 @@
         { "text": { "en": "Which installation?", "de": "Welche Installation?" }, "link": "/install/" },
         { "text": { "en": "Desktop app", "de": "Desktop-App" }, "link": "/install/desktop" },
         { "text": { "en": "Docker", "de": "Docker" }, "link": "/install/docker" },
+        { "text": { "en": "Hardware acceleration", "de": "Hardware-Beschleunigung" }, "link": "/install/hardware-acceleration" },
         { "text": { "en": "Proxmox", "de": "Proxmox" }, "link": "/install/proxmox" },
         { "text": { "en": "Linux (bare-metal)", "de": "Linux (Bare-Metal)" }, "link": "/install/linux" },
         { "text": { "en": "Mobile apps", "de": "Mobile Apps" }, "link": "/install/mobile" },
