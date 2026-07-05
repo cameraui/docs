@@ -1,6 +1,6 @@
-import { withMermaid } from 'vitepress-plugin-mermaid';
-import llmstxt from 'vitepress-plugin-llms';
 import footnote from 'markdown-it-footnote';
+import llmstxt from 'vitepress-plugin-llms';
+import { withMermaid } from 'vitepress-plugin-mermaid';
 import nav from './nav.json';
 
 type Lang = 'en' | 'de';
@@ -37,9 +37,32 @@ export default withMermaid({
   srcExclude: ['README.md'],
 
   head: [
-    ['link', { rel: 'icon', type: 'image/x-icon', sizes: '32x32', href: '/favicon.ico' }],
-    ['link', { rel: 'icon', type: 'image/x-icon', sizes: '16x16', href: '/favicon-16.ico' }],
-    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        sizes: '32x32',
+        href: '/favicon.ico',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        sizes: '16x16',
+        href: '/favicon-16.ico',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png',
+      },
+    ],
   ],
 
   vite: {

@@ -17,6 +17,7 @@
     "vitepress-plugin-llms": "^1.13.2"
   },
   "devDependencies": {
+    "@types/markdown-it-footnote": "^3.0.4",
     "markdown-it-footnote": "^4.0.0",
     "mermaid": "^11.16.0",
     "updates": "^17.18.2",
