@@ -27,7 +27,7 @@ Der Rest dieser Seite ist für **Linux und Docker**, wo Hardware die Container-G
 2. **Device-Passthrough.** Der Device-Node kommt in den `devices:`-Abschnitt deiner Compose-Datei.
 3. **Verifizieren.** Der Container sagt dir, was tatsächlich angekommen ist.
 
-GPUs wählst du über den passenden [Image-Flavor](/de/install/docker#hardware-beschleunigung); KI-Beschleuniger (Coral, Hailo, Intel NPU) funktionieren mit **jedem** Flavor, da die Laufzeit-Bibliotheken bereits in jedem Image enthalten sind.
+GPUs wählst du über den passenden [Image-Flavor](/de/install/docker#hardware-beschleunigung). KI-Beschleuniger funktionieren mit **jedem** Flavor: Die Coral-Runtime steckt in jedem Image, und die Hailo-Runtime bringt ihr Plugin selbst mit. Die einzige Ausnahme ist die Intel NPU, deren Userspace-Treiber nur im **intel-Flavor** enthalten ist.
 
 ## Host prüfen
 
@@ -62,7 +62,7 @@ Zeigt ein Device hier `✗`, existiert aber auf dem Host, fehlt es in deiner Com
 | Coral Edge TPU (PCIe/M.2) | Objekterkennung | gasket/apex (`coral`-Befehl) | `/dev/apex_0` |
 | Coral Edge TPU (USB) | Objekterkennung | keiner | `/dev/bus/usb` |
 | Hailo-8 / Hailo-8L | Objekterkennung | hailo_pci + Firmware (`hailo`-Befehl) | `/dev/hailo0` |
-| Intel NPU (Core Ultra) | OpenVINO-Inferenz | [intel/linux-npu-driver](https://github.com/intel/linux-npu-driver) | `/dev/accel` |
+| Intel NPU (Core Ultra) | OpenVINO-Inferenz | `intel_vpu`-Kernelmodul + Firmware | `/dev/accel` (intel-Flavor) |
 | AMD ROCm | Compute | ROCm-Stack | `/dev/kfd` + `/dev/dri` |
 
 ## Intel / AMD GPU
@@ -115,7 +115,7 @@ Die Userspace-Runtime liefert das Hailo-Plugin selbst mit. Sonst ist nichts zu i
 
 ## Intel NPU (Core Ultra)
 
-Die NPU braucht einen Host-Treiber von [intel/linux-npu-driver](https://github.com/intel/linux-npu-driver). Sobald `/dev/accel` auf dem Host existiert, durchreichen:
+Der **intel-Flavor** bündelt den Userspace-Treiber der NPU (Level Zero + Intel NPU UMD und Compiler); andere Flavors nicht. Auf dem Host brauchst du das `intel_vpu`-Kernelmodul (upstream seit Linux 6.8) und dessen Firmware; falls `/dev/accel` fehlt, siehe [intel/linux-npu-driver](https://github.com/intel/linux-npu-driver). Dann das Device durchreichen:
 
 ```yaml
     devices:

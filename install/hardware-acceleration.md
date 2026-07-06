@@ -27,7 +27,7 @@ The rest of this page is for **Linux and Docker**, where hardware has to cross t
 2. **Device passthrough.** The device node goes into the `devices:` section of your compose file.
 3. **Verify.** The container tells you what actually arrived.
 
-GPUs are matched by picking the right [image flavor](/install/docker#hardware-acceleration); AI accelerators (Coral, Hailo, Intel NPU) work with **any** flavor, since the runtime libraries are already in every image.
+GPUs are matched by picking the right [image flavor](/install/docker#hardware-acceleration). AI accelerators work with **any** flavor: the Coral runtime is baked into every image, and the Hailo runtime ships with its plugin. The one exception is the Intel NPU, whose user-space driver is bundled in the **intel flavor** only.
 
 ## Check your host
 
@@ -62,7 +62,7 @@ If a device shows `✗` here but exists on the host, it is missing from your com
 | Coral Edge TPU (PCIe/M.2) | Object detection | gasket/apex (`coral` command) | `/dev/apex_0` |
 | Coral Edge TPU (USB) | Object detection | none | `/dev/bus/usb` |
 | Hailo-8 / Hailo-8L | Object detection | hailo_pci + firmware (`hailo` command) | `/dev/hailo0` |
-| Intel NPU (Core Ultra) | OpenVINO inference | [intel/linux-npu-driver](https://github.com/intel/linux-npu-driver) | `/dev/accel` |
+| Intel NPU (Core Ultra) | OpenVINO inference | `intel_vpu` kernel module + firmware | `/dev/accel` (intel flavor) |
 | AMD ROCm | Compute | ROCm stack | `/dev/kfd` + `/dev/dri` |
 
 ## Intel / AMD GPU
@@ -115,7 +115,7 @@ The userspace runtime ships inside the Hailo plugin. Nothing else to install.
 
 ## Intel NPU (Core Ultra)
 
-The NPU needs a host driver from [intel/linux-npu-driver](https://github.com/intel/linux-npu-driver). Once `/dev/accel` exists on the host, pass it through:
+The **intel flavor** bundles the NPU user-space driver (Level Zero + the Intel NPU UMD and compiler); other flavors do not. On the host you need the `intel_vpu` kernel module (upstream since Linux 6.8) and its firmware; if `/dev/accel` is missing, see [intel/linux-npu-driver](https://github.com/intel/linux-npu-driver). Then pass the device through:
 
 ```yaml
     devices:
