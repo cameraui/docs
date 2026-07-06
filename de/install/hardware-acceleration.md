@@ -15,7 +15,7 @@ camera.ui beschleunigt zwei Dinge: die **Video-Pipeline** (Dekodieren der Kamera
 | **macOS** (Desktop-App, Intel & Apple Silicon) | VideoToolbox (Apple GPU + Media Engine) | CoreML (Apple GPU + **Neural Engine**), ONNX |
 | **Windows** (Desktop-App, x64) | NVIDIA (CUDA/NVENC), Intel (QSV) und jede GPU via Direct3D 11/12 | OpenVINO (Intel GPU/NPU), ONNX (NVIDIA CUDA) |
 | **Linux x64** (Docker, bare-metal, Proxmox) | NVIDIA (CUDA/NVENC), Intel (VA-API/QSV), AMD (VA-API), dazu Vulkan/OpenCL | OpenVINO (Intel GPU/NPU), ONNX (CUDA/TensorRT), NCNN (Vulkan), Coral, Hailo |
-| **Linux arm64** (Raspberry Pi, Rockchip) | Rockchip (RKMPP), VA-API, Vulkan | Coral, Hailo, NCNN |
+| **Linux arm64** (Raspberry Pi, Rockchip) | Rockchip (RKMPP); Raspberry-Pi-Media-Engine (V4L2, `/dev/video10`–`12` durchreichen) | Coral, Hailo, NCNN (CPU/NEON) |
 
 Die Tabelle zeigt, was camera.ui nutzen **kann**. Der passende GPU-Treiber muss trotzdem auf dem Host installiert sein. camera.ui probiert beim Start jedes Backend aus und wählt nur, was wirklich funktioniert; alles, dessen Treiber fehlt, wird still übersprungen und erzeugt nie einen Fehler.
 
