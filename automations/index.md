@@ -18,7 +18,7 @@ Open **Automations** from the menu, then create one with the **+** button. A new
 
 A trigger is what starts a flow. You can use more than one.
 
-- **Detection event.** Something detected at a camera: motion, a person, vehicle, animal, or package, an audio event like a doorbell or glass breaking, a recognised face, or a license plate. Filter by object, confidence, and event phase (start, update, end).
+- **Detection event.** Something detected at a camera: motion, a person, vehicle, or animal, an audio event like a doorbell or glass breaking, a recognised face, or a license plate. Filter by object, confidence, and event phase (start, update, end).
 - **Sensor change.** A sensor's state changes, for example a contact sensor opening.
 - **Schedule.** A recurring time, set with a cron expression.
 - **System event.** Something in camera.ui itself, such as a camera connecting or disconnecting, or a plugin starting or stopping.

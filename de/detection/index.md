@@ -11,7 +11,7 @@ Erkennung ist, wie camera.ui versteht, was in deinem Video passiert: Bewegung, P
 Erkennung ist gestuft, damit sie effizient bleibt:
 
 1. **Bewegung** läuft durchgehend und günstig. Sie bemerkt nur, dass sich etwas geändert hat.
-2. Wenn Bewegung auslöst, wacht die schwerere **KI** auf. Sie führt Objekterkennung aus (Personen, Fahrzeuge, Tiere, Pakete) und schaut dann genauer auf das Gefundene: Gesichter bei den erkannten Personen, Kennzeichen bei den Fahrzeugen und einen semantischen Fingerabdruck für die Suche. Audio wird parallel analysiert.
+2. Wenn Bewegung auslöst, wacht die schwerere **KI** auf. Sie führt Objekterkennung aus (Personen, Fahrzeuge, Tiere) und schaut dann genauer auf das Gefundene: Gesichter bei den erkannten Personen, Kennzeichen bei den Fahrzeugen und einen semantischen Fingerabdruck für die Suche. Audio wird parallel analysiert.
 
 Diese „Kaskade" bedeutet, dass die anspruchsvolle KI nur läuft, wenn es etwas zu sehen gibt, und jeder Schritt nur auf den Objekten, für die er gilt, was CPU- und GPU-Last niedrig hält.
 
@@ -20,7 +20,7 @@ flowchart LR
   cam[Kamerabild] --> motion{Bewegung?}
   cam -. parallel .-> audio[Audio]
   motion -- nein --> idle[Schwere KI bleibt im Leerlauf]
-  motion -- ja --> obj[Objekterkennung<br/>Person · Fahrzeug · Tier · Paket]
+  motion -- ja --> obj[Objekterkennung<br/>Person · Fahrzeug · Tier]
   obj -- Person --> face[Gesichter]
   obj -- Fahrzeug --> plate[Kennzeichen]
   obj --> clip[CLIP]
@@ -33,7 +33,7 @@ flowchart LR
 ## Was du erkennen kannst
 
 - **[Bewegung](/de/detection/motion)** — Bewegung im Bild.
-- **[Objekte](/de/detection/ai-backends)** — Personen, Fahrzeuge, Tiere und Pakete.
+- **[Objekte](/de/detection/ai-backends)** — Personen, Fahrzeuge und Tiere.
 - **[Gesichter](/de/detection/faces)** — bekannte Personen erkennen und unbekannte gruppieren.
 - **[Kennzeichen](/de/detection/license-plates)** — Kennzeichen lesen.
 - **[Audio](/de/detection/audio)** — Geräusche wie Glasbruch, Alarme oder Hundebellen.

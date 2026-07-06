@@ -13,7 +13,7 @@ Die **Aufnahmen**-Ansicht ist der Ort, an dem du vergangene Ereignisse über dei
 Grenze die Liste auf genau das ein, was du suchst:
 
 - **Kamera und Zeitraum.**
-- **Objekttyp.** Person, Fahrzeug, Tier oder Paket.
+- **Objekttyp.** Person, Fahrzeug oder Tier.
 - **Trigger.** Bewegung, eine Türklingel, ein Sensor oder ein Alarmgeräusch.
 - **Attribute.** Ereignisse, die ein Gesicht oder ein Kennzeichen enthalten.
 - **Confidence.** Erkennungen mit niedriger Confidence ausblenden.

@@ -13,7 +13,7 @@ The **Recordings** view is where you find past events across your cameras. Each 
 Narrow the list to exactly what you're after:
 
 - **Camera and time range.**
-- **Object type.** Person, vehicle, animal, or package.
+- **Object type.** Person, vehicle, or animal.
 - **Trigger.** Motion, a doorbell, a sensor, or an audio alarm.
 - **Attributes.** Events that contain a face or a license plate.
 - **Confidence.** Hide low-confidence detections.

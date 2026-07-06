@@ -18,7 +18,7 @@ Ein Ablauf läuft von links nach rechts: Ein **Trigger** startet ihn, optionale 
 
 Ein Trigger ist das, was einen Ablauf startet. Du kannst mehrere verwenden.
 
-- **Erkennungsereignis.** Etwas an einer Kamera erkannt: Bewegung, eine Person, ein Fahrzeug, Tier oder Paket, ein Audio-Ereignis wie eine Türklingel oder Glasbruch, ein erkanntes Gesicht oder ein Kennzeichen. Filtere nach Objekt, Confidence und Ereignis-Phase (Start, Update, Ende).
+- **Erkennungsereignis.** Etwas an einer Kamera erkannt: Bewegung, eine Person, ein Fahrzeug oder Tier, ein Audio-Ereignis wie eine Türklingel oder Glasbruch, ein erkanntes Gesicht oder ein Kennzeichen. Filtere nach Objekt, Confidence und Ereignis-Phase (Start, Update, Ende).
 - **Sensoränderung.** Der Zustand eines Sensors ändert sich, etwa ein sich öffnender Kontaktsensor.
 - **Zeitplan.** Eine wiederkehrende Zeit, per Cron-Ausdruck.
 - **Systemereignis.** Etwas in camera.ui selbst, etwa eine Kamera, die sich verbindet oder trennt, oder ein Plugin, das startet oder stoppt.

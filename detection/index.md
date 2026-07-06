@@ -11,7 +11,7 @@ Detection is how camera.ui understands what's in your video: movement, people an
 Detection is layered, so it stays efficient:
 
 1. **Motion** runs continuously and cheaply. It just notices that something changed.
-2. When motion fires, the heavier **AI** wakes up. It runs object detection (people, vehicles, animals, packages), then looks closer at what it found: faces on the people it sees, license plates on the vehicles, and a semantic fingerprint for search. Audio is analysed alongside.
+2. When motion fires, the heavier **AI** wakes up. It runs object detection (people, vehicles, animals), then looks closer at what it found: faces on the people it sees, license plates on the vehicles, and a semantic fingerprint for search. Audio is analysed alongside.
 
 This "cascade" means the demanding AI only runs when there's something to look at, and each step only runs on the objects it applies to, which keeps CPU and GPU use low.
 
@@ -20,7 +20,7 @@ flowchart LR
   cam[Camera frame] --> motion{Motion?}
   cam -. parallel .-> audio[Audio]
   motion -- no --> idle[Heavy AI stays idle]
-  motion -- yes --> obj[Object detection<br/>person · vehicle · animal · package]
+  motion -- yes --> obj[Object detection<br/>person · vehicle · animal]
   obj -- person --> face[Faces]
   obj -- vehicle --> plate[License plates]
   obj --> clip[CLIP]
@@ -33,7 +33,7 @@ flowchart LR
 ## What you can detect
 
 - **[Motion](/detection/motion)** — movement in the frame.
-- **[Objects](/detection/ai-backends)** — people, vehicles, animals, and packages.
+- **[Objects](/detection/ai-backends)** — people, vehicles, and animals.
 - **[Faces](/detection/faces)** — recognise known people and group unknown ones.
 - **[License plates](/detection/license-plates)** — read plate numbers.
 - **[Audio](/detection/audio)** — sounds like glass breaking, alarms, or a dog barking.

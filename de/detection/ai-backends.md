@@ -4,7 +4,7 @@ title: Objekterkennung & KI-Backends
 
 # Objekterkennung & KI-Backends
 
-Objekterkennung findet **Personen, Fahrzeuge, Tiere und Pakete** im Bild und ist die Basis für Gesichter, Kennzeichen und semantische Suche. Sie läuft auf einem **KI-Backend**, das du passend zu deiner Hardware wählst.
+Objekterkennung findet **Personen, Fahrzeuge und Tiere** im Bild und ist die Basis für Gesichter, Kennzeichen und semantische Suche. Sie läuft auf einem **KI-Backend**, das du passend zu deiner Hardware wählst.
 
 ## Ein Backend wählen
 
@@ -17,7 +17,7 @@ camera.ui liefert sechs KI-Backends als Plugins. Wähle das für deine Hardware 
 - **Coral.** Für eine Coral Edge TPU, mit CPU-Fallback. Nur Linux.
 - **Hailo.** Für einen Hailo-8- / Hailo-8L-Beschleuniger. Nur Linux.
 
-CoreML, OpenVINO, ONNX und NCNN liefern Objekt-, Gesichts- und Kennzeichen-Erkennung. CoreML, OpenVINO und ONNX liefern zusätzlich CLIP für die [semantische Suche](/de/detection/semantic-search). Coral und Hailo sind Edge-AI-Beschleuniger-Backends, die nur Objekterkennung liefern, und das nur für **Personen, Fahrzeuge und Tiere**[^edge] (keine Pakete, keine Gesichts- oder Kennzeichen-Erkennung, kein CLIP).
+CoreML, OpenVINO, ONNX und NCNN liefern Objekt-, Gesichts- und Kennzeichen-Erkennung. CoreML, OpenVINO und ONNX liefern zusätzlich CLIP für die [semantische Suche](/de/detection/semantic-search). Coral und Hailo sind Edge-AI-Beschleuniger-Backends, die nur Objekterkennung liefern, und das nur für **Personen, Fahrzeuge und Tiere**[^edge] (keine Gesichts- oder Kennzeichen-Erkennung, kein CLIP).
 
 [^edge]: Coral und Hailo nutzen ein festes Objektmodell, das drei Klassen meldet. Die übrigen Backends erkennen die volle oben beschriebene Bandbreite an Objekttypen.
 
