@@ -6,7 +6,7 @@ title: HomeKit
 
 The HomeKit plugin adds your cameras to **Apple Home**, so you can view them and get recordings through the Home app and across your Apple devices. It bridges each camera along with the sensors you've assigned to it, such as motion, a doorbell, or a contact sensor.
 
-![HomeKit camera settings with pairing QR code](/img/plugins/homekit-pairing.png)
+<Shot src="/img/plugins/homekit-pairing.png" alt="HomeKit camera settings with pairing QR code" />
 
 ## Setup
 

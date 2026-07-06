@@ -14,7 +14,7 @@ camera.ui alarmiert dich, wenn an einer Kamera etwas passiert, mit einem Vorscha
 
 ## Einstellungen pro Gerät
 
-![Benachrichtigungs-Einstellungen](/img/notifications/notification-settings.png)
+<Shot src="/img/notifications/notification-settings.png" alt="Benachrichtigungs-Einstellungen" />
 
 Öffne **Einstellungen → Benachrichtigungen** auf einem Gerät, um dessen Alarme zu steuern:
 

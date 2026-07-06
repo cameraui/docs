@@ -12,7 +12,7 @@ camera.ui Cloud ist ein Weg, deinen eigenen Server zu erreichen, keine Kopie dav
 
 ## Aktivieren
 
-![Die Cloud-Karte unter Einstellungen, Remote](/img/remote/remote-settings.png)
+<Shot src="/img/remote/remote-settings.png" alt="Die Cloud-Karte unter Einstellungen, Remote" />
 
 Öffne unter **Einstellungen → Remote** die **Cloud**-Karte und schalte **Aktiviert** ein. Gib dem Server einen **Namen**; so erscheint er in deinem Cloud-Dashboard, was praktisch ist, sobald du mehrere hast.
 

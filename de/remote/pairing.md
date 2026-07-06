@@ -8,7 +8,7 @@ Die [Mobile-Apps](/de/install/mobile) verbinden sich über camera.ui Cloud mit d
 
 ## Koppeln
 
-![Server-Kopplung mit QR-Code und Pair-Code](/img/remote/pairing.png)
+<Shot src="/img/remote/pairing.png" alt="Server-Kopplung mit QR-Code und Pair-Code" />
 
 1. Stelle sicher, dass [camera.ui Cloud](/de/remote/cloud) auf dem Server aktiviert ist.
 2. Öffne auf dem Server **Einstellungen → Remote** und wähle **Server registrieren**. Ein **QR-Code**, ein **Pair-Code** und eine **Pair-URL** erscheinen.

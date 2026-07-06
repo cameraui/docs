@@ -20,7 +20,7 @@ Um eine Automation zu teilen, exportiere sie und sende die Datei. Die andere Per
 
 ## Community-Blueprints
 
-![Der Community-Automatisierungen-Store](/img/automations/blueprint-store.png)
+<Shot src="/img/automations/blueprint-store.png" alt="Der Community-Automatisierungen-Store" />
 
 Wähle in der **Automations**-Liste **Community-Automatisierungen durchsuchen**, um den Store zu öffnen. Er listet Blueprints, die von der camera.ui-Community geteilt wurden, mit Suche, einem Kategoriefilter und einer Reihe empfohlener Blueprints.
 

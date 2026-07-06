@@ -6,7 +6,7 @@ title: Automationen erstellen
 
 Automationen verbinden, was an deinen Kameras passiert, mit Aktionen, die camera.ui ausführen kann. Du baust sie visuell: Ziehe **Nodes** auf eine Arbeitsfläche und verbinde sie zu einem Ablauf. Automationen sind eine Admin-Funktion.
 
-![Automations-Editor-Canvas](/img/automations/editor-canvas.png)
+<Shot src="/img/automations/editor-canvas.png" alt="Automations-Editor-Canvas" />
 
 ## Wie ein Ablauf funktioniert
 

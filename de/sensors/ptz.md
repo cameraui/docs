@@ -17,7 +17,7 @@ PTZ ist ein [Sensor](/de/sensors/), den ein Plugin einer Kamera bereitstellt. Da
 - **Presets.** Zu einer gespeicherten Position springen, falls deine Kamera Presets unterstützt.
 - **Home.** Über die Home-Schaltfläche zur Home-Position zurückkehren.
 
-![PTZ-Joystick-Steuerung](/img/sensors/ptz-joystick.png)
+<Shot src="/img/sensors/ptz-joystick.png" alt="PTZ-Joystick-Steuerung" />
 
 ## Autotrack
 
@@ -32,4 +32,4 @@ Konfiguriere es in den [Einstellungen](/de/cameras/settings) der Kamera unter **
 - **Zur Home-Position zurückkehren.** Die Kamera zur Home-Position zurückfahren, wenn länger kein Ziel erkannt wird.
 - **Wartezeit vor Rückkehr.** Wie lange ohne Ziel gewartet wird, bevor die Kamera zurückkehrt.
 
-![PTZ-Autotrack-Einstellungen](/img/sensors/ptz-autotrack.png)
+<Shot src="/img/sensors/ptz-autotrack.png" alt="PTZ-Autotrack-Einstellungen" />

@@ -6,7 +6,7 @@ title: Live view
 
 Open any camera to watch it live.
 
-![Live view player with the control bar](/img/cameras/live-view.png)
+<Shot src="/img/cameras/live-view.png" alt="Live view player with the control bar" />
 
 ## Player controls
 

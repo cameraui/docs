@@ -13,7 +13,7 @@ camera.ui läuft über **HTTPS**. Wie du es öffnest, hängt von der Installatio
 camera.ui sichert die Verbindung mit einem **selbstsignierten Zertifikat**, daher zeigt dein Browser beim ersten Mal eine Warnung („Diese Verbindung ist nicht sicher"). In deinem lokalen Netzwerk ist das erwartet. Wähle **Erweitert → Fortfahren**, um weiterzumachen. Die Warnung kannst du später entfernen, indem du das Zertifikat unter **Einstellungen → System → Zertifikat** installierst.
 :::
 
-![Browser-Zertifikatswarnung](/img/getting-started/cert-warning.png)
+<Shot src="/img/getting-started/cert-warning.png" alt="Browser-Zertifikatswarnung" />
 
 ## 2. Anmelden
 
@@ -24,7 +24,7 @@ Melde dich beim ersten Mal mit dem Standard-Konto an:
 
 Diese ersetzt du im nächsten Schritt.
 
-![camera.ui Login-Screen](/img/getting-started/login.png)
+<Shot src="/img/getting-started/login.png" alt="camera.ui Login-Screen" />
 
 ## 3. Ersteinrichtung
 
@@ -39,7 +39,7 @@ Wähle, wie du starten möchtest:
 - **Neue Installation.** Einen frischen Server einrichten. Das wählen die meisten.
 - **Aus Backup wiederherstellen.** Wechsel von einer anderen camera.ui-Installation? Lade dein Backup-Archiv hoch, und camera.ui stellt deine Einstellungen wieder her und startet neu.
 
-![Onboarding-Welcome-Schritt](/img/getting-started/onboarding-welcome.png)
+<Shot src="/img/getting-started/onboarding-welcome.png" alt="Onboarding-Welcome-Schritt" />
 
 ### Erscheinungsbild
 
@@ -57,7 +57,7 @@ Richte dein eigenes Konto ein. Es ersetzt das Standard-`admin` / `admin`:
 Das ist ein Administrator-Konto. Verwende ein starkes, einzigartiges Passwort, besonders wenn du camera.ui jemals von außerhalb deines lokalen Netzwerks erreichen willst.
 :::
 
-![Onboarding-Account-Schritt](/img/getting-started/onboarding-account.png)
+<Shot src="/img/getting-started/onboarding-account.png" alt="Onboarding-Account-Schritt" />
 
 ### Fertig
 
@@ -69,7 +69,7 @@ Nach der Anmeldung landest du auf der **Startseite**. Wähle **Jetzt starten**, 
 
 Die **Kameras**-Seite durchsucht dein Netzwerk und listet gefundene Kameras unter **Entdeckt**. Wähle eine aus, gib Benutzername und Passwort ein, und sie ist hinzugefügt. Falls deine Kamera nicht gefunden wird, gib ihre Stream-Daten über **Kamera hinzufügen** manuell ein.
 
-![Kameras-Seite mit entdeckten Kameras](/img/getting-started/cameras-page.png)
+<Shot src="/img/getting-started/cameras-page.png" alt="Kameras-Seite mit entdeckten Kameras" />
 
 Die vollständige Anleitung findest du unter **[Kamera hinzufügen](/de/cameras/add-camera)**.
 

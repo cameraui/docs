@@ -14,7 +14,7 @@ camera.ui alerts you when something happens at a camera, with a thumbnail and a 
 
 ## Per-device settings
 
-![Notification settings](/img/notifications/notification-settings.png)
+<Shot src="/img/notifications/notification-settings.png" alt="Notification settings" />
 
 Open **Settings → Notifications** on a device to control its alerts:
 

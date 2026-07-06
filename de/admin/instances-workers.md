@@ -8,7 +8,7 @@ Zwei Admin-Funktionen helfen, wenn du mehr als eine Maschine betreibst: **Instan
 
 ## Instanzen
 
-![Die Instanzen-Liste](/img/admin/instances.png)
+<Shot src="/img/admin/instances.png" alt="Die Instanzen-Liste" />
 
 Eine **Instanz** ist ein weiterer hier gespeicherter camera.ui-Server, sodass du zu ihm wechseln kannst, ohne dich neu anzumelden. Verwalte sie unter **Instances** (im Menü).
 
@@ -23,7 +23,7 @@ Zu einer Instanz über einfaches HTTP zu wechseln überträgt deine Sitzung in d
 
 ## Worker
 
-![Die Worker-Einstellungen](/img/admin/workers.png)
+<Shot src="/img/admin/workers.png" alt="Die Worker-Einstellungen" />
 
 Ein **Worker** ist eine zweite Maschine, die einen Teil der Verarbeitung eines Servers übernimmt, etwa Dekodierung und Erkennung für ausgelastete Kameras, oder ein Plugin hostet, das der Hauptserver nicht ausführen kann. Verwalte sie unter **Workers** (im Menü).
 

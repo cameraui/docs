@@ -6,7 +6,7 @@ title: Live-Ansicht
 
 Öffne eine Kamera, um sie live anzusehen.
 
-![Live-Player mit Steuerleiste](/img/cameras/live-view.png)
+<Shot src="/img/cameras/live-view.png" alt="Live-Player mit Steuerleiste" />
 
 ## Player-Steuerung
 

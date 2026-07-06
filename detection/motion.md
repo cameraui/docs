@@ -19,7 +19,7 @@ camera.ui offers several motion plugins, so you can match CPU use to your hardwa
 
 ## Tuning sensitivity
 
-![Per-camera detection settings](/img/detection/detection-settings.png)
+<Shot src="/img/detection/detection-settings.png" alt="Per-camera detection settings" />
 
 Each engine exposes its own settings (such as area, threshold, and blur) in its plugin settings, with a reset to defaults. Two settings live on the camera itself, in [Settings → Detection](/cameras/settings):
 

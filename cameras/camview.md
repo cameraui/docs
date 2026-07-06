@@ -6,7 +6,7 @@ title: Camview
 
 Camview shows several cameras at once in a grid. You can build custom layouts, arrange them how you like, and control every camera in a layout together.
 
-![Camview multi-camera grid](/img/cameras/camview-grid.png)
+<Shot src="/img/cameras/camview-grid.png" alt="Camview multi-camera grid" />
 
 ## Create a layout
 

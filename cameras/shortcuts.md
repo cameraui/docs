@@ -32,4 +32,4 @@ Controlling accessories requires admin. See [Sensors & accessories](/sensors/) f
 4. Long-press a shortcut to remove it.
 5. Select **Finish Editing** when you're done.
 
-![Shortcuts overlay on a camera](/img/cameras/shortcuts-overlay.png)
+<Shot src="/img/cameras/shortcuts-overlay.png" alt="Shortcuts overlay on a camera" />

@@ -6,7 +6,7 @@ title: KI-Beschreibungen
 
 camera.ui kann ein generatives KI-Modell nutzen, um eine kurze, gut lesbare Zusammenfassung jedes Ereignisses zu schreiben: einen Titel, eine Beschreibung des Geschehens, eine benachrichtigungstaugliche Zusammenfassung und eine Bedrohungsstufe. Es benennt Personen, Kennzeichen und was sich bewegt hat.
 
-![Eine KI-generierte Ereignisbeschreibung](/img/detection/genai-description.png)
+<Shot src="/img/detection/genai-description.png" alt="Eine KI-generierte Ereignisbeschreibung" />
 
 ## Einen Anbieter wählen
 

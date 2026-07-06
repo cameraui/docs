@@ -19,7 +19,7 @@ camera.ui bietet mehrere Bewegungs-Plugins, sodass du die CPU-Last an deine Hard
 
 ## Empfindlichkeit justieren
 
-![Erkennungs-Einstellungen pro Kamera](/img/detection/detection-settings.png)
+<Shot src="/img/detection/detection-settings.png" alt="Erkennungs-Einstellungen pro Kamera" />
 
 Jede Engine bietet eigene Einstellungen (etwa Fläche, Schwellwert und Weichzeichnung) in ihren Plugin-Settings, mit „Zurücksetzen". Zwei Einstellungen liegen an der Kamera selbst, unter [Einstellungen → Detection](/de/cameras/settings):
 

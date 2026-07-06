@@ -13,7 +13,7 @@ Plugins extend camera.ui. Most of what it does beyond live view comes from plugi
 
 ## Managing plugins
 
-![The Plugins page](/img/plugins/plugins-list.png)
+<Shot src="/img/plugins/plugins-list.png" alt="The Plugins page" />
 
 Open **Plugins** from the menu to see everything installed, each as a card with a live status (ready, started, stopped, error). From a card you can:
 
@@ -26,7 +26,7 @@ Plugins run as their own process, so one misbehaving plugin won't take down the 
 
 ## Installing a plugin
 
-![The plugin store](/img/plugins/plugin-store.png)
+<Shot src="/img/plugins/plugin-store.png" alt="The plugin store" />
 
 Choose **Search plugins** to open the store. The list comes from npm, so any package published as a camera.ui plugin can appear and it isn't a fixed catalog, but camera.ui curates what you see on top of it:
 

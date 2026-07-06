@@ -19,8 +19,8 @@ The Cameras page lists devices that have been **discovered**, ready for you to a
 
 You can hide devices you don't want to see with the eye icon, and bring them back later with **Show hidden devices**.
 
-![Cameras page with discovered devices](/img/cameras/discovered-devices.png)
-![Connect dialog with username and password](/img/cameras/connect-dialog.png)
+<Shot src="/img/cameras/discovered-devices.png" alt="Cameras page with discovered devices" />
+<Shot src="/img/cameras/connect-dialog.png" alt="Connect dialog with username and password" />
 
 ## Add a camera manually
 
@@ -34,7 +34,7 @@ Use this for cameras that aren't discovered, or to set up streams yourself. Sele
 3. Add more URLs to a source, or **Add source** to add another role (for example a low-resolution stream for fast scrubbing).
 4. Save. The camera appears in your Cameras list and live view.
 
-![Add camera dialog with sources and roles](/img/cameras/add-camera-dialog.png)
+<Shot src="/img/cameras/add-camera-dialog.png" alt="Add camera dialog with sources and roles" />
 
 ### Sources and roles
 

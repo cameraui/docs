@@ -2,7 +2,7 @@
 
 The mobile apps are companion viewers for iOS and Android. They let you watch your cameras, browse recordings, and receive notifications on the go. The server runs elsewhere (on your [desktop](/install/desktop) or a [server install](/install/)); the mobile app connects to it.
 
-![The camera.ui mobile app](/img/install/mobile-app.png)
+<Shot src="/img/install/mobile-app.png" alt="The camera.ui mobile app" />
 
 ## Download
 

@@ -13,7 +13,7 @@ camera.ui runs over **HTTPS**. How you open it depends on how you installed it:
 camera.ui secures the connection with a **self-signed certificate**, so your browser shows a "your connection is not private" warning the first time. This is expected on your local network. Choose **Advanced → Proceed** to continue. You can remove the warning later by installing the certificate from **Settings → System → Certificate**.
 :::
 
-![Browser certificate warning](/img/getting-started/cert-warning.png)
+<Shot src="/img/getting-started/cert-warning.png" alt="Browser certificate warning" />
 
 ## 2. Sign in
 
@@ -24,7 +24,7 @@ The first time, sign in with the default account:
 
 You'll replace these in the next step.
 
-![camera.ui login screen](/img/getting-started/login.png)
+<Shot src="/img/getting-started/login.png" alt="camera.ui login screen" />
 
 ## 3. First-run setup
 
@@ -39,7 +39,7 @@ Choose how to start:
 - **New Installation.** Set up a fresh server. This is what most people pick.
 - **Restore from Backup.** Moving from another camera.ui install? Upload your backup archive, and camera.ui restores your settings and restarts.
 
-![Onboarding welcome step](/img/getting-started/onboarding-welcome.png)
+<Shot src="/img/getting-started/onboarding-welcome.png" alt="Onboarding welcome step" />
 
 ### Appearance
 
@@ -57,7 +57,7 @@ Set up your own account. This replaces the default `admin` / `admin`:
 This is an administrator account. Use a strong, unique password, especially if you ever plan to reach camera.ui from outside your local network.
 :::
 
-![Onboarding account step](/img/getting-started/onboarding-account.png)
+<Shot src="/img/getting-started/onboarding-account.png" alt="Onboarding account step" />
 
 ### Finish
 
@@ -69,7 +69,7 @@ After signing in you land on the **Home** screen. Select **Get started**, or ope
 
 The **Cameras** page scans your network and lists the cameras it finds under **Discovered**. Select one, enter its username and password, and it's added. If your camera isn't found, use **Add camera** to enter its stream details by hand.
 
-![Cameras page with discovered cameras](/img/getting-started/cameras-page.png)
+<Shot src="/img/getting-started/cameras-page.png" alt="Cameras page with discovered cameras" />
 
 For the full walkthrough, see **[Adding a camera](/cameras/add-camera)**.
 

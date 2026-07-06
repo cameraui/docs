@@ -6,7 +6,7 @@ title: Camera settings
 
 Every camera has a settings drawer where you configure how it connects, what it detects, and how it behaves. Open it with the **Settings** (cog) button on the camera. It is available to admins.
 
-![Camera settings drawer](/img/cameras/settings-drawer.png)
+<Shot src="/img/cameras/settings-drawer.png" alt="Camera settings drawer" />
 
 The drawer has four tabs.
 

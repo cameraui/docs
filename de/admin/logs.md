@@ -6,7 +6,7 @@ title: Logs & Konsole
 
 Wenn etwas nicht funktioniert, zeigt die **Logs**-Ansicht (im Menü, nur Admins), was der Server tut.
 
-![Die Logs-Ansicht](/img/admin/logs.png)
+<Shot src="/img/admin/logs.png" alt="Die Logs-Ansicht" />
 
 ## Die Logs lesen
 

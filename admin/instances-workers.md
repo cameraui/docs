@@ -8,7 +8,7 @@ Two admin features help when you run more than one machine: **instances** for ma
 
 ## Instances
 
-![The instances list](/img/admin/instances.png)
+<Shot src="/img/admin/instances.png" alt="The instances list" />
 
 An **instance** is another camera.ui server saved here, so you can switch to it without logging in again. Manage them in **Instances** (in the menu).
 
@@ -23,7 +23,7 @@ Switching to an instance over plain HTTP passes your session in the address, so 
 
 ## Workers
 
-![The Workers settings](/img/admin/workers.png)
+<Shot src="/img/admin/workers.png" alt="The Workers settings" />
 
 A **worker** is a second machine that takes on some of a server's processing, such as decoding and detection for busy cameras, or hosting a plugin the main server can't run. Manage them in **Workers** (in the menu).
 

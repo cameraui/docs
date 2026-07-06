@@ -12,7 +12,7 @@ Semantic search needs an AI backend that provides **CLIP** (CoreML, OpenVINO, or
 
 ## Searching
 
-![AI Search results in Recordings](/img/detection/ai-search.png)
+<Shot src="/img/detection/ai-search.png" alt="AI Search results in Recordings" />
 
 In [Recordings](/recording/browsing), open **AI Search** and describe what you're looking for. camera.ui ranks events by how well they match, and you can raise the **minimum match score** to keep only close matches.
 

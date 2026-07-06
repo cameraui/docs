@@ -8,7 +8,7 @@ camera.ui nimmt deine Kameras auf, damit du zurückschauen kannst, was passiert 
 
 ## Aufnahme-Modi
 
-![Aufnahme-Modus-Einstellungen](/img/recording/recording-modes.png)
+<Shot src="/img/recording/recording-modes.png" alt="Aufnahme-Modus-Einstellungen" />
 
 Jede Kamera nimmt in einem von drei Modi auf, einstellbar in ihren Aufnahme-Einstellungen:
 

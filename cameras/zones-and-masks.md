@@ -10,7 +10,7 @@ Zones let you control where detection happens, hide parts of the frame, and dete
 
 Open a camera's [settings](/cameras/settings), go to the **Settings** tab, and select **Edit zones** under **Zones**. The editor opens over the camera image with two tabs: **Zones** and **Lines**.
 
-![Zone editor in the Zones tab](/img/cameras/zone-editor.png)
+<Shot src="/img/cameras/zone-editor.png" alt="Zone editor in the Zones tab" />
 
 ## Detection zones
 

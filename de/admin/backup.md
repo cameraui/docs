@@ -16,7 +16,7 @@ Lade ein Archiv hoch und wähle **Backup-Archiv wiederherstellen**. camera.ui st
 
 ## Geplante Backups
 
-![Die Karte „Backup-Zeitplan"](/img/admin/backup-scheduler.png)
+<Shot src="/img/admin/backup-scheduler.png" alt="Die Karte „Backup-Zeitplan&quot;" />
 
 Die Karte **Backup-Zeitplan** erstellt Backups automatisch und behält nur die neuesten Archive.
 

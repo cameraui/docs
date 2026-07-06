@@ -8,7 +8,7 @@ Jedes Konto hat eigene Sicherheits-Einstellungen unter **Einstellungen → Konto
 
 ## Zwei-Faktor-Authentifizierung
 
-![Einrichtung der Zwei-Faktor-Authentifizierung](/img/admin/2fa-setup.png)
+<Shot src="/img/admin/2fa-setup.png" alt="Einrichtung der Zwei-Faktor-Authentifizierung" />
 
 Die Zwei-Faktor-Authentifizierung (2FA) ergänzt dein Passwort um einen Code aus einer Authenticator-App, etwa Google Authenticator oder Authy.
 

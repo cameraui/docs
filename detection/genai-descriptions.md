@@ -6,7 +6,7 @@ title: AI descriptions
 
 camera.ui can use a generative-AI model to write a short, readable summary of each event: a title, a description of what happened, a notification-friendly summary, and a threat level. It names people, plates, and detected movement.
 
-![An AI-generated event description](/img/detection/genai-description.png)
+<Shot src="/img/detection/genai-description.png" alt="An AI-generated event description" />
 
 ## Choosing a provider
 

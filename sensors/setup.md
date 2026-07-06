@@ -18,7 +18,7 @@ Open a camera's [settings](/cameras/settings) and go to the **Plugins** tab. It 
 
 A camera added through a plugin (such as ONVIF or a cloud camera) also has a category for that plugin, holding its settings.
 
-![Camera settings Plugins tab](/img/sensors/plugins-tab.png)
+<Shot src="/img/sensors/plugins-tab.png" alt="Camera settings Plugins tab" />
 
 ## Assign and enable sensors
 

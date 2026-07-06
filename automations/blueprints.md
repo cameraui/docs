@@ -20,7 +20,7 @@ To share an automation, export it and send the file. The other person imports it
 
 ## Community blueprints
 
-![The community automations store](/img/automations/blueprint-store.png)
+<Shot src="/img/automations/blueprint-store.png" alt="The community automations store" />
 
 On the **Automations** list, choose **Browse community automations** to open the store. It lists blueprints shared by the camera.ui community, with search, a category filter, and a featured row.
 

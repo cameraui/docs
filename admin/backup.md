@@ -16,7 +16,7 @@ Upload an archive and choose **Restore backup archive**. camera.ui restores your
 
 ## Scheduled backups
 
-![The Backup scheduler card](/img/admin/backup-scheduler.png)
+<Shot src="/img/admin/backup-scheduler.png" alt="The Backup scheduler card" />
 
 The **Backup scheduler** card creates backups automatically and keeps only the newest archives.
 

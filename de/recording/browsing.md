@@ -6,7 +6,7 @@ title: Durchsuchen & Filter
 
 Die **Aufnahmen**-Ansicht ist der Ort, an dem du vergangene Ereignisse über deine Kameras hinweg findest. Jedes Ereignis zeigt ein Thumbnail und das Erkannte, neueste zuerst.
 
-![Recordings-Ansicht mit Ereignissen und Filtern](/img/recording/recordings-view.png)
+<Shot src="/img/recording/recordings-view.png" alt="Recordings-Ansicht mit Ereignissen und Filtern" />
 
 ## Filtern
 

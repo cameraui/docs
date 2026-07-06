@@ -6,7 +6,7 @@ title: Gesichtserkennung
 
 Gesichtserkennung erkennt Gesichter an deinen Kameras, identifiziert Personen, die du angelegt hast, und gruppiert die noch unbekannten.[^license] Sie baut auf der [Objekterkennung](/de/detection/ai-backends) auf und braucht daher ein KI-Backend mit Gesichts-Unterstützung, das an der Kamera aktiviert ist.
 
-![Gesichter-Ansicht mit bekannten und unbekannten Gesichtern](/img/detection/faces-view.png)
+<Shot src="/img/detection/faces-view.png" alt="Gesichter-Ansicht mit bekannten und unbekannten Gesichtern" />
 
 ## Ein bekanntes Gesicht anlegen
 
@@ -20,7 +20,7 @@ So fügst du jemanden hinzu:
 
 Die Person wird nun in künftigen Ereignissen erkannt, ihr Name erscheint als Attribut an den Erkennungen.
 
-![Gesicht-anlegen-Dialog](/img/detection/faces-enroll.png)
+<Shot src="/img/detection/faces-enroll.png" alt="Gesicht-anlegen-Dialog" />
 
 ## Unbekannte Gesichter
 

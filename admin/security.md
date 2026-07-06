@@ -8,7 +8,7 @@ Each account has its own security settings, in **Settings → Account**. They ap
 
 ## Two-factor authentication
 
-![Two-factor authentication setup](/img/admin/2fa-setup.png)
+<Shot src="/img/admin/2fa-setup.png" alt="Two-factor authentication setup" />
 
 Two-factor authentication (2FA) adds a code from an authenticator app, such as Google Authenticator or Authy, on top of your password.
 

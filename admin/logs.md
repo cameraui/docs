@@ -6,7 +6,7 @@ title: Logs & console
 
 When something isn't working, the **Logs** view (in the menu, admins only) shows what the server is doing.
 
-![The Logs view](/img/admin/logs.png)
+<Shot src="/img/admin/logs.png" alt="The Logs view" />
 
 ## Reading the logs
 

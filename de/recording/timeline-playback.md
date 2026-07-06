@@ -6,7 +6,7 @@ title: Timeline & Wiedergabe
 
 Öffne eine Kamera und nutze ihre **Zeitleiste**, um durch aufgenommenes Material zu scrubben. Zieh entlang der Timeline, um durch die Zeit zu navigieren; Markierungen zeigen, wo Ereignisse waren.
 
-![Aufnahme-Timeline und Scrubber](/img/recording/timeline.png)
+<Shot src="/img/recording/timeline.png" alt="Aufnahme-Timeline und Scrubber" />
 
 ## Material durchsehen
 

@@ -23,7 +23,7 @@ These show their current state but aren't operated:
 
 ## Controllable accessories
 
-![Accessory controls in the camera overview](/img/sensors/accessory-controls.png)
+<Shot src="/img/sensors/accessory-controls.png" alt="Accessory controls in the camera overview" />
 
 These you can operate (admin only):
 

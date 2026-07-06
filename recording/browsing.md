@@ -6,7 +6,7 @@ title: Browsing & filters
 
 The **Recordings** view is where you find past events across your cameras. Each event shows a thumbnail and what was detected, newest first.
 
-![Recordings view with events and filters](/img/recording/recordings-view.png)
+<Shot src="/img/recording/recordings-view.png" alt="Recordings view with events and filters" />
 
 ## Filtering
 

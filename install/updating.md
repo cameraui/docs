@@ -34,4 +34,4 @@ The server version you chose is stored separately and persists across image pull
 
 The [mobile apps](/install/mobile) update through the App Store and Google Play like any other app, and also receive over-the-air updates to the interface.
 
-![Settings then System update button](/img/install/system-update.png)
+<Shot src="/img/install/system-update.png" alt="Settings then System update button" />

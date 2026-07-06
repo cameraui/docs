@@ -23,7 +23,7 @@ The recipient opens the link, enters the code, and watches the live stream. They
 Sharing needs your server connected to **camera.ui Cloud** ([Settings → Remote](/remote/cloud)) and online. The cloud hosts the link and helps the viewer find your server, but the video travels over a **direct, end-to-end-encrypted connection** between the viewer and your server. It never passes through camera.ui's servers, and the access code is checked only on your own server.
 :::
 
-![Share dialog with link and access code](/img/cameras/share-dialog.png)
+<Shot src="/img/cameras/share-dialog.png" alt="Share dialog with link and access code" />
 
 ## Managing shares
 

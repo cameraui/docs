@@ -38,6 +38,6 @@ When a limit is reached, what happens depends on the **retention mode**:
 
 ## Keeping an eye on usage
 
-![Storage usage statistics](/img/recording/storage-stats.png)
+<Shot src="/img/recording/storage-stats.png" alt="Storage usage statistics" />
 
 camera.ui shows how much space is used and free, and a breakdown per camera, including each camera's recording rate (megabytes per hour) and how many days of footage it holds. This helps you size storage and spot a camera recording more than expected.

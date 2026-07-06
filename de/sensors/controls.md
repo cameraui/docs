@@ -23,7 +23,7 @@ Diese zeigen ihren aktuellen Status, werden aber nicht bedient:
 
 ## Steuerbares Zubehör
 
-![Zubehör-Steuerung in der Kamera-Übersicht](/img/sensors/accessory-controls.png)
+<Shot src="/img/sensors/accessory-controls.png" alt="Zubehör-Steuerung in der Kamera-Übersicht" />
 
 Dieses kannst du bedienen (nur Admin):
 

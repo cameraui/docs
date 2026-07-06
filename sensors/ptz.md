@@ -17,7 +17,7 @@ Open a PTZ camera and select the **PTZ** button in the player to show the contro
 - **Presets.** Jump to a saved position, if your camera supports presets.
 - **Home.** Return to the home position with **Go to home**.
 
-![PTZ joystick control](/img/sensors/ptz-joystick.png)
+<Shot src="/img/sensors/ptz-joystick.png" alt="PTZ joystick control" />
 
 ## Autotrack
 
@@ -32,4 +32,4 @@ Configure it in the camera's [settings](/cameras/settings), under **Autotrack**:
 - **Return to home.** Move the camera back to its home position when no target is seen for a while.
 - **Wait before returning.** How long to wait without a target before returning home.
 
-![PTZ autotrack settings](/img/sensors/ptz-autotrack.png)
+<Shot src="/img/sensors/ptz-autotrack.png" alt="PTZ autotrack settings" />

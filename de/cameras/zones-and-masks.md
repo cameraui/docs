@@ -10,7 +10,7 @@ Mit Zonen steuerst du, wo Erkennung stattfindet, blendest Teile des Bildes aus u
 
 Öffne die [Einstellungen](/de/cameras/settings) einer Kamera, gehe zum **Einstellungen**-Tab und wähle unter **Zonen** den Punkt **Zonen bearbeiten**. Der Editor öffnet sich über dem Kamerabild mit zwei Tabs: **Zonen** und **Linien**.
 
-![Zonen-Editor im Zones-Tab](/img/cameras/zone-editor.png)
+<Shot src="/img/cameras/zone-editor.png" alt="Zonen-Editor im Zones-Tab" />
 
 ## Erkennungszonen
 

@@ -32,4 +32,4 @@ Das Steuern von Zubehör erfordert Admin-Rechte. Siehe [Sensoren & Zubehör](/de
 4. Per Long-Press entfernst du einen Shortcut.
 5. Wähle **Bearbeitung beenden**, wenn du fertig bist.
 
-![Shortcuts-Overlay auf einer Kamera](/img/cameras/shortcuts-overlay.png)
+<Shot src="/img/cameras/shortcuts-overlay.png" alt="Shortcuts-Overlay auf einer Kamera" />

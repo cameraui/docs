@@ -18,7 +18,7 @@ Sensoren stammen von [Plugins](/de/plugins/). Um einer Kamera einen Sensor zu ge
 
 Eine Kamera, die über ein Plugin hinzugefügt wurde (etwa ONVIF oder eine Cloud-Kamera), hat zusätzlich eine Kategorie für dieses Plugin mit dessen Einstellungen.
 
-![Plugins-Tab der Kamera-Einstellungen](/img/sensors/plugins-tab.png)
+<Shot src="/img/sensors/plugins-tab.png" alt="Plugins-Tab der Kamera-Einstellungen" />
 
 ## Sensoren zuweisen und aktivieren
 

@@ -38,6 +38,6 @@ Wenn eine Grenze erreicht ist, hängt das Weitere vom **Retention-Modus** ab:
 
 ## Verbrauch im Blick behalten
 
-![Speicher-Nutzungsstatistik](/img/recording/storage-stats.png)
+<Shot src="/img/recording/storage-stats.png" alt="Speicher-Nutzungsstatistik" />
 
 camera.ui zeigt, wie viel Platz belegt und frei ist, sowie eine Aufschlüsselung pro Kamera, inklusive der Aufnahme-Rate jeder Kamera (Megabyte pro Stunde) und wie viele Tage Material sie hält. Das hilft, den Speicher zu dimensionieren und eine Kamera zu erkennen, die mehr aufnimmt als erwartet.

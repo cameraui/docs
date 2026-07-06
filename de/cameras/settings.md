@@ -6,7 +6,7 @@ title: Kamera-Einstellungen
 
 Jede Kamera hat einen Einstellungs-Drawer, in dem du konfigurierst, wie sie sich verbindet, was sie erkennt und wie sie sich verhält. Öffne ihn mit der **Einstellungen**-Schaltfläche (Zahnrad) an der Kamera. Sie steht Admins zur Verfügung.
 
-![Kamera-Einstellungs-Drawer](/img/cameras/settings-drawer.png)
+<Shot src="/img/cameras/settings-drawer.png" alt="Kamera-Einstellungs-Drawer" />
 
 Der Drawer hat vier Tabs.
 

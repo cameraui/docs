@@ -8,7 +8,7 @@ camera.ui records your cameras so you can go back and watch what happened. Recor
 
 ## Recording modes
 
-![Recording mode settings](/img/recording/recording-modes.png)
+<Shot src="/img/recording/recording-modes.png" alt="Recording mode settings" />
 
 Each camera records in one of three modes, set in its recording settings:
 

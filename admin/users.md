@@ -18,7 +18,7 @@ Access is decided by role, not per camera; there are no per-camera permissions.
 
 ## Managing users
 
-![The registered users list](/img/admin/users.png)
+<Shot src="/img/admin/users.png" alt="The registered users list" />
 
 In **Settings → Users**, the **Registered users** list shows everyone. From there you can:
 

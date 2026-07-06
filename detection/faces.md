@@ -6,7 +6,7 @@ title: Face recognition
 
 Face recognition spots faces on your cameras, recognises people you have enrolled, and groups the ones it doesn't know yet.[^license] It builds on [object detection](/detection/ai-backends), so it needs an AI backend with face support enabled on the camera.
 
-![Faces view with known and unknown faces](/img/detection/faces-view.png)
+<Shot src="/img/detection/faces-view.png" alt="Faces view with known and unknown faces" />
 
 ## Enrolling a known face
 
@@ -20,7 +20,7 @@ To add someone:
 
 The person is now recognised in future events, with their name shown as an attribute on detections.
 
-![Enroll face dialog](/img/detection/faces-enroll.png)
+<Shot src="/img/detection/faces-enroll.png" alt="Enroll face dialog" />
 
 ## Unknown faces
 

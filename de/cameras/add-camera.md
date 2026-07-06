@@ -19,8 +19,8 @@ Die Kameras-Seite listet Geräte, die **entdeckt** wurden und bereit zum Hinzuf�
 
 Geräte, die du nicht sehen willst, kannst du mit dem Augen-Symbol ausblenden und später über **Ausgeblendete Geräte anzeigen** wieder einblenden.
 
-![Kameras-Seite mit entdeckten Geräten](/img/cameras/discovered-devices.png)
-![Verbinden-Dialog mit Benutzername und Passwort](/img/cameras/connect-dialog.png)
+<Shot src="/img/cameras/discovered-devices.png" alt="Kameras-Seite mit entdeckten Geräten" />
+<Shot src="/img/cameras/connect-dialog.png" alt="Verbinden-Dialog mit Benutzername und Passwort" />
 
 ## Eine Kamera manuell hinzufügen
 
@@ -34,7 +34,7 @@ Nutze das für Kameras, die nicht entdeckt werden, oder um Streams selbst einzur
 3. Füge einer Quelle weitere URLs hinzu, oder **Quelle hinzufügen** für eine weitere Rolle (zum Beispiel ein niedrig aufgelöster Stream fürs schnelle Scrubben).
 4. Speichere. Die Kamera erscheint in deiner Kameras-Liste und in der Live-Ansicht.
 
-![Kamera-hinzufügen-Dialog mit Quellen und Rollen](/img/cameras/add-camera-dialog.png)
+<Shot src="/img/cameras/add-camera-dialog.png" alt="Kamera-hinzufügen-Dialog mit Quellen und Rollen" />
 
 ### Quellen und Rollen
 

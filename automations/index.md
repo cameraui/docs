@@ -6,7 +6,7 @@ title: Building automations
 
 Automations connect what happens at your cameras to actions camera.ui can take. You build them visually: drag **nodes** onto a canvas and connect them into a flow. Automations are an admin feature.
 
-![Automation editor canvas](/img/automations/editor-canvas.png)
+<Shot src="/img/automations/editor-canvas.png" alt="Automation editor canvas" />
 
 ## How a flow works
 

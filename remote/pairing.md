@@ -8,7 +8,7 @@ The [mobile apps](/install/mobile) connect to your server through camera.ui Clou
 
 ## Pairing
 
-![Server pairing QR code and pair code](/img/remote/pairing.png)
+<Shot src="/img/remote/pairing.png" alt="Server pairing QR code and pair code" />
 
 1. Make sure [camera.ui Cloud](/remote/cloud) is enabled on the server.
 2. On the server, open **Settings → Remote** and choose **Register server**. A **QR code**, a **pair code**, and a **pair URL** appear.

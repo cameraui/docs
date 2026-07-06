@@ -2,7 +2,7 @@
 
 Die Mobile-Apps sind Companion-Viewer für iOS und Android. Mit ihnen siehst du deine Kameras live, durchsuchst Aufnahmen und erhältst unterwegs Benachrichtigungen. Der Server läuft woanders (auf deinem [Desktop](/de/install/desktop) oder einer [Server-Installation](/de/install/)); die Mobile-App verbindet sich mit ihm.
 
-![Die camera.ui Mobile-App](/img/install/mobile-app.png)
+<Shot src="/img/install/mobile-app.png" alt="Die camera.ui Mobile-App" />
 
 ## Download
 

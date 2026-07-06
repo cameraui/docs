@@ -16,7 +16,7 @@ Download the installer for your platform — directly below, or from the [downlo
 
 Apple Silicon and Intel Macs use separate downloads. Pick the one that matches your Mac.
 
-![camera.ui download page](/img/install/desktop-download.png)
+<Shot src="/img/install/desktop-download.png" alt="camera.ui download page" />
 
 ## Install
 
@@ -57,13 +57,13 @@ The first time you open the app, it asks **"How should camera.ui run?"** and off
 - **Viewer · Direct.** Connects to an existing server by address, for example another machine on your network.
 - **Viewer · Cloud.** Signs in via cloud.cameraui.com to reach a server through [camera.ui Cloud](/remote/cloud).
 
-![Desktop first-launch mode picker](/img/install/desktop-mode-picker.png)
+<Shot src="/img/install/desktop-mode-picker.png" alt="Desktop first-launch mode picker" />
 
 In **Server** mode the app starts the server, opens the interface, and guides you through [first-run setup](/intro/getting-started). In a **Viewer** mode it connects to a server you already have.
 
 You can change this anytime from the tray icon (**Switch mode…**), without reinstalling.
 
-![Desktop tray menu](/img/install/desktop-tray-menu.png)
+<Shot src="/img/install/desktop-tray-menu.png" alt="Desktop tray menu" />
 
 
 ## macOS permissions

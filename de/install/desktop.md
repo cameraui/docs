@@ -16,7 +16,7 @@ Lade den Installer für deine Plattform herunter — direkt hier, oder von der [
 
 Apple-Silicon- und Intel-Macs nutzen getrennte Downloads. Wähle den, der zu deinem Mac passt.
 
-![camera.ui Download-Seite](/img/install/desktop-download.png)
+<Shot src="/img/install/desktop-download.png" alt="camera.ui Download-Seite" />
 
 ## Installieren
 
@@ -57,13 +57,13 @@ Beim ersten Öffnen fragt die App **„Wie soll camera.ui laufen?"** und bietet 
 - **Viewer · Direkt.** Verbindet sich per Adresse mit einem vorhandenen Server, zum Beispiel einer anderen Maschine in deinem Netzwerk.
 - **Viewer · Cloud.** Meldet sich über cloud.cameraui.com an, um einen Server über [camera.ui Cloud](/de/remote/cloud) zu erreichen.
 
-![Erststart-Modus-Auswahl der Desktop-App](/img/install/desktop-mode-picker.png)
+<Shot src="/img/install/desktop-mode-picker.png" alt="Erststart-Modus-Auswahl der Desktop-App" />
 
 Im **Server**-Modus startet die App den Server, öffnet die Oberfläche und führt dich durch die [Ersteinrichtung](/de/intro/getting-started). In einem **Viewer**-Modus verbindet sie sich mit einem Server, den du bereits hast.
 
 Du kannst das jederzeit über das Tray-Symbol ändern (**Modus wechseln…**), ohne neu zu installieren.
 
-![Tray-Menü der Desktop-App](/img/install/desktop-tray-menu.png)
+<Shot src="/img/install/desktop-tray-menu.png" alt="Tray-Menü der Desktop-App" />
 
 
 ## macOS-Berechtigungen

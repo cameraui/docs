@@ -6,7 +6,7 @@ title: Camview
 
 Camview zeigt mehrere Kameras gleichzeitig in einem Raster. Du kannst eigene Layouts bauen, sie nach Belieben anordnen und alle Kameras eines Layouts gemeinsam steuern.
 
-![Camview Multi-Kamera-Raster](/img/cameras/camview-grid.png)
+<Shot src="/img/cameras/camview-grid.png" alt="Camview Multi-Kamera-Raster" />
 
 ## Ein Layout erstellen
 

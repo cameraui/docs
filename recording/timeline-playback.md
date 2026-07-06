@@ -6,7 +6,7 @@ title: Timeline & playback
 
 Open a camera and use its **timeline** to scrub through recorded footage. Drag along the timeline to move through time; marks show where events happened.
 
-![Recording timeline and scrubber](/img/recording/timeline.png)
+<Shot src="/img/recording/timeline.png" alt="Recording timeline and scrubber" />
 
 ## Reviewing footage
 

@@ -18,7 +18,7 @@ Der Zugriff wird über die Rolle bestimmt, nicht pro Kamera; es gibt keine kamer
 
 ## Benutzer verwalten
 
-![Die Liste registrierter Benutzer](/img/admin/users.png)
+<Shot src="/img/admin/users.png" alt="Die Liste registrierter Benutzer" />
 
 Unter **Einstellungen → Benutzer** zeigt die Liste **Registrierte Benutzer** alle an. Von dort kannst du:
 

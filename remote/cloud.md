@@ -12,7 +12,7 @@ camera.ui Cloud is a way to reach your own server, not a copy of it. Your camera
 
 ## Enabling it
 
-![The Cloud card in Settings, Remote](/img/remote/remote-settings.png)
+<Shot src="/img/remote/remote-settings.png" alt="The Cloud card in Settings, Remote" />
 
 In **Settings → Remote**, open the **Cloud** card and turn on **Enabled**. Give the server a **name**; this is how it appears in your cloud dashboard, which helps once you have more than one.
 

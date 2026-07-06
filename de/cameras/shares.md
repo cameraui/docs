@@ -23,7 +23,7 @@ Die Person öffnet den Link, gibt den Code ein und sieht den Live-Stream. Ein ca
 Teilen setzt voraus, dass dein Server mit **camera.ui Cloud** verbunden ([Einstellungen → Remote](/de/remote/cloud)) und online ist. Die Cloud hostet den Link und hilft dem Zuschauer, deinen Server zu finden, aber das Video läuft über eine **direkte, Ende-zu-Ende-verschlüsselte Verbindung** zwischen Zuschauer und deinem Server. Es passiert nie camera.uis Server, und der Zugangscode wird nur auf deinem eigenen Server geprüft.
 :::
 
-![Freigabe-Dialog mit Link und Zugangscode](/img/cameras/share-dialog.png)
+<Shot src="/img/cameras/share-dialog.png" alt="Freigabe-Dialog mit Link und Zugangscode" />
 
 ## Freigaben verwalten
 

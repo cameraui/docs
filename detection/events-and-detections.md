@@ -6,7 +6,7 @@ title: Events & detections
 
 When detection fires, camera.ui groups what it finds into an **event**. Knowing the pieces helps when you browse recordings, set up notifications, or search.
 
-![An event with its detections](/img/detection/event-detections.png)
+<Shot src="/img/detection/event-detections.png" alt="An event with its detections" />
 
 ## The pieces
 

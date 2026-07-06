@@ -34,4 +34,4 @@ Die von dir gewählte Server-Version wird separat gespeichert und bleibt über I
 
 Die [Mobile-Apps](/de/install/mobile) aktualisieren sich über den App Store und Google Play wie jede andere App und erhalten zusätzlich Over-the-Air-Updates der Oberfläche.
 
-![Update-Button unter Einstellungen / System](/img/install/system-update.png)
+<Shot src="/img/install/system-update.png" alt="Update-Button unter Einstellungen / System" />

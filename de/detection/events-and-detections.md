@@ -6,7 +6,7 @@ title: Events & Erkennungen
 
 Wenn Erkennung auslöst, gruppiert camera.ui das Gefundene zu einem **Ereignis**. Die Bausteine zu kennen hilft beim Durchsehen von Aufnahmen, beim Einrichten von Benachrichtigungen und bei der Suche.
 
-![Ein Ereignis mit seinen Erkennungen](/img/detection/event-detections.png)
+<Shot src="/img/detection/event-detections.png" alt="Ein Ereignis mit seinen Erkennungen" />
 
 ## Die Bausteine
 

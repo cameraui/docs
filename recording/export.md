@@ -8,13 +8,13 @@ You can save recordings as files to keep or share, either a single clip or a bat
 
 ## Export a clip
 
-![Trimming a clip on the timeline](/img/recording/export-trim.png)
+<Shot src="/img/recording/export-trim.png" alt="Trimming a clip on the timeline" />
 
 On the [timeline](/recording/timeline-playback), drag the trim handles to select the start and end of the part you want, then export. camera.ui produces an **MP4** file and gives you a download.
 
 ## Export multiple recordings
 
-![The Export recordings dialog](/img/recording/export-recordings.png)
+<Shot src="/img/recording/export-recordings.png" alt="The Export recordings dialog" />
 
 In the Recordings view, the download button opens an **Export recordings** dialog for exporting more than one clip at once. Choose one or more cameras, a time range spanning multiple days, a quality (Best quality or Smallest files), and optionally a timelapse interval. camera.ui produces one MP4 file per camera per day (the first and last day cover the selected time range, the days in between are exported in full) and estimates the total size before you export. The files are bundled into a single ZIP download.
 
