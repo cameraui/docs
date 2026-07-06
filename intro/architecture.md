@@ -78,5 +78,5 @@ For larger setups, you can add extra machines as **workers**. A worker takes ove
 On your local network you connect directly. To reach your server from anywhere, camera.ui offers several options: camera.ui Cloud, Cloudflare tunnels, a custom domain, or direct port-forwarding. All of them are optional and entirely your choice. See [Remote access](/remote/).
 
 [^detect]: Detection needs a detection plugin that matches your hardware (CoreML, ONNX, OpenVINO, NCNN, or an edge accelerator like Coral or Hailo). See [Detection & AI](/detection/).
-[^license]: Recording (NVR) and push notifications require an active camera.ui subscription.
+[^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback, export, face recognition, semantic search, and AI descriptions, plus push notifications. Live view and real-time detection are free.
 [^cloud-optional]: camera.ui Cloud is optional. On your own network everything stays local, and your server never has to connect to the cloud. See [Reaching it from outside](#reaching-it-from-outside).

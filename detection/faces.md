@@ -4,7 +4,7 @@ title: Face recognition
 
 # Face recognition
 
-Face recognition spots faces on your cameras, recognises people you have enrolled, and groups the ones it doesn't know yet. It builds on [object detection](/detection/ai-backends), so it needs an AI backend with face support enabled on the camera.
+Face recognition spots faces on your cameras, recognises people you have enrolled, and groups the ones it doesn't know yet.[^license] It builds on [object detection](/detection/ai-backends), so it needs an AI backend with face support enabled on the camera.
 
 ![Faces view with known and unknown faces](/img/detection/faces-view.png)
 
@@ -39,3 +39,5 @@ In the [NVR settings](/recording/), face recognition has:
 ## Rescanning
 
 Enrolled someone new? Select **Rescan existing events** to re-check past recordings and tag them with the newly known face.
+
+[^license]: Face recognition (matching faces against your enrolled people) builds on recording and requires an active camera.ui subscription. Detecting that a face is present is part of the free detection.

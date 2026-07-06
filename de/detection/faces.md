@@ -4,7 +4,7 @@ title: Gesichtserkennung
 
 # Gesichtserkennung
 
-Gesichtserkennung erkennt Gesichter an deinen Kameras, identifiziert Personen, die du angelegt hast, und gruppiert die noch unbekannten. Sie baut auf der [Objekterkennung](/de/detection/ai-backends) auf und braucht daher ein KI-Backend mit Gesichts-Unterstützung, das an der Kamera aktiviert ist.
+Gesichtserkennung erkennt Gesichter an deinen Kameras, identifiziert Personen, die du angelegt hast, und gruppiert die noch unbekannten.[^license] Sie baut auf der [Objekterkennung](/de/detection/ai-backends) auf und braucht daher ein KI-Backend mit Gesichts-Unterstützung, das an der Kamera aktiviert ist.
 
 ![Gesichter-Ansicht mit bekannten und unbekannten Gesichtern](/img/detection/faces-view.png)
 
@@ -39,3 +39,5 @@ In den [NVR-Einstellungen](/de/recording/) hat die Gesichtserkennung:
 ## Erneut scannen
 
 Jemanden neu angelegt? Wähle **Bestehende Events erneut scannen**, um vergangene Aufnahmen erneut zu prüfen und mit dem neu bekannten Gesicht zu markieren.
+
+[^license]: Gesichtserkennung (der Abgleich mit deinen angelegten Personen) baut auf Aufnahmen auf und erfordert ein aktives camera.ui-Abo. Die reine Gesichts-Detection (dass ein Gesicht da ist) gehört zur kostenlosen Erkennung.

@@ -42,4 +42,4 @@ For an extra layer on the device itself, turn on **App lock with Face ID / Finge
 
 The apps update through the App Store and Google Play like any other app, and also receive over-the-air updates to the interface. See [Updating](/install/updating).
 
-[^license]: Recording (NVR) and push notifications require an active camera.ui subscription.
+[^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback, export, face recognition, semantic search, and AI descriptions, plus push notifications. Live view and real-time detection are free.

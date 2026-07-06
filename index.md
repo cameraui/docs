@@ -42,5 +42,5 @@ A single server does the heavy lifting. It connects to your cameras, records foo
 - **[Recording (NVR)](/recording/)** — configure 24/7 and event recording
 - **[Detection & AI](/detection/)** — set up motion and object detection
 
-[^license]: Recording (NVR) and push notifications require an active camera.ui subscription.
+[^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback, export, face recognition, semantic search, and AI descriptions, plus push notifications. Live view and real-time detection are free.
 [^smarthome]: Google Home and Alexa support is planned.

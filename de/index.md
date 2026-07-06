@@ -42,5 +42,5 @@ Ein einzelner Server übernimmt die Hauptarbeit. Er verbindet sich mit deinen Ka
 - **[Aufnahmen (NVR)](/de/recording/)** — 24/7- und Ereignis-Aufnahme konfigurieren
 - **[Erkennung & KI](/de/detection/)** — Bewegungs- und Objekterkennung einrichten
 
-[^license]: Aufnahmen (NVR) und Push-Benachrichtigungen erfordern ein aktives camera.ui-Abo.
+[^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe, Export, Gesichtserkennung, semantische Suche und KI-Beschreibungen, dazu Push-Benachrichtigungen. Live-Ansicht und Echtzeit-Erkennung sind kostenlos.
 [^smarthome]: Unterstützung für Google Home und Alexa ist geplant.
