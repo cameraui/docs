@@ -6,6 +6,14 @@ title: Recording (NVR)
 
 camera.ui records your cameras so you can go back and watch what happened. Recording and everything in this section need an active camera.ui subscription.[^license]
 
+## Turning on recording
+
+Recording comes from the **camera.ui NVR** plugin, which is installed by default, and runs on a subscription tied to your camera.ui account. To turn it on:
+
+1. In **Settings → Remote**, choose **Register Server** and sign in with your camera.ui account. This links the server to your account; you don't need to enable remote cloud access for it.
+2. Open **Settings → Recordings** and, in the **License & Cloud** card, click the **cloud icon** and sign in. It's grey when you're not connected and turns green once you are.
+3. Your license then activates automatically. If the status doesn't update, use the **Refetch License** button.
+
 ## Recording modes
 
 <Shot src="/img/recording/recording-modes.png" alt="Recording mode settings" />
