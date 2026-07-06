@@ -4,16 +4,15 @@ The desktop app is the recommended way to run camera.ui on **macOS and Windows**
 
 ## Download
 
-Download the installer for your platform from the [download page](https://cameraui.com).
+Download the installer for your platform — directly below, or from the [download page](https://cameraui.com/#download). The links always point to the latest release.
 
-<!-- TODO: confirm the final public download URL — the download page was "Coming Soon" at the time of writing -->
-
-| Platform | File |
+| Platform | Download |
 |---|---|
-| macOS (Apple Silicon) | `.dmg` (arm64) |
-| macOS (Intel) | `.dmg` (x64) |
-| Windows 10 / 11 | `.exe` installer |
-| Linux | `.deb` or `.AppImage` |
+| macOS (Apple Silicon) | [`camera.ui-arm64.dmg`](https://downloads.cameraui.com/latest/camera.ui-arm64.dmg) |
+| macOS (Intel) | [`camera.ui-x64.dmg`](https://downloads.cameraui.com/latest/camera.ui-x64.dmg) |
+| Windows 10 / 11 | [`camera.ui-x64.exe`](https://downloads.cameraui.com/latest/camera.ui-x64.exe) |
+| Linux (AppImage) | [`x64`](https://downloads.cameraui.com/latest/camera.ui-x86_64.AppImage) · [`arm64`](https://downloads.cameraui.com/latest/camera.ui-arm64.AppImage) |
+| Linux (.deb) | [`amd64`](https://downloads.cameraui.com/latest/camera.ui-amd64.deb) · [`arm64`](https://downloads.cameraui.com/latest/camera.ui-arm64.deb) |
 
 Apple Silicon and Intel Macs use separate downloads. Pick the one that matches your Mac.
 
