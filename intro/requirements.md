@@ -22,7 +22,7 @@ What pushes you higher: more cameras, higher resolutions, continuous recording, 
 
 You can run the camera.ui server on **Linux, macOS, or Windows**:
 
-- **Linux.** In [Docker](/install/docker), on [Proxmox](/install/proxmox), or [bare-metal](/install/linux). Ubuntu 24.04 (or newer) is the tested baseline. A bare-metal install needs Node.js 24 and Python 3.11; the Docker images bundle everything.
+- **Linux.** In [Docker](/install/docker), on [Proxmox](/install/proxmox), or [bare-metal](/install/linux). Ubuntu 24.04 (or newer) is the tested baseline. A bare-metal install only needs Node.js 24, since camera.ui manages everything else (FFmpeg, go2rtc, a portable Python runtime) itself; the Docker images bundle everything.
 - **macOS.** Through the [desktop app](/install/desktop) in Server mode. Apple Silicon Macs (M1 and newer) are an excellent fit: low power, with full hardware acceleration including the Neural Engine.
 - **Windows.** Through the [desktop app](/install/desktop) in Server mode.
 
