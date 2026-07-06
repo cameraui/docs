@@ -3,6 +3,7 @@
     <div class="shot-win">
       <img
         v-if="src && !failed"
+        ref="imgEl"
         :src="src"
         :alt="alt"
         class="shot-img"
@@ -28,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const props = withDefaults(
   defineProps<{ src?: string; alt?: string; ratio?: string }>(),
@@ -39,6 +40,12 @@ const props = withDefaults(
 );
 
 const failed = ref(false);
+const imgEl = ref<HTMLImageElement | null>(null);
+
+onMounted(() => {
+  const el = imgEl.value;
+  if (el && el.complete && el.naturalWidth === 0) failed.value = true;
+});
 </script>
 
 <style scoped>
