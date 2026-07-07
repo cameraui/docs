@@ -35,6 +35,7 @@ export default withMermaid({
   cleanUrls: true,
   lastUpdated: true,
   ignoreDeadLinks: false,
+  sitemap: { hostname: 'https://docs.cameraui.com' },
   srcExclude: ['README.md'],
 
   head: [
