@@ -8,6 +8,10 @@ Because everything runs on your own server, your footage stays on hardware you c
 Head to **[Getting started](/intro/getting-started)** for a guided first run, or jump straight to **[Installation](/install/)**.
 :::
 
+::: info Work in progress
+These docs are new and still growing; screenshots are being added over time. If something is missing or unclear, tell us on [Discord](https://discord.gg/bBGnGcbz8N) or open an issue on [GitHub](https://github.com/cameraui/docs/issues).
+:::
+
 ## What you can do
 
 - **Watch live.** Low-latency streaming over WebRTC and MSE, multi-camera grids, two-way talk, PTZ control, and snapshots.

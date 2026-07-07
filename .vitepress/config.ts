@@ -13,7 +13,8 @@ function sidebar(lang: Lang, prefix = '') {
     collapsed: (section as { collapsed?: boolean }).collapsed ?? false,
     items: section.items.map((item) => ({
       text: item.text[lang],
-      link: prefix + item.link,
+      // External links (e.g. the SDK docs) must not get the locale prefix.
+      link: item.link.startsWith('http') ? item.link : prefix + item.link,
     })),
   }));
 }

@@ -8,6 +8,10 @@ Da alles auf deinem eigenen Server läuft, bleiben deine Aufnahmen auf Hardware,
 Starte mit den **[ersten Schritten](/de/intro/getting-started)** für eine geführte Einrichtung, oder geh direkt zur **[Installation](/de/install/)**.
 :::
 
+::: info In Arbeit
+Diese Doku ist neu und wächst noch; Screenshots werden nach und nach ergänzt. Fehlt etwas oder ist unklar? Sag uns auf [Discord](https://discord.gg/bBGnGcbz8N) Bescheid oder eröffne ein Issue auf [GitHub](https://github.com/cameraui/docs/issues).
+:::
+
 ## Was du machen kannst
 
 - **Live ansehen.** Latenzarmes Streaming über WebRTC und MSE, Multi-Kamera-Raster, Gegensprechen, PTZ-Steuerung und Snapshots.
