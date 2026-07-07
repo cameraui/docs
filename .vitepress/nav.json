@@ -214,7 +214,7 @@
     },
     {
       "text": { "en": "Plugins", "de": "Plugins" },
-      "collapsed": true,
+      "collapsed": false,
       "items": [
         {
           "text": { "en": "Overview", "de": "Überblick" },
