@@ -6,12 +6,18 @@ title: Aufnahmen (NVR)
 
 camera.ui nimmt deine Kameras auf, damit du zurückschauen kannst, was passiert ist. Aufnahmen und alles in diesem Abschnitt erfordern ein aktives camera.ui-Abo.[^license]
 
+::: info Aufnahmen während der Beta testen
+Abos sind noch nicht käuflich. Um Aufnahmen zu testen, erstelle dein camera.ui-Konto auf [cloud.cameraui.com](https://cloud.cameraui.com/) und frag auf unserem [Discord](https://discord.gg/bBGnGcbz8N) nach einem Trial.
+:::
+
+<!-- TODO: remove the trial note above once subscriptions can be purchased -->
+
 ## Aufnahmen aktivieren
 
 Aufnahmen kommen vom **camera.ui NVR**-Plugin (standardmäßig installiert) und laufen über ein Abo, das an dein camera.ui-Konto gebunden ist. So schaltest du sie frei:
 
-1. Wähle in **Einstellungen → Remote** den **Register Server**-Button und melde dich mit deinem camera.ui-Konto an. Das verknüpft den Server mit deinem Konto; den Remote-Cloud-Zugriff musst du dafür nicht aktivieren.
-2. Öffne **Einstellungen → Aufnahmen** und klicke in der **License & Cloud**-Card auf das **Cloud-Icon** und melde dich an. Grau heißt nicht verbunden, grün heißt verbunden.
+1. Wähle in **Einstellungen → Remote** den Button **Server registrieren** und melde dich mit deinem camera.ui-Konto an. Das verknüpft den Server mit deinem Konto; den Remote-Cloud-Zugriff musst du dafür nicht aktivieren.
+2. Öffne **Einstellungen → Aufnahmen** und klicke in der Karte **Lizenz & Cloud** auf das **Cloud-Icon** und melde dich an. Grau heißt nicht verbunden, grün heißt verbunden.
 3. Deine Lizenz aktiviert sich dann automatisch. Aktualisiert sich der Status nicht, nutze den **Refetch License**-Button.
 
 ## Aufnahme-Modi

@@ -6,6 +6,12 @@ title: Recording (NVR)
 
 camera.ui records your cameras so you can go back and watch what happened. Recording and everything in this section need an active camera.ui subscription.[^license]
 
+::: info Trying recording during the beta
+Subscriptions aren't open for purchase yet. To test recording, create your camera.ui account at [cloud.cameraui.com](https://cloud.cameraui.com/), then ask for a trial on our [Discord](https://discord.gg/bBGnGcbz8N).
+:::
+
+<!-- TODO: remove the trial note above once subscriptions can be purchased -->
+
 ## Turning on recording
 
 Recording comes from the **camera.ui NVR** plugin, which is installed by default, and runs on a subscription tied to your camera.ui account. To turn it on:
