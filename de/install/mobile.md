@@ -6,9 +6,10 @@ Die Mobile-Apps sind Companion-Viewer für iOS und Android. Mit ihnen siehst du 
 
 ## Download
 
-Hol dir camera.ui im [App Store](https://cameraui.com) (iOS) und bei [Google Play](https://cameraui.com) (Android).
+- **iOS / iPadOS.** Derzeit in der **Beta**. Tritt über [TestFlight](https://testflight.apple.com/join/wbzK69Wu) bei: Apples TestFlight-App installieren, dann den Einladungslink auf dem Gerät öffnen.[^appstore]
+- **Android.** Erscheint in Kürze.
 
-<!-- TODO: confirm final App Store + Google Play links — apps may still be in beta (TestFlight / Play testing) at the time of writing -->
+<!-- TODO: swap the TestFlight invite for the App Store link once released; add the Google Play link when the Android app ships -->
 
 | Plattform | Voraussetzung |
 |---|---|
@@ -40,6 +41,7 @@ Für eine zusätzliche Ebene auf dem Gerät selbst aktivierst du in den Einstell
 
 ## Updates
 
-Die Apps aktualisieren sich über den App Store und Google Play wie jede andere App und erhalten zusätzlich Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).
+Die Apps aktualisieren sich über den App Store und Google Play (während der Beta über TestFlight) wie jede andere App und erhalten zusätzlich Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).
 
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe, Export, Gesichtserkennung, semantische Suche und KI-Beschreibungen, dazu Push-Benachrichtigungen. Live-Ansicht und Echtzeit-Erkennung sind kostenlos.
+[^appstore]: Mit dem öffentlichen Release wechselt die App in den App Store.

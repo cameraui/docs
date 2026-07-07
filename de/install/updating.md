@@ -32,6 +32,6 @@ Die von dir gewählte Server-Version wird separat gespeichert und bleibt über I
 
 ## Die Mobile-Apps aktualisieren
 
-Die [Mobile-Apps](/de/install/mobile) aktualisieren sich über den App Store und Google Play wie jede andere App und erhalten zusätzlich Over-the-Air-Updates der Oberfläche.
+Die [Mobile-Apps](/de/install/mobile) aktualisieren sich über den App Store und Google Play (während der Beta über TestFlight) wie jede andere App und erhalten zusätzlich Over-the-Air-Updates der Oberfläche.
 
 <Shot src="/img/install/system-update.png" alt="Update-Button unter Einstellungen / System" />

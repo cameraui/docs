@@ -6,9 +6,10 @@ The mobile apps are companion viewers for iOS and Android. They let you watch yo
 
 ## Download
 
-Get camera.ui from the [App Store](https://cameraui.com) (iOS) and [Google Play](https://cameraui.com) (Android).
+- **iOS / iPadOS.** Currently in **beta**. Join through [TestFlight](https://testflight.apple.com/join/wbzK69Wu): install Apple's TestFlight app, then open the invite link on your device.[^appstore]
+- **Android.** Coming soon.
 
-<!-- TODO: confirm final App Store + Google Play links — apps may still be in beta (TestFlight / Play testing) at the time of writing -->
+<!-- TODO: swap the TestFlight invite for the App Store link once released; add the Google Play link when the Android app ships -->
 
 | Platform | Requirement |
 |---|---|
@@ -40,6 +41,7 @@ For an extra layer on the device itself, turn on **App lock with Face ID / Finge
 
 ## Updates
 
-The apps update through the App Store and Google Play like any other app, and also receive over-the-air updates to the interface. See [Updating](/install/updating).
+The apps update through the App Store and Google Play (during the beta, through TestFlight) like any other app, and also receive over-the-air updates to the interface. See [Updating](/install/updating).
 
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback, export, face recognition, semantic search, and AI descriptions, plus push notifications. Live view and real-time detection are free.
+[^appstore]: The app moves to the App Store with the public release.
