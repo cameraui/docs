@@ -41,7 +41,9 @@ Beispiel für eine Intel-Maschine: `FLAVOR=intel bash install-cameraui-lxc.sh`
 - **NVIDIA.** Nutze eine **VM mit PCIe-Passthrough** statt eines LXC. In der VM hast du ein normales Linux und folgst dem Standard-[Docker-Setup](/de/install/docker) mit dem `nvidia`-Flavor. Ein LXC würde erfordern, den NVIDIA-Treiber auf dem Proxmox-Host und die Userspace-Bibliotheken im Container dauerhaft versionsgleich zu halten. Eine VM vermeidet das komplett, und Proxmox' VM-Passthrough ist ausgezeichnet.
 - **KI-Beschleuniger (Coral, Hailo).** Gleiches Muster wie überall: den [Host-Treiber](/de/install/hardware-acceleration#host-prüfen) auf dem Proxmox-Host installieren, dann den Device-Node (`/dev/apex_0`, `/dev/hailo0`) in den Container reichen.
 
-## Aufnahmen auf einem NAS
+## Aufnahmen auf einer dedizierten Platte oder einem NAS
+
+Aufnahmen landen standardmäßig auf dem eigenen Volume des Containers. Für eine größere Platte, ein NAS-Share oder einen zusammengefassten Pool reichst du diesen Speicher in den Container und setzt den NVR-Speicherpfad darauf.
 
 Unprivilegierte Container können NFS/CIFS-Shares nicht selbst mounten. Mounte das Share auf dem **Proxmox-Host** und reiche es als Mountpoint in den Container:
 
@@ -49,7 +51,23 @@ Unprivilegierte Container können NFS/CIFS-Shares nicht selbst mounten. Mounte d
 pct set <CTID> -mp0 /mnt/nas/recordings,mp=/mnt/recordings
 ```
 
-Dann `/mnt/recordings` in den camera.ui-Container binden (siehe den [Speicher-Abschnitt](/de/install/docker#speicher-für-aufnahmen) der Docker-Seite).
+Setze dann den NVR-**Speicherpfad** auf `/mnt/recordings` (Einstellungen → Aufnahmen → Speicher), oder siehe den [Speicher-Abschnitt](/de/install/docker#speicher-für-aufnahmen) der Docker-Seite.
+
+::: warning FUSE-Mounts (mergerfs, rclone) brauchen Sonderbehandlung
+Ein FUSE-Mount — etwa ein **mergerfs**-Pool, der mehrere Platten zusammenfasst — propagiert **nicht** wie ein normales Dateisystem in einen (unprivilegierten) Container. Ist der FUSE-Mount nicht **vor dem Container-Start** auf dem Host aktiv, sieht der Container den leeren Mountpoint auf der Root-Disk des Hosts statt den Pool. Aufnahmen landen dann auf der kleinen OS-Platte und werden innerhalb von Minuten wieder rotiert — obwohl der Pool Terabytes frei hat.
+
+Mounte den Pool auf dem Host **vor** dem Container-Start (z.B. per fstab-Eintrag oder systemd-Unit mit `Before=pve-container@<CTID>.service`) und stelle sicher, dass der Mount in den Container geteilt wird. Danach immer **aus dem Container heraus verifizieren**.
+:::
+
+## Speichergröße verifizieren
+
+Nach dem Setzen eines eigenen Speicherpfads prüfen, ob der Container wirklich das volle Volume sieht — dieser eine Check fängt fast jedes Mount-Problem ab:
+
+```bash
+pct exec <CTID> -- df -h /mnt/recordings
+```
+
+Die angezeigte Größe muss zu deiner echten Platte oder deinem Pool passen. Zeigt sie stattdessen die kleine Container-Root-Größe, ist der Mount nicht propagiert — dann die Schritte oben erneut prüfen. Der NVR loggt seinen aufgelösten Speicher samt Größe außerdem bei jedem Start und zeigt in **Einstellungen → Aufnahmen** eine Warnung, wenn das Volume unerwartet klein ist.
 
 ## Verifizieren
 

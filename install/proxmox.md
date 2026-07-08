@@ -41,7 +41,9 @@ Example for an Intel machine: `FLAVOR=intel bash install-cameraui-lxc.sh`
 - **NVIDIA.** Use a **VM with PCIe passthrough** instead of an LXC. Inside the VM you get a plain Linux machine and follow the standard [Docker setup](/install/docker) with the `nvidia` flavor. An LXC would require keeping the NVIDIA driver on the Proxmox host and the user-space libraries inside the container in permanent version lockstep. A VM avoids that entirely, and Proxmox's VM passthrough is excellent.
 - **AI accelerators (Coral, Hailo).** Same pattern as everywhere: install the [host driver](/install/hardware-acceleration#check-your-host) on the Proxmox host, then pass the device node (`/dev/apex_0`, `/dev/hailo0`) into the container.
 
-## Recordings on a NAS
+## Recordings on a dedicated disk or NAS
+
+Recordings default to the container's own volume. Point them at a bigger disk, a NAS share, or a merged pool by handing that storage into the container and setting the NVR's storage path to it.
 
 Unprivileged containers cannot mount NFS/CIFS shares themselves. Mount the share on the **Proxmox host** and hand it into the container as a mount point:
 
@@ -49,7 +51,23 @@ Unprivileged containers cannot mount NFS/CIFS shares themselves. Mount the share
 pct set <CTID> -mp0 /mnt/nas/recordings,mp=/mnt/recordings
 ```
 
-Then bind `/mnt/recordings` into the camera.ui container (see the [storage section](/install/docker#storage-for-recordings) of the Docker page).
+Then set the NVR **Storage Path** to `/mnt/recordings` (Settings → Recordings → Storage), or see the [storage section](/install/docker#storage-for-recordings) of the Docker page.
+
+::: warning FUSE mounts (mergerfs, rclone) need extra care
+A FUSE mount — such as a **mergerfs** pool merging several drives — does not propagate into an (unprivileged) container the way a normal filesystem does. If the FUSE mount isn't active on the host **before the container starts**, the container sees the empty mountpoint on the host's root disk instead of the pool. Recordings then land on the small OS disk and get rotated away within minutes, even though the pool has terabytes free.
+
+Mount the pool on the host **before** the container starts (e.g. via an fstab entry or a systemd unit ordered `Before=pve-container@<CTID>.service`), and make sure the mount is shared into the container. Then always **verify from inside the container**.
+:::
+
+## Verify your storage size
+
+After setting a custom storage path, confirm the container really sees the full volume — this one check catches almost every mount problem:
+
+```bash
+pct exec <CTID> -- df -h /mnt/recordings
+```
+
+The reported size must match your real disk or pool. If it shows the small container root size instead, the mount didn't propagate — recheck the steps above. The NVR also logs its resolved storage and size on every start, and shows a warning in **Settings → Recordings** when the volume is unexpectedly small.
 
 ## Verify
 
