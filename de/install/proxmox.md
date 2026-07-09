@@ -29,9 +29,10 @@ Alles ist über Umgebungsvariablen einstellbar:
 | `CT_HOSTNAME` | `cameraui` | Container-Hostname |
 | `CORES` / `RAM_MB` / `DISK_GB` | `4` / `4096` / `16` | Container-Ressourcen |
 | `BRIDGE` | `vmbr0` | Netzwerk-Bridge (Container bekommt seine IP per DHCP) |
-| `STORAGE` | `local-lvm` | rootfs-Storage |
+| `STORAGE` | auto-detect | rootfs-Storage (nimmt den ersten aktiven Storage, der ein Container-rootfs aufnehmen kann) |
 | `FLAVOR` | `cpu` | `cpu`, `intel` oder `amd` (wählt den [Image-Flavor](/de/install/docker#hardware-beschleunigung)) |
 | `GPU_PASSTHROUGH` | `1` wenn Flavor ≠ cpu | reicht `/dev/dri` in den Container |
+| `TZ` | Zeitzone des Hosts | Zeitzone im Container |
 
 Beispiel für eine Intel-Maschine: `FLAVOR=intel bash install-cameraui-lxc.sh`
 

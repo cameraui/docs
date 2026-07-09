@@ -29,9 +29,10 @@ Everything is tunable via environment variables:
 | `CT_HOSTNAME` | `cameraui` | container hostname |
 | `CORES` / `RAM_MB` / `DISK_GB` | `4` / `4096` / `16` | container resources |
 | `BRIDGE` | `vmbr0` | network bridge (container gets its IP via DHCP) |
-| `STORAGE` | `local-lvm` | rootfs storage |
+| `STORAGE` | auto-detect | rootfs storage (picks the first active storage that can hold a container rootfs) |
 | `FLAVOR` | `cpu` | `cpu`, `intel` or `amd` (picks the [image flavor](/install/docker#hardware-acceleration)) |
 | `GPU_PASSTHROUGH` | `1` when flavor ≠ cpu | pass `/dev/dri` into the container |
+| `TZ` | host timezone | timezone inside the container |
 
 Example for an Intel machine: `FLAVOR=intel bash install-cameraui-lxc.sh`
 
