@@ -74,8 +74,8 @@ The driver is part of the Linux kernel, so there is nothing to install on the ho
       - /dev/dri:/dev/dri
 ```
 
-::: tip Older Intel iGPUs (pre-Gen12, e.g. Apollo Lake)
-Video decoding, which feeds the detection pipeline with frames, is fully accelerated on old iGPUs too. But Intel's OpenCL compute runtime has dropped these generations, so **OpenVINO and OpenCL inference fall back to CPU** there, and the plugins log it. For fast detection on such machines, add a Coral or Hailo.
+::: tip Older Intel iGPUs (Gen8 to Gen11, e.g. UHD 630)
+Intel's current OpenCL runtime only covers Gen12 and newer. The `intel` flavor therefore bundles Intel's legacy runtime alongside it, so **OpenVINO and OpenCL inference also work on Gen8 to Gen11 iGPUs** (Broadwell through Comet Lake). Only chips older than Gen8 (Haswell and earlier) have no OpenCL runtime at all: there inference falls back to CPU, and a Coral or Hailo is the way to fast detection. Video decoding is fully accelerated on all of them either way.
 :::
 
 ## NVIDIA GPU

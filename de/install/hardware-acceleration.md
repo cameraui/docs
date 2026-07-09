@@ -74,8 +74,8 @@ Der Treiber ist Teil des Linux-Kernels, auf dem Host ist also nichts zu installi
       - /dev/dri:/dev/dri
 ```
 
-::: tip Ältere Intel-iGPUs (vor Gen12, z. B. Apollo Lake)
-Die Video-Dekodierung, die die Detection-Pipeline mit Frames versorgt, ist auch auf alten iGPUs voll beschleunigt. Intels OpenCL-Compute-Runtime unterstützt diese Generationen aber nicht mehr, daher fällt **OpenVINO- und OpenCL-Inferenz dort auf die CPU zurück**, und die Plugins loggen das. Für schnelle Erkennung auf solchen Maschinen ergänze einen Coral oder Hailo.
+::: tip Ältere Intel-iGPUs (Gen8 bis Gen11, z. B. UHD 630)
+Intels aktuelle OpenCL-Runtime deckt nur noch Gen12 und neuer ab. Der `intel`-Flavor bündelt deshalb zusätzlich Intels Legacy-Runtime, sodass **OpenVINO- und OpenCL-Inferenz auch auf Gen8- bis Gen11-iGPUs funktioniert** (Broadwell bis Comet Lake). Nur Chips vor Gen8 (Haswell und älter) haben gar keine OpenCL-Runtime: Dort fällt die Inferenz auf die CPU zurück, und ein Coral oder Hailo ist der Weg zu schneller Erkennung. Die Video-Dekodierung ist auf allen ohnehin voll beschleunigt.
 :::
 
 ## NVIDIA GPU
