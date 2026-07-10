@@ -30,7 +30,7 @@ Alles ist über Umgebungsvariablen einstellbar:
 | `CORES` / `RAM_MB` / `DISK_GB` | `4` / `4096` / `16` | Container-Ressourcen |
 | `BRIDGE` | `vmbr0` | Netzwerk-Bridge (Container bekommt seine IP per DHCP) |
 | `STORAGE` | auto-detect | rootfs-Storage (nimmt den ersten aktiven Storage, der ein Container-rootfs aufnehmen kann) |
-| `FLAVOR` | `cpu` | `cpu`, `intel` oder `amd` (wählt den [Image-Flavor](/de/install/docker#hardware-beschleunigung)) |
+| `FLAVOR` | `cpu` | `cpu`, `intel` oder `amd` (wählt den [Image-Flavor](/de/install/docker#hardware-beschleunigung)); `nvidia` ist [experimentell](#nvidia-im-lxc-experimentell) |
 | `GPU_PASSTHROUGH` | `1` wenn Flavor ≠ cpu | reicht `/dev/dri` in den Container |
 | `TZ` | Zeitzone des Hosts | Zeitzone im Container |
 
@@ -39,8 +39,28 @@ Beispiel für eine Intel-Maschine: `FLAVOR=intel bash install-cameraui-lxc.sh`
 ## Hardware-Beschleunigung
 
 - **Intel / AMD iGPU.** `FLAVOR=intel` (oder `amd`) setzen. Das Script reicht den GPU-Render-Node über Proxmox' Device-Passthrough in den Container und verdrahtet ihn bis zu Docker durch. Sonst nichts zu konfigurieren; die Details stehen auf der Seite [Hardware-Beschleunigung](/de/install/hardware-acceleration).
-- **NVIDIA.** Nutze eine **VM mit PCIe-Passthrough** statt eines LXC. In der VM hast du ein normales Linux und folgst dem Standard-[Docker-Setup](/de/install/docker) mit dem `nvidia`-Flavor. Ein LXC würde erfordern, den NVIDIA-Treiber auf dem Proxmox-Host und die Userspace-Bibliotheken im Container dauerhaft versionsgleich zu halten. Eine VM vermeidet das komplett, und Proxmox' VM-Passthrough ist ausgezeichnet. Der Trade-off: Die VM monopolisiert die Karte. Brauchen andere Dienste auf dem Host dieselbe GPU (Ollama, Jellyfin), geht NVIDIA auch im LXC: die `/dev/nvidia*`-Device-Nodes durchreichen, im Container exakt die Treiberversion des Hosts mit `--no-kernel-module` installieren und für Docker das NVIDIA Container Toolkit im LXC ergänzen. Jedes Treiber-Update muss danach auf Host und Container gleichzeitig nachgezogen werden; deshalb automatisiert das Install-Script diesen Weg nicht.
+- **NVIDIA.** Nutze eine **VM mit PCIe-Passthrough** statt eines LXC. In der VM hast du ein normales Linux und folgst dem Standard-[Docker-Setup](/de/install/docker) mit dem `nvidia`-Flavor. Ein LXC würde erfordern, den NVIDIA-Treiber auf dem Proxmox-Host und die Userspace-Bibliotheken im Container dauerhaft versionsgleich zu halten. Eine VM vermeidet das komplett, und Proxmox' VM-Passthrough ist ausgezeichnet. Der Trade-off: Die VM monopolisiert die Karte. Brauchen andere Dienste auf dem Host dieselbe GPU (Ollama, Jellyfin), siehe [NVIDIA im LXC](#nvidia-im-lxc-experimentell) unten.
 - **KI-Beschleuniger (Coral, Hailo).** Gleiches Muster wie überall: den [Host-Treiber](/de/install/hardware-acceleration#host-prüfen) auf dem Proxmox-Host installieren, dann den Device-Node (`/dev/apex_0`, `/dev/hailo0`) in den Container reichen.
+
+### NVIDIA im LXC (experimentell)
+
+`FLAVOR=nvidia` teilt die Karte zwischen dem Container und anderen Diensten auf dem Host, was eine VM nicht kann. Der Haken ist eine harte Versionskopplung: Die NVIDIA-Userspace-Bibliotheken im Container müssen exakt zum Kernel-Treiber des Hosts passen, nach jedem Treiber-Update.
+
+Voraussetzung ist ein funktionierender NVIDIA-Treiber auf dem Proxmox-Host (`.run`-Installer mit `--dkms` plus `pve-headers`; `nvidia-smi` auf dem Host muss funktionieren), und die installierte Treiberversion muss auf `download.nvidia.com` existieren. Dann:
+
+```bash
+FLAVOR=nvidia bash install-cameraui-lxc.sh
+```
+
+Das Script reicht alle `/dev/nvidia*`-Device-Nodes in den Container, installiert den passenden Userspace-Treiber (`--no-kernel-module`) plus das NVIDIA Container Toolkit (mit `no-cgroups=true`, weil ein unprivilegierter Container keine Device-Cgroups verwalten kann) und registriert einen Sync-Service, der nach Host-Treiber-Updates beim Boot den passenden Userspace nachinstalliert. Verifizieren mit:
+
+```bash
+pct exec <CTID> -- docker exec cameraui nvidia-smi
+```
+
+::: warning Experimentell
+Dieser Weg hängt an NVIDIAs Installer-Archiv und daran, dass der Host-Treiber gesund bleibt; nach einem Host-Treiber-Update braucht der Container einen Reboot zum Nachsynchronisieren. Wenn es bricht, funktioniert der VM-Weg immer. Reports und Fixes sind im [docker-Repo](https://github.com/cameraui/docker) willkommen.
+:::
 
 ## Aufnahmen auf einer dedizierten Platte oder einem NAS
 

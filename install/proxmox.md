@@ -30,7 +30,7 @@ Everything is tunable via environment variables:
 | `CORES` / `RAM_MB` / `DISK_GB` | `4` / `4096` / `16` | container resources |
 | `BRIDGE` | `vmbr0` | network bridge (container gets its IP via DHCP) |
 | `STORAGE` | auto-detect | rootfs storage (picks the first active storage that can hold a container rootfs) |
-| `FLAVOR` | `cpu` | `cpu`, `intel` or `amd` (picks the [image flavor](/install/docker#hardware-acceleration)) |
+| `FLAVOR` | `cpu` | `cpu`, `intel` or `amd` (picks the [image flavor](/install/docker#hardware-acceleration)); `nvidia` is [experimental](#nvidia-in-an-lxc-experimental) |
 | `GPU_PASSTHROUGH` | `1` when flavor ≠ cpu | pass `/dev/dri` into the container |
 | `TZ` | host timezone | timezone inside the container |
 
@@ -39,8 +39,28 @@ Example for an Intel machine: `FLAVOR=intel bash install-cameraui-lxc.sh`
 ## Hardware acceleration
 
 - **Intel / AMD iGPU.** Set `FLAVOR=intel` (or `amd`). The script passes the GPU render node into the container via Proxmox's device passthrough and wires it through to Docker. Nothing else to configure; the details live on the [Hardware acceleration](/install/hardware-acceleration) page.
-- **NVIDIA.** Use a **VM with PCIe passthrough** instead of an LXC. Inside the VM you get a plain Linux machine and follow the standard [Docker setup](/install/docker) with the `nvidia` flavor. An LXC would require keeping the NVIDIA driver on the Proxmox host and the user-space libraries inside the container in permanent version lockstep. A VM avoids that entirely, and Proxmox's VM passthrough is excellent. The trade-off: the VM monopolizes the card. If other services on the host need the same GPU (Ollama, Jellyfin), NVIDIA inside an LXC is possible: pass the `/dev/nvidia*` device nodes through, install the host's exact driver version inside the container with `--no-kernel-module`, and add the NVIDIA Container Toolkit inside the LXC for Docker. Every driver update then has to be applied to the host and every container in lockstep, which is why the install script doesn't automate this path.
+- **NVIDIA.** Use a **VM with PCIe passthrough** instead of an LXC. Inside the VM you get a plain Linux machine and follow the standard [Docker setup](/install/docker) with the `nvidia` flavor. An LXC would require keeping the NVIDIA driver on the Proxmox host and the user-space libraries inside the container in permanent version lockstep. A VM avoids that entirely, and Proxmox's VM passthrough is excellent. The trade-off: the VM monopolizes the card. If other services on the host need the same GPU (Ollama, Jellyfin), see [NVIDIA in an LXC](#nvidia-in-an-lxc-experimental) below.
 - **AI accelerators (Coral, Hailo).** Same pattern as everywhere: install the [host driver](/install/hardware-acceleration#check-your-host) on the Proxmox host, then pass the device node (`/dev/apex_0`, `/dev/hailo0`) into the container.
+
+### NVIDIA in an LXC (experimental)
+
+`FLAVOR=nvidia` shares the card between the container and other services on the host, which a VM cannot do. The catch is a hard version coupling: the NVIDIA user-space libraries inside the container must exactly match the host's kernel driver, after every driver update.
+
+It needs a working NVIDIA driver on the Proxmox host first (`.run` installer with `--dkms` plus `pve-headers`; `nvidia-smi` on the host must work), and the installed driver version must exist on `download.nvidia.com`. Then:
+
+```bash
+FLAVOR=nvidia bash install-cameraui-lxc.sh
+```
+
+The script passes all `/dev/nvidia*` device nodes into the container, installs the matching user-space driver (`--no-kernel-module`) plus the NVIDIA Container Toolkit (with `no-cgroups=true`, because an unprivileged container cannot manage device cgroups), and registers a boot-time sync service that re-installs the matching user space after host driver updates. Verify with:
+
+```bash
+pct exec <CTID> -- docker exec cameraui nvidia-smi
+```
+
+::: warning Experimental
+This path depends on NVIDIA's installer archive and on the host driver staying healthy; after a host driver update the container needs a reboot to re-sync. If it breaks, the VM route always works. Reports and fixes are welcome in the [docker repo](https://github.com/cameraui/docker).
+:::
 
 ## Recordings on a dedicated disk or NAS
 
