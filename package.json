@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "medium-zoom": "^1.1.0",
-    "vitepress-plugin-llms": "^1.13.2"
+    "vitepress-plugin-llms": "^1.13.3"
   },
   "devDependencies": {
     "@types/markdown-it-footnote": "^3.0.4",
