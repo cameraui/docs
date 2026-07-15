@@ -18,7 +18,7 @@ Einmal aktiviert, kannst du **Backup-Codes neu generieren** oder **2FA deaktivie
 
 ### Remote-Instanzen
 
-Ist am Konto einer entfernten [Instanz](/de/admin/instances-workers#instanzen) 2FA aktiviert, fragt camera.ui nach dem 6-stelligen Code, wenn du diese Instanz hinzufügst, ihre Zugangsdaten änderst oder zu ihr wechselst. Hier funktioniert nur der Code aus deiner Authenticator-App, Backup-Codes werden nicht akzeptiert. Bei einem falschen Code fragt die App einfach erneut.
+Ist am Konto einer entfernten [Instanz](/de/admin/instances) 2FA aktiviert, fragt camera.ui nach dem 6-stelligen Code, wenn du diese Instanz hinzufügst, ihre Zugangsdaten änderst oder zu ihr wechselst. Hier funktioniert nur der Code aus deiner Authenticator-App, Backup-Codes werden nicht akzeptiert. Bei einem falschen Code fragt die App einfach erneut.
 
 Brichst du beim Hinzufügen oder Bearbeiten ab, wird die Instanz trotzdem gespeichert, ihre Karte zeigt dann **Zwei-Faktor-Bestätigung ausstehend**. Wähle **Code eingeben** auf der Karte, um es abzuschließen. Ein Abbruch beim Wechseln stoppt nur den Wechsel.
 

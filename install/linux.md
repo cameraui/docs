@@ -31,13 +31,13 @@ If the service user needs GPU access for hardware acceleration, add it to your d
 
 ## Worker mode
 
-To run this machine as a [worker](/admin/instances-workers) for another camera.ui server, add `--worker` to the install command:
+To run this machine as a [worker](/admin/workers) for another camera.ui server, add `--worker` to the install command:
 
 ```bash
 sudo cameraui install --user cameraui --worker
 ```
 
-The flag is stored with the service, so the machine comes back up as a worker after a reboot. Generate a pairing code on the main server, put the snippet into this machine's config file as described on the [workers page](/admin/instances-workers#pair-a-worker), then run `sudo cameraui restart --user cameraui`.
+The flag is stored with the service, so the machine comes back up as a worker after a reboot. Generate a pairing code on the main server, put the snippet into this machine's config file as described on the [workers page](/admin/workers#pair-a-worker), then run `sudo cameraui restart --user cameraui`.
 
 ## Managing the service
 

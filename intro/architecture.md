@@ -71,7 +71,7 @@ You can also save more than one server as an **Instance** and switch between the
 
 ## Scaling across machines
 
-For larger setups, you can add extra machines as **workers**. A worker takes over the decoding and detection for some cameras, offloading the main server, or it can run an entire plugin instead (useful for a detector that needs specific hardware the main server lacks). Cameras and plugins assigned to a worker automatically **fall back** to the main server if that worker goes offline, and move back to the worker once it reconnects. See [Instances & workers](/admin/instances-workers).
+For larger setups, you can add extra machines as **workers**. A worker takes over the decoding and detection for some cameras, offloading the main server, or it can run an entire plugin instead (useful for a detector that needs specific hardware the main server lacks). Cameras and plugins assigned to a worker automatically **fall back** to the main server if that worker goes offline, and move back to the worker once it reconnects. See [Workers](/admin/workers).
 
 ## Reaching it from outside
 

@@ -131,7 +131,7 @@ Use a dedicated local disk for `/recordings`, not a network share. See [System r
 
 A worker is a second machine that takes over camera work (decoding, detection, plugins) from your main server. It runs no UI and no streaming engine of its own. It uses the same image as the server, started in worker mode with `CAMERA_UI_WORKER=true`.
 
-Enable workers on the main server first and generate a pairing code there. The compose file for the worker machine, the environment variables it takes, and how to assign cameras to it are on [Instances & workers](/admin/instances-workers#worker-in-docker).
+Enable workers on the main server first and generate a pairing code there. The compose file for the worker machine, the environment variables it takes, and how to assign cameras to it are on [Workers](/admin/workers#worker-in-docker).
 
 `CAMERA_UI_WORKER_CAPABILITIES` decides what the worker takes on: `frameDecoding` for decoding and detection, `pluginHost` for running plugins. Set at least one, otherwise the worker won't start.
 

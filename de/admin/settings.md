@@ -32,5 +32,5 @@ Für Admins verfügbar:
 - Ein **Dashboard** mit Status und Ressourcennutzung des Servers.
 - **[Automationen](/de/automations/)** zum Verbinden von Ereignissen mit Aktionen.
 - **[Logs](/de/admin/logs)** und ein **Terminal** zur Fehlersuche.
-- **[Instanzen und Worker](/de/admin/instances-workers)** zum Betreiben mehrerer Server und Verteilen der Last.
+- **[Instanzen](/de/admin/instances)** zum Wechseln zwischen mehreren Servern und **[Worker](/de/admin/workers)** zum Verteilen der Last dieses einen.
 - Ein roher **Konfigurations**-Editor für fortgeschrittene Änderungen.

@@ -18,7 +18,7 @@ Once enabled, you can **regenerate backup codes** or **disable 2FA**, both of wh
 
 ### Remote instances
 
-If the account on a remote [instance](/admin/instances-workers#instances) has 2FA enabled, camera.ui asks for the 6-digit code when you add that instance, change its credentials, or switch to it. Only the code from your authenticator app works here, backup codes aren't accepted. A wrong code just asks again.
+If the account on a remote [instance](/admin/instances) has 2FA enabled, camera.ui asks for the 6-digit code when you add that instance, change its credentials, or switch to it. Only the code from your authenticator app works here, backup codes aren't accepted. A wrong code just asks again.
 
 If you cancel while adding or editing, the instance is still saved, but its card shows **Two-factor confirmation pending**. Pick **Enter code** on the card to finish. Cancelling during a switch only stops the switch.
 

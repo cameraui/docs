@@ -1,51 +1,96 @@
 {
   "topnav": [
-    { "text": { "en": "Install", "de": "Installation" }, "link": "/install/" },
     {
-      "text": { "en": "Cameras", "de": "Kameras" },
+      "text": {
+        "en": "Install",
+        "de": "Installation"
+      },
+      "link": "/install/"
+    },
+    {
+      "text": {
+        "en": "Cameras",
+        "de": "Kameras"
+      },
       "link": "/cameras/add-camera"
     },
-    { "text": { "en": "Recording", "de": "Aufnahmen" }, "link": "/recording/" },
     {
-      "text": { "en": "Detection & AI", "de": "Erkennung & KI" },
+      "text": {
+        "en": "Recording",
+        "de": "Aufnahmen"
+      },
+      "link": "/recording/"
+    },
+    {
+      "text": {
+        "en": "Detection & AI",
+        "de": "Erkennung & KI"
+      },
       "link": "/detection/"
     }
   ],
   "sections": [
     {
-      "text": { "en": "Introduction", "de": "Einführung" },
+      "text": {
+        "en": "Introduction",
+        "de": "Einführung"
+      },
       "items": [
         {
-          "text": { "en": "What is camera.ui?", "de": "Was ist camera.ui?" },
+          "text": {
+            "en": "What is camera.ui?",
+            "de": "Was ist camera.ui?"
+          },
           "link": "/"
         },
         {
-          "text": { "en": "How it works", "de": "Wie es funktioniert" },
+          "text": {
+            "en": "How it works",
+            "de": "Wie es funktioniert"
+          },
           "link": "/intro/architecture"
         },
         {
-          "text": { "en": "System requirements", "de": "Systemanforderungen" },
+          "text": {
+            "en": "System requirements",
+            "de": "Systemanforderungen"
+          },
           "link": "/intro/requirements"
         },
         {
-          "text": { "en": "Getting started", "de": "Erste Schritte" },
+          "text": {
+            "en": "Getting started",
+            "de": "Erste Schritte"
+          },
           "link": "/intro/getting-started"
         }
       ]
     },
     {
-      "text": { "en": "Installation", "de": "Installation" },
+      "text": {
+        "en": "Installation",
+        "de": "Installation"
+      },
       "items": [
         {
-          "text": { "en": "Which installation?", "de": "Welche Installation?" },
+          "text": {
+            "en": "Which installation?",
+            "de": "Welche Installation?"
+          },
           "link": "/install/"
         },
         {
-          "text": { "en": "Desktop app", "de": "Desktop-App" },
+          "text": {
+            "en": "Desktop app",
+            "de": "Desktop-App"
+          },
           "link": "/install/desktop"
         },
         {
-          "text": { "en": "Docker", "de": "Docker" },
+          "text": {
+            "en": "Docker",
+            "de": "Docker"
+          },
           "link": "/install/docker"
         },
         {
@@ -56,32 +101,53 @@
           "link": "/install/hardware-acceleration"
         },
         {
-          "text": { "en": "Proxmox", "de": "Proxmox" },
+          "text": {
+            "en": "Proxmox",
+            "de": "Proxmox"
+          },
           "link": "/install/proxmox"
         },
         {
-          "text": { "en": "Linux (bare-metal)", "de": "Linux (Bare-Metal)" },
+          "text": {
+            "en": "Linux (bare-metal)",
+            "de": "Linux (Bare-Metal)"
+          },
           "link": "/install/linux"
         },
         {
-          "text": { "en": "Mobile apps", "de": "Mobile Apps" },
+          "text": {
+            "en": "Mobile apps",
+            "de": "Mobile Apps"
+          },
           "link": "/install/mobile"
         },
         {
-          "text": { "en": "Updating", "de": "Aktualisieren" },
+          "text": {
+            "en": "Updating",
+            "de": "Aktualisieren"
+          },
           "link": "/install/updating"
         }
       ]
     },
     {
-      "text": { "en": "Cameras", "de": "Kameras" },
+      "text": {
+        "en": "Cameras",
+        "de": "Kameras"
+      },
       "items": [
         {
-          "text": { "en": "Home", "de": "Startseite" },
+          "text": {
+            "en": "Home",
+            "de": "Startseite"
+          },
           "link": "/cameras/home"
         },
         {
-          "text": { "en": "Adding a camera", "de": "Kamera hinzufügen" },
+          "text": {
+            "en": "Adding a camera",
+            "de": "Kamera hinzufügen"
+          },
           "link": "/cameras/add-camera"
         },
         {
@@ -92,19 +158,31 @@
           "link": "/cameras/protocols"
         },
         {
-          "text": { "en": "Live view", "de": "Live-Ansicht" },
+          "text": {
+            "en": "Live view",
+            "de": "Live-Ansicht"
+          },
           "link": "/cameras/live-view"
         },
         {
-          "text": { "en": "Shortcuts", "de": "Shortcuts" },
+          "text": {
+            "en": "Shortcuts",
+            "de": "Shortcuts"
+          },
           "link": "/cameras/shortcuts"
         },
         {
-          "text": { "en": "Camview", "de": "Camview" },
+          "text": {
+            "en": "Camview",
+            "de": "Camview"
+          },
           "link": "/cameras/camview"
         },
         {
-          "text": { "en": "Camera settings", "de": "Kamera-Einstellungen" },
+          "text": {
+            "en": "Camera settings",
+            "de": "Kamera-Einstellungen"
+          },
           "link": "/cameras/settings"
         },
         {
@@ -115,49 +193,82 @@
           "link": "/cameras/zones-and-masks"
         },
         {
-          "text": { "en": "Shares", "de": "Freigaben" },
+          "text": {
+            "en": "Shares",
+            "de": "Freigaben"
+          },
           "link": "/cameras/shares"
         }
       ]
     },
     {
-      "text": { "en": "Sensors & accessories", "de": "Sensoren & Zubehör" },
+      "text": {
+        "en": "Sensors & accessories",
+        "de": "Sensoren & Zubehör"
+      },
       "items": [
         {
-          "text": { "en": "Overview", "de": "Überblick" },
+          "text": {
+            "en": "Overview",
+            "de": "Überblick"
+          },
           "link": "/sensors/"
         },
         {
-          "text": { "en": "Set up sensors", "de": "Sensoren einrichten" },
+          "text": {
+            "en": "Set up sensors",
+            "de": "Sensoren einrichten"
+          },
           "link": "/sensors/setup"
         },
         {
-          "text": { "en": "Virtual sensors", "de": "Virtuelle Sensoren" },
+          "text": {
+            "en": "Virtual sensors",
+            "de": "Virtuelle Sensoren"
+          },
           "link": "/sensors/virtual"
         },
         {
-          "text": { "en": "Controls & states", "de": "Steuerung & Status" },
+          "text": {
+            "en": "Controls & states",
+            "de": "Steuerung & Status"
+          },
           "link": "/sensors/controls"
         },
         {
-          "text": { "en": "PTZ & autotrack", "de": "PTZ & Autotrack" },
+          "text": {
+            "en": "PTZ & autotrack",
+            "de": "PTZ & Autotrack"
+          },
           "link": "/sensors/ptz"
         }
       ]
     },
     {
-      "text": { "en": "Detection & AI", "de": "Erkennung & KI" },
+      "text": {
+        "en": "Detection & AI",
+        "de": "Erkennung & KI"
+      },
       "items": [
         {
-          "text": { "en": "Overview", "de": "Überblick" },
+          "text": {
+            "en": "Overview",
+            "de": "Überblick"
+          },
           "link": "/detection/"
         },
         {
-          "text": { "en": "Events & detections", "de": "Events & Erkennungen" },
+          "text": {
+            "en": "Events & detections",
+            "de": "Events & Erkennungen"
+          },
           "link": "/detection/events-and-detections"
         },
         {
-          "text": { "en": "Motion detection", "de": "Bewegungserkennung" },
+          "text": {
+            "en": "Motion detection",
+            "de": "Bewegungserkennung"
+          },
           "link": "/detection/motion"
         },
         {
@@ -168,15 +279,24 @@
           "link": "/detection/ai-backends"
         },
         {
-          "text": { "en": "Face recognition", "de": "Gesichtserkennung" },
+          "text": {
+            "en": "Face recognition",
+            "de": "Gesichtserkennung"
+          },
           "link": "/detection/faces"
         },
         {
-          "text": { "en": "License plates", "de": "Kennzeichen" },
+          "text": {
+            "en": "License plates",
+            "de": "Kennzeichen"
+          },
           "link": "/detection/license-plates"
         },
         {
-          "text": { "en": "Audio detection", "de": "Audio-Erkennung" },
+          "text": {
+            "en": "Audio detection",
+            "de": "Audio-Erkennung"
+          },
           "link": "/detection/audio"
         },
         {
@@ -196,60 +316,105 @@
       ]
     },
     {
-      "text": { "en": "Recording (NVR)", "de": "Aufnahmen (NVR)" },
+      "text": {
+        "en": "Recording (NVR)",
+        "de": "Aufnahmen (NVR)"
+      },
       "items": [
         {
-          "text": { "en": "Overview", "de": "Überblick" },
+          "text": {
+            "en": "Overview",
+            "de": "Überblick"
+          },
           "link": "/recording/"
         },
         {
-          "text": { "en": "Storage", "de": "Speicher" },
+          "text": {
+            "en": "Storage",
+            "de": "Speicher"
+          },
           "link": "/recording/storage"
         },
         {
-          "text": { "en": "Playback", "de": "Wiedergabe" },
+          "text": {
+            "en": "Playback",
+            "de": "Wiedergabe"
+          },
           "link": "/recording/timeline-playback"
         },
         {
-          "text": { "en": "Export", "de": "Export" },
+          "text": {
+            "en": "Export",
+            "de": "Export"
+          },
           "link": "/recording/export"
         },
         {
-          "text": { "en": "Browsing", "de": "Durchsuchen" },
+          "text": {
+            "en": "Browsing",
+            "de": "Durchsuchen"
+          },
           "link": "/recording/browsing"
         }
       ]
     },
     {
-      "text": { "en": "Plugins", "de": "Plugins" },
+      "text": {
+        "en": "Plugins",
+        "de": "Plugins"
+      },
       "collapsed": false,
       "items": [
         {
-          "text": { "en": "Overview", "de": "Überblick" },
+          "text": {
+            "en": "Overview",
+            "de": "Überblick"
+          },
           "link": "/plugins/"
         },
         {
-          "text": { "en": "HomeKit", "de": "HomeKit" },
+          "text": {
+            "en": "HomeKit",
+            "de": "HomeKit"
+          },
           "link": "/plugins/homekit"
         },
         {
-          "text": { "en": "Google Home", "de": "Google Home" },
+          "text": {
+            "en": "Google Home",
+            "de": "Google Home"
+          },
           "link": "/plugins/google-home"
         },
-        { "text": { "en": "Alexa", "de": "Alexa" }, "link": "/plugins/alexa" }
+        {
+          "text": {
+            "en": "Alexa",
+            "de": "Alexa"
+          },
+          "link": "/plugins/alexa"
+        }
       ]
     },
     {
-      "text": { "en": "Notifications", "de": "Benachrichtigungen" },
+      "text": {
+        "en": "Notifications",
+        "de": "Benachrichtigungen"
+      },
       "items": [
         {
-          "text": { "en": "Notifications", "de": "Benachrichtigungen" },
+          "text": {
+            "en": "Notifications",
+            "de": "Benachrichtigungen"
+          },
           "link": "/notifications/"
         }
       ]
     },
     {
-      "text": { "en": "Automations", "de": "Automationen" },
+      "text": {
+        "en": "Automations",
+        "de": "Automationen"
+      },
       "collapsed": true,
       "items": [
         {
@@ -260,81 +425,172 @@
           "link": "/automations/"
         },
         {
-          "text": { "en": "Blueprints & store", "de": "Blueprints & Store" },
+          "text": {
+            "en": "Blueprints & store",
+            "de": "Blueprints & Store"
+          },
           "link": "/automations/blueprints"
         }
       ]
     },
     {
-      "text": { "en": "Remote access", "de": "Remote-Zugriff" },
+      "text": {
+        "en": "Remote access",
+        "de": "Remote-Zugriff"
+      },
       "collapsed": true,
       "items": [
-        { "text": { "en": "Overview", "de": "Überblick" }, "link": "/remote/" },
         {
-          "text": { "en": "camera.ui Cloud", "de": "camera.ui Cloud" },
+          "text": {
+            "en": "Overview",
+            "de": "Überblick"
+          },
+          "link": "/remote/"
+        },
+        {
+          "text": {
+            "en": "camera.ui Cloud",
+            "de": "camera.ui Cloud"
+          },
           "link": "/remote/cloud"
         },
         {
-          "text": { "en": "Cloudflare tunnel", "de": "Cloudflare-Tunnel" },
+          "text": {
+            "en": "Cloudflare tunnel",
+            "de": "Cloudflare-Tunnel"
+          },
           "link": "/remote/cloudflare"
         },
         {
-          "text": { "en": "Custom domain", "de": "Eigene Domain" },
+          "text": {
+            "en": "Custom domain",
+            "de": "Eigene Domain"
+          },
           "link": "/remote/custom-domain"
         },
         {
-          "text": { "en": "Pairing mobile apps", "de": "Mobile Apps koppeln" },
+          "text": {
+            "en": "Pairing mobile apps",
+            "de": "Mobile Apps koppeln"
+          },
           "link": "/remote/pairing"
         }
       ]
     },
     {
-      "text": { "en": "Administration", "de": "Verwaltung" },
+      "text": {
+        "en": "Administration",
+        "de": "Verwaltung"
+      },
       "collapsed": true,
       "items": [
         {
-          "text": { "en": "Overview", "de": "Überblick" },
+          "text": {
+            "en": "Overview",
+            "de": "Überblick"
+          },
           "link": "/admin/settings"
         },
         {
-          "text": { "en": "Security", "de": "Sicherheit" },
+          "text": {
+            "en": "Security",
+            "de": "Sicherheit"
+          },
           "link": "/admin/security"
         },
-        { "text": { "en": "Users", "de": "Benutzer" }, "link": "/admin/users" },
-        { "text": { "en": "Backup", "de": "Backup" }, "link": "/admin/backup" },
-        { "text": { "en": "System", "de": "System" }, "link": "/admin/system" },
-        { "text": { "en": "MQTT", "de": "MQTT" }, "link": "/admin/mqtt" },
-        { "text": { "en": "Logs", "de": "Logs" }, "link": "/admin/logs" },
         {
-          "text": { "en": "Instances", "de": "Instanzen" },
-          "link": "/admin/instances-workers"
+          "text": {
+            "en": "Users",
+            "de": "Benutzer"
+          },
+          "link": "/admin/users"
+        },
+        {
+          "text": {
+            "en": "Backup",
+            "de": "Backup"
+          },
+          "link": "/admin/backup"
+        },
+        {
+          "text": {
+            "en": "System",
+            "de": "System"
+          },
+          "link": "/admin/system"
+        },
+        {
+          "text": {
+            "en": "MQTT",
+            "de": "MQTT"
+          },
+          "link": "/admin/mqtt"
+        },
+        {
+          "text": {
+            "en": "Logs",
+            "de": "Logs"
+          },
+          "link": "/admin/logs"
+        },
+        {
+          "text": {
+            "en": "Instances",
+            "de": "Instanzen"
+          },
+          "link": "/admin/instances"
+        },
+        {
+          "text": {
+            "en": "Workers",
+            "de": "Worker"
+          },
+          "link": "/admin/workers"
         }
       ]
     },
     {
-      "text": { "en": "Troubleshooting", "de": "Fehlerbehebung" },
+      "text": {
+        "en": "Troubleshooting",
+        "de": "Fehlerbehebung"
+      },
       "collapsed": true,
       "items": [
         {
-          "text": { "en": "Troubleshooting", "de": "Fehlerbehebung" },
+          "text": {
+            "en": "Troubleshooting",
+            "de": "Fehlerbehebung"
+          },
           "link": "/troubleshooting/"
         }
       ]
     },
     {
-      "text": { "en": "Plugin development", "de": "Plugin-Entwicklung" },
+      "text": {
+        "en": "Plugin development",
+        "de": "Plugin-Entwicklung"
+      },
       "collapsed": true,
       "items": [
         {
-          "text": { "en": "Node.js SDK", "de": "Node.js SDK" },
+          "text": {
+            "en": "Node.js SDK",
+            "de": "Node.js SDK"
+          },
           "link": "https://cameraui.github.io/sdk/node/"
         },
         {
-          "text": { "en": "Python SDK", "de": "Python SDK" },
+          "text": {
+            "en": "Python SDK",
+            "de": "Python SDK"
+          },
           "link": "https://cameraui.github.io/sdk/python/"
         },
         {
-          "text": { "en": "Go SDK", "de": "Go SDK" },
+          "text": {
+            "en": "Go SDK",
+            "de": "Go SDK"
+          },
           "link": "https://cameraui.github.io/sdk/go/"
         }
       ]

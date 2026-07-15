@@ -54,7 +54,7 @@ Nur die `.AppImage` aktualisiert sich selbst. Eine `.deb`-Installation bleibt au
 Beim ersten Öffnen fragt die App **„Wie soll camera.ui laufen?"** und bietet vier Modi:
 
 - **Server.** Betreibt den camera.ui-Server auf diesem Gerät. Das ist die All-in-One-Option und das, was die meisten auf macOS und Windows wählen.
-- **Worker.** Übernimmt einen Teil der Arbeit für einen anderen camera.ui-Server in deinem Netzwerk. Gib die Adresse des Hauptservers und einen Pairing-Code aus dessen **Workers**-Einstellungen ein. Siehe [Instanzen & Worker](/de/admin/instances-workers).
+- **Worker.** Übernimmt einen Teil der Arbeit für einen anderen camera.ui-Server in deinem Netzwerk. Gib die Adresse des Hauptservers und einen Pairing-Code aus dessen **Workers**-Einstellungen ein. Siehe [Worker](/de/admin/workers#worker-mit-der-desktop-app).
 - **Viewer · Direkt.** Verbindet sich per Adresse mit einem vorhandenen Server, zum Beispiel einer anderen Maschine in deinem Netzwerk.
 - **Viewer · Cloud.** Meldet sich über cloud.cameraui.com an, um einen Server über [camera.ui Cloud](/de/remote/cloud) zu erreichen.
 

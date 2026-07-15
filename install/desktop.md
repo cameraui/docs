@@ -54,7 +54,7 @@ Only the `.AppImage` updates itself. A `.deb` install stays on its version. Upda
 The first time you open the app, it asks **"How should camera.ui run?"** and offers four modes:
 
 - **Server.** Runs the camera.ui server on this machine. This is the all-in-one option, and what most people on macOS and Windows pick.
-- **Worker.** Takes on part of the work for another camera.ui server on your network. Enter the address of the main server and a pairing code from its **Workers** settings. See [Instances & workers](/admin/instances-workers).
+- **Worker.** Takes on part of the work for another camera.ui server on your network. Enter the address of the main server and a pairing code from its **Workers** settings. See [Workers](/admin/workers#worker-with-the-desktop-app).
 - **Viewer · Direct.** Connects to an existing server by address, for example another machine on your network.
 - **Viewer · Cloud.** Signs in via cloud.cameraui.com to reach a server through [camera.ui Cloud](/remote/cloud).
 

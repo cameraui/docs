@@ -31,13 +31,13 @@ Braucht der Service-User GPU-Zugriff für Hardware-Beschleunigung, füge ihn den
 
 ## Worker-Modus
 
-Damit diese Maschine als [Worker](/de/admin/instances-workers) für einen anderen camera.ui-Server läuft, hänge `--worker` an den Install-Befehl:
+Damit diese Maschine als [Worker](/de/admin/workers) für einen anderen camera.ui-Server läuft, hänge `--worker` an den Install-Befehl:
 
 ```bash
 sudo cameraui install --user cameraui --worker
 ```
 
-Das Flag wird mit dem Service gespeichert, die Maschine kommt nach einem Reboot also wieder als Worker hoch. Erzeuge auf dem Haupt-Server einen Pairing-Code, trag das Snippet wie auf der [Worker-Seite](/de/admin/instances-workers#einen-worker-koppeln) beschrieben in die Config dieser Maschine ein und führe dann `sudo cameraui restart --user cameraui` aus.
+Das Flag wird mit dem Service gespeichert, die Maschine kommt nach einem Reboot also wieder als Worker hoch. Erzeuge auf dem Haupt-Server einen Pairing-Code, trag das Snippet wie auf der [Worker-Seite](/de/admin/workers#einen-worker-koppeln) beschrieben in die Config dieser Maschine ein und führe dann `sudo cameraui restart --user cameraui` aus.
 
 ## Service verwalten
 

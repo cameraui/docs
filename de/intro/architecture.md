@@ -71,7 +71,7 @@ Du kannst außerdem mehr als einen Server als **Instanz** speichern und in derse
 
 ## Über mehrere Maschinen skalieren
 
-Für größere Setups kannst du zusätzliche Maschinen als **Worker** hinzufügen. Ein Worker übernimmt das Dekodieren und die Erkennung für einige Kameras und entlastet so den Hauptserver, oder er führt stattdessen ein ganzes Plugin aus (nützlich für einen Detektor, der spezielle Hardware braucht, die dem Hauptserver fehlt). Kameras und Plugins, die einem Worker zugewiesen sind, fallen automatisch auf den Hauptserver **zurück**, falls dieser Worker offline geht, und wandern zurück zum Worker, sobald er sich wieder verbindet. Siehe [Instanzen & Worker](/de/admin/instances-workers).
+Für größere Setups kannst du zusätzliche Maschinen als **Worker** hinzufügen. Ein Worker übernimmt das Dekodieren und die Erkennung für einige Kameras und entlastet so den Hauptserver, oder er führt stattdessen ein ganzes Plugin aus (nützlich für einen Detektor, der spezielle Hardware braucht, die dem Hauptserver fehlt). Kameras und Plugins, die einem Worker zugewiesen sind, fallen automatisch auf den Hauptserver **zurück**, falls dieser Worker offline geht, und wandern zurück zum Worker, sobald er sich wieder verbindet. Siehe [Worker](/de/admin/workers).
 
 ## Von außen erreichen
 
