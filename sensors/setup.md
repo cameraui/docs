@@ -4,7 +4,7 @@ title: Set up sensors
 
 # Set up sensors
 
-Sensors come from [plugins](/plugins/). To give a camera a sensor, you enable the plugin that provides it and turn the sensor on, all from the camera's settings. This needs admin.
+Most sensors come from [plugins](/plugins/). To give a camera a sensor, you enable the plugin that provides it and turn the sensor on, all from the camera's settings. Virtual sensors are the exception: you create those yourself, no plugin involved. Both need admin.
 
 ## Open the Plugins tab
 
@@ -29,3 +29,7 @@ Within a category, pick a **sensor type**, then choose the **plugin** that shoul
 Many plugins and sensors have their own options, shown right there as a form: plugin settings that apply to this camera, and per-sensor settings. Changes take effect immediately.
 
 Once enabled, sensors show up in the camera's Overview and on the video. See [Controls & states](/sensors/controls) to use them, and [PTZ & autotrack](/sensors/ptz) for PTZ cameras.
+
+## Virtual sensors
+
+Some sensors have no plugin behind them: you create them yourself on the camera's **Settings** tab. See [Virtual sensors](/sensors/virtual).

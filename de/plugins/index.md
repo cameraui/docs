@@ -15,12 +15,19 @@ Plugins erweitern camera.ui. Das meiste, was es über die Live-Ansicht hinaus ka
 
 <Shot src="/img/plugins/plugins-list.png" alt="Die Plugins-Seite" />
 
-Öffne **Plugins** aus dem Menü, um alles Installierte zu sehen, jeweils als Karte mit Live-Status (Ready, Started, Stopped, Error). Von einer Karte aus kannst du:
+Öffne **Plugins** aus dem Menü, um alles Installierte zu sehen, jeweils als Karte mit Live-Status (Bereit, Gestartet, Gestoppt, Fehler). Von einer Karte aus kannst du:
 
 - Es **aktivieren oder deaktivieren** und seinen Prozess **starten, stoppen oder neu starten**.
 - Es **aktualisieren**, wenn eine neue Version verfügbar ist, oder eine **bestimmte Version** wählen.
 - Seine **Einstellungen öffnen** oder seine **Logs** ansehen, wenn etwas klemmt.
 - Es **deinstallieren**, optional samt gespeicherter Daten.
+
+Aufnahmen sind die Ausnahme: Wenn du die gespeicherten Daten eines Aufnahme-Plugins löschst, bleibt das Videomaterial erhalten.
+
+Der Zahnrad-Button neben der Suchleiste enthält zwei Einstellungen, beide standardmäßig aus:
+
+- **Beta-Versionen.** Zeigt Vorabversionen in der Versionsauswahl und bietet Beta-Releases als Updates an.
+- **Plugin-Build-Skripte erlauben.** Lässt Plugins beim Installieren oder Aktualisieren Install-Skripte und native Builds ausführen. Nur für Plugins aktivieren, denen du vertraust.
 
 Plugins laufen als eigener Prozess, sodass ein sich fehlverhaltendes Plugin nicht den Rest mitreißt. Sie können in Node, Python oder Go geschrieben sein; ein kleines Abzeichen auf jeder Karte zeigt, welche.
 
@@ -38,7 +45,7 @@ Wähle ein Plugin und installiere es, bei Bedarf mit Versionswahl. Einmal instal
 
 ## Einstellungen
 
-Die eigenen Einstellungen eines Plugins liegen auf seiner Seite unter **Settings** und gelten serverweit. Einstellungen, die eine einzelne Kamera betreffen, werden stattdessen in den [Einstellungen dieser Kamera](/de/cameras/settings) bearbeitet. Aufnahme-Plugin-Einstellungen liegen beim Rest der [Aufnahmen](/de/recording/).
+Die eigenen Einstellungen eines Plugins liegen auf seiner Seite unter **Einstellungen** und gelten serverweit. Einstellungen, die eine einzelne Kamera betreffen, werden stattdessen in den [Einstellungen dieser Kamera](/de/cameras/settings) bearbeitet. Aufnahme-Plugin-Einstellungen liegen beim Rest der [Aufnahmen](/de/recording/).
 
 ## Einrichtungs-Anleitungen
 

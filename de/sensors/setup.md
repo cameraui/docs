@@ -4,7 +4,7 @@ title: Sensoren einrichten
 
 # Sensoren einrichten
 
-Sensoren stammen von [Plugins](/de/plugins/). Um einer Kamera einen Sensor zu geben, aktivierst du das Plugin, das ihn bereitstellt, und schaltest den Sensor ein, alles in den Einstellungen der Kamera. Das erfordert Admin-Rechte.
+Die meisten Sensoren stammen von [Plugins](/de/plugins/). Um einer Kamera einen Sensor zu geben, aktivierst du das Plugin, das ihn bereitstellt, und schaltest den Sensor ein, alles in den Einstellungen der Kamera. Virtuelle Sensoren sind die Ausnahme: die erstellst du selbst, ganz ohne Plugin. Beides erfordert Admin-Rechte.
 
 ## Den Plugins-Tab öffnen
 
@@ -29,3 +29,7 @@ Wähle innerhalb einer Kategorie einen **Sensor-Typ** und dann das **Plugin**, d
 Viele Plugins und Sensoren haben eigene Optionen, die direkt als Formular erscheinen: Plugin-Einstellungen, die für diese Kamera gelten, und Einstellungen pro Sensor. Änderungen wirken sofort.
 
 Einmal aktiviert, erscheinen Sensoren in der Übersicht der Kamera und auf dem Video. Siehe [Steuerung & Status](/de/sensors/controls), um sie zu nutzen, und [PTZ & Autotrack](/de/sensors/ptz) für PTZ-Kameras.
+
+## Virtuelle Sensoren
+
+Hinter manchen Sensoren steckt kein Plugin: die erstellst du selbst im **Einstellungen**-Tab der Kamera. Siehe [Virtuelle Sensoren](/de/sensors/virtual).

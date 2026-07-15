@@ -15,7 +15,7 @@ PTZ ist ein [Sensor](/de/sensors/), den ein Plugin einer Kamera bereitstellt. Da
 - **Schwenken und Neigen.** Mit dem Joystick auf dem Bildschirm.
 - **Zoomen.** Die Kamera hinein- und herauszoomen.
 - **Presets.** Zu einer gespeicherten Position springen, falls deine Kamera Presets unterstützt.
-- **Home.** Über die Home-Schaltfläche zur Home-Position zurückkehren.
+- **Home.** Mit **Zurück zur Startposition** zur Home-Position zurückkehren.
 
 <Shot src="/img/sensors/ptz-joystick.png" alt="PTZ-Joystick-Steuerung" />
 
@@ -29,7 +29,12 @@ Konfiguriere es in den [Einstellungen](/de/cameras/settings) der Kamera unter **
 - **Ziel-Labels.** Welchen Objekttypen die Kamera folgen soll, etwa Personen oder Fahrzeuge.
 - **Minimale Konfidenz.** Nur Erkennungen über diesem Konfidenz-Wert verfolgen.
 - **Totzone.** Ein zentraler Bereich, in dem sich ein Ziel bewegen kann, ohne dass die Kamera nachregelt, was ständige kleine Bewegungen vermeidet.
+- **Verfolgungsgeschwindigkeit.** Wie energisch die Kamera nachzieht, um das Ziel zu zentrieren. Höher ist schneller, niedriger ist sanfter.
+- **Bewegungsvorhersage.** Zielt einem bewegten Objekt um so viele Erkennungs-Frames voraus, damit die Kamera mithält statt hinterherzuhängen. Auf 0 gesetzt schaltet die Vorhersage ab.
+- **Schwenkraten-Kalibrierung.** Kalibriert, wie weit ein Bewegungsschritt bei deiner Kamera schwenkt. Kleiner, wenn die Kamera vor dem Ziel stoppt, größer, wenn sie überschießt.
 - **Zur Home-Position zurückkehren.** Die Kamera zur Home-Position zurückfahren, wenn länger kein Ziel erkannt wird.
 - **Wartezeit vor Rückkehr.** Wie lange ohne Ziel gewartet wird, bevor die Kamera zurückkehrt.
+
+Wenn du die Kamera selbst bewegst, per Joystick oder mit der App deiner Kamera, pausiert Autotrack für 45 Sekunden und kommt dir nicht in die Quere. Die Zeit beginnt, sobald du aufhörst zu bewegen.
 
 <Shot src="/img/sensors/ptz-autotrack.png" alt="PTZ-Autotrack-Einstellungen" />

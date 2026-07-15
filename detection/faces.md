@@ -16,7 +16,7 @@ To add someone:
 
 1. Select **Add Face**.
 2. Enter a **name**, pick the **face detection plugin**, and drop in a clear photo of the person.
-3. camera.ui checks that it can find a face, then select **Enroll**.
+3. Select **Enroll**. camera.ui checks the photo for a face and tells you if it can't find one.
 
 The person is now recognised in future events, with their name shown as an attribute on detections.
 
@@ -35,9 +35,10 @@ In the [NVR settings](/recording/), face recognition has:
 
 - **Match threshold.** How strict face matching is (0.3 to 0.8).
 - **Max training images.** How many photos to keep per person (5 to 15); camera.ui keeps the best ones.
+- **Max unknown people.** How many unknown groups are kept (10 to 500). Once the limit is hit, the group that was seen longest ago is dropped. Raise it for busy outdoor cameras.
 
 ## Rescanning
 
-Enrolled someone new? Select **Rescan existing events** to re-check past recordings and tag them with the newly known face.
+After enrolling someone new, select **Rescan existing events** to re-check past recordings and tag them with the newly known face.
 
 [^license]: Face recognition (matching faces against your enrolled people) builds on recording and requires an active camera.ui subscription. Detecting that a face is present is part of the free detection.

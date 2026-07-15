@@ -16,7 +16,7 @@ Status und Geräteinfo der Kamera, plus eine Live-Ansicht ihrer Sensoren und ihr
 
 ## Quellen
 
-Hier fügst du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera hinzu, änderst und entfernst sie, genau wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus und Vorladen. Jede Quelle zeigt außerdem ihren Live-Status, die erkannten Codecs und die Stream-URL.
+Hier fügst du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera hinzu, änderst und entfernst sie, genau wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus, Vorladen und Audio stummschalten (entfernt die Audiospur dieser Quelle). Jede Quelle zeigt außerdem ihren Live-Status, die erkannten Codecs und die Stream-URL.
 
 ## Einstellungen
 
@@ -25,7 +25,8 @@ Das Haupt-Konfigurationsformular, gegliedert in Bereiche:
 - **Allgemein.** Name, Raum, Kameratyp und ob die Kamera deaktiviert ist (hier entfernst du auch eine Kamera).
 - **Branding.** Hersteller, Modell und weitere Gerätedetails.
 - **Interface.** [Streaming-Modus und -Quelle](/de/cameras/live-view#streaming-modi) sowie das Seitenverhältnis.
-- **Erkennung.** Feinabstimmung pro Kamera für Bewegungs-, Objekt-, Audio- und Sensor-Erkennung (Empfindlichkeit, Confidence, Timeouts und Trigger), plus ein Snooze-Schalter. Siehe [Erkennung & KI](/de/detection/).
+- **Erkennung.** Feinabstimmung pro Kamera für Bewegungs-, Objekt-, Audio- und Sensor-Erkennung (Empfindlichkeit, Confidence, Timeouts, Trigger und Umgang mit statischen Objekten), plus ein Snooze-Schalter. Siehe [Erkennung & KI](/de/detection/).
+- **Virtuelle Sensoren.** Virtuelle Sensoren dieser Kamera erstellen, umbenennen und löschen. Sie bringen externe Geräte und Zustände in camera.ui, und du bedienst sie über den Übersicht-Tab oder per Automationen.
 - **Autotrack.** Eine PTZ-Kamera erkannten Objekten automatisch folgen lassen. Siehe [PTZ & Autotrack](/de/sensors/ptz).
 - **Zonen.** Erkennungszonen, Privatsphäre-Masken und Überquerungslinien zeichnen. Siehe [Zonen, Masken & Linien](/de/cameras/zones-and-masks).
 - **Snapshot.** Wie Standbilder aktualisiert und zwischengespeichert werden (Auto-Refresh, Cache-Zeit und Aktualisierungsintervall).

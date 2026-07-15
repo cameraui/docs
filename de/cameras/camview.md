@@ -12,19 +12,19 @@ Camview zeigt mehrere Kameras gleichzeitig in einem Raster. Du kannst eigene Lay
 
 1. Öffne **Camview** und wähle **Neue Ansicht**.
 2. Gib der Ansicht einen Namen und wähle eine Rastergröße, von einer einzelnen Kamera bis zu 26.
-3. Wähle **Weiter**, und ziehe dann deine Kameras in die Felder.
+3. Wähle **Weiter**, und fülle dann die Felder. Auf einem breiten Bildschirm ziehst du die Kameras aus der Liste rechts in die Felder. Auf einem schmalen Bildschirm tippst du auf das Plus in einem Feld und wählst eine Kamera aus der Liste.
 4. Speichere die Ansicht.
 
 Du kannst mehrere Ansichten erstellen und oben über die Ansichtsauswahl zwischen ihnen wechseln.
 
 ## Das Raster anordnen
 
-Aktiviere **Anordnen**, um Kacheln zu verschieben und in der Größe zu ändern. Zwei Helfer machen das schnell:
+Aktiviere **Anordnen**, um Kacheln zu verschieben. Am Computer kannst du eine Kachel zusätzlich an der unteren rechten Ecke in der Größe ändern, und zwei Helfer machen das schnell:
 
 - **Automatisch anordnen** packt die Kacheln lückenlos zusammen.
 - **Seitenverhältnisse anpassen** bringt jede Kachel auf das konfigurierte Seitenverhältnis ihrer Kamera.
 
-Wähle **Fertig**, wenn du fertig bist. Layouts werden pro Benutzer gespeichert, und Handy und Computer behalten jeweils ihre eigene Anordnung, sodass ein für den Desktop abgestimmtes Raster auf dem Handy aufgeräumt bleibt. **Bearbeiten** und **Löschen** einer Ansicht findest du in der oberen Leiste.
+Wähle **Fertig**, wenn du fertig bist. Auf dem Handy liegen die Kameras in einer Spalte, dort ändert **Anordnen** nur die Reihenfolge; Größe ändern und die beiden Helfer gibt es dort nicht. Die Ansicht selbst wird in deinem Konto gespeichert. Die Anordnung bleibt in dem Browser, in dem du sie erstellt hast, und Handy und Computer behalten jeweils ihre eigene, sodass ein für den Desktop abgestimmtes Raster auf dem Handy aufgeräumt bleibt. **Bearbeiten** und **Löschen** einer Ansicht findest du in der oberen Leiste.
 
 ## Alle Kameras auf einmal steuern
 
@@ -36,6 +36,10 @@ Ein schwebendes Bedienelement in der Ecke wirkt auf jede Kamera der Ansicht geme
 - Den Streaming-Modus für alle umschalten.
 - Den Activity-Modus für alle setzen (Always On, Standby, Activity).
 - Die Auflösung für alle ändern.
+
+## Eine Kamera in den Fokus holen
+
+Klicke auf eine Kachel, um sie auf die ganze Ansicht zu vergrößern, und klicke erneut, um zurück zum Raster zu kommen. Ansichten mit nur einer Kamera bleiben, wie sie sind.
 
 ## Wiedergabe über das ganze Raster
 

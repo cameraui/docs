@@ -4,11 +4,11 @@ title: Semantische Suche
 
 # Semantische Suche
 
-Die semantische Suche lässt dich Momente in deinen Aufnahmen finden, indem du sie **in einfachen Worten beschreibst**, etwa „Person mit roter Jacke" oder „Lieferwagen", statt nach Typ zu filtern. Sie wird von CLIP angetrieben.
+Die semantische Suche lässt dich Momente in deinen Aufnahmen finden, indem du sie **in einfachen Worten beschreibst**, etwa „Person mit roter Jacke“ oder „Lieferwagen“, statt nach Typ zu filtern. Sie wird von CLIP angetrieben.
 
 ## Was du brauchst
 
-Die semantische Suche braucht ein KI-Backend, das **CLIP** bereitstellt (CoreML, OpenVINO oder ONNX), aktiviert an deinen Kameras. Während diese Kameras aufnehmen, baut camera.ui ein durchsuchbares Verständnis jedes Ereignisses auf.[^license]
+Die semantische Suche braucht ein KI-Backend, das **CLIP** bereitstellt (CoreML, OpenVINO oder ONNX), aktiviert an deinen Kameras. Während diese Kameras aufnehmen, macht camera.ui jede erkannte Person, jedes Fahrzeug und jedes Tier durchsuchbar. Ereignisse ohne eines davon, etwa reine Bewegung, tauchen in den Ergebnissen nicht auf.[^license]
 
 ## Suchen
 

@@ -25,19 +25,31 @@ sudo npm install -g camera.ui
 sudo cameraui install --user cameraui
 ```
 
-`cameraui install` creates the service user if it doesn't exist, registers a systemd service named `cameraui` and starts it on boot. The first start downloads and installs the server, so give it a few minutes and follow along with `cameraui logs`. The web UI then runs on `https://<host>:3443`.
+`cameraui install` creates the service user if it doesn't exist, registers a systemd service named `cameraui` and starts it on boot. The first start downloads and installs the server, so give it a few minutes and follow along with `sudo cameraui logs --user cameraui` in a second terminal. The web UI then runs on `https://<host>:3443`.
 
-If the service user needs GPU access for hardware acceleration, add it to your distribution's `video`/`render` groups (either via `--group` during install or `usermod -aG` afterwards).
+If the service user needs GPU access for hardware acceleration, add it to your distribution's `video`/`render` groups. `--group video` only applies when the install creates the user. For an existing user, run `sudo usermod -aG video cameraui` and restart the service.
+
+## Worker mode
+
+To run this machine as a [worker](/admin/instances-workers) for another camera.ui server, add `--worker` to the install command:
+
+```bash
+sudo cameraui install --user cameraui --worker
+```
+
+The flag is stored with the service, so the machine comes back up as a worker after a reboot. Generate a pairing code on the main server, put the snippet into this machine's config file as described on the [workers page](/admin/instances-workers#pair-a-worker), then run `sudo cameraui restart --user cameraui`.
 
 ## Managing the service
 
 ```bash
-cameraui status     # service state
-cameraui logs       # tail the logs
-cameraui restart    # also: start / stop
-sudo cameraui update-server            # update to the latest server release
-sudo cameraui update-server 1.2.3      # or pin a specific version
+cameraui status                          # service state
+sudo cameraui logs --user cameraui       # tail the logs
+sudo cameraui restart --user cameraui    # also: start / stop
+sudo cameraui update-server              # update to the latest server release
+sudo cameraui update-server 1.2.3        # or pin a specific version
 ```
+
+The service runs as its own user, so everything except `status` needs sudo and the same `--user` you installed with. If you installed with `-H <path>`, pass that instead.
 
 camera.ui also updates the server from the web UI; `update-server` is the CLI equivalent.
 

@@ -11,7 +11,7 @@ Erkennung ist, wie camera.ui versteht, was in deinem Video passiert: Bewegung, P
 Erkennung ist gestuft, damit sie effizient bleibt:
 
 1. **Bewegung** läuft durchgehend und günstig. Sie bemerkt nur, dass sich etwas geändert hat.
-2. Wenn Bewegung auslöst, wacht die schwerere **KI** auf. Sie führt Objekterkennung aus (Personen, Fahrzeuge, Tiere) und schaut dann genauer auf das Gefundene: Gesichter bei den erkannten Personen, Kennzeichen bei den Fahrzeugen und einen semantischen Fingerabdruck für die Suche. Audio wird parallel analysiert.
+2. Wenn ein Trigger auslöst, wacht die schwerere **KI** auf. Sie führt Objekterkennung aus (Personen, Fahrzeuge, Tiere) und schaut dann genauer auf das Gefundene: Gesichter bei den erkannten Personen, Kennzeichen bei den Fahrzeugen und einen semantischen Fingerabdruck für die Suche. Bewegung ist der übliche Trigger. Auch ein erkanntes Geräusch weckt die KI, ebenso ein anderer Sensor, zum Beispiel ein Kontaktsensor an einer Tür.
 
 Diese „Kaskade" bedeutet, dass die anspruchsvolle KI nur läuft, wenn es etwas zu sehen gibt, und jeder Schritt nur auf den Objekten, für die er gilt, was CPU- und GPU-Last niedrig hält.
 
@@ -19,8 +19,10 @@ Diese „Kaskade" bedeutet, dass die anspruchsvolle KI nur läuft, wenn es etwas
 flowchart LR
   cam[Kamerabild] --> motion{Bewegung?}
   cam -. parallel .-> audio[Audio]
-  motion -- nein --> idle[Schwere KI bleibt im Leerlauf]
+  sensor[Sensor-Trigger<br/>z. B. Kontaktsensor an einer Tür] --> obj
+  motion -- nein --> idle[Schwere KI bleibt im Leerlauf<br/>bis ein anderer Trigger auslöst]
   motion -- ja --> obj[Objekterkennung<br/>Person · Fahrzeug · Tier]
+  audio -- Geräusch --> obj
   obj -- Person --> face[Gesichter]
   obj -- Fahrzeug --> plate[Kennzeichen]
   obj --> clip[CLIP]

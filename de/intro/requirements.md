@@ -49,7 +49,7 @@ Wähle auf Linux den [Docker-Flavor](/de/install/docker), der zu deiner GPU pass
 
 Nutze für Aufnahmen eine **dedizierte lokale Disk**, getrennt von der System-Disk und keine Netzwerkfreigabe (NAS). Durchgehende Aufnahme schreibt permanent, und eine lokale Disk ist dafür deutlich zuverlässiger und reaktionsschneller.
 
-camera.ui zeigt für jede Kamera die Aufnahme-Bandbreite (MB pro Stunde) und lässt dich den Verbrauch mit einem **Speicher-Kontingent** und einem **Aufbewahrungs**-Zeitfenster begrenzen, damit der Speicher nie unerwartet volläuft.
+camera.ui zeigt für jede Kamera die Aufnahme-Rate pro Tag und lässt dich den Verbrauch über die Einstellungen **Kontingent** und **Aufbewahrung** begrenzen, damit der Speicher nie unerwartet volläuft.
 
 ## Desktop-App
 

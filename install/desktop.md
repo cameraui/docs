@@ -4,7 +4,7 @@ The desktop app is the recommended way to run camera.ui on **macOS and Windows**
 
 ## Download
 
-Download the installer for your platform — directly below, or from the [download page](https://cameraui.com/#download). The links always point to the latest release.
+Download the installer for your platform, directly below or from the [download page](https://cameraui.com/#download). The links always point to the latest release.
 
 | Platform | Download |
 |---|---|
@@ -46,24 +46,38 @@ chmod +x camera.ui-*.AppImage
 ```
 
 ::: tip Pick the `.AppImage` if you want automatic updates
-Only the `.AppImage` updates itself. A `.deb` install stays on its version — update it by downloading and installing the new `.deb`.
+Only the `.AppImage` updates itself. A `.deb` install stays on its version. Update it by downloading and installing the new `.deb`.
 :::
 
 ## First launch: choose how to run
 
-The first time you open the app, it asks **"How should camera.ui run?"** and offers three modes:
+The first time you open the app, it asks **"How should camera.ui run?"** and offers four modes:
 
 - **Server.** Runs the camera.ui server on this machine. This is the all-in-one option, and what most people on macOS and Windows pick.
+- **Worker.** Takes on part of the work for another camera.ui server on your network. Enter the address of the main server and a pairing code from its **Workers** settings. See [Instances & workers](/admin/instances-workers).
 - **Viewer · Direct.** Connects to an existing server by address, for example another machine on your network.
 - **Viewer · Cloud.** Signs in via cloud.cameraui.com to reach a server through [camera.ui Cloud](/remote/cloud).
 
 <Shot src="/img/install/desktop-mode-picker.png" alt="Desktop first-launch mode picker" />
 
-In **Server** mode the app starts the server, opens the interface, and guides you through [first-run setup](/intro/getting-started). In a **Viewer** mode it connects to a server you already have.
+In **Server** mode the app starts the server, opens the interface, and guides you through [first-run setup](/intro/getting-started). In a **Viewer** mode it connects to a server you already have. In **Worker** mode there is no window, only the tray icon and a status screen.
 
-You can change this anytime from the tray icon (**Switch mode…**), without reinstalling.
+## The tray icon
+
+The tray icon holds the app's own settings:
+
+- **Open.** Brings the window back.
+- **Open At Login.** Starts camera.ui when you log in. It goes straight to the tray: no window, no splash. Open it from the tray icon when you need it.[^autostart]
+- **Close to tray.** Off by default. Turn it on and closing the window only hides it, so a server on this machine keeps running.[^closetotray]
+- **Switch mode….** Changes how the app runs, without reinstalling.
+- **Quit.** Stops the app, and in Server mode the server with it.
+
+On Windows, left-click the tray icon to open the window, right-click for the menu.
 
 <Shot src="/img/install/desktop-tray-menu.png" alt="Desktop tray menu" />
+
+[^autostart]: macOS and Windows only.
+[^closetotray]: Windows and Linux only. On macOS the app stays in the tray when you close the window anyway, so the option isn't there.
 
 
 ## macOS permissions

@@ -13,9 +13,12 @@ Two admin features help when you run more than one machine: **instances** for ma
 An **instance** is another camera.ui server saved here, so you can switch to it without logging in again. Manage them in **Instances** (in the menu).
 
 - **Add an instance** with a name, its URL, and a username and password for it.
+- **Two-factor accounts.** If the account on that server uses two-factor authentication, camera.ui asks for the 6-digit code from your authenticator app when you add the instance or switch to it.[^backupcodes] Until you enter it, the card shows a **2FA** tag and **Two-factor confirmation pending**. Use **Enter code** in the card's menu to finish.
 - Each instance card shows its status: version, uptime, cameras, whether it's online and recording, and resource use.
 
-When you have more than one, an **instance switcher** appears in the top bar. Pick a server to jump to it, or return to "This server".
+[^backupcodes]: The prompt takes the 6-digit code from the app only, not a backup code.
+
+When you have more than one, an **instance switcher** appears in the top bar. Pick a server to jump to it, or return to "This Server".
 
 ::: warning
 Switching to an instance over plain HTTP passes your session in the address, so camera.ui warns you first. Use HTTPS where you can.
@@ -46,7 +49,43 @@ worker:
     - pluginHost
 ```
 
-Paste the snippet into the worker machine's `config.yml`, then start it with `camera.ui --worker`. The worker exchanges the code for its own credentials; nothing is shared or reused between workers, and each one can be revoked independently. The pairing code can only be used once.
+Paste the snippet into the worker machine's `config.yml`, then start it with `cameraui --worker run`. To keep the machine a worker across reboots, install it as a service instead: `cameraui --worker install`. The worker exchanges the code for its own credentials; nothing is shared or reused between workers, and each one can be revoked independently. The pairing code can only be used once.
+
+You can pass the same values as environment variables instead, which is usually easier in a container. `CAMERA_UI_WORKER=true` starts worker mode without the `--worker` option, and `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` and `CAMERA_UI_WORKER_CAPABILITIES` (comma-separated) cover the rest of the snippet. No `config.yml` is needed then, and if you set both, the environment variable wins.
+
+### Worker in Docker
+
+A worker runs from the same image as the server, just started in worker mode. Save this as `docker-compose.worker.yml` on the second machine, with your master's address and the pairing code from above:
+
+```yaml
+name: cameraui-worker
+
+services:
+  cameraui-worker:
+    image: ghcr.io/cameraui/camera.ui:latest
+    container_name: cameraui-worker
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - TZ=Europe/Berlin
+      - CAMERA_UI_WORKER=true
+      - CAMERA_UI_WORKER_MASTER=192.168.1.10
+      - CAMERA_UI_WORKER_PAIRING_CODE=XXXX-XXXX
+      - CAMERA_UI_WORKER_NAME=worker-1
+    volumes:
+      - cameraui-worker-data:/data
+
+volumes:
+  cameraui-worker-data:
+```
+
+Then start it:
+
+```bash
+docker compose -f docker-compose.worker.yml up -d
+```
+
+The master address takes a hostname or IP, without a scheme. `CAMERA_UI_WORKER_API_PORT` is only needed if the master's HTTPS port differs from the default. The pairing code is only needed for the first start: the worker stores its own credentials and reconnects by itself afterwards. To pass hardware through for decoding, use the same override files as the main deployment, see [Hardware acceleration](/install/hardware-acceleration).
 
 ### The workers list
 

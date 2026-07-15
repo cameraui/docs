@@ -6,7 +6,7 @@ title: Remote access
 
 By default, camera.ui is reachable on your local network. To view your cameras while you're away, you set up remote access. It's included for free and doesn't need the recording subscription.[^free]
 
-Remote access is an admin setting, under **Settings → Remote**. The page shows your current **connection status** (local, local network, remote, or cloud) and the address you're connected on.
+Remote access is an admin setting, under **Settings → Remote Access**. The page shows your current **connection status** (local, local network, remote, or cloud) and the address you're connected on.
 
 ## Choosing how to connect
 

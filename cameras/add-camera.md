@@ -13,9 +13,10 @@ There are two ways to add a camera: let camera.ui **discover** it, or **add it m
 The Cameras page lists devices that have been **discovered**, ready for you to add. A camera shows up here when camera.ui's built-in discovery finds it on your network (ONVIF and other protocols), or when a [plugin](/plugins/) that manages cameras reports one. Either way, you add it the same way. Cameras you have already added appear under **Adopted cameras**.
 
 1. Open **Cameras**. Discovery runs automatically. If a camera on your network doesn't appear, select **Rescan** and check that it's powered on and on the same network.
-2. Select a camera under **Discovered**. A **Connect** dialog opens.
+2. Select a camera under **Discovered**. A **Connect** dialog opens. Where the address is known, the **Address** column shows it, and the dialog repeats it above the credential fields.
 3. Some cameras need credentials. If asked, enter the **username** and **password** (a few use a PIN instead), then select **Connect**. Others need no details and connect right away.
-4. The status changes to **Connecting…**, and on success the camera moves to **Adopted cameras** and shows up in your live view.
+4. The status changes to **Connecting…**. camera.ui reads out the camera and opens **Confirm camera**, showing the **Name**, **Room** and the **Sources** it found. Adjust them if you want, or leave them as they are.
+5. Select **Add camera**. The camera moves to **Adopted cameras** and shows up in your live view.
 
 You can hide devices you don't want to see with the eye icon, and bring them back later with **Show hidden devices**.
 
@@ -30,9 +31,13 @@ Use this for cameras that aren't discovered, or to set up streams yourself. Sele
 2. Under **Sources**, set up at least one stream:
    - Enter a **Source name**.
    - Pick a **Source role**: **High Resolution**, **Mid Resolution**, or **Low Resolution** for streaming, or **Snapshot** for stills. At least one streaming role is required.
-   - Choose the **protocol** (RTSP is the default and works with most IP cameras) and enter the stream **URL**. Use the **(i)** button for protocol-specific help, or **Test camera source** to preview a frame.
-3. Add more URLs to a source, or **Add source** to add another role (for example a low-resolution stream for fast scrubbing).
+   - Paste the full stream **URL** including the protocol, for example `rtsp://user:pass@192.168.1.50:554/stream`. RTSP works with most IP cameras. camera.ui detects the protocol from the URL and shows **Detected protocol** under the field. Use the **(i)** button next to the field for protocol-specific help, or **Test camera source** to preview a frame.
+3. Select **Add source** to add another URL to the same source. To add a second source with another role, for example a low-resolution stream for fast scrubbing, use the plus button below the Sources card.
 4. Save. The camera appears in your Cameras list and live view.
+
+::: tip
+The **NVR** plugin, if installed and enabled, is activated for every new camera automatically, whether you added it manually or adopted it from **Discovered**. Recording then starts on its own as long as your subscription has a free camera slot. You can change the mode or turn recording off per camera, see [Recording](/recording/).
+:::
 
 <Shot src="/img/cameras/add-camera-dialog.png" alt="Add camera dialog with sources and roles" />
 
@@ -45,17 +50,18 @@ A camera can have several **sources**, each with a **role**:
 
 One source is enough to get started. Adding a lower-resolution stream later improves performance for grids and playback.
 
-### Performance options
+### Source options
 
-Each source has a few options that trade a little memory for a faster, smoother experience:
+Each streaming source has a few options:
 
 - **Hot mode.** Keeps the connection to the camera always active, so there's no reconnect delay when a stream is opened.
 - **Preload.** Preloads the stream so the camera view opens with minimal delay.
+- **Mute audio.** Removes the audio track from this source. Off by default.
 
 With hot mode and preload on, opening a stream is near-instant, whether the camera uses H.264 or H.265.
 
 ## Connection protocols
 
-camera.ui supports many connection types. **RTSP** works with almost any IP camera and is the usual choice, while **ONVIF** powers discovery. The protocol list also covers specific brands and systems, some of which connect directly and others through a [plugin](/plugins/). The **(i)** button next to the protocol field shows instructions for the one you picked. See [Connection protocols](/cameras/protocols) for the full list.[^cloud]
+camera.ui supports many connection types. **RTSP** works with almost any IP camera and is the usual choice, while **ONVIF** powers discovery. The protocol list also covers specific brands and systems, some of which connect directly and others through a [plugin](/plugins/). The **(i)** button next to the URL field shows instructions for the protocol it detected, where they exist. See [Connection protocols](/cameras/protocols) for the full list.[^cloud]
 
 [^cloud]: Cameras that depend on a vendor cloud (such as Ring or Nest) can be connected, either directly or through a plugin, but they are **not recommended** and **not covered by support**. Use local RTSP / ONVIF cameras for a reliable experience.

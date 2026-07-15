@@ -19,7 +19,7 @@ If a camera shows offline or won't load:
 
 - Check the source's **codec** in the Sources tab; very unusual codecs may need transcoding.
 - Try a different **streaming mode** in the camera's [interface settings](/cameras/settings).
-- Enable **[hot mode and preload](/cameras/add-camera#performance-options)** on the source for faster, more reliable opening.
+- Enable **[hot mode and preload](/cameras/add-camera#source-options)** on the source for faster, more reliable opening.
 
 ## Detection isn't firing
 
@@ -39,6 +39,7 @@ If a camera shows offline or won't load:
 - Recording needs an **active subscription**. See [Recording](/recording/).
 - Confirm the camera's **recording mode** is set, either continuous or event.
 - Check **[storage](/recording/storage)**: a full disk with **Strict** retention pauses recording until you free space.
+- If **Settings → Recordings** warns that the storage volume is small, recordings are on a small disk and rotate away quickly. Either the disk really is that small, or a storage mount you expected never mounted. Check the path in **[storage](/recording/storage)**.
 
 ## Can't reach the server remotely
 

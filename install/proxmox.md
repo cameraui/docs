@@ -29,7 +29,8 @@ Everything is tunable via environment variables:
 | `CT_HOSTNAME` | `cameraui` | container hostname |
 | `CORES` / `RAM_MB` / `DISK_GB` | `4` / `4096` / `16` | container resources |
 | `BRIDGE` | `vmbr0` | network bridge (container gets its IP via DHCP) |
-| `STORAGE` | auto-detect | rootfs storage (picks the first active storage that can hold a container rootfs) |
+| `STORAGE` | auto-detect | rootfs storage (prefers `local-lvm`, `local-zfs`, `local`, otherwise the first active storage that can hold a container rootfs) |
+| `TEMPLATE_STORAGE` | `local` | storage the LXC template is downloaded to (needs content type "Container template") |
 | `FLAVOR` | `cpu` | `cpu`, `intel` or `amd` (picks the [image flavor](/install/docker#hardware-acceleration)); `nvidia` is [experimental](#nvidia-in-an-lxc-experimental) |
 | `GPU_PASSTHROUGH` | `1` when flavor ≠ cpu | pass `/dev/dri` into the container |
 | `TZ` | host timezone | timezone inside the container |
@@ -75,20 +76,20 @@ pct set <CTID> -mp0 /mnt/nas/recordings,mp=/mnt/recordings
 Then set the NVR **Storage Path** to `/mnt/recordings` (Settings → Recordings → Storage), or see the [storage section](/install/docker#storage-for-recordings) of the Docker page.
 
 ::: warning FUSE mounts (mergerfs, rclone) need extra care
-A FUSE mount — such as a **mergerfs** pool merging several drives — does not propagate into an (unprivileged) container the way a normal filesystem does. If the FUSE mount isn't active on the host **before the container starts**, the container sees the empty mountpoint on the host's root disk instead of the pool. Recordings then land on the small OS disk and get rotated away within minutes, even though the pool has terabytes free.
+A FUSE mount (such as a **mergerfs** pool merging several drives) does not propagate into an (unprivileged) container the way a normal filesystem does. If the FUSE mount isn't active on the host **before the container starts**, the container sees the empty mountpoint on the host's root disk instead of the pool. Recordings then land on the small OS disk and get rotated away within minutes, even though the pool has terabytes free.
 
 Mount the pool on the host **before** the container starts (e.g. via an fstab entry or a systemd unit ordered `Before=pve-container@<CTID>.service`), and make sure the mount is shared into the container. Then always **verify from inside the container**.
 :::
 
 ## Verify your storage size
 
-After setting a custom storage path, confirm the container really sees the full volume — this one check catches almost every mount problem:
+After setting a custom storage path, confirm the container really sees the full volume. This one check catches almost every mount problem:
 
 ```bash
 pct exec <CTID> -- df -h /mnt/recordings
 ```
 
-The reported size must match your real disk or pool. If it shows the small container root size instead, the mount didn't propagate — recheck the steps above. The NVR also logs its resolved storage and size on every start, and shows a warning in **Settings → Recordings** when the volume is unexpectedly small.
+The reported size must match your real disk or pool. If it shows the small container root size instead, the mount didn't propagate. Recheck the steps above. The NVR also logs its resolved storage and size on every start, and shows a warning in **Settings → Recordings** when the volume is unexpectedly small.
 
 ## Verify
 

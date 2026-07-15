@@ -10,12 +10,15 @@ Zwei Admin-Funktionen helfen, wenn du mehr als eine Maschine betreibst: **Instan
 
 <Shot src="/img/admin/instances.png" alt="Die Instanzen-Liste" />
 
-Eine **Instanz** ist ein weiterer hier gespeicherter camera.ui-Server, sodass du zu ihm wechseln kannst, ohne dich neu anzumelden. Verwalte sie unter **Instances** (im Menü).
+Eine **Instanz** ist ein weiterer hier gespeicherter camera.ui-Server, sodass du zu ihm wechseln kannst, ohne dich neu anzumelden. Verwalte sie unter **Instanzen** (im Menü).
 
 - **Eine Instanz hinzufügen** mit Namen, ihrer URL und einem Benutzernamen und Passwort dafür.
+- **Konten mit Zwei-Faktor-Authentifizierung.** Ist das Konto auf diesem Server mit Zwei-Faktor-Authentifizierung geschützt, fragt camera.ui beim Hinzufügen oder beim Wechsel nach dem 6-stelligen Code aus deiner Authenticator-App.[^backupcodes] Bis du ihn eingibst, zeigt die Karte ein **2FA**-Tag und **Zwei-Faktor-Bestätigung ausstehend**. Über **Code eingeben** im Menü der Karte schließt du es ab.
 - Jede Instanz-Karte zeigt ihren Status: Version, Uptime, Kameras, ob sie online ist und aufnimmt, sowie Ressourcennutzung.
 
-Sobald du mehr als eine hast, erscheint ein **Instanz-Umschalter** in der oberen Leiste. Wähle einen Server, um zu ihm zu springen, oder kehre zu „This server" zurück.
+[^backupcodes]: Die Abfrage nimmt nur den 6-stelligen Code aus der App an, keinen Backup-Code.
+
+Sobald du mehr als eine hast, erscheint ein **Instanz-Umschalter** in der oberen Leiste. Wähle einen Server, um zu ihm zu springen, oder kehre zu „Dieser Server" zurück.
 
 ::: warning
 Zu einer Instanz über einfaches HTTP zu wechseln überträgt deine Sitzung in der Adresse, daher warnt camera.ui dich zuerst. Nutze HTTPS, wo du kannst.
@@ -46,7 +49,43 @@ worker:
     - pluginHost
 ```
 
-Füge den Ausschnitt in die `config.yml` der Worker-Maschine ein und starte sie dann mit `camera.ui --worker`. Der Worker tauscht den Code gegen eigene Zugangsdaten; es wird nichts zwischen Workern geteilt oder wiederverwendet, und jede kann einzeln widerrufen werden. Der Pairing-Code lässt sich nur einmal verwenden.
+Füge den Ausschnitt in die `config.yml` der Worker-Maschine ein und starte sie dann mit `cameraui --worker run`. Damit die Maschine auch nach einem Neustart Worker bleibt, installiere sie stattdessen als Service: `cameraui --worker install`. Der Worker tauscht den Code gegen eigene Zugangsdaten; es wird nichts zwischen Workern geteilt oder wiederverwendet, und jede kann einzeln widerrufen werden. Der Pairing-Code lässt sich nur einmal verwenden.
+
+Alternativ kannst du dieselben Werte als Umgebungsvariablen setzen, was in einem Container meist einfacher ist. `CAMERA_UI_WORKER=true` startet den Worker-Modus ohne die Option `--worker`, und `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` sowie `CAMERA_UI_WORKER_CAPABILITIES` (kommagetrennt) decken den Rest des Ausschnitts ab. Eine `config.yml` ist dann nicht nötig, und wenn du beides setzt, gewinnt die Umgebungsvariable.
+
+### Worker in Docker
+
+Ein Worker läuft aus demselben Image wie der Server, nur im Worker-Modus gestartet. Speichere das hier als `docker-compose.worker.yml` auf der zweiten Maschine, mit der Adresse deines Masters und dem Pairing-Code von oben:
+
+```yaml
+name: cameraui-worker
+
+services:
+  cameraui-worker:
+    image: ghcr.io/cameraui/camera.ui:latest
+    container_name: cameraui-worker
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - TZ=Europe/Berlin
+      - CAMERA_UI_WORKER=true
+      - CAMERA_UI_WORKER_MASTER=192.168.1.10
+      - CAMERA_UI_WORKER_PAIRING_CODE=XXXX-XXXX
+      - CAMERA_UI_WORKER_NAME=worker-1
+    volumes:
+      - cameraui-worker-data:/data
+
+volumes:
+  cameraui-worker-data:
+```
+
+Dann starte ihn:
+
+```bash
+docker compose -f docker-compose.worker.yml up -d
+```
+
+Die Master-Adresse nimmt einen Hostnamen oder eine IP an, ohne Schema. `CAMERA_UI_WORKER_API_PORT` brauchst du nur, wenn der HTTPS-Port des Masters vom Standard abweicht. Der Pairing-Code wird nur beim ersten Start gebraucht: Der Worker speichert seine eigenen Zugangsdaten und verbindet sich danach von selbst wieder. Um Hardware für die Dekodierung durchzureichen, nutze dieselben Override-Dateien wie beim Haupt-Deployment, siehe [Hardware-Beschleunigung](/de/install/hardware-acceleration).
 
 ### Die Worker-Liste
 

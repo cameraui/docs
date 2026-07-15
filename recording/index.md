@@ -16,9 +16,11 @@ Subscriptions aren't open for purchase yet. To test recording, create your camer
 
 Recording comes from the **camera.ui NVR** plugin, which is installed by default, and runs on a subscription tied to your camera.ui account. To turn it on:
 
-1. In **Settings → Remote**, choose **Register Server** and sign in with your camera.ui account. This links the server to your account; you don't need to enable remote cloud access for it.
+1. In **Settings → Remote Access**, choose **Register server** and sign in with your camera.ui account. This links the server to your account; you don't need to enable remote cloud access for it.
 2. Open **Settings → Recordings** and, in the **License & Cloud** card, click the **cloud icon** and sign in. It's grey when you're not connected and turns green once you are.
 3. Your license then activates automatically. If the status doesn't update, use the **Refetch License** button.
+
+Once the license is active, cameras you add start recording on their own, as long as your subscription still has a free camera slot. A new camera records continuously in every stream quality. You can change the mode, pick which qualities to record, or turn recording off in the camera's recording settings.
 
 ## Recording modes
 

@@ -8,7 +8,7 @@ Die Seite **Einstellungen → System** (nur Admins) kümmert sich um die Version
 
 ## Version und Updates
 
-Sie zeigt die **Server**-Version, und in der Desktop-App die **App**-Version. Wenn ein Update verfügbar ist, wähle **Aktualisieren**, um es zu installieren, oder **Verwalten**, um eine bestimmte Version zu wählen, auch Vorabversionen. Siehe [Aktualisieren](/de/install/updating), wie Updates plattformübergreifend funktionieren.
+Sie zeigt die **Server**-Version, und in der Desktop- und der mobilen App die **App**-Version. Wenn ein Update verfügbar ist, wähle **Aktualisieren**, um es zu installieren, oder **Verwalten**, um eine bestimmte Version zu wählen. Vorabversionen erscheinen in dieser Liste nur, wenn **Beta-Updates** aktiv ist, der Schalter oben auf der Seite. Siehe [Aktualisieren](/de/install/updating), wie Updates plattformübergreifend funktionieren.
 
 ## Server-Aktionen
 
@@ -18,5 +18,5 @@ Sie zeigt die **Server**-Version, und in der Desktop-App die **App**-Version. We
 Der Server bietet außerdem einen **Zertifikat**-Download für sein HTTPS.
 
 ::: tip
-Suchst du den Servernamen oder die Netzwerk-Adressen? Die liegen unter [Remote-Zugriff](/de/remote/). Thema und Sprache liegen unter **Erscheinungsbild**.
+Suchst du den Servernamen oder die Netzwerk-Adressen? Die liegen unter [Remote-Zugriff](/de/remote/). Design und Sprache liegen unter **Erscheinungsbild**.
 :::

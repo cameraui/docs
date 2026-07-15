@@ -4,7 +4,7 @@ title: Sensors & accessories
 
 # Sensors & accessories
 
-A **sensor** is any non-video capability attached to a camera: a detection, an environmental reading, or a controllable accessory. Sensors come from [plugins](/plugins/), and one camera can carry sensors from several plugins at once.
+A **sensor** is any non-video capability attached to a camera: a detection, an environmental reading, or a controllable accessory. Most sensors come from [plugins](/plugins/), and one camera can carry sensors from several plugins at once. The exception is virtual sensors, which you create yourself.
 
 ## Types of sensor
 
@@ -15,7 +15,9 @@ A **sensor** is any non-video capability attached to a camera: a detection, an e
 
 ## Setting up and using sensors
 
-Sensors are provided by plugins and enabled per camera. See **[Set up sensors](/sensors/setup)** to add them to a camera, and **[Controls & states](/sensors/controls)** to read their state and operate accessories.
+Most sensors are provided by plugins and enabled per camera. See **[Set up sensors](/sensors/setup)** to add them to a camera, and **[Controls & states](/sensors/controls)** to read their state and operate accessories.
+
+Virtual sensors are the exception: you create them yourself, no plugin involved. See **[Virtual sensors](/sensors/virtual)**.
 
 ## In automations
 

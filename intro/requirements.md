@@ -49,7 +49,7 @@ On Linux, pick the [Docker flavor](/install/docker) that matches your GPU. On ma
 
 Use a **dedicated local disk** for recordings, separate from the system disk and not a network share (NAS). Continuous recording writes constantly, and a local disk is far more reliable and responsive for it.
 
-camera.ui shows each camera's recording bandwidth (MB per hour) and lets you cap usage with a **storage quota** and a **retention** window, so storage never fills up unexpectedly.
+camera.ui shows each camera's recording rate per day and lets you cap usage with the **Quota** and **Retention** settings, so storage never fills up unexpectedly.
 
 ## Desktop app
 

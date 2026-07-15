@@ -20,8 +20,7 @@ flowchart LR
     direction TB
     g[Streaming-Engine] --> fw[Frame-Worker<br/>einer pro Kamera]
     fw --> det[Erkennung<br/>Bewegung → Objekt → Gesicht · Kennzeichen · Audio]
-    det --> nvr[(NVR-Plugin<br/>Aufnahmen + Speicher)]
-    det --> notif[Notifier<br/>Push · E-Mail]
+    det --> nvr[(NVR-Plugin<br/>Aufnahmen + Push)]
     g --> api[Web-UI + API]
     nvr --> api
   end
@@ -50,7 +49,7 @@ Plugins liefern:
 
 - **Kamera-Quellen.** ONVIF und weitere Kamera-Protokolle.
 - **Detektoren.** Bewegungs-Engines und die KI-Backends (CoreML, ONNX, OpenVINO, NCNN, Coral, Hailo).
-- **Benachrichtigungen.** Der Notifier.
+- **Aufnahme & Benachrichtigungen.** Das NVR-Plugin nimmt dein Material auf und sendet Push-Benachrichtigungen.
 - **Smart-Home-Bridges.** Apple HomeKit.
 
 Mehr dazu unter [Plugins](/de/plugins/).
@@ -59,13 +58,14 @@ Mehr dazu unter [Plugins](/de/plugins/).
 
 Du nutzt camera.ui überall über dieselbe Oberfläche, aber die Apps spielen nicht alle dieselbe Rolle:
 
-- Die **[Desktop-App](/de/install/desktop)** kann der **Server selbst** sein (sie betreibt camera.ui auf deiner Maschine, das einfachste All-in-One-Setup) oder ein **Viewer**, der sich mit einem anderen Server verbindet. Du wählst das beim ersten Start und kannst jederzeit wechseln.
+- Die **[Desktop-App](/de/install/desktop)** kann der **Server selbst** sein (sie betreibt camera.ui auf deiner Maschine, das einfachste All-in-One-Setup), ein **Viewer**, der sich mit einem anderen Server verbindet, oder ein **Worker**, der einen anderen Server beim Dekodieren, bei der Erkennung oder mit einem Plugin unterstützt. Du wählst das beim ersten Start und kannst jederzeit wechseln. Zur Einrichtung als Worker siehe [Über mehrere Maschinen skalieren](#uber-mehrere-maschinen-skalieren).
 - Die **[Mobile-Apps](/de/install/mobile)** und der **Browser** sind immer **Viewer**.
 
 Wie Viewer den Server erreichen:
 
 - In deinem Netzwerk verbinden sich Browser und ein Desktop-Viewer **direkt**.
-- Die Mobile-Apps, und jeder Browser außerhalb von zuhause, verbinden sich über **camera.ui Cloud**.[^cloud-optional]
+- Die **Mobile-Apps** verbinden sich immer über **camera.ui Cloud**.[^cloud-optional]
+- Ein Browser außerhalb von zuhause nutzt die [Remote-Zugriff-Option](/de/remote/), die du eingerichtet hast: camera.ui Cloud, einen Cloudflare-Tunnel oder deine eigene Domain.
 
 Du kannst außerdem mehr als einen Server als **Instanz** speichern und in derselben App zwischen ihnen wechseln.
 

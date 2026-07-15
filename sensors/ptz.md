@@ -29,7 +29,12 @@ Configure it in the camera's [settings](/cameras/settings), under **Autotrack**:
 - **Target labels.** Which object types the camera should follow, such as people or vehicles.
 - **Minimum confidence.** Only track detections above this confidence score.
 - **Dead zone.** A central area where a target can move without the camera adjusting, which avoids constant small movements.
+- **Tracking speed.** How aggressively the camera moves to re-center the target. Higher is snappier, lower is smoother.
+- **Motion prediction.** Aims ahead of a moving target by this many detection frames, so the camera keeps pace instead of trailing. Set it to 0 to turn prediction off.
+- **Pan-rate calibration.** Calibrates how far each move step travels on your camera. Lower it if the camera stops short of the target, raise it if it overshoots.
 - **Return to home.** Move the camera back to its home position when no target is seen for a while.
 - **Wait before returning.** How long to wait without a target before returning home.
+
+If you move the camera yourself, with the joystick or your camera's own app, autotrack pauses for 45 seconds so it doesn't fight you. The countdown starts when you stop moving.
 
 <Shot src="/img/sensors/ptz-autotrack.png" alt="PTZ autotrack settings" />

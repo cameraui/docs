@@ -20,8 +20,7 @@ flowchart LR
     direction TB
     g[Streaming engine] --> fw[Frame worker<br/>one per camera]
     fw --> det[Detection<br/>motion → object → face · plate · audio]
-    det --> nvr[(NVR plugin<br/>recordings + storage)]
-    det --> notif[Notifier<br/>push · email]
+    det --> nvr[(NVR plugin<br/>recordings + push)]
     g --> api[Web UI + API]
     nvr --> api
   end
@@ -50,7 +49,7 @@ Plugins provide:
 
 - **Camera sources.** ONVIF and other camera protocols.
 - **Detectors.** Motion engines and the AI backends (CoreML, ONNX, OpenVINO, NCNN, Coral, Hailo).
-- **Notifications.** The notifier.
+- **Recording & notifications.** The NVR plugin records your footage and sends push notifications.
 - **Smart-home bridges.** Apple HomeKit.
 
 Learn more under [Plugins](/plugins/).
@@ -59,13 +58,14 @@ Learn more under [Plugins](/plugins/).
 
 You use camera.ui through the same interface everywhere, but the apps don't all play the same role:
 
-- The **[desktop app](/install/desktop)** can be the **server itself** (running camera.ui on your machine, the simplest all-in-one setup), or a **viewer** that connects to another server. You choose on first launch, and can switch anytime.
+- The **[desktop app](/install/desktop)** can be the **server itself** (running camera.ui on your machine, the simplest all-in-one setup), a **viewer** that connects to another server, or a **worker** that helps another server with decoding, detection, or a plugin. You choose on first launch, and can switch anytime. For worker setup, see [Scaling across machines](#scaling-across-machines).
 - The **[mobile apps](/install/mobile)** and the **browser** are always **viewers**.
 
 How viewers reach the server:
 
 - On your network, the browser and a desktop viewer connect **directly**.
-- The mobile apps, and any browser away from home, connect through **camera.ui Cloud**.[^cloud-optional]
+- The **mobile apps** always connect through **camera.ui Cloud**.[^cloud-optional]
+- A browser away from home uses whichever [remote access](/remote/) option you set up: camera.ui Cloud, a Cloudflare tunnel, or your own domain.
 
 You can also save more than one server as an **Instance** and switch between them from the same app.
 

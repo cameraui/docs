@@ -22,6 +22,13 @@ Open **Plugins** from the menu to see everything installed, each as a card with 
 - **Open its settings**, or view its **logs** if something's wrong.
 - **Uninstall** it, optionally removing its stored data.
 
+Recordings are the exception: if you delete a recording plugin's stored data, its footage is kept.
+
+The gear button next to the search bar holds two settings, both off by default:
+
+- **Beta versions.** Shows pre-release versions in the version picker and offers beta releases as updates.
+- **Allow plugin build scripts.** Lets plugins run install scripts and native builds while installing or updating. Only turn this on for plugins you trust.
+
 Plugins run as their own process, so one misbehaving plugin won't take down the rest. They can be written in Node, Python, or Go; a small badge on each card shows which.
 
 ## Installing a plugin

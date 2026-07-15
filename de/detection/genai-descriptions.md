@@ -10,12 +10,12 @@ camera.ui kann ein generatives KI-Modell nutzen, um eine kurze, gut lesbare Zusa
 
 ## Einen Anbieter wählen
 
-Aktiviere in den [NVR-Einstellungen](/de/recording/) die **KI-Beschreibungen** und wähle einen Anbieter:
+Öffne in den [NVR-Einstellungen](/de/recording/) den Tab **GenAI**, aktiviere **Enabled** und wähle einen Anbieter:
 
 - **Ollama.** Führt ein Modell lokal auf deiner eigenen Hardware aus. Setze die **API Base URL** (zum Beispiel `http://localhost:11434`).
 - **OpenAI** oder **Gemini.** Nutzt ein Cloud-Modell. Setze deinen **API Key**.
 
-Dann legst du das **Modell** fest (etwa `llava`, `gpt-4o` oder `gemini-2.5-flash`), eine optionale **Description Language** und wie viele Bilder pro Ereignis gesendet werden. **Verbindung testen** prüft, ob es funktioniert. Aktiviere es pro Kamera mit dem **KI-Beschreibungen**-Schalter der Kamera.
+Dann legst du das **Modell** fest (etwa `llava`, `gpt-4o` oder `gemini-2.5-flash`), eine optionale **Description Language** und wie viele Bilder pro Ereignis gesendet werden. **Request Timeout** legt fest, wie lange camera.ui auf den Anbieter wartet, standardmäßig 60 Sekunden; lokale Ollama-Modelle brauchen oft mehr. **Test Connection** prüft, ob es funktioniert. Aktiviere es pro Kamera mit dem **KI-Beschreibungen**-Schalter der Kamera.
 
 ## Datenschutz
 

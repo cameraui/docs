@@ -16,11 +16,17 @@ To turn it on, choose **Set up 2FA**, scan the QR code with your app (or enter t
 
 Once enabled, you can **regenerate backup codes** or **disable 2FA**, both of which ask for a current code.
 
+### Remote instances
+
+If the account on a remote [instance](/admin/instances-workers#instances) has 2FA enabled, camera.ui asks for the 6-digit code when you add that instance, change its credentials, or switch to it. Only the code from your authenticator app works here, backup codes aren't accepted. A wrong code just asks again.
+
+If you cancel while adding or editing, the instance is still saved, but its card shows **Two-factor confirmation pending**. Pick **Enter code** on the card to finish. Cancelling during a switch only stops the switch.
+
 ## Biometric login (mobile app)
 
-On a phone or tablet with Face ID or Touch ID, the app offers to save your credentials in the device's secure storage the first time you sign in successfully. Accept the prompt to turn it on, or do it later under **Settings → Account** with the **Use Face ID / Touch ID** switch.
+On a phone or tablet with Face ID or Touch ID, the app offers to save your credentials in the device's secure storage the first time you sign in successfully. Choose **Enable** to turn it on. If you pick **Not now**, the app won't ask again for that server.
 
-Once enabled, a **Sign in with Face ID** button appears on the login screen, so you no longer need to type your password on that device. Turning the switch off removes the saved credentials; you can turn it back on the next time you sign in.
+Once enabled, a **Sign in with Face ID** button appears on the login screen, so you no longer need to type your password on that device. The **Use Face ID / Touch ID** switch under **Settings → Account** only turns biometric login off: it removes the saved credentials, and the app offers to save them again the next time you sign in.
 
 ## Active sessions
 

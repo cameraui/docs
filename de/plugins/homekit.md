@@ -19,18 +19,20 @@ Einmal hinzugefügt, streamt die Kamera in Home und unterstützt **HomeKit Secur
 
 ## Schnelles Streaming
 
-Eine Kamera in Home zu öffnen geht nahezu sofort und dauert nur wenige Millisekunden, egal ob die Kamera H.264 oder H.265 nutzt. Das setzt voraus, dass die Quelle bereitgehalten wird, aktiviere also [Hot Modus und Vorladen](/de/cameras/add-camera#performance-optionen) an den Kameras, die du bridgest.
+Eine Kamera in Home zu öffnen geht nahezu sofort und dauert nur wenige Millisekunden, egal ob die Kamera H.264 oder H.265 nutzt. Das setzt voraus, dass die Quelle bereitgehalten wird, aktiviere also [Hot Modus und Vorladen](/de/cameras/add-camera#quellen-optionen) an den Kameras, die du bridgest.
 
 ## Einstellungen
 
 Die HomeKit-Einstellungen jeder Kamera umfassen:
 
 - **QR-Code und PIN.** Die Kopplungs-Details dieser Kamera.
-- **Hardware-Beschleunigung und Transcoding.** Justieren, wie der Stream für Home aufbereitet wird.
-- **Port und mDNS-Advertiser.** Erweiterte Netzwerk-Optionen; die Standardwerte passen meist.
-- **Kopplung zurücksetzen.** Einen neuen Code erzeugen und die Kamera neu hinzufügen, falls die Kopplung bricht.
+- **Use Hardware Acceleration.** Nutzt die GPU für HomeKit Secure Video Aufnahmen, sofern eine vorhanden ist. Standardmäßig an.
+- **Adaptive Stream Source.** Standardmäßig an. Wenn du unterwegs bist und die Verbindung langsam ist, wählt camera.ui die Quelle passend zur Größe, die Home anfragt: hohe, mittlere oder niedrige Auflösung. Schalte es aus, um immer die primäre Quelle zu nutzen.
+- **Port und mDNS advertiser.** Erweiterte Netzwerk-Optionen; die Standardwerte passen meist.
+- **Reset Pairing.** Einen neuen Code erzeugen und die Kamera neu hinzufügen, falls die Kopplung bricht.
 
 ## Gut zu wissen
 
 - Jede Kamera ist ihr eigenes HomeKit-Zubehör, nicht eine geteilte Bridge, daher fügst du sie einzeln hinzu.
-- Die nach Home übernommenen Sensoren sind die der Kamera zugewiesenen: Bewegung, Türklingel, Batterie, Licht, Kontakt, Sirene, Alarmanlage, Schalter und Audio.
+- Kameras mit Zwei-Wege-Audio kannst du aus der Home-App ansprechen.
+- Die nach Home übernommenen Sensoren sind die der Kamera zugewiesenen: Bewegung, Türklingel, Batterie, Licht, Kontakt, Sirene, Alarmanlage und Schalter.

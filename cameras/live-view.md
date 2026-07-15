@@ -11,7 +11,7 @@ Open any camera to watch it live.
 ## Player controls
 
 - **Play / pause** the live stream.
-- **Volume / mute** for cameras with audio.
+- **Mute / unmute** for cameras with audio.
 - **Two-way talk** to speak through the camera (see below).
 - **Fullscreen** and **Picture-in-Picture** to pop the video into a floating window.
 - **Digital zoom** by scrolling or pinching, up to 5×, with a minimap. Drag to pan when zoomed in.
@@ -24,20 +24,25 @@ When you review recordings, the player also offers rewind, fast-forward, and pla
 
 The **Intercom** button sends audio from your device's microphone to the camera's speaker, so you can talk through a doorbell or camera. It is available on cameras that support two-way audio, and your browser or the app asks for microphone access the first time.
 
+## Second stream overlay
+
+Give a source a **PiP Source** in the camera [settings](/cameras/settings) (Sources tab) and the player gets a **Toggle PiP** button. It shows that second stream as a small overlay on the video. Click the overlay to swap the two streams.
+
 ## Streaming modes
 
-camera.ui can stream live video in a few ways. You set the default per camera in its [settings](/cameras/settings), and can switch on the fly from the player:
+camera.ui can stream live video in a few ways. You set the mode per camera in its [settings](/cameras/settings). The player also has a button to switch between WebRTC and MSE while you watch.
 
 - **Auto** picks the best mode for your device and network, and is the simplest choice.
 - **WebRTC** gives the lowest latency.
 - **MSE** is a broadly compatible fallback.
+- **webrtc/tcp** sends WebRTC over TCP only. Pick it in the camera settings if some networks block the ports WebRTC normally uses. It is not available from the player button.
 
 ## Activity mode: Always On and Standby
 
 Each camera has an **Activity mode** that controls when its stream runs, balancing responsiveness against resource use:
 
 - **Always On** keeps the stream live at all times, for instant viewing.
-- **Standby** pauses the stream after a short idle and resumes it when you open the camera. A paused camera shows "Stream paused to conserve resources."
+- **Standby** starts the stream when you open the camera and stops it again a few seconds later. The player then shows "Stream paused to conserve resources. Click on stream to resume." Click the video to watch again.
 - **Activity** keeps the stream running while there is activity and lets it rest otherwise.
 
 ## Shortcuts
@@ -46,7 +51,7 @@ Each camera has an **Activity mode** that controls when its stream runs, balanci
 
 ## More options
 
-The options menu (the dots) gives quick access to a camera's **Detections**, **Zones**, **Heatmap**, and **AI descriptions**, plus **Export**. A **PTZ** button appears on cameras that support pan, tilt, and zoom. See [PTZ & autotrack](/sensors/ptz) and [Detection & AI](/detection/).
+The options menu (the dots) toggles **Zones**, **Heatmap** and **Edit Shortcuts**, plus **Detections** on cameras that run motion or object detection. **AI descriptions** appears when the NVR plugin is installed. **Export** appears once the timeline is open, and saves the range you trim there. A **PTZ** button appears on cameras that support pan, tilt, and zoom. See [PTZ & autotrack](/sensors/ptz) and [Detection & AI](/detection/).
 
 ## The camera page
 

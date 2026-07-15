@@ -11,11 +11,13 @@ Der Server ist der wichtigste Teil, den du aktuell halten solltest. Wie du ihn a
 
 ## Beta-Updates
 
-Willst du Vorabversionen früh ausprobieren? Öffne unter **Einstellungen → [System](/de/admin/system)** den Punkt **Verwalten** und wähle eine Version zum Installieren, auch Vorabversionen. In den Mobile-Apps kannst du stattdessen **Beta-Updates** aktivieren, um sie automatisch zu erhalten. Vorabversionen können weniger stabil sein, nutze das also nur, wenn du beim Testen helfen willst.
+Um Vorabversionen früh auszuprobieren, aktiviere unter **Einstellungen → [System](/de/admin/system)** die Option **Beta-Updates**. Der Server bietet dann Vorabversionen an, und unter **Verwalten** werden sie aufgelistet, sodass du eine bestimmte auswählen kannst. In der mobilen App schaltet derselbe Schalter zusätzlich die Beta-Over-the-Air-Updates der Oberfläche ein. Vorabversionen können weniger stabil sein, nutze das also nur, wenn du beim Testen helfen willst.[^beta-desktop]
+
+[^beta-desktop]: Die Desktop-App zeigt den Schalter nicht, weil sie den Server zusammen mit der App aktualisiert.
 
 ## Die Desktop-App aktualisieren
 
-Die [Desktop-App](/de/install/desktop) hält sich selbst aktuell. Sie prüft beim Start und regelmäßig im Betrieb, lädt Updates dann von selbst herunter und installiert sie. Da der Server-Modus auch den gebündelten Server aktualisiert, bleiben App und Server synchron.
+Die [Desktop-App](/de/install/desktop) hält sich selbst aktuell. Beim Start installiert sie Updates von selbst. Im laufenden Betrieb prüft sie weiter, und wenn eine neue Version gefunden wird, meldet sie das und zeigt unter **Einstellungen → [System](/de/admin/system)** einen **Aktualisieren**-Button. Das Update wird installiert, sobald du ihn auswählst, oder beim nächsten Start. Da der Server-Modus auch den gebündelten Server aktualisiert, bleiben App und Server synchron.
 
 Eine Ausnahme unter Linux: Nur die `.AppImage` aktualisiert sich selbst. Wenn du die `.deb` installiert hast, aktualisiere, indem du die neue `.deb` von der [Download-Seite](https://cameraui.com) herunterlädst und installierst.
 

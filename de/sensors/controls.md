@@ -16,9 +16,9 @@ Sobald eine Kamera [eingerichtete Sensoren](/de/sensors/setup) hat, siehst du ih
 Diese zeigen ihren aktuellen Status, werden aber nicht bedient:
 
 - **Kontakt.** Offen oder geschlossen, für eine Tür oder ein Fenster.
-- **Temperatur** und **Luftfeuchte.** Der aktuelle Wert.
-- **Anwesenheit.** Belegt oder leer.
-- **Rauch** und **Leck.** Klar oder ausgelöst.
+- **Temperatur** und **Feuchtigkeit.** Der aktuelle Wert.
+- **Belegung.** Belegt oder leer.
+- **Rauchmelder** und **Wassersensor.** Klar oder ausgelöst.
 - **Batterie.** Ladestand und Laden.
 
 ## Steuerbares Zubehör
@@ -31,8 +31,8 @@ Dieses kannst du bedienen (nur Admin):
 - **Schalter.** An oder aus.
 - **Schloss.** Ver- oder entriegeln.
 - **Sirene.** An oder aus, und Lautstärke, wo unterstützt.
-- **Garage.** Öffnen oder schließen.
+- **Garagentor.** Öffnen oder schließen.
 - **Türklingel.** Ein Läuten auslösen.
-- **Alarmanlage.** Einen Zustand wählen: unscharf, Stay Arm, Away Arm oder Night Arm.
+- **Alarmanlage.** Einen Modus wählen: Aus, Zuhause, Abwesend oder Nacht. Wenn der Alarm ausgelöst wird, zeigt das Element einen Alarmhinweis und die Modi bleiben gesperrt, solange er aktiv ist.
 
 PTZ-Kameras haben ihre eigene [Steuerung und Autotrack](/de/sensors/ptz).

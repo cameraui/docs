@@ -8,11 +8,15 @@ You can back up your camera.ui setup and restore it later, on any platform. It's
 
 ## Creating a backup
 
-Choose **Download backup archive** to save a single archive of your camera.ui configuration, database, and user accounts. Keep it somewhere safe.[^ignore]
+Choose **Download backup archive** to save a single archive of your camera.ui storage directory: configuration, database, user accounts, and media. Keep it somewhere safe.[^ignore]
 
 ## Restoring
 
-Upload an archive and choose **Restore backup archive**. camera.ui restores your setup and then restarts to apply it. This replaces the current configuration, so be sure you want to roll back to the archive's state.
+Upload an archive and choose **Restore backup archive**, then confirm with **Restore and restart**. This replaces the current configuration, so be sure you want to roll back to the archive's state.
+
+A **Restoring backup** overlay covers the screen while it works and walks through three steps: uploading the archive (with a progress bar), restoring, and restarting the server. Leave the window open until it's done. camera.ui logs you out at the end, so sign in again once the server is back.
+
+Archives larger than 200 MB are rejected on upload. If yours is too big, exclude media folders from the backup and create a new one.[^ignore]
 
 ## Scheduled backups
 

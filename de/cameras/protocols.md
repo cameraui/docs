@@ -1,6 +1,8 @@
 # Verbindungs-Protokolle
 
-Wenn du eine [Kamera manuell hinzufügst](/de/cameras/add-camera#eine-kamera-manuell-hinzufugen), beginnt jede Stream-URL mit einem **Protokoll**, das camera.ui sagt, wie es sich verbindet. RTSP ist die Vorgabe und funktioniert mit nahezu jeder IP-Kamera. Im Hinzufügen-Dialog öffnet die **(i)**-Schaltfläche neben dem Protokollfeld eine Hilfe zum gewählten Protokoll, mit URL-Formaten und Beispielen.
+Wenn du eine [Kamera manuell hinzufügst](/de/cameras/add-camera#eine-kamera-manuell-hinzufugen), beginnt jede Stream-URL mit einem **Protokoll**, das camera.ui sagt, wie es sich verbindet. RTSP ist die Vorgabe und funktioniert mit nahezu jeder IP-Kamera. Im Hinzufügen-Dialog fügst du die komplette Stream-URL ein. camera.ui liest das Protokoll aus der URL und zeigt es unter dem Feld als erkanntes Protokoll an. Die **(i)**-Schaltfläche neben dem URL-Feld öffnet die Hilfe zu diesem Protokoll, mit URL-Formaten und Beispielen.
+
+Eine Stream-URL muss mit einem Protokoll beginnen, das camera.ui unterstützt. Sonst lässt sich die Quelle nicht speichern und das Feld meldet, dass das Protokoll nicht unterstützt wird. Die **(i)**-Hilfe steht erst zur Verfügung, wenn camera.ui das eingegebene Protokoll erkennt, damit lässt sich eine URL schnell prüfen.
 
 ## RTSP (empfohlen)
 
@@ -30,7 +32,7 @@ Der Pfad nach der Adresse ist kameraspezifisch, schau also im Handbuch oder der 
 
 ## Marken- und Smart-Home-Integrationen
 
-Die Protokoll-Auswahl enthält außerdem marken- und app-spezifische Optionen wie **Tapo**, **Kasa**, **Doorbird**, **GoPro**, **Home Assistant**, **HomeKit**, **Ring**, **Nest**, **Wyze** und **Tuya**. Viele davon hängen von einer Hersteller-Cloud ab.[^cloud] Nutze die **(i)**-Hilfe für die genaue Einrichtung jedes Protokolls.
+camera.ui erkennt außerdem marken- und app-spezifische URLs wie **Tapo**, **Kasa**, **Doorbird**, **GoPro**, **Home Assistant**, **HomeKit**, **Ring**, **Nest**, **Wyze** und **Tuya**. Viele davon hängen von einer Hersteller-Cloud ab.[^cloud] Füge die URL ein und nutze die **(i)**-Hilfe für die genaue Einrichtung jedes Protokolls.
 
 ## Tipps
 

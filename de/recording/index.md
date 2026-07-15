@@ -16,9 +16,11 @@ Abos sind noch nicht käuflich. Um Aufnahmen zu testen, erstelle dein camera.ui-
 
 Aufnahmen kommen vom **camera.ui NVR**-Plugin (standardmäßig installiert) und laufen über ein Abo, das an dein camera.ui-Konto gebunden ist. So schaltest du sie frei:
 
-1. Wähle in **Einstellungen → Remote** den Button **Server registrieren** und melde dich mit deinem camera.ui-Konto an. Das verknüpft den Server mit deinem Konto; den Remote-Cloud-Zugriff musst du dafür nicht aktivieren.
+1. Wähle in **Einstellungen → Remote Zugriff** den Button **Server registrieren** und melde dich mit deinem camera.ui-Konto an. Das verknüpft den Server mit deinem Konto; den Remote-Cloud-Zugriff musst du dafür nicht aktivieren.
 2. Öffne **Einstellungen → Aufnahmen** und klicke in der Karte **Lizenz & Cloud** auf das **Cloud-Icon** und melde dich an. Grau heißt nicht verbunden, grün heißt verbunden.
 3. Deine Lizenz aktiviert sich dann automatisch. Aktualisiert sich der Status nicht, nutze den **Refetch License**-Button.
+
+Sobald die Lizenz aktiv ist, nehmen neu hinzugefügte Kameras von selbst auf, solange dein Abo noch einen freien Kamera-Slot hat. Eine neue Kamera nimmt durchgehend in allen Stream-Qualitäten auf. Du kannst den Modus ändern, auswählen, welche Qualitäten aufgenommen werden, oder die Aufnahme in den Aufnahme-Einstellungen der Kamera ausschalten.
 
 ## Aufnahme-Modi
 
@@ -32,7 +34,7 @@ Jede Kamera nimmt in einem von drei Modi auf, einstellbar in ihren Aufnahme-Eins
 
 ## Qualität
 
-Du wählst, welche Stream-Qualitäten aufgenommen werden, **hoch**, **mittel** oder **niedrig**, und kannst mehrere behalten. Auch einen niedrig aufgelösten Stream aufzunehmen macht das Scrubben der [Timeline](/de/recording/timeline-playback) schnell und flüssig.
+Du wählst, welche Stream-Qualitäten aufgenommen werden, **high**, **mid** oder **low**, und kannst mehrere behalten. Auch einen niedrig aufgelösten Stream aufzunehmen macht das Scrubben der [Timeline](/de/recording/timeline-playback) schnell und flüssig.
 
 ## Weiter
 

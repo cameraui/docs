@@ -13,10 +13,11 @@ Die **Aufnahmen**-Ansicht ist der Ort, an dem du vergangene Ereignisse über dei
 Grenze die Liste auf genau das ein, was du suchst:
 
 - **Kamera und Zeitraum.**
-- **Objekttyp.** Person, Fahrzeug oder Tier.
-- **Trigger.** Bewegung, eine Türklingel, ein Sensor oder ein Alarmgeräusch.
+- **Nur mit Aufnahme.** Standardmäßig an. Schalte es aus, um auch Ereignisse zu sehen, bei denen ein Trigger ausgelöst hat, aber nichts aufgenommen wurde. Diese Ereignisse lassen sich nicht herunterladen oder abspielen.
+- **Labels.** Person, Fahrzeug, Tier, Paket oder Sonstige.
+- **Auslöser.** Bewegung, eine Türklingel, ein Sensor oder ein Alarmgeräusch.
 - **Attribute.** Ereignisse, die ein Gesicht oder ein Kennzeichen enthalten.
-- **Confidence.** Erkennungen mit niedriger Confidence ausblenden.
+- **Konfidenz.** Erkennungen mit niedriger Konfidenz ausblenden.
 - **Rastersuche.** Ist genau eine Kamera ausgewählt, kannst du einen Bereich auf ihrem Snapshot markieren, um nur Ereignisse anzuzeigen, die in diesem Teil des Bildes erkannt wurden.
 
 Du kannst außerdem per Text über erkannte Labels, Gesichter und Kennzeichen suchen.

@@ -19,7 +19,7 @@ camera.ui accelerates two things: the **video pipeline** (decoding camera stream
 
 The table shows what camera.ui **can** use. The matching GPU driver still has to be installed on the host. camera.ui probes every backend at startup and only picks ones that actually work; anything whose driver is missing is skipped silently, never an error.
 
-On the **desktop app** there is nothing to set up: macOS ships video acceleration as part of the OS, and on Windows the graphics driver comes with the system. Hardware is detected automatically, and the detection plugins log what they found (`Available devices: …`) and what each model runs on.
+On the **desktop app** there is nothing to set up: macOS ships video acceleration as part of the OS, and on Windows the graphics driver comes with the system. Hardware is detected automatically. Each detection plugin logs what every model runs on (`Loaded model: …`) and shows it under **Active Hardware** in its plugin settings.
 
 The rest of this page is for **Linux and Docker**, where hardware has to cross the container boundary. That always takes the same three steps:
 

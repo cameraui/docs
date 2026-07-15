@@ -20,7 +20,8 @@ Für Admins verfügbar:
 
 - **Benutzer.** Konten und Rollen. Siehe [Benutzer](/de/admin/users).
 - **Aufnahmen.** Aufnahme- und Speicher-Optionen. Siehe [Aufnahmen](/de/recording/).
-- **Remote Access.** Den Server von außen erreichen. Siehe [Remote-Zugriff](/de/remote/).
+- **Remote Zugriff.** Den Server von außen erreichen. Siehe [Remote-Zugriff](/de/remote/).
+- **MQTT.** Verbinde camera.ui mit einem MQTT-Broker.
 - **Backup.** Dein Setup sichern und wiederherstellen, sowie wiederkehrende Backups planen. Siehe [Backup](/de/admin/backup).
 - **System.** Version, Updates und Server-Aktionen. Siehe [System](/de/admin/system).
 

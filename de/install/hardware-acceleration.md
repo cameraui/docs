@@ -19,7 +19,7 @@ camera.ui beschleunigt zwei Dinge: die **Video-Pipeline** (Dekodieren der Kamera
 
 Die Tabelle zeigt, was camera.ui nutzen **kann**. Der passende GPU-Treiber muss trotzdem auf dem Host installiert sein. camera.ui probiert beim Start jedes Backend aus und wählt nur, was wirklich funktioniert; alles, dessen Treiber fehlt, wird still übersprungen und erzeugt nie einen Fehler.
 
-Auf der **Desktop-App** gibt es nichts einzurichten: macOS bringt die Video-Beschleunigung als Teil des Betriebssystems mit, und unter Windows kommt der Grafiktreiber mit dem System. Die Hardware wird automatisch erkannt, und die Erkennungs-Plugins loggen, was sie gefunden haben (`Available devices: …`) und worauf jedes Modell läuft.
+Auf der **Desktop-App** gibt es nichts einzurichten: macOS bringt die Video-Beschleunigung als Teil des Betriebssystems mit, und unter Windows kommt der Grafiktreiber mit dem System. Die Hardware wird automatisch erkannt. Jedes Erkennungs-Plugin loggt, worauf jedes Modell läuft (`Loaded model: …`), und zeigt es unter **Active Hardware** in seinen Plugin-Einstellungen.
 
 Der Rest dieser Seite ist für **Linux und Docker**, wo Hardware die Container-Grenze überwinden muss. Das sind immer dieselben drei Schritte:
 

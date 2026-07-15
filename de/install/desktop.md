@@ -4,7 +4,7 @@ Die Desktop-App ist die empfohlene Art, camera.ui auf **macOS und Windows** zu b
 
 ## Download
 
-Lade den Installer für deine Plattform herunter — direkt hier, oder von der [Download-Seite](https://cameraui.com/#download). Die Links zeigen immer auf das neueste Release.
+Lade den Installer für deine Plattform herunter, direkt hier oder von der [Download-Seite](https://cameraui.com/#download). Die Links zeigen immer auf das neueste Release.
 
 | Plattform | Download |
 |---|---|
@@ -46,24 +46,38 @@ chmod +x camera.ui-*.AppImage
 ```
 
 ::: tip Nimm die `.AppImage`, wenn du automatische Updates willst
-Nur die `.AppImage` aktualisiert sich selbst. Eine `.deb`-Installation bleibt auf ihrer Version — aktualisiere sie, indem du die neue `.deb` herunterlädst und installierst.
+Nur die `.AppImage` aktualisiert sich selbst. Eine `.deb`-Installation bleibt auf ihrer Version. Aktualisiere sie, indem du die neue `.deb` herunterlädst und installierst.
 :::
 
 ## Erster Start: wählen, wie es läuft
 
-Beim ersten Öffnen fragt die App **„Wie soll camera.ui laufen?"** und bietet drei Modi:
+Beim ersten Öffnen fragt die App **„Wie soll camera.ui laufen?"** und bietet vier Modi:
 
 - **Server.** Betreibt den camera.ui-Server auf diesem Gerät. Das ist die All-in-One-Option und das, was die meisten auf macOS und Windows wählen.
+- **Worker.** Übernimmt einen Teil der Arbeit für einen anderen camera.ui-Server in deinem Netzwerk. Gib die Adresse des Hauptservers und einen Pairing-Code aus dessen **Workers**-Einstellungen ein. Siehe [Instanzen & Worker](/de/admin/instances-workers).
 - **Viewer · Direkt.** Verbindet sich per Adresse mit einem vorhandenen Server, zum Beispiel einer anderen Maschine in deinem Netzwerk.
 - **Viewer · Cloud.** Meldet sich über cloud.cameraui.com an, um einen Server über [camera.ui Cloud](/de/remote/cloud) zu erreichen.
 
 <Shot src="/img/install/desktop-mode-picker.png" alt="Erststart-Modus-Auswahl der Desktop-App" />
 
-Im **Server**-Modus startet die App den Server, öffnet die Oberfläche und führt dich durch die [Ersteinrichtung](/de/intro/getting-started). In einem **Viewer**-Modus verbindet sie sich mit einem Server, den du bereits hast.
+Im **Server**-Modus startet die App den Server, öffnet die Oberfläche und führt dich durch die [Ersteinrichtung](/de/intro/getting-started). In einem **Viewer**-Modus verbindet sie sich mit einem Server, den du bereits hast. Im **Worker**-Modus gibt es kein Fenster, nur das Tray-Symbol und eine Statusanzeige.
 
-Du kannst das jederzeit über das Tray-Symbol ändern (**Modus wechseln…**), ohne neu zu installieren.
+## Das Tray-Symbol
+
+Im Tray-Symbol stecken die Einstellungen der App selbst:
+
+- **Öffnen.** Holt das Fenster zurück.
+- **Beim Anmelden öffnen.** Startet camera.ui, sobald du dich anmeldest. Es landet direkt im Tray: kein Fenster, kein Splash. Öffne es bei Bedarf über das Tray-Symbol.[^autostart]
+- **In den Tray schließen.** Standardmäßig aus. Schaltest du es ein, wird das Fenster beim Schließen nur versteckt, ein Server auf diesem Gerät läuft also weiter.[^closetotray]
+- **Modus wechseln….** Ändert, wie die App läuft, ohne Neuinstallation.
+- **Beenden.** Stoppt die App, im Server-Modus auch den Server.
+
+Unter Windows öffnet ein Linksklick auf das Tray-Symbol das Fenster, ein Rechtsklick das Menü.
 
 <Shot src="/img/install/desktop-tray-menu.png" alt="Tray-Menü der Desktop-App" />
+
+[^autostart]: Nur macOS und Windows.
+[^closetotray]: Nur Windows und Linux. Unter macOS bleibt die App beim Schließen des Fensters ohnehin im Tray, daher gibt es die Option dort nicht.
 
 
 ## macOS-Berechtigungen
@@ -73,6 +87,8 @@ Auf macOS 15 und neuer fragt das System beim ersten Start nach Zugriff auf das *
 ## Updates
 
 Die Desktop-App hält sich selbst aktuell. Sie prüft beim Start und regelmäßig im Betrieb auf Updates und lädt sie dann für dich herunter und installiert sie. Im Server-Modus aktualisiert sie außerdem den gebündelten Server, bevor sie ihn startet, sodass App und Server synchron bleiben.
+
+Eine Ausnahme unter Linux: nur die `.AppImage` aktualisiert sich selbst. Wenn du die `.deb` installiert hast, aktualisiere sie, indem du die neue `.deb` von der [Download-Seite](https://cameraui.com) herunterlädst und installierst.
 
 ## Wo deine Daten liegen
 

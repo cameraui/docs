@@ -11,9 +11,9 @@ The [mobile apps](/install/mobile) connect to your server through camera.ui Clou
 <Shot src="/img/remote/pairing.png" alt="Server pairing QR code and pair code" />
 
 1. Make sure [camera.ui Cloud](/remote/cloud) is enabled on the server.
-2. On the server, open **Settings → Remote** and choose **Register server**. A **QR code**, a **pair code**, and a **pair URL** appear.
-3. In the app, sign in to your camera.ui account, then scan the QR code or enter the pair code. The code is valid for a limited time.
-4. Confirm, and the server appears in your account.
+2. On the server, open **Settings → Remote Access** and choose **Register server**. A **QR code**, a **pair code**, and a **pair URL** appear.
+3. Scan the QR code with your phone's camera, or open the pair URL in a browser. The camera.ui sign-in page opens. Sign in to your camera.ui account. The code is valid for 10 minutes.
+4. Press **Connect**. The server appears in your account.
 
 ## Connecting
 

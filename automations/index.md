@@ -23,8 +23,11 @@ A trigger is what starts a flow. You can use more than one.
 - **Schedule.** A recurring time, set with a cron expression.
 - **System event.** Something in camera.ui itself, such as a camera connecting or disconnecting, or a plugin starting or stopping.
 - **Webhook.** An external service calls a URL to start the flow.
+- **MQTT message.** A message arrives on an MQTT topic. Set the topic (`+` and `#` wildcards work) and choose how to match: any message, an exact payload, or a value at a JSON path like `params.switch:0.output`. Needs the MQTT connection set up in Settings.
 - **Geofence.** A user enters or leaves a location you define.
 - **Manual.** You run the flow yourself with the Run button, useful while building and testing.
+
+Virtual sensors work here too. You create them per camera in camera settings, then set them with a **Control sensor** action and react to them with a **Sensor change** trigger.
 
 ## Conditions
 
@@ -32,7 +35,7 @@ Conditions decide whether a flow continues:
 
 - **If / else.** Branch on a comparison.
 - **Switch.** Branch on several possible values.
-- **Sensor state.** Check one or more sensors, combined with AND or OR.
+- **Sensor state.** Check one or more sensors, combined with AND or OR. Each value can be a fixed value or a variable from an earlier step.
 - **Time.** Only continue within a time-of-day range and on chosen days.
 
 ## Actions
@@ -41,9 +44,10 @@ Actions are what the flow does:
 
 - **Send notification.** Push an alert with a title, message, and severity.
 - **Capture snapshot.** Take a fresh image from a camera.
-- **Control sensor.** Set an accessory, such as turning on a light or locking a door.
+- **Control sensor.** Set an accessory, such as turning on a light or locking a door. Values can be fixed or taken from a variable.
 - **Camera control.** Change a camera setting, like snoozing detection.
 - **HTTP request.** Call an external service.
+- **MQTT publish.** Send a message to an MQTT topic. Set the topic and the payload, and turn on **Retain** if the broker should keep the message for anyone subscribing later. Wildcards aren't allowed in the topic. Needs the MQTT connection set up in Settings.
 - **Plugin call.** Run a detection or analysis plugin on an image.
 - **Set variable** and **delay.** Hold a value, or wait before the next step.
 

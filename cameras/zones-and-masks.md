@@ -4,11 +4,13 @@ title: Zones, masks & lines
 
 # Zones, masks & lines
 
-Zones let you control where detection happens, hide parts of the frame, and detect when something crosses a line. You edit them per camera, and they act on the camera's [detection](/detection/), so it needs detection set up.
+Zones let you control where detection happens, ignore parts of the frame, and detect when something crosses a line. You edit them per camera, and they act on the camera's [detection](/detection/), so it needs detection set up.
 
 ## Opening the editor
 
-Open a camera's [settings](/cameras/settings), go to the **Settings** tab, and select **Edit zones** under **Zones**. The editor opens over the camera image with two tabs: **Zones** and **Lines**.
+Open a camera's [settings](/cameras/settings) and go to the **Settings** tab. Under **Zones** you see the zones and lines already on the camera, each with its colour, name and type (Zone, Privacy mask or Line crossing). The pencil on an entry opens the editor on it, the bin deletes it. With nothing configured yet, you only see "No zones or lines on this camera yet."
+
+Below the list, **Edit zones** opens the editor over the camera image with two tabs: **Zones** and **Lines**.
 
 <Shot src="/img/cameras/zone-editor.png" alt="Zone editor in the Zones tab" />
 
@@ -19,11 +21,15 @@ On the **Zones** tab, draw a polygon by adding points on the image. A zone limit
 - **Include.** Only detections inside the zone trigger.
 - **Exclude.** Detections inside the zone are ignored, for example a busy road or a swaying tree.
 
-You can limit a zone to specific **object types** (its labels), so it reacts only to people or only to vehicles. **Intersect** mode triggers when a detection's box merely overlaps the zone, instead of needing its centre inside.
+You can limit a zone to specific **object types** (its labels), so it reacts only to people or only to vehicles. Careful: object types are collected across all zones of a camera and act as one allow-list. As soon as any zone is limited to vehicles, person detections are dropped on the whole camera, including inside zones that have no object types set. If you only want to limit the area, leave the object types empty on every zone.
+
+A zone also has a match mode. **Contain** is the default: a detection only counts when its whole box is inside the zone. **Intersect** counts it as soon as the box overlaps the zone at all. The mode applies to include and exclude zones alike.
 
 ## Privacy masks
 
-Turn a zone into a **privacy mask** to black out part of the frame. Masked areas are hidden in live view and recordings, which is useful for a neighbour's window or a public sidewalk. A privacy mask only hides; it has no detection settings.
+Turn a zone into a **privacy mask** to ignore an area completely. Detections that sit fully inside the mask are dropped, so they never trigger an event, which is useful for a neighbour's window or a public sidewalk. Something that only partly overlaps the mask still counts. A privacy mask has no detection settings of its own.
+
+A privacy mask does not change the video. The area stays visible in live view and in recordings.
 
 ## Lines (line-crossing)
 

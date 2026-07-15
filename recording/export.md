@@ -16,7 +16,7 @@ On the [timeline](/recording/timeline-playback), drag the trim handles to select
 
 <Shot src="/img/recording/export-recordings.png" alt="The Export recordings dialog" />
 
-In the Recordings view, the download button opens an **Export recordings** dialog for exporting more than one clip at once. Choose one or more cameras, a time range spanning multiple days, a quality (Best quality or Smallest files), and optionally a timelapse interval. camera.ui produces one MP4 file per camera per day (the first and last day cover the selected time range, the days in between are exported in full) and estimates the total size before you export. The files are bundled into a single ZIP download.
+In the Recordings view, the download button opens an **Export recordings** dialog for exporting more than one clip at once. Choose one or more cameras, a time range spanning multiple days, a quality (Best quality or Smallest files), and optionally a timelapse interval. camera.ui produces one MP4 file per camera per day (the first and last day cover the selected time range, the days in between are exported in full) and estimates the total size before you export. If the export produces more than one file, they come as a single ZIP. A single file downloads as a plain MP4.
 
 ## Timelapse
 

@@ -11,7 +11,7 @@ Detection is how camera.ui understands what's in your video: movement, people an
 Detection is layered, so it stays efficient:
 
 1. **Motion** runs continuously and cheaply. It just notices that something changed.
-2. When motion fires, the heavier **AI** wakes up. It runs object detection (people, vehicles, animals), then looks closer at what it found: faces on the people it sees, license plates on the vehicles, and a semantic fingerprint for search. Audio is analysed alongside.
+2. When a trigger fires, the heavier **AI** wakes up. It runs object detection (people, vehicles, animals), then looks closer at what it found: faces on the people it sees, license plates on the vehicles, and a semantic fingerprint for search. Motion is the usual trigger. A detected sound wakes the AI too, and so can another sensor, for example a door contact.
 
 This "cascade" means the demanding AI only runs when there's something to look at, and each step only runs on the objects it applies to, which keeps CPU and GPU use low.
 
@@ -19,8 +19,10 @@ This "cascade" means the demanding AI only runs when there's something to look a
 flowchart LR
   cam[Camera frame] --> motion{Motion?}
   cam -. parallel .-> audio[Audio]
-  motion -- no --> idle[Heavy AI stays idle]
+  sensor[Sensor trigger<br/>e.g. door contact] --> obj
+  motion -- no --> idle[Heavy AI stays idle<br/>unless another trigger fires]
   motion -- yes --> obj[Object detection<br/>person · vehicle · animal]
+  audio -- sound --> obj
   obj -- person --> face[Faces]
   obj -- vehicle --> plate[License plates]
   obj --> clip[CLIP]

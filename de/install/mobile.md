@@ -37,7 +37,7 @@ Aktiviere unter **Einstellungen → Konto** die **Biometrische Anmeldung**, um d
 
 ## App-Sperre
 
-Für eine zusätzliche Ebene auf dem Gerät selbst aktivierst du in den Einstellungen der App die **App-Sperre mit Face ID / Fingerabdruck**. Ist sie aktiv, verlangt die App bei jedem Öffnen eine biometrische Authentifizierung (oder ersatzweise den Geräte-Passcode), sodass jemand mit deinem entsperrten Handy trotzdem nicht deine Kameras sieht. Das ist getrennt von der biometrischen Anmeldung: Die Anmeldung spart dir das Passwort-Tippen, die App-Sperre prüft bei jedem Öffnen erneut, wer das Handy hält.
+Für eine zusätzliche Ebene auf dem Gerät selbst aktivierst du in den Einstellungen der App die **App-Sperre mit Face ID / Fingerabdruck**. Ist sie aktiv, verlangt die App bei jedem Start eine biometrische Authentifizierung (oder ersatzweise den Geräte-Passcode), und erneut, wenn du nach ein paar Minuten im Hintergrund zurückkommst. Kurz wegwechseln und zurück fragt nicht neu. Das ist getrennt von der biometrischen Anmeldung: Die Anmeldung spart dir das Passwort-Tippen, die App-Sperre prüft zusätzlich am Gerät selbst.
 
 ## Updates
 

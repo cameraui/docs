@@ -33,6 +33,6 @@ These you can operate (admin only):
 - **Siren.** On or off, and volume where supported.
 - **Garage.** Open or close.
 - **Doorbell.** Trigger a ring.
-- **Security system.** Choose a state: disarmed, stay arm, away arm, or night arm.
+- **Security system.** Choose a mode: Off, Home, Away or Night. If the alarm goes off, the control shows an alarm banner and the modes stay locked while it's active.
 
 PTZ cameras have their own [controls and autotrack](/sensors/ptz).

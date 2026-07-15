@@ -25,7 +25,9 @@ CoreML, OpenVINO, ONNX, and NCNN provide object, face, and license-plate detecti
 
 In a backend's plugin settings you choose a **model** for each task (object, face, license plate, CLIP) and a **confidence threshold**, which is how sure the AI must be before it reports a detection. Larger models are more accurate but heavier; higher confidence means fewer false alarms but more missed detections. camera.ui downloads the models it needs automatically.
 
-There is also a per-camera **Object confidence** in [Settings → Detection](/cameras/settings); set it to 0 to skip object detection on that camera.
+There is also a per-camera **Object Confidence** in [Settings → Detection](/cameras/settings), between 0.3 and 1. Raise it if a camera reports objects that aren't there, lower it if it misses real ones.
+
+Below it is **Ignore stationary objects**, on by default. Objects that stay put across events, like a car parked in the driveway, stop triggering new object events until they move again. Turn it off if you want every event to report the objects it sees, even the ones that never move.
 
 ## What you get
 

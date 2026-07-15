@@ -77,6 +77,10 @@
       "text": { "en": "Cameras", "de": "Kameras" },
       "items": [
         {
+          "text": { "en": "Home", "de": "Startseite" },
+          "link": "/cameras/home"
+        },
+        {
           "text": { "en": "Adding a camera", "de": "Kamera hinzufügen" },
           "link": "/cameras/add-camera"
         },
@@ -126,6 +130,10 @@
         {
           "text": { "en": "Set up sensors", "de": "Sensoren einrichten" },
           "link": "/sensors/setup"
+        },
+        {
+          "text": { "en": "Virtual sensors", "de": "Virtuelle Sensoren" },
+          "link": "/sensors/virtual"
         },
         {
           "text": { "en": "Controls & states", "de": "Steuerung & Status" },
@@ -295,6 +303,7 @@
         { "text": { "en": "Users", "de": "Benutzer" }, "link": "/admin/users" },
         { "text": { "en": "Backup", "de": "Backup" }, "link": "/admin/backup" },
         { "text": { "en": "System", "de": "System" }, "link": "/admin/system" },
+        { "text": { "en": "MQTT", "de": "MQTT" }, "link": "/admin/mqtt" },
         { "text": { "en": "Logs", "de": "Logs" }, "link": "/admin/logs" },
         {
           "text": { "en": "Instances", "de": "Instanzen" },

@@ -16,7 +16,13 @@ camera.ui Cloud is a way to reach your own server, not a copy of it. Your camera
 
 In **Settings → Remote**, open the **Cloud** card and turn on **Enabled**. Give the server a **name**; this is how it appears in your cloud dashboard, which helps once you have more than one.
 
-The **status** row shows whether the server is **registered**, and a **tunnel** indicator shows the live connection. To connect a server, choose **Register server** and complete the pairing. The same flow on a phone is covered in [Pairing mobile apps](/remote/pairing).
+The **status** row shows whether the server is **Registered**, and a **tunnel** indicator shows the live connection. To connect a server, choose **Register server** and complete the pairing. If the status shows **Re-authentication required**, the server lost its cloud credentials: choose **Reconnect** and pair again. A registered server can be taken off your account with **Unregister server**. The same flow on a phone is covered in [Pairing mobile apps](/remote/pairing).
+
+## Cloud keeps direct access on
+
+While Cloud is on, your server also keeps a public address so the apps can reach it. That's why the **Enabled** switch in the **Direct connection** card is locked on, and the **External URL** row shows the address in use.
+
+If you haven't set up a direct address, or the one you configured can't be reached, camera.ui starts a temporary Cloudflare tunnel instead. Either way you don't have to touch your router. If you'd rather use your own address, set it up under [Direct connection](/remote/).
 
 ## The cloud dashboard
 

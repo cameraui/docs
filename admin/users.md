@@ -12,7 +12,7 @@ There are three roles:
 
 - **User.** Day-to-day access: live view, recordings, Camview, and their own account settings.
 - **Admin.** Everything a user can do, plus managing cameras, plugins, automations, users, and all server settings.
-- **Master.** The main account. The same as an admin, plus it can reset the server, and it can't be deleted or demoted.
+- **Master.** The main account. The same as an admin, plus it can reset the server. It can't be deleted, and its role can't be changed, not even by itself. Only the master can edit its own username, password and avatar; other admins get an error if they try.
 
 Access is decided by role, not per camera; there are no per-camera permissions.
 

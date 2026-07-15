@@ -26,7 +26,7 @@ Controlling accessories requires admin. See [Sensors & accessories](/sensors/) f
 
 ## Adding and editing shortcuts
 
-1. On the camera, open **Edit Shortcuts** from the options menu (or the toolbar button).
+1. On the camera, open the options menu and select **Edit Shortcuts**. The **Shortcuts** button in the toolbar only shows or hides the shortcuts you already have.
 2. Click anywhere on the video to drop a shortcut, then choose a **Camera** or a **Sensor** as its target.
 3. Drag a shortcut to reposition it. Positions are stored relative to the frame, so they stay put when the video resizes.
 4. Long-press a shortcut to remove it.

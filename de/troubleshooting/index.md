@@ -19,12 +19,12 @@ Wenn eine Kamera offline zeigt oder nicht lädt:
 
 - Prüfe den **Codec** der Quelle im Sources-Tab; sehr ungewöhnliche Codecs brauchen eventuell Transcoding.
 - Probiere einen anderen **Streaming-Modus** in den [Interface-Einstellungen](/de/cameras/settings) der Kamera.
-- Aktiviere **[Hot Modus und Vorladen](/de/cameras/add-camera#performance-optionen)** für die Quelle, für schnelleres, zuverlässigeres Öffnen.
+- Aktiviere **[Hot Modus und Vorladen](/de/cameras/add-camera#quellen-optionen)** für die Quelle, für schnelleres, zuverlässigeres Öffnen.
 
 ## Erkennung löst nicht aus
 
 - Stelle sicher, dass eine **Bewegungs-Engine** und, für Objekte, ein **[KI-Backend](/de/detection/ai-backends)** der Kamera zugewiesen sind. Siehe [Sensoren einrichten](/de/sensors/setup).
-- Senke **Confidence** oder **Bewegungs-Empfindlichkeit** unter [Einstellungen → Detection](/de/cameras/settings), wenn Ereignisse verpasst werden.
+- Senke **Konfidenz** oder **Bewegungs-Empfindlichkeit** unter [Einstellungen → Erkennung](/de/cameras/settings), wenn Ereignisse verpasst werden.
 - Prüfe, dass deine **[Zonen](/de/cameras/zones-and-masks)** den Bereich nicht ausschließen.
 - Denk an die **Kaskade**: Objekt-, Gesichts- und Kennzeichen-Erkennung laufen erst nach Bewegung oder einem anderen Trigger. Siehe [Erkennung](/de/detection/).
 
@@ -39,6 +39,7 @@ Wenn eine Kamera offline zeigt oder nicht lädt:
 - Aufnahmen brauchen ein **aktives Abo**. Siehe [Aufnahmen](/de/recording/).
 - Bestätige, dass der **Aufnahme-Modus** der Kamera gesetzt ist, Continuous oder Event.
 - Prüfe den **[Speicher](/de/recording/storage)**: eine volle Disk mit **Strict**-Retention pausiert die Aufnahme, bis du Platz freigibst.
+- Wenn **Einstellungen → Aufnahmen** warnt, dass das Speichervolumen klein ist, liegen die Aufnahmen auf einer kleinen Disk und rotieren schnell weg. Entweder ist die Disk wirklich so klein, oder ein erwarteter Speicher-Mount wurde nie eingehängt. Prüfe den Pfad unter **[Speicher](/de/recording/storage)**.
 
 ## Server remote nicht erreichbar
 

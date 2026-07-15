@@ -18,7 +18,7 @@ Diese Doku ist neu und wächst noch; Screenshots werden nach und nach ergänzt. 
 - **Rund um die Uhr aufnehmen.**[^license] Durchgehende, ereignisbasierte oder Ad-hoc-Aufnahme, mit scrubbarer Timeline, synchroner Multi-Kamera-Wiedergabe und MP4-/Zeitraffer-Export.
 - **Erkennen, was zählt.** Bewegungs-, Objekt-, Gesichts-, Kennzeichen- und Audio-Erkennung, lokal auf deiner eigenen Hardware, plus semantische Suche und KI-generierte Ereignisbeschreibungen.
 - **Informiert bleiben.**[^license] Push-Benachrichtigungen pro Kamera, Alarme nur bei bekannten Gesichtern, Ruhezeiten und kritische Alarme, die immer durchkommen.
-- **Kameras verbinden.** Kameras über ONVIF und Dutzende weiterer Protokolle hinzufügen und per Apple HomeKit[^smarthome] ins Smart Home einbinden.
+- **Kameras verbinden.** Kameras über ONVIF und Dutzende weiterer Protokolle hinzufügen und per Apple HomeKit oder Home Assistant (über MQTT)[^smarthome] ins Smart Home einbinden.
 - **Erweitern.** Ein Plugin-System lässt dich Kameras, Detektoren und Integrationen aus einem In-App-Store hinzufügen.
 
 ## Live-Demo

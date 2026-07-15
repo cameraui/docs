@@ -8,7 +8,7 @@ The **Settings → System** page (admins only) handles the server's version and 
 
 ## Version and updates
 
-It shows the **server** version, and the **app** version in the desktop app. When an update is available, choose **Update** to install it, or **Manage** to pick a specific version, including pre-releases. See [Updating](/install/updating) for how updates work across platforms.
+It shows the **server** version, and the **app** version in the desktop and mobile apps. When an update is available, choose **Update** to install it, or **Manage** to pick a specific version. Pre-release versions only show up in that list when **Beta updates** is on, the toggle at the top of the page. See [Updating](/install/updating) for how updates work across platforms.
 
 ## Server actions
 

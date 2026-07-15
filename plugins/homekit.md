@@ -19,18 +19,20 @@ Once added, the camera streams in Home and supports **HomeKit Secure Video** rec
 
 ## Fast streaming
 
-Opening a camera in Home is near-instant, taking only a few milliseconds, whether the camera uses H.264 or H.265. This relies on the source being kept ready, so enable [hot mode and preload](/cameras/add-camera#performance-options) on the cameras you bridge.
+Opening a camera in Home is near-instant, taking only a few milliseconds, whether the camera uses H.264 or H.265. This relies on the source being kept ready, so enable [hot mode and preload](/cameras/add-camera#source-options) on the cameras you bridge.
 
 ## Settings
 
 Each camera's HomeKit settings include:
 
 - **QR code and PIN.** The pairing details for that camera.
-- **Hardware acceleration and transcoding.** Tune how the stream is prepared for Home.
+- **Hardware acceleration.** Uses the GPU, if one is available, for HomeKit Secure Video recordings. On by default.
+- **Adaptive stream source.** On by default. When you're away from home on a slow connection, camera.ui picks the source that matches the size Home asks for: high, mid, or low resolution. Turn it off to always use the primary source.
 - **Port and mDNS advertiser.** Advanced networking options; the defaults are usually fine.
 - **Reset pairing.** Generate a new code and re-add the camera if pairing breaks.
 
 ## Good to know
 
 - Each camera is its own HomeKit accessory, not one shared bridge, so you add them one at a time.
-- The sensors that come across into Home are the ones assigned to the camera: motion, doorbell, battery, light, contact, siren, security system, switch, and audio.
+- Cameras that support two-way audio can be talked to from the Home app.
+- The sensors that come across into Home are the ones assigned to the camera: motion, doorbell, battery, light, contact, siren, security system and switch.

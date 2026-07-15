@@ -8,11 +8,15 @@ Du kannst dein camera.ui-Setup sichern und später wiederherstellen, auf jeder P
 
 ## Ein Backup erstellen
 
-Wähle **Backup-Archiv herunterladen**, um ein einzelnes Archiv deiner camera.ui-Konfiguration, Datenbank und Benutzerkonten zu speichern. Bewahre es sicher auf.[^ignore]
+Wähle **Backup-Archiv herunterladen**, um ein einzelnes Archiv deines camera.ui-Speicherverzeichnisses zu speichern: Konfiguration, Datenbank, Benutzerkonten und Medien. Bewahre es sicher auf.[^ignore]
 
 ## Wiederherstellen
 
-Lade ein Archiv hoch und wähle **Backup-Archiv wiederherstellen**. camera.ui stellt dein Setup wieder her und startet anschließend neu, um es anzuwenden. Das ersetzt die aktuelle Konfiguration, sei dir also sicher, dass du auf den Stand des Archivs zurück willst.
+Lade ein Archiv hoch und wähle **Backup-Archiv wiederherstellen**, bestätige dann mit **Wiederherstellen und neustarten**. Das ersetzt die aktuelle Konfiguration, sei dir also sicher, dass du auf den Stand des Archivs zurück willst.
+
+Während der Wiederherstellung liegt die Überlagerung **Backup wiederherstellen** über dem Bildschirm und durchläuft drei Schritte: Archiv hochladen (mit Fortschrittsbalken), wiederherstellen und Server neu starten. Lass das Fenster offen, bis es fertig ist. camera.ui meldet dich am Ende ab, melde dich also neu an, sobald der Server wieder da ist.
+
+Archive größer als 200 MB werden beim Hochladen abgelehnt. Ist deins zu groß, schließe Medienordner vom Backup aus und erstelle ein neues.[^ignore]
 
 ## Geplante Backups
 

@@ -37,7 +37,7 @@ In **Settings → Account**, turn on **Biometric login** to sign in with Face ID
 
 ## App lock
 
-For an extra layer on the device itself, turn on **App lock with Face ID / Fingerprint** in the app's settings. With it on, the app asks for biometric authentication (or your device passcode as a fallback) every time you open it, so someone holding your unlocked phone still can't see your cameras. It's separate from biometric login: login saves you typing your password, app lock re-checks who's holding the phone each time you open the app.
+For an extra layer on the device itself, turn on **App lock with Face ID / Fingerprint** in the app's settings. With it on, the app asks for biometric authentication (or your device passcode as a fallback) every time it starts, and again when you come back after a few minutes in the background. Switching away briefly and back doesn't re-prompt. It's separate from biometric login: login saves you typing your password, app lock adds a check on the device itself.
 
 ## Updates
 

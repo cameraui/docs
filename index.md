@@ -18,7 +18,7 @@ These docs are new and still growing; screenshots are being added over time. If 
 - **Record around the clock.**[^license] Continuous, event-based, or ad-hoc recording, with a scrubbable timeline, synchronized multi-camera playback, and MP4 / timelapse export.
 - **Detect what matters.** Motion, object, face, license-plate, and audio detection, all running locally on your own hardware, plus semantic search and AI-generated event descriptions.
 - **Stay informed.**[^license] Per-camera push notifications, known-faces-only alerts, quiet hours, and critical alerts that always get through.
-- **Connect your cameras.** Add cameras over ONVIF and dozens of other protocols, and bridge them into your smart home via Apple HomeKit[^smarthome].
+- **Connect your cameras.** Add cameras over ONVIF and dozens of other protocols, and bridge them into your smart home via Apple HomeKit or Home Assistant (over MQTT)[^smarthome].
 - **Extend it.** A plugin system lets you add cameras, detectors, and integrations from an in-app store.
 
 ## Live demo

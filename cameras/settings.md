@@ -16,7 +16,7 @@ The camera's status and device info, plus a live view of its sensors and accesso
 
 ## Sources
 
-Add, change, and remove the camera's stream [sources](/cameras/add-camera#sources-and-roles) here, just like when [adding a camera](/cameras/add-camera): each source's name, role (high, mid, low resolution, or snapshot), stream URLs, and options such as hot mode and preload. Each source also shows its live status, detected codecs, and stream URL.
+Add, change, and remove the camera's stream [sources](/cameras/add-camera#sources-and-roles) here, just like when [adding a camera](/cameras/add-camera): each source's name, role (high, mid, low resolution, or snapshot), stream URLs, and options such as hot mode, preload, and mute audio (drops the audio track from that source). Each source also shows its live status, detected codecs, and stream URL.
 
 ## Settings
 
@@ -25,7 +25,8 @@ The main configuration form, grouped into sections:
 - **General.** Name, room, camera type, and whether the camera is disabled (also where you remove a camera).
 - **Branding.** Manufacturer, model, and other device details.
 - **Interface.** The [streaming mode and source](/cameras/live-view#streaming-modes), and the aspect ratio.
-- **Detection.** Per-camera tuning for motion, object, audio, and sensor detection (sensitivity, confidence, timeouts, and triggers), plus a snooze switch. See [Detection & AI](/detection/).
+- **Detection.** Per-camera tuning for motion, object, audio, and sensor detection (sensitivity, confidence, timeouts, triggers, and stationary-object handling), plus a snooze switch. See [Detection & AI](/detection/).
+- **Virtual Sensors.** Create, rename, and delete virtual sensors for this camera. They bring external devices and states into camera.ui, and you operate them from the Overview tab or from automations.
 - **Autotrack.** Let a PTZ camera follow detected objects automatically. See [PTZ & autotrack](/sensors/ptz).
 - **Zones.** Draw detection zones, privacy masks, and crossing lines. See [Zones, masks & lines](/cameras/zones-and-masks).
 - **Snapshot.** How still images are refreshed and cached (auto-refresh, cache time, and refresh interval).

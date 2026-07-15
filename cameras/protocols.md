@@ -1,6 +1,8 @@
 # Connection protocols
 
-When you [add a camera manually](/cameras/add-camera#add-a-camera-manually), each stream URL begins with a **protocol** that tells camera.ui how to connect. RTSP is the default and works with almost any IP camera. In the add-camera dialog, the **(i)** button next to the protocol field opens help for the selected protocol, with URL formats and examples.
+When you [add a camera manually](/cameras/add-camera#add-a-camera-manually), each stream URL begins with a **protocol** that tells camera.ui how to connect. RTSP is the default and works with almost any IP camera. In the add-camera dialog you paste the full stream URL. camera.ui reads the protocol from the URL and shows it under the field as the detected protocol. The **(i)** button next to the URL field opens help for that protocol, with URL formats and examples.
+
+A stream URL has to start with one of the protocols camera.ui supports. If it doesn't, the source won't save and the field tells you the protocol isn't supported. The **(i)** help only becomes available once camera.ui recognizes the protocol you typed, so it's a quick way to check a URL.
 
 ## RTSP (recommended)
 
@@ -30,7 +32,7 @@ The path after the address is specific to your camera, so check its manual or ap
 
 ## Brand and smart-home integrations
 
-The protocol picker also includes brand- and app-specific options, such as **Tapo**, **Kasa**, **Doorbird**, **GoPro**, **Home Assistant**, **HomeKit**, **Ring**, **Nest**, **Wyze**, and **Tuya**. Many of these depend on a vendor cloud.[^cloud] Use the **(i)** help for the exact setup of each.
+camera.ui also recognizes brand- and app-specific URLs, such as **Tapo**, **Kasa**, **Doorbird**, **GoPro**, **Home Assistant**, **HomeKit**, **Ring**, **Nest**, **Wyze**, and **Tuya**. Many of these depend on a vendor cloud.[^cloud] Paste the URL and use the **(i)** help for the exact setup of each.
 
 ## Tips
 

@@ -13,7 +13,8 @@ The **Recordings** view is where you find past events across your cameras. Each 
 Narrow the list to exactly what you're after:
 
 - **Camera and time range.**
-- **Object type.** Person, vehicle, or animal.
+- **Only with recording.** On by default. Turn it off to also see events where a trigger fired but nothing was recorded. Those events can't be downloaded or previewed.
+- **Labels.** Person, vehicle, animal, package, or other.
 - **Trigger.** Motion, a doorbell, a sensor, or an audio alarm.
 - **Attributes.** Events that contain a face or a license plate.
 - **Confidence.** Hide low-confidence detections.

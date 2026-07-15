@@ -8,7 +8,7 @@ If you'd rather expose the server yourself, point your own domain at it. In **Se
 
 This assumes you've already made the server reachable at that address, through your own DNS and a reverse proxy or port-forwarding on your router. camera.ui doesn't change your network for you here; it records the public address to use.
 
-Use **Test connection** to confirm it works.
+Choose **Save** to store the address, then use **Test connection**. The test checks the saved address, so a URL you've typed but not saved yet won't be picked up.
 
 ::: tip
 If you don't run your own domain or reverse proxy, [camera.ui Cloud](/remote/cloud) or a [Cloudflare tunnel](/remote/cloudflare) is simpler, since neither needs router changes.

@@ -25,7 +25,9 @@ CoreML, OpenVINO, ONNX und NCNN liefern Objekt-, Gesichts- und Kennzeichen-Erken
 
 In den Plugin-Settings eines Backends wählst du ein **Modell** pro Aufgabe (Objekt, Gesicht, Kennzeichen, CLIP) und einen **Confidence-Schwellwert**, also wie sicher die KI sein muss, bevor sie eine Erkennung meldet. Größere Modelle sind genauer, aber schwerer; höhere Confidence bedeutet weniger Fehlalarme, aber mehr verpasste Erkennungen. camera.ui lädt die benötigten Modelle automatisch herunter.
 
-Es gibt zusätzlich eine **Objekt-Konfidenz** pro Kamera unter [Einstellungen → Detection](/de/cameras/settings); auf 0 gesetzt überspringt sie die Objekterkennung für diese Kamera.
+Es gibt zusätzlich eine **Objekt-Konfidenz** pro Kamera unter [Einstellungen → Erkennung](/de/cameras/settings), zwischen 0,3 und 1. Erhöhe sie, wenn eine Kamera Objekte meldet, die es nicht gibt; senke sie, wenn sie echte übersieht.
+
+Darunter liegt **Statische Objekte ignorieren**, standardmäßig an. Objekte, die über Ereignisse hinweg unbewegt bleiben, etwa ein geparktes Auto in der Einfahrt, lösen keine neuen Objekt-Ereignisse mehr aus, bis sie sich wieder bewegen. Schalte es aus, wenn jedes Ereignis alle gesehenen Objekte melden soll, auch die unbewegten.
 
 ## Was du bekommst
 
