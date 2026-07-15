@@ -97,6 +97,8 @@ Füge den Ausschnitt in die `config.yml` der Worker-Maschine ein und starte sie 
 
 Alternativ kannst du dieselben Werte als Umgebungsvariablen setzen, was in einem Container meist einfacher ist. `CAMERA_UI_WORKER=true` startet den Worker-Modus ohne die Option `--worker`, und `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` sowie `CAMERA_UI_WORKER_CAPABILITIES` (kommagetrennt) decken den Rest des Ausschnitts ab. Eine `config.yml` ist dann nicht nötig, und wenn du beides setzt, gewinnt die Umgebungsvariable.
 
+Lässt du die Capabilities weg, bietet der Worker alles an, was die meisten Setups wollen; der Master weist trotzdem nur zu, was du ihm gibst. Setze sie, um einen Worker auf eine einzige Aufgabe zu beschränken, etwa nur das Hosten von Plugins.
+
 ## Die Worker-Liste
 
 Sobald gekoppelt, erscheint ein Worker in der **Workers**-Liste mit Online-/Offline-Status, Plattform (Betriebssystem/Architektur), Prozess-ID, Version sowie Live-CPU- und Speichernutzung. Weicht die Version eines Workers von der des Masters ab, wird ein Hinweis angezeigt.

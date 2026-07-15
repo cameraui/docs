@@ -97,6 +97,8 @@ Paste the snippet into the worker machine's `config.yml`, then start it with `ca
 
 You can pass the same values as environment variables instead, which is usually easier in a container. `CAMERA_UI_WORKER=true` starts worker mode without the `--worker` option, and `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` and `CAMERA_UI_WORKER_CAPABILITIES` (comma-separated) cover the rest of the snippet. No `config.yml` is needed then, and if you set both, the environment variable wins.
 
+Leave the capabilities unset and the worker offers everything, which is what most setups want; the master still only assigns what you give it. Set them to restrict a worker to a single job, for example only hosting plugins.
+
 ## The workers list
 
 Once paired, a worker appears in the **Workers** list showing its online/offline status, platform (OS/architecture), process ID, version, and live CPU and memory use. A warning is shown if a worker's version differs from the master's.
