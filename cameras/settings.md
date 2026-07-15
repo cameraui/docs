@@ -28,7 +28,7 @@ The main configuration form, grouped into sections:
 - **Detection.** Per-camera tuning for motion, object, audio, and sensor detection (sensitivity, confidence, timeouts, triggers, and stationary-object handling), plus a snooze switch. See [Detection & AI](/detection/).
 - **Virtual Sensors.** Create, rename, and delete virtual sensors for this camera. They bring external devices and states into camera.ui, and you operate them from the Overview tab or from automations.
 - **Autotrack.** Let a PTZ camera follow detected objects automatically. See [PTZ & autotrack](/sensors/ptz).
-- **Zones.** Draw detection zones, privacy masks, and crossing lines. See [Zones, masks & lines](/cameras/zones-and-masks).
+- **Zones.** Draw detection zones, ignore zones, and crossing lines. See [Zones & lines](/cameras/zones-and-masks).
 - **Snapshot.** How still images are refreshed and cached (auto-refresh, cache time, and refresh interval).
 - **Frame Worker.** The frame rate used for analysis, plus whether event thumbnails are captured from the highest-resolution stream.
 

@@ -1,14 +1,14 @@
 ---
-title: Zones, masks & lines
+title: Zones & lines
 ---
 
-# Zones, masks & lines
+# Zones & lines
 
 Zones let you control where detection happens, ignore parts of the frame, and detect when something crosses a line. You edit them per camera, and they act on the camera's [detection](/detection/), so it needs detection set up.
 
 ## Opening the editor
 
-Open a camera's [settings](/cameras/settings) and go to the **Settings** tab. Under **Zones** you see the zones and lines already on the camera, each with its colour, name and type (Zone, Privacy mask or Line crossing). The pencil on an entry opens the editor on it, the bin deletes it. With nothing configured yet, you only see "No zones or lines on this camera yet."
+Open a camera's [settings](/cameras/settings) and go to the **Settings** tab. Under **Zones** you see the zones and lines already on the camera, each with its colour, name and type (Zone, Ignore zone or Line crossing). The pencil on an entry opens the editor on it, the bin deletes it. With nothing configured yet, you only see "No zones or lines on this camera yet."
 
 Below the list, **Edit zones** opens the editor over the camera image with two tabs: **Zones** and **Lines**.
 
@@ -25,11 +25,13 @@ You can limit a zone to specific **object types** (its labels), so it reacts onl
 
 A zone also has a match mode. **Contain** is the default: a detection only counts when its whole box is inside the zone. **Intersect** counts it as soon as the box overlaps the zone at all. The mode applies to include and exclude zones alike.
 
-## Privacy masks
+## Ignore zones
 
-Turn a zone into a **privacy mask** to ignore an area completely. Detections that sit fully inside the mask are dropped, so they never trigger an event, which is useful for a neighbour's window or a public sidewalk. Something that only partly overlaps the mask still counts. A privacy mask has no detection settings of its own.
+Turn a zone into an **ignore zone** to leave an area out of detection completely. Detections that sit fully inside it are dropped, so they never trigger an event, which is useful for a busy road or a neighbour's window. Something that only partly overlaps it still counts. An ignore zone has no detection settings of its own.
 
-A privacy mask does not change the video. The area stays visible in live view and in recordings.
+An ignore zone does not change the video.[^noblackout] The area stays visible in live view and in recordings, and it is still recorded.
+
+[^noblackout]: camera.ui has no way to black out part of the picture. If a neighbour's window must not be filmed at all, point the camera elsewhere, or use your camera's own privacy mask if it has one, which blanks the area before the picture reaches camera.ui.
 
 ## Lines (line-crossing)
 

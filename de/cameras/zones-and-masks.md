@@ -1,14 +1,14 @@
 ---
-title: Zonen, Masken & Linien
+title: Zonen & Linien
 ---
 
-# Zonen, Masken & Linien
+# Zonen & Linien
 
 Mit Zonen steuerst du, wo Erkennung stattfindet, ignorierst Teile des Bildes und erkennst, wenn etwas eine Linie überquert. Du bearbeitest sie pro Kamera, und sie wirken auf die [Erkennung](/de/detection/) der Kamera, die also eingerichtet sein muss.
 
 ## Den Editor öffnen
 
-Öffne die [Einstellungen](/de/cameras/settings) einer Kamera und gehe zum **Einstellungen**-Tab. Unter **Zonen** siehst du die Zonen und Linien, die es an der Kamera schon gibt, jeweils mit Farbe, Name und Typ (Zone, Privatsphäre-Maske oder Linienüberquerung). Der Stift an einem Eintrag öffnet den Editor direkt darauf, der Papierkorb löscht ihn. Ist noch nichts angelegt, steht dort nur "Noch keine Zonen oder Linien an dieser Kamera."
+Öffne die [Einstellungen](/de/cameras/settings) einer Kamera und gehe zum **Einstellungen**-Tab. Unter **Zonen** siehst du die Zonen und Linien, die es an der Kamera schon gibt, jeweils mit Farbe, Name und Typ (Zone, Ignorierte Zone oder Linienüberquerung). Der Stift an einem Eintrag öffnet den Editor direkt darauf, der Papierkorb löscht ihn. Ist noch nichts angelegt, steht dort nur "Noch keine Zonen oder Linien an dieser Kamera."
 
 Unter der Liste öffnet **Zonen bearbeiten** den Editor über dem Kamerabild mit zwei Tabs: **Zonen** und **Linien**.
 
@@ -25,11 +25,13 @@ Du kannst eine Zone auf bestimmte **Objekttypen** (ihre Labels) begrenzen, sodas
 
 Eine Zone hat außerdem einen Modus. **Enthalten** ist die Voreinstellung: Eine Erkennung zählt nur, wenn ihre ganze Box in der Zone liegt. **Schneiden** zählt sie schon, sobald die Box die Zone überlappt. Der Modus gilt für einschließende und ausschließende Zonen gleichermaßen.
 
-## Privatsphärenmasken
+## Ignorierte Zonen
 
-Mach aus einer Zone eine **Privatsphärenmaske**, um einen Bereich komplett zu ignorieren. Erkennungen, die vollständig in der Maske liegen, werden verworfen und lösen kein Ereignis aus, was bei einem Nachbarfenster oder einem öffentlichen Gehweg nützlich ist. Was die Maske nur teilweise überlappt, zählt weiterhin. Eine Privatsphärenmaske hat keine eigenen Erkennungseinstellungen.
+Mach aus einer Zone eine **ignorierte Zone**, um einen Bereich komplett von der Erkennung auszunehmen. Erkennungen, die vollständig darin liegen, werden verworfen und lösen kein Ereignis aus, was bei einer viel befahrenen Straße oder einem Nachbarfenster nützlich ist. Was nur teilweise überlappt, zählt weiterhin. Eine ignorierte Zone hat keine eigenen Erkennungseinstellungen.
 
-Eine Privatsphärenmaske verändert das Video nicht. Der Bereich bleibt in der Live-Ansicht und in Aufnahmen sichtbar.
+Eine ignorierte Zone verändert das Video nicht.[^noblackout] Der Bereich bleibt in der Live-Ansicht und in Aufnahmen sichtbar und wird weiterhin aufgezeichnet.
+
+[^noblackout]: camera.ui kann keinen Teil des Bildes schwärzen. Soll ein Nachbarfenster gar nicht gefilmt werden, richte die Kamera anders aus, oder nutze die Privatsphärenmaske der Kamera selbst, falls sie eine hat: die schwärzt den Bereich, bevor das Bild bei camera.ui ankommt.
 
 ## Linien (Linienüberquerung)
 

@@ -28,7 +28,7 @@ Das Haupt-Konfigurationsformular, gegliedert in Bereiche:
 - **Erkennung.** Feinabstimmung pro Kamera für Bewegungs-, Objekt-, Audio- und Sensor-Erkennung (Empfindlichkeit, Confidence, Timeouts, Trigger und Umgang mit statischen Objekten), plus ein Snooze-Schalter. Siehe [Erkennung & KI](/de/detection/).
 - **Virtuelle Sensoren.** Virtuelle Sensoren dieser Kamera erstellen, umbenennen und löschen. Sie bringen externe Geräte und Zustände in camera.ui, und du bedienst sie über den Übersicht-Tab oder per Automationen.
 - **Autotrack.** Eine PTZ-Kamera erkannten Objekten automatisch folgen lassen. Siehe [PTZ & Autotrack](/de/sensors/ptz).
-- **Zonen.** Erkennungszonen, Privatsphäre-Masken und Überquerungslinien zeichnen. Siehe [Zonen, Masken & Linien](/de/cameras/zones-and-masks).
+- **Zonen.** Erkennungszonen, ignorierte Zonen und Überquerungslinien zeichnen. Siehe [Zonen & Linien](/de/cameras/zones-and-masks).
 - **Snapshot.** Wie Standbilder aktualisiert und zwischengespeichert werden (Auto-Refresh, Cache-Zeit und Aktualisierungsintervall).
 - **Frame Worker.** Die für die Analyse genutzte Bildrate sowie ob Event-Thumbnails aus dem höchstauflösenden Stream erzeugt werden.
 
