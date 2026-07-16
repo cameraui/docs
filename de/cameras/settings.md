@@ -24,7 +24,7 @@ Das Haupt-Konfigurationsformular, gegliedert in Bereiche:
 
 - **Allgemein.** Name, Raum, Kameratyp und ob die Kamera deaktiviert ist (hier entfernst du auch eine Kamera).
 - **Branding.** Hersteller, Modell und weitere Gerätedetails.
-- **Interface.** [Streaming-Modus und -Quelle](/de/cameras/live-view#streaming-modi) sowie das Seitenverhältnis.
+- **Interface.** [Streaming-Modus und -Quelle](/de/cameras/live-view#streaming-modi) sowie das Anzeige-Seitenverhältnis. Wähle einen Preset (16:9, 4:3, 1:1 und mehr) oder gib ein eigenes `Breite:Höhe` wie `21:9` ein, mit einer Live-Vorschau der Kamera in diesem Verhältnis.
 - **Erkennung.** Feinabstimmung pro Kamera für Bewegungs-, Objekt-, Audio- und Sensor-Erkennung (Empfindlichkeit, Confidence, Timeouts, Trigger und Umgang mit statischen Objekten), plus ein Snooze-Schalter. Siehe [Erkennung & KI](/de/detection/).
 - **Virtuelle Sensoren.** Virtuelle Sensoren dieser Kamera erstellen, umbenennen und löschen. Sie bringen externe Geräte und Zustände in camera.ui, und du bedienst sie über den Übersicht-Tab oder per Automationen.
 - **Autotrack.** Eine PTZ-Kamera erkannten Objekten automatisch folgen lassen. Siehe [PTZ & Autotrack](/de/sensors/ptz).
