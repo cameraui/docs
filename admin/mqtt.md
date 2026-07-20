@@ -109,6 +109,10 @@ Automations with an MQTT trigger subscribe to their own topics on top of this.
 
 **Home Assistant discovery** makes Home Assistant create the devices and entities for you, no YAML. It's off by default.
 
+::: warning Pick one path, not both
+MQTT discovery is one of two ways to get camera.ui entities into Home Assistant. The other is the [Home Assistant integration](/home-assistant/integration), which needs no broker. The two do not merge: run both and every device shows up twice. Use MQTT discovery if you already run a broker, otherwise use the integration.
+:::
+
 Turn it on and check the **Discovery prefix**. It has to match the discovery prefix configured in Home Assistant, which is `homeassistant` unless you changed it.
 
 Home Assistant then builds one device per camera, using the camera's name, plus its model and firmware version when camera.ui knows them. Each device gets:

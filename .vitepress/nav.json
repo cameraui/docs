@@ -397,6 +397,42 @@
     },
     {
       "text": {
+        "en": "Home Assistant",
+        "de": "Home Assistant"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Overview",
+            "de": "Überblick"
+          },
+          "link": "/home-assistant/"
+        },
+        {
+          "text": {
+            "en": "Add-on",
+            "de": "Add-on"
+          },
+          "link": "/home-assistant/add-on"
+        },
+        {
+          "text": {
+            "en": "Integration",
+            "de": "Integration"
+          },
+          "link": "/home-assistant/integration"
+        },
+        {
+          "text": {
+            "en": "Lovelace card",
+            "de": "Lovelace-Card"
+          },
+          "link": "/home-assistant/card"
+        }
+      ]
+    },
+    {
+      "text": {
         "en": "Notifications",
         "de": "Benachrichtigungen"
       },

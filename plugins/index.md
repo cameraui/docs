@@ -50,3 +50,4 @@ A plugin's own settings live on its page, under **Settings**, and apply server-w
 ## Setup guides
 
 - **[HomeKit](/plugins/homekit)** — add your cameras to Apple Home.
+- **[Home Assistant](/home-assistant/)** — cameras, sensors and detection events as Home Assistant entities.

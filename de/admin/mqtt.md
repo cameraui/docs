@@ -109,6 +109,10 @@ Automationen mit einem MQTT-Trigger abonnieren zusätzlich ihre eigenen Topics.
 
 **Home Assistant Discovery** lässt Home Assistant die Geräte und Entitäten selbst anlegen, ohne YAML. Standardmäßig ist das aus.
 
+::: warning Nimm einen Weg, nicht beide
+MQTT Discovery ist einer von zwei Wegen, camera.ui-Entitäten nach Home Assistant zu bringen. Der andere ist die [Home-Assistant-Integration](/de/home-assistant/integration), die keinen Broker braucht. Die beiden führen nicht zusammen: nutzt du beide, taucht jedes Gerät doppelt auf. Nimm MQTT Discovery, wenn du ohnehin einen Broker betreibst, sonst die Integration.
+:::
+
 Schalte es ein und prüfe das **Discovery-Präfix**. Es muss dem in Home Assistant konfigurierten Discovery-Präfix entsprechen, das ist `homeassistant`, sofern du es nicht geändert hast.
 
 Home Assistant baut daraus ein Gerät pro Kamera, mit dem Namen der Kamera sowie Modell und Firmware-Version, sofern camera.ui sie kennt. Jedes Gerät bekommt:
