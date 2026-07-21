@@ -4,16 +4,16 @@ title: Home Assistant
 
 # Home Assistant
 
-camera.ui arbeitet auf zwei Wegen mit Home Assistant zusammen, die nichts miteinander zu tun haben. Du kannst **camera.ui in Home Assistant laufen lassen**, über das Add-on, und du kannst **ein bestehendes camera.ui mit Home Assistant verbinden**, über die Integration. Das sind getrennte Aufgaben, du kannst also das eine oder das andere oder beides machen: Das Add-on betreibt den Server, die Integration bringt seine Kameras und Sensoren als HA-Entitäten herein.
+camera.ui arbeitet auf zwei Wegen mit Home Assistant zusammen, die nichts miteinander zu tun haben. Du kannst **camera.ui in Home Assistant laufen lassen**, über das App, und du kannst **ein bestehendes camera.ui mit Home Assistant verbinden**, über die Integration. Das sind getrennte Aufgaben, du kannst also das eine oder das andere oder beides machen: Das App betreibt den Server, die Integration bringt seine Kameras und Sensoren als HA-Entitäten herein.
 
 <Shot src="/img/home-assistant/devices.png" alt="camera.ui-Geräte und Entitäten in Home Assistant" />
 
 ## Betreiben vs. verbinden
 
-- **Das Add-on betreibt camera.ui.** Es installiert den camera.ui-Server als Home-Assistant-OS-Add-on, deine Kameras, Aufnahmen und die Erkennung liegen also auf derselben Maschine wie HA. Das ist nur eine Art, camera.ui zu hosten, mehr nicht.
-- **Die Integration verbindet camera.ui.** Sie spricht mit einem camera.ui-Server (dem Add-on oder einer Docker-/Desktop-Installation irgendwo im Netz) und legt pro Kamera ein HA-Gerät mit Live-Stream, Sensoren und PTZ an. So tauchen die Entitäten in HA auf.
+- **Das App betreibt camera.ui.** Es installiert den camera.ui-Server als Home-Assistant-OS-App, deine Kameras, Aufnahmen und die Erkennung liegen also auf derselben Maschine wie HA. Das ist nur eine Art, camera.ui zu hosten, mehr nicht.
+- **Die Integration verbindet camera.ui.** Sie spricht mit einem camera.ui-Server (dem App oder einer Docker-/Desktop-Installation irgendwo im Netz) und legt pro Kamera ein HA-Gerät mit Live-Stream, Sensoren und PTZ an. So tauchen die Entitäten in HA auf.
 
-Läuft das Add-on, fügst du trotzdem die Integration hinzu, um Entitäten nach Home Assistant zu bekommen. Läuft dein camera.ui schon woanders, brauchst du nur die Integration.
+Läuft das App, fügst du trotzdem die Integration hinzu, um Entitäten nach Home Assistant zu bekommen. Läuft dein camera.ui schon woanders, brauchst du nur die Integration.
 
 ## Entitäten hereinholen: einen Transport wählen
 
@@ -75,7 +75,7 @@ Siehe **[Lovelace-Card](/de/home-assistant/card)** für Platzierung und Konfigur
 
 ## Nächste Schritte
 
-- **[Add-on](/de/home-assistant/add-on)** — den camera.ui-Server in Home Assistant OS laufen lassen.
+- **[App](/de/home-assistant/app)** — den camera.ui-Server in Home Assistant OS laufen lassen.
 - **[Integration](/de/home-assistant/integration)** — einen camera.ui-Server verbinden und Kameras, Sensoren und PTZ als HA-Entitäten bekommen.
 - **[Lovelace-Card](/de/home-assistant/card)** — eine Kamera mit PTZ aufs Dashboard bringen.
 

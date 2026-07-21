@@ -8,13 +8,13 @@ Die **camera.ui Integration** verbindet einen bestehenden camera.ui Server mit H
 
 Sie spricht den Server direkt über dein lokales Netzwerk an, Ereignisse kommen also per Push in dem Moment an, in dem sie passieren. Du brauchst keinen MQTT-Broker und keinen Cloud-Dienst.
 
-Diese Seite behandelt die Custom-Integration (Domain `cameraui`). Wenn du Home Assistant OS nutzt und camera.ui stattdessen als verwaltetes Add-on laufen lassen willst, siehe die Seite [Add-on](/de/home-assistant/add-on).
+Diese Seite behandelt die Custom-Integration (Domain `cameraui`). Wenn du Home Assistant OS nutzt und camera.ui stattdessen als verwaltetes App laufen lassen willst, siehe die Seite [App](/de/home-assistant/app).
 
 ## Installation
 
 Die Integration wird über [HACS](https://hacs.xyz) als Custom-Repository verteilt.
 
-1. Füge in HACS `cameraui/hass-integration` als Custom-**Integration**-Repository hinzu.
+1. Füge in HACS `cameraui/homeassistant-integration` als Custom-**Integration**-Repository hinzu.
 2. Installiere **camera.ui** aus HACS.
 3. Starte Home Assistant neu.
 
@@ -189,6 +189,6 @@ Details zu Optionen und Layouts findest du auf der Seite [Lovelace-Card](/de/hom
 
 ## Nächste Schritte
 
-- **[Add-on](/de/home-assistant/add-on)** — camera.ui selbst als Home Assistant OS Add-on betreiben.
+- **[App](/de/home-assistant/app)** — camera.ui selbst als Home Assistant OS App betreiben.
 - **[Lovelace-Card](/de/home-assistant/card)** — die mitgelieferten Dashboard-Cards konfigurieren.
 - **[Sensoren](/de/sensors/setup)** — einer Kamera Sensoren zuweisen, damit sie Home Assistant erreichen.

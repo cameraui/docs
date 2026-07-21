@@ -410,10 +410,10 @@
         },
         {
           "text": {
-            "en": "Add-on",
-            "de": "Add-on"
+            "en": "App",
+            "de": "App"
           },
-          "link": "/home-assistant/add-on"
+          "link": "/home-assistant/app"
         },
         {
           "text": {

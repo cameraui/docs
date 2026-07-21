@@ -4,16 +4,16 @@ title: Home Assistant
 
 # Home Assistant
 
-camera.ui works with Home Assistant in two ways that have nothing to do with each other. You can **run camera.ui inside Home Assistant** with the add-on, and you can **connect an existing camera.ui to Home Assistant** with the integration. They are separate jobs, so you can do either or both: the add-on runs the server, the integration surfaces its cameras and sensors as HA entities.
+camera.ui works with Home Assistant in two ways that have nothing to do with each other. You can **run camera.ui inside Home Assistant** with the app, and you can **connect an existing camera.ui to Home Assistant** with the integration. They are separate jobs, so you can do either or both: the app runs the server, the integration surfaces its cameras and sensors as HA entities.
 
 <Shot src="/img/home-assistant/devices.png" alt="camera.ui devices and entities in Home Assistant" />
 
 ## Running vs connecting
 
-- **The add-on runs camera.ui.** It installs the camera.ui server as a Home Assistant OS add-on, so your cameras, recordings, and detection live on the same box as HA. This is a way to host camera.ui, nothing more.
-- **The integration connects camera.ui.** It talks to a camera.ui server (the add-on, or a Docker/desktop install anywhere on your network) and creates one HA device per camera with live streams, sensors, and PTZ. This is how entities show up in HA.
+- **The app runs camera.ui.** It installs the camera.ui server as a Home Assistant OS app, so your cameras, recordings, and detection live on the same box as HA. This is a way to host camera.ui, nothing more.
+- **The integration connects camera.ui.** It talks to a camera.ui server (the app, or a Docker/desktop install anywhere on your network) and creates one HA device per camera with live streams, sensors, and PTZ. This is how entities show up in HA.
 
-If you run the add-on, you still add the integration to get entities into Home Assistant. If your camera.ui already runs elsewhere, you only need the integration.
+If you run the app, you still add the integration to get entities into Home Assistant. If your camera.ui already runs elsewhere, you only need the integration.
 
 ## Getting entities in: pick one transport
 
@@ -75,7 +75,7 @@ See **[Lovelace card](/home-assistant/card)** for how to place and configure it.
 
 ## Next steps
 
-- **[Add-on](/home-assistant/add-on)** — run the camera.ui server inside Home Assistant OS.
+- **[App](/home-assistant/app)** — run the camera.ui server inside Home Assistant OS.
 - **[Integration](/home-assistant/integration)** — connect a camera.ui server and get cameras, sensors, and PTZ as HA entities.
 - **[Lovelace card](/home-assistant/card)** — put a camera with PTZ on your dashboard.
 
