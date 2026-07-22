@@ -52,6 +52,43 @@ If a camera shows offline or won't load:
 - Open the **[Logs](/admin/logs)** and filter or search for the issue. You can download the log to share when asking for help.
 - For deeper inspection, the **Terminal** gives a shell on the server.
 
+## OpenVino plugin GPU detection fails
+
+UBUNTU Bare Metal Instalation.
+
+This error on openvino plugin logs.
+ERROR: .....libOpenCL.so.1: cannot open shared object file: No such file or directory
+
+The reason is the file libOpenCL.so.1 is not loaded and therefore wont allow the intell igpu to start
+this fix is to run the followong code to install libOpenCL.so.1
+ 
+Step 1: Install the OpenCL Loader & Intel GPU Drivers
+Run the following commands in your host terminal to install libOpenCL.so.1 and the Intel Compute Runtime:
+```bash
+sudo apt update
+sudo apt install -y ocl-icd-libopencl1 intel-opencl-icd
+ocl-icd-libopencl1: Provides the missing libOpenCL.so.1 file.
+```
+intel-opencl-icd: Enables hardware acceleration specifically for Intel iGPUs / GPUs.
+
+Step 2: Ensure User Permissions for the GPU
+To allow the user running @camera.ui (in your case, cameraui) to access the Intel GPU rendering device, add the user to the render and video groups:
+```bash
+sudo gpasswd -a cameraui render
+sudo gpasswd -a cameraui video
+```
+(If you are logged in directly as cameraui, replace cameraui with $USER).
+
+Step 3: Refresh and Restart
+Refresh the dynamic linker cache:
+```bash
+sudo ldconfig
+```
+Restart the @camera.ui process or reboot the machine for group permissions to take full effect:
+```bash
+sudo reboot
+```
+
 ## Still stuck?
 
 Ask the community on [Discord](https://discord.gg/bBGnGcbz8N) or [Reddit](https://www.reddit.com/r/cameraui/), or open an issue on [GitHub](https://github.com/cameraui/camera.ui). Include your logs and the steps that led to the problem.
