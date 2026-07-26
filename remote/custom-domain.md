@@ -6,7 +6,7 @@ title: Custom domain
 
 If you'd rather expose the server yourself, point your own domain at it. In **Settings → Remote**, set the **direct connection** method to **Custom domain** and enter the **URL** where the server is reachable, for example `https://nvr.example.com`.
 
-This assumes you've already made the server reachable at that address, through your own DNS and a reverse proxy or port-forwarding on your router. camera.ui doesn't change your network for you here; it records the public address to use.
+This assumes you've already made the server reachable at that address, through your own DNS and a reverse proxy or port-forwarding on your router. camera.ui doesn't change your network for you here; it records the public address to use. If you go the reverse-proxy route, [Reverse proxy](/remote/reverse-proxy) covers what the proxy has to forward.
 
 Choose **Save** to store the address, then use **Test connection**. The test checks the saved address, so a URL you've typed but not saved yet won't be picked up.
 

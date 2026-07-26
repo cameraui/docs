@@ -506,6 +506,13 @@
         },
         {
           "text": {
+            "en": "Reverse proxy",
+            "de": "Reverse-Proxy"
+          },
+          "link": "/remote/reverse-proxy"
+        },
+        {
+          "text": {
             "en": "Pairing mobile apps",
             "de": "Mobile Apps koppeln"
           },
