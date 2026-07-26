@@ -16,18 +16,40 @@ Below the list, **Edit zones** opens the editor over the camera image with two t
 
 ## Detection zones
 
-On the **Zones** tab, draw a polygon by adding points on the image. A zone limits where detections count:
+On the **Zones** tab, draw a polygon by adding points on the image. Each zone is either an include or an exclude zone:
 
-- **Include.** Only detections inside the zone trigger.
-- **Exclude.** Detections inside the zone are ignored, for example a busy road or a swaying tree.
+- **Include.** Only detections inside the zone count. Everything else in the frame is ignored. Use it to watch one spot, like a driveway or a doorway.
+- **Exclude.** Detections inside the zone are ignored, everything outside the zone still counts. Use it to cut out one troublesome corner, like a swaying tree, while the rest of the frame keeps working.
 
-You can limit a zone to specific **object types** (its labels), so it reacts only to people or only to vehicles. Careful: object types are collected across all zones of a camera and act as one allow-list. As soon as any zone is limited to vehicles, person detections are dropped on the whole camera, including inside zones that have no object types set. If you only want to limit the area, leave the object types empty on every zone.
+One exclude zone on its own is all you need to say "watch everything except this". You don't have to add an include zone around the rest.
 
-A zone also has a match mode. **Contain** is the default: a detection only counts when its whole box is inside the zone. **Intersect** counts it as soon as the box overlaps the zone at all. The mode applies to include and exclude zones alike.
+### Combining zones
+
+Draw several include zones and a detection counts when it is in any one of them. Draw several exclude zones and each one cuts its area out.
+
+If you mix both, **exclude wins**: a detection inside an exclude zone is dropped even when it also sits in an include zone. That is what lets you carve a hole out of a larger include zone, for example watching the whole front yard but not the pavement running through it.
+
+Note the change once an include zone exists: being outside every exclude zone is no longer enough, a detection now also has to be inside an include zone. Only exclude zones on the camera means everything outside them counts.
+
+### Match mode
+
+**Contain** is the default: a detection counts as inside only when its whole box is in the zone. **Intersect** counts it as soon as the box overlaps the zone at all.
+
+The mode decides what "inside" means for both kinds of zone. With an exclude zone in Contain mode, someone standing half in your excluded area is still detected. Switch that zone to Intersect if you want it gone as soon as it touches the area.
+
+### Object types
+
+You can limit a zone to specific **object types**, so it reacts only to people or only to vehicles.
+
+Object types are not local to the zone though. They are collected across all zones of a camera and act as one allow-list for the whole camera. Limit any zone to vehicles and person detections are dropped everywhere on that camera, including inside zones that have no object types of their own. That holds for exclude zones too, so an exclude zone set to vehicles switches off person detection on the entire camera, which is rarely what you want.
+
+Every new zone starts with **motion, person, vehicle and animal** already selected. If you only want to limit the area and not the object types, clear the selection on each zone. Leaving the default in place also means package detections are dropped, since package is not part of it.
 
 ## Ignore zones
 
-Turn a zone into an **ignore zone** to leave an area out of detection completely. Detections that sit fully inside it are dropped, so they never trigger an event, which is useful for a busy road or a neighbour's window. Something that only partly overlaps it still counts. An ignore zone has no detection settings of its own.
+Turn a zone into an **ignore zone** to leave an area out of detection completely, for example a neighbour's window or a public pavement. Detections that sit fully inside it are dropped and never trigger an event. Something that only partly overlaps it still counts.
+
+An ignore zone has no settings of its own, and that is the point of it. It always uses the "fully inside" rule, it drops whatever lands there no matter the object type, and it stays out of the camera-wide allow-list described above. When you want an area gone and nothing else, that makes it the safer choice over an exclude zone. Reach for an exclude zone instead when you need it to interact with your include zones, or when you want Intersect rather than Contain.
 
 An ignore zone does not change the video.[^noblackout] The area stays visible in live view and in recordings, and it is still recorded.
 

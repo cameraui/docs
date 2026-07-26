@@ -16,18 +16,40 @@ Unter der Liste öffnet **Zonen bearbeiten** den Editor über dem Kamerabild mit
 
 ## Erkennungszonen
 
-Im Tab **Zonen** zeichnest du ein Polygon, indem du Punkte auf dem Bild setzt. Eine Zone begrenzt, wo Erkennungen zählen:
+Im Tab **Zonen** zeichnest du ein Polygon, indem du Punkte auf dem Bild setzt. Jede Zone ist entweder einschließend oder ausschließend:
 
-- **Einschließen.** Nur Erkennungen innerhalb der Zone lösen aus.
-- **Ausschließen.** Erkennungen innerhalb der Zone werden ignoriert, etwa eine viel befahrene Straße oder ein schwankender Baum.
+- **Einschließen.** Nur Erkennungen innerhalb der Zone zählen. Alles andere im Bild wird ignoriert. Gut geeignet, um eine einzelne Stelle zu beobachten, etwa eine Einfahrt oder einen Hauseingang.
+- **Ausschließen.** Erkennungen innerhalb der Zone werden ignoriert, alles außerhalb zählt weiterhin. Gut geeignet, um eine störende Ecke auszunehmen, etwa einen schwankenden Baum, während der Rest des Bildes normal weiterarbeitet.
 
-Du kannst eine Zone auf bestimmte **Objekttypen** (ihre Labels) begrenzen, sodass sie nur auf Personen oder nur auf Fahrzeuge reagiert. Achtung: Die Objekttypen werden über alle Zonen einer Kamera gesammelt und wirken als eine gemeinsame Positivliste. Sobald eine Zone auf Fahrzeuge begrenzt ist, werden Personen-Erkennungen auf der ganzen Kamera verworfen, auch in Zonen ohne gesetzte Objekttypen. Wenn du nur den Bereich begrenzen willst, lass die Objekttypen in jeder Zone leer.
+Für "alles beobachten außer hier" reicht eine einzelne ausschließende Zone. Du musst nicht zusätzlich eine einschließende Zone um den Rest legen.
 
-Eine Zone hat außerdem einen Modus. **Enthalten** ist die Voreinstellung: Eine Erkennung zählt nur, wenn ihre ganze Box in der Zone liegt. **Schneiden** zählt sie schon, sobald die Box die Zone überlappt. Der Modus gilt für einschließende und ausschließende Zonen gleichermaßen.
+### Zonen kombinieren
+
+Zeichnest du mehrere einschließende Zonen, zählt eine Erkennung, sobald sie in einer davon liegt. Zeichnest du mehrere ausschließende Zonen, nimmt jede ihren Bereich heraus.
+
+Mischst du beides, **gewinnt Ausschließen**: Eine Erkennung in einer ausschließenden Zone wird verworfen, auch wenn sie gleichzeitig in einer einschließenden liegt. Genau damit schneidest du ein Loch aus einer größeren einschließenden Zone, etwa den ganzen Vorgarten beobachten, aber nicht den Gehweg, der hindurchführt.
+
+Beachte, was sich ändert, sobald es eine einschließende Zone gibt: Außerhalb aller ausschließenden Zonen zu liegen genügt dann nicht mehr, die Erkennung muss zusätzlich in einer einschließenden Zone liegen. Gibt es an der Kamera nur ausschließende Zonen, zählt alles außerhalb.
+
+### Modus
+
+**Enthalten** ist die Voreinstellung: Eine Erkennung gilt erst als drinnen, wenn ihre ganze Box in der Zone liegt. **Schneiden** zählt sie schon, sobald die Box die Zone überlappt.
+
+Der Modus legt für beide Zonenarten fest, was "drinnen" bedeutet. Bei einer ausschließenden Zone im Modus Enthalten wird jemand, der nur halb im ausgenommenen Bereich steht, weiterhin erkannt. Stell die Zone auf Schneiden, wenn sie schon bei Berührung greifen soll.
+
+### Objekttypen
+
+Du kannst eine Zone auf bestimmte **Objekttypen** begrenzen, sodass sie nur auf Personen oder nur auf Fahrzeuge reagiert.
+
+Die Objekttypen gelten allerdings nicht nur lokal. Sie werden über alle Zonen einer Kamera gesammelt und wirken als eine gemeinsame Positivliste für die ganze Kamera. Begrenzt du eine beliebige Zone auf Fahrzeuge, werden Personen-Erkennungen überall auf dieser Kamera verworfen, auch in Zonen ohne eigene Objekttypen. Das gilt genauso für ausschließende Zonen: Eine ausschließende Zone auf Fahrzeuge schaltet die Personenerkennung der gesamten Kamera ab, was selten gewollt ist.
+
+Jede neue Zone startet mit **Bewegung, Person, Fahrzeug und Tier** bereits ausgewählt. Willst du nur den Bereich begrenzen und nicht die Objekttypen, leere die Auswahl in jeder Zone. Lässt du die Voreinstellung stehen, werden außerdem Paket-Erkennungen verworfen, denn Paket gehört nicht dazu.
 
 ## Ignorierte Zonen
 
-Mach aus einer Zone eine **ignorierte Zone**, um einen Bereich komplett von der Erkennung auszunehmen. Erkennungen, die vollständig darin liegen, werden verworfen und lösen kein Ereignis aus, was bei einer viel befahrenen Straße oder einem Nachbarfenster nützlich ist. Was nur teilweise überlappt, zählt weiterhin. Eine ignorierte Zone hat keine eigenen Erkennungseinstellungen.
+Mach aus einer Zone eine **ignorierte Zone**, um einen Bereich komplett von der Erkennung auszunehmen, etwa ein Nachbarfenster oder einen öffentlichen Gehweg. Erkennungen, die vollständig darin liegen, werden verworfen und lösen kein Ereignis aus. Was nur teilweise überlappt, zählt weiterhin.
+
+Eine ignorierte Zone hat keine eigenen Einstellungen, und das ist ihr Sinn. Sie nutzt immer die Regel "vollständig enthalten", sie verwirft alles, was dort landet, unabhängig vom Objekttyp, und sie bleibt aus der oben beschriebenen kameraweiten Positivliste heraus. Wenn du einen Bereich einfach nur loswerden willst, ist sie damit die sicherere Wahl gegenüber einer ausschließenden Zone. Zu einer ausschließenden Zone greifst du, wenn sie mit deinen einschließenden Zonen zusammenspielen soll oder wenn du Schneiden statt Enthalten brauchst.
 
 Eine ignorierte Zone verändert das Video nicht.[^noblackout] Der Bereich bleibt in der Live-Ansicht und in Aufnahmen sichtbar und wird weiterhin aufgezeichnet.
 

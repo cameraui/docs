@@ -37,6 +37,26 @@ Everything is tunable via environment variables:
 
 Example for an Intel machine: `FLAVOR=intel bash install-cameraui-lxc.sh`
 
+## Getting a shell in the container
+
+The script creates the container without a root password, so the Proxmox console and SSH won't let you in. Use the host shell instead:
+
+```bash
+pct enter <CTID>
+```
+
+That puts you in a root shell inside the container. Single commands don't need you to enter it at all:
+
+```bash
+pct exec <CTID> -- docker logs cameraui
+```
+
+If you'd rather log in the usual way, set a password once. Console and SSH work from then on:
+
+```bash
+pct exec <CTID> -- passwd
+```
+
 ## Hardware acceleration
 
 - **Intel / AMD iGPU.** Set `FLAVOR=intel` (or `amd`). The script passes the GPU render node into the container via Proxmox's device passthrough and wires it through to Docker. Nothing else to configure; the details live on the [Hardware acceleration](/install/hardware-acceleration) page.
