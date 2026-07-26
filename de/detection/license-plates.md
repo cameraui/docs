@@ -4,11 +4,13 @@ title: Kennzeichen
 
 # Kennzeichen
 
-Die Kennzeichenerkennung liest Nummernschilder von Fahrzeugen. Sie baut auf der [Objekterkennung](/de/detection/ai-backends) auf: Ein Fahrzeug wird erkannt, dann sein Kennzeichen lokalisiert und per OCR gelesen. Aktiviere an der Kamera ein KI-Backend mit Kennzeichen-Unterstützung.
+Die Kennzeichenerkennung liest Nummernschilder von Fahrzeugen. Sie baut auf der [Objekterkennung](/de/detection/ai-backends) auf: Ein Fahrzeug wird erkannt, dann sein Kennzeichen lokalisiert und per OCR gelesen. Aktiviere an der Kamera ein KI-Backend mit Kennzeichen-Unterstützung. Wenn die Kamera Objekte selbst erkennt, aber nicht meldet, wo sie sind (viele Reolink-Modelle), aktiviere [Objekt-Assistenz](/de/detection/ai-backends#objekt-assistenz), damit Kennzeichen einen passenden Ausschnitt bekommen.
 
 ## Einrichtung
 
 In den Plugin-Settings des Backends nutzen Kennzeichen zwei Modelle, einen **Detektor**, der das Schild findet, und ein **OCR-Modell**, das die Zeichen liest, plus einen Confidence-Schwellwert. camera.ui lädt sie automatisch herunter.
+
+Pro Kamera gibt es unter [Einstellungen → Erkennung](/de/cameras/settings) zwei weitere Optionen: **Kennzeichen-Konfidenz** (Lesungen, bei denen die OCR unsicherer ist als dieser Wert, werden ignoriert, 0 bis 1, Standard 0,9) und **Min. Kennzeichenlänge** (kürzere Lesungen werden als Fragmente verworfen, Standard 4 Zeichen).
 
 ## Wo Kennzeichen erscheinen
 

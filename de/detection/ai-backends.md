@@ -29,6 +29,12 @@ Es gibt zusätzlich eine **Objekt-Konfidenz** pro Kamera unter [Einstellungen �
 
 Darunter liegt **Statische Objekte ignorieren**, standardmäßig an. Objekte, die über Ereignisse hinweg unbewegt bleiben, etwa ein geparktes Auto in der Einfahrt, lösen keine neuen Objekt-Ereignisse mehr aus, bis sie sich wieder bewegen. Schalte es aus, wenn jedes Ereignis alle gesehenen Objekte melden soll, auch die unbewegten.
 
+## Objekt-Assistenz
+
+Manche Kameras erkennen Objekte selbst, melden aber nur, dass sie etwas gesehen haben, nicht wo im Bild. Viele Reolink-Modelle arbeiten so. Damit hat die Gesichts- und Kennzeichenerkennung nichts zum Heranzoomen und findet selten etwas.
+
+Wähle unter dem **Plugins**-Tab der Kamera unter **Objekt** ein **Objekt-Assistenz**-Plugin. Es ist ein zweiter Detektor, der die Person oder das Fahrzeug im Bild lokalisiert, damit Gesichts- und Kennzeichenerkennung einen passenden Ausschnitt bekommen. Siehe [Sensoren einrichten](/de/sensors/setup).
+
 ## Was du bekommst
 
 Erkannte Objekte erscheinen in der Live-Ansicht als Boxen, treiben [Benachrichtigungen](/de/notifications/) an und werden zu Ereignissen, die du [durchsuchen](/de/recording/browsing) und nach Typ filtern kannst. Sie speisen außerdem [Gesichtserkennung](/de/detection/faces), [Kennzeichen](/de/detection/license-plates) und [semantische Suche](/de/detection/semantic-search). Eine **Heatmap**-Überlagerung im Player zeigt, wo über einen Zeitraum am häufigsten Objekte erkannt wurden.

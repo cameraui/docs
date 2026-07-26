@@ -17,7 +17,8 @@ Zu den erkennbaren Geräuschen gehören Glasbruch, Schreien, Schüsse, Alarme (R
 
 ## Lautstärke-Gate und Timeout
 
-Zwei weitere Einstellungen liegen an der Kamera selbst, unter [Einstellungen → Detection](/de/cameras/settings):
+Drei weitere Einstellungen liegen an der Kamera selbst, unter [Einstellungen → Detection](/de/cameras/settings):
 
 - **Min. Lautstärke (dBFS).** Audio-Frames unterhalb dieses Pegels werden übersprungen, sodass leise Hintergrundgeräusche nie analysiert werden. Reicht von -100 (Stille) bis 0 (Maximum), Standard -40.
+- **Audio-Konfidenz.** Erkannte Geräusche, bei denen der Detektor unsicherer ist als dieser Wert, zählen nicht als Ereignis und lösen keine Automationen aus (0 bis 1, Standard 0,7). Sie liegt über dem eigenen Schwellwert des Plugins, sodass das Plugin empfindlich bleiben kann und trotzdem nur sichere Geräusche auslösen. Erhöhe sie bei falschen Glasbruch- oder Schuss-Alarmen.
 - **Audio-Timeout.** Wie lange ein Audio-Ereignis nach dem letzten Trigger „aktiv" bleibt (mindestens 10 Sekunden).

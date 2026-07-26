@@ -4,7 +4,7 @@ title: Gesichtserkennung
 
 # Gesichtserkennung
 
-Gesichtserkennung erkennt Gesichter an deinen Kameras, identifiziert Personen, die du angelegt hast, und gruppiert die noch unbekannten.[^license] Sie baut auf der [Objekterkennung](/de/detection/ai-backends) auf und braucht daher ein KI-Backend mit Gesichts-Unterstützung, das an der Kamera aktiviert ist.
+Gesichtserkennung erkennt Gesichter an deinen Kameras, identifiziert Personen, die du angelegt hast, und gruppiert die noch unbekannten.[^license] Sie baut auf der [Objekterkennung](/de/detection/ai-backends) auf und braucht daher ein KI-Backend mit Gesichts-Unterstützung, das an der Kamera aktiviert ist. Wenn die Kamera Objekte selbst erkennt, aber nicht meldet, wo sie sind (viele Reolink-Modelle), aktiviere [Objekt-Assistenz](/de/detection/ai-backends#objekt-assistenz), damit Gesichter einen passenden Ausschnitt bekommen.
 
 <Shot src="/img/detection/faces-view.png" alt="Gesichter-Ansicht mit bekannten und unbekannten Gesichtern" />
 
@@ -36,6 +36,8 @@ In den [NVR-Einstellungen](/de/recording/) hat die Gesichtserkennung:
 - **Match Threshold.** Wie streng der Gesichtsabgleich ist (0,3 bis 0,8).
 - **Max Training Images.** Wie viele Fotos pro Person behalten werden (5 bis 15); camera.ui behält die besten.
 - **Max Unknown People.** Wie viele unbekannte Gruppen behalten werden (10 bis 500). Ist das Limit erreicht, fällt die Gruppe raus, die am längsten nicht mehr gesehen wurde. Erhöhe den Wert bei stark frequentierten Außenkameras.
+
+Pro Kamera gibt es unter [Einstellungen → Erkennung](/de/cameras/settings) zusätzlich eine **Gesichts-Konfidenz**: Gesichter, bei denen die KI unsicherer ist als dieser Wert, werden für Ereignisse und Automationen ignoriert (0 bis 1, Standard 0,5).
 
 ## Erneut scannen
 

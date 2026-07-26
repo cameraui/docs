@@ -29,6 +29,12 @@ There is also a per-camera **Object Confidence** in [Settings → Detection](/ca
 
 Below it is **Ignore stationary objects**, on by default. Objects that stay put across events, like a car parked in the driveway, stop triggering new object events until they move again. Turn it off if you want every event to report the objects it sees, even the ones that never move.
 
+## Object assist
+
+Some cameras detect objects on their own but report only that they saw something, not where in the frame it is. Many Reolink models work this way. That leaves face and license-plate recognition nothing to zoom in on, so they rarely find anything.
+
+Under the camera's **Plugins** tab, pick an **Object Assist** plugin below **Object**. It is a second detector that locates the person or vehicle in the frame, so face and plate recognition get a proper crop to work on. See [Set up sensors](/sensors/setup).
+
 ## What you get
 
 Detected objects appear on the live view as boxes, drive [notifications](/notifications/), and become events you can [browse](/recording/browsing) and filter by type. They also feed [face recognition](/detection/faces), [license plates](/detection/license-plates), and [semantic search](/detection/semantic-search). A **heatmap** overlay on the player shows where objects were detected most often over a time window.

@@ -4,7 +4,7 @@ title: Face recognition
 
 # Face recognition
 
-Face recognition spots faces on your cameras, recognises people you have enrolled, and groups the ones it doesn't know yet.[^license] It builds on [object detection](/detection/ai-backends), so it needs an AI backend with face support enabled on the camera.
+Face recognition spots faces on your cameras, recognises people you have enrolled, and groups the ones it doesn't know yet.[^license] It builds on [object detection](/detection/ai-backends), so it needs an AI backend with face support enabled on the camera. If the camera detects objects itself without reporting where they are (many Reolink models), enable [Object Assist](/detection/ai-backends#object-assist) so faces get a proper crop.
 
 <Shot src="/img/detection/faces-view.png" alt="Faces view with known and unknown faces" />
 
@@ -36,6 +36,8 @@ In the [NVR settings](/recording/), face recognition has:
 - **Match threshold.** How strict face matching is (0.3 to 0.8).
 - **Max training images.** How many photos to keep per person (5 to 15); camera.ui keeps the best ones.
 - **Max unknown people.** How many unknown groups are kept (10 to 500). Once the limit is hit, the group that was seen longest ago is dropped. Raise it for busy outdoor cameras.
+
+Per camera, [Settings → Detection](/cameras/settings) also has a **Face confidence**: faces the AI is less sure about than this are ignored for events and automations (0 to 1, default 0.5).
 
 ## Rescanning
 
