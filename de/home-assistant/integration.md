@@ -51,7 +51,7 @@ Jedes Kameragerät trägt eine **Kamera-Entität**, die live streamt und Snapsho
 
 ### Sensoren
 
-Jeder Sensor, den du an einer Kamera in camera.ui eingerichtet hast, wird auf der passenden Plattform in Home Assistant gespiegelt:
+Jeder [freigegebene Sensor](/de/sensors/) in camera.ui wird auf der passenden Plattform in Home Assistant gespiegelt, egal ob er zu einer Kamera gehört oder nicht:
 
 | camera.ui Sensor | Home Assistant Plattform |
 |---|---|
@@ -64,9 +64,11 @@ Jeder Sensor, den du an einer Kamera in camera.ui eingerichtet hast, wird auf de
 | Abdeckung | `cover` |
 | Alarmanlage | `alarm_control_panel` |
 
+Kamera-Hardware (das eigene Spotlight, die Sirene oder die Batterie einer Kamera) landet am Gerät der Kamera. Jeder andere Sensor wird ein eigenes Gerät und hängt unter seiner Kamera, wenn er genau einer zugewiesen ist. Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigeben** auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite).
+
 Die steuerbaren funktionieren in beide Richtungen: ein **switch** und eine **siren** schalten an und aus, ein **light** schaltet an und aus (und dimmt, wenn es Helligkeit meldet), ein **cover** öffnet und schließt, ein **lock** ver- und entriegelt, und ein **alarm_control_panel** aktiviert Home, Away oder Night und deaktiviert. Befehle gehen direkt an camera.ui.
 
-Diese Oberfläche wird live gepflegt. Fügst du an einer Kamera in camera.ui einen Sensor hinzu, benennst ihn um oder entfernst ihn, erscheint die passende Home Assistant Entität, aktualisiert ihren Namen oder verschwindet, ohne Neustart.
+Diese Oberfläche wird live gepflegt. Fügst du in camera.ui einen Sensor hinzu, benennst ihn um, weist ihn neu zu, gibst ihn frei oder löschst ihn, erscheint die passende Home Assistant Entität, aktualisiert sich oder verschwindet, ohne Neustart. Ein Sensor, dessen Plugin offline ist, zeigt sich als nicht verfügbar.
 
 ### Bewegungs- und Objekterkennung
 

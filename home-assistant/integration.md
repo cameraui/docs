@@ -51,7 +51,7 @@ Each camera device carries a **camera entity** that streams live and serves snap
 
 ### Sensors
 
-Every sensor you've set up on a camera in camera.ui is mirrored into Home Assistant on the matching platform:
+Every [exposed sensor](/sensors/) in camera.ui is mirrored into Home Assistant on the matching platform, whether it belongs to a camera or not:
 
 | camera.ui sensor | Home Assistant platform |
 |---|---|
@@ -64,9 +64,11 @@ Every sensor you've set up on a camera in camera.ui is mirrored into Home Assist
 | Cover | `cover` |
 | Alarm system | `alarm_control_panel` |
 
+Camera hardware (a camera's own spotlight, siren or battery) lands on the camera's device. Every other sensor becomes a device of its own, linked below its camera when it is assigned to exactly one. Whether a sensor comes across at all is the **Expose sensor** toggle on the [Sensors page](/sensors/setup#the-sensors-page).
+
 The controllable ones work both ways: a **switch** and a **siren** turn on and off, a **light** turns on and off (and dims, if it reports brightness), a **cover** opens and closes, a **lock** locks and unlocks, and an **alarm panel** arms home, away or night and disarms. Commands are sent straight to camera.ui.
 
-This surface is driven live. Add, rename or remove a sensor on a camera in camera.ui and the matching Home Assistant entity appears, updates its name or disappears without a restart.
+This surface is driven live. Add, rename, re-assign, expose or delete a sensor in camera.ui and the matching Home Assistant entity appears, updates or disappears without a restart. A sensor whose plugin is offline shows as unavailable.
 
 ### Motion and object detection
 
