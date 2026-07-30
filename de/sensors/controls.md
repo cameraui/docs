@@ -8,8 +8,9 @@ Sobald eine Kamera [eingerichtete Sensoren](/de/sensors/setup) hat, siehst du ih
 
 ## Wo Sensoren erscheinen
 
-- **Die Übersicht der Kamera** (im [Einstellungs](/de/cameras/settings)-Drawer) listet jeden Sensor mit seinem Live-Status und, bei steuerbaren, den Bedienelementen.
+- **Die Übersicht der Kamera** (im [Einstellungs](/de/cameras/settings)-Drawer) listet jeden der Kamera zugewiesenen Sensor mit seinem Live-Status und, bei steuerbaren, den Bedienelementen.
 - **[Shortcuts](/de/cameras/shortcuts)** lassen dich einen Sensor aufs Video legen, um per Hover den Status zu lesen und per Klick zu bedienen.
+- **Die [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite)** listet jeden Sensor im System. Ihr Bearbeiten-Dialog zeigt dieselben Bedienelemente, auch für Sensoren ohne Kamera.
 
 ## Read-only-Sensoren
 

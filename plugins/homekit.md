@@ -4,7 +4,7 @@ title: HomeKit
 
 # HomeKit
 
-The HomeKit plugin adds your cameras to **Apple Home**, so you can view them and get recordings through the Home app and across your Apple devices. It bridges each camera along with the sensors you've assigned to it, such as motion, a doorbell, or a contact sensor.
+The HomeKit plugin adds your cameras and sensors to **Apple Home**. Cameras stream and record through the Home app across your Apple devices; sensors appear as accessories you can see and control there.
 
 <Shot src="/img/plugins/homekit-pairing.png" alt="HomeKit camera settings with pairing QR code" />
 
@@ -16,6 +16,14 @@ The HomeKit plugin adds your cameras to **Apple Home**, so you can view them and
 4. In the Apple **Home** app, choose **Add Accessory** and scan the camera's QR code, or enter its PIN. Repeat for each camera.
 
 Once added, the camera streams in Home and supports **HomeKit Secure Video** recording if you've set that up in Home.
+
+## What ends up where
+
+A camera comes across as one accessory with everything that belongs to it: its motion sensor, doorbell button, spotlight, siren, and battery.
+
+Every other [exposed sensor](/sensors/) (contact, occupancy, smoke, leak, temperature, humidity, lock, garage, switch, security system, standalone lights and sirens) lives behind a single **camera.ui Bridge** accessory. The bridge appears as soon as the first such sensor is exposed; pair it once and every sensor you expose later joins automatically. Its QR code and PIN sit in the plugin's settings.
+
+Whether a sensor comes across at all is the **Expose sensor** toggle on the [Sensors page](/sensors/setup#the-sensors-page).
 
 ## Fast streaming
 
@@ -31,8 +39,9 @@ Each camera's HomeKit settings include:
 - **Port and mDNS advertiser.** Advanced networking options; the defaults are usually fine.
 - **Reset pairing.** Generate a new code and re-add the camera if pairing breaks.
 
+The plugin's own settings hold the same set for the sensor bridge: its QR code, PIN, port, mDNS advertiser, and a **Reset Bridge Pairing** button.
+
 ## Good to know
 
-- Each camera is its own HomeKit accessory, not one shared bridge, so you add them one at a time.
+- Each camera is its own HomeKit accessory, so you add cameras one at a time. Standalone sensors share the one bridge and only need a single pairing.
 - Cameras that support two-way audio can be talked to from the Home app.
-- The sensors that come across into Home are the ones assigned to the camera: motion, doorbell, battery, light, contact, siren, security system and switch.

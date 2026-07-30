@@ -68,9 +68,11 @@ Läuft der eingebaute Broker, steht das zusammen mit seinem Port auf der Karte.
 
 ## Topic-Referenz
 
-`<prefix>` unten ist dein Topic-Präfix, `<id>` die ID der Kamera, `<stableId>` die ID eines Sensors. In Topic-Segmenten werden `#`, `+`, `/` und Leerzeichen durch `-` ersetzt.
+`<prefix>` unten ist dein Topic-Präfix, `<id>` die ID der Kamera, `<sensorId>` die ID eines Sensors. In Topic-Segmenten werden `#`, `+`, `/` und Leerzeichen durch `-` ersetzt.
 
 Zustands-Topics sind retained, ein später verbundener Abonnent bekommt also weiterhin den aktuellen Wert. Ereignisse sind nicht retained.
+
+Sensoren veröffentlichen unter ihrem eigenen Baum, nicht unter einer Kamera: Ein [Sensor](/de/sensors/) ist ein eigenes Objekt und kann mehreren Kameras gehören oder keiner. Veröffentlicht werden nur [freigegebene](/de/sensors/) Sensoren; wird die Freigabe ausgeschaltet, räumt camera.ui die retained Topics des Sensors ab.
 
 ### Was camera.ui veröffentlicht
 
@@ -88,8 +90,8 @@ Zustands-Topics sind retained, ein später verbundener Abonnent bekommt also wei
 | `<prefix>/camera/<id>/motion` | `ON` · `OFF` | ja |
 | `<prefix>/camera/<id>/detection/<label>` | `ON` · `OFF`, ein Topic pro erkanntem Label | ja |
 | `<prefix>/camera/<id>/snapshot` | JPEG des letzten Ereignis-Thumbnails | ja |
-| `<prefix>/camera/<id>/sensor/<stableId>/meta` | JSON: Stable-ID, Typ, Name, Anzeigename, Plugin | ja |
-| `<prefix>/camera/<id>/sensor/<stableId>/<property>` | Wert der Eigenschaft als JSON | ja |
+| `<prefix>/sensor/<sensorId>/meta` | JSON: ID, Typ, Name, Anzeigename, Plugin, zugewiesene Kameras | ja |
+| `<prefix>/sensor/<sensorId>/<property>` | Wert der Eigenschaft als JSON | ja |
 
 `<prefix>/status` ist auch das Last Will: Verschwindet camera.ui ohne Abmeldung, veröffentlicht der Broker dafür `offline`.
 
@@ -99,7 +101,7 @@ Das Motion-Topic geht auf `ON`, wenn ein Ereignis Bewegung enthält, ein Label-T
 
 | Topic | Zweck |
 |---|---|
-| `<prefix>/camera/<id>/sensor/<stableId>/<property>/set` | Eine Sensor-Eigenschaft setzen |
+| `<prefix>/sensor/<sensorId>/<property>/set` | Eine Sensor-Eigenschaft setzen |
 
 Veröffentliche auf einem `/set`-Topic, um einen Sensor zu steuern: `ON` und `OFF` werden zu true und false, alles andere wird als JSON gelesen und fällt sonst auf reinen Text zurück. Erkennungssensoren ignorieren Befehle, ihre Werte kommen von der Kamera.
 
@@ -122,14 +124,14 @@ Home Assistant baut daraus ein Gerät pro Kamera, mit dem Namen der Kamera sowie
 - **Snapshot.** Eine Kamera-Entität, gespeist aus dem Snapshot-Topic.
 - **Person, Vehicle, Animal, Package.** Erkennungssensoren, nur für Kameras mit Objekterkennung.
 
-Ein [Sensor](/de/sensors/) der Kamera landet am selben Gerät, wenn sein Typ einem Home-Assistant-Typ entspricht: Kontakt-, Anwesenheits-, Rauch- und Wassersensoren, Türklingeln, Temperatur-, Luftfeuchte- und Batteriewerte, Schalter, Lichter (mit Helligkeit, wenn das Licht sie unterstützt), Sirenen, Schlösser, Garagentore und Alarmanlagen. Schalter, Lichter, Sirenen, Schlösser, Garagentore und Alarmanlagen lassen sich aus Home Assistant steuern.[^detsensors]
+Jeder [freigegebene Sensor](/de/sensors/) wird ein eigenes Gerät, wenn sein Typ einem Home-Assistant-Typ entspricht: Kontakt-, Anwesenheits-, Rauch- und Wassersensoren, Türklingeln, Temperatur-, Luftfeuchte- und Batteriewerte, Schalter, Lichter (mit Helligkeit, wenn das Licht sie unterstützt), Sirenen, Schlösser, Garagentore und Alarmanlagen. Ein Sensor, der genau einer Kamera zugewiesen ist, hängt unter deren Gerät. Schalter, Lichter, Sirenen, Schlösser, Garagentore und Alarmanlagen lassen sich aus Home Assistant steuern.[^detsensors]
 
 Entitäten sind nur verfügbar, solange sowohl camera.ui als auch die Kamera online sind. Status ist die Ausnahme: Er folgt allein camera.ui und kann die Kamera so weiterhin als offline melden. Schaltest du Discovery aus, MQTT aus oder änderst das Discovery- oder Topic-Präfix, entfernt camera.ui die angelegten Entitäten.
 
 ## Nächste Schritte
 
 - **[Automationen](/de/automations/)** — auf eine eingehende MQTT-Nachricht reagieren oder als Aktion eine senden.
-- **[Sensoren](/de/sensors/)** — die Sensoren, die auf den Topics der Kamera und in Home Assistant auftauchen.
+- **[Sensoren](/de/sensors/)** — die Sensoren, die auf den Sensor-Topics und in Home Assistant auftauchen, und die Freigabe, die das steuert.
 
 [^detsensors]: Erkennungssensoren (Bewegung, Objekt, Audio, Gesicht, Kennzeichen und so weiter) bekommen keine eigene Entität. Sie speisen die Motion- und Erkennungs-Entitäten oben.
 [^anon]: Wird Benutzername oder Passwort geleert, nimmt der eingebaute Broker jeden Client ohne Zugangsdaten an.

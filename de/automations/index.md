@@ -27,7 +27,7 @@ Ein Trigger ist das, was einen Ablauf startet. Du kannst mehrere verwenden.
 - **Geofence.** Ein Benutzer betritt oder verlässt einen von dir definierten Ort.
 - **Manuell.** Du startest den Ablauf selbst mit der **Ausführen**-Schaltfläche, nützlich beim Bauen und Testen.
 
-Virtuelle Sensoren funktionieren hier ebenfalls. Du erstellst sie pro Kamera in den Kamera-Einstellungen, setzt sie dann mit einer **Sensor steuern**-Aktion und reagierst mit einem **Sensoränderung**-Trigger darauf.
+[Virtuelle Sensoren](/de/sensors/virtual) funktionieren hier ebenfalls. Du erstellst sie auf der Sensoren-Seite, setzt sie dann mit einer **Sensor steuern**-Aktion und reagierst mit einem **Sensoränderung**-Trigger darauf.
 
 ## Bedingungen
 

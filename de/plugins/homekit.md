@@ -4,7 +4,7 @@ title: HomeKit
 
 # HomeKit
 
-Das HomeKit-Plugin fügt deine Kameras zu **Apple Home** hinzu, sodass du sie über die Home-App und auf deinen Apple-Geräten ansehen und Aufnahmen erhalten kannst. Es bridged jede Kamera samt der ihr zugewiesenen Sensoren, etwa Bewegung, eine Türklingel oder einen Kontaktsensor.
+Das HomeKit-Plugin fügt deine Kameras und Sensoren zu **Apple Home** hinzu. Kameras streamen und zeichnen über die Home-App auf deinen Apple-Geräten auf; Sensoren erscheinen als Zubehör, das du dort sehen und steuern kannst.
 
 <Shot src="/img/plugins/homekit-pairing.png" alt="HomeKit-Kamera-Einstellungen mit Kopplungs-QR-Code" />
 
@@ -16,6 +16,14 @@ Das HomeKit-Plugin fügt deine Kameras zu **Apple Home** hinzu, sodass du sie ü
 4. Wähle in der Apple-**Home**-App **Gerät hinzufügen** und scanne den QR-Code der Kamera, oder gib ihren PIN ein. Wiederhole das für jede Kamera.
 
 Einmal hinzugefügt, streamt die Kamera in Home und unterstützt **HomeKit Secure Video**-Aufnahmen, wenn du das in Home eingerichtet hast.
+
+## Was wo landet
+
+Eine Kamera kommt als ein Zubehör mit allem, was zu ihr gehört: ihrem Bewegungssensor, ihrer Klingeltaste, ihrem Spotlight, ihrer Sirene und ihrer Batterie.
+
+Jeder andere [freigegebene Sensor](/de/sensors/) (Kontakt, Belegung, Rauchmelder, Wassersensor, Temperatur, Feuchtigkeit, Schloss, Garagentor, Schalter, Alarmanlage, eigenständige Lichter und Sirenen) liegt hinter einem einzelnen Zubehör **camera.ui Bridge**. Die Bridge erscheint, sobald der erste solche Sensor freigegeben ist; kopple sie einmal, und jeder später freigegebene Sensor kommt automatisch dazu. Ihr QR-Code und PIN stecken in den Einstellungen des Plugins.
+
+Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigeben** auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite).
 
 ## Schnelles Streaming
 
@@ -31,8 +39,9 @@ Die HomeKit-Einstellungen jeder Kamera umfassen:
 - **Port und mDNS advertiser.** Erweiterte Netzwerk-Optionen; die Standardwerte passen meist.
 - **Reset Pairing.** Einen neuen Code erzeugen und die Kamera neu hinzufügen, falls die Kopplung bricht.
 
+Die Einstellungen des Plugins selbst halten dasselbe Set für die Sensor-Bridge: ihren QR-Code, PIN, Port, mDNS advertiser und einen Button **Reset Bridge Pairing**.
+
 ## Gut zu wissen
 
-- Jede Kamera ist ihr eigenes HomeKit-Zubehör, nicht eine geteilte Bridge, daher fügst du sie einzeln hinzu.
+- Jede Kamera ist ihr eigenes HomeKit-Zubehör, du fügst Kameras also einzeln hinzu. Eigenständige Sensoren teilen sich die eine Bridge und brauchen nur eine einzige Kopplung.
 - Kameras mit Zwei-Wege-Audio kannst du aus der Home-App ansprechen.
-- Die nach Home übernommenen Sensoren sind die der Kamera zugewiesenen: Bewegung, Türklingel, Batterie, Licht, Kontakt, Sirene, Alarmanlage und Schalter.

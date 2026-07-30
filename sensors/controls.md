@@ -8,8 +8,9 @@ Once a camera has [sensors set up](/sensors/setup), you can see their state and 
 
 ## Where sensors appear
 
-- **The camera's Overview** (in the [settings](/cameras/settings) drawer) lists every sensor with its live state and, for controllable ones, the controls.
+- **The camera's Overview** (in the [settings](/cameras/settings) drawer) lists every sensor assigned to the camera with its live state and, for controllable ones, the controls.
 - **[Shortcuts](/cameras/shortcuts)** let you place a sensor on the video to read its state on hover and operate it on click.
+- **The [Sensors page](/sensors/setup#the-sensors-page)** lists every sensor in the system. Its edit dialog shows the same controls, including for sensors assigned to no camera.
 
 ## Read-only sensors
 

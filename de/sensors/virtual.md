@@ -4,22 +4,22 @@ title: Virtuelle Sensoren
 
 # Virtuelle Sensoren
 
-Ein **virtueller Sensor** ist ein Sensor ohne Plugin dahinter. Du erstellst ihn selbst an einer Kamera, camera.ui hält seinen Zustand, und du setzt diesen Zustand über den Übersicht-Tab der Kamera oder per [Automation](/de/automations/).
+Ein **virtueller Sensor** ist ein Sensor ohne Plugin dahinter. Du erstellst ihn selbst, camera.ui hält seinen Zustand, und du setzt diesen Zustand über die Oberfläche oder per [Automation](/de/automations/).
 
-Nutze ihn, um ein externes Gerät oder einen Zustand in camera.ui abzubilden: eine Türklingel, die du per Automation auslöst, einen Kontakt, den du umlegst, wenn eine MQTT-Nachricht eintrifft, einen Schalter, der für etwas steht, das kein Plugin meldet. Einmal erstellt, verhält sich ein virtueller Sensor wie jeder andere [Sensor](/de/sensors/). Er erscheint in der Übersicht der Kamera, lässt sich als [Shortcut](/de/cameras/shortcuts) aufs Video legen und funktioniert als Automations-Trigger.
+Nutze ihn, um ein externes Gerät oder einen Zustand in camera.ui abzubilden: eine Türklingel, die du per Automation auslöst, einen Kontakt, den du umlegst, wenn eine MQTT-Nachricht eintrifft, einen Schalter, der für etwas steht, das kein Plugin meldet. Einmal erstellt, verhält sich ein virtueller Sensor wie jeder andere [Sensor](/de/sensors/). Du kannst ihn Kameras zuweisen, als [Shortcut](/de/cameras/shortcuts) aufs Video legen, ins Smart Home freigeben und als Automations-Trigger nutzen.
 
 Erstellen, Umbenennen und Löschen virtueller Sensoren erfordert Admin-Rechte.
 
-## Virtuellen Sensor erstellen
+## Virtuellen Sensor anlegen
 
-Öffne die [Einstellungen](/de/cameras/settings) der Kamera, geh zum **Einstellungen**-Tab und klapp **Virtuelle Sensoren** auf. Klick auf **Virtuellen Sensor erstellen** und füll aus:
+Öffne die **Sensoren**-Seite und klicke auf **Virtuellen Sensor anlegen**. Füll aus:
 
 - **Typ.** Was der Sensor darstellt. Du wählst ihn einmal, später lässt er sich nicht ändern.
-- **Name.** Wie der Sensor in camera.ui erscheint, zum Beispiel "Haustür". Zwei Sensoren desselben Typs an einer Kamera können sich keinen Namen teilen.
+- **Name.** Wie der Sensor in camera.ui erscheint, zum Beispiel "Haustür". Zwei virtuelle Sensoren desselben Typs können sich keinen Namen teilen.
 
-Der Sensor gehört zu dieser Kamera und taucht sofort in ihrer Übersicht auf.[^cameradelete] Ein neuer startet im Ruhezustand: aus, geschlossen, verriegelt oder deaktiviert, je nach Typ.
+Der Sensor startet im Ruhezustand: aus, geschlossen, verriegelt oder deaktiviert, je nach Typ. Er gehört noch keiner Kamera; klicke auf seine Zeile, um Kameras zuzuweisen, dann taucht er sofort in deren Übersicht auf.[^cameradelete]
 
-<Shot src="/img/sensors/virtual-sensors-list.png" alt="Bereich Virtuelle Sensoren in den Kamera-Einstellungen" />
+<Shot src="/img/sensors/virtual-sensors-list.png" alt="Virtuelle Sensoren auf der Sensoren-Seite" />
 
 ## Verfügbare Typen
 
@@ -39,11 +39,11 @@ Es gibt 13 Typen:
 - **Temperatur.** Ein Temperaturwert.
 - **Feuchtigkeit.** Ein Feuchtigkeitswert.
 
-## Über die Übersicht steuern
+## Steuern
 
-Öffne die Kamera und geh zum **Übersicht**-Tab. Türklingel, Schalter, Licht, Sirene, Schloss, Garagentor und Alarmanlage liegen dort mit ihren Bedienelementen und funktionieren genauso wie die von Plugins bereitgestellten, siehe [Steuerung & Status](/de/sensors/controls).
+Im **Übersicht**-Tab einer zugewiesenen Kamera liegen Türklingel, Schalter, Licht, Sirene, Schloss, Garagentor und Alarmanlage mit ihren Bedienelementen und funktionieren genauso wie die von Plugins bereitgestellten, siehe [Steuerung & Status](/de/sensors/controls). Dieselben Bedienelemente stecken im Bearbeiten-Dialog auf der **Sensoren**-Seite, der auch Sensoren ohne Kamera abdeckt.
 
-Kontakt, Belegung, Rauchmelder, Wassersensor, Temperatur und Feuchtigkeit sind in der Übersicht read-only. Ihr Wert kommt aus einer Automation.
+Kontakt, Belegung, Rauchmelder, Wassersensor, Temperatur und Feuchtigkeit sind read-only. Ihr Wert kommt aus einer Automation.
 
 Schloss, Garagentor und Alarmanlage folgen sofort dem, was du setzt. Es gibt keine Hardware, die zurückmeldet, also hängen sie nie in einem Zustand wie "verriegelt gerade" oder "öffnet gerade".
 
@@ -55,10 +55,10 @@ Im [Automations-Editor](/de/automations/) setzt eine **Sensor steuern**-Aktion e
 
 ## Umbenennen oder löschen
 
-Die Liste **Virtuelle Sensoren** zeigt jeden virtuellen Sensor der Kamera mit seinem Typ. Mit dem Stift benennst du ihn um, mit dem roten Symbol löschst du ihn.[^delete]
+Beides passiert auf der **Sensoren**-Seite: Klicke auf die Zeile, um den Sensor umzubenennen, und nutze den Löschen-Button der Zeile, um ihn zu entfernen.[^delete]
 
 Das Umbenennen ändert den Namen überall, in der Übersicht, auf Shortcuts und in Automationen. Automationen, die den Sensor nutzen, laufen weiter.
 
-[^cameradelete]: Wenn du eine Kamera löschst, werden auch die virtuellen Sensoren gelöscht, die du an ihr erstellt hast.
+[^cameradelete]: Wenn du eine Kamera löschst, wird nur die Zuweisung entfernt. Der Sensor selbst bleibt und lässt sich anderen Kameras zuweisen.
 
 [^delete]: Wenn du einen virtuellen Sensor löschst, funktionieren Automationen, die ihn verwenden, nicht mehr. Ein neuer Sensor mit gleichem Typ und Namen stellt die Verknüpfung nicht wieder her, denn er ist ein neuer Sensor. Richte die Automation neu auf ihn aus.

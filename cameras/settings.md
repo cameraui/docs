@@ -26,7 +26,6 @@ The main configuration form, grouped into sections:
 - **Branding.** Manufacturer, model, and other device details.
 - **Interface.** The [streaming mode and source](/cameras/live-view#streaming-modes), and the display aspect ratio. Pick a preset (16:9, 4:3, 1:1, and more) or type a custom `width:height` like `21:9`, with a live preview of the camera framed at that ratio.
 - **Detection.** Per-camera tuning for motion, object, audio, and sensor detection (sensitivity, confidence, timeouts, triggers, and stationary-object handling), plus a snooze switch. See [Detection & AI](/detection/).
-- **Virtual Sensors.** Create, rename, and delete virtual sensors for this camera. They bring external devices and states into camera.ui, and you operate them from the Overview tab or from automations.
 - **Autotrack.** Let a PTZ camera follow detected objects automatically. See [PTZ & autotrack](/sensors/ptz).
 - **Zones.** Draw detection zones, ignore zones, and crossing lines. See [Zones & lines](/cameras/zones-and-masks).
 - **Snapshot.** How still images are refreshed and cached (auto-refresh, cache time, and refresh interval).

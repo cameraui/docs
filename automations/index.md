@@ -27,7 +27,7 @@ A trigger is what starts a flow. You can use more than one.
 - **Geofence.** A user enters or leaves a location you define.
 - **Manual.** You run the flow yourself with the Run button, useful while building and testing.
 
-Virtual sensors work here too. You create them per camera in camera settings, then set them with a **Control sensor** action and react to them with a **Sensor change** trigger.
+[Virtual sensors](/sensors/virtual) work here too. You create them on the Sensors page, then set them with a **Control sensor** action and react to them with a **Sensor change** trigger.
 
 ## Conditions
 

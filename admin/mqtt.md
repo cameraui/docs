@@ -68,9 +68,11 @@ When the built-in broker is running, the card says so along with its port.
 
 ## Topic reference
 
-`<prefix>` below is your topic prefix, `<id>` the camera's ID, `<stableId>` a sensor's ID. In topic segments, `#`, `+`, `/` and whitespace are replaced with `-`.
+`<prefix>` below is your topic prefix, `<id>` the camera's ID, `<sensorId>` a sensor's ID. In topic segments, `#`, `+`, `/` and whitespace are replaced with `-`.
 
 State topics are retained, so a subscriber that connects later still gets the current value. Events are not retained.
+
+Sensors publish under their own tree, not under a camera: a [sensor](/sensors/) is its own entity and can belong to several cameras or none. Only [exposed](/sensors/) sensors are published; turning the expose toggle off clears the sensor's retained topics.
 
 ### What camera.ui publishes
 
@@ -88,8 +90,8 @@ State topics are retained, so a subscriber that connects later still gets the cu
 | `<prefix>/camera/<id>/motion` | `ON` · `OFF` | yes |
 | `<prefix>/camera/<id>/detection/<label>` | `ON` · `OFF`, one topic per detected label | yes |
 | `<prefix>/camera/<id>/snapshot` | JPEG of the last event thumbnail | yes |
-| `<prefix>/camera/<id>/sensor/<stableId>/meta` | JSON: stable ID, type, name, display name, plugin | yes |
-| `<prefix>/camera/<id>/sensor/<stableId>/<property>` | the property's value as JSON | yes |
+| `<prefix>/sensor/<sensorId>/meta` | JSON: ID, type, name, display name, plugin, assigned cameras | yes |
+| `<prefix>/sensor/<sensorId>/<property>` | the property's value as JSON | yes |
 
 `<prefix>/status` is also the last will: if camera.ui goes away without saying goodbye, the broker publishes `offline` for it.
 
@@ -99,7 +101,7 @@ The motion topic goes `ON` when an event includes motion, a label topic when tha
 
 | Topic | Purpose |
 |---|---|
-| `<prefix>/camera/<id>/sensor/<stableId>/<property>/set` | Set a sensor property |
+| `<prefix>/sensor/<sensorId>/<property>/set` | Set a sensor property |
 
 Publish to a `/set` topic to control a sensor: `ON` and `OFF` become true and false, anything else is read as JSON and falls back to plain text. Detection sensors ignore commands, their values come from the camera.
 
@@ -122,14 +124,14 @@ Home Assistant then builds one device per camera, using the camera's name, plus 
 - **Snapshot.** A camera entity fed by the snapshot topic.
 - **Person, Vehicle, Animal, Package.** Detection sensors, only for cameras that have object detection.
 
-A [sensor](/sensors/) on the camera joins the same device when its type maps to a Home Assistant one: contact, occupancy, smoke and leak sensors, doorbells, temperature, humidity and battery readings, switches, lights (with brightness where the light supports it), sirens, locks, garage doors and security systems. Switches, lights, sirens, locks, garage doors and security systems are controllable from Home Assistant.[^detsensors]
+Every [exposed sensor](/sensors/) becomes a device of its own when its type maps to a Home Assistant one: contact, occupancy, smoke and leak sensors, doorbells, temperature, humidity and battery readings, switches, lights (with brightness where the light supports it), sirens, locks, garage doors and security systems. A sensor assigned to exactly one camera is linked below that camera's device. Switches, lights, sirens, locks, garage doors and security systems are controllable from Home Assistant.[^detsensors]
 
 Entities stay available only while both camera.ui and the camera are online. Status is the exception: it follows camera.ui alone, so it can still report the camera as offline. Turning discovery back off, turning MQTT off, or changing the discovery prefix or topic prefix removes the entities camera.ui created.
 
 ## Next steps
 
 - **[Automations](/automations/)** — react to an incoming MQTT message, or publish one as an action.
-- **[Sensors](/sensors/)** — the sensors that show up on the camera's topics and in Home Assistant.
+- **[Sensors](/sensors/)** — the sensors that show up on the sensor topics and in Home Assistant, and the expose toggle that controls it.
 
 [^detsensors]: Detection sensors (motion, object, audio, face, license plate and the like) get no entity of their own. They feed the Motion and detection entities above.
 [^anon]: Clearing the username or the password lets the built-in broker accept any client without credentials.
