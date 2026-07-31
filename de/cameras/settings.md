@@ -29,7 +29,7 @@ Das Haupt-Konfigurationsformular, gegliedert in Bereiche:
 - **Autotrack.** Eine PTZ-Kamera erkannten Objekten automatisch folgen lassen. Siehe [PTZ & Autotrack](/de/sensors/ptz).
 - **Zonen.** Erkennungszonen, ignorierte Zonen und Überquerungslinien zeichnen. Siehe [Zonen & Linien](/de/cameras/zones-and-masks).
 - **Snapshot.** Wie Standbilder aktualisiert und zwischengespeichert werden (Auto-Refresh, Cache-Zeit und Aktualisierungsintervall).
-- **Frame Worker.** Die für die Analyse genutzte Bildrate sowie ob Event-Thumbnails aus dem höchstauflösenden Stream erzeugt werden.
+- **Frame Worker.** Die für die Analyse genutzte Bildrate sowie ob Event-Thumbnails aus dem höchstauflösenden Stream erzeugt werden. Legt außerdem Decoder-Hardware (CUDA, VAAPI, Quick Sync, ...) und Gerät für diese Kamera fest; Auto wählt die beste verfügbare. Eine Kamera, die einem [Worker](/de/admin/workers) zugewiesen ist, bekommt eine zweite Decoder-Auswahl für den Worker, so können Host und Worker verschiedene GPUs nutzen.
 
 ## Plugins
 
