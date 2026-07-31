@@ -30,3 +30,5 @@ cache
 
 notes.txt
 /private
+.tmp
+.temp
