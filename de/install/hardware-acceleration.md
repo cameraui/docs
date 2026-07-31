@@ -82,6 +82,8 @@ Intels aktuelle OpenCL-Runtime deckt nur noch Gen12 und neuer ab. Der `intel`-Fl
 
 Zwei host-seitige Bausteine: der NVIDIA-Treiber (z. B. `sudo ubuntu-drivers install`) und das Container Toolkit, das die Treiber-Bibliotheken in Container injiziert. `sudo bash cameraui-host.sh nvidia` installiert das Toolkit und registriert es bei Docker. Nutze dann das `nvidia`-Flavor-Override von der [Docker-Seite](/de/install/docker#hardware-beschleunigung). `NVIDIA_DRIVER_CAPABILITIES=all` aktiviert auch die OpenCL- und Vulkan-Pfade, die die Erkennungs-Plugins nutzen können.
 
+Außerhalb von Docker (Bare-Metal-Linux, Windows) braucht CUDA-Erkennung mit dem ONNX-Plugin zusätzlich die CUDA-12-Bibliotheken und cuDNN 9 systemweit von [NVIDIA](https://developer.nvidia.com/cuda-downloads). Das Docker-Image bringt beides mit; unterstützt sind Karten von GTX 900/10xx bis RTX 50xx.
+
 ## Coral Edge TPU
 
 Die Laufzeit-Bibliothek (`libedgetpu`) ist bereits in jedem Image-Flavor enthalten. Nur die Host-Seite unterscheidet sich je nach Bauform:
