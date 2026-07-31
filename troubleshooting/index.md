@@ -28,6 +28,10 @@ If a camera shows offline or won't load:
 - Check your **[zones](/cameras/zones-and-masks)** aren't excluding the area.
 - Remember the **cascade**: object, face, and plate detection only run after motion or another trigger. See [Detection](/detection/).
 
+## OpenVINO can't find the GPU on bare metal
+
+The OpenVINO plugin logs `libOpenCL.so.1: cannot open shared object file` when the host is missing Intel's OpenCL runtime. Install it with `sudo apt install ocl-icd-libopencl1 intel-opencl-icd`, and make sure the service user is in the `render` and `video` groups. See [Linux → Hardware acceleration](/install/linux#hardware-acceleration).
+
 ## No notifications
 
 - Check the **[notification settings](/notifications/)** on the device: the master switch, quiet hours, and whether the device is registered.

@@ -61,7 +61,7 @@ Everything lives in the service user's home under `~/.camera.ui` (config, databa
 
 Video acceleration is [automatic](/install/hardware-acceleration), but on bare metal the host provides the drivers that the Docker images would otherwise bundle:
 
-- **Intel GPU:** `sudo apt install intel-media-va-driver-non-free` (VA-API/QSV)
+- **Intel GPU:** `sudo apt install intel-media-va-driver-non-free` (VA-API/QSV). For OpenVINO or OpenCL inference on the GPU, also install the OpenCL runtime: `sudo apt install ocl-icd-libopencl1 intel-opencl-icd`
 - **AMD GPU:** `sudo apt install mesa-va-drivers`
 - **NVIDIA:** the regular driver (e.g. `sudo ubuntu-drivers install`); the Container Toolkit is Docker-only, you don't need it here. CUDA detection with the ONNX plugin additionally needs the CUDA 12 libraries and cuDNN 9 on the system (from [NVIDIA's apt repo](https://developer.nvidia.com/cuda-downloads): `sudo apt install cuda-libraries-12-8 cudnn9-cuda-12`). The Docker image ships these, bare metal does not
 - **Coral Edge TPU:** the `libedgetpu` runtime plus (for PCIe/M.2) the gasket kernel driver, see the [Coral section](/install/hardware-acceleration#coral-edge-tpu)

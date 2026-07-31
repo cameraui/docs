@@ -61,7 +61,7 @@ Alles liegt im Home des Service-Users unter `~/.camera.ui` (Config, Datenbank, A
 
 Video-Beschleunigung ist [automatisch](/de/install/hardware-acceleration), auf Bare-Metal liefert aber der Host die Treiber, die die Docker-Images sonst mitbringen:
 
-- **Intel-GPU:** `sudo apt install intel-media-va-driver-non-free` (VA-API/QSV)
+- **Intel-GPU:** `sudo apt install intel-media-va-driver-non-free` (VA-API/QSV). Für OpenVINO- oder OpenCL-Inferenz auf der GPU zusätzlich die OpenCL-Runtime: `sudo apt install ocl-icd-libopencl1 intel-opencl-icd`
 - **AMD-GPU:** `sudo apt install mesa-va-drivers`
 - **NVIDIA:** der normale Treiber (z.B. `sudo ubuntu-drivers install`); das Container Toolkit ist Docker-spezifisch, hier nicht nötig. Für CUDA-Erkennung mit dem ONNX-Plugin müssen zusätzlich die CUDA-12-Bibliotheken und cuDNN 9 aufs System ([NVIDIA-apt-Repo](https://developer.nvidia.com/cuda-downloads): `sudo apt install cuda-libraries-12-8 cudnn9-cuda-12`). Das Docker-Image bringt beides mit, Bare-Metal nicht
 - **Coral Edge TPU:** die `libedgetpu`-Runtime plus (bei PCIe/M.2) der gasket-Kernel-Treiber, siehe [Coral-Abschnitt](/de/install/hardware-acceleration#coral-edge-tpu)

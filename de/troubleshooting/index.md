@@ -28,6 +28,10 @@ Wenn eine Kamera offline zeigt oder nicht lädt:
 - Prüfe, dass deine **[Zonen](/de/cameras/zones-and-masks)** den Bereich nicht ausschließen.
 - Denk an die **Kaskade**: Objekt-, Gesichts- und Kennzeichen-Erkennung laufen erst nach Bewegung oder einem anderen Trigger. Siehe [Erkennung](/de/detection/).
 
+## OpenVINO findet die GPU auf Bare-Metal nicht
+
+Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn dem Host Intels OpenCL-Runtime fehlt. Installiere sie mit `sudo apt install ocl-icd-libopencl1 intel-opencl-icd` und stelle sicher, dass der Service-User in den Gruppen `render` und `video` ist. Siehe [Linux → Hardware-Beschleunigung](/de/install/linux#hardware-beschleunigung).
+
 ## Keine Benachrichtigungen
 
 - Prüfe die **[Benachrichtigungs-Einstellungen](/de/notifications/)** auf dem Gerät: Hauptschalter, Ruhezeiten und ob das Gerät registriert ist.
