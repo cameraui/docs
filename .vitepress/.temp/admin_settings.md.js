@@ -1,0 +1,19 @@
+import { ssrRenderAttrs, ssrRenderStyle } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.1tPrXgE0.js";
+const __pageData = JSON.parse('{"title":"Settings overview","description":"","frontmatter":{"title":"Settings overview"},"headers":[],"relativePath":"admin/settings.md","filePath":"admin/settings.md","lastUpdated":1784139260000}');
+const _sfc_main = { name: "admin/settings.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><div style="${ssrRenderStyle({ "display": "none" })}" hidden="true" aria-hidden="true" data-nosnippet>Are you an LLM? You can read better optimized documentation at /admin/settings.md for this page in Markdown format</div><h1 id="settings-overview" tabindex="-1">Settings overview <a class="header-anchor" href="#settings-overview" aria-label="Permalink to &quot;Settings overview&quot;">​</a></h1><p>Most of how camera.ui is configured lives under <strong>Settings</strong>, reached from the menu. Some settings are personal to your account; others are server-wide and need an admin.</p><h2 id="personal-settings" tabindex="-1">Personal settings <a class="header-anchor" href="#personal-settings" aria-label="Permalink to &quot;Personal settings&quot;">​</a></h2><p>Available to everyone signed in:</p><ul><li><strong>Account.</strong> Your profile, password, two-factor authentication, and active sessions. See <a href="/admin/security">Security</a>.</li><li><strong>Appearance.</strong> Theme, language, and interface options.</li><li><strong>Notifications.</strong> How and when this device alerts you. See <a href="/notifications/">Notifications</a>.</li></ul><h2 id="administrator-settings" tabindex="-1">Administrator settings <a class="header-anchor" href="#administrator-settings" aria-label="Permalink to &quot;Administrator settings&quot;">​</a></h2><p>Available to admins:</p><ul><li><strong>Users.</strong> Accounts and roles. See <a href="/admin/users">Users</a>.</li><li><strong>Recordings.</strong> Recording and storage options. See <a href="/recording/">Recording</a>.</li><li><strong>Remote access.</strong> Reaching the server from outside. See <a href="/remote/">Remote access</a>.</li><li><strong>MQTT.</strong> Connect camera.ui to an MQTT broker.</li><li><strong>Backup.</strong> Back up and restore your setup, and schedule recurring backups. See <a href="/admin/backup">Backup</a>.</li><li><strong>System.</strong> Version, updates, and server actions. See <a href="/admin/system">System</a>.</li></ul><h2 id="admin-tools" tabindex="-1">Admin tools <a class="header-anchor" href="#admin-tools" aria-label="Permalink to &quot;Admin tools&quot;">​</a></h2><p>Beyond Settings, the menu has more admin tools:</p><ul><li>A <strong>dashboard</strong> with the server&#39;s status and resource use.</li><li><strong><a href="/automations/">Automations</a></strong> for connecting events to actions.</li><li><strong><a href="/admin/logs">Logs</a></strong> and a <strong>terminal</strong> for troubleshooting.</li><li><strong><a href="/admin/instances">Instances</a></strong> for switching between several servers, and <strong><a href="/admin/workers">Workers</a></strong> for sharing the load of this one.</li><li>A raw <strong>configuration</strong> editor for advanced changes.</li></ul></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("admin/settings.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const settings = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  settings as default
+};

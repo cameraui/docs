@@ -7,9 +7,9 @@ The mobile apps are companion viewers for iOS and Android. They let you watch yo
 ## Download
 
 - **iOS / iPadOS.** Currently in **beta**. Join through [TestFlight](https://testflight.apple.com/join/wbzK69Wu): install Apple's TestFlight app, then open the invite link on your device.[^appstore]
-- **Android.** Coming soon.
+- **Android.** Currently in **beta**. Join the [beta group](https://groups.google.com/a/cameraui.com/g/cameraui-beta) with the Google account you use in the Play Store, become a [tester](https://play.google.com/apps/testing/com.cameraui.app), then install from [Google Play](https://play.google.com/store/apps/details?id=com.cameraui.app).[^androidbeta]
 
-<!-- TODO: swap the TestFlight invite for the App Store link once released; add the Google Play link when the Android app ships -->
+<!-- TODO: swap the beta links (TestFlight, Play Store testing) for the public App Store and Play Store listings on release -->
 
 | Platform | Requirement |
 |---|---|
@@ -41,7 +41,8 @@ For an extra layer on the device itself, turn on **App lock with Face ID / Finge
 
 ## Updates
 
-The apps update through the App Store and Google Play (during the beta, through TestFlight) like any other app, and also receive over-the-air updates to the interface. See [Updating](/install/updating).
+The apps update through the App Store and Google Play like any other app (during the beta, through TestFlight on iOS and the Play Store testing track on Android), and also receive over-the-air updates to the interface. See [Updating](/install/updating).
 
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback, export, face recognition, semantic search, and AI descriptions, plus push notifications. Live view and real-time detection are free.
 [^appstore]: The app moves to the App Store with the public release.
+[^androidbeta]: Google requires testers to stay enrolled for at least 14 days before the app can go public, so please stay opted in. For beta builds, turn on **Beta updates** under **Settings → System** in the app.

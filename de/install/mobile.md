@@ -7,9 +7,9 @@ Die Mobile-Apps sind Companion-Viewer für iOS und Android. Mit ihnen siehst du 
 ## Download
 
 - **iOS / iPadOS.** Derzeit in der **Beta**. Tritt über [TestFlight](https://testflight.apple.com/join/wbzK69Wu) bei: Apples TestFlight-App installieren, dann den Einladungslink auf dem Gerät öffnen.[^appstore]
-- **Android.** Erscheint in Kürze.
+- **Android.** Derzeit in der **Beta**. Tritt der [Beta-Gruppe](https://groups.google.com/a/cameraui.com/g/cameraui-beta) mit dem Google-Konto bei, das du im Play Store nutzt, werde [Tester](https://play.google.com/apps/testing/com.cameraui.app), und installiere dann über [Google Play](https://play.google.com/store/apps/details?id=com.cameraui.app).[^androidbeta]
 
-<!-- TODO: swap the TestFlight invite for the App Store link once released; add the Google Play link when the Android app ships -->
+<!-- TODO: swap the beta links (TestFlight, Play Store testing) for the public App Store and Play Store listings on release -->
 
 | Plattform | Voraussetzung |
 |---|---|
@@ -41,7 +41,8 @@ Für eine zusätzliche Ebene auf dem Gerät selbst aktivierst du in den Einstell
 
 ## Updates
 
-Die Apps aktualisieren sich über den App Store und Google Play (während der Beta über TestFlight) wie jede andere App und erhalten zusätzlich Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).
+Die Apps aktualisieren sich über den App Store und Google Play wie jede andere App (während der Beta über TestFlight auf iOS und den Testing-Track im Play Store auf Android) und erhalten zusätzlich Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).
 
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe, Export, Gesichtserkennung, semantische Suche und KI-Beschreibungen, dazu Push-Benachrichtigungen. Live-Ansicht und Echtzeit-Erkennung sind kostenlos.
 [^appstore]: Mit dem öffentlichen Release wechselt die App in den App Store.
+[^androidbeta]: Google verlangt, dass Tester mindestens 14 Tage angemeldet bleiben, bevor die App öffentlich gehen kann, bleib also bitte dabei. Für Beta-Builds aktivierst du in der App unter **Einstellungen → System** die Option **Beta-Updates**.

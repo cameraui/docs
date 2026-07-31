@@ -123,6 +123,13 @@
         },
         {
           "text": {
+            "en": "Apple TV",
+            "de": "Apple TV"
+          },
+          "link": "/install/tv"
+        },
+        {
+          "text": {
             "en": "Updating",
             "de": "Aktualisieren"
           },
