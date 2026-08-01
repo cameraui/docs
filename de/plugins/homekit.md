@@ -15,13 +15,26 @@ Das HomeKit-Plugin fügt deine Kameras und Sensoren zu **Apple Home** hinzu. Kam
 3. Öffne die **HomeKit-Einstellungen** einer Kamera. Jede Kamera wird einzeln zu Home hinzugefügt und hat ihren eigenen **QR-Code** und **PIN**.
 4. Wähle in der Apple-**Home**-App **Gerät hinzufügen** und scanne den QR-Code der Kamera, oder gib ihren PIN ein. Wiederhole das für jede Kamera.
 
+Du koppelst vom selben Gerät, auf dem camera.ui offen ist? Dann gibt es nichts zu scannen: nimm in der Home-App **Weitere Optionen** und tippe den PIN ein. Der Kopier-Button daneben legt ihn in die Zwischenablage.
+
 Einmal hinzugefügt, streamt die Kamera in Home und unterstützt **HomeKit Secure Video**-Aufnahmen, wenn du das in Home eingerichtet hast.
 
 ## Was wo landet
 
-Eine Kamera kommt als ein Zubehör mit allem, was zu ihr gehört: ihrem Bewegungssensor, ihrer Klingeltaste, ihrem Spotlight, ihrer Sirene und ihrer Batterie.
+Eine Kamera ist immer ihr eigenes Zubehör, mit einem Bewegungssensor darauf. Diesen Bewegungssensor speist die Erkennung von camera.ui, er funktioniert also auch ohne zugewiesenen Bewegungssensor.
 
-Jeder andere [freigegebene Sensor](/de/sensors/) (Kontakt, Belegung, Rauchmelder, Wassersensor, Temperatur, Feuchtigkeit, Schloss, Garagentor, Schalter, Alarmanlage, eigenständige Lichter und Sirenen) liegt hinter einem einzelnen Zubehör **camera.ui Bridge**. Die Bridge erscheint, sobald der erste solche Sensor freigegeben ist; kopple sie einmal, und jeder später freigegebene Sensor kommt automatisch dazu. Ihr QR-Code und PIN stecken in den Einstellungen des Plugins.
+Was aus einem Sensor wird, hängt an seiner [Kamera-Zuweisung](/de/sensors/setup):
+
+**Einer Kamera zugewiesen** wird der Sensor Teil des Kamera-Zubehörs statt einer eigenen Kachel:
+
+- **Bewegung** speist den Bewegungssensor der Kamera und bekommt kein eigenes Zubehör.
+- **Klingel** ergänzt die Klingeltaste an der Kamera.
+- **Batterie** ergänzt Ladestand und Warnung bei niedrigem Akku.
+- **Spotlight und Sirene** werden zu Bedienelementen an der Kamera, solange es die eigene Hardware der Kamera ist.
+
+**Keiner Kamera zugewiesen** wird der Sensor sein eigenes Zubehör hinter der einen **camera.ui Bridge**: Kontakt, Belegung, Rauchmelder, Wassersensor, Temperatur, Feuchtigkeit, Schloss, Garagentor, Schalter und Alarmanlage landen immer hier, genauso Bewegungssensoren, Klingeln, Lichter und Sirenen, die zu keiner Kamera gehören. Ein eigenständiges Licht oder eine eigenständige Sirene bleibt auf der Bridge, auch wenn du sie einer Kamera zuweist; nur in der Kamera verbaute Hardware wandert auf die Kamera.
+
+Die Bridge läuft, sobald das Plugin läuft, mit oder ohne Sensoren. Kopple sie einmal, und jeder später freigegebene Sensor kommt automatisch dazu. Ihr QR-Code und PIN stecken in den Einstellungen des Plugins.
 
 Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigeben** auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite).
 

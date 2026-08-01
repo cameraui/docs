@@ -15,13 +15,26 @@ The HomeKit plugin adds your cameras and sensors to **Apple Home**. Cameras stre
 3. Open a camera's **HomeKit settings**. Each camera is added to Home individually and has its own **QR code** and **PIN**.
 4. In the Apple **Home** app, choose **Add Accessory** and scan the camera's QR code, or enter its PIN. Repeat for each camera.
 
+Pairing from the same device camera.ui is open on? There is nothing to scan then, so use **More options** in the Home app and type the PIN. The copy button next to it puts the PIN on your clipboard.
+
 Once added, the camera streams in Home and supports **HomeKit Secure Video** recording if you've set that up in Home.
 
 ## What ends up where
 
-A camera comes across as one accessory with everything that belongs to it: its motion sensor, doorbell button, spotlight, siren, and battery.
+A camera is always its own accessory, with a motion sensor on it. That motion sensor is fed by camera.ui's detection, so it works whether or not a motion sensor is assigned.
 
-Every other [exposed sensor](/sensors/) (contact, occupancy, smoke, leak, temperature, humidity, lock, garage, switch, security system, standalone lights and sirens) lives behind a single **camera.ui Bridge** accessory. The bridge appears as soon as the first such sensor is exposed; pair it once and every sensor you expose later joins automatically. Its QR code and PIN sit in the plugin's settings.
+What a sensor turns into depends on its [camera assignment](/sensors/setup):
+
+**Assigned to a camera**, the sensor becomes part of that camera's accessory instead of a separate tile:
+
+- **Motion** feeds the camera's motion sensor and gets no accessory of its own.
+- **Doorbell** adds the doorbell button to the camera.
+- **Battery** adds the charge level and the low-battery warning.
+- **Spotlight and siren** become controls on the camera, as long as they are the camera's own hardware.
+
+**Not assigned to a camera**, the sensor becomes its own accessory behind the single **camera.ui Bridge**: contact, occupancy, smoke, leak, temperature, humidity, lock, garage door, switch and security system always land here, and so do motion sensors, doorbells, lights and sirens that belong to no camera. A standalone light or siren stays on the bridge even if you assign it to a camera; only hardware built into the camera moves onto it.
+
+The bridge runs as soon as the plugin does, with or without sensors. Pair it once and every sensor you expose later joins automatically. Its QR code and PIN sit in the plugin's settings.
 
 Whether a sensor comes across at all is the **Expose sensor** toggle on the [Sensors page](/sensors/setup#the-sensors-page).
 
