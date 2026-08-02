@@ -10,7 +10,7 @@ camera.ui alerts you when something happens at a camera, with a thumbnail and a 
 
 - **In the app.** Every alert appears in the in-app list (the bell), on any device, always up to date.
 - **Desktop app.** While it's running, including in the tray, it shows native system notifications for the server it's connected to. It stays quiet while the window is in front, since the bell already shows the alert. No cloud or account is needed.
-- **Phone (push).** The [mobile app](/install/mobile) gets push even when it's closed, delivered through camera.ui Cloud.[^license]
+- **Phone (push).** The [mobile app](/install/mobile) gets push even when it's closed, delivered end-to-end encrypted through camera.ui Cloud.[^license]
 
 ## Getting push on your phone
 
@@ -21,6 +21,10 @@ Phone push needs a few things in place. If any is missing, alerts still land in 
 3. **On, and synced.** In the app, open **Settings → Notifications**, turn the master switch on, and tap **Sync this device** once. Repeat on every phone, for every server you connect to.
 
 **Re-sync after a reinstall.** Reinstalling the app, clearing its data, or switching to a new phone resets the push token, so open **Settings → Notifications** and tap **Sync this device** again. After a reinstall the **This device** row already shows it needs syncing. If push ever goes quiet for no clear reason, that's the first thing to try.
+
+## Push stays private
+
+Your server seals every alert before it leaves your network. camera.ui Cloud, Google and Apple only pass the sealed envelope along; the camera name, the alert text and the link inside are unreadable to all three.[^e2ee] The thumbnail takes no detour at all: your phone loads it straight from your server.
 
 ## Your notification settings
 
@@ -51,6 +55,7 @@ Each camera has its own notification settings, so you only get pinged for what m
 Some events are too important to hold back. **Critical alerts**, like a doorbell ring or an alarm, are delivered immediately and ignore both the cooldown and quiet hours.
 
 [^license]: Push notifications to the mobile apps require an active camera.ui subscription.
+[^e2ee]: End-to-end encryption needs a current mobile app and NVR plugin. Older versions keep receiving push, but without the encryption.
 [^device]: The **This device** row is the exception. It only affects the phone or computer you are on.
 [^admin]: Only admins see the system notifications section.
 [^nvr]: These per-camera controls come from the NVR plugin, the same plugin that handles recording.

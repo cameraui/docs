@@ -10,6 +10,8 @@ camera.ui Cloud lässt dich deinen Server von überall erreichen, ohne am Router
 
 camera.ui Cloud ist ein Weg, deinen eigenen Server zu erreichen, keine Kopie davon. Deine Kameras, Aufnahmen, Einstellungen und die Oberfläche bleiben alle auf deinem Server. Die einzige Aufgabe der Cloud ist es, deiner App und deinem Server beim Verbinden zu helfen, und deine Session läuft dann direkt zu deiner eigenen Instanz. Dein Video, deine Zugangsdaten und andere Daten gehen direkt zu deinem Server und sind für camera.ui niemals einsehbar.
 
+Push-Benachrichtigungen sind das Einzige, das tatsächlich durch die Cloud läuft, und sie sind Ende-zu-Ende-verschlüsselt: dein Server versiegelt jeden Alarm, nur dein Handy kann ihn öffnen, und die Cloud reicht den Umschlag weiter, ohne etwas zu speichern. Siehe [Benachrichtigungen](/de/notifications/).
+
 ## Aktivieren
 
 <Shot src="/img/remote/remote-settings.png" alt="Die Cloud-Karte unter Einstellungen, Remote" />

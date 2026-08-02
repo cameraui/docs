@@ -10,7 +10,7 @@ camera.ui alarmiert dich, wenn an einer Kamera etwas passiert, mit einem Vorscha
 
 - **In der App.** Jeder Alarm erscheint in der In-App-Liste (der Glocke), auf jedem Gerät, immer aktuell.
 - **Desktop-App.** Während sie läuft, auch im Tray, zeigt sie native System-Benachrichtigungen für den Server, mit dem sie verbunden ist. Solange das Fenster im Vordergrund ist, bleibt sie still, denn die Glocke zeigt den Alarm bereits. Keine Cloud und kein Konto nötig.
-- **Handy (Push).** Die [Mobile-App](/de/install/mobile) erhält Push auch bei geschlossener App, zugestellt über camera.ui Cloud.[^license]
+- **Handy (Push).** Die [Mobile-App](/de/install/mobile) erhält Push auch bei geschlossener App, Ende-zu-Ende-verschlüsselt zugestellt über camera.ui Cloud.[^license]
 
 ## Push aufs Handy bekommen
 
@@ -21,6 +21,10 @@ Push aufs Handy braucht ein paar Dinge. Fehlt eines davon, landen Alarme weiterh
 3. **An und synchronisiert.** Öffne in der App **Einstellungen → Benachrichtigungen**, schalte den Hauptschalter ein und tippe einmal auf **Dieses Gerät synchronisieren**. Wiederhole das auf jedem Handy, für jeden Server, mit dem du dich verbindest.
 
 **Nach einer Neuinstallation neu synchronisieren.** Die App neu installieren, ihre Daten löschen oder aufs neue Handy wechseln setzt den Push-Token zurück, öffne also **Einstellungen → Benachrichtigungen** und tippe erneut auf **Dieses Gerät synchronisieren**. Nach einer Neuinstallation zeigt die Zeile **Dieses Gerät** das ohnehin als nicht synchronisiert an. Wenn Push ohne klaren Grund verstummt, probiere zuerst das.
+
+## Push bleibt privat
+
+Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui Cloud, Google und Apple reichen nur den versiegelten Umschlag weiter; Kameraname, Alarmtext und der Link darin sind für alle drei unlesbar.[^e2ee] Das Vorschaubild macht gar keinen Umweg: dein Handy lädt es direkt von deinem Server.
 
 ## Deine Benachrichtigungs-Einstellungen
 
@@ -51,6 +55,7 @@ Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem ge
 Manche Ereignisse sind zu wichtig, um sie zurückzuhalten. **Kritische Alarme**, etwa ein Türklingel-Läuten oder ein Alarm, werden sofort zugestellt und ignorieren sowohl den Cooldown als auch die Ruhezeiten.
 
 [^license]: Push-Benachrichtigungen an die Mobile-Apps erfordern ein aktives camera.ui-Abo.
+[^e2ee]: Die Ende-zu-Ende-Verschlüsselung braucht eine aktuelle Mobile-App und ein aktuelles NVR-Plugin. Ältere Versionen erhalten Push weiterhin, aber ohne die Verschlüsselung.
 [^device]: Die Zeile **Dieses Gerät** ist die Ausnahme. Sie betrifft nur das Handy oder den Computer, an dem du gerade bist.
 [^admin]: Den Bereich mit den System-Benachrichtigungen sehen nur Admins.
 [^nvr]: Diese Einstellungen pro Kamera stammen vom NVR-Plugin, das auch die Aufnahme übernimmt.
