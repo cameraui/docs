@@ -10,7 +10,17 @@ camera.ui alarmiert dich, wenn an einer Kamera etwas passiert, mit einem Vorscha
 
 - **In der App.** Jeder Alarm erscheint in der In-App-Liste (der Glocke), auf jedem Gerät, immer aktuell.
 - **Desktop-App.** Während sie läuft, auch im Tray, zeigt sie native System-Benachrichtigungen für den Server, mit dem sie verbunden ist. Solange das Fenster im Vordergrund ist, bleibt sie still, denn die Glocke zeigt den Alarm bereits. Keine Cloud und kein Konto nötig.
-- **Handy (Push).** Die [Mobile-Apps](/de/install/mobile) erhalten Push-Benachrichtigungen über camera.ui Cloud und erreichen dich auch, wenn die App geschlossen ist. Schalte Benachrichtigungen auf dem Handy unter **Einstellungen → Benachrichtigungen** ein und tippe einmal auf **Dieses Gerät synchronisieren**. Das gilt für jedes Handy und für jeden Server, mit dem du dich verbindest.[^license]
+- **Handy (Push).** Die [Mobile-App](/de/install/mobile) erhält Push auch bei geschlossener App, zugestellt über camera.ui Cloud.[^license]
+
+## Push aufs Handy bekommen
+
+Push aufs Handy braucht ein paar Dinge. Fehlt eines davon, landen Alarme weiterhin in der In-App-Glocke, aber das Handy bleibt still:
+
+1. **Die native App.** Push erreicht nur die [Mobile-App](/de/install/mobile) aus dem App Store oder Play Store. Ein Browser oder die Web-App (PWA) zeigt die In-App-Glocke, aber nie Push.
+2. **camera.ui Cloud.** Push wird über [camera.ui Cloud](/de/remote/cloud) zugestellt, der Server braucht sie also aktiviert und mit deinem Konto [gekoppelt](/de/remote/pairing). Außerdem ist ein aktives Abo nötig.
+3. **An und synchronisiert.** Öffne in der App **Einstellungen → Benachrichtigungen**, schalte den Hauptschalter ein und tippe einmal auf **Dieses Gerät synchronisieren**. Wiederhole das auf jedem Handy, für jeden Server, mit dem du dich verbindest.
+
+**Nach einer Neuinstallation neu synchronisieren.** Die App neu installieren, ihre Daten löschen oder aufs neue Handy wechseln setzt den Push-Token zurück, öffne also **Einstellungen → Benachrichtigungen** und tippe erneut auf **Dieses Gerät synchronisieren**. Nach einer Neuinstallation zeigt die Zeile **Dieses Gerät** das ohnehin als nicht synchronisiert an. Wenn Push ohne klaren Grund verstummt, probiere zuerst das.
 
 ## Deine Benachrichtigungs-Einstellungen
 

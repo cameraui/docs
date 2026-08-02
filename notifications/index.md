@@ -10,7 +10,17 @@ camera.ui alerts you when something happens at a camera, with a thumbnail and a 
 
 - **In the app.** Every alert appears in the in-app list (the bell), on any device, always up to date.
 - **Desktop app.** While it's running, including in the tray, it shows native system notifications for the server it's connected to. It stays quiet while the window is in front, since the bell already shows the alert. No cloud or account is needed.
-- **Phone (push).** The [mobile apps](/install/mobile) receive push notifications through camera.ui Cloud, so they reach you even when the app is closed. Turn notifications on in **Settings → Notifications** on the phone, then tap **Sync this device** once. Do that on every phone, for every server you connect to.[^license]
+- **Phone (push).** The [mobile app](/install/mobile) gets push even when it's closed, delivered through camera.ui Cloud.[^license]
+
+## Getting push on your phone
+
+Phone push needs a few things in place. If any is missing, alerts still land in the in-app bell, but the phone stays quiet:
+
+1. **The native app.** Push only reaches the [mobile app](/install/mobile) from the App Store or Play Store. A browser or the web app (PWA) shows the in-app bell, but never push.
+2. **camera.ui Cloud.** Push is delivered through [camera.ui Cloud](/remote/cloud), so the server needs it enabled and [paired](/remote/pairing) to your account. It also needs an active subscription.
+3. **On, and synced.** In the app, open **Settings → Notifications**, turn the master switch on, and tap **Sync this device** once. Repeat on every phone, for every server you connect to.
+
+**Re-sync after a reinstall.** Reinstalling the app, clearing its data, or switching to a new phone resets the push token, so open **Settings → Notifications** and tap **Sync this device** again. After a reinstall the **This device** row already shows it needs syncing. If push ever goes quiet for no clear reason, that's the first thing to try.
 
 ## Your notification settings
 
