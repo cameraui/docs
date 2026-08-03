@@ -157,7 +157,7 @@ Der gesamte Zustand liegt im `cameraui-data`-Volume: Konfiguration, Datenbank, A
 
 ## Aktualisieren
 
-Der Server aktualisiert sich innerhalb der App selbst, und die gewählte Version bleibt über Image-Pulls hinweg erhalten. Um das Image selbst zu aktualisieren (OS, GPU-Bibliotheken und Launcher), ziehe es neu und erstelle den Container neu:
+Ein neues Image zu ziehen aktualisiert nicht den Server, nur das Image (OS, GPU-Bibliotheken und Launcher): Der Launcher behält die Server-Version, die im `cameraui-data`-Volume installiert ist. Aktualisiere den Server über **Einstellungen → System** oder führe `cameraui update-server -H /data` im Container aus und starte ihn danach neu. Um das Image zu aktualisieren, ziehe es neu und erstelle den Container neu:
 
 ```bash
 docker compose pull

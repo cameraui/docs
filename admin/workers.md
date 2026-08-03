@@ -103,6 +103,8 @@ Leave the capabilities unset and the worker offers everything, which is what mos
 
 Once paired, a worker appears in the **Workers** list showing its online/offline status, platform (OS/architecture), process ID, version, and live CPU and memory use. A warning is shown if a worker's version differs from the master's.
 
+A lagging worker shows an **Update** button right in the list: the worker installs the master's version and restarts itself. Two cases need a different route. Workers running inside the desktop app update with that app. And workers still on a version before 2.1.0 don't understand the update command yet, so bring them up once by hand: on Docker, exec into the container, run `cameraui update-server -H /data` and restart the container (pulling the worker image won't change the version). From then on the button covers them too. See [Updating](/install/updating).
+
 ## Camera and plugin assignments
 
 Under **Camera Assignments**, choose which camera each worker decodes and detects on; cameras left as **Local** stay on the main server.

@@ -7,7 +7,7 @@ camera.ui hat zwei Teile, die aktualisiert werden: den **Server** (den Kern, der
 Der Server ist der wichtigste Teil, den du aktuell halten solltest. Wie du ihn aktualisierst, hängt von der Installationsart ab:
 
 - **Desktop-App.** Die App aktualisiert den Server automatisch für dich, bevor sie ihn startet. Du musst nichts tun.
-- **Docker oder Bare-Metal.** Wenn eine neue Server-Version verfügbar ist, zeigt **Einstellungen → [System](/de/admin/system)** einen **Aktualisieren**-Button. Wähle ihn, und der Server installiert das Update und startet neu.
+- **Docker oder Bare-Metal.** Wenn eine neue Server-Version verfügbar ist, zeigt **Einstellungen → [System](/de/admin/system)** einen **Aktualisieren**-Button. Wähle ihn, und der Server installiert das Update und startet neu. Ein neues Docker-Image zu ziehen macht das nicht: Der Launcher behält die Server-Version, die schon im Volume liegt. [Worker](/de/admin/workers) aktualisieren sich über die Workers-Seite des Masters; nur ein Worker, der noch auf einer Version vor 2.1.0 läuft, braucht eine manuelle Runde: führe `cameraui update-server -H /data` in seinem Container aus und starte ihn neu.
 
 ## Beta-Updates
 
@@ -23,14 +23,16 @@ Eine Ausnahme unter Linux: Nur die `.AppImage` aktualisiert sich selbst. Wenn du
 
 ## Das Docker-Image aktualisieren
 
-Den Server über die UI zu aktualisieren ändert nicht das [Docker](/de/install/docker)-Image. Um das Image selbst zu aktualisieren (Basis-OS, GPU-Bibliotheken und Launcher), zieh die neueste Version und erstelle den Container neu:
+Server und Image werden getrennt aktualisiert. Den Server über die UI zu aktualisieren ändert nicht das [Docker](/de/install/docker)-Image, und ein neues Image zu ziehen ändert nicht den Server: Der Launcher installiert den Server beim ersten Start ins Volume und behält diese Version dann über jeden späteren Pull hinweg. Ein frisches Image startet deinen bestehenden Server, keinen neueren, deshalb hebt erneutes Ziehen die Version nie an.
+
+Um das **Image** selbst zu aktualisieren (Basis-OS, GPU-Bibliotheken und Launcher), zieh die neueste Version und erstelle den Container neu:
 
 ```bash
 docker compose pull
 docker compose up -d
 ```
 
-Die von dir gewählte Server-Version wird separat gespeichert und bleibt über Image-Pulls hinweg erhalten, sodass ein Image-Update sie nie zurücksetzt.
+Um den **Server** zu aktualisieren, nutze den **Aktualisieren**-Button oben oder führe `cameraui update-server -H /data` im Container aus und starte ihn danach neu. Das `-H /data` ist wichtig: ohne landet das Update außerhalb des Daten-Volumes und der Neustart bootet wieder die alte Version.
 
 ## Die Mobile-Apps aktualisieren
 

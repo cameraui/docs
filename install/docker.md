@@ -157,7 +157,7 @@ All state lives in the `cameraui-data` volume: config, database, recordings, and
 
 ## Updating
 
-The server updates itself from within the app, and the version you choose persists across image pulls. To update the image itself (OS, GPU libraries, and launcher), pull and recreate the container:
+Pulling a new image does not update the server, only the image (OS, GPU libraries, and launcher): the launcher keeps the server version installed in the `cameraui-data` volume. Update the server from **Settings → System**, or run `cameraui update-server -H /data` in the container, then restart it. To update the image, pull and recreate the container:
 
 ```bash
 docker compose pull

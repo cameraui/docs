@@ -7,7 +7,7 @@ camera.ui has two parts that update: the **server** (the core that does the work
 The server is the most important part to keep current. How you update it depends on how you installed it:
 
 - **Desktop app.** The app updates the server for you automatically, before it starts. There is nothing to do.
-- **Docker or bare-metal.** When a new server version is available, **Settings → [System](/admin/system)** shows an **Update** button. Select it, and the server installs the update and restarts.
+- **Docker or bare-metal.** When a new server version is available, **Settings → [System](/admin/system)** shows an **Update** button. Select it, and the server installs the update and restarts. Pulling a new Docker image does not do this: the launcher keeps the server version already in the volume. [Workers](/admin/workers) update from the master's Workers page; only a worker still on a version before 2.1.0 needs one manual round, run `cameraui update-server -H /data` in its container and restart it.
 
 ## Beta updates
 
@@ -23,14 +23,16 @@ One exception on Linux: only the `.AppImage` updates itself. If you installed th
 
 ## Updating the Docker image
 
-Updating the server from the UI does not change the [Docker](/install/docker) image. To update the image itself (the base OS, GPU libraries, and launcher), pull the latest and recreate the container:
+The server and the image update separately. Updating the server from the UI does not change the [Docker](/install/docker) image, and pulling a new image does not change the server: the launcher installs the server into the volume on first start, then keeps that version across every later pull. A fresh image starts your existing server, not a newer one, which is why re-pulling never bumps the version.
+
+To update the **image** itself (the base OS, GPU libraries, and launcher), pull the latest and recreate the container:
 
 ```bash
 docker compose pull
 docker compose up -d
 ```
 
-The server version you chose is stored separately and persists across image pulls, so an image update never resets it.
+To update the **server**, use the **Update** button above, or run `cameraui update-server -H /data` in the container and restart it. The `-H /data` matters: without it the update lands outside the data volume and the restart boots the old version again.
 
 ## Updating the mobile apps
 
