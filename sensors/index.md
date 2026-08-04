@@ -11,7 +11,7 @@ Every sensor is its own entity. It keeps its name, settings, and history no matt
 ## Types of sensor
 
 - **Detection.** Motion, object, audio, face, license plate, and semantic (CLIP). These are covered under [Detection & AI](/detection/).
-- **Environmental & state.** Contact (open/closed), temperature, humidity, occupancy, smoke, leak, and battery. These are read-only.
+- **Environmental & state.** Contact, temperature, humidity, occupancy, smoke, leak, battery, gas, carbon monoxide, CO₂, heat, cold, vibration, tamper, problem, power, and illuminance. These are read-only. The binary ones (like gas or tamper) can trigger a camera's detection the same way a contact sensor does.
 - **Accessories.** Light, switch, lock, siren, garage, security system, and doorbell. These can be controlled.
 - **PTZ.** Pan, tilt, and zoom. See [PTZ & autotrack](/sensors/ptz).
 

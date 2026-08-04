@@ -24,6 +24,8 @@ Eine Kamera, die über ein Plugin hinzugefügt wurde (etwa ONVIF oder eine Cloud
 
 Wähle innerhalb einer Kategorie einen **Sensor-Typ** und dann das **Plugin**, das ihn bereitstellen soll. Detection-Typen nehmen jeweils einen Anbieter; Zubehör kann von mehreren Plugins kommen. Jeder aktivierte Sensor erscheint in der **Sensors**-Liste, wo du ihn umbenennen kannst.
 
+Eine Türklingel, die einer Kamera zugewiesen ist, startet bei jedem Läuten automatisch ein Kamera-Ereignis, ohne dass du sie unter Detection aktivieren musst. Türklingeln, die du vor diesem Release zugewiesen hast, behalten ihre aktuelle Einstellung.
+
 ## Einstellungen konfigurieren
 
 Viele Plugins und Sensoren haben eigene Optionen, die direkt als Formular erscheinen: Plugin-Einstellungen, die für diese Kamera gelten, und Einstellungen pro Sensor. Änderungen wirken sofort.
@@ -32,7 +34,7 @@ Einmal aktiviert, erscheinen Sensoren in der Übersicht der Kamera und auf dem V
 
 ## Die Sensoren-Seite
 
-Die **Sensoren**-Seite listet jeden Sensor im System: von Plugins bereitgestellte, Kamera-Hardware und virtuelle. Jede Zeile zeigt Verbindungsstatus, Name, Typ, lieferndes Plugin und zugewiesene Kameras. Kamera-Hardware trägt ein Schloss neben ihrer Kamera; ein Sensor, der fürs Smart Home ausgeblendet ist, ein durchgestrichenes Auge neben dem Namen. Suche und sortierbare Spalten halten große Setups überschaubar.
+Die **Sensoren**-Seite listet die Sensoren, die du verwaltest: von Plugins bereitgestellte und virtuelle. Sensoren, die eine Kamera selbst mitbringt, ihre Bewegung, Batterie oder PTZ, sind standardmäßig ausgeblendet; der Einstellungs-Button neben dem Suchfeld holt sie zurück. Jede Zeile zeigt Verbindungsstatus, Name, Typ, lieferndes Plugin und zugewiesene Kameras. Eine Kamera-Hardware-Zeile trägt ein Schloss neben ihrer Kamera; ein Sensor, der fürs Smart Home ausgeblendet ist, ein durchgestrichenes Auge neben dem Namen. Zwei schwebende Buttons wechseln zwischen der Tabelle und einer Kartenansicht und starten den Auswahlmodus, in dem du beliebig viele Sensoren markierst und auf einmal ausblendest, wieder einblendest oder löschst. Das Icon eines Sensors leuchtet, solange er aktiv ist, du erkennst also auf einen Blick, dass Bewegung läuft, eine Tür offen ist, ein Licht an ist oder eine Türklingel läutet. Suche und sortierbare Spalten halten große Setups überschaubar.
 
 <Shot src="/img/sensors/sensors-page.png" alt="Sensoren-Seite mit allen Sensoren" />
 

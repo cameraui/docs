@@ -23,7 +23,7 @@ The sensor starts in its idle state: off, closed, locked, or disarmed, depending
 
 ## Available types
 
-There are 13 types:
+There are 23 types:
 
 - **Doorbell.** A ring you trigger. It resets itself two seconds later.
 - **Switch.** On or off.
@@ -38,12 +38,22 @@ There are 13 types:
 - **Security System.** Off, Home, Away, or Night.
 - **Temperature.** A temperature reading.
 - **Humidity.** A humidity reading.
+- **Gas.** Clear or triggered.
+- **Carbon Monoxide.** Clear or triggered.
+- **Heat.** Clear or triggered.
+- **Cold.** Clear or triggered.
+- **Vibration.** Clear or triggered.
+- **Tamper.** Clear or triggered.
+- **Problem.** Clear or triggered.
+- **Power.** Clear or triggered.
+- **Illuminance.** A light-level reading in lux.
+- **CO₂.** A carbon dioxide reading in ppm.
 
 ## Control it
 
 On an assigned camera's **Overview** tab, Doorbell, Switch, Light, Siren, Lock, Garage, and Security System sit there with their controls and work the same as the plugin-provided ones, see [Controls & states](/sensors/controls). The same controls appear in the sensor's edit dialog on the **Sensors** page, which also covers sensors assigned to no camera.
 
-Contact, Occupancy, Smoke, Leak, Temperature, and Humidity are read-only. Their value comes from an automation.
+Contact, Occupancy, Smoke, Leak, Temperature, Humidity, Gas, Carbon Monoxide, Heat, Cold, Vibration, Tamper, Problem, Power, Illuminance, and CO₂ are read-only. Their value comes from an automation.
 
 Lock, Garage, and Security System follow what you set immediately. There is no hardware to report back, so they never sit in a "locking" or "opening" state.
 

@@ -11,7 +11,7 @@ Jeder Sensor ist ein eigenes Objekt. Er behält Name, Einstellungen und Verlauf,
 ## Sensor-Typen
 
 - **Erkennung.** Bewegung, Objekt, Audio, Gesicht, Kennzeichen und semantisch (CLIP). Diese behandeln wir unter [Erkennung & KI](/de/detection/).
-- **Umgebung & Zustand.** Kontakt (offen/geschlossen), Temperatur, Feuchtigkeit, Belegung, Rauchmelder, Wassersensor und Batterie. Diese sind read-only.
+- **Umgebung & Zustand.** Kontakt, Temperatur, Feuchtigkeit, Belegung, Rauchmelder, Wassersensor, Batterie, Gasmelder, Kohlenmonoxid, CO₂, Hitze, Kälte, Vibration, Sabotage, Problem, Strom und Helligkeit. Diese sind read-only. Die binären (etwa Gasmelder oder Sabotage) können die Erkennung einer Kamera auslösen, genauso wie ein Kontaktsensor.
 - **Zubehör.** Licht, Schalter, Schloss, Sirene, Garage, Alarmanlage und Türklingel. Diese lassen sich steuern.
 - **PTZ.** Schwenken, Neigen und Zoomen. Siehe [PTZ & Autotrack](/de/sensors/ptz).
 

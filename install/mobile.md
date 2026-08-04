@@ -18,14 +18,15 @@ The mobile apps are companion viewers for iOS and Android. They let you watch yo
 
 ## Connecting to your server
 
-The mobile apps connect to your server through **camera.ui Cloud**. Sign in with your camera.ui account (Google, Apple, or email), and your paired servers appear.
+You sign in with your camera.ui account (Google, Apple, or email), and your paired servers appear. From there the app picks the best route on its own:
 
-This needs two things on the server side:
+- **At home.** On the same network as the server, the app connects straight to it over your local network, so live view starts faster with less lag. It trusts the server's certificate for local addresses automatically.
+- **Away.** Off the network, it reaches the server through **camera.ui Cloud**.
+
+Either way, the account is what links the app to your server. This needs two things on the server side:
 
 - [Remote access via camera.ui Cloud](/remote/cloud) enabled.
 - The server [paired](/remote/pairing) to your account.
-
-Unlike the [desktop app](/install/desktop), the mobile apps don't connect directly over the local network. They always go through camera.ui Cloud.
 
 ## Notifications
 

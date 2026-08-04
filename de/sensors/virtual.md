@@ -23,7 +23,7 @@ Der Sensor startet im Ruhezustand: aus, geschlossen, verriegelt oder deaktiviert
 
 ## Verfügbare Typen
 
-Es gibt 13 Typen:
+Es gibt 23 Typen:
 
 - **Türklingel.** Ein Läuten, das du auslöst. Es setzt sich zwei Sekunden später selbst zurück.
 - **Schalter.** An oder aus.
@@ -38,12 +38,22 @@ Es gibt 13 Typen:
 - **Alarmanlage.** Aus, Zuhause, Abwesend oder Nacht.
 - **Temperatur.** Ein Temperaturwert.
 - **Feuchtigkeit.** Ein Feuchtigkeitswert.
+- **Gasmelder.** Klar oder ausgelöst.
+- **Kohlenmonoxid.** Klar oder ausgelöst.
+- **Hitze.** Klar oder ausgelöst.
+- **Kälte.** Klar oder ausgelöst.
+- **Vibration.** Klar oder ausgelöst.
+- **Sabotage.** Klar oder ausgelöst.
+- **Problem.** Klar oder ausgelöst.
+- **Strom.** Klar oder ausgelöst.
+- **Helligkeit.** Ein Helligkeitswert in Lux.
+- **CO₂.** Ein CO₂-Wert in ppm.
 
 ## Steuern
 
 Im **Übersicht**-Tab einer zugewiesenen Kamera liegen Türklingel, Schalter, Licht, Sirene, Schloss, Garagentor und Alarmanlage mit ihren Bedienelementen und funktionieren genauso wie die von Plugins bereitgestellten, siehe [Steuerung & Status](/de/sensors/controls). Dieselben Bedienelemente stecken im Bearbeiten-Dialog auf der **Sensoren**-Seite, der auch Sensoren ohne Kamera abdeckt.
 
-Kontakt, Belegung, Rauchmelder, Wassersensor, Temperatur und Feuchtigkeit sind read-only. Ihr Wert kommt aus einer Automation.
+Kontakt, Belegung, Rauchmelder, Wassersensor, Temperatur, Feuchtigkeit, Gasmelder, Kohlenmonoxid, Hitze, Kälte, Vibration, Sabotage, Problem, Strom, Helligkeit und CO₂ sind read-only. Ihr Wert kommt aus einer Automation.
 
 Schloss, Garagentor und Alarmanlage folgen sofort dem, was du setzt. Es gibt keine Hardware, die zurückmeldet, also hängen sie nie in einem Zustand wie "verriegelt gerade" oder "öffnet gerade".
 

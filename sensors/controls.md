@@ -20,6 +20,8 @@ These show their current state but aren't operated:
 - **Temperature** and **humidity.** The current reading.
 - **Occupancy.** Occupied or empty.
 - **Smoke** and **leak.** Clear or triggered.
+- **Gas, carbon monoxide, heat, cold, vibration, tamper, problem,** and **power.** Clear or triggered.
+- **Illuminance** and **CO₂.** The current reading.
 - **Battery.** Level and charging.
 
 ## Controllable accessories

@@ -67,6 +67,12 @@ MQTT discovery is documented with the rest of the broker settings on the [MQTT a
 | `cameraui_event` + device triggers | Yes | No |
 | Discovery | zeroconf (mDNS) | over MQTT |
 
+## Bringing Home Assistant sensors in
+
+The integration and MQTT both send camera.ui out to Home Assistant. The **Home Assistant plugin** goes the other way: it imports Home Assistant's own sensors and controls into camera.ui, where you can assign them to cameras and use them as detection triggers. It is separate from the two transports above and does not clash with them.
+
+See **[Import from Home Assistant](/home-assistant/import)** for setup.
+
 ## The Lovelace card
 
 The `cameraui-card` shows a camera's live stream with a PTZ overlay on your dashboards. With the integration it is registered for you automatically; you just add it to a view.
@@ -78,4 +84,5 @@ See **[Lovelace card](/home-assistant/card)** for how to place and configure it.
 - **[App](/home-assistant/app)** — run the camera.ui server inside Home Assistant OS.
 - **[Integration](/home-assistant/integration)** — connect a camera.ui server and get cameras, sensors, and PTZ as HA entities.
 - **[Lovelace card](/home-assistant/card)** — put a camera with PTZ on your dashboard.
+- **[Import from Home Assistant](/home-assistant/import)** — bring Home Assistant's own sensors and controls into camera.ui.
 

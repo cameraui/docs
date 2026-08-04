@@ -24,6 +24,8 @@ A camera added through a plugin (such as ONVIF or a cloud camera) also has a cat
 
 Within a category, pick a **sensor type**, then choose the **plugin** that should provide it. Detection types take one provider at a time; accessories can come from several plugins. Each enabled sensor appears in the **Sensors** list, where you can rename it.
 
+A doorbell sensor assigned to a camera starts a camera event on every ring automatically, no need to enable it under Detection. Doorbells you assigned before this release keep their current setting.
+
 ## Configure settings
 
 Many plugins and sensors have their own options, shown right there as a form: plugin settings that apply to this camera, and per-sensor settings. Changes take effect immediately.
@@ -32,7 +34,7 @@ Once enabled, sensors show up in the camera's Overview and on the video. See [Co
 
 ## The Sensors page
 
-The **Sensors** page lists every sensor in the system: plugin-provided, camera hardware, and virtual. Each row shows the connection state, name, type, providing plugin, and assigned cameras. Camera hardware shows a lock next to its camera; a sensor that is hidden from your smart home carries a crossed-out eye next to its name. Search and the sortable columns keep large setups manageable.
+The **Sensors** page lists the sensors you manage: plugin-provided and virtual. Sensors a camera brings itself, its motion, battery, or PTZ, are hidden by default; the settings button next to the search field brings them back. Each row shows the connection state, name, type, providing plugin, and assigned cameras. A camera-hardware row shows a lock next to its camera; a sensor hidden from your smart home carries a crossed-out eye next to its name. Two floating buttons switch between the table and a card view and start select mode, where you tick any number of sensors and hide, unhide, or delete them at once. A sensor's icon glows while it is active, so you can tell at a glance that motion is running, a door is open, a light is on, or a doorbell is ringing. Search and the sortable columns keep large setups manageable.
 
 <Shot src="/img/sensors/sensors-page.png" alt="Sensors page listing all sensors" />
 

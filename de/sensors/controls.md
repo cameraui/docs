@@ -20,6 +20,8 @@ Diese zeigen ihren aktuellen Status, werden aber nicht bedient:
 - **Temperatur** und **Feuchtigkeit.** Der aktuelle Wert.
 - **Belegung.** Belegt oder leer.
 - **Rauchmelder** und **Wassersensor.** Klar oder ausgelöst.
+- **Gasmelder, Kohlenmonoxid, Hitze, Kälte, Vibration, Sabotage, Problem** und **Strom.** Klar oder ausgelöst.
+- **Helligkeit** und **CO₂.** Der aktuelle Wert.
 - **Batterie.** Ladestand und Laden.
 
 ## Steuerbares Zubehör

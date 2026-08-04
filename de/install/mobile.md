@@ -18,14 +18,15 @@ Die Mobile-Apps sind Companion-Viewer für iOS und Android. Mit ihnen siehst du 
 
 ## Mit deinem Server verbinden
 
-Die Mobile-Apps verbinden sich über **camera.ui Cloud** mit deinem Server. Melde dich mit deinem camera.ui-Konto an (Google, Apple oder E-Mail), und deine gekoppelten Server erscheinen.
+Melde dich mit deinem camera.ui-Konto an (Google, Apple oder E-Mail), und deine gekoppelten Server erscheinen. Von da wählt die App den besten Weg von selbst:
 
-Dafür sind serverseitig zwei Dinge nötig:
+- **Zu Hause.** Im selben Netzwerk wie der Server verbindet sich die App direkt über dein lokales Netzwerk, Live-Ansicht startet also schneller und mit weniger Verzögerung. Dem Zertifikat des Servers für lokale Adressen vertraut sie automatisch.
+- **Unterwegs.** Außerhalb des Netzwerks erreicht sie den Server über **camera.ui Cloud**.
+
+So oder so verbindet das Konto die App mit deinem Server. Dafür sind serverseitig zwei Dinge nötig:
 
 - [Remote-Zugriff über camera.ui Cloud](/de/remote/cloud) aktiviert.
 - Der Server mit deinem Konto [gekoppelt](/de/remote/pairing).
-
-Anders als die [Desktop-App](/de/install/desktop) verbinden sich die Mobile-Apps nicht direkt über das lokale Netzwerk. Sie laufen immer über camera.ui Cloud.
 
 ## Benachrichtigungen
 

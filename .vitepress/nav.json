@@ -435,6 +435,13 @@
             "de": "Lovelace-Card"
           },
           "link": "/home-assistant/card"
+        },
+        {
+          "text": {
+            "en": "Import sensors",
+            "de": "Sensoren importieren"
+          },
+          "link": "/home-assistant/import"
         }
       ]
     },
