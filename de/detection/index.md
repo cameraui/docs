@@ -41,6 +41,7 @@ flowchart LR
 - **[Audio](/de/detection/audio)** — Geräusche wie Glasbruch, Alarme oder Hundebellen.
 - **[Semantische Suche](/de/detection/semantic-search)** — Momente finden, indem du sie in Worten beschreibst.
 - **[KI-Beschreibungen](/de/detection/genai-descriptions)** — eine schriftliche Zusammenfassung des Geschehens.
+- **[Episoden](/de/detection/episodes)** — zusammenhängende Sichtungen über mehrere Kameras als eine Story.
 
 ## Plugins erledigen die Arbeit
 

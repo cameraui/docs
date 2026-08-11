@@ -36,7 +36,7 @@ Open **Settings → Notifications** to control your alerts. These settings belon
 - **This device.** On a phone, tap **Sync this device** once to start receiving push. In the desktop app, this switches native notifications on or off for that computer alone.
 - **Quiet hours.** Silence non-critical alerts during a daily window. Critical alerts still come through, and the in-app list stays current.
 - **System notifications.** Alerts about camera.ui itself: server and app updates, plugin updates, and a plugin crashing or recovering. Each one has its own switch.[^admin]
-- **Plugin notifications.** Alerts that plugins send, such as a camera going offline or storage filling up. You can switch each plugin on or off.
+- **Plugin notifications.** Alerts that plugins send, such as a camera going offline or storage filling up. You can switch each plugin on or off. Tapping a camera offline or online alert opens that camera's log, where the reason for the outage is usually shown.
 - **Devices.** The phones and other targets your alerts go to. Rename one, switch **Active** off to pause it, or remove it to unregister it for good.
 
 ## What each camera alerts you about
@@ -50,6 +50,14 @@ Each camera has its own notification settings, so you only get pinged for what m
 - **Cooldown (Seconds).** A quiet period after an alert, so one busy scene doesn't flood you.
 - **Fast Notifications.** Send the alert the instant something is detected, before the image is ready.
 
+## AI descriptions arrive as one summary
+
+With AI descriptions on, an event's texts collect and come through as a single summary, sent once the scene stays calm for a bit or the event ends.[^ai] You get the story of the whole visit instead of a buzz for every moment.
+
+- **The first alert stays fast.** A person still pings you right away, and the name follows the moment a known face is recognised.
+- **One alert, updated quietly.** Later moments refresh that same alert without buzzing again.
+- **Tapping opens the start.** The summary takes you to the beginning of the event, not the last moment.
+
 ## Critical alerts
 
 Some events are too important to hold back. **Critical alerts**, like a doorbell ring or an alarm, are delivered immediately and ignore both the cooldown and quiet hours.
@@ -59,3 +67,4 @@ Some events are too important to hold back. **Critical alerts**, like a doorbell
 [^device]: The **This device** row is the exception. It only affects the phone or computer you are on.
 [^admin]: Only admins see the system notifications section.
 [^nvr]: These per-camera controls come from the NVR plugin, the same plugin that handles recording.
+[^ai]: AI descriptions come from the NVR plugin. Turn them on in its settings.

@@ -82,6 +82,10 @@ Kameras mit Objekterkennung bekommen zusätzlich je einen Binärsensor für **pe
 
 Kameras mit dem passenden Detektor bekommen Wert-Sensoren für **face**, **license plate** und **classification**. Der Wert des Sensors sind die erkannten Labels, die rohen Erkennungen liegen in seinen Attributen.
 
+### Updates
+
+Home Assistant bekommt außerdem **Update-Entitäten** für den camera.ui-Server und seine Plugins. Ist ein Update verfügbar, taucht es in der eigenen Updates-Liste von Home Assistant auf, und du kannst es von dort installieren, ohne die camera.ui-Oberfläche zu öffnen.
+
 ## PTZ
 
 Schwenken, Neigen und Zoomen wird als **Dienst** bereitgestellt, `cameraui.ptz`, nicht als Entität. Wähle eine oder mehrere Kamera-Entitäten als Ziel und eine Aktion:

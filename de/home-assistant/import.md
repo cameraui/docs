@@ -31,3 +31,7 @@ Importierte Sensoren erscheinen in der [Sensoren](/de/sensors/)-Ansicht wie alle
 ## Die Integration parallel betreiben
 
 Du kannst aus Home Assistant importieren und gleichzeitig die [Integration](/de/home-assistant/integration) betreiben. Sie kommen sich nicht in die Quere: Das Plugin importiert nie die Kameras und Sensoren, die camera.ui selbst nach Home Assistant exportiert, es entsteht also keine Schleife.
+
+**Importierte Sensoren werden nie zurückgeschickt.** Ein aus Home Assistant geholter Sensor wird nie wieder nach Home Assistant exportiert, weder von diesem Plugin noch von der [Integration](/de/home-assistant/integration), selbst wenn du ihn an eine andere Bridge wie HomeKit freigibst. Es gibt in keine Richtung eine Schleife.[^stray]
+
+[^stray]: Kommst du von einem älteren Setup? Lade die camera.ui-Integration in Home Assistant einmal neu, damit übrig gebliebene camera.ui-Geräte von vor diesem Fix verschwinden.

@@ -82,6 +82,10 @@ Cameras with object detection also get one binary sensor each for **person**, **
 
 Cameras with the matching detector get value sensors for **face**, **license plate** and **classification**. The sensor's value is the recognized labels, and the raw detections are available in its attributes.
 
+### Updates
+
+Home Assistant also gets **update entities** for the camera.ui server and its plugins. When an update is available, it shows up in Home Assistant's own updates list, and you can install it from there without opening the camera.ui interface.
+
 ## PTZ
 
 Pan, tilt and zoom is exposed as a **service**, `cameraui.ptz`, rather than as an entity. Target one or more camera entities and pick an action:

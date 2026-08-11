@@ -33,9 +33,12 @@ Beachte, was sich ändert, sobald es eine einschließende Zone gibt: Außerhalb 
 
 ### Modus
 
-**Enthalten** ist die Voreinstellung: Eine Erkennung gilt erst als drinnen, wenn ihre ganze Box in der Zone liegt. **Schneiden** zählt sie schon, sobald die Box die Zone überlappt.
+Jede Zone hat einen Modus, der festlegt, was als drinnen zählt:
 
-Der Modus legt für beide Zonenarten fest, was "drinnen" bedeutet. Bei einer ausschließenden Zone im Modus Enthalten wird jemand, der nur halb im ausgenommenen Bereich steht, weiterhin erkannt. Stell die Zone auf Schneiden, wenn sie schon bei Berührung greifen soll.
+- **Objekt berührt die Zone.** Eine Erkennung zählt, sobald ihre Box die Zone überlappt. Das ist die Voreinstellung.
+- **Objekt komplett in der Zone.** Eine Erkennung zählt nur, wenn ihre ganze Box in der Zone liegt. Ein Auto, das nur den Rand der Zone streift, löst sie nicht mehr aus.
+
+Der Modus gilt für einschließende und ausschließende Zonen gleichermaßen. Bei einer ausschließenden Zone auf „Objekt komplett in der Zone" wird jemand, der nur halb im ausgenommenen Bereich steht, weiterhin erkannt. Stell sie auf „Objekt berührt die Zone", wenn sie schon bei Berührung greifen soll.
 
 ### Objekttypen
 
@@ -49,7 +52,7 @@ Jede neue Zone startet mit **Bewegung, Person, Fahrzeug und Tier** bereits ausge
 
 Mach aus einer Zone eine **ignorierte Zone**, um einen Bereich komplett von der Erkennung auszunehmen, etwa ein Nachbarfenster oder einen öffentlichen Gehweg. Erkennungen, die vollständig darin liegen, werden verworfen und lösen kein Ereignis aus. Was nur teilweise überlappt, zählt weiterhin.
 
-Eine ignorierte Zone hat keine eigenen Einstellungen, und das ist ihr Sinn. Sie nutzt immer die Regel "vollständig enthalten", sie verwirft alles, was dort landet, unabhängig vom Objekttyp, und sie bleibt aus der oben beschriebenen kameraweiten Positivliste heraus. Wenn du einen Bereich einfach nur loswerden willst, ist sie damit die sicherere Wahl gegenüber einer ausschließenden Zone. Zu einer ausschließenden Zone greifst du, wenn sie mit deinen einschließenden Zonen zusammenspielen soll oder wenn du Schneiden statt Enthalten brauchst.
+Eine ignorierte Zone hat keine eigenen Einstellungen, und das ist ihr Sinn. Sie nutzt immer die Regel "vollständig enthalten", sie verwirft alles, was dort landet, unabhängig vom Objekttyp, und sie bleibt aus der oben beschriebenen kameraweiten Positivliste heraus. Wenn du einen Bereich einfach nur loswerden willst, ist sie damit die sicherere Wahl gegenüber einer ausschließenden Zone. Zu einer ausschließenden Zone greifst du, wenn sie mit deinen einschließenden Zonen zusammenspielen soll oder wenn du „Objekt berührt die Zone" statt „Objekt komplett in der Zone" brauchst.
 
 Eine ignorierte Zone verändert das Video nicht.[^noblackout] Der Bereich bleibt in der Live-Ansicht und in Aufnahmen sichtbar und wird weiterhin aufgezeichnet.
 

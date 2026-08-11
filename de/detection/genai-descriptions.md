@@ -4,18 +4,25 @@ title: KI-Beschreibungen
 
 # KI-Beschreibungen
 
-camera.ui kann ein generatives KI-Modell nutzen, um eine kurze, gut lesbare Zusammenfassung jedes Ereignisses zu schreiben: einen Titel, eine Beschreibung des Geschehens, eine benachrichtigungstaugliche Zusammenfassung und eine Bedrohungsstufe. Es benennt Personen, Kennzeichen und was sich bewegt hat.
+camera.ui kann ein generatives KI-Modell nutzen, um zu beschreiben, was vor der Kamera passiert. Es schreibt eine kurze Zusammenfassung jedes Moments in einem Ereignis: einen Titel, was passiert ist, eine benachrichtigungstaugliche Zeile und eine Bedrohungsstufe. Es benennt Personen, Kennzeichen und erkannte Bewegung.
 
 <Shot src="/img/detection/genai-description.png" alt="Eine KI-generierte Ereignisbeschreibung" />
 
 ## Einen Anbieter wählen
 
-Öffne in den [NVR-Einstellungen](/de/recording/) den Tab **GenAI**, aktiviere **Enabled** und wähle einen Anbieter:
+Öffne in den [NVR-Einstellungen](/de/recording/) den Tab **GenAI** und wähle einen Anbieter:
 
 - **Ollama.** Führt ein Modell lokal auf deiner eigenen Hardware aus. Setze die **API Base URL** (zum Beispiel `http://localhost:11434`).
 - **OpenAI** oder **Gemini.** Nutzt ein Cloud-Modell. Setze deinen **API Key**.
 
 Dann legst du das **Modell** fest (etwa `llava`, `gpt-4o` oder `gemini-2.5-flash`), eine optionale **Description Language** und wie viele Bilder pro Ereignis gesendet werden. **Request Timeout** legt fest, wie lange camera.ui auf den Anbieter wartet, standardmäßig 60 Sekunden; lokale Ollama-Modelle brauchen oft mehr. **Test Connection** prüft, ob es funktioniert. Aktiviere es pro Kamera mit dem **KI-Beschreibungen**-Schalter der Kamera.
+
+## Moments und Episoden
+
+Der Anbieter, den du unter **GenAI** wählst, speist zwei Funktionen, jede mit eigenem Tab:
+
+- **Moments.** Aktiviere hier **Enabled**, um KI-Beschreibungen dessen zu bekommen, was in einem Ereignis passiert. **Custom Instructions** nimmt Freitext-Vorgaben, die dem eingebauten Prompt hinzugefügt werden, etwa worauf zu achten ist oder wie formuliert werden soll. Die Beschreibungen eines Ereignisses gehen als eine einzige Zusammenfassungs-Benachrichtigung raus, kurz nachdem die Aktivität endet.
+- **Episoden.** Bündelt zusammenhängende Ereignisse über mehrere Kameras zu einer Story, mit eigenen **Custom Instructions**. Siehe [Episoden](/de/detection/episodes).
 
 ## Datenschutz
 

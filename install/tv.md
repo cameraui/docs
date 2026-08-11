@@ -48,6 +48,8 @@ The Sensors page lays out every sensor as a tile, grouped by type, with its curr
 
 The app updates through TestFlight during the beta, like any other Apple TV app.
 
+If your server or its recording plugin is older than the app needs, the app shows an **Update needed** screen naming exactly what to bring up to date, instead of empty lists and missing pictures. Update camera.ui on the server, then reopen the app.
+
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback. Live view is free.
 [^appstore]: The app moves to the App Store with the public release.
 [^token]: Create a token in camera.ui under Settings, Account, API tokens.

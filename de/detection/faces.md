@@ -29,6 +29,15 @@ Gesichter, die zu keiner angelegten Person passen, sammeln sich unter **Unbekann
 - **Weise eine Gruppe** einer Person zu, um alle darin auf einmal anzulegen, oder weise ein einzelnes Gesicht zu.
 - **Verwirf** Gruppen oder Gesichter, die dich nicht interessieren, oder leere alle ungruppierten Gesichter.
 
+## Ein Gesicht ignorieren
+
+Manche Gesichter willst du nie wieder sehen, etwa einen vorbeigehenden Fremden oder den Postboten. Ignoriere eines, und camera.ui sammelt es nicht mehr.[^nvrupdate]
+
+- **Ein Gesicht oder eine ganze Gruppe ignorieren.** Jedes unbekannte Gesicht hat einen Ignorieren-Button, und jede Gruppe einen für alle ihre Gesichter auf einmal. Im Auswahlmodus kannst du mehrere auf einmal ignorieren.
+- **Neue Sichtungen werden verworfen.** Ist jemand ignoriert, tauchen spätere Aufnahmen nicht wieder als unbekannte Gesichter auf.
+- **Ignorierte Gesichter liegen in einer eigenen Liste.** Sie sammeln sich unter **Ignorierte Gesichter** am Ende des Bereichs Unbekannte Gesichter.
+- **Wiederherstellen zum Rückgängigmachen.** **Wiederherstellen** an einem ignorierten Gesicht lässt die Person wieder erscheinen.
+
 ## Einstellungen
 
 In den [NVR-Einstellungen](/de/recording/) hat die Gesichtserkennung:
@@ -44,3 +53,4 @@ Pro Kamera gibt es unter [Einstellungen → Erkennung](/de/cameras/settings) zus
 Nachdem du jemanden neu angelegt hast, wähle **Bestehende Events erneut scannen**, um vergangene Aufnahmen erneut zu prüfen und mit dem neu bekannten Gesicht zu markieren.
 
 [^license]: Gesichtserkennung (der Abgleich mit deinen angelegten Personen) baut auf Aufnahmen auf und erfordert ein aktives camera.ui-Abo. Die reine Gesichts-Detection (dass ein Gesicht da ist) gehört zur kostenlosen Erkennung.
+[^nvrupdate]: Gesichter zu ignorieren braucht das aktuelle Aufnahme-Plugin. Aktualisiere es, wenn der Ignorieren-Button fehlt.

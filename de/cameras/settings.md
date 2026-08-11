@@ -29,7 +29,7 @@ Das Haupt-Konfigurationsformular, gegliedert in Bereiche:
 - **Autotrack.** Eine PTZ-Kamera erkannten Objekten automatisch folgen lassen. Siehe [PTZ & Autotrack](/de/sensors/ptz).
 - **Zonen.** Erkennungszonen, ignorierte Zonen und Überquerungslinien zeichnen. Siehe [Zonen & Linien](/de/cameras/zones-and-masks).
 - **Snapshot.** Wie Standbilder aktualisiert und zwischengespeichert werden (Auto-Refresh, Cache-Zeit und Aktualisierungsintervall).
-- **Frame Worker.** Die für die Analyse genutzte Bildrate sowie ob Event-Thumbnails aus dem höchstauflösenden Stream erzeugt werden. Legt außerdem Decoder-Hardware (CUDA, VAAPI, Quick Sync, ...) und Gerät für diese Kamera fest; Auto wählt die beste verfügbare. Eine zweite Decoder-Auswahl gilt, während die Kamera auf einem zugewiesenen [Worker](/de/admin/workers) decodiert, so können Host und Worker verschiedene GPUs nutzen; bei Wie Server verwendet der Worker die erste Auswahl.
+- **Frame Worker.** Legt Decoder-Hardware (CUDA, VAAPI, Quick Sync und mehr) und Gerät für diese Kamera fest. Auto wählt die beste verfügbare. Eine zweite Decoder-Auswahl gilt, während die Kamera auf einem zugewiesenen [Worker](/de/admin/workers) decodiert, so können Host und Worker verschiedene GPUs nutzen; bei Wie Server verwendet der Worker die erste Auswahl. **Hauptstream ohne GPU** erzwingt die Erkennung auf dem hochauflösenden Stream auf Systemen ohne GPU, wo sie echte Rechenleistung kostet; mit einem Hardware-Decoder wird der hochauflösende Stream ohnehin analysiert, sobald etwas erkannt wird, lass ihn also aus.
 
 ## Plugins
 

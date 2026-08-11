@@ -41,6 +41,7 @@ flowchart LR
 - **[Audio](/detection/audio)** — sounds like glass breaking, alarms, or a dog barking.
 - **[Semantic search](/detection/semantic-search)** — find moments by describing them in words.
 - **[AI descriptions](/detection/genai-descriptions)** — a written summary of what happened.
+- **[Episodes](/detection/episodes)** — related sightings across cameras told as one story.
 
 ## Plugins do the work
 

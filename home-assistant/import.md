@@ -31,3 +31,7 @@ Imported sensors show up in the [Sensors](/sensors/) view like any other. Assign
 ## Running the integration too
 
 You can import from Home Assistant and run the [integration](/home-assistant/integration) at the same time. They don't clash: the plugin never re-imports the cameras and sensors that camera.ui itself exports to Home Assistant, so nothing loops back on itself.
+
+**Imported sensors are never sent back.** A sensor pulled in from Home Assistant is never exported to Home Assistant again, not by this plugin and not by the [integration](/home-assistant/integration), even if you export it to another bridge like HomeKit. There is no loop in either direction.[^stray]
+
+[^stray]: Coming from an older setup? Reload the camera.ui integration in Home Assistant once so any stray camera.ui devices from before this fix disappear.

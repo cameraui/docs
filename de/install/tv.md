@@ -48,6 +48,8 @@ Die Sensoren-Seite legt jeden Sensor als Kachel an, nach Typ gruppiert, mit sein
 
 Die App aktualisiert sich während der Beta über TestFlight, wie jede andere Apple-TV-App.
 
+Ist dein Server oder sein Aufnahme-Plugin älter als die App braucht, zeigt die App einen **Update needed**-Screen, der genau nennt, was zu aktualisieren ist, statt leerer Listen und fehlender Bilder. Aktualisiere camera.ui auf dem Server und öffne die App erneut.
+
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe. Die Live-Ansicht ist kostenlos.
 [^appstore]: Mit dem öffentlichen Release wechselt die App in den App Store.
 [^token]: Erstelle einen Token in camera.ui unter Einstellungen, Konto, API-Tokens.

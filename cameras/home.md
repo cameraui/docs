@@ -8,7 +8,7 @@ Home is the first screen after you sign in. It shows every camera you have acces
 
 <Shot src="/img/cameras/home-grid.png" alt="Home screen with camera cards" />
 
-Above the cards, **Recent Events** shows the latest detections as a row you can scroll sideways. Select an event to jump to it. See [Events & detections](/detection/events-and-detections).
+Above the cards, **Recent Events** is a row of recent moments you can scroll sideways. A visit with several phases shows one card per moment, like the timeline, and selecting a card opens it at that moment. Cards with a recognized face or a read license plate get arrows to browse the pictures, and resting your finger on a card (or hovering on a computer) plays a short preview. [Episodes](/detection/episodes) appear here too, as a mosaic card showing how many cameras took part. See [Events & detections](/detection/events-and-detections).
 
 If you have no cameras yet, Home says "No cameras available" and offers **Get started**, which takes admins to the Cameras page to [add one](/cameras/add-camera).
 

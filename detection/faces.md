@@ -29,6 +29,15 @@ Faces that don't match anyone enrolled collect under **Unknown Faces**, grouped 
 - **Assign a group** to a person to enrol everyone in it at once, or assign a single face.
 - **Discard** groups or faces you don't care about, or clear all ungrouped faces.
 
+## Ignoring a face
+
+Some faces you never want to see again, like a passing stranger or the mail carrier. Ignore one and camera.ui stops collecting them.[^nvrupdate]
+
+- **Ignore a face or a whole group.** Each unknown face has an ignore button, and every group has one for all its faces at once. In selection mode you can ignore several at a time.
+- **New sightings are dropped.** Once someone is ignored, their later shots don't come back as unknown faces.
+- **Ignored faces sit in their own list.** They collect under **Ignored Faces** at the bottom of the Unknown Faces section.
+- **Restore to undo.** **Restore** on an ignored face lets that person show up again.
+
 ## Settings
 
 In the [NVR settings](/recording/), face recognition has:
@@ -44,3 +53,4 @@ Per camera, [Settings → Detection](/cameras/settings) also has a **Face confid
 After enrolling someone new, select **Rescan existing events** to re-check past recordings and tag them with the newly known face.
 
 [^license]: Face recognition (matching faces against your enrolled people) builds on recording and requires an active camera.ui subscription. Detecting that a face is present is part of the free detection.
+[^nvrupdate]: Ignoring faces needs the current recording plugin. Update it if the ignore button is missing.

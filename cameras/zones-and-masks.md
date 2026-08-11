@@ -33,9 +33,12 @@ Note the change once an include zone exists: being outside every exclude zone is
 
 ### Match mode
 
-**Contain** is the default: a detection counts as inside only when its whole box is in the zone. **Intersect** counts it as soon as the box overlaps the zone at all.
+Each zone has a mode that decides what counts as inside:
 
-The mode decides what "inside" means for both kinds of zone. With an exclude zone in Contain mode, someone standing half in your excluded area is still detected. Switch that zone to Intersect if you want it gone as soon as it touches the area.
+- **Object touches the zone.** A detection counts as soon as its box overlaps the zone at all. This is the default.
+- **Object fully inside the zone.** A detection counts only when its whole box sits in the zone. A car that just clips the edge of the zone no longer triggers it.
+
+The mode applies to include and exclude zones alike. With an exclude zone set to "object fully inside the zone", someone standing half in the excluded area is still detected. Switch it to "object touches the zone" if you want it gone the moment it touches the area.
 
 ### Object types
 
@@ -49,7 +52,7 @@ Every new zone starts with **motion, person, vehicle and animal** already select
 
 Turn a zone into an **ignore zone** to leave an area out of detection completely, for example a neighbour's window or a public pavement. Detections that sit fully inside it are dropped and never trigger an event. Something that only partly overlaps it still counts.
 
-An ignore zone has no settings of its own, and that is the point of it. It always uses the "fully inside" rule, it drops whatever lands there no matter the object type, and it stays out of the camera-wide allow-list described above. When you want an area gone and nothing else, that makes it the safer choice over an exclude zone. Reach for an exclude zone instead when you need it to interact with your include zones, or when you want Intersect rather than Contain.
+An ignore zone has no settings of its own, and that is the point of it. It always uses the "fully inside" rule, it drops whatever lands there no matter the object type, and it stays out of the camera-wide allow-list described above. When you want an area gone and nothing else, that makes it the safer choice over an exclude zone. Reach for an exclude zone instead when you need it to interact with your include zones, or when you want "object touches the zone" rather than "object fully inside the zone".
 
 An ignore zone does not change the video.[^noblackout] The area stays visible in live view and in recordings, and it is still recorded.
 

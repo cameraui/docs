@@ -29,7 +29,7 @@ The main configuration form, grouped into sections:
 - **Autotrack.** Let a PTZ camera follow detected objects automatically. See [PTZ & autotrack](/sensors/ptz).
 - **Zones.** Draw detection zones, ignore zones, and crossing lines. See [Zones & lines](/cameras/zones-and-masks).
 - **Snapshot.** How still images are refreshed and cached (auto-refresh, cache time, and refresh interval).
-- **Frame Worker.** The frame rate used for analysis, plus whether event thumbnails are captured from the highest-resolution stream. Also picks the decoder hardware (CUDA, VAAPI, Quick Sync, ...) and device for this camera; Auto chooses the best available. A second decoder selection applies while the camera decodes on an assigned [worker](/admin/workers), so host and worker can use different GPUs; on Same as server the worker uses the first selection.
+- **Frame Worker.** Picks the decoder hardware (CUDA, VAAPI, Quick Sync, and more) and device for this camera. Auto chooses the best available. A second decoder selection applies while the camera decodes on an assigned [worker](/admin/workers), so host and worker can use different GPUs; on Same as server the worker uses the first selection. **Main stream without GPU** forces detection onto the high-resolution stream on CPU-only systems, where it costs real processing power; with a hardware decoder the high-resolution stream is already analysed when something is detected, so leave it off.
 
 ## Plugins
 

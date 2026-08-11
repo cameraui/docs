@@ -36,7 +36,7 @@ Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui 
 - **Dieses Gerät.** Tippe auf dem Handy einmal auf **Dieses Gerät synchronisieren**, um Push zu erhalten. In der Desktop-App schaltest du hier die nativen Benachrichtigungen für diesen einen Computer an oder aus.
 - **Ruhezeiten.** Nicht-kritische Alarme in einem täglichen Zeitfenster stummschalten. Kritische Alarme kommen trotzdem durch, und die In-App-Liste bleibt aktuell.
 - **System-Benachrichtigungen.** Hinweise zu camera.ui selbst: Server- und App-Updates, Plugin-Updates und ein Plugin, das abstürzt oder sich wieder fängt. Jeder Eintrag hat einen eigenen Schalter.[^admin]
-- **Plugin-Benachrichtigungen.** Hinweise, die Plugins senden, etwa wenn eine Kamera offline geht oder der Speicher volläuft. Du kannst jedes Plugin einzeln an- oder ausschalten.
+- **Plugin-Benachrichtigungen.** Hinweise, die Plugins senden, etwa wenn eine Kamera offline geht oder der Speicher volläuft. Du kannst jedes Plugin einzeln an- oder ausschalten. Tippst du auf einen Kamera-offline- oder -online-Alarm, öffnet sich das Log dieser Kamera, wo der Grund für den Ausfall meist zu sehen ist.
 - **Geräte.** Die Handys und anderen Ziele, an die deine Alarme gehen. Benenne eines um, schalte **Aktiv** aus, um es zu pausieren, oder entferne es ganz.
 
 ## Worüber jede Kamera dich alarmiert
@@ -50,6 +50,14 @@ Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem ge
 - **Cooldown (Seconds).** Eine Ruhephase nach einem Alarm, damit eine belebte Szene dich nicht überflutet.
 - **Fast Notifications.** Den Alarm sofort senden, sobald etwas erkannt wird, noch bevor das Bild fertig ist.
 
+## KI-Beschreibungen kommen als eine Zusammenfassung
+
+Mit aktivierten KI-Beschreibungen sammeln sich die Texte eines Ereignisses und kommen als eine einzige Zusammenfassung, sobald die Szene kurz ruhig bleibt oder das Ereignis endet.[^ai] Du bekommst die Story des ganzen Besuchs statt eines Summens für jeden Moment.
+
+- **Der erste Alarm bleibt schnell.** Eine Person pingt dich weiterhin sofort an, und der Name folgt, sobald ein bekanntes Gesicht erkannt wird.
+- **Ein Alarm, leise aktualisiert.** Spätere Momente aktualisieren denselben Alarm, ohne erneut zu summen.
+- **Tippen öffnet den Anfang.** Die Zusammenfassung bringt dich zum Beginn des Ereignisses, nicht zum letzten Moment.
+
 ## Kritische Alarme
 
 Manche Ereignisse sind zu wichtig, um sie zurückzuhalten. **Kritische Alarme**, etwa ein Türklingel-Läuten oder ein Alarm, werden sofort zugestellt und ignorieren sowohl den Cooldown als auch die Ruhezeiten.
@@ -59,3 +67,4 @@ Manche Ereignisse sind zu wichtig, um sie zurückzuhalten. **Kritische Alarme**,
 [^device]: Die Zeile **Dieses Gerät** ist die Ausnahme. Sie betrifft nur das Handy oder den Computer, an dem du gerade bist.
 [^admin]: Den Bereich mit den System-Benachrichtigungen sehen nur Admins.
 [^nvr]: Diese Einstellungen pro Kamera stammen vom NVR-Plugin, das auch die Aufnahme übernimmt.
+[^ai]: KI-Beschreibungen stammen vom NVR-Plugin. Schalte sie in dessen Einstellungen ein.

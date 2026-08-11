@@ -10,13 +10,13 @@ You can save recordings as files to keep or share, either a single clip or a bat
 
 <Shot src="/img/recording/export-trim.png" alt="Trimming a clip on the timeline" />
 
-On the [timeline](/recording/timeline-playback), drag the trim handles to select the start and end of the part you want, then export. camera.ui produces an **MP4** file and gives you a download.
+On the [timeline](/recording/timeline-playback), drag the trim handles to select the start and end of the part you want, then export. camera.ui produces an **MP4** file and gives you a download. The clip is saved in the quality you are watching, so switching to a lower quality first gives you a smaller file.
 
 ## Export multiple recordings
 
 <Shot src="/img/recording/export-recordings.png" alt="The Export recordings dialog" />
 
-In the Recordings view, the download button opens an **Export recordings** dialog for exporting more than one clip at once. Choose one or more cameras, a time range spanning multiple days, a quality (Best quality or Smallest files), and optionally a timelapse interval. camera.ui produces one MP4 file per camera per day (the first and last day cover the selected time range, the days in between are exported in full) and estimates the total size before you export. If the export produces more than one file, they come as a single ZIP. A single file downloads as a plain MP4.
+In the Recordings view, the download button opens an **Export recordings** dialog for exporting more than one clip at once. Choose one or more cameras, a time range spanning multiple days, a quality (Best quality or Smallest files), and optionally a timelapse interval. camera.ui produces one MP4 file per camera per day (the first and last day cover the selected time range, the days in between are exported in full) and estimates the total size before you export. If the export produces more than one file, they come as a single ZIP. A single file downloads as a plain MP4. This dialog keeps its own quality choice, separate from what you are watching.
 
 ## Timelapse
 

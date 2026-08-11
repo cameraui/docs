@@ -8,7 +8,7 @@ Die Startseite ist der erste Bildschirm nach der Anmeldung. Sie zeigt jede Kamer
 
 <Shot src="/img/cameras/home-grid.png" alt="Startseite mit Kamerakarten" />
 
-Über den Karten zeigt **Letzte Ereignisse** die neuesten Erkennungen in einer Reihe, die du seitlich scrollen kannst. Wähle ein Ereignis, um dorthin zu springen. Siehe [Events & Erkennungen](/de/detection/events-and-detections).
+Über den Karten ist **Letzte Ereignisse** eine seitlich scrollbare Reihe der neuesten Momente. Ein Besuch mit mehreren Phasen zeigt eine Karte pro Moment, wie die Timeline, und ein Klick auf eine Karte öffnet sie an diesem Moment. Karten mit einem erkannten Gesicht oder einem gelesenen Kennzeichen bekommen Pfeile, um durch die Bilder zu blättern, und wenn du den Finger auf einer Karte ruhen lässt (oder am Computer darüberfährst), läuft eine kurze Vorschau. [Episoden](/de/detection/episodes) erscheinen hier ebenfalls, als Mosaik-Karte, die zeigt, wie viele Kameras beteiligt waren. Siehe [Events & Erkennungen](/de/detection/events-and-detections).
 
 Wenn du noch keine Kameras hast, steht dort "Keine Kameras verfügbar" und **Jetzt starten**, was Admins zur Kameras-Seite bringt, um [eine hinzuzufügen](/de/cameras/add-camera).
 

@@ -319,6 +319,13 @@
             "de": "KI-Beschreibungen (GenAI)"
           },
           "link": "/detection/genai-descriptions"
+        },
+        {
+          "text": {
+            "en": "Episodes",
+            "de": "Episoden"
+          },
+          "link": "/detection/episodes"
         }
       ]
     },

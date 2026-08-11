@@ -19,7 +19,7 @@ Open **Automations** from the menu, then create one with the **+** button. A new
 A trigger is what starts a flow. You can use more than one.
 
 - **Detection event.** Something detected at a camera: motion, a person, vehicle, or animal, an audio event like a doorbell or glass breaking, a recognised face, or a license plate. Filter by object, confidence, and event phase (start, update, end).
-- **Sensor change.** A sensor's state changes, for example a contact sensor opening.
+- **Sensor change.** A sensor's state changes, like a contact sensor opening. This also covers your cameras' detection sensors: motion, objects, faces, license plates, and classifiers. Face, plate, and classifier sensors carry what was recognised, so a flow can react to a specific person, car, plate, or result, for example a bird classifier that reports the species.[^detvssensor]
 - **Schedule.** A recurring time, set with a cron expression.
 - **System event.** Something in camera.ui itself, such as a camera connecting or disconnecting, or a plugin starting or stopping.
 - **Webhook.** An external service calls a URL to start the flow.
@@ -35,7 +35,7 @@ Conditions decide whether a flow continues:
 
 - **If / else.** Branch on a comparison.
 - **Switch.** Branch on several possible values.
-- **Sensor state.** Check one or more sensors, combined with AND or OR. Each value can be a fixed value or a variable from an earlier step.
+- **Sensor state.** Check one or more sensors, combined with AND or OR. Each value can be a fixed value or a variable from an earlier step. For a detection sensor you can check a specific value, like a recognised name, a plate, or a classifier label. When a sensor holds several values at once, the check passes if any one matches, and matching ignores upper and lower case.
 - **Time.** Only continue within a time-of-day range and on chosen days.
 
 ## Actions
@@ -63,6 +63,8 @@ In the toolbar you can name the flow, turn it **Enabled** on or off, and set two
 - **Ignore repeated events**, so a burst of triggers runs the flow once.
 - **Wait for completion**, so a new trigger waits until the current run finishes.
 
-Save with the **Save** button. If your flow has a **Manual** trigger, a **Run** button lets you test it. In the list, each automation shows when it last ran, and camera.ui disables one automatically if it points at a camera or sensor you've removed, with a notice to fix it.
+Save with the **Save** button. If your flow has a **Manual** trigger, a **Run** button lets you test it. In the list, each automation shows when it last ran, and camera.ui disables one automatically if it points at a camera or sensor you've removed, with a notice to fix it. On the list you can select several automations at once to enable, disable, or delete them together.
 
 To share automations, see [Blueprints & store](/automations/blueprints).
+
+[^detvssensor]: A Detection event fires on each raw event as it happens. A Sensor change reacts to the sensor's own state, which keeps the recognised names, plates, or labels for as long as the subject stays in view.

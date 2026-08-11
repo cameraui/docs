@@ -19,7 +19,7 @@ Ein Ablauf läuft von links nach rechts: Ein **Trigger** startet ihn, optionale 
 Ein Trigger ist das, was einen Ablauf startet. Du kannst mehrere verwenden.
 
 - **Erkennungsereignis.** Etwas an einer Kamera erkannt: Bewegung, eine Person, ein Fahrzeug oder Tier, ein Audio-Ereignis wie eine Türklingel oder Glasbruch, ein erkanntes Gesicht oder ein Kennzeichen. Filtere nach Objekt, Confidence und Ereignis-Phase (Start, Update, Ende).
-- **Sensoränderung.** Der Zustand eines Sensors ändert sich, etwa ein sich öffnender Kontaktsensor.
+- **Sensoränderung.** Der Zustand eines Sensors ändert sich, etwa ein sich öffnender Kontaktsensor. Das umfasst auch die Erkennungssensoren deiner Kameras: Bewegung, Objekte, Gesichter, Kennzeichen und Klassifizierer. Gesichts-, Kennzeichen- und Klassifizierer-Sensoren tragen das Erkannte, ein Ablauf kann also auf eine bestimmte Person, ein bestimmtes Auto, ein Kennzeichen oder ein Ergebnis reagieren, etwa einen Vogel-Klassifizierer, der die Art meldet.[^detvssensor]
 - **Zeitplan.** Eine wiederkehrende Zeit, per Cron-Ausdruck.
 - **Systemereignis.** Etwas in camera.ui selbst, etwa eine Kamera, die sich verbindet oder trennt, oder ein Plugin, das startet oder stoppt.
 - **Webhook.** Ein externer Dienst ruft eine URL auf, um den Ablauf zu starten.
@@ -35,7 +35,7 @@ Bedingungen entscheiden, ob ein Ablauf weiterläuft:
 
 - **Wenn / Sonst.** Verzweigen anhand eines Vergleichs.
 - **Verzweigung.** Verzweigen anhand mehrerer möglicher Werte.
-- **Sensorstatus.** Einen oder mehrere Sensoren prüfen, mit UND oder ODER kombiniert. Jeder Wert kann ein fester Wert sein oder eine Variable aus einem früheren Schritt.
+- **Sensorstatus.** Einen oder mehrere Sensoren prüfen, mit UND oder ODER kombiniert. Jeder Wert kann ein fester Wert sein oder eine Variable aus einem früheren Schritt. Bei einem Erkennungssensor kannst du einen bestimmten Wert prüfen, etwa einen erkannten Namen, ein Kennzeichen oder ein Klassifizierer-Label. Hält ein Sensor mehrere Werte gleichzeitig, passt die Prüfung, wenn einer davon passt, und der Abgleich ignoriert Groß- und Kleinschreibung.
 - **Zeitbereich.** Nur innerhalb einer Tageszeit-Spanne und an gewählten Tagen weiterlaufen.
 
 ## Aktionen
@@ -63,6 +63,8 @@ In der Toolbar kannst du den Ablauf benennen, **Aktiviert** an- oder ausschalten
 - **Wiederholte Ereignisse ignorieren**, sodass ein Schwung Trigger den Ablauf einmal ausführt.
 - **Auf Abschluss warten**, sodass ein neuer Trigger wartet, bis der aktuelle Lauf fertig ist.
 
-Speichere mit der **Speichern**-Schaltfläche. Hat dein Ablauf einen **Manuell**-Trigger, kannst du ihn mit **Ausführen** testen. In der Liste zeigt jede Automation, wann sie zuletzt lief, und camera.ui deaktiviert eine automatisch, wenn sie auf eine entfernte Kamera oder einen entfernten Sensor zeigt, mit einem Hinweis zum Korrigieren.
+Speichere mit der **Speichern**-Schaltfläche. Hat dein Ablauf einen **Manuell**-Trigger, kannst du ihn mit **Ausführen** testen. In der Liste zeigt jede Automation, wann sie zuletzt lief, und camera.ui deaktiviert eine automatisch, wenn sie auf eine entfernte Kamera oder einen entfernten Sensor zeigt, mit einem Hinweis zum Korrigieren. In der Liste kannst du mehrere Automationen auf einmal auswählen, um sie zusammen zu aktivieren, zu deaktivieren oder zu löschen.
 
 Zum Teilen von Automationen siehe [Blueprints & Store](/de/automations/blueprints).
+
+[^detvssensor]: Ein Erkennungsereignis feuert bei jedem Roh-Ereignis, während es passiert. Eine Sensoränderung reagiert auf den eigenen Zustand des Sensors, der die erkannten Namen, Kennzeichen oder Labels behält, solange das Subjekt im Bild bleibt.
