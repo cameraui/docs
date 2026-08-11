@@ -14,7 +14,7 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI 
 
 - **Join Window.** Ein neues Ereignis schließt sich der offenen Episode an, wenn es so lange nach der letzten Aktivität startet. Standard 90 Sekunden.
 - **Quiet Time.** Die Episode schließt und bekommt ihre Story, sobald es so lange ruhig war. Standard 60 Sekunden.
-- **Max Duration.** Eine Episode sammelt nie länger als das; mehr Aktivität startet eine Folge-Episode. Standard 10 Minuten.
+- **Wrap Up After.** Sobald eine Episode diese Länge erreicht, nimmt sie keine neue Aktivität mehr auf und schließt beim nächsten natürlichen Bruch: Was noch läuft, wird zuerst zu Ende geführt, spätere Aktivität startet die nächste Episode. Standard 10 Minuten.
 - **Custom Instructions.** Freitext-Vorgaben, die dem eingebauten Prompt für die Story hinzugefügt werden, etwa worauf zu achten ist oder wie formuliert werden soll.
 
 ## Wo Episoden erscheinen

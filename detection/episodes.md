@@ -14,7 +14,7 @@ In the NVR settings, open the **Episodes** tab and turn on **Enabled**. Then set
 
 - **Join Window.** A new event joins the open episode when it starts within this long after the last activity. Default 90 seconds.
 - **Quiet Time.** The episode closes and gets its story once it has been this quiet. Default 60 seconds.
-- **Max Duration.** An episode never collects longer than this; more activity starts a follow-up. Default 10 minutes.
+- **Wrap Up After.** Once an episode reaches this length it stops taking in new activity and closes at the next natural break: whatever is still happening finishes first, and later activity starts the next episode. Default 10 minutes.
 - **Custom Instructions.** Free-text guidance added to the built-in prompt for the story, for example what to watch for or how to phrase it.
 
 ## Where episodes show up

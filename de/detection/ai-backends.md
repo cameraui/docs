@@ -27,6 +27,8 @@ In den Plugin-Settings eines Backends wählst du ein **Modell** pro Aufgabe (Obj
 
 Es gibt zusätzlich eine **Objekt-Konfidenz** pro Kamera unter [Einstellungen → Erkennung](/de/cameras/settings), zwischen 0,3 und 1. Erhöhe sie, wenn eine Kamera Objekte meldet, die es nicht gibt; senke sie, wenn sie echte übersieht.
 
+Daneben liegt **Objekt Timeout** in Sekunden (mindestens 10, Standard 15). Es betrifft nur Kameras, die Objekte selbst melden, etwa viele Reolink-Modelle: Es begrenzt, wie lange so eine Erkennung aktiv bleibt, wenn die Kamera kein Ende-Signal sendet. Frame-basierte Backends ignorieren es.
+
 Darunter liegt **Statische Objekte ignorieren**, standardmäßig an. Objekte, die über Ereignisse hinweg unbewegt bleiben, etwa ein geparktes Auto in der Einfahrt, lösen keine neuen Objekt-Ereignisse mehr aus, bis sie sich wieder bewegen. Schalte es aus, wenn jedes Ereignis alle gesehenen Objekte melden soll, auch die unbewegten.
 
 ## Objekt-Assistenz

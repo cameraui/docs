@@ -27,6 +27,8 @@ In a backend's plugin settings you choose a **model** for each task (object, fac
 
 There is also a per-camera **Object Confidence** in [Settings → Detection](/cameras/settings), between 0.3 and 1. Raise it if a camera reports objects that aren't there, lower it if it misses real ones.
 
+Next to it is **Object timeout**, in seconds (minimum 10, default 15). It only matters for cameras that report objects on their own, like many Reolink models: it caps how long such a detection stays active when the camera never sends an end signal. Frame-based backends ignore it.
+
 Below it is **Ignore stationary objects**, on by default. Objects that stay put across events, like a car parked in the driveway, stop triggering new object events until they move again. Turn it off if you want every event to report the objects it sees, even the ones that never move.
 
 ## Object assist
