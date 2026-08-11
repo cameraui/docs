@@ -15,6 +15,8 @@ Detection is layered, so it stays efficient:
 
 This "cascade" means the demanding AI only runs when there's something to look at, and each step only runs on the objects it applies to, which keeps CPU and GPU use low.
 
+While an event is active, the heavier analysis (objects, faces, plates, and search) switches to the camera's high-resolution stream for sharper crops, then drops back to the lighter stream once the scene goes quiet.
+
 ```mermaid
 flowchart LR
   cam[Camera frame] --> motion{Motion?}

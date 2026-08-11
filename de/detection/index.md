@@ -15,6 +15,8 @@ Erkennung ist gestuft, damit sie effizient bleibt:
 
 Diese „Kaskade" bedeutet, dass die anspruchsvolle KI nur läuft, wenn es etwas zu sehen gibt, und jeder Schritt nur auf den Objekten, für die er gilt, was CPU- und GPU-Last niedrig hält.
 
+Solange ein Ereignis aktiv ist, schaltet die schwerere Analyse (Objekte, Gesichter, Kennzeichen und Suche) auf den hochauflösenden Stream der Kamera für schärfere Ausschnitte und fällt zurück auf den leichteren Stream, sobald die Szene ruhig wird.
+
 ```mermaid
 flowchart LR
   cam[Kamerabild] --> motion{Bewegung?}

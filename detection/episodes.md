@@ -23,6 +23,10 @@ In the NVR settings, open the **Episodes** tab and turn on **Enabled**. Then set
 - **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it.
 - **Apple TV.** Episodes are available in the Apple TV app too.
 
+<Shot src="/img/detection/episode-card.png" alt="An episode mosaic card in the recordings view" />
+
 ## The episode player
 
 Opening an episode plays the whole sequence. It switches between cameras on its own as the story moves, and shows the current camera's name and time. A strip below the video holds one block per camera stretch, so you can jump straight to any point or skip between cameras.
+
+<Shot src="/img/detection/episode-player.png" alt="The episode player with the camera strip below the video" />

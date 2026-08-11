@@ -19,7 +19,7 @@ flowchart LR
   subgraph server[camera.ui server · your hardware]
     direction TB
     g[Streaming engine] --> fw[Frame worker<br/>one per camera]
-    fw --> det[Detection<br/>motion → object → face · plate · audio]
+    fw --> det[Detection<br/>motion → objects → faces · plates<br/>audio in parallel]
     det --> nvr[(NVR plugin<br/>recordings + push)]
     g --> api[Web UI + API]
     nvr --> api
@@ -64,7 +64,7 @@ You use camera.ui through the same interface everywhere, but the apps don't all 
 How viewers reach the server:
 
 - On your network, the browser and a desktop viewer connect **directly**.
-- The **mobile apps** always connect through **camera.ui Cloud**.[^cloud-optional]
+- The **mobile apps** connect directly over your local network at home, and through **camera.ui Cloud** when you're away.[^cloud-optional]
 - A browser away from home uses whichever [remote access](/remote/) option you set up: camera.ui Cloud, a Cloudflare tunnel, or your own domain.
 
 You can also save more than one server as an **Instance** and switch between them from the same app.
