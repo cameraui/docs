@@ -10,7 +10,7 @@ There are two ways to add a camera: let camera.ui **discover** it, or **add it m
 
 ## Discover a camera
 
-The Cameras page lists devices that have been **discovered**, ready for you to add. A camera shows up here when camera.ui's built-in discovery finds it on your network (ONVIF and other protocols), or when a [plugin](/plugins/) that manages cameras reports one. Either way, you add it the same way. Cameras you have already added appear under **Adopted cameras**.
+The Cameras page lists devices that have been **discovered**, ready for you to add. A camera shows up here when camera.ui's built-in discovery finds it on your network (ONVIF and other protocols), or when a [plugin](/plugins/) that manages cameras reports one. Either way, you add it the same way. Cameras you have already added appear under **Adopted cameras**. Discovery and adding are for admins; other users open the same **Cameras** page as a plain list and tap through to any camera.
 
 1. Open **Cameras**. Discovery runs automatically. If a camera on your network doesn't appear, select **Rescan** and check that it's powered on and on the same network.
 2. Select a camera under **Discovered**. A **Connect** dialog opens. Where the address is known, the **Address** column shows it, and the dialog repeats it above the credential fields.

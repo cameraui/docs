@@ -16,6 +16,7 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI 
 - **Quiet Time.** Die Episode schließt und bekommt ihre Story, sobald es so lange ruhig war. Standard 60 Sekunden.
 - **Wrap Up After.** Sobald eine Episode diese Länge erreicht, nimmt sie keine neue Aktivität mehr auf und schließt beim nächsten natürlichen Bruch: Was noch läuft, wird zuerst zu Ende geführt, spätere Aktivität startet die nächste Episode. Standard 10 Minuten.
 - **Custom Instructions.** Freitext-Vorgaben, die dem eingebauten Prompt für die Story hinzugefügt werden, etwa worauf zu achten ist oder wie formuliert werden soll.
+- **Video in Push.** Ob ein Episoden-Push den Episoden-Clip abspielt, der wie der [Episoden-Player](#der-episoden-player) zwischen Kameras wechselt. **Off** hängt ihn nie an, **Always** immer, und **Camera setting** hängt ihn an, wenn mindestens eine Kamera der Episode [Video in Push](/de/notifications/#woruber-jede-kamera-dich-alarmiert) aktiviert hat. Standard **Camera setting**.
 
 ## Wo Episoden erscheinen
 

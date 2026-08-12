@@ -11,14 +11,14 @@ Most of how camera.ui is configured lives under **Settings**, reached from the m
 Available to everyone signed in:
 
 - **Account.** Your profile, password, two-factor authentication, and active sessions. See [Security](/admin/security).
-- **Appearance.** Theme, language, and interface options.
+- **Appearance.** Theme, language, and interface options, including whether the settings pages form their own sidebar group and which groups can collapse.
 - **Notifications.** How and when this device alerts you. See [Notifications](/notifications/).
 
 ## Administrator settings
 
 Available to admins:
 
-- **Users.** Accounts and roles. See [Users](/admin/users).
+- **Users.** Accounts, roles, and active sessions. See [Users](/admin/users).
 - **Recordings.** Recording and storage options. See [Recording](/recording/).
 - **Remote access.** Reaching the server from outside. See [Remote access](/remote/).
 - **MQTT.** Connect camera.ui to an MQTT broker.
@@ -29,7 +29,7 @@ Available to admins:
 
 Beyond Settings, the menu has more admin tools:
 
-- A **dashboard** with the server's status and resource use.
+- **Metrics** for how the server and each camera are doing: system and process tables, per-camera decode and detection rates, and the storage breakdown.
 - **[Automations](/automations/)** for connecting events to actions.
 - **[Logs](/admin/logs)** and a **terminal** for troubleshooting.
 - **[Instances](/admin/instances)** for switching between several servers, and **[Workers](/admin/workers)** for sharing the load of this one.

@@ -16,6 +16,7 @@ In the NVR settings, open the **Episodes** tab and turn on **Enabled**. Then set
 - **Quiet Time.** The episode closes and gets its story once it has been this quiet. Default 60 seconds.
 - **Wrap Up After.** Once an episode reaches this length it stops taking in new activity and closes at the next natural break: whatever is still happening finishes first, and later activity starts the next episode. Default 10 minutes.
 - **Custom Instructions.** Free-text guidance added to the built-in prompt for the story, for example what to watch for or how to phrase it.
+- **Video in Push.** Whether an episode push plays the episode clip, which switches cameras like the [episode player](#the-episode-player). **Off** never attaches it, **Always** always does, and **Camera setting** attaches it when at least one camera in the episode has [Video in Push](/notifications/#what-each-camera-alerts-you-about) turned on. Default **Camera setting**.
 
 ## Where episodes show up
 

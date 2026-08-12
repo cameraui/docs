@@ -48,7 +48,7 @@ To keep that footage instead, put an empty file named `.cameraui-keep` into the 
 
 <Shot src="/img/recording/storage-stats.png" alt="Storage usage statistics" />
 
-camera.ui shows how much space is used and free, and a breakdown per camera, including each camera's recording rate (megabytes per hour) and how many days of footage it holds. This helps you size storage and spot a camera recording more than expected.
+Open **Metrics → Storage**. The **Storage Overview** shows how much disk is used and free, and the NVR's share of it. The **Camera Storage** table breaks it down per camera: size on disk, days of footage held, the recording rate per day, and the mode. This helps you size storage and spot a camera recording more than expected.
 
 If the page warns that the storage volume is small, most of the volume is kept free as headroom, so recordings rotate out quickly. That usually means the larger disk you meant to use isn't mounted, so check the storage path. A separate warning appears when free disk space drops below 8%. Below 5%, recording pauses.
 

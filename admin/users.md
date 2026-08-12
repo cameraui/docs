@@ -10,7 +10,7 @@ camera.ui supports multiple user accounts, each with a role that decides what th
 
 There are three roles:
 
-- **User.** Day-to-day access: live view, recordings, Camview, and their own account settings.
+- **User.** Day-to-day access: the camera list, live view, recordings, Camview, and their own account settings. The Cameras page opens as a plain list to tap through to any camera; discovery, adding cameras, and camera settings stay with admins.
 - **Admin.** Everything a user can do, plus managing cameras, plugins, automations, users, and all server settings.
 - **Master.** The main account. The same as an admin, plus it can reset the server. It can't be deleted, and its role can't be changed, not even by itself. Only the master can edit its own username, password and avatar; other admins get an error if they try.
 
@@ -25,6 +25,10 @@ In **Settings → Users**, the **Registered users** list shows everyone. From th
 - **Create a new user**, setting a username, password, and role (user or admin).
 - **Edit** a user to change their details or role.
 - **Remove** a user.
+
+## Logged in users
+
+Below the registered users, the **Logged in users** list shows every active session across all accounts, with the device, its address, and type. Your own session is marked. Use **Sign out** on a row to end that session.
 
 ## The first account
 

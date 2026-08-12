@@ -10,7 +10,7 @@ camera.ui unterstützt mehrere Benutzerkonten, jedes mit einer Rolle, die bestim
 
 Es gibt drei Rollen:
 
-- **Benutzer.** Alltäglicher Zugriff: Live-Ansicht, Aufnahmen, Kameransicht und die eigenen Konto-Einstellungen.
+- **Benutzer.** Alltäglicher Zugriff: die Kameraliste, Live-Ansicht, Aufnahmen, Kameransicht und die eigenen Konto-Einstellungen. Die **Kameras**-Seite öffnet als schlichte Liste zum Antippen jeder Kamera; Entdeckung, Hinzufügen und Kamera-Einstellungen bleiben bei Admins.
 - **Admin.** Alles, was ein Benutzer kann, plus Verwalten von Kameras, Plugins, Automatisierungen, Benutzern und allen Server-Einstellungen.
 - **Master.** Das Hauptkonto. Wie ein Admin, plus es kann den Server zurücksetzen. Es kann nicht gelöscht werden, und seine Rolle lässt sich nicht ändern, auch nicht von ihm selbst. Nur der Master kann seinen eigenen Benutzernamen, sein Passwort und seinen Avatar bearbeiten; andere Admins bekommen dabei einen Fehler.
 
@@ -25,6 +25,10 @@ Unter **Einstellungen → Benutzer** zeigt die Liste **Registrierte Benutzer** a
 - **Einen neuen Benutzer anlegen**, mit Benutzername, Passwort und Rolle (Benutzer oder Admin).
 - Einen Benutzer **bearbeiten**, um Details oder Rolle zu ändern.
 - Einen Benutzer **entfernen**.
+
+## Derzeit angemeldete Benutzer
+
+Unter den registrierten Benutzern zeigt die Liste **Derzeit angemeldete Benutzer** jede aktive Sitzung über alle Konten hinweg, mit Gerät, Adresse und Typ. Deine eigene Sitzung ist markiert. Nutze **Abmelden** in einer Zeile, um diese Sitzung zu beenden.
 
 ## Das erste Konto
 

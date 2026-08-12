@@ -101,7 +101,7 @@ Lässt du die Capabilities weg, bietet der Worker alles an, was die meisten Setu
 
 ## Die Worker-Liste
 
-Sobald gekoppelt, erscheint ein Worker in der **Workers**-Liste mit Online-/Offline-Status, Plattform (Betriebssystem/Architektur), Prozess-ID, Version sowie Live-CPU- und Speichernutzung. Weicht die Version eines Workers von der des Masters ab, wird ein Hinweis angezeigt.
+Sobald gekoppelt, erscheint ein Worker in der **Workers**-Liste mit Online-/Offline-Status, Plattform (Betriebssystem/Architektur), Prozess-ID, Version sowie Live-CPU- und Speichernutzung. Weicht die Version eines Workers von der des Masters ab, wird ein Hinweis angezeigt. Hängt ein Worker zurück, erscheint zusätzlich ein kleiner Punkt am **Workers**-Eintrag in der Seitenleiste, dasselbe Zeichen, das Server und Plugins für ein ausstehendes Update nutzen.
 
 Ein zurückhängender Worker zeigt direkt in der Liste einen **Aktualisieren**-Button: Der Worker installiert die Version des Masters und startet sich selbst neu. Zwei Fälle laufen anders. Worker in der Desktop-App aktualisieren sich mit der App. Und Worker, die noch auf einer Version vor 2.1.0 laufen, verstehen das Update-Kommando noch nicht, bring sie einmal von Hand auf Stand: Bei Docker geh per exec in den Container, führe `cameraui update-server -H /data` aus und starte den Container neu (das Worker-Image zu ziehen ändert die Version nicht). Ab dann deckt der Button auch sie ab. Siehe [Aktualisieren](/de/install/updating).
 

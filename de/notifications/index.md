@@ -24,7 +24,7 @@ Push aufs Handy braucht ein paar Dinge. Fehlt eines davon, landen Alarme weiterh
 
 ## Push bleibt privat
 
-Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui Cloud, Google und Apple reichen nur den versiegelten Umschlag weiter; Kameraname, Alarmtext und der Link darin sind für alle drei unlesbar.[^e2ee] Das Vorschaubild macht gar keinen Umweg: dein Handy lädt es direkt von deinem Server.
+Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui Cloud, Google und Apple reichen nur den versiegelten Umschlag weiter; Kameraname, Alarmtext und der Link darin sind für alle drei unlesbar.[^e2ee] Das Vorschaubild macht gar keinen Umweg: dein Handy lädt es direkt von deinem Server. Ist **Video in Push** an, wird der Clip genauso zugestellt: Er bleibt im versiegelten Push und streamt von deinem eigenen Server, die Cloud sieht also nie ein Bild.
 
 ## Deine Benachrichtigungs-Einstellungen
 
@@ -49,6 +49,7 @@ Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem ge
 - **Notify for Sensors.** Eine Türklingel, ein Kontaktsensor, eine Sirene oder eine Alarmanlage.
 - **Cooldown (Seconds).** Eine Ruhephase nach einem Alarm, damit eine belebte Szene dich nicht überflutet.
 - **Fast Notifications.** Den Alarm sofort senden, sobald etwas erkannt wird, noch bevor das Bild fertig ist.
+- **Video in Push.** Hängt einen kurzen Clip des Moments an den Push. Auf dem iPhone spielt er direkt in der Benachrichtigung, auf Android bleibt das Bild und der Clip öffnet beim Antippen, und der In-App-Alarm öffnet mit einem Player. Nutzt die niedrigste aufgezeichnete Qualität. Standardmäßig aus.
 
 ## KI-Beschreibungen kommen als eine Zusammenfassung
 

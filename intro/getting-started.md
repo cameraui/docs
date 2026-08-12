@@ -73,6 +73,16 @@ The **Cameras** page scans your network and lists the cameras it finds under **D
 
 For the full walkthrough, see **[Adding a camera](/cameras/add-camera)**.
 
+## Getting around
+
+The sidebar on the left is grouped by purpose. Your daily pages sit at the top. A **Manage** group holds cameras, sensors, faces, automations, plugins and instances. A **System** group keeps the diagnostic pages and starts collapsed. On a phone the same groups show up in the menu.
+
+The order is yours to change. Select the **pencil** at the top of the sidebar to start editing: drag a page to another spot or into another group, use the **eye** to hide a settings page you don't need, then select the **check** when you're done. **Reset to defaults** brings back the original layout. Your layout is saved to your account, so it follows you to every browser and device.
+
+<Shot src="/img/getting-started/sidebar-edit.png" alt="The sidebar in edit mode, with groups and drag handles" />
+
+In **Settings → Appearance** you can also add the settings pages to the sidebar as their own group, and choose which groups can collapse.
+
 ## Next steps
 
 Once your camera is connected:

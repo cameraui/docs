@@ -48,7 +48,7 @@ Wenn du das Material stattdessen behalten willst, lege eine leere Datei namens `
 
 <Shot src="/img/recording/storage-stats.png" alt="Speicher-Nutzungsstatistik" />
 
-camera.ui zeigt, wie viel Platz belegt und frei ist, sowie eine Aufschlüsselung pro Kamera, inklusive der Aufnahme-Rate jeder Kamera (Megabyte pro Stunde) und wie viele Tage Material sie hält. Das hilft, den Speicher zu dimensionieren und eine Kamera zu erkennen, die mehr aufnimmt als erwartet.
+Öffne **Metrics → Speicher**. Die **Speicherübersicht** zeigt, wie viel Disk belegt und frei ist, sowie den Anteil des NVR daran. Die Tabelle **Kameraspeicher** schlüsselt es pro Kamera auf: Größe auf der Disk, gehaltene Tage Material, die Aufnahme-Rate pro Tag und den Modus. Das hilft, den Speicher zu dimensionieren und eine Kamera zu erkennen, die mehr aufnimmt als erwartet.
 
 Wenn die Seite warnt, dass das Speichervolumen klein ist, wird der größte Teil des Volumes als Reserve freigehalten, Aufnahmen rotieren also schnell heraus. Meist ist dann die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe also den Speicherpfad. Eine eigene Warnung erscheint, wenn der freie Speicher unter 8% fällt. Unter 5% pausiert die Aufnahme.
 

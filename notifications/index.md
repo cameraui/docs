@@ -24,7 +24,7 @@ Phone push needs a few things in place. If any is missing, alerts still land in 
 
 ## Push stays private
 
-Your server seals every alert before it leaves your network. camera.ui Cloud, Google and Apple only pass the sealed envelope along; the camera name, the alert text and the link inside are unreadable to all three.[^e2ee] The thumbnail takes no detour at all: your phone loads it straight from your server.
+Your server seals every alert before it leaves your network. camera.ui Cloud, Google and Apple only pass the sealed envelope along; the camera name, the alert text and the link inside are unreadable to all three.[^e2ee] The thumbnail takes no detour at all: your phone loads it straight from your server. When **Video in Push** is on, the clip is delivered the same way: it stays inside the sealed push and streams from your own server, so the cloud never sees a frame.
 
 ## Your notification settings
 
@@ -49,6 +49,7 @@ Each camera has its own notification settings, so you only get pinged for what m
 - **Notify for Sensors.** A doorbell, a contact sensor, a siren, or a security system.
 - **Cooldown (Seconds).** A quiet period after an alert, so one busy scene doesn't flood you.
 - **Fast Notifications.** Send the alert the instant something is detected, before the image is ready.
+- **Video in Push.** Attach a short clip of the moment to the push. On iPhone it plays right in the notification, on Android the picture stays and the clip opens on tap, and the in-app alert opens with a player. Uses the lowest recorded quality. Off by default.
 
 ## AI descriptions arrive as one summary
 

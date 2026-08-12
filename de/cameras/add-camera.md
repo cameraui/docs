@@ -10,7 +10,7 @@ Es gibt zwei Wege, eine Kamera hinzuzufügen: camera.ui sie **entdecken** lassen
 
 ## Eine Kamera entdecken
 
-Die Kameras-Seite listet Geräte, die **entdeckt** wurden und bereit zum Hinzufügen sind. Eine Kamera erscheint hier, wenn camera.uis eingebaute Suche sie in deinem Netzwerk findet (ONVIF und weitere Protokolle), oder wenn ein [Plugin](/de/plugins/), das Kameras verwaltet, eine meldet. In beiden Fällen fügst du sie gleich hinzu. Bereits hinzugefügte Kameras erscheinen unter **Verbundene Kameras**.
+Die Kameras-Seite listet Geräte, die **entdeckt** wurden und bereit zum Hinzufügen sind. Eine Kamera erscheint hier, wenn camera.uis eingebaute Suche sie in deinem Netzwerk findet (ONVIF und weitere Protokolle), oder wenn ein [Plugin](/de/plugins/), das Kameras verwaltet, eine meldet. In beiden Fällen fügst du sie gleich hinzu. Bereits hinzugefügte Kameras erscheinen unter **Verbundene Kameras**. Entdeckung und Hinzufügen sind Admin-Sache; andere Benutzer öffnen dieselbe **Kameras**-Seite als schlichte Liste und tippen sich zu jeder Kamera durch.
 
 1. Öffne **Kameras**. Die Suche läuft automatisch. Falls eine Kamera in deinem Netzwerk nicht erscheint, wähle **Neu scannen** und prüfe, ob sie eingeschaltet und im selben Netzwerk ist.
 2. Wähle eine Kamera unter **Entdeckt**. Ein **Verbinden**-Dialog öffnet sich. Wenn die Adresse bekannt ist, zeigt die Spalte **Adresse** sie an, und der Dialog wiederholt sie über den Zugangsdaten.
