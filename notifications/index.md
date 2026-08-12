@@ -49,7 +49,7 @@ Each camera has its own notification settings, so you only get pinged for what m
 - **Notify for Sensors.** A doorbell, a contact sensor, a siren, or a security system.
 - **Cooldown (Seconds).** A quiet period after an alert, so one busy scene doesn't flood you.
 - **Fast Notifications.** Send the alert the instant something is detected, before the image is ready.
-- **Video in Push.** Attach a short clip of the moment to the push. On iPhone it plays right in the notification, on Android the picture stays and the clip opens on tap, and the in-app alert opens with a player. Uses the lowest recorded quality. Off by default.
+- **Video in Push.** Attach a short clip of the moment to the push. On iPhone it plays right in the notification, on Android the expanded notification animates the clip frame by frame,[^androidframes] and the in-app alert opens with a player. Uses the lowest recorded quality. Off by default.
 
 ## AI descriptions arrive as one summary
 
@@ -69,3 +69,4 @@ Some events are too important to hold back. **Critical alerts**, like a doorbell
 [^admin]: Only admins see the system notifications section.
 [^nvr]: These per-camera controls come from the NVR plugin, the same plugin that handles recording.
 [^ai]: AI descriptions come from the NVR plugin. Turn them on in its settings.
+[^androidframes]: Android notifications cannot play video, so the current app pulls frames from the clip and cycles them. Tapping still opens the recording.

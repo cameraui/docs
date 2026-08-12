@@ -49,7 +49,7 @@ Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem ge
 - **Notify for Sensors.** Eine Türklingel, ein Kontaktsensor, eine Sirene oder eine Alarmanlage.
 - **Cooldown (Seconds).** Eine Ruhephase nach einem Alarm, damit eine belebte Szene dich nicht überflutet.
 - **Fast Notifications.** Den Alarm sofort senden, sobald etwas erkannt wird, noch bevor das Bild fertig ist.
-- **Video in Push.** Hängt einen kurzen Clip des Moments an den Push. Auf dem iPhone spielt er direkt in der Benachrichtigung, auf Android bleibt das Bild und der Clip öffnet beim Antippen, und der In-App-Alarm öffnet mit einem Player. Nutzt die niedrigste aufgezeichnete Qualität. Standardmäßig aus.
+- **Video in Push.** Hängt einen kurzen Clip des Moments an den Push. Auf dem iPhone spielt er direkt in der Benachrichtigung, auf Android animiert die aufgeklappte Benachrichtigung den Clip Bild für Bild,[^androidframes] und der In-App-Alarm öffnet mit einem Player. Nutzt die niedrigste aufgezeichnete Qualität. Standardmäßig aus.
 
 ## KI-Beschreibungen kommen als eine Zusammenfassung
 
@@ -69,3 +69,4 @@ Manche Ereignisse sind zu wichtig, um sie zurückzuhalten. **Kritische Alarme**,
 [^admin]: Den Bereich mit den System-Benachrichtigungen sehen nur Admins.
 [^nvr]: Diese Einstellungen pro Kamera stammen vom NVR-Plugin, das auch die Aufnahme übernimmt.
 [^ai]: KI-Beschreibungen stammen vom NVR-Plugin. Schalte sie in dessen Einstellungen ein.
+[^androidframes]: Android-Benachrichtigungen können kein Video abspielen, deshalb zieht die aktuelle App Einzelbilder aus dem Clip und blättert sie durch. Antippen öffnet weiterhin die Aufnahme.
