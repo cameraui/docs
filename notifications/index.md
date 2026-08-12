@@ -20,7 +20,7 @@ Phone push needs a few things in place. If any is missing, alerts still land in 
 2. **camera.ui Cloud.** Push is delivered through [camera.ui Cloud](/remote/cloud), so the server needs it enabled and [paired](/remote/pairing) to your account. It also needs an active subscription.
 3. **On, and synced.** In the app, open **Settings → Notifications**, turn the master switch on, and tap **Sync this device** once. Repeat on every phone, for every server you connect to.
 
-**Re-sync after a reinstall.** Reinstalling the app, clearing its data, or switching to a new phone resets the push token, so open **Settings → Notifications** and tap **Sync this device** again. After a reinstall the **This device** row already shows it needs syncing. If push ever goes quiet for no clear reason, that's the first thing to try.
+**Push repairs itself after a reinstall.** Reinstalling the app, clearing its data, or switching to a new phone resets the push token. The app checks with the server on its own and re-registers in the background. If it can't, for example because the phone's notification permission is off, a note saying **Push notifications stopped working** appears on any screen with a **Fix** button. One tap sets the phone up again. You can also open **Settings → Notifications** and tap **Re-sync**. The **This device** row only asks for a sync when the server really doesn't know this phone.
 
 ## Push stays private
 
@@ -43,7 +43,7 @@ Open **Settings → Notifications** to control your alerts. These settings belon
 
 Each camera has its own notification settings, so you only get pinged for what matters there:[^nvr]
 
-- **Notify for Objects.** Which to notify on (people and vehicles by default).
+- **Notify for Objects.** Which to notify on (people and vehicles by default). An [alert zone](/cameras/zones-and-masks#alert-zones) on the camera replaces this list, and also decides where in the picture the type alerts.
 - **Known Faces Only.** For people, only alert on a recognised [face](/detection/faces).
 - **Notify for Audio.** Which sounds, such as alarms or glass breaking.
 - **Notify for Sensors.** A doorbell, a contact sensor, a siren, or a security system.

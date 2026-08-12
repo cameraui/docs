@@ -20,7 +20,7 @@ Push aufs Handy braucht ein paar Dinge. Fehlt eines davon, landen Alarme weiterh
 2. **camera.ui Cloud.** Push wird über [camera.ui Cloud](/de/remote/cloud) zugestellt, der Server braucht sie also aktiviert und mit deinem Konto [gekoppelt](/de/remote/pairing). Außerdem ist ein aktives Abo nötig.
 3. **An und synchronisiert.** Öffne in der App **Einstellungen → Benachrichtigungen**, schalte den Hauptschalter ein und tippe einmal auf **Dieses Gerät synchronisieren**. Wiederhole das auf jedem Handy, für jeden Server, mit dem du dich verbindest.
 
-**Nach einer Neuinstallation neu synchronisieren.** Die App neu installieren, ihre Daten löschen oder aufs neue Handy wechseln setzt den Push-Token zurück, öffne also **Einstellungen → Benachrichtigungen** und tippe erneut auf **Dieses Gerät synchronisieren**. Nach einer Neuinstallation zeigt die Zeile **Dieses Gerät** das ohnehin als nicht synchronisiert an. Wenn Push ohne klaren Grund verstummt, probiere zuerst das.
+**Push repariert sich nach einer Neuinstallation selbst.** Die App neu installieren, ihre Daten löschen oder aufs neue Handy wechseln setzt den Push-Token zurück. Die App prüft das von sich aus mit dem Server und registriert sich im Hintergrund neu. Klappt das nicht, etwa weil die Benachrichtigungs-Berechtigung des Handys aus ist, erscheint auf jedem Bildschirm ein Hinweis **Push-Nachrichten kommen nicht mehr an** mit einem **Beheben**-Button. Ein Tipp richtet das Handy wieder ein. Du kannst auch **Einstellungen → Benachrichtigungen** öffnen und auf **Erneut synchronisieren** tippen. Die Zeile **Dieses Gerät** verlangt nur dann eine Synchronisierung, wenn der Server dieses Handy wirklich nicht kennt.
 
 ## Push bleibt privat
 
@@ -43,7 +43,7 @@ Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui 
 
 Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem gepingt wirst, was dort zählt:[^nvr]
 
-- **Notify for Objects.** Worüber benachrichtigt wird (standardmäßig Personen und Fahrzeuge).
+- **Notify for Objects.** Worüber benachrichtigt wird (standardmäßig Personen und Fahrzeuge). Eine [Alarmzone](/de/cameras/zones-and-masks#alarmzonen) an der Kamera ersetzt diese Liste und entscheidet zusätzlich, wo im Bild der Typ alarmiert.
 - **Known Faces Only.** Bei Personen nur bei einem erkannten [Gesicht](/de/detection/faces) alarmieren.
 - **Notify for Audio.** Welche Geräusche, etwa Alarme oder Glasbruch.
 - **Notify for Sensors.** Eine Türklingel, ein Kontaktsensor, eine Sirene oder eine Alarmanlage.

@@ -36,7 +36,7 @@ The OpenVINO plugin logs `libOpenCL.so.1: cannot open shared object file` when t
 
 - Check the **[notification settings](/notifications/)** on the device: the master switch, quiet hours, and whether the device is registered.
 - Check the **camera's** notification settings: which objects, sounds, and sensors it alerts on.
-- For **push to a phone**, you need the native [mobile app](/install/mobile) (a browser gets no push), [camera.ui Cloud](/remote/cloud) set up, and a tap on **Sync this device**. See [Getting push on your phone](/notifications/#getting-push-on-your-phone).
+- For **push to a phone**, you need the native [mobile app](/install/mobile) (a browser gets no push), [camera.ui Cloud](/remote/cloud) set up, and a tap on **Sync this device**. If push worked before and went quiet, the app usually notices and shows a note with a **Fix** button; one tap sets the phone up again. See [Getting push on your phone](/notifications/#getting-push-on-your-phone).
 
 ## Recording isn't working
 
