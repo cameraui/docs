@@ -51,7 +51,9 @@ Each camera has an **Activity mode** that controls when its stream runs, balanci
 
 ## More options
 
-The options menu (the dots) toggles **Zones**, **Heatmap** and **Edit Shortcuts**, plus **Detections** on cameras that run motion or object detection. **AI descriptions** appears when the NVR plugin is installed. **Export** appears once the timeline is open, and saves the range you trim there. A **PTZ** button appears on cameras that support pan, tilt, and zoom. See [PTZ & autotrack](/sensors/ptz) and [Detection & AI](/detection/).
+The options menu (the dots) toggles **Zones**, **Heatmap** and **Edit Shortcuts**, plus **Detections** on cameras that run motion or object detection. **AI descriptions** appears when the NVR plugin is installed. **Export** appears once the timeline is open, and saves the range you trim there. See [Detection & AI](/detection/).
+
+Cameras with pan, tilt and zoom get their own bar at the top right of the player, with the home position, the presets saved on the camera, and the **PTZ** button for the on-screen controls. See [PTZ & autotrack](/sensors/ptz).
 
 ## The camera page
 

@@ -32,9 +32,11 @@ You can add more than one server and switch between them, handy if you run separ
 ## Around the app
 
 - **Home.** The latest activity up top, plus camera and storage status and today's event count. Select a notification to jump straight to the recording.
-- **Camview.** A live wall of your cameras. Pick a grid or a mixed layout, rearrange the tiles, or open any camera fullscreen.
+- **Camview.** A live wall of your cameras. Pick a grid or a mixed layout, rearrange the tiles, or open any camera fullscreen. **Fill wall** drops the borders and fills the screen with the wall.
 - **Events.** Your events grouped by day, with filters for persons, faces, vehicles, animals, packages, doorbell, sensors, sounds, and motion. Select one to play it back from that moment. Keep scrolling to reach older days.
+- **Episodes.** [Episodes](/detection/episodes) show up as mosaic cards among your events and on the Home screen. Opening one plays the whole story and switches cameras on its own. Left and right jump between cameras.
 - **Sensors.** Your sensors as tiles, live from the server.
+- **Talk back.** In the fullscreen player, the microphone button speaks through the camera, if the camera supports two-way audio.
 
 ### Sensors
 
@@ -48,7 +50,7 @@ The Sensors page lays out every sensor as a tile, grouped by type, with its curr
 
 The app updates through TestFlight during the beta, like any other Apple TV app.
 
-If your server or its recording plugin is older than the app needs, the app shows an **Update needed** screen naming exactly what to bring up to date, instead of empty lists and missing pictures. Update camera.ui on the server, then reopen the app.
+If your server or its recording plugin is older than the app needs, the app shows an **Update needed** screen naming exactly what to bring up to date, instead of empty lists and missing pictures. Update camera.ui on the server, then reopen the app. The current beta needs camera.ui 2.1.6 or newer and the recording plugin at 1.3.13 or newer.
 
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback. Live view is free.
 [^appstore]: The app moves to the App Store with the public release.

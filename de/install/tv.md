@@ -32,9 +32,11 @@ Du kannst mehrere Server hinzufügen und zwischen ihnen wechseln, praktisch, wen
 ## Rund um die App
 
 - **Home.** Oben die neueste Aktivität, dazu Kamera- und Speicher-Status und die heutige Ereigniszahl. Wähl eine Benachrichtigung, um direkt zur Aufnahme zu springen.
-- **Camview.** Eine Live-Wand deiner Kameras. Wähl ein Raster oder ein gemischtes Layout, ordne die Kacheln um oder öffne eine Kamera im Vollbild.
+- **Camview.** Eine Live-Wand deiner Kameras. Wähl ein Raster oder ein gemischtes Layout, ordne die Kacheln um oder öffne eine Kamera im Vollbild. **Fill wall** lässt die Ränder weg und füllt den Bildschirm mit der Wand.
 - **Ereignisse.** Deine Ereignisse nach Tag gruppiert, mit Filtern für Personen, Gesichter, Fahrzeuge, Tiere, Pakete, Türklingel, Sensoren, Geräusche und Bewegung. Wähl eines, um es ab diesem Moment abzuspielen. Scroll weiter, um ältere Tage zu erreichen.
+- **Episoden.** [Episoden](/de/detection/episodes) erscheinen als Mosaik-Karten zwischen deinen Ereignissen und auf dem Home-Screen. Öffnest du eine, spielt sie die ganze Story und wechselt von selbst zwischen den Kameras. Links und rechts springen zwischen den Kameras.
 - **Sensoren.** Deine Sensoren als Kacheln, live vom Server.
+- **Gegensprechen.** Im Vollbild-Player spricht der Mikrofon-Button über die Kamera, sofern sie Gegensprechen unterstützt.
 
 ### Sensoren
 
@@ -48,7 +50,7 @@ Die Sensoren-Seite legt jeden Sensor als Kachel an, nach Typ gruppiert, mit sein
 
 Die App aktualisiert sich während der Beta über TestFlight, wie jede andere Apple-TV-App.
 
-Ist dein Server oder sein Aufnahme-Plugin älter als die App braucht, zeigt die App einen **Update needed**-Screen, der genau nennt, was zu aktualisieren ist, statt leerer Listen und fehlender Bilder. Aktualisiere camera.ui auf dem Server und öffne die App erneut.
+Ist dein Server oder sein Aufnahme-Plugin älter als die App braucht, zeigt die App einen **Update needed**-Screen, der genau nennt, was zu aktualisieren ist, statt leerer Listen und fehlender Bilder. Aktualisiere camera.ui auf dem Server und öffne die App erneut. Die aktuelle Beta braucht camera.ui ab 2.1.6 und das Aufnahme-Plugin ab 1.3.13.
 
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe. Die Live-Ansicht ist kostenlos.
 [^appstore]: Mit dem öffentlichen Release wechselt die App in den App Store.

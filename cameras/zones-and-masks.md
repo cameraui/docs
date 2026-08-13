@@ -127,17 +127,16 @@ Hidden:
 - Event and recording thumbnails, moment cards, face and plate crops, and episode mosaics.
 - Pictures attached to push notifications.
 - Snapshots: camera tiles, the camera list, the overview, the snapshot API, MQTT, HomeKit stills and the Home Assistant camera image.
-- Live view and playback in the camera.ui web player, where the browser draws the area black on top of the video.
+- Live view and playback in the camera.ui web interface, and in the mobile apps, which run that same interface. The area is drawn black on top of the video.
+- Live view, playback and the episode player in the Apple TV app, and the clip that loops on its Home screen, where the app draws the area black on top of the video.
+- The preview that plays while you hover an event or a recording, and a picture you take with the camera button in the player.
 
 Not hidden:
 
 - The recording on disk, and anything you export or download from it.
 - Video clips attached to push notifications.
 - RTSP, and everything that reads it: HomeKit live and HomeKit recordings, the Home Assistant stream, and other apps.
-- The Apple TV app, which draws no overlay.
-- The mobile apps, until an app update ships the new interface. Their snapshots are covered, the live picture is not.
-- The preview that plays while you hover an event or a recording in the web UI.
-- A picture you take with the camera button in the live player.
+- Picture-in-picture, which pops the bare video out of the page and leaves the black area behind.
 
 So a privacy zone hides the area from someone looking at the screen, and from the pictures camera.ui sends out. It does not hide it from someone who has the stream. If an area must never be filmed at all, point the camera elsewhere, or use the camera's own privacy mask if it has one, which blanks the area before the picture reaches camera.ui.
 
@@ -148,7 +147,7 @@ Sometimes camera.ui cannot paint the mask, for example on a hardware frame it co
 - **Send it anyway.** The picture goes out uncovered. This is the default.
 - **Send no picture.** No picture is produced at all.
 
-10-bit video is not supported by the mask, so on a 10-bit stream every picture takes this path. Set it to **Send no picture** if an uncovered picture would be worse than none.
+Set it to **Send no picture** if an uncovered picture would be worse than none.
 
 ## Lines (line-crossing)
 

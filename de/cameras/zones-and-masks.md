@@ -127,17 +127,16 @@ Verdeckt:
 - Vorschaubilder von Ereignissen und Aufnahmen, Moment-Karten, Gesichts- und Kennzeichen-Ausschnitte und Episoden-Mosaike.
 - Bilder in Push-Benachrichtigungen.
 - Snapshots: Kamera-Kacheln, Kameraliste, Übersicht, Snapshot-API, MQTT, HomeKit-Standbilder und das Home-Assistant-Kamerabild.
-- Live-Ansicht und Wiedergabe im camera.ui-Web-Player, wo der Browser den Bereich über das Video schwarz zeichnet.
+- Live-Ansicht und Wiedergabe in der camera.ui-Weboberfläche und in den Mobile-Apps, die dieselbe Oberfläche ausführen. Der Bereich wird über das Video schwarz gezeichnet.
+- Live-Ansicht, Wiedergabe und Episoden-Player in der Apple-TV-App sowie der Clip, der auf ihrem Home-Screen läuft, wo die App den Bereich über das Video schwarz zeichnet.
+- Die Vorschau beim Überfahren eines Ereignisses oder einer Aufnahme, und ein Bild, das du mit dem Kamera-Button im Player aufnimmst.
 
 Nicht verdeckt:
 
 - Die Aufnahme auf der Disk und alles, was du daraus exportierst oder herunterlädst.
 - Video-Clips in Push-Benachrichtigungen.
 - RTSP und alles, was darauf zugreift: HomeKit live und HomeKit-Aufnahmen, der Home-Assistant-Stream und andere Apps.
-- Die Apple-TV-App, die kein Overlay zeichnet.
-- Die Mobile-Apps, bis ein App-Update die neue Oberfläche mitbringt. Ihre Snapshots sind verdeckt, das Live-Bild nicht.
-- Die Vorschau, die beim Überfahren eines Ereignisses oder einer Aufnahme in der Web-Oberfläche läuft.
-- Ein Bild, das du mit dem Kamera-Button im Live-Player aufnimmst.
+- Bild-im-Bild, das das nackte Video aus der Seite heraushebt und den schwarzen Bereich zurücklässt.
 
 Eine Privatzone verdeckt den Bereich also vor jemandem, der auf den Bildschirm schaut, und in den Bildern, die camera.ui verschickt. Sie verdeckt ihn nicht vor jemandem, der den Stream hat. Soll ein Bereich gar nicht gefilmt werden, richte die Kamera anders aus, oder nutze die Privatsphärenmaske der Kamera selbst, falls sie eine hat: die schwärzt den Bereich, bevor das Bild bei camera.ui ankommt.
 
@@ -148,7 +147,7 @@ Manchmal kann camera.ui die Maske nicht zeichnen, etwa bei einem Hardware-Frame,
 - **Trotzdem senden.** Das Bild geht unverdeckt raus. Das ist die Voreinstellung.
 - **Kein Bild senden.** Es wird gar kein Bild erzeugt.
 
-10-Bit-Video unterstützt die Maske nicht, bei einem 10-Bit-Stream geht also jedes Bild diesen Weg. Stell es auf **Kein Bild senden**, wenn ein unverdecktes Bild schlimmer wäre als gar keins.
+Stell es auf **Kein Bild senden**, wenn ein unverdecktes Bild schlimmer wäre als gar keins.
 
 ## Linien (Linienüberquerung)
 

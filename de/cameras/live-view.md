@@ -51,7 +51,9 @@ Jede Kamera hat einen **Aktivitätsmodus**, der steuert, wann ihr Stream läuft,
 
 ## Weitere Optionen
 
-Das Optionen-Menü (die Punkte) schaltet **Zonen**, **Heatmap** und **Shortcuts bearbeiten** um, dazu **Erkennungen** bei Kameras mit Bewegungs- oder Objekterkennung. **KI-Beschreibungen** erscheint, wenn das NVR-Plugin installiert ist. **Export** erscheint, sobald die Zeitleiste offen ist, und sichert den Bereich, den du dort zuschneidest. Eine **PTZ**-Schaltfläche erscheint bei Kameras, die Schwenken, Neigen und Zoomen unterstützen. Siehe [PTZ & Autotrack](/de/sensors/ptz) und [Erkennung & KI](/de/detection/).
+Das Optionen-Menü (die Punkte) schaltet **Zonen**, **Heatmap** und **Shortcuts bearbeiten** um, dazu **Erkennungen** bei Kameras mit Bewegungs- oder Objekterkennung. **KI-Beschreibungen** erscheint, wenn das NVR-Plugin installiert ist. **Export** erscheint, sobald die Zeitleiste offen ist, und sichert den Bereich, den du dort zuschneidest. Siehe [Erkennung & KI](/de/detection/).
+
+Kameras mit Schwenken, Neigen und Zoomen bekommen oben rechts im Player eine eigene Leiste, mit der Home-Position, den auf der Kamera gespeicherten Positionen und der **PTZ**-Schaltfläche für die Steuerung. Siehe [PTZ & Autotrack](/de/sensors/ptz).
 
 ## Die Kameraseite
 

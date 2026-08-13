@@ -77,7 +77,7 @@ Die vollständige Anleitung findest du unter **[Kamera hinzufügen](/de/cameras/
 
 Die Seitenleiste links ist nach Zweck gruppiert. Deine täglichen Seiten liegen oben. Eine Gruppe **Verwalten** hält Kameras, Sensoren, Gesichter, Automationen, Plugins und Instanzen. Eine Gruppe **System** fasst die Diagnose-Seiten und startet eingeklappt. Auf dem Handy erscheinen dieselben Gruppen im Menü.
 
-Die Reihenfolge kannst du ändern. Wähle den **Stift** oben in der Seitenleiste, um zu bearbeiten: zieh eine Seite an eine andere Stelle oder in eine andere Gruppe, blende mit dem **Auge** eine Settings-Seite aus, die du nicht brauchst, und wähle dann den **Haken**, wenn du fertig bist. **Auf Standard zurücksetzen** stellt die ursprüngliche Anordnung wieder her. Deine Anordnung wird mit deinem Konto gespeichert, folgt dir also in jeden Browser und auf jedes Gerät.
+Die Reihenfolge kannst du ändern. Wähle den **Stift** oben in der Seitenleiste, um zu bearbeiten: zieh eine Seite an eine andere Stelle oder in eine andere Gruppe, blende mit dem **Auge** eine Settings-Seite aus, die du nicht brauchst, und wähle dann den **Haken**, wenn du fertig bist. **Auf Standard zurücksetzen** stellt die ursprüngliche Anordnung wieder her. In einer langen Liste scrollt sie mit, wenn du einen Eintrag nach oben oder unten ziehst. Deine Anordnung wird mit deinem Konto gespeichert, folgt dir also in jeden Browser und auf jedes Gerät.
 
 <Shot src="/img/getting-started/sidebar-edit.png" alt="Die Seitenleiste im Bearbeiten-Modus, mit Gruppen und Ziehpunkten" />
 
