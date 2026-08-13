@@ -25,7 +25,7 @@ CoreML, OpenVINO, ONNX, and NCNN provide object, face, and license-plate detecti
 
 In a backend's plugin settings you choose a **model** for each task (object, face, license plate, CLIP) and a **confidence threshold**, which is how sure the AI must be before it reports a detection. Larger models are more accurate but heavier; higher confidence means fewer false alarms but more missed detections. camera.ui downloads the models it needs automatically.
 
-A camera can also limit which object types it detects at all. **Object labels** in [Settings → Detection](/cameras/settings) takes any of person, vehicle, animal and package: what you pick is what the camera reports, everything else is dropped before it becomes a detection. Empty is the default and means all types. It covers the AI backend as well as cameras that detect objects themselves, so it is the setting to reach for when a type should be off everywhere. A [zone](/cameras/zones-and-masks) only decides where a type counts. Motion and audio are not affected by it.
+Which object types a camera reports is set in its [zones](/cameras/zones-and-masks), on the **Objects** tab. A zone lists the types that count inside it, and a type no object zone lists is dropped on that camera. Without an object zone every type counts everywhere. Motion and audio are not affected.
 
 There is also a per-camera **Object Confidence** in [Settings → Detection](/cameras/settings), between 0.3 and 1. Raise it if a camera reports objects that aren't there, lower it if it misses real ones.
 

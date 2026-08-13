@@ -43,9 +43,10 @@ Bedingungen entscheiden, ob ein Ablauf weiterläuft:
 Aktionen sind das, was der Ablauf tut:
 
 - **Benachrichtigung senden.** Einen Alarm mit Titel, Nachricht und Schweregrad senden.
+- **Benachrichtigungen an/aus.** Push stummschalten oder wieder freigeben. Unter **Gilt für** wählst du **Alle**, **Eine Kamera** oder **Einen Nutzer**. Schaltest du eine Kamera stumm, hört ihr Push auf, während alle anderen Kameras weiter melden, du kannst also tagsüber die Straßenkamera ruhigstellen und nachts wieder anschalten. Stummgeschaltete Alarme landen weiterhin in der In-App-Glocke, und die Ereignisse erscheinen weiter auf der Timeline. Kritische Alarme kommen immer durch.
 - **Schnappschuss.** Ein frisches Bild einer Kamera aufnehmen.
 - **Sensor steuern.** Ein Zubehör setzen, etwa ein Licht einschalten oder eine Tür verriegeln. Werte können fest sein oder aus einer Variable kommen.
-- **Kamera-Steuerung.** Eine Kamera-Einstellung ändern, etwa die Erkennung pausieren.
+- **Kamera-Steuerung.** Eine oder mehrere Einstellungen einer Kamera in einem Schritt ändern: Erkennung pausieren, Kamera deaktivieren, Aufnahme (an/aus, Modus, Vorpuffer und welche Streams aufgezeichnet werden), Erkennungs-Schwellwerte und Timeouts, PTZ-Autotrack (an/aus, verfolgte Objekttypen, Rückkehr zur Ausgangsposition, Mindest-Konfidenz) und die Snapshot-Aktualisierung. "Nur den Hauptstream aufnehmen, solange die Disk voll ist" ist damit eine Automation.
 - **HTTP-Anfrage.** Einen externen Dienst aufrufen.
 - **MQTT Publish.** Eine Nachricht auf ein MQTT-Topic senden. Setze Topic und Payload, und schalte **Retain** ein, wenn der Broker die Nachricht für später hinzukommende Abonnenten behalten soll. Wildcards sind im Topic nicht erlaubt. Benötigt die MQTT-Verbindung in den Einstellungen.
 - **Plugin-Aufruf.** Ein Erkennungs- oder Analyse-Plugin auf ein Bild anwenden.

@@ -43,12 +43,12 @@ Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui 
 
 Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem gepingt wirst, was dort zählt:[^nvr]
 
-- **Notify for Objects.** Worüber benachrichtigt wird (standardmäßig Personen und Fahrzeuge). Eine [Alarmzone](/de/cameras/zones-and-masks#alarmzonen) an der Kamera ersetzt diese Liste und entscheidet zusätzlich, wo im Bild der Typ alarmiert.
+- **Worüber du alarmiert wirst.** Legen die [Alarmzonen](/de/cameras/zones-and-masks#alarmzonen) der Kamera fest, nicht diese Einstellungen. Ohne Alarmzone alarmiert die Kamera bei allem, was sie erkennt. Zeichne eine, um es nach Typ und Bereich einzugrenzen.
 - **Known Faces Only.** Bei Personen nur bei einem erkannten [Gesicht](/de/detection/faces) alarmieren.
 - **Notify for Audio.** Welche Geräusche, etwa Alarme oder Glasbruch.
 - **Notify for Sensors.** Eine Türklingel, ein Kontaktsensor, eine Sirene oder eine Alarmanlage.
 - **Cooldown (Seconds).** Eine Ruhephase nach einem Alarm, damit eine belebte Szene dich nicht überflutet.
-- **Fast Notifications.** Den Alarm sofort senden, sobald etwas erkannt wird, noch bevor das Bild fertig ist.
+- **Notification Speed.** Wie lange auf ein gutes Bild gewartet wird. **Immediate** sendet sofort, mit Bild nur, wenn schon eines da ist. **Balanced** (Standard) wartet bis zu 2 Sekunden, **Best** bis zu 4. Ein erkanntes Gesicht sendet immer sofort, das Bild wird danach leise nachgereicht.
 - **Video in Push.** Hängt einen kurzen Clip des Moments an den Push. Auf dem iPhone spielt er direkt in der Benachrichtigung, auf Android animiert die aufgeklappte Benachrichtigung den Clip Bild für Bild,[^androidframes] und der In-App-Alarm öffnet mit einem Player. Nutzt die niedrigste aufgezeichnete Qualität. Standardmäßig aus.
 
 ## KI-Beschreibungen kommen als eine Zusammenfassung

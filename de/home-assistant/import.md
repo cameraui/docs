@@ -26,7 +26,7 @@ Nicht unterstützte Entitätstypen werden übersprungen. Um bestimmte Entitäten
 
 ## Importierte Sensoren nutzen
 
-Importierte Sensoren erscheinen in der [Sensoren](/de/sensors/)-Ansicht wie alle anderen. Weist du einen einer Kamera zu, wird er zu einem Erkennungs-Trigger für diese Kamera, genau wie ein nativer Sensor: Ein Home-Assistant-Bewegungsmelder oder Türkontakt kann dann ein Kamera-Ereignis starten. Importierte Steuerungen erscheinen in der Übersicht der Kamera und in [Automationen](/de/automations/).
+Importierte Sensoren erscheinen in der [Sensoren](/de/sensors/)-Ansicht wie alle anderen. Weist du einen einer Kamera zu, wird er zu einem Erkennungs-Trigger für diese Kamera, genau wie ein nativer Sensor: Ein Home-Assistant-Bewegungsmelder oder Türkontakt kann dann ein Kamera-Ereignis starten. Importierte Steuerungen erscheinen in der Übersicht der Kamera und in [Automationen](/de/automations/). Auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite) zeigt jeder importierte Sensor seine Home-Assistant-Entity-ID als **ID**, du kannst also zwei Entitäten mit gleichem Anzeigenamen unterscheiden und danach suchen.
 
 ## Die Integration parallel betreiben
 

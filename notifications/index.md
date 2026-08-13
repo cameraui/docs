@@ -43,12 +43,12 @@ Open **Settings → Notifications** to control your alerts. These settings belon
 
 Each camera has its own notification settings, so you only get pinged for what matters there:[^nvr]
 
-- **Notify for Objects.** Which to notify on (people and vehicles by default). An [alert zone](/cameras/zones-and-masks#alert-zones) on the camera replaces this list, and also decides where in the picture the type alerts.
+- **Which objects alert you.** Set by the camera's [alert zones](/cameras/zones-and-masks#alert-zones), not here. Without an alert zone the camera alerts on everything it detects. Draw one to narrow it down by type and by area.
 - **Known Faces Only.** For people, only alert on a recognised [face](/detection/faces).
 - **Notify for Audio.** Which sounds, such as alarms or glass breaking.
 - **Notify for Sensors.** A doorbell, a contact sensor, a siren, or a security system.
 - **Cooldown (Seconds).** A quiet period after an alert, so one busy scene doesn't flood you.
-- **Fast Notifications.** Send the alert the instant something is detected, before the image is ready.
+- **Notification Speed.** How long to wait for a good picture. **Immediate** sends right away, with a picture only if one is ready. **Balanced** (the default) waits up to 2 seconds, **Best** up to 4. A recognised face always sends immediately, and the picture is updated quietly afterwards.
 - **Video in Push.** Attach a short clip of the moment to the push. On iPhone it plays right in the notification, on Android the expanded notification animates the clip frame by frame,[^androidframes] and the in-app alert opens with a player. Uses the lowest recorded quality. Off by default.
 
 ## AI descriptions arrive as one summary

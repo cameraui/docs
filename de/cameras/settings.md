@@ -25,9 +25,9 @@ Das Haupt-Konfigurationsformular, gegliedert in Bereiche:
 - **Allgemein.** Name, Raum, Kameratyp und ob die Kamera deaktiviert ist (hier entfernst du auch eine Kamera).
 - **Branding.** Hersteller, Modell und weitere Gerätedetails.
 - **Interface.** [Streaming-Modus und -Quelle](/de/cameras/live-view#streaming-modi) sowie das Anzeige-Seitenverhältnis. Wähle einen Preset (16:9, 4:3, 1:1 und mehr) oder gib ein eigenes `Breite:Höhe` wie `21:9` ein, mit einer Live-Vorschau der Kamera in diesem Verhältnis.
-- **Erkennung.** Feinabstimmung pro Kamera für Bewegungs-, Objekt-, Audio- und Sensor-Erkennung (Empfindlichkeit, Confidence, Timeouts, Trigger und Umgang mit statischen Objekten), welche Objekttypen diese Kamera überhaupt erkennt, plus ein Snooze-Schalter. Siehe [Erkennung & KI](/de/detection/).
+- **Erkennung.** Feinabstimmung pro Kamera für Bewegungs-, Objekt-, Audio- und Sensor-Erkennung (Empfindlichkeit, Confidence, Timeouts, Trigger und Umgang mit statischen Objekten), plus ein Snooze-Schalter. Welche Objekttypen die Kamera meldet, legst du unter **Zonen** fest. Siehe [Erkennung & KI](/de/detection/).
 - **Autotrack.** Eine PTZ-Kamera erkannten Objekten automatisch folgen lassen. Siehe [PTZ & Autotrack](/de/sensors/ptz).
-- **Zonen.** Erkennungszonen, ignorierte Zonen und Überquerungslinien zeichnen. Siehe [Zonen & Linien](/de/cameras/zones-and-masks).
+- **Zonen.** Bewegungs-, Objekt-, Alarm- und Privatzonen sowie Überquerungslinien zeichnen. Siehe [Zonen & Privatsphäre](/de/cameras/zones-and-masks).
 - **Snapshot.** Wie Standbilder aktualisiert und zwischengespeichert werden (Auto-Refresh, Cache-Zeit und Aktualisierungsintervall).
 - **Frame Worker.** Legt Decoder-Hardware (CUDA, VAAPI, Quick Sync und mehr) und Gerät für diese Kamera fest. Auto wählt die beste verfügbare. Eine zweite Decoder-Auswahl gilt, während die Kamera auf einem zugewiesenen [Worker](/de/admin/workers) decodiert, so können Host und Worker verschiedene GPUs nutzen; bei Wie Server verwendet der Worker die erste Auswahl. **Hauptstream ohne GPU** erzwingt die Erkennung auf dem hochauflösenden Stream auf Systemen ohne GPU, wo sie echte Rechenleistung kostet; mit einem Hardware-Decoder wird der hochauflösende Stream ohnehin analysiert, sobald etwas erkannt wird, lass ihn also aus.
 

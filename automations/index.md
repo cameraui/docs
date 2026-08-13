@@ -43,9 +43,10 @@ Conditions decide whether a flow continues:
 Actions are what the flow does:
 
 - **Send notification.** Push an alert with a title, message, and severity.
+- **Notifications on/off.** Mute or unmute push. Under **Applies to** pick **Everyone**, **One camera**, or **One user**. Muting one camera stops its push while every other camera keeps notifying, so you can silence the street camera during the day and turn it back on at night. Muted alerts still land in the in-app bell and the events still show up on the timeline. Critical alerts always come through.
 - **Capture snapshot.** Take a fresh image from a camera.
 - **Control sensor.** Set an accessory, such as turning on a light or locking a door. Values can be fixed or taken from a variable.
-- **Camera control.** Change a camera setting, like snoozing detection.
+- **Camera control.** Change one or more of a camera's settings in one step: snooze detections, disable the camera, recording (on/off, mode, pre-buffer, and which streams it records), detection thresholds and timeouts, PTZ autotrack (on/off, which object types it tracks, return to home, minimum confidence), and snapshot refresh. So "record just the main stream while the disk is full" is an automation.
 - **HTTP request.** Call an external service.
 - **MQTT publish.** Send a message to an MQTT topic. Set the topic and the payload, and turn on **Retain** if the broker should keep the message for anyone subscribing later. Wildcards aren't allowed in the topic. Needs the MQTT connection set up in Settings.
 - **Plugin call.** Run a detection or analysis plugin on an image.

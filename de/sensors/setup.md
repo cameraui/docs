@@ -34,13 +34,14 @@ Einmal aktiviert, erscheinen Sensoren in der Übersicht der Kamera und auf dem V
 
 ## Die Sensoren-Seite
 
-Die **Sensoren**-Seite listet die Sensoren, die du verwaltest: von Plugins bereitgestellte und virtuelle. Sensoren, die eine Kamera selbst mitbringt, ihre Bewegung, Batterie oder PTZ, sind standardmäßig ausgeblendet; der Einstellungs-Button neben dem Suchfeld holt sie zurück. Jede Zeile zeigt Verbindungsstatus, Name, Typ, lieferndes Plugin und zugewiesene Kameras. Eine Kamera-Hardware-Zeile trägt ein Schloss neben ihrer Kamera; ein Sensor, der fürs Smart Home ausgeblendet ist, ein durchgestrichenes Auge neben dem Namen. Zwei schwebende Buttons wechseln zwischen der Tabelle und einer Kartenansicht und starten den Auswahlmodus, in dem du beliebig viele Sensoren markierst und auf einmal ausblendest, wieder einblendest oder löschst. Das Icon eines Sensors leuchtet, solange er aktiv ist, du erkennst also auf einen Blick, dass Bewegung läuft, eine Tür offen ist, ein Licht an ist oder eine Türklingel läutet. Suche und sortierbare Spalten halten große Setups überschaubar.
+Die **Sensoren**-Seite listet die Sensoren, die du verwaltest: von Plugins bereitgestellte und virtuelle. Sensoren, die eine Kamera selbst mitbringt, ihre Bewegung, Batterie oder PTZ, sind standardmäßig ausgeblendet; der Einstellungs-Button neben dem Suchfeld holt sie zurück. Jede Zeile zeigt Verbindungsstatus, Name, **ID**, Typ, lieferndes Plugin und zugewiesene Kameras. Die ID ist die Kennung, die der Sensor in dem System trägt, aus dem er kommt, und unterscheidet zwei Sensoren mit gleichem Namen; bei einer Home-Assistant-Entität ist es die Entity-ID. Selbst angelegte Sensoren haben keine. Auf schmalen Bildschirmen rutscht die ID unter den Namen, und die Suche findet Sensoren darüber. Eine Kamera-Hardware-Zeile trägt ein Schloss neben ihrer Kamera; ein Sensor, der fürs Smart Home ausgeblendet ist, ein durchgestrichenes Auge neben dem Namen. Zwei schwebende Buttons wechseln zwischen der Tabelle und einer Kartenansicht und starten den Auswahlmodus, in dem du beliebig viele Sensoren markierst und auf einmal ausblendest, wieder einblendest oder löschst. Das Icon eines Sensors leuchtet, solange er aktiv ist, du erkennst also auf einen Blick, dass Bewegung läuft, eine Tür offen ist, ein Licht an ist oder eine Türklingel läutet. Suche und sortierbare Spalten halten große Setups überschaubar.
 
 <Shot src="/img/sensors/sensors-page.png" alt="Sensoren-Seite mit allen Sensoren" />
 
 Klicke auf eine Zeile, um den Sensor zu bearbeiten:
 
 - **Name.** Wie der Sensor überall erscheint.
+- **ID.** Die Kennung des Sensors in dem System, aus dem er kommt, schreibgeschützt. Wird nur gezeigt, wenn der Sensor eine hat.
 - **Zugewiesene Kameras.** Wähle beliebig viele Kameras. Der Sensor erscheint bei diesen Kameras und kann deren Erkennung auslösen. Kamera-Hardware ist fest an ihre Kamera gebunden und lässt sich nicht umziehen.
 - **Sensor freigeben.** Ob der Sensor in HomeKit, Home Assistant und MQTT erscheint.
 

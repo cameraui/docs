@@ -34,13 +34,14 @@ Once enabled, sensors show up in the camera's Overview and on the video. See [Co
 
 ## The Sensors page
 
-The **Sensors** page lists the sensors you manage: plugin-provided and virtual. Sensors a camera brings itself, its motion, battery, or PTZ, are hidden by default; the settings button next to the search field brings them back. Each row shows the connection state, name, type, providing plugin, and assigned cameras. A camera-hardware row shows a lock next to its camera; a sensor hidden from your smart home carries a crossed-out eye next to its name. Two floating buttons switch between the table and a card view and start select mode, where you tick any number of sensors and hide, unhide, or delete them at once. A sensor's icon glows while it is active, so you can tell at a glance that motion is running, a door is open, a light is on, or a doorbell is ringing. Search and the sortable columns keep large setups manageable.
+The **Sensors** page lists the sensors you manage: plugin-provided and virtual. Sensors a camera brings itself, its motion, battery, or PTZ, are hidden by default; the settings button next to the search field brings them back. Each row shows the connection state, name, **ID**, type, providing plugin, and assigned cameras. The ID is the id the sensor carries in the system it comes from, which tells two sensors with the same name apart; for a Home Assistant entity it is the entity id. Sensors you created yourself have none. On narrow screens the ID moves under the name, and search finds sensors by it. A camera-hardware row shows a lock next to its camera; a sensor hidden from your smart home carries a crossed-out eye next to its name. Two floating buttons switch between the table and a card view and start select mode, where you tick any number of sensors and hide, unhide, or delete them at once. A sensor's icon glows while it is active, so you can tell at a glance that motion is running, a door is open, a light is on, or a doorbell is ringing. Search and the sortable columns keep large setups manageable.
 
 <Shot src="/img/sensors/sensors-page.png" alt="Sensors page listing all sensors" />
 
 Click a row to edit the sensor:
 
 - **Name.** How the sensor appears everywhere.
+- **ID.** The sensor's id in the system it comes from, read-only. Only shown when the sensor has one.
 - **Assigned cameras.** Pick any number of cameras. The sensor shows up on those cameras and can trigger their detection. Camera hardware is fixed to its camera and can't be re-assigned.
 - **Expose sensor.** Whether the sensor shows up in HomeKit, Home Assistant, and MQTT.
 

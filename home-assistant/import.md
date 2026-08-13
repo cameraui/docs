@@ -26,7 +26,7 @@ Unsupported entity types are skipped. To keep specific entities out, list them u
 
 ## Using imported sensors
 
-Imported sensors show up in the [Sensors](/sensors/) view like any other. Assign one to a camera and it becomes a detection trigger for that camera, exactly like a native sensor: a Home Assistant motion detector or door contact can then start a camera event. Imported controls appear in the camera's Overview and in [automations](/automations/).
+Imported sensors show up in the [Sensors](/sensors/) view like any other. Assign one to a camera and it becomes a detection trigger for that camera, exactly like a native sensor: a Home Assistant motion detector or door contact can then start a camera event. Imported controls appear in the camera's Overview and in [automations](/automations/). On the [Sensors page](/sensors/setup#the-sensors-page) each imported sensor shows its Home Assistant entity id as its **ID**, so you can tell two entities with the same friendly name apart, and search by it.
 
 ## Running the integration too
 

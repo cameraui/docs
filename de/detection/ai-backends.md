@@ -25,7 +25,7 @@ CoreML, OpenVINO, ONNX und NCNN liefern Objekt-, Gesichts- und Kennzeichen-Erken
 
 In den Plugin-Settings eines Backends wählst du ein **Modell** pro Aufgabe (Objekt, Gesicht, Kennzeichen, CLIP) und einen **Confidence-Schwellwert**, also wie sicher die KI sein muss, bevor sie eine Erkennung meldet. Größere Modelle sind genauer, aber schwerer; höhere Confidence bedeutet weniger Fehlalarme, aber mehr verpasste Erkennungen. camera.ui lädt die benötigten Modelle automatisch herunter.
 
-Eine Kamera kann außerdem begrenzen, welche Objekttypen sie überhaupt erkennt. **Object labels** unter [Einstellungen → Erkennung](/de/cameras/settings) nimmt `person`, `vehicle`, `animal` und `package`: Was du wählst, meldet die Kamera, alles andere wird verworfen, bevor es eine Erkennung wird. Leer ist die Voreinstellung und bedeutet alle Typen. Das greift beim KI-Backend genauso wie bei Kameras, die Objekte selbst erkennen, und ist damit die Einstellung für "dieser Typ soll überall aus sein". Eine [Zone](/de/cameras/zones-and-masks) entscheidet nur, wo ein Typ zählt. Bewegung und Audio sind davon nicht betroffen.
+Welche Objekttypen eine Kamera meldet, legst du in ihren [Zonen](/de/cameras/zones-and-masks) fest, im Tab **Objekte**. Eine Zone listet die Typen, die darin zählen, und ein Typ, den keine Objektzone führt, wird an dieser Kamera verworfen. Ohne Objektzone zählt jeder Typ überall. Bewegung und Audio sind davon nicht betroffen.
 
 Es gibt zusätzlich eine **Objekt-Konfidenz** pro Kamera unter [Einstellungen → Erkennung](/de/cameras/settings), zwischen 0,3 und 1. Erhöhe sie, wenn eine Kamera Objekte meldet, die es nicht gibt; senke sie, wenn sie echte übersieht.
 
