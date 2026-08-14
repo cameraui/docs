@@ -8,7 +8,9 @@ Aufnahmen können viel Speicher belegen, daher gibt dir camera.ui Kontrolle dar�
 
 ## Wo Aufnahmen liegen
 
-Standardmäßig liegen Aufnahmen bei den übrigen camera.ui-Daten. Ab mehr als ein paar Kameras lege sie auf eine **dedizierte lokale Disk**, nicht auf die System-Disk und nicht auf eine Netzwerkfreigabe. Siehe [Systemanforderungen](/de/intro/requirements#speicher-fur-aufnahmen).
+Standardmäßig liegen Aufnahmen bei den übrigen camera.ui-Daten. Ab mehr als ein paar Kameras lege sie auf eine **dedizierte lokale Disk**, getrennt von der System-Disk. Siehe [Systemanforderungen](/de/intro/requirements#speicher-fur-aufnahmen).
+
+Eine an die Maschine angeschlossene Disk ist in Ordnung, ebenso ein Speicherpfad, der ein Symlink darauf ist. Eine **Netzwerkfreigabe (NAS, SMB, NFS) nicht**, und den Grund lohnt es zu kennen: In dem Ordner liegt mehr als Video. Erkennungs-Ereignisse, die Timeline-Markierungen und der Suchindex liegen als Datenbanken neben dem Material, damit sie mitwandern, wenn du die Disk umziehst. Diese Datenbanken brauchen Dateisperren, die Netzwerk-Dateisysteme nicht zuverlässig bereitstellen. Kaputt geht dort also die Ereignis-Datenbank, nicht ein Videobild. Liegt dein Speicher auf einem NAS, lass camera.ui stattdessen auf dem NAS laufen und nimm dort lokal auf.
 
 ## Grobe Dimensionierung
 

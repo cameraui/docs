@@ -98,4 +98,6 @@ In Server mode, your settings and recordings are stored in a `camera.ui/volume` 
 - **Windows:** `%APPDATA%\camera.ui\camera.ui\volume`
 - **Linux:** `~/.config/camera.ui/camera.ui/volume`
 
+Recordings do not have to stay there. Point the recording settings at another disk, an external drive for example, and only the recordings move. A network share is the one place to avoid, see [Storage & retention](/recording/storage#where-recordings-are-stored).
+
 See [Backup & restore](/admin/backup) to keep a copy.

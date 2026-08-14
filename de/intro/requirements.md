@@ -47,7 +47,7 @@ Wähle auf Linux den [Docker-Flavor](/de/install/docker), der zu deiner GPU pass
 
 [Aufnahmen](/de/recording/storage) können groß werden. Wie viel Platz du brauchst, hängt von Kameraanzahl, Auflösung und Bitrate, [Aufnahme-Modus](/de/recording/) und der Aufbewahrungsdauer ab.
 
-Nutze für Aufnahmen eine **dedizierte lokale Disk**, getrennt von der System-Disk und keine Netzwerkfreigabe (NAS). Durchgehende Aufnahme schreibt permanent, und eine lokale Disk ist dafür deutlich zuverlässiger und reaktionsschneller.
+Nutze für Aufnahmen eine **dedizierte lokale Disk**, getrennt von der System-Disk und keine Netzwerkfreigabe (NAS). Durchgehende Aufnahme schreibt permanent, und im Aufnahmeordner liegen außerdem die Datenbanken, die deine Ereignisse indizieren, die Netzwerkfreigaben nicht zuverlässig sperren können. Siehe [Speicher & Aufbewahrung](/de/recording/storage#wo-aufnahmen-liegen).
 
 camera.ui zeigt für jede Kamera die Aufnahme-Rate pro Tag und lässt dich den Verbrauch über die Einstellungen **Kontingent** und **Aufbewahrung** begrenzen, damit der Speicher nie unerwartet volläuft.
 

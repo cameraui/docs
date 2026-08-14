@@ -98,4 +98,6 @@ Im Server-Modus werden deine Einstellungen und Aufnahmen in einem `camera.ui/vol
 - **Windows:** `%APPDATA%\camera.ui\camera.ui\volume`
 - **Linux:** `~/.config/camera.ui/camera.ui/volume`
 
+Die Aufnahmen müssen dort nicht bleiben. Zeig mit den Aufnahme-Einstellungen auf eine andere Disk, etwa eine externe Platte, dann ziehen nur die Aufnahmen um. Der eine Ort, den du meiden solltest, ist eine Netzwerkfreigabe, siehe [Speicher & Aufbewahrung](/de/recording/storage#wo-aufnahmen-liegen).
+
 Siehe [Backup & Wiederherstellung](/de/admin/backup), um eine Kopie zu behalten.

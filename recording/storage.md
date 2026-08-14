@@ -8,7 +8,9 @@ Recordings can use a lot of disk, so camera.ui gives you control over where they
 
 ## Where recordings are stored
 
-By default, recordings live with the rest of camera.ui's data. For more than a couple of cameras, put them on a **dedicated local disk**, not the system disk and not a network share. See [System requirements](/intro/requirements#storage-for-recordings).
+By default, recordings live with the rest of camera.ui's data. For more than a couple of cameras, put them on a **dedicated local disk**, separate from the system disk. See [System requirements](/intro/requirements#storage-for-recordings).
+
+A disk plugged into the machine is fine, and so is a storage path that is a symlink to one. A **network share (NAS, SMB, NFS) is not**, and the reason is worth knowing: the folder holds more than video. Detection events, the timeline markers and the search index sit next to the footage as databases, so they travel with it when you move the disk. Those databases need file locking that network filesystems do not provide reliably, so what breaks there is the event database, not a frame of video. If your storage lives on a NAS, run camera.ui on the NAS instead and record locally from there.
 
 ## Rough sizing
 
