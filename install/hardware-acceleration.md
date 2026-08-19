@@ -104,6 +104,8 @@ The runtime library (`libedgetpu`) is already in every image flavor. Only the ho
 
 Without a reachable TPU the Coral plugin runs on CPU and says so in its log. Check its `Available devices:` line if detection seems slow.
 
+To see which device detection actually runs on, run the benchmark in **Metrics → Cameras**: its per-camera page names the runtime, the model and the device. See [What detection costs](/detection/ai-backends#what-detection-costs).
+
 ## Hailo-8 / Hailo-8L
 
 The kernel driver is built from source on the host: `sudo bash cameraui-host.sh hailo` installs build dependencies, compiles the driver, installs the firmware and udev rules. **Reboot afterwards** so the firmware loads, then pass the device:

@@ -57,6 +57,16 @@ Aktionen sind das, was der Ablauf tut:
 - **Bild-Eingabe.** Ein Bild laden (aus einer URL, einer Variable oder einem Upload), das eine Aktion nutzen kann.
 - **Ausgabe.** Ergebnisse sammeln, um sie nach dem Lauf anzusehen.
 
+## Werte zwischen Schritten weitergeben
+
+Schritte reichen Werte über **Variablen** weiter. Ein Knoten, der etwas produziert, bietet in seinen Einstellungen **Ausgabevariable hinzufügen** an: Gib ihr einen Namen, und jeder dahinter verdrahtete Schritt kann den Wert nutzen. **Variablen** an einem Schritt listet, was ihm zur Verfügung steht; steht dort nichts, ist der Knoten, aus dem der Wert kommen soll, noch nicht verbunden.
+
+Geschrieben wird eine Variable als `{{name}}`, überall wo ein Feld Text annimmt, etwa im Text einer Benachrichtigung, die die erkannte Person begrüßt. Felder, die nur einen Wert annehmen, etwa ein Sensorwert oder eine Bedingung, lassen dich die Variable stattdessen aus einer Liste wählen.
+
+Zwei Dinge helfen, wenn ein Flow wächst. **Variable setzen** hält einen Wert für später fest, praktisch wenn du ihn erst einige Schritte weiter brauchst. Und **Alias** an einem Knoten stellt seinen Ausgabevariablen ein Präfix voran, aus `result` zweier Plugins wird so `cam1.result` und `cam2.result` statt eines Namenskonflikts.
+
+Ein Tippfehler fällt beim Speichern auf, **Unbekannte Variable** nennt dann die, die nicht aufgelöst werden konnte.
+
 ## Optionen und Ausführen
 
 In der Toolbar kannst du den Ablauf benennen, **Aktiviert** an- oder ausschalten und zwei Verhalten setzen:

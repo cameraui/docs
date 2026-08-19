@@ -10,17 +10,24 @@ camera.ui records your cameras so you can go back and watch what happened. Recor
 Subscriptions aren't open for purchase yet. To test recording, create your camera.ui account at [cloud.cameraui.com](https://cloud.cameraui.com/), then ask for a trial on our [Discord](https://discord.gg/bBGnGcbz8N).
 :::
 
-<!-- TODO: remove the trial note above once subscriptions can be purchased -->
 
 ## Turning on recording
 
 Recording comes from the **camera.ui NVR** plugin, which is installed by default, and runs on a subscription tied to your camera.ui account. To turn it on:
 
 1. In **Settings → Remote Access**, choose **Register server** and sign in with your camera.ui account. This links the server to your account; you don't need to enable remote cloud access for it.
-2. Open **Settings → Recordings** and, in the **License & Cloud** card, click the **cloud icon** and sign in. It's grey when you're not connected and turns green once you are.
+2. Open **Settings → Recordings** and, in the **License & Cloud** card, click the **cloud icon** and sign in.
 3. Your license then activates automatically. If the status doesn't update, use the **Refetch License** button.
 
 Once the license is active, cameras you add start recording on their own, as long as your subscription still has a free camera slot. A new camera records continuously in every stream quality. You can change the mode, pick which qualities to record, or turn recording off in the camera's recording settings.
+
+### Camera slots
+
+The **License** card in **Settings → Recordings** shows how many recording slots your plan includes, how many cameras are active, and how many currently use a slot.
+
+Slots go to your enabled cameras in order. A camera past the limit keeps detecting, keeps its events and its live view, and simply does not record, without a warning of its own, so check the numbers on that card if footage is missing from one camera. Turning off recording on a camera you care less about frees its slot for another.
+
+If your subscription lapses, recording stops and playback, export, face recognition and search ask for a valid license. **Nothing on disk is deleted**, it all comes back when the license is valid again. A failed cloud check is not the same thing: recording carries on while camera.ui retries.
 
 ## Recording modes
 

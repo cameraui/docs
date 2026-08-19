@@ -4,7 +4,7 @@ title: Face recognition
 
 # Face recognition
 
-Face recognition spots faces on your cameras, recognises people you have enrolled, and groups the ones it doesn't know yet.[^license] It builds on [object detection](/detection/ai-backends), so it needs an AI backend with face support enabled on the camera. If the camera detects objects itself without reporting where they are (many Reolink models), enable [Object Assist](/detection/ai-backends#object-assist) so faces get a proper crop.
+Face recognition spots faces on your cameras, recognizes people you have enrolled, and groups the ones it doesn't know yet.[^license] It builds on [object detection](/detection/ai-backends), so it needs an AI backend with face support enabled on the camera. If the camera detects objects itself without reporting where they are (many Reolink models), enable [Object Assist](/detection/ai-backends#object-assist) so faces get a proper crop.
 
 <Shot src="/img/detection/faces-view.png" alt="Faces view with known and unknown faces" />
 
@@ -18,7 +18,7 @@ To add someone:
 2. Enter a **name**, pick the **face detection plugin**, and drop in a clear photo of the person.
 3. Select **Enroll**. camera.ui checks the photo for a face and tells you if it can't find one.
 
-The person is now recognised in future events, with their name shown as an attribute on detections.
+The person is now recognized in future events, with their name shown as an attribute on detections.
 
 <Shot src="/img/detection/faces-enroll.png" alt="Enroll face dialog" />
 
@@ -26,7 +26,7 @@ The person is now recognised in future events, with their name shown as an attri
 
 Faces that don't match anyone enrolled collect under **Unknown Faces**, grouped automatically so the same person's shots cluster together.
 
-- **Assign a group** to a person to enrol everyone in it at once, or assign a single face.
+- **Assign a group** to a person to enroll everyone in it at once, or assign a single face.
 - **Discard** groups or faces you don't care about, or clear all ungrouped faces.
 
 ## Ignoring a face
@@ -40,17 +40,21 @@ Some faces you never want to see again, like a passing stranger or the mail carr
 
 ## Settings
 
-In the [NVR settings](/recording/), face recognition has:
+In **Settings → [Recordings](/recording/)**, face recognition has:
 
-- **Match threshold.** How strict face matching is (0.3 to 0.8).
 - **Max training images.** How many photos to keep per person (5 to 15); camera.ui keeps the best ones.
 - **Max unknown people.** How many unknown groups are kept (10 to 500). Once the limit is hit, the group that was seen longest ago is dropped. Raise it for busy outdoor cameras.
 
-Per camera, [Settings → Detection](/cameras/settings) also has a **Face confidence**: faces the AI is less sure about than this are ignored for events and automations (0 to 1, default 0.5).
+Per camera, [Settings → Detection](/cameras/settings) has two face settings:
+
+- **Face confidence.** Faces the AI is less sure about than this are ignored for events and automations (0 to 1, default 0.5).
+- **Match threshold.** How certain the match against your enrolled people has to be before someone is named (0.3 to 0.95, default 0.55). Higher means fewer wrong names, lower means the camera recognizes people more often. A camera looking down the street can demand more than the one at the door.[^perc]
+
+[^perc]: Needs camera-ui-nvr 1.3.16 or newer.
 
 ## Rescanning
 
 After enrolling someone new, select **Rescan existing events** to re-check past recordings and tag them with the newly known face.
 
 [^license]: Face recognition (matching faces against your enrolled people) builds on recording and requires an active camera.ui subscription. Detecting that a face is present is part of the free detection.
-[^nvrupdate]: Ignoring faces needs the current recording plugin. Update it if the ignore button is missing.
+[^nvrupdate]: Needs a current camera-ui-nvr. Update it if the ignore button is missing.

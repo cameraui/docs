@@ -19,8 +19,8 @@
   "devDependencies": {
     "@types/markdown-it-footnote": "^3.0.4",
     "markdown-it-footnote": "^4.0.0",
-    "mermaid": "^11.16.1",
-    "updates": "^18.0.0",
+    "mermaid": "^11.17.0",
+    "updates": "^18.0.4",
     "vitepress": "^1.6.4",
     "vitepress-plugin-mermaid": "^2.0.17"
   }

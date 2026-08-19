@@ -10,7 +10,7 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI 
 
 ## Einschalten
 
-Öffne in den NVR-Einstellungen den Tab **Episodes** und aktiviere **Enabled**. Richte dann **Camera Groups** ein: Eine Episode bildet sich nur unter Kameras derselben Gruppe, und eine Gruppe braucht mindestens zwei Kameras. Kameras, die du weglässt, sind nicht dabei.
+Öffne unter **Einstellungen → [Aufnahmen](/de/recording/)** den Tab **Episodes** und aktiviere **Enabled**. Richte dann **Camera Groups** ein: Eine Episode bildet sich nur unter Kameras derselben Gruppe, und eine Gruppe braucht mindestens zwei Kameras. Kameras, die du weglässt, sind nicht dabei.
 
 - **Join Window.** Ein neues Ereignis schließt sich der offenen Episode an, wenn es so lange nach der letzten Aktivität startet. Standard 90 Sekunden.
 - **Quiet Time.** Die Episode schließt und bekommt ihre Story, sobald es so lange ruhig war. Standard 60 Sekunden.
@@ -21,13 +21,13 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI 
 ## Wo Episoden erscheinen
 
 - **Home.** Episoden erscheinen in der **Recent Events**-Reihe als Mosaik-Karte, die zeigt, wie viele Kameras beteiligt waren.
-- **Aufnahmen.** Dieselbe Mosaik-Karte erscheint in der Liste. Eine Aufnahme, die zu einer Episode gehört, zeigt einen **Open episode**-Button, der dorthin springt.
+- **Aufnahmen.** Dieselbe Mosaik-Karte erscheint in der Liste. Eine Aufnahme, die zu einer Episode gehört, zeigt einen **Open episode**-Button, der dorthin springt. Episoden-Karten folgen den Filtern wie alles andere dort: Typ, Suche, Audio, Attribute, Sensoren und ein eigener Zeitraum greifen auch für sie.
 - **Apple TV.** Episoden gibt es auch in der Apple-TV-App.
 
 <Shot src="/img/detection/episode-card.png" alt="Eine Episoden-Mosaik-Karte in der Aufnahmen-Ansicht" />
 
 ## Der Episoden-Player
 
-Öffnest du eine Episode, spielt sie die ganze Sequenz ab. Sie wechselt von selbst zwischen den Kameras, während die Story voranschreitet, und zeigt Name und Zeit der aktuellen Kamera. Ein Streifen unter dem Video hält einen Block pro Kamera-Abschnitt, sodass du direkt zu jedem Punkt springen oder zwischen Kameras wechseln kannst.
+Öffnest du eine Episode, spielt sie die ganze Sequenz ab. Sie wechselt von selbst zwischen den Kameras, während die Story voranschreitet, und zeigt Name und Zeit der aktuellen Kamera. Ein Streifen unter dem Video hält einen Block pro Kamera-Abschnitt, sodass du direkt zu jedem Punkt springen oder zwischen Kameras wechseln kannst. Zoomen und Verschieben funktionieren wie in der [Live-Ansicht](/de/cameras/live-view).
 
 <Shot src="/img/detection/episode-player.png" alt="Der Episoden-Player mit dem Kamera-Streifen unter dem Video" />

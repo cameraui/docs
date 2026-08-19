@@ -13,8 +13,6 @@ Erkennung ist gestuft, damit sie effizient bleibt:
 1. **Bewegung** läuft durchgehend und günstig. Sie bemerkt nur, dass sich etwas geändert hat.
 2. Wenn ein Trigger auslöst, wacht die schwerere **KI** auf. Sie führt Objekterkennung aus (Personen, Fahrzeuge, Tiere) und schaut dann genauer auf das Gefundene: Gesichter bei den erkannten Personen, Kennzeichen bei den Fahrzeugen und einen semantischen Fingerabdruck für die Suche. Bewegung ist der übliche Trigger. Auch ein erkanntes Geräusch weckt die KI, ebenso ein anderer Sensor, zum Beispiel ein Kontaktsensor an einer Tür.
 
-Diese „Kaskade" bedeutet, dass die anspruchsvolle KI nur läuft, wenn es etwas zu sehen gibt, und jeder Schritt nur auf den Objekten, für die er gilt, was CPU- und GPU-Last niedrig hält.
-
 Solange ein Ereignis aktiv ist, schaltet die schwerere Analyse (Objekte, Gesichter, Kennzeichen und Suche) auf den hochauflösenden Stream der Kamera für schärfere Ausschnitte und fällt zurück auf den leichteren Stream, sobald die Szene ruhig wird.
 
 ```mermaid

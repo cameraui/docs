@@ -133,7 +133,7 @@ A worker is a second machine that takes over camera work (decoding, detection, p
 
 Enable workers on the main server first and generate a pairing code there. The compose file for the worker machine, the environment variables it takes, and how to assign cameras to it are on [Workers](/admin/workers#worker-in-docker).
 
-`CAMERA_UI_WORKER_CAPABILITIES` decides what the worker takes on: `frameDecoding` for decoding and detection, `pluginHost` for running plugins. Set at least one, otherwise the worker won't start.
+`CAMERA_UI_WORKER_CAPABILITIES` narrows what the worker takes on: `frameDecoding` for decoding and detection, `pluginHost` for running plugins. Leave it unset and the worker offers both.
 
 ## Ports
 
@@ -157,7 +157,7 @@ All state lives in the `cameraui-data` volume: config, database, recordings, and
 
 ## Updating
 
-Pulling a new image does not update the server, only the image (OS, GPU libraries, and launcher): the launcher keeps the server version installed in the `cameraui-data` volume. Update the server from **Settings → System**, or run `cameraui update-server -H /data` in the container, then restart it. To update the image, pull and recreate the container:
+Pulling a new image does not update the server, only the image (OS, GPU libraries, and launcher): the launcher keeps the server version installed in the `cameraui-data` volume. Update the server from the [Updates page](/install/updating#the-updates-page), or run `cameraui update-server -H /data` in the container, then restart it. To update the image, pull and recreate the container:
 
 ```bash
 docker compose pull

@@ -25,7 +25,7 @@ Wenn eine Kamera offline zeigt oder nicht lädt:
 
 - Stelle sicher, dass eine **Bewegungs-Engine** und, für Objekte, ein **[KI-Backend](/de/detection/ai-backends)** der Kamera zugewiesen sind. Siehe [Sensoren einrichten](/de/sensors/setup).
 - Senke **Konfidenz** oder **Bewegungs-Empfindlichkeit** unter [Einstellungen → Erkennung](/de/cameras/settings), wenn Ereignisse verpasst werden.
-- Prüfe, dass deine **[Zonen](/de/cameras/zones-and-masks)** den Bereich nicht ausschließen.
+- Prüfe, dass deine **[Zonen](/de/cameras/zones-and-masks)** den Bereich abdecken und dass der erwartete Typ auf einer davon steht.
 - Denk an die **Kaskade**: Objekt-, Gesichts- und Kennzeichen-Erkennung laufen erst nach Bewegung oder einem anderen Trigger. Siehe [Erkennung](/de/detection/).
 
 ## OpenVINO findet die GPU auf Bare-Metal nicht
@@ -47,9 +47,17 @@ Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn
 
 ## Server remote nicht erreichbar
 
-- Bestätige unter **[Einstellungen → Remote](/de/remote/)**, dass der Cloud-Zugriff **aktiviert** und der Server **registriert** ist, mit verbundenem Tunnel.
+- Öffne **[Einstellungen → Remote Zugriff](/de/remote/)** und wähle den Info-Button neben dem **Verbindungsstatus**. Die **Verbindungsdetails** nennen die genutzte Adresse, was der Server sieht, und jede probierte Adresse mit Dauer und Fehlergrund. **Details kopieren** kopiert alles für einen Fehlerbericht.
+- Bestätige, dass der Cloud-Zugriff **aktiviert** und der Server **registriert** ist, mit verbundenem Tunnel.
 - Nutze bei einer direkten Verbindung **Verbindung testen**, um zu prüfen, ob die Adresse erreichbar ist.
 - Die Mobile-Apps brauchen [camera.ui Cloud](/de/remote/cloud), um von außerhalb deines Netzwerks zu verbinden.
+- Verbindet die App über das Internet, obwohl du zuhause bist, schau in die Karte **Netzwerk** auf derselben Seite: Eine bei **Server-Adressen** fehlende IP oder eine **Lokale Adresse**, die nicht antwortet, schickt die App nach draußen.
+
+## Ich komme nicht rein
+
+Kennst du das Konto, aber nicht das Passwort, kann ein anderer Administrator unter **Einstellungen → [Benutzer](/de/admin/users)** ein neues setzen: Menü des Benutzers öffnen, **Bearbeiten** wählen, neues Passwort eintragen.
+
+Das **Master**-Konto ist die Ausnahme. Es kann nur sich selbst ändern, niemand sonst kann es zurücksetzen, und über die Kommandozeile geht es auch nicht. Ein [Backup](/de/admin/backup) aus einer Zeit, als du das Passwort noch kanntest, bringt die alten Konten mit zurück. Ohne so ein Backup hilft nur eine Neuinstallation, bewahre das Master-Passwort also dort auf, wo du es wiederfindest.
 
 ## Mehr Details bekommen
 

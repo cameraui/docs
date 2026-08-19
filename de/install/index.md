@@ -10,8 +10,6 @@ Die beste Installationsart hängt vor allem davon ab, **auf welcher Plattform** 
 - **Linux** → **[Docker](/de/install/docker)** (oder **[Proxmox](/de/install/proxmox)**, falls du es nutzt). Das ist die empfohlene Art, einen dedizierten Linux-Server zu betreiben, mit GPU-Beschleunigung.
 - **Willst du nur vom Handy aus zusehen?** → die **[Mobile-Apps](/de/install/mobile)**. Du brauchst trotzdem einen Server, der irgendwo läuft.
 
-Die Desktop-App ist zugleich der einfachste Einstieg und ein vollwertiger Always-on-Server.
-
 ## Eine Methode wählen
 
 | Methode | Läuft auf | Empfohlen für |

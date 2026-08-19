@@ -41,21 +41,22 @@ Open **Settings → Notifications** to control your alerts. These settings belon
 
 ## What each camera alerts you about
 
-Each camera has its own notification settings, so you only get pinged for what matters there:[^nvr]
+Each camera has its own notification settings, in the camera's [settings](/cameras/settings) under **Notifications**, so you only get pinged for what matters there:[^nvr]
 
+- **Send notifications.** The camera's own switch. Off means this camera never pushes, while its events still land on the timeline and in the app. On by default.
 - **Which objects alert you.** Set by the camera's [alert zones](/cameras/zones-and-masks#alert-zones), not here. Without an alert zone the camera alerts on everything it detects. Draw one to narrow it down by type and by area.
-- **Known Faces Only.** For people, only alert on a recognised [face](/detection/faces).
-- **Notify for Audio.** Which sounds, such as alarms or glass breaking.
-- **Notify for Sensors.** A doorbell, a contact sensor, a siren, or a security system.
-- **Cooldown (Seconds).** A quiet period after an alert, so one busy scene doesn't flood you.
-- **Notification Speed.** How long to wait for a good picture. **Immediate** sends right away, with a picture only if one is ready. **Balanced** (the default) waits up to 2 seconds, **Best** up to 4. A recognised face always sends immediately, and the picture is updated quietly afterwards.
-- **Video in Push.** Attach a short clip of the moment to the push. On iPhone it plays right in the notification, on Android the expanded notification animates the clip frame by frame,[^androidframes] and the in-app alert opens with a player. Uses the lowest recorded quality. Off by default.
+- **Which faces and plates alert you.** Also set by the [alert zones](/cameras/zones-and-masks#who-exactly-and-which-plate). A zone can name the people it pushes for, with entries for unknown faces and for anyone enrolled, and the same for plates. Nothing selected notifies for everyone.
+- **Notify for sounds.** Which sounds, such as alarms or glass breaking.
+- **Notify for sensors.** A doorbell, a contact sensor, a siren, or a security system.
+- **Notification speed.** How long to wait for a good picture. **Immediate** sends right away, with a picture only if one is ready. **Balanced** (the default) waits up to 2 seconds, **Best** up to 4. A recognized face always sends immediately, and the picture is updated quietly afterwards.
+- **Cooldown (seconds).** A quiet period after an alert, so one busy scene doesn't flood you. 30 seconds by default, up to 600. Doorbell and alarms bypass it.
+- **Video in push.** Attach a short clip of the moment to the push. On iPhone it plays right in the notification, on Android the expanded notification animates the clip frame by frame,[^androidframes] and the in-app alert opens with a player. Uses the lowest recorded quality. Off by default.
 
 ## AI descriptions arrive as one summary
 
 With AI descriptions on, an event's texts collect and come through as a single summary, sent once the scene stays calm for a bit or the event ends.[^ai] You get the story of the whole visit instead of a buzz for every moment.
 
-- **The first alert stays fast.** A person still pings you right away, and the name follows the moment a known face is recognised.
+- **The first alert stays fast.** A person still pings you right away, and the name follows the moment a known face is recognized.
 - **One alert, updated quietly.** Later moments refresh that same alert without buzzing again.
 - **Tapping opens the start.** The summary takes you to the beginning of the event, not the last moment.
 
@@ -67,6 +68,6 @@ Some events are too important to hold back. **Critical alerts**, like a doorbell
 [^e2ee]: End-to-end encryption needs a current mobile app and NVR plugin. Older versions keep receiving push, but without the encryption.
 [^device]: The **This device** row is the exception. It only affects the phone or computer you are on.
 [^admin]: Only admins see the system notifications section.
-[^nvr]: These per-camera controls come from the NVR plugin, the same plugin that handles recording.
+[^nvr]: Sending the push is the NVR plugin's job, so a camera without one saves the settings and starts using them once a plugin is installed. Needs camera-ui-nvr 1.3.16.
 [^ai]: AI descriptions come from the NVR plugin. Turn them on in its settings.
 [^androidframes]: Android notifications cannot play video, so the current app pulls frames from the clip and cycles them. Tapping still opens the recording.

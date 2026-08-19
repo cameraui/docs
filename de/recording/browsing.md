@@ -37,7 +37,7 @@ Jede Karte ist ein Moment, neueste zuerst.
 - **Gesichter und Kennzeichen.** Hat ein Moment mehr als sein Szenenbild, etwa ein erkanntes Gesicht oder ein gelesenes Kennzeichen, erscheinen Pfeile, um an Ort und Stelle durch die Bilder zu blättern, mit Name oder Kennzeichen. Die kleinen Kacheln unten markieren eines und springen dorthin.
 - **Gruppierte Karten.** Eine gruppierte Karte zeigt die anderen Momente des Ereignisses als kleine Vorschauen unten. Jede öffnet ihren eigenen Moment.
 - **Geteilte Karten.** Mit **Ungroup** an ist jeder Moment eine eigene Karte und zeigt seine Position im Ereignis, etwa 2/3. Zeigst du auf eine, werden die anderen Karten desselben Ereignisses hervorgehoben.
-- **Halten für Vorschau.** Auf Handy oder Tablet lässt du den Finger auf einer Karte ruhen, um den kurzen Vorschau-Clip abzuspielen. Finger heben stoppt, Tippen öffnet. Am Computer läuft die Vorschau beim Darüberfahren.
+- **Halten für Vorschau.** Auf Handy oder Tablet lässt du den Finger auf einer Karte ruhen, um den kurzen Vorschau-Clip abzuspielen. Finger heben stoppt, Tippen öffnet. Am Computer läuft die Vorschau beim Darüberfahren. Sie geht den Clip durch, herangezoomt auf das, worum es in dem Moment ging, mit einer Uhr für das gerade gezeigte Bild. Eine Karte ohne abspielbares Material sagt **Keine Vorschau**.
 
 ## Auswählen und löschen
 

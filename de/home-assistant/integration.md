@@ -26,6 +26,8 @@ Nach der Installation muss Home Assistant deinen Server finden und sich an ihm a
 
 camera.ui kündigt sich im lokalen Netz über mDNS an (`_camera-ui._tcp.local.`). Sobald Home Assistant den Server sieht, erscheint unter **Einstellungen → Geräte & Dienste** eine **camera.ui gefunden**-Karte. Öffne sie und gib deinen API-Token ein, Host und Port kommen aus der Erkennung.
 
+<Shot src="/img/home-assistant/discovery-card.png" alt="Die gefundene camera.ui-Karte in Home Assistant" />
+
 ### Manuelle Einrichtung
 
 Wenn die Erkennung den Server nicht erreicht (zum Beispiel in einem anderen Subnetz), füge ihn von Hand hinzu:
@@ -35,7 +37,7 @@ Wenn die Erkennung den Server nicht erreicht (zum Beispiel in einem anderen Subn
 
 ### API-Token
 
-Beide Wege brauchen einen API-Token. Erstelle einen in camera.ui unter **Settings → Account → API tokens** und füge ihn in die Integration ein.
+Beide Wege brauchen einen [API-Token](/de/admin/security#api-tokens). Erstelle einen in camera.ui unter **Einstellungen → Account → API-Tokens** und füge ihn in die Integration ein.
 
 Home Assistant prüft den Token vor dem Abschluss gegen den Server. Wird der Token abgelehnt, siehst du einen Authentifizierungsfehler, ist der Server nicht erreichbar, stattdessen einen Verbindungsfehler.[^ssl]
 
@@ -48,6 +50,8 @@ Die Integration legt **ein Home Assistant Gerät pro Kamera** an und hält die L
 ### Kameras
 
 Jedes Kameragerät trägt eine **Kamera-Entität**, die live streamt und Snapshots liefert. Das Gerät ist mit dem Hersteller `camera.ui` gekennzeichnet und verlinkt zurück auf die Weboberfläche des Servers.
+
+<Shot src="/img/home-assistant/device-page.png" alt="Ein camera.ui-Gerät in Home Assistant mit seinen Sensoren" />
 
 ### Sensoren
 
@@ -64,7 +68,7 @@ Jeder [freigegebene Sensor](/de/sensors/) in camera.ui wird auf der passenden Pl
 | Abdeckung | `cover` |
 | Alarmanlage | `alarm_control_panel` |
 
-Kamera-Hardware (das eigene Spotlight, die Sirene oder die Batterie einer Kamera) landet am Gerät der Kamera. Jeder andere Sensor wird ein eigenes Gerät und hängt unter seiner Kamera, wenn er genau einer zugewiesen ist. Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigeben** auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite).
+Kamera-Hardware (das eigene Spotlight, die Sirene oder die Batterie einer Kamera) landet am Gerät der Kamera. Jeder andere Sensor wird ein eigenes Gerät und hängt unter seiner Kamera, wenn er genau einer zugewiesen ist. Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigeben** auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite). Kamera-Hardware hat keinen Schalter, sie folgt immer ihrer Kamera.
 
 Die steuerbaren funktionieren in beide Richtungen: ein **switch** und eine **siren** schalten an und aus, ein **light** schaltet an und aus (und dimmt, wenn es Helligkeit meldet), ein **cover** öffnet und schließt, ein **lock** ver- und entriegelt, und ein **alarm_control_panel** aktiviert Home, Away oder Night und deaktiviert. Befehle gehen direkt an camera.ui.
 

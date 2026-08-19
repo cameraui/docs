@@ -25,7 +25,7 @@ If a camera shows offline or won't load:
 
 - Make sure a **motion engine** and, for objects, an **[AI backend](/detection/ai-backends)** are assigned to the camera. See [Set up sensors](/sensors/setup).
 - Lower the **confidence** or **motion sensitivity** in [Settings → Detection](/cameras/settings) if events are missed.
-- Check your **[zones](/cameras/zones-and-masks)** aren't excluding the area.
+- Check your **[zones](/cameras/zones-and-masks)** cover the area, and that the type you expect is listed on one of them.
 - Remember the **cascade**: object, face, and plate detection only run after motion or another trigger. See [Detection](/detection/).
 
 ## OpenVINO can't find the GPU on bare metal
@@ -47,9 +47,17 @@ The OpenVINO plugin logs `libOpenCL.so.1: cannot open shared object file` when t
 
 ## Can't reach the server remotely
 
-- In **[Settings → Remote](/remote/)**, confirm cloud access is **enabled** and the server is **registered**, with the tunnel connected.
+- Open **[Settings → Remote Access](/remote/)** and select the info button next to the **connection status**. **Connection details** names the address in use, what the server sees, and every address that was tried with its timing and failure reason. **Copy details** copies the lot for a bug report.
+- Confirm cloud access is **enabled** and the server is **registered**, with the tunnel connected.
 - For a direct connection, use **Test connection** to check the address is reachable.
 - The mobile apps need [camera.ui Cloud](/remote/cloud) to connect from outside your network.
+- If the app connects over the internet while you're at home, check the **Network** card on the same page: an IP address missing from **Server addresses**, or a **Local address** that doesn't answer, sends the app out over the internet instead.
+
+## I can't sign in
+
+If you know the account but not the password, another administrator can set a new one in **Settings → [Users](/admin/users)**: open the user's menu, choose **Edit**, and enter a new password.
+
+The **master** account is the exception. It can only be changed by itself, so nobody else can reset it, and there is no command-line way either. Restoring a [backup](/admin/backup) from a time when you still knew the password brings the old accounts back with it. Without such a backup the only way in is a fresh install, so keep the master password somewhere you will find it again.
 
 ## Getting more detail
 

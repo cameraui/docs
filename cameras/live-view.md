@@ -20,6 +20,12 @@ Open any camera to watch it live.
 
 When you review recordings, the player also offers rewind, fast-forward, and playback speed. See [Timeline & playback](/recording/timeline-playback).
 
+## Detection boxes
+
+With **Detections** on, the player draws a box around everything the camera currently sees, with the type, the confidence and the track number. A camera that reports a detection without saying where it is gets no box, there is nothing to draw around.
+
+An object that has settled, a car parked in the driveway or a bin left at the kerb, keeps its box but gets a faded label and a timer counting how long it has been standing there. A settled object triggers no new events and no notifications, see [stationary objects](/detection/events-and-detections#stationary-objects). It goes back to a normal box as soon as it moves again. On a small card the labels are left out and only the box remains.
+
 ## Two-way talk
 
 The **Intercom** button sends audio from your device's microphone to the camera's speaker, so you can talk through a doorbell or camera. It is available on cameras that support two-way audio, and your browser or the app asks for microphone access the first time.

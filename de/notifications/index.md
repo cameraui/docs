@@ -41,15 +41,16 @@ Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui 
 
 ## Worüber jede Kamera dich alarmiert
 
-Jede Kamera hat eigene Benachrichtigungs-Einstellungen, sodass du nur bei dem gepingt wirst, was dort zählt:[^nvr]
+Jede Kamera hat eigene Benachrichtigungs-Einstellungen, unter **Einstellungen → Benachrichtigungen** neben den Aufnahme-Optionen, sodass du nur bei dem gepingt wirst, was dort zählt:[^nvr]
 
+- **Benachrichtigungen senden.** Der eigene Schalter der Kamera. Aus heißt, diese Kamera sendet nie einen Push, ihre Ereignisse landen aber weiter auf der Timeline und in der App. Standardmäßig an.
 - **Worüber du alarmiert wirst.** Legen die [Alarmzonen](/de/cameras/zones-and-masks#alarmzonen) der Kamera fest, nicht diese Einstellungen. Ohne Alarmzone alarmiert die Kamera bei allem, was sie erkennt. Zeichne eine, um es nach Typ und Bereich einzugrenzen.
-- **Known Faces Only.** Bei Personen nur bei einem erkannten [Gesicht](/de/detection/faces) alarmieren.
-- **Notify for Audio.** Welche Geräusche, etwa Alarme oder Glasbruch.
-- **Notify for Sensors.** Eine Türklingel, ein Kontaktsensor, eine Sirene oder eine Alarmanlage.
-- **Cooldown (Seconds).** Eine Ruhephase nach einem Alarm, damit eine belebte Szene dich nicht überflutet.
-- **Notification Speed.** Wie lange auf ein gutes Bild gewartet wird. **Immediate** sendet sofort, mit Bild nur, wenn schon eines da ist. **Balanced** (Standard) wartet bis zu 2 Sekunden, **Best** bis zu 4. Ein erkanntes Gesicht sendet immer sofort, das Bild wird danach leise nachgereicht.
-- **Video in Push.** Hängt einen kurzen Clip des Moments an den Push. Auf dem iPhone spielt er direkt in der Benachrichtigung, auf Android animiert die aufgeklappte Benachrichtigung den Clip Bild für Bild,[^androidframes] und der In-App-Alarm öffnet mit einem Player. Nutzt die niedrigste aufgezeichnete Qualität. Standardmäßig aus.
+- **Welche Gesichter und Kennzeichen dich alarmieren.** Legen ebenfalls die [Alarmzonen](/de/cameras/zones-and-masks#wer-genau-und-welches-kennzeichen) fest. Eine Zone kann benennen, für wen sie meldet, mit Einträgen für unbekannte Gesichter und für alle Hinterlegten, und dasselbe für Kennzeichen. Nichts ausgewählt meldet für alle.
+- **Bei Geräuschen melden.** Welche Geräusche, etwa Alarme oder Glasbruch.
+- **Bei Sensoren melden.** Eine Türklingel, ein Kontaktsensor, eine Sirene oder eine Alarmanlage.
+- **Geschwindigkeit.** Wie lange auf ein gutes Bild gewartet wird. **Immediate** sendet sofort, mit Bild nur, wenn schon eines da ist. **Balanced** (Standard) wartet bis zu 2 Sekunden, **Best** bis zu 4. Ein erkanntes Gesicht sendet immer sofort, das Bild wird danach leise nachgereicht.
+- **Sperrzeit (Sekunden).** Eine Ruhephase nach einem Alarm, damit eine belebte Szene dich nicht überflutet. Standardmäßig 30 Sekunden, bis zu 600. Türklingel und Alarme umgehen sie.
+- **Video in der Benachrichtigung.** Hängt einen kurzen Clip des Moments an den Push. Auf dem iPhone spielt er direkt in der Benachrichtigung, auf Android animiert die aufgeklappte Benachrichtigung den Clip Bild für Bild,[^androidframes] und der In-App-Alarm öffnet mit einem Player. Nutzt die niedrigste aufgezeichnete Qualität. Standardmäßig aus.
 
 ## KI-Beschreibungen kommen als eine Zusammenfassung
 
@@ -67,6 +68,6 @@ Manche Ereignisse sind zu wichtig, um sie zurückzuhalten. **Kritische Alarme**,
 [^e2ee]: Die Ende-zu-Ende-Verschlüsselung braucht eine aktuelle Mobile-App und ein aktuelles NVR-Plugin. Ältere Versionen erhalten Push weiterhin, aber ohne die Verschlüsselung.
 [^device]: Die Zeile **Dieses Gerät** ist die Ausnahme. Sie betrifft nur das Handy oder den Computer, an dem du gerade bist.
 [^admin]: Den Bereich mit den System-Benachrichtigungen sehen nur Admins.
-[^nvr]: Diese Einstellungen pro Kamera stammen vom NVR-Plugin, das auch die Aufnahme übernimmt.
+[^nvr]: Das Senden übernimmt das NVR-Plugin, eine Kamera ohne Plugin speichert die Einstellungen also und nutzt sie, sobald eins installiert ist. Braucht camera-ui-nvr 1.3.16.
 [^ai]: KI-Beschreibungen stammen vom NVR-Plugin. Schalte sie in dessen Einstellungen ein.
 [^androidframes]: Android-Benachrichtigungen können kein Video abspielen, deshalb zieht die aktuelle App Einzelbilder aus dem Clip und blättert sie durch. Antippen öffnet weiterhin die Aufnahme.

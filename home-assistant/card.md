@@ -1,8 +1,8 @@
 ---
-title: Dashboard Cards
+title: Dashboard cards
 ---
 
-# Dashboard Cards
+# Dashboard cards
 
 The camera.ui integration ships two custom Lovelace cards for your Home Assistant dashboards:
 

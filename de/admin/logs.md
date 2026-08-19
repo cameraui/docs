@@ -29,6 +29,8 @@ In der Konsole kannst du:
 - Die sichtbaren Zeilen **durchsuchen**.
 - Die Ausgabe **kopieren**, als Textdatei **exportieren / teilen** oder **leeren**.
 
+Neue Zeilen scrollen von selbst ins Bild. Scrollst du hoch, um etwas zu lesen, hört das auf, die Zeile bleibt also stehen; scroll wieder nach unten, dann folgt sie wieder.
+
 Bei Problemen mit der App hilft der Konsolen-Export, bei Problemen mit dem Server der Logs-Download.
 
 ## Terminal

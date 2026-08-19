@@ -2,7 +2,7 @@
 title: Integration
 ---
 
-# Home Assistant Integration
+# Home Assistant integration
 
 The **camera.ui integration** connects an existing camera.ui server to Home Assistant. Your cameras, their sensors, motion and object detection, PTZ controls and the full camera.ui interface all show up inside Home Assistant.
 
@@ -26,6 +26,8 @@ Once installed, Home Assistant needs to find your server and authenticate agains
 
 camera.ui advertises itself on the local network over mDNS (`_camera-ui._tcp.local.`). When Home Assistant sees it, a **camera.ui found** card appears under **Settings → Devices & services**. Open it and enter your API token; the host and port are filled in from discovery.
 
+<Shot src="/img/home-assistant/discovery-card.png" alt="The discovered camera.ui card in Home Assistant" />
+
 ### Manual setup
 
 If discovery doesn't reach the server (a different subnet, for example), add it by hand:
@@ -35,7 +37,7 @@ If discovery doesn't reach the server (a different subnet, for example), add it 
 
 ### API token
 
-Both paths need an API token. Create one in camera.ui under **Settings → Account → API tokens**, then paste it into the integration.
+Both paths need an [API token](/admin/security#api-tokens). Create one in camera.ui under **Settings → Account → API tokens**, then paste it into the integration.
 
 Home Assistant checks the token against the server before finishing. If the token is rejected you'll see an authentication error; if the server can't be reached you'll see a connection error instead.[^ssl]
 
@@ -47,7 +49,9 @@ The integration creates **one Home Assistant device per camera** and keeps the l
 
 ### Cameras
 
-Each camera device carries a **camera entity** that streams live and serves snapshots. The device is labelled with the manufacturer `camera.ui` and links back to the server's web interface.
+Each camera device carries a **camera entity** that streams live and serves snapshots. The device is labeled with the manufacturer `camera.ui` and links back to the server's web interface.
+
+<Shot src="/img/home-assistant/device-page.png" alt="A camera.ui device in Home Assistant with its sensors" />
 
 ### Sensors
 
@@ -64,7 +68,7 @@ Every [exposed sensor](/sensors/) in camera.ui is mirrored into Home Assistant o
 | Cover | `cover` |
 | Alarm system | `alarm_control_panel` |
 
-Camera hardware (a camera's own spotlight, siren or battery) lands on the camera's device. Every other sensor becomes a device of its own, linked below its camera when it is assigned to exactly one. Whether a sensor comes across at all is the **Expose sensor** toggle on the [Sensors page](/sensors/setup#the-sensors-page).
+Camera hardware (a camera's own spotlight, siren or battery) lands on the camera's device. Every other sensor becomes a device of its own, linked below its camera when it is assigned to exactly one. Whether a sensor comes across at all is the **Expose sensor** toggle on the [Sensors page](/sensors/setup#the-sensors-page). Camera hardware has no toggle, it always follows its camera.
 
 The controllable ones work both ways: a **switch** and a **siren** turn on and off, a **light** turns on and off (and dims, if it reports brightness), a **cover** opens and closes, a **lock** locks and unlocks, and an **alarm panel** arms home, away or night and disarms. Commands are sent straight to camera.ui.
 

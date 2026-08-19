@@ -20,7 +20,7 @@ Für Admins verfügbar:
 
 - **Benutzer.** Konten, Rollen und aktive Sitzungen. Siehe [Benutzer](/de/admin/users).
 - **Aufnahmen.** Aufnahme- und Speicher-Optionen. Siehe [Aufnahmen](/de/recording/).
-- **Remote Zugriff.** Den Server von außen erreichen. Siehe [Remote-Zugriff](/de/remote/).
+- **Remote Zugriff.** Den Server von außen erreichen, dazu die Adressen, über die Apps ihn im eigenen Netzwerk erreichen. Siehe [Remote-Zugriff](/de/remote/).
 - **MQTT.** Verbinde camera.ui mit einem MQTT-Broker.
 - **Backup.** Dein Setup sichern und wiederherstellen, sowie wiederkehrende Backups planen. Siehe [Backup](/de/admin/backup).
 - **System.** Version, Updates und Server-Aktionen. Siehe [System](/de/admin/system).
@@ -29,7 +29,8 @@ Für Admins verfügbar:
 
 Über die Einstellungen hinaus hat das Menü weitere Admin-Werkzeuge:
 
-- **Metrics** dazu, wie es dem Server und jeder Kamera geht: System- und Prozess-Tabellen, Dekodier- und Erkennungsraten pro Kamera und die Speicher-Aufschlüsselung.
+- **Metrics** dazu, wie es dem Server und jeder Kamera geht, in drei Tabs, zwischen denen du am Handy auch wischen kannst: **Übersicht** mit den System- und Prozess-Tabellen, **Kameras** mit dem, was Erkennung pro Kamera kostet, und **Speicher** mit der Aufschlüsselung der Platte. Siehe [Was Erkennung kostet](/de/detection/ai-backends#was-erkennung-kostet).
+- **[Updates](/de/install/updating#die-updates-seite)** für Server, Plugins und Worker in einer Liste.
 - **[Automationen](/de/automations/)** zum Verbinden von Ereignissen mit Aktionen.
 - **[Logs](/de/admin/logs)** und ein **Terminal** zur Fehlersuche.
 - **[Instanzen](/de/admin/instances)** zum Wechseln zwischen mehreren Servern und **[Worker](/de/admin/workers)** zum Verteilen der Last dieses einen.

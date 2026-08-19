@@ -36,7 +36,7 @@ Was aus einem Sensor wird, hängt an seiner [Kamera-Zuweisung](/de/sensors/setup
 
 Die Bridge läuft, sobald das Plugin läuft, mit oder ohne Sensoren. Kopple sie einmal, und jeder später freigegebene Sensor kommt automatisch dazu. Ihr QR-Code und PIN stecken in den Einstellungen des Plugins.
 
-Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigeben** auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite).
+Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigeben** auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite). Kamera-Hardware hat keinen Schalter, sie folgt immer ihrer Kamera.
 
 ## Schnelles Streaming
 

@@ -20,6 +20,12 @@ title: Live-Ansicht
 
 Beim Durchsehen von Aufnahmen bietet der Player außerdem Zurückspulen, Vorspulen und Wiedergabegeschwindigkeit. Siehe [Timeline & Wiedergabe](/de/recording/timeline-playback).
 
+## Erkennungsboxen
+
+Ist **Erkennungen** an, zeichnet der Player um alles, was die Kamera gerade sieht, eine Box mit Typ, Konfidenz und Track-Nummer. Eine Kamera, die eine Erkennung meldet, ohne zu sagen wo, bekommt keine Box, es gibt nichts zu umranden.
+
+Ein Objekt, das sich niedergelassen hat, ein geparktes Auto in der Einfahrt oder eine abgestellte Mülltonne, behält seine Box, bekommt aber ein blasses Label und einen Timer, der zeigt, wie lange es dort schon steht. Ein niedergelassenes Objekt löst keine neuen Ereignisse und keine Benachrichtigungen aus, siehe [unbewegte Objekte](/de/detection/events-and-detections#unbewegte-objekte). Bewegt es sich wieder, wird die Box wieder normal. Auf einer kleinen Karte fallen die Labels weg und nur die Box bleibt.
+
 ## Gegensprechen
 
 Die **Gegensprechanlage**-Schaltfläche sendet Audio vom Mikrofon deines Geräts an den Lautsprecher der Kamera, sodass du durch eine Türklingel oder Kamera sprechen kannst. Sie ist bei Kameras mit Zwei-Wege-Audio verfügbar, und dein Browser oder die App fragt beim ersten Mal nach Mikrofon-Zugriff.

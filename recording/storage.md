@@ -12,6 +12,16 @@ By default, recordings live with the rest of camera.ui's data. For more than a c
 
 A disk plugged into the machine is fine, and so is a storage path that is a symlink to one. A **network share (NAS, SMB, NFS) is not**, and the reason is worth knowing: the folder holds more than video. Detection events, the timeline markers and the search index sit next to the footage as databases, so they travel with it when you move the disk. Those databases need file locking that network filesystems do not provide reliably, so what breaks there is the event database, not a frame of video. If your storage lives on a NAS, run camera.ui on the NAS instead and record locally from there.
 
+## Moving recordings to another disk
+
+Changing the storage path does not take your recordings with it. camera.ui starts fresh at the new location, and the old folder keeps its footage and its events where they are. Move the data yourself:
+
+1. Stop the server.
+2. Move the whole storage folder to the new disk, including the `events` and `clip` folders next to the footage. Those hold your events, the timeline markers and the search index, and they belong to that footage.
+3. Start the server and set the new path in **Settings → Recordings**.
+
+Nothing inside stores an absolute path, so the timeline, the events and the search work at the new location without a rebuild. Leave the `events` and `clip` folders behind and the footage arrives without any of them, with no way to recreate them from the video files. Enrolled faces are not affected either way, they live outside the recordings folder.
+
 ## Rough sizing
 
 Continuous recording writes the recorded stream to disk, so the size follows its bitrate. A rough guide:

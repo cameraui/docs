@@ -9,7 +9,7 @@ Starte mit den **[ersten Schritten](/de/intro/getting-started)** für eine gefü
 :::
 
 ::: info In Arbeit
-Diese Doku ist neu und wächst noch; Screenshots werden nach und nach ergänzt. Fehlt etwas oder ist unklar? Sag uns auf [Discord](https://discord.gg/bBGnGcbz8N) Bescheid oder eröffne ein Issue auf [GitHub](https://github.com/cameraui/docs/issues).
+Fehlt etwas oder ist unklar? Sag uns auf [Discord](https://discord.gg/bBGnGcbz8N) Bescheid oder eröffne ein Issue auf [GitHub](https://github.com/cameraui/docs/issues).
 :::
 
 ## Was du machen kannst
@@ -17,7 +17,7 @@ Diese Doku ist neu und wächst noch; Screenshots werden nach und nach ergänzt. 
 - **Live ansehen.** Latenzarmes Streaming über WebRTC und MSE, Multi-Kamera-Raster, Gegensprechen, PTZ-Steuerung und Snapshots.
 - **Rund um die Uhr aufnehmen.**[^license] Durchgehende, ereignisbasierte oder Ad-hoc-Aufnahme, mit scrubbarer Timeline, synchroner Multi-Kamera-Wiedergabe und MP4-/Zeitraffer-Export.
 - **Erkennen, was zählt.** Bewegungs-, Objekt-, Gesichts-, Kennzeichen- und Audio-Erkennung, lokal auf deiner eigenen Hardware, plus semantische Suche und KI-generierte Ereignisbeschreibungen.
-- **Informiert bleiben.**[^license] Push-Benachrichtigungen pro Kamera, Alarme nur bei bekannten Gesichtern, Ruhezeiten und kritische Alarme, die immer durchkommen.
+- **Informiert bleiben.**[^license] Push-Benachrichtigungen pro Kamera, Alarme begrenzt auf Bereich, Objekttyp oder namentlich genannte Personen, Ruhezeiten und kritische Alarme, die immer durchkommen.
 - **Kameras verbinden.** Kameras über ONVIF und Dutzende weiterer Protokolle hinzufügen und per Apple HomeKit oder Home Assistant (über MQTT)[^smarthome] ins Smart Home einbinden.
 - **Erweitern.** Ein Plugin-System lässt dich Kameras, Detektoren und Integrationen aus einem In-App-Store hinzufügen.
 

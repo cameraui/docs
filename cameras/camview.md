@@ -24,7 +24,19 @@ Turn on **Rearrange** to drag tiles around. On a computer you can also resize a 
 - **Auto-arrange** packs the tiles together with no gaps.
 - **Fit aspect ratios** sizes each tile to its camera's configured aspect ratio.
 
-Select **Done** when you're finished. On phones the cameras sit in one column, so Rearrange only changes their order, and resizing and the two helpers aren't available there. A view itself is saved to your account. The arrangement is kept in the browser you made it in, and phones and computers keep their own, so a grid tuned for your desktop stays tidy on mobile. **Edit** and **Delete** for a view are in the top bar.
+While you drag the handle, the tile's pixel size shows in its top left corner. Tiles stay where you drop them, and each one has a faint outline so you can see the slots.
+
+Select **Done** when you're finished. On phones the cameras sit in one column, so Rearrange only changes their order, and resizing and the rearrange helpers aren't available there. A view itself is saved to your account. The arrangement is kept in the browser you made it in, and phones and computers keep their own, so a grid tuned for your desktop stays tidy on mobile. **Edit** and **Delete** for a view are in the top bar.
+
+## Fit the picture to the card
+
+Cameras rarely match the shape of their tile, so a wide stream in a tall slot leaves black bars. In **Rearrange**, the **Picture in the card** button offers three choices:
+
+- **Keep aspect ratio** shows the whole picture and lives with the bars. This is the default.
+- **Crop to fit** fills the card and cuts off the edges.
+- **Stretch to fit** fills the card and distorts the picture.
+
+The choice is saved with the view, so it follows your account to every device, and it applies to live and to playback. Expanding a tile, fullscreen and zoom always show the whole picture again. The button is on computers only, but a view keeps the fit you picked there when you open it on a phone.
 
 ## Control all cameras at once
 

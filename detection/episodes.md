@@ -10,7 +10,7 @@ Episodes need [AI descriptions](/detection/genai-descriptions). The AI writes th
 
 ## Turning it on
 
-In the NVR settings, open the **Episodes** tab and turn on **Enabled**. Then set up **Camera Groups**: an episode only forms among cameras in the same group, and a group needs at least two cameras. Cameras you leave out take no part.
+In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and turn on **Enabled**. Then set up **Camera Groups**: an episode only forms among cameras in the same group, and a group needs at least two cameras. Cameras you leave out take no part.
 
 - **Join Window.** A new event joins the open episode when it starts within this long after the last activity. Default 90 seconds.
 - **Quiet Time.** The episode closes and gets its story once it has been this quiet. Default 60 seconds.
@@ -21,13 +21,13 @@ In the NVR settings, open the **Episodes** tab and turn on **Enabled**. Then set
 ## Where episodes show up
 
 - **Home.** Episodes appear in the **Recent Events** row as a mosaic card, showing how many cameras took part.
-- **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it.
+- **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it. Episode cards follow the filters like everything else there: type, search, audio, attributes, sensors and a custom date range all apply to them.
 - **Apple TV.** Episodes are available in the Apple TV app too.
 
 <Shot src="/img/detection/episode-card.png" alt="An episode mosaic card in the recordings view" />
 
 ## The episode player
 
-Opening an episode plays the whole sequence. It switches between cameras on its own as the story moves, and shows the current camera's name and time. A strip below the video holds one block per camera stretch, so you can jump straight to any point or skip between cameras.
+Opening an episode plays the whole sequence. It switches between cameras on its own as the story moves, and shows the current camera's name and time. A strip below the video holds one block per camera stretch, so you can jump straight to any point or skip between cameras. Zoom and pan work as in the [live view](/cameras/live-view).
 
 <Shot src="/img/detection/episode-player.png" alt="The episode player with the camera strip below the video" />

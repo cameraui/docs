@@ -24,6 +24,12 @@ Zwei Dinge können ein Ereignis starten oder formen:
 
 Der Unterschied zählt fürs Filtern und Benachrichtigen: Du kannst auf einen Türklingel-Druck (Trigger) alarmieren oder nur, wenn eine Person gesehen wird (Erkennung).
 
+## Das Bild eines Ereignisses
+
+Jede Karte, jeder Push und jede KI-Beschreibung zeigt ein Bild für den Moment, und camera.ui wählt Frame und Ausschnitt dafür. Es rahmt das Motiv, eine Person kommt also als ganze Person an und nicht als Nahaufnahme einer Schulter. Wird später im selben Ereignis ein Gesicht erkannt, fällt der „Unknown"-Ausschnitt weg, statt neben dem Namen stehen zu bleiben.
+
+Eine Kamera, die Erkennungen meldet, ohne zu sagen, wo im Bild sie waren, also die meisten Reolink-AI- und ONVIF-Kameras, liefert nichts zum Rahmen. Stattdessen wird der bewegte Teil des Bildes gerahmt. Das ist ungenauer als eine echte Box, ein [Objekt-Assistenz](/de/detection/ai-backends#objekt-assistenz)-Plugin ist also die bessere Antwort, wenn du diese Kameras sauber verortet haben willst.
+
 ## Unbewegte Objekte
 
 Ein Auto, das in der Einfahrt parkt, oder eine stehen gelassene Tonne würde sonst bei jeder Bewegung erneut erkannt. **Statische Objekte ignorieren** ist in den [Einstellungen → Detection](/de/cameras/settings) einer Kamera standardmäßig an: Bleibt ein Objekt eine Weile unbewegt, zählt camera.ui es nicht mehr als Erkennung, auch über spätere Ereignisse hinweg. Die Box siehst du in der Live-Ansicht weiterhin. Sobald sich das Objekt von der Stelle bewegt oder die Kamera schwenkt oder neigt, zählt es wieder.

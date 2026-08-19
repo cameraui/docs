@@ -32,6 +32,12 @@ Once enabled, a **Sign in with Face ID** button appears on the login screen, so 
 
 The **Active sessions** list shows every device signed in to your account, with the current one marked. You can **sign out** a single device, or sign out all the others at once, which is handy if you've logged in somewhere you no longer trust.
 
+## API tokens
+
+Integrations that talk to camera.ui on their own, the [Home Assistant integration](/home-assistant/integration) and the [Apple TV app](/install/tv) for example, sign in with a token instead of your password. Create one under **Settings → Account → API tokens**: give it a name you recognize later, and copy it right away, it is shown only once.
+
+A token has full access to your account, so treat it like a password. The list shows when each was last used, and **Revoke** kills one immediately, which is what you do when an integration is retired or a token leaks.
+
 ## Password
 
 Change your password under **Account**. Changing your password or username signs you out everywhere, so you sign back in with the new details.

@@ -37,7 +37,7 @@ Each card is one moment, newest first.
 - **Faces and plates.** When a moment has more than its scene picture, like a recognized face or a read license plate, arrows appear to step through the pictures in place, with the name or plate shown. The small tiles at the bottom mark and jump to one.
 - **Grouped cards.** A grouped card shows the event's other moments as small previews at the bottom. Each opens its own moment.
 - **Split cards.** With **Ungroup** on, each moment is its own card and shows its place in the event, like 2/3. Pointing at one highlights the other cards of the same event.
-- **Hold to preview.** On a phone or tablet, rest your finger on a card to play the short preview clip. Lift your finger to stop, tap to open. On a computer the preview plays on hover.
+- **Hold to preview.** On a phone or tablet, rest your finger on a card to play the short preview clip. Lift your finger to stop, tap to open. On a computer the preview plays on hover. It steps through the clip zoomed to whatever the moment was about, with a clock showing the time of the frame you are looking at. A card with no playable footage behind it says **No preview**.
 
 ## Selecting and deleting
 

@@ -12,6 +12,16 @@ Standardmäßig liegen Aufnahmen bei den übrigen camera.ui-Daten. Ab mehr als e
 
 Eine an die Maschine angeschlossene Disk ist in Ordnung, ebenso ein Speicherpfad, der ein Symlink darauf ist. Eine **Netzwerkfreigabe (NAS, SMB, NFS) nicht**, und den Grund lohnt es zu kennen: In dem Ordner liegt mehr als Video. Erkennungs-Ereignisse, die Timeline-Markierungen und der Suchindex liegen als Datenbanken neben dem Material, damit sie mitwandern, wenn du die Disk umziehst. Diese Datenbanken brauchen Dateisperren, die Netzwerk-Dateisysteme nicht zuverlässig bereitstellen. Kaputt geht dort also die Ereignis-Datenbank, nicht ein Videobild. Liegt dein Speicher auf einem NAS, lass camera.ui stattdessen auf dem NAS laufen und nimm dort lokal auf.
 
+## Aufnahmen auf eine andere Platte umziehen
+
+Den Speicherpfad zu ändern nimmt deine Aufnahmen nicht mit. camera.ui fängt am neuen Ort bei null an, und der alte Ordner behält Material und Ereignisse dort, wo sie sind. Zieh die Daten selbst um:
+
+1. Stoppe den Server.
+2. Verschiebe den kompletten Speicherordner auf die neue Platte, einschließlich der Ordner `events` und `clip` neben dem Material. Darin liegen deine Ereignisse, die Marker der Zeitleiste und der Suchindex, und sie gehören zu genau diesem Material.
+3. Starte den Server und trag den neuen Pfad unter **Einstellungen → Aufnahmen** ein.
+
+Nichts darin speichert einen absoluten Pfad, Zeitleiste, Ereignisse und Suche funktionieren am neuen Ort also ohne Neuaufbau. Lässt du `events` und `clip` zurück, kommt das Material ohne sie an, und aus den Videodateien lassen sie sich nicht wiederherstellen. Hinterlegte Gesichter sind so oder so nicht betroffen, sie liegen außerhalb des Aufnahmeordners.
+
 ## Grobe Dimensionierung
 
 Durchgehende Aufnahme schreibt den aufgezeichneten Stream auf die Disk, die Größe richtet sich also nach dessen Bitrate. Als Faustregel:

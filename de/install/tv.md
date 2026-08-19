@@ -33,10 +33,12 @@ Du kannst mehrere Server hinzufügen und zwischen ihnen wechseln, praktisch, wen
 
 - **Home.** Oben die neueste Aktivität, dazu Kamera- und Speicher-Status und die heutige Ereigniszahl. Wähl eine Benachrichtigung, um direkt zur Aufnahme zu springen.
 - **Camview.** Eine Live-Wand deiner Kameras. Wähl ein Raster oder ein gemischtes Layout, ordne die Kacheln um oder öffne eine Kamera im Vollbild. **Fill wall** lässt die Ränder weg und füllt den Bildschirm mit der Wand.
-- **Ereignisse.** Deine Ereignisse nach Tag gruppiert, mit Filtern für Personen, Gesichter, Fahrzeuge, Tiere, Pakete, Türklingel, Sensoren, Geräusche und Bewegung. Wähl eines, um es ab diesem Moment abzuspielen. Scroll weiter, um ältere Tage zu erreichen.
+- **Ereignisse.** Deine Ereignisse nach Tag gruppiert, mit Filtern für Personen, Gesichter, Fahrzeuge, Tiere, Türklingel, Sensoren, Geräusche und Bewegung. Wähl eines, um es ab diesem Moment abzuspielen. Scroll weiter, um ältere Tage zu erreichen.
 - **Episoden.** [Episoden](/de/detection/episodes) erscheinen als Mosaik-Karten zwischen deinen Ereignissen und auf dem Home-Screen. Öffnest du eine, spielt sie die ganze Story und wechselt von selbst zwischen den Kameras. Links und rechts springen zwischen den Kameras.
 - **Sensoren.** Deine Sensoren als Kacheln, live vom Server.
 - **Gegensprechen.** Im Vollbild-Player spricht der Mikrofon-Button über die Kamera, sofern sie Gegensprechen unterstützt.
+
+Die Wiedergabe folgt der [Wiedergabe-Quelle](/de/recording/timeline-playback#wiedergabequalität) jeder Kamera, Episoden eingeschlossen. Bei Auto spielt eine Lücke in der High-Aufnahme die nächste Qualität mit Material, genau wie im Webinterface.
 
 ### Sensoren
 
@@ -54,5 +56,5 @@ Ist dein Server oder sein Aufnahme-Plugin älter als die App braucht, zeigt die 
 
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe. Die Live-Ansicht ist kostenlos.
 [^appstore]: Mit dem öffentlichen Release wechselt die App in den App Store.
-[^token]: Erstelle einen Token in camera.ui unter Einstellungen, Konto, API-Tokens.
+[^token]: Erstelle einen [API-Token](/de/admin/security#api-tokens) in camera.ui unter Einstellungen, Account, API-Tokens.
 [^sensors]: Das sind dieselben Sensoren wie auf der Web-Sensoren-Seite. Erkennungssensoren, die an eine einzelne Kamera gebunden sind, bleiben hier ausgeblendet.

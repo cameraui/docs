@@ -107,9 +107,13 @@ Cameras show a placeholder, the event row never fills, and nothing updates. That
 
 ## Telling camera.ui about the address
 
-Once the proxy works, enter the public address under **Settings → Remote** as described in [Custom domain](/remote/custom-domain).
+Once the proxy works, enter the public address under **Settings → Remote Access** as described in [Custom domain](/remote/custom-domain).
 
-The server checks that address by requesting it itself, from the inside. If your router does not support hairpin NAT, that request leaves the network and never comes back, so the check fails even though the address works perfectly from outside. Pointing your internal DNS at the proxy resolves it.
+If the proxy also answers on your own network, put its address into **Local address** in the **Network** card on the same page, for example `https://camera.home.lan`. Apps then talk to the proxy at home instead of the server's IP. The proxy needs a certificate for that name and has to pass WebSocket connections through, the same as for outside access. Camera streams keep using the IP addresses in **Server addresses** above, so leave those alone.
+
+<Shot src="/img/remote/network-addresses.png" alt="The Network card with Server addresses and Local address" />
+
+**Test connection** checks the address by requesting it from the server itself. If your router has no hairpin NAT, or internal DNS sends the name somewhere else, that request never comes back and the test fails even though the address works from outside. Remote access keeps running anyway: camera.ui gives up a custom domain only when the name stops resolving on the public internet. Pointing your internal DNS at the proxy makes the test pass too.
 
 ## Next steps
 

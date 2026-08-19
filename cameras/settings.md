@@ -24,9 +24,10 @@ The main configuration form, grouped into sections:
 
 - **General.** Name, room, camera type, and whether the camera is disabled (also where you remove a camera).
 - **Branding.** Manufacturer, model, and other device details.
-- **Interface.** The [streaming mode and source](/cameras/live-view#streaming-modes), and the display aspect ratio. Pick a preset (16:9, 4:3, 1:1, and more) or type a custom `width:height` like `21:9`, with a live preview of the camera framed at that ratio.
-- **Detection.** Per-camera tuning for motion, object, audio, and sensor detection (sensitivity, confidence, timeouts, triggers, and stationary-object handling), plus a snooze switch. Which object types the camera reports is set in **Zones**. See [Detection & AI](/detection/).
+- **Interface.** Everything about how this camera is shown and played: the [streaming mode and source](/cameras/live-view#streaming-modes), the [playback source](/recording/timeline-playback#playback-quality) for recordings, the [activity mode](/cameras/live-view#activity-mode-always-on-and-standby), and the display aspect ratio. For the ratio, pick a preset (16:9, 4:3, 1:1, and more) or type a custom `width:height` like `21:9`, with a live preview of the camera framed at that ratio.
+- **Detection.** Per-camera tuning for motion, object, audio, face, license plate and sensor detection: sensitivity, confidence, timeouts, triggers and stationary-object handling, plus a snooze switch. The confidence values the AI backends use come from here, so a change applies right away. Which object types the camera reports is set in **Zones**. See [Detection & AI](/detection/).
 - **Recording.** Whether and how this camera is recorded: the mode, the pre-buffer, and which streams go to disk. An installed NVR plugin does the recording. See [Recording](/recording/).
+- **Notifications.** What this camera pushes to your phone: the camera's own on/off switch, video in push, which sounds and sensors notify, the cooldown and the notification speed. Which detections notify you is set in **Zones**, on the alert zones. See [Notifications](/notifications/).
 - **Autotrack.** Let a PTZ camera follow detected objects automatically. See [PTZ & autotrack](/sensors/ptz).
 - **Snapshot.** How still images are refreshed and cached (auto-refresh, cache time, and refresh interval).
 - **Zones.** Draw motion, object, alert and privacy zones, and crossing lines. See [Zones & privacy](/cameras/zones-and-masks).

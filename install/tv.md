@@ -33,10 +33,12 @@ You can add more than one server and switch between them, handy if you run separ
 
 - **Home.** The latest activity up top, plus camera and storage status and today's event count. Select a notification to jump straight to the recording.
 - **Camview.** A live wall of your cameras. Pick a grid or a mixed layout, rearrange the tiles, or open any camera fullscreen. **Fill wall** drops the borders and fills the screen with the wall.
-- **Events.** Your events grouped by day, with filters for persons, faces, vehicles, animals, packages, doorbell, sensors, sounds, and motion. Select one to play it back from that moment. Keep scrolling to reach older days.
+- **Events.** Your events grouped by day, with filters for persons, faces, vehicles, animals, doorbell, sensors, sounds, and motion. Select one to play it back from that moment. Keep scrolling to reach older days.
 - **Episodes.** [Episodes](/detection/episodes) show up as mosaic cards among your events and on the Home screen. Opening one plays the whole story and switches cameras on its own. Left and right jump between cameras.
 - **Sensors.** Your sensors as tiles, live from the server.
 - **Talk back.** In the fullscreen player, the microphone button speaks through the camera, if the camera supports two-way audio.
+
+Playback follows each camera's [playback source](/recording/timeline-playback#playback-quality), episodes included. On Auto a gap in the high recording plays the next quality that has footage, the same as in the web interface.
 
 ### Sensors
 
@@ -54,5 +56,5 @@ If your server or its recording plugin is older than the app needs, the app show
 
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback. Live view is free.
 [^appstore]: The app moves to the App Store with the public release.
-[^token]: Create a token in camera.ui under Settings, Account, API tokens.
+[^token]: Create an [API token](/admin/security#api-tokens) in camera.ui under Settings, Account, API tokens.
 [^sensors]: These are the same sensors as the web Sensors page. Detection sensors tied to a single camera stay hidden here.

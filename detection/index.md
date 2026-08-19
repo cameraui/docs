@@ -13,7 +13,7 @@ Detection is layered, so it stays efficient:
 1. **Motion** runs continuously and cheaply. It just notices that something changed.
 2. When a trigger fires, the heavier **AI** wakes up. It runs object detection (people, vehicles, animals), then looks closer at what it found: faces on the people it sees, license plates on the vehicles, and a semantic fingerprint for search. Motion is the usual trigger. A detected sound wakes the AI too, and so can another sensor, for example a door contact.
 
-This "cascade" means the demanding AI only runs when there's something to look at, and each step only runs on the objects it applies to, which keeps CPU and GPU use low.
+
 
 While an event is active, the heavier analysis (objects, faces, plates, and search) switches to the camera's high-resolution stream for sharper crops, then drops back to the lighter stream once the scene goes quiet.
 
@@ -38,7 +38,7 @@ flowchart LR
 
 - **[Motion](/detection/motion)** — movement in the frame.
 - **[Objects](/detection/ai-backends)** — people, vehicles, and animals.
-- **[Faces](/detection/faces)** — recognise known people and group unknown ones.
+- **[Faces](/detection/faces)** — recognize known people and group unknown ones.
 - **[License plates](/detection/license-plates)** — read plate numbers.
 - **[Audio](/detection/audio)** — sounds like glass breaking, alarms, or a dog barking.
 - **[Semantic search](/detection/semantic-search)** — find moments by describing them in words.

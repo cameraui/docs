@@ -8,17 +8,16 @@ Audio detection listens to a camera's audio for specific sounds, such as glass b
 
 ## Setup
 
-Enable the audio plugin for a camera in [Settings → Plugins](/cameras/settings) (see [Set up sensors](/sensors/setup)). In its settings:
+Enable the audio plugin for a camera in [Settings → Plugins](/cameras/settings) (see [Set up sensors](/sensors/setup)). That is the whole setup: the plugin has no settings of its own, it listens for the standard sound list and takes its confidence from the camera.
 
-- **Listen labels.** Choose which sounds to detect.
-- **Confidence threshold.** How sure it must be before reporting a sound (0.1 to 1).
+The sounds it recognizes are glass breaking, screaming, gunshots, alarms (smoke, car, siren), a doorbell, knocking, a dog bark, a cat, a baby crying, and speech.[^yamnet]
 
-The sounds it can recognise include glass breaking, screaming, gunshots, alarms (smoke, car, siren), a doorbell, knocking, a dog bark, a cat, a baby crying, and speech.
+## Settings on the camera
 
-## Volume gate and timeout
-
-Three more settings live on the camera itself, in [Settings → Detection](/cameras/settings):
+Audio detection is tuned in [Settings → Detection](/cameras/settings), per camera:
 
 - **Min. volume (dBFS).** Audio frames below this level are skipped, so quiet background noise is never analysed. Ranges from -100 (silence) to 0 (maximum), default -40.
-- **Audio confidence.** Recognised sounds the detector is less sure about than this don't count as events or trigger automations (0 to 1, default 0.7). It sits on top of the plugin's own threshold, so the plugin can stay sensitive while only confident sounds actually fire. Raise it if you get false glass-break or gunshot alarms.
+- **Audio confidence.** Sounds the detector is less sure about than this are dropped (0 to 1, default 0.7). Raise it if you get false glass-break or gunshot alarms, lower it if real ones are missed.
 - **Audio timeout.** How long an audio event stays active after the last trigger (minimum 10 seconds).
+
+[^yamnet]: Needs camera-ui-audio-yamnet 1.2.4 or newer.

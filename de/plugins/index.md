@@ -62,3 +62,4 @@ Die eigenen Einstellungen eines Plugins liegen auf seiner Seite unter **Einstell
 
 - **[HomeKit](/de/plugins/homekit)** — deine Kameras zu Apple Home hinzufügen.
 - **[Home Assistant](/de/home-assistant/)** — Kameras, Sensoren und Erkennungs-Events als Home-Assistant-Entitäten.
+- **Google Home und Alexa** — noch nicht verfügbar, beide auf der Roadmap.

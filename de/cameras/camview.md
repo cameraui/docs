@@ -24,7 +24,19 @@ Aktiviere **Anordnen**, um Kacheln zu verschieben. Am Computer kannst du eine Ka
 - **Automatisch anordnen** packt die Kacheln lückenlos zusammen.
 - **Seitenverhältnisse anpassen** bringt jede Kachel auf das konfigurierte Seitenverhältnis ihrer Kamera.
 
-Wähle **Fertig**, wenn du fertig bist. Auf dem Handy liegen die Kameras in einer Spalte, dort ändert **Anordnen** nur die Reihenfolge; Größe ändern und die beiden Helfer gibt es dort nicht. Die Ansicht selbst wird in deinem Konto gespeichert. Die Anordnung bleibt in dem Browser, in dem du sie erstellt hast, und Handy und Computer behalten jeweils ihre eigene, sodass ein für den Desktop abgestimmtes Raster auf dem Handy aufgeräumt bleibt. **Bearbeiten** und **Löschen** einer Ansicht findest du in der oberen Leiste.
+Während du am Griff ziehst, steht die Pixelgröße der Kachel oben links in ihr. Kacheln bleiben liegen, wo du sie ablegst, und jede hat einen zarten Rahmen, damit du die Plätze siehst.
+
+Wähle **Fertig**, wenn du fertig bist. Auf dem Handy liegen die Kameras in einer Spalte, dort ändert **Anordnen** nur die Reihenfolge; Größe ändern und die Anordnen-Helfer gibt es dort nicht. Die Ansicht selbst wird in deinem Konto gespeichert. Die Anordnung bleibt in dem Browser, in dem du sie erstellt hast, und Handy und Computer behalten jeweils ihre eigene, sodass ein für den Desktop abgestimmtes Raster auf dem Handy aufgeräumt bleibt. **Bearbeiten** und **Löschen** einer Ansicht findest du in der oberen Leiste.
+
+## Das Bild an die Karte anpassen
+
+Kameras passen selten zur Form ihrer Kachel, ein breiter Stream in einem hohen Platz lässt also schwarze Balken. Im Modus **Anordnen** bietet der Button **Bild in der Karte** drei Möglichkeiten:
+
+- **Seitenverhältnis behalten** zeigt das ganze Bild und nimmt die Balken in Kauf. Das ist die Voreinstellung.
+- **Zuschneiden** füllt die Karte und schneidet die Ränder ab.
+- **Verzerren** füllt die Karte und verzerrt das Bild.
+
+Die Wahl wird mit der Ansicht gespeichert, folgt also deinem Konto auf jedes Gerät, und sie gilt für Live und Wiedergabe. Eine vergrößerte Kachel, Vollbild und Zoom zeigen immer wieder das ganze Bild. Den Button gibt es nur am Computer, eine Ansicht behält die dort gewählte Anpassung aber, wenn du sie auf dem Handy öffnest.
 
 ## Alle Kameras auf einmal steuern
 

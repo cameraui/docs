@@ -13,7 +13,7 @@ From a camera, select **Share Camera** in the player toolbar, then set:
 - **Source.** Which stream quality to share (high, mid, or low resolution).
 - **Expires after.** How long the link stays valid.
 - **Max Viewers.** How many people can watch at the same time, or unlimited.
-- **Label.** An optional name to recognise the share later.
+- **Label.** An optional name to recognize the share later.
 
 Select **Create**. camera.ui gives you a **Share Link** and an **Access Code**. Send both to the person you want to share with. The access code is shown only once, so copy it before closing.
 

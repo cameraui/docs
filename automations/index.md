@@ -18,8 +18,8 @@ Open **Automations** from the menu, then create one with the **+** button. A new
 
 A trigger is what starts a flow. You can use more than one.
 
-- **Detection event.** Something detected at a camera: motion, a person, vehicle, or animal, an audio event like a doorbell or glass breaking, a recognised face, or a license plate. Filter by object, confidence, and event phase (start, update, end).
-- **Sensor change.** A sensor's state changes, like a contact sensor opening. This also covers your cameras' detection sensors: motion, objects, faces, license plates, and classifiers. Face, plate, and classifier sensors carry what was recognised, so a flow can react to a specific person, car, plate, or result, for example a bird classifier that reports the species.[^detvssensor]
+- **Detection event.** Something detected at a camera: motion, a person, vehicle, or animal, an audio event like a doorbell or glass breaking, a recognized face, or a license plate. Filter by object, confidence, and event phase (start, update, end).
+- **Sensor change.** A sensor's state changes, like a contact sensor opening. This also covers your cameras' detection sensors: motion, objects, faces, license plates, and classifiers. Face, plate, and classifier sensors carry what was recognized, so a flow can react to a specific person, car, plate, or result, for example a bird classifier that reports the species.[^detvssensor]
 - **Schedule.** A recurring time, set with a cron expression.
 - **System event.** Something in camera.ui itself, such as a camera connecting or disconnecting, or a plugin starting or stopping.
 - **Webhook.** An external service calls a URL to start the flow.
@@ -35,7 +35,7 @@ Conditions decide whether a flow continues:
 
 - **If / else.** Branch on a comparison.
 - **Switch.** Branch on several possible values.
-- **Sensor state.** Check one or more sensors, combined with AND or OR. Each value can be a fixed value or a variable from an earlier step. For a detection sensor you can check a specific value, like a recognised name, a plate, or a classifier label. When a sensor holds several values at once, the check passes if any one matches, and matching ignores upper and lower case.
+- **Sensor state.** Check one or more sensors, combined with AND or OR. Each value can be a fixed value or a variable from an earlier step. For a detection sensor you can check a specific value, like a recognized name, a plate, or a classifier label. When a sensor holds several values at once, the check passes if any one matches, and matching ignores upper and lower case.
 - **Time.** Only continue within a time-of-day range and on chosen days.
 
 ## Actions
@@ -57,9 +57,19 @@ Actions are what the flow does:
 - **Image input.** Load an image (from a URL, a variable, or an upload) for an action to use.
 - **Output.** Collect results to view after the flow runs.
 
+## Passing values between steps
+
+Steps hand values to each other through **variables**. A node that produces something offers **Add output variable** in its settings: give it a name, and every step wired after it can use that value. **Variables** on a step lists what is available to it, so if a field says nothing is there, the node it should come from is not connected yet.
+
+Write a variable as `{{name}}` wherever a field takes text, for example a notification body that greets the person the camera recognized. Fields that only take one value, like a sensor value or a condition, let you pick the variable from a list instead of typing it.
+
+Two things help when a flow grows. **Set variable** stores a value for later, useful when you need it several steps down. And **Alias** on a node puts a prefix in front of its output variables, so `result` from two different plugins becomes `cam1.result` and `cam2.result` instead of clashing.
+
+A misspelled name is caught on save, with **Unknown variable** naming the one it could not resolve.
+
 ## Options and running
 
-In the toolbar you can name the flow, turn it **Enabled** on or off, and set two behaviours:
+In the toolbar you can name the flow, turn it **Enabled** on or off, and set two behaviors:
 
 - **Ignore repeated events**, so a burst of triggers runs the flow once.
 - **Wait for completion**, so a new trigger waits until the current run finishes.
@@ -68,4 +78,4 @@ Save with the **Save** button. If your flow has a **Manual** trigger, a **Run** 
 
 To share automations, see [Blueprints & store](/automations/blueprints).
 
-[^detvssensor]: A Detection event fires on each raw event as it happens. A Sensor change reacts to the sensor's own state, which keeps the recognised names, plates, or labels for as long as the subject stays in view.
+[^detvssensor]: A Detection event fires on each raw event as it happens. A Sensor change reacts to the sensor's own state, which keeps the recognized names, plates, or labels for as long as the subject stays in view.

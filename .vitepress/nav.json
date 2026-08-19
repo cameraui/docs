@@ -392,20 +392,6 @@
             "de": "HomeKit"
           },
           "link": "/plugins/homekit"
-        },
-        {
-          "text": {
-            "en": "Google Home",
-            "de": "Google Home"
-          },
-          "link": "/plugins/google-home"
-        },
-        {
-          "text": {
-            "en": "Alexa",
-            "de": "Alexa"
-          },
-          "link": "/plugins/alexa"
         }
       ]
     },

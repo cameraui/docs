@@ -107,9 +107,13 @@ Kameras zeigen einen Platzhalter, die Event-Zeile füllt sich nie, nichts aktual
 
 ## camera.ui die Adresse mitteilen
 
-Sobald der Proxy läuft, trägst du die öffentliche Adresse unter **Einstellungen → Remote** ein, wie unter [Eigene Domain](/de/remote/custom-domain) beschrieben.
+Sobald der Proxy läuft, trägst du die öffentliche Adresse unter **Einstellungen → Remote Zugriff** ein, wie unter [Eigene Domain](/de/remote/custom-domain) beschrieben.
 
-Der Server prüft diese Adresse, indem er sie selbst von innen aufruft. Wenn dein Router kein Hairpin-NAT beherrscht, verlässt diese Anfrage das Netzwerk und kommt nie zurück. Die Prüfung schlägt dann fehl, obwohl die Adresse von außen einwandfrei funktioniert. Ein interner DNS-Eintrag, der auf den Proxy zeigt, löst das.
+Antwortet der Proxy auch in deinem eigenen Netzwerk, trag seine Adresse unter **Lokale Adresse** in der Karte **Netzwerk** auf derselben Seite ein, etwa `https://camera.home.lan`. Apps sprechen zuhause dann mit dem Proxy statt mit der IP des Servers. Der Proxy braucht ein Zertifikat für diesen Namen und muss WebSocket-Verbindungen durchreichen, genau wie für den Zugriff von außen. Kamera-Streams nutzen weiterhin die IP-Adressen unter **Server-Adressen** darüber, lass die also unangetastet.
+
+<Shot src="/img/remote/network-addresses.png" alt="Die Karte Netzwerk mit Server-Adressen und Lokale Adresse" />
+
+**Verbindung testen** prüft die Adresse, indem der Server sie selbst aufruft. Beherrscht dein Router kein Hairpin-NAT oder schickt internes DNS den Namen woandershin, kommt diese Anfrage nie zurück und der Test schlägt fehl, obwohl die Adresse von außen funktioniert. Der Remote-Zugriff läuft trotzdem weiter: camera.ui gibt eine eigene Domain erst auf, wenn der Name im öffentlichen Internet nicht mehr auflöst. Ein interner DNS-Eintrag, der auf den Proxy zeigt, lässt auch den Test durchlaufen.
 
 ## Nächste Schritte
 

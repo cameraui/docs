@@ -32,6 +32,12 @@ Einmal aktiviert, erscheint auf dem Login-Bildschirm die Schaltfläche **Mit Fac
 
 Die Liste **Aktive Sitzungen** zeigt jedes an deinem Konto angemeldete Gerät, das aktuelle markiert. Du kannst ein einzelnes Gerät **abmelden** oder alle anderen auf einmal, praktisch, wenn du dich irgendwo angemeldet hast, dem du nicht mehr traust.
 
+## API-Tokens
+
+Integrationen, die selbst mit camera.ui sprechen, etwa die [Home-Assistant-Integration](/de/home-assistant/integration) und die [Apple-TV-App](/de/install/tv), melden sich mit einem Token statt mit deinem Passwort an. Erstelle eines unter **Einstellungen → Account → API-Tokens**: Gib ihm einen Namen, den du später wiedererkennst, und kopiere es sofort, es wird nur einmal angezeigt.
+
+Ein Token hat vollen Zugriff auf dein Konto, behandle es also wie ein Passwort. Die Liste zeigt, wann jedes zuletzt genutzt wurde, und **Widerrufen** macht eines sofort ungültig, was du tust, wenn eine Integration wegfällt oder ein Token abhandenkommt.
+
 ## Passwort
 
 Ändere dein Passwort unter **Konto**. Das Ändern, auch deines Benutzernamens, meldet dich überall ab, sodass du dich mit den neuen Daten neu anmeldest.

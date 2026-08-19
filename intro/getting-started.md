@@ -24,8 +24,6 @@ The first time, sign in with the default account:
 
 You'll replace these in the next step.
 
-<Shot src="/img/getting-started/login.png" alt="camera.ui login screen" />
-
 ## 3. First-run setup
 
 On first sign-in, camera.ui walks you through a short setup wizard:
@@ -38,8 +36,6 @@ Choose how to start:
 
 - **New Installation.** Set up a fresh server. This is what most people pick.
 - **Restore from Backup.** Moving from another camera.ui install? Upload your backup archive, and camera.ui restores your settings and restarts.
-
-<Shot src="/img/getting-started/onboarding-welcome.png" alt="Onboarding welcome step" />
 
 ### Appearance
 
@@ -56,8 +52,6 @@ Set up your own account. This replaces the default `admin` / `admin`:
 ::: tip Choose a strong password
 This is an administrator account. Use a strong, unique password, especially if you ever plan to reach camera.ui from outside your local network.
 :::
-
-<Shot src="/img/getting-started/onboarding-account.png" alt="Onboarding account step" />
 
 ### Finish
 

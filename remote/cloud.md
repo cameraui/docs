@@ -16,7 +16,7 @@ Push notifications are the one thing that does travel through the cloud, and the
 
 <Shot src="/img/remote/remote-settings.png" alt="The Cloud card in Settings, Remote" />
 
-In **Settings → Remote**, open the **Cloud** card and turn on **Enabled**. Give the server a **name**; this is how it appears in your cloud dashboard, which helps once you have more than one.
+In **Settings → Remote Access**, open the **Cloud** card and turn on **Enabled**. Give the server a **name**; this is how it appears in your cloud dashboard, which helps once you have more than one.
 
 The **status** row shows whether the server is **Registered**, and a **tunnel** indicator shows the live connection. To connect a server, choose **Register server** and complete the pairing. If the status shows **Re-authentication required**, the server lost its cloud credentials: choose **Reconnect** and pair again. A registered server can be taken off your account with **Unregister server**. The same flow on a phone is covered in [Pairing mobile apps](/remote/pairing).
 
@@ -25,6 +25,8 @@ The **status** row shows whether the server is **Registered**, and a **tunnel** 
 While Cloud is on, your server also keeps a public address so the apps can reach it. That's why the **Enabled** switch in the **Direct connection** card is locked on, and the **External URL** row shows the address in use.
 
 If you haven't set up a direct address, or the one you configured can't be reached, camera.ui starts a temporary Cloudflare tunnel instead. Either way you don't have to touch your router. If you'd rather use your own address, set it up under [Direct connection](/remote/).
+
+The fallback is not permanent. camera.ui keeps checking your own address and goes back to it once it answers, a custom domain every minute and a Cloudflare tunnel about every ten minutes. No restart needed. While the fallback is up, **External URL** shows the temporary address, and a Cloudflare retry that fails again hands out a new one.
 
 ## The cloud dashboard
 

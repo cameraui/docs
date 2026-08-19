@@ -14,7 +14,7 @@ Download the installer for your platform, directly below or from the [download p
 | Linux (AppImage) | [`x64`](https://downloads.cameraui.com/latest/camera.ui-x86_64.AppImage) · [`arm64`](https://downloads.cameraui.com/latest/camera.ui-arm64.AppImage) |
 | Linux (.deb) | [`amd64`](https://downloads.cameraui.com/latest/camera.ui-amd64.deb) · [`arm64`](https://downloads.cameraui.com/latest/camera.ui-arm64.deb) |
 
-Apple Silicon and Intel Macs use separate downloads. Pick the one that matches your Mac.
+
 
 <Shot src="/img/install/desktop-download.png" alt="camera.ui download page" />
 
@@ -87,6 +87,8 @@ On macOS 15 and newer, the system asks for **local network** access on first lau
 ## Updates
 
 The desktop app keeps itself up to date. It checks for updates when it starts and periodically while running, then downloads and installs them for you. In Server mode it also updates the bundled server before starting it, so the app and the server stay in sync.
+
+You can also trigger it from the [Updates page](/install/updating#the-updates-page), from any device: the app downloads the update, installs it and relaunches. Handy when the machine running it sits in a cupboard without a keyboard.
 
 One exception on Linux: only the `.AppImage` updates itself. If you installed the `.deb`, update by downloading and installing the new `.deb` from the [download page](https://cameraui.com).
 

@@ -20,7 +20,7 @@ Available to admins:
 
 - **Users.** Accounts, roles, and active sessions. See [Users](/admin/users).
 - **Recordings.** Recording and storage options. See [Recording](/recording/).
-- **Remote access.** Reaching the server from outside. See [Remote access](/remote/).
+- **Remote access.** Reaching the server from outside, plus the addresses apps use to reach it on your own network. See [Remote access](/remote/).
 - **MQTT.** Connect camera.ui to an MQTT broker.
 - **Backup.** Back up and restore your setup, and schedule recurring backups. See [Backup](/admin/backup).
 - **System.** Version, updates, and server actions. See [System](/admin/system).
@@ -29,7 +29,8 @@ Available to admins:
 
 Beyond Settings, the menu has more admin tools:
 
-- **Metrics** for how the server and each camera are doing: system and process tables, per-camera decode and detection rates, and the storage breakdown.
+- **Metrics** for how the server and each camera are doing, in three tabs you can also swipe between on a phone: **Overview** with the system and process tables, **Cameras** with what detection costs per camera, and **Storage** with the disk breakdown. See [What detection costs](/detection/ai-backends#what-detection-costs).
+- **[Updates](/install/updating#the-updates-page)** for the server, the plugins and the workers in one list.
 - **[Automations](/automations/)** for connecting events to actions.
 - **[Logs](/admin/logs)** and a **terminal** for troubleshooting.
 - **[Instances](/admin/instances)** for switching between several servers, and **[Workers](/admin/workers)** for sharing the load of this one.

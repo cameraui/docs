@@ -19,6 +19,23 @@ title: Timeline & Wiedergabe
 - **Zoome** die Timeline rein und raus, vom groben Überblick bis auf Sekunden genau. In der tiefsten Zoomstufe wird das Scrubben bildgenau und die Timeline zeigt ein **Feinsteuerung**-Badge.
 - **Springe zu einem Tag** über den Kalender, der die Tage mit Material hervorhebt.
 
+## Wiedergabequalität
+
+Jede Kamera hat in ihren [Einstellungen](/de/cameras/settings) unter **Interface** eine **Wiedergabe Quelle**: **Auto**, **High**, **Mid** oder **Low**. Auto ist der Standard und die Einstellung, bei der du bleiben solltest.
+
+Eine Aufnahme kann in einer Qualität ein Loch haben und in einer anderen nicht, etwa wenn der High-Stream für ein paar Minuten weggebrochen ist, während der Low-Stream weiterlief. Bei Auto nimmt die Wiedergabe die beste Qualität, für die an dieser Stelle wirklich Material da ist, und ein Badge nennt die Qualität, solange es nicht die oberste ist. Sobald die High-Aufnahme wieder da ist, wechselt sie von selbst zurück. Legst du statt Auto eine Qualität fest, bleibt die Wiedergabe darauf, Loch inklusive.
+
+## Wenn eine Kamera nicht aufgenommen hat
+
+Bänder unter der Zeitleiste sagen, was die Kamera gemacht hat, wenn Material fehlt:
+
+- **offline** heißt, die Kamera hat gar nichts aufgenommen.
+- **recording without high** (oder eine andere Qualität) heißt, nur dieser Stream ist ausgefallen, es gibt also Material, nur nicht in jeder Qualität. Genau hier zahlt sich Auto von oben aus.
+
+Ein Band beginnt dort, wo die Aufnahme wirklich aufgehört hat, und endet dort, wo sie weiterging, es passt also zu den Aufnahmebalken und nicht zu dem Moment, in dem camera.ui es gemerkt hat. Aussetzer unter 15 Sekunden erzeugen kein Band, ein Reconnect müllt die Zeitleiste also nicht zu.
+
+Ein Ausfall läuft oft in Phasen ab: erst geht der High-Stream, dann der Rest, dann kommt einer vor dem anderen zurück. Diese Phasen liegen nebeneinander in einem Band, jede in ihrer eigenen Farbe, beschriftet mit der Gesamtdauer. Zeig darauf, um die Phasen einzeln zu lesen.
+
 ## Zeitleiste oder Erkennungen
 
 Auf der Kameraseite hat das Panel zwei Ansichten, zwischen denen du wechseln kannst. **Zeitleiste** ist die Skala, auf der du scrubbst. **Erkennungen** ersetzt sie durch eine Liste dessen, was erkannt wurde: Tag, Uhrzeit, Dauer, ein Vorschaubild und Icons für die erkannten Typen. Klick einen Eintrag an, um direkt dorthin zu springen.
@@ -35,4 +52,4 @@ Wähle den **Export**-Button auf der Timeline, um das Zuschneiden einzuschalten.
 
 Admins können aufgenommenes Material direkt aus der Timeline löschen. Wähle **Aufnahmen löschen**, zieh die Griffe über den Zeitraum, der weg soll, und dann **Auswahl löschen**. Das Material und alle Ereignisse darin werden endgültig entfernt, minutenweise, und die Änderung erscheint auf jedem offenen Gerät. Die letzten Minuten werden gerade noch geschrieben und lassen sich noch nicht löschen, warte also kurz und versuch es erneut.
 
-[^conf]: Damit diese Ereignisse auch den Filter **Nur mit Aufnahme** und den Konfidenzfilter unter Aufnahmen passieren, aktualisiere das NVR-Plugin.
+[^conf]: Damit diese Ereignisse auch den Filter **Nur mit Aufnahme** und den Konfidenzfilter unter Aufnahmen passieren, braucht es ein aktuelles camera-ui-nvr.

@@ -14,8 +14,6 @@ Lade den Installer für deine Plattform herunter, direkt hier oder von der [Down
 | Linux (AppImage) | [`x64`](https://downloads.cameraui.com/latest/camera.ui-x86_64.AppImage) · [`arm64`](https://downloads.cameraui.com/latest/camera.ui-arm64.AppImage) |
 | Linux (.deb) | [`amd64`](https://downloads.cameraui.com/latest/camera.ui-amd64.deb) · [`arm64`](https://downloads.cameraui.com/latest/camera.ui-arm64.deb) |
 
-Apple-Silicon- und Intel-Macs nutzen getrennte Downloads. Wähle den, der zu deinem Mac passt.
-
 <Shot src="/img/install/desktop-download.png" alt="camera.ui Download-Seite" />
 
 ## Installieren
@@ -79,7 +77,6 @@ Unter Windows öffnet ein Linksklick auf das Tray-Symbol das Fenster, ein Rechts
 [^autostart]: Nur macOS und Windows.
 [^closetotray]: Nur Windows und Linux. Unter macOS bleibt die App beim Schließen des Fensters ohnehin im Tray, daher gibt es die Option dort nicht.
 
-
 ## macOS-Berechtigungen
 
 Auf macOS 15 und neuer fragt das System beim ersten Start nach Zugriff auf das **lokale Netzwerk**. Erlaube ihn, sonst kann die App deine Kameras im Netzwerk nicht erreichen. Beim ersten Gegensprechen fragt macOS zusätzlich nach **Mikrofon**-Zugriff, und beim ersten Tippen auf **„Mein Standort"** beim Geofence-Trigger in den [Automatisierungen](/de/automations/) fragt es nach **Standort**-Zugriff.
@@ -87,6 +84,8 @@ Auf macOS 15 und neuer fragt das System beim ersten Start nach Zugriff auf das *
 ## Updates
 
 Die Desktop-App hält sich selbst aktuell. Sie prüft beim Start und regelmäßig im Betrieb auf Updates und lädt sie dann für dich herunter und installiert sie. Im Server-Modus aktualisiert sie außerdem den gebündelten Server, bevor sie ihn startet, sodass App und Server synchron bleiben.
+
+Du kannst es auch über die [Updates-Seite](/de/install/updating#die-updates-seite) anstoßen, von jedem Gerät aus: Die App lädt das Update, installiert es und startet neu. Praktisch, wenn die Maschine im Schrank steht und keine Tastatur hat.
 
 Eine Ausnahme unter Linux: nur die `.AppImage` aktualisiert sich selbst. Wenn du die `.deb` installiert hast, aktualisiere sie, indem du die neue `.deb` von der [Download-Seite](https://cameraui.com) herunterlädst und installierst.
 

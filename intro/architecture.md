@@ -2,8 +2,6 @@
 
 camera.ui is **server-centric**: one server, running on your hardware, does all the work. It connects to your cameras, streams and records video, runs detection, and serves the interface. The browser and the mobile apps are **viewers** of that server. The desktop app can be a viewer too, or run the server itself.
 
-You don't need to understand the internals to use camera.ui, but a quick mental model makes the rest of these docs easier to follow.
-
 ## One self-contained server
 
 The camera.ui server bundles everything it needs to run: the web interface, a built-in **streaming engine** (our own go2rtc build) for live video, and its own **video processing** for decoding and recording. Your settings, cameras, users, and events live in a small **local database** on the same machine.

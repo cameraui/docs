@@ -29,6 +29,8 @@ In the Console you can:
 - **Search** the visible lines.
 - **Copy** the output, **Export / share** it as a text file, or **Clear** it.
 
+New lines scroll into view as they arrive. Scroll up to read something and it stops following, so the line you are looking at stays put; scroll back to the bottom to have it follow again.
+
 For problems with the app, the Console export is the useful thing to attach. For problems with the server, the Logs download.
 
 ## Terminal

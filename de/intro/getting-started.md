@@ -24,8 +24,6 @@ Melde dich beim ersten Mal mit dem Standard-Konto an:
 
 Diese ersetzt du im nächsten Schritt.
 
-<Shot src="/img/getting-started/login.png" alt="camera.ui Login-Screen" />
-
 ## 3. Ersteinrichtung
 
 Bei der ersten Anmeldung führt dich camera.ui durch einen kurzen Einrichtungs-Assistenten:
@@ -38,8 +36,6 @@ Wähle, wie du starten möchtest:
 
 - **Neue Installation.** Einen frischen Server einrichten. Das wählen die meisten.
 - **Aus Backup wiederherstellen.** Wechsel von einer anderen camera.ui-Installation? Lade dein Backup-Archiv hoch, und camera.ui stellt deine Einstellungen wieder her und startet neu.
-
-<Shot src="/img/getting-started/onboarding-welcome.png" alt="Onboarding-Welcome-Schritt" />
 
 ### Erscheinungsbild
 
@@ -56,8 +52,6 @@ Richte dein eigenes Konto ein. Es ersetzt das Standard-`admin` / `admin`:
 ::: tip Wähle ein starkes Passwort
 Das ist ein Administrator-Konto. Verwende ein starkes, einzigartiges Passwort, besonders wenn du camera.ui jemals von außerhalb deines lokalen Netzwerks erreichen willst.
 :::
-
-<Shot src="/img/getting-started/onboarding-account.png" alt="Onboarding-Account-Schritt" />
 
 ### Fertig
 

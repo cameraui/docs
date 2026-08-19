@@ -8,17 +8,16 @@ Audio-Erkennung hört auf den Ton einer Kamera nach bestimmten Geräuschen, etwa
 
 ## Einrichtung
 
-Aktiviere das Audio-Plugin für eine Kamera unter [Einstellungen → Plugins](/de/cameras/settings) (siehe [Sensoren einrichten](/de/sensors/setup)). In seinen Einstellungen:
+Aktiviere das Audio-Plugin für eine Kamera unter [Einstellungen → Plugins](/de/cameras/settings) (siehe [Sensoren einrichten](/de/sensors/setup)). Das ist die ganze Einrichtung: Das Plugin hat keine eigenen Einstellungen mehr, es hört auf die Standard-Geräuschliste und nimmt seine Konfidenz von der Kamera.
 
-- **Listen Labels.** Wähle, welche Geräusche erkannt werden.
-- **Konfidenzschwelle.** Wie sicher es sein muss, bevor es ein Geräusch meldet (0,1 bis 1).
+Erkannt werden Glasbruch, Schreien, Schüsse, Alarme (Rauch, Auto, Sirene), eine Türklingel, Klopfen, Hundebellen, eine Katze, Babyweinen und Sprache.[^yamnet]
 
-Zu den erkennbaren Geräuschen gehören Glasbruch, Schreien, Schüsse, Alarme (Rauch, Auto, Sirene), eine Türklingel, Klopfen, Hundebellen, eine Katze, Babyweinen und Sprache.
+## Einstellungen an der Kamera
 
-## Lautstärke-Gate und Timeout
-
-Drei weitere Einstellungen liegen an der Kamera selbst, unter [Einstellungen → Detection](/de/cameras/settings):
+Die Audio-Erkennung wird pro Kamera unter [Einstellungen → Detection](/de/cameras/settings) eingestellt:
 
 - **Min. Lautstärke (dBFS).** Audio-Frames unterhalb dieses Pegels werden übersprungen, sodass leise Hintergrundgeräusche nie analysiert werden. Reicht von -100 (Stille) bis 0 (Maximum), Standard -40.
-- **Audio-Konfidenz.** Erkannte Geräusche, bei denen der Detektor unsicherer ist als dieser Wert, zählen nicht als Ereignis und lösen keine Automationen aus (0 bis 1, Standard 0,7). Sie liegt über dem eigenen Schwellwert des Plugins, sodass das Plugin empfindlich bleiben kann und trotzdem nur sichere Geräusche auslösen. Erhöhe sie bei falschen Glasbruch- oder Schuss-Alarmen.
+- **Audio-Konfidenz.** Geräusche, bei denen der Detektor unsicherer ist als dieser Wert, werden verworfen (0 bis 1, Standard 0,7). Erhöhe sie bei falschen Glasbruch- oder Schuss-Alarmen, senke sie, wenn echte übersehen werden.
 - **Audio-Timeout.** Wie lange ein Audio-Ereignis nach dem letzten Trigger „aktiv" bleibt (mindestens 10 Sekunden).
+
+[^yamnet]: Braucht camera-ui-audio-yamnet 1.2.4 oder neuer.

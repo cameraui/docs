@@ -51,7 +51,7 @@ sudo cameraui update-server 1.2.3        # or pin a specific version
 
 The service runs as its own user, so everything except `status` needs sudo and the same `--user` you installed with. If you installed with `-H <path>`, pass that instead.
 
-camera.ui also updates the server from the web UI; `update-server` is the CLI equivalent.
+The [Updates page](/install/updating#the-updates-page) does the same from the web interface; `update-server` is the CLI equivalent.
 
 ## Data
 

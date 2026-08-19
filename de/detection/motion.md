@@ -28,6 +28,8 @@ Jede Engine bietet eigene Einstellungen (etwa Fläche, Schwellwert und Weichzeic
 
 Wenn eine Kamera zu empfindlich ist (eine viel befahrene Straße, ein schwankender Baum), begrenze mit [Zonen](/de/cameras/zones-and-masks), wo Bewegung zählt.
 
+Auch die eingeblendete Uhrzeit einer Kamera kann Bewegung auslösen, vor allem nachts und bei höherer Bewegungs-Auflösung, weil die wechselnden Ziffern wie Bewegung aussehen. Wenn du Bewegungs-Ereignisse ohne erkennbaren Anlass bekommst, zeichne eine Bewegungszone, die die Ecke mit der Uhrzeit ausspart.
+
 ## Die Kaskade
 
 Wenn Bewegung auslöst, startet sie die schwereren Detektoren (Objekt, Gesicht usw.). Du kannst diese Kaskade auch von anderen Sensoren starten lassen, etwa einem Tür-Kontaktsensor, der die Objekterkennung auslöst, unter **Sensor-Trigger** in den Erkennungs-Einstellungen der Kamera.

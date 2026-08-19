@@ -6,11 +6,13 @@ title: AI descriptions
 
 camera.ui can use a generative-AI model to describe what happens on camera. It writes a short summary of each moment in an event: a title, what happened, a notification-friendly line, and a threat level. It names people, plates, and detected movement.
 
+Names and plates come from what [face recognition](/detection/faces) and [plate reading](/detection/license-plates) actually confirmed, not from what the model thinks it can read in the picture. A description will not put a plate on a car that was never read.[^genai-reads]
+
 <Shot src="/img/detection/genai-description.png" alt="An AI-generated event description" />
 
 ## Choosing a provider
 
-In the [NVR settings](/recording/), open the **GenAI** tab and pick a provider:
+In **Settings → [Recordings](/recording/)**, open the **GenAI** tab and pick a provider:
 
 - **Ollama.** Runs a model locally on your own hardware. Set the **API Base URL** (for example `http://localhost:11434`).
 - **OpenAI** or **Gemini.** Use a cloud model. Set your **API Key**.
@@ -29,3 +31,5 @@ The provider you pick under **GenAI** feeds two features, each with its own tab:
 With Ollama, everything stays on your own hardware. With OpenAI or Gemini, event snapshots are sent to that provider to generate the description.[^license]
 
 [^license]: AI descriptions build on recording, which requires an active camera.ui subscription.
+
+[^genai-reads]: Needs camera-ui-nvr 1.3.16 or newer.

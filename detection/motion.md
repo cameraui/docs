@@ -28,6 +28,8 @@ Each engine exposes its own settings (such as area, threshold, and blur) in its 
 
 If a camera is too sensitive (a busy road, a swaying tree), limit where motion counts with [zones](/cameras/zones-and-masks).
 
+A camera's on-screen timestamp can trigger motion too, mostly at night and at higher motion resolutions, because the changing digits look like movement. If you get motion events with nothing in frame, draw a motion zone that leaves out the timestamp corner.
+
 ## The cascade
 
 When motion fires, it triggers the heavier detectors (object, face, and so on). You can also let other sensors start this cascade, for example a door contact sensor triggering object detection, under **Sensor triggers** in the camera's detection settings.

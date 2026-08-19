@@ -101,9 +101,11 @@ Leave the capabilities unset and the worker offers everything, which is what mos
 
 ## The workers list
 
-Once paired, a worker appears in the **Workers** list showing its online/offline status, platform (OS/architecture), process ID, version, and live CPU and memory use. A warning is shown if a worker's version differs from the master's. When a worker is behind, a small dot also appears on the **Workers** entry in the sidebar, the same marker the server and plugins use for a pending update.
+Once paired, a worker appears in the **Workers** list showing its online/offline status, platform (OS/architecture), process ID, version, and live CPU and memory use. A warning is shown if a worker's version differs from the master's. When a worker is behind, a small dot appears on the **Updates** entry in the navigation, the same marker the server and plugins use for a pending update.
 
-A lagging worker shows an **Update** button right in the list: the worker installs the master's version and restarts itself. Two cases need a different route. Workers running inside the desktop app update with that app. And workers still on a version before 2.1.0 don't understand the update command yet, so bring them up once by hand: on Docker, exec into the container, run `cameraui update-server -H /data` and restart the container (pulling the worker image won't change the version). From then on the button covers them too. See [Updating](/install/updating).
+The list is also where you see a worker that thinks it is connected but is not. A worker that fails to link up at startup, or loses the link later, says so in its [log](/admin/logs) with the reason instead of sitting there looking online. Cameras and plugins running on a worker show up in **Metrics** with the worker's name and its load.
+
+The [Updates page](/install/updating#the-updates-page) lists every lagging worker next to the server and the plugins, and a lagging worker shows an **Update** button right in the list too: the worker installs the version the master is heading for and restarts itself. Normally that is the version the master runs; when a server update is waiting, it is that one, so the worker does not have to be updated twice. Workers running the desktop app update the same way, the app installs its update and relaunches. Only a worker still on a version before 2.1.0 needs a different route, it does not understand the update command yet, so bring it up once by hand: on Docker, exec into the container, run `cameraui update-server -H /data` and restart the container (pulling the worker image won't change the version). From then on the button covers them too. See [Updating](/install/updating).
 
 ## Camera and plugin assignments
 

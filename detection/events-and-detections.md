@@ -13,16 +13,22 @@ When detection fires, camera.ui groups what it finds into an **event**. Knowing 
 - **Event.** Everything that happens during one continuous burst of activity at a camera. An event has a start and an end, and can update as it goes.
 - **Segment.** A stretch of an event where the AI kept seeing objects, with its own thumbnail. Objects leaving and coming back start a new segment, and an event where the AI never sees an object, like a doorbell press with nobody in view, has none.
 - **Detection.** Something the AI found in a segment, such as a person or a vehicle, with a confidence score.
-- **Attribute.** Extra detail on a detection, such as a recognised face, a license plate, or a semantic (CLIP) embedding used for search.
+- **Attribute.** Extra detail on a detection, such as a recognized face, a license plate, or a semantic (CLIP) embedding used for search.
 
 ## Triggers vs detections
 
 Two things can start or shape an event:
 
 - A **trigger** is a signal that something happened: motion, a doorbell, a contact sensor, an alarm sound. A trigger can start an event on its own.
-- A **detection** is what the AI actually recognised in the video, like an object, a face, or a plate.
+- A **detection** is what the AI actually recognized in the video, like an object, a face, or a plate.
 
 The difference matters for filtering and notifications: you can alert on a doorbell press (a trigger) or only when a person is seen (a detection).
+
+## The picture an event carries
+
+Every card, push and AI description shows one picture for the moment, and camera.ui picks the frame and the crop for it. It frames the subject, so a person arrives as a whole person, not as a close-up of a shoulder. When a face is recognized later in the same event, the "Unknown" crop is dropped rather than kept alongside the name.
+
+A camera that reports detections without saying where in the frame they were, most Reolink AI and ONVIF cameras, gives nothing to frame. The moving part of the picture is framed instead. That is less precise than a real box, so an [object assist](/detection/ai-backends#object-assist) plugin is the better answer if you want those cameras placed properly.
 
 ## Stationary objects
 

@@ -8,7 +8,7 @@ Die Seite **Einstellungen → System** (nur Admins) kümmert sich um die Version
 
 ## Version und Updates
 
-Sie zeigt die **Server**-Version, und in der Desktop- und der mobilen App die **App**-Version. Wenn ein Update verfügbar ist, wähle **Aktualisieren**, um es zu installieren, oder **Verwalten**, um eine bestimmte Version zu wählen. Vorabversionen erscheinen in dieser Liste nur, wenn **Beta-Updates** aktiv ist, der Schalter oben auf der Seite. Siehe [Aktualisieren](/de/install/updating), wie Updates plattformübergreifend funktionieren.
+Sie zeigt die **Server**-Version, und in der Desktop- und der mobilen App die **App**-Version. Installiert wird auf der [Updates-Seite](/de/install/updating#die-updates-seite); hier bleiben **Verwalten**, das jede veröffentlichte Version auflistet, damit du eine bestimmte installieren kannst, und **Beta-Updates**, der Schalter oben auf der Seite, der entscheidet, ob Vorabversionen überhaupt angeboten werden. Braucht eine installierte Version einen Neustart, zeigt die Versionszeile beide an und bietet **Neustart**. Siehe [Aktualisieren](/de/install/updating), wie Updates plattformübergreifend funktionieren.
 
 ## Server-Aktionen
 

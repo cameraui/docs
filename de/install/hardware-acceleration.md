@@ -104,6 +104,8 @@ Die Laufzeit-Bibliothek (`libedgetpu`) ist bereits in jedem Image-Flavor enthalt
 
 Ohne erreichbaren TPU läuft das Coral-Plugin auf der CPU und sagt das in seinem Log. Prüfe seine `Available devices:`-Zeile, falls die Erkennung langsam wirkt.
 
+Um zu sehen, auf welchem Gerät die Erkennung tatsächlich läuft, starte den Benchmark unter **Metrics → Kameras**: Seine Seite je Kamera nennt Runtime, Modell und Gerät. Siehe [Was Erkennung kostet](/de/detection/ai-backends#was-erkennung-kostet).
+
 ## Hailo-8 / Hailo-8L
 
 Der Kernel-Treiber wird auf dem Host aus dem Quellcode gebaut: `sudo bash cameraui-host.sh hailo` installiert die Build-Abhängigkeiten, kompiliert den Treiber und installiert Firmware und udev-Regeln. **Danach neu starten**, damit die Firmware lädt, dann das Device durchreichen:

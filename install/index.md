@@ -10,7 +10,7 @@ The best way to install depends mostly on **which platform** you'll run it on.
 - **Linux** → **[Docker](/install/docker)** (or **[Proxmox](/install/proxmox)** if you run it). This is the recommended way to run a dedicated Linux server, with GPU acceleration.
 - **Just want to watch on your phone?** → the **[mobile apps](/install/mobile)**. You'll still need a server running somewhere.
 
-The desktop app is both the simplest way to get started and a fully capable always-on server.
+
 
 ## Choose a method
 
