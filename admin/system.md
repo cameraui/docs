@@ -15,7 +15,9 @@ It shows the **server** version, and the **app** version in the desktop and mobi
 - **Restart server.** Restart camera.ui, for example after a change that needs it.
 - **Reset server.** Wipe the configuration back to defaults. This removes all your settings and data and can't be undone, so it's limited to the master account.
 
-The server also offers a **certificate** download for its HTTPS.
+## Certificates
+
+**Certificate** downloads the server's own certificate, for adding it to a device's trust store. **Own certificate** takes a certificate you obtained for your domain and serves it for the names it covers. See [Certificate](/remote/certificate).
 
 ::: tip
 Looking for the server name or network addresses? Those are under [Remote access](/remote/). Theme and language are under **Appearance**.

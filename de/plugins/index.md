@@ -24,7 +24,7 @@ Plugins erweitern camera.ui. Das meiste, was es über die Live-Ansicht hinaus ka
 
 Aufnahmen sind die Ausnahme: Wenn du die gespeicherten Daten eines Aufnahme-Plugins löschst, bleibt das Videomaterial erhalten.
 
-Sind Plugins veraltet, aktualisiert ein **Alle aktualisieren**-Button in der Werkzeugleiste alle auf einmal und meldet das Ergebnis.
+Sind Plugins veraltet, aktualisiert ein **Alle aktualisieren**-Button in der Werkzeugleiste alle auf einmal und meldet das Ergebnis. Während ein Update-Lauf von der [Updates-Seite](/de/install/updating) läuft, bleiben die Plugins gestoppt und die Buttons hier deaktiviert, bis er fertig ist.
 
 Der Zahnrad-Button neben der Suchleiste enthält zwei Einstellungen, beide standardmäßig aus:
 

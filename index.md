@@ -14,7 +14,7 @@ If something is missing or unclear, tell us on [Discord](https://discord.gg/bBGn
 
 ## What you can do
 
-- **Watch live.** Low-latency streaming over WebRTC and MSE, multi-camera grids, two-way talk, PTZ control, and snapshots.
+- **Watch live.** Low-latency streaming over WebRTC and MSE, multi-camera grids, two-way talk, PTZ control, and snapshots. A floor plan of your home shows which camera is seeing something right now.
 - **Record around the clock.**[^license] Continuous, event-based, or ad-hoc recording, with a scrubbable timeline, synchronized multi-camera playback, and MP4 / timelapse export.
 - **Detect what matters.** Motion, object, face, license-plate, and audio detection, all running locally on your own hardware, plus semantic search and AI-generated event descriptions.
 - **Stay informed.**[^license] Per-camera push notifications, alerts limited by area, object type or the people you name, quiet hours, and critical alerts that always get through.

@@ -14,7 +14,7 @@ Fehlt etwas oder ist unklar? Sag uns auf [Discord](https://discord.gg/bBGnGcbz8N
 
 ## Was du machen kannst
 
-- **Live ansehen.** Latenzarmes Streaming über WebRTC und MSE, Multi-Kamera-Raster, Gegensprechen, PTZ-Steuerung und Snapshots.
+- **Live ansehen.** Latenzarmes Streaming über WebRTC und MSE, Multi-Kamera-Raster, Gegensprechen, PTZ-Steuerung und Snapshots. Ein Grundriss deines Zuhauses zeigt, welche Kamera gerade etwas sieht.
 - **Rund um die Uhr aufnehmen.**[^license] Durchgehende, ereignisbasierte oder Ad-hoc-Aufnahme, mit scrubbarer Timeline, synchroner Multi-Kamera-Wiedergabe und MP4-/Zeitraffer-Export.
 - **Erkennen, was zählt.** Bewegungs-, Objekt-, Gesichts-, Kennzeichen- und Audio-Erkennung, lokal auf deiner eigenen Hardware, plus semantische Suche und KI-generierte Ereignisbeschreibungen.
 - **Informiert bleiben.**[^license] Push-Benachrichtigungen pro Kamera, Alarme begrenzt auf Bereich, Objekttyp oder namentlich genannte Personen, Ruhezeiten und kritische Alarme, die immer durchkommen.

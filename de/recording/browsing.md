@@ -6,15 +6,20 @@ title: Durchsuchen & Filter
 
 Die **Aufnahmen**-Ansicht ist der Ort, an dem du vergangene Ereignisse über deine Kameras hinweg findest. Jedes Ereignis zeigt ein Thumbnail und das Erkannte, neueste zuerst. Zusammenhängende Ereignisse über mehrere Kameras können auch als **Episode**-Karte erscheinen. Eine Aufnahme, die zu einer gehört, zeigt einen **Open episode**-Button. Siehe [Episoden](/de/detection/episodes).
 
-<Shot src="/img/recording/recordings-view.png" alt="Recordings-Ansicht mit Ereignissen und Filtern" />
+Sagt die Liste, dass Aufnahmen nicht verfügbar sind, läuft das NVR-Plugin nicht. Sie füllt sich wieder, sobald das Plugin antwortet.
 
 ## Filtern
 
-Grenze die Liste auf genau das ein, was du suchst:
+**Anzeigen** oben in der Seitenleiste bestimmt, was die Liste hält: **Alle**, nur **Ereignisse** oder nur **Episoden**. Episoden haben keine eigenen Erkennungen, in dieser Ansicht grenzen sie also nur Kamera und Zeitraum ein.
+
+<Shot src="/img/recording/recordings-filters.png" alt="Die Filter-Seitenleiste mit dem Anzeigen-Schalter, der Suche und den Filtern für Raum und Kamera" />
+
+Der Rest grenzt die Liste auf genau das ein, was du suchst:
 
 - **Kamera und Zeitraum.**
+- **Räume.** Wählt die Kameras aus, die im [Grundriss](/de/cameras/floor-plan) in diesen Räumen stehen.
 - **Nur mit Aufnahme.** Standardmäßig an. Schalte es aus, um auch Ereignisse zu sehen, bei denen ein Trigger ausgelöst hat, aber nichts aufgenommen wurde. Diese Ereignisse lassen sich nicht herunterladen oder abspielen.
-- **Labels.** Person, Fahrzeug, Tier, Paket oder Sonstige.
+- **Labels.** Person, Fahrzeug, Tier oder Sonstige.
 - **Auslöser.** Bewegung, eine Türklingel, ein Sensor oder ein Alarmgeräusch.
 - **Attribute.** Ereignisse, die ein Gesicht oder ein Kennzeichen enthalten.
 - **Konfidenz.** Erkennungen mit niedriger Konfidenz ausblenden.

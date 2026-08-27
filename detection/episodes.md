@@ -10,7 +10,7 @@ Episodes need [AI descriptions](/detection/genai-descriptions). The AI writes th
 
 ## Turning it on
 
-In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and turn on **Enabled**. Then set up **Camera Groups**: an episode only forms among cameras in the same group, and a group needs at least two cameras. Cameras you leave out take no part.
+In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and turn on **Enabled**. Every camera takes part; an episode forms once at least two different cameras saw related activity. With a drawn [floor plan](/cameras/floor-plan), camera.ui also checks whether the sightings fit together in space: unrelated things happening at the same time in different corners of the property become separate episodes instead of one mixed story, and the title names the places involved.
 
 - **Join Window.** A new event joins the open episode when it starts within this long after the last activity. Default 90 seconds.
 - **Quiet Time.** The episode closes and gets its story once it has been this quiet. Default 60 seconds.
@@ -29,5 +29,7 @@ In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and tur
 ## The episode player
 
 Opening an episode plays the whole sequence. It switches between cameras on its own as the story moves, and shows the current camera's name and time. A strip below the video holds one block per camera stretch, so you can jump straight to any point or skip between cameras. Zoom and pan work as in the [live view](/cameras/live-view).
+
+When a second camera covers the same room on the [floor plan](/cameras/floor-plan), the control bar offers **Second angle**, which plays that view of the same stretch instead.
 
 <Shot src="/img/detection/episode-player.png" alt="The episode player with the camera strip below the video" />

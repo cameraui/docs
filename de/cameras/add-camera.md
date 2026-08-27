@@ -48,7 +48,7 @@ Eine Kamera kann mehrere **Quellen** haben, jede mit einer **Rolle**:
 - **Hohe / Mittlere / Niedrige Auflösung** sind Streaming-Stufen. camera.ui nutzt die passende für die jeweilige Situation, etwa einen niedrig aufgelösten Stream im Multi-Kamera-Raster und einen hoch aufgelösten im Vollbild.
 - **Snapshot** liefert Standbilder.
 
-Eine Quelle genügt für den Anfang. Einen niedriger aufgelösten Stream später hinzuzufügen verbessert die Leistung bei Rastern und Wiedergabe.
+Eine Quelle genügt für den Anfang. Einen niedriger aufgelösten Stream später hinzuzufügen verbessert die Leistung bei Rastern und Wiedergabe. Jede Quelle braucht innerhalb der Kamera einen eigenen Namen; ein bereits vergebener wird mit einem Hinweis unter dem Feld abgelehnt. Ist eine Quelle gespeichert, steht ihr Name fest.
 
 ### Quellen-Optionen
 
@@ -57,6 +57,7 @@ Jede Streaming-Quelle hat ein paar Optionen:
 - **Hot Modus.** Hält die Verbindung zur Kamera dauerhaft aktiv, sodass es beim Öffnen eines Streams keine Reconnect-Verzögerung gibt.
 - **Vorladen.** Lädt den Stream vor, sodass die Kamera-Ansicht mit minimaler Verzögerung öffnet.
 - **Audio stummschalten.** Entfernt die Audiospur dieser Quelle. Standardmäßig aus.
+- **Gegensprechen deaktivieren.** Entfernt den Rücksprechkanal dieser Quelle, der Mikrofon-Button verschwindet. Standardmäßig aus.
 
 Mit aktivem Hot Modus und Vorladen öffnet ein Stream nahezu sofort, egal ob die Kamera H.264 oder H.265 nutzt.
 

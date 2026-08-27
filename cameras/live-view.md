@@ -14,7 +14,7 @@ Open any camera to watch it live.
 - **Mute / unmute** for cameras with audio.
 - **Two-way talk** to speak through the camera (see below).
 - **Fullscreen** and **Picture-in-Picture** to pop the video into a floating window.
-- **Digital zoom** by scrolling or pinching, up to 5×, with a minimap. Drag to pan when zoomed in.
+- **Digital zoom** by scrolling or pinching, up to 5×, with a minimap. Drag to pan when zoomed in. The crop holds while you scrub the timeline, until you double-click the picture or zoom back out.
 - **Quality** switches the source resolution (**High**, **Mid**, or **Low Resolution**).
 - **Open camera** opens the full camera page with recordings and the timeline.
 
@@ -38,7 +38,7 @@ Give a source a **PiP Source** in the camera [settings](/cameras/settings) (Sour
 
 camera.ui can stream live video in a few ways. You set the mode per camera in its [settings](/cameras/settings). The player also has a button to switch between WebRTC and MSE while you watch.
 
-- **Auto** picks the best mode for your device and network, and is the simplest choice.
+- **Auto** starts WebRTC and MSE together and keeps whichever connects first, so a network that blocks WebRTC still gets a picture. When the camera's codec cannot travel over WebRTC it goes straight to MSE. The simplest choice.
 - **WebRTC** gives the lowest latency.
 - **MSE** is a broadly compatible fallback.
 - **webrtc/tcp** sends WebRTC over TCP only. Pick it in the camera settings if some networks block the ports WebRTC normally uses. It is not available from the player button.

@@ -10,7 +10,7 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI 
 
 ## Einschalten
 
-Öffne unter **Einstellungen → [Aufnahmen](/de/recording/)** den Tab **Episodes** und aktiviere **Enabled**. Richte dann **Camera Groups** ein: Eine Episode bildet sich nur unter Kameras derselben Gruppe, und eine Gruppe braucht mindestens zwei Kameras. Kameras, die du weglässt, sind nicht dabei.
+Öffne unter **Einstellungen → [Aufnahmen](/de/recording/)** den Tab **Episodes** und aktiviere **Enabled**. Jede Kamera macht mit; eine Episode entsteht, sobald mindestens zwei verschiedene Kameras zusammenhängende Aktivität gesehen haben. Mit einem gezeichneten [Grundriss](/de/cameras/floor-plan) prüft camera.ui zusätzlich, ob die Sichtungen räumlich zusammenpassen: Unzusammenhängendes, das zeitgleich in verschiedenen Ecken des Grundstücks passiert, wird zu getrennten Episoden statt zu einer vermischten Story, und der Titel nennt die beteiligten Orte.
 
 - **Join Window.** Ein neues Ereignis schließt sich der offenen Episode an, wenn es so lange nach der letzten Aktivität startet. Standard 90 Sekunden.
 - **Quiet Time.** Die Episode schließt und bekommt ihre Story, sobald es so lange ruhig war. Standard 60 Sekunden.
@@ -29,5 +29,7 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI 
 ## Der Episoden-Player
 
 Öffnest du eine Episode, spielt sie die ganze Sequenz ab. Sie wechselt von selbst zwischen den Kameras, während die Story voranschreitet, und zeigt Name und Zeit der aktuellen Kamera. Ein Streifen unter dem Video hält einen Block pro Kamera-Abschnitt, sodass du direkt zu jedem Punkt springen oder zwischen Kameras wechseln kannst. Zoomen und Verschieben funktionieren wie in der [Live-Ansicht](/de/cameras/live-view).
+
+Deckt eine zweite Kamera denselben Raum im [Grundriss](/de/cameras/floor-plan) ab, bietet die Steuerleiste **Zweiter Winkel** an und spielt denselben Abschnitt aus dieser Sicht.
 
 <Shot src="/img/detection/episode-player.png" alt="Der Episoden-Player mit dem Kamera-Streifen unter dem Video" />

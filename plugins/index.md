@@ -24,7 +24,7 @@ Open **Plugins** from the menu to see everything installed, each as a card with 
 
 Recordings are the exception: if you delete a recording plugin's stored data, its footage is kept.
 
-When plugins are out of date, an **Update all** button in the toolbar updates every one and reports the result.
+When plugins are out of date, an **Update all** button in the toolbar updates every one and reports the result. While an update run from the [Updates page](/install/updating) is going on, the plugins are stopped and the buttons on this page are disabled until it finishes.
 
 The gear button next to the search bar holds two settings, both off by default:
 

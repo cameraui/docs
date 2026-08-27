@@ -48,6 +48,12 @@ When a limit is reached, what happens depends on the **Retention Mode**:
 - **Overwrite** (default). The oldest recordings are deleted to make room, so recording never stops.
 - **Strict.** Nothing is deleted beyond the retention window. If the disk fills, recording pauses until you free space.
 
+## Free disk space
+
+Independent of those limits, camera.ui keeps part of the disk clear. **Min Free Space (GB)** sets that line: cleanup works to keep at least that much available, and recording pauses at half of it. Left at 0 the reserve is derived from the disk size, which is a share of the whole volume.
+
+Set your own line when the recordings share a disk with other data. A derived reserve on a large shared disk can be far bigger than you want, so recording pauses long before your storage cap is reached. Values below 10 GB count as 10.
+
 ## Footage from removed cameras
 
 If you delete a camera, or unassign the NVR from it, its recordings stay on disk. They still count towards **Max Storage**, and retention and cleanup still remove them when the disk gets tight, like an active camera's recordings.
@@ -62,7 +68,7 @@ To keep that footage instead, put an empty file named `.cameraui-keep` into the 
 
 Open **Metrics → Storage**. The **Storage Overview** shows how much disk is used and free, and the NVR's share of it. The **Camera Storage** table breaks it down per camera: size on disk, days of footage held, the recording rate per day, and the mode. This helps you size storage and spot a camera recording more than expected.
 
-If the page warns that the storage volume is small, most of the volume is kept free as headroom, so recordings rotate out quickly. That usually means the larger disk you meant to use isn't mounted, so check the storage path. A separate warning appears when free disk space drops below 8%. Below 5%, recording pauses.
+If the page warns that the storage volume is small, most of the volume is kept free as headroom, so recordings rotate out quickly. That usually means the larger disk you meant to use isn't mounted, so check the storage path. A separate warning appears when free disk space drops below 8%, and a red banner once recording has paused for lack of space.
 
 ## Uninstalling the NVR
 

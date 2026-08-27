@@ -30,6 +30,8 @@ Der Anbieter, den du unter **GenAI** wählst, speist zwei Funktionen, jede mit e
 
 Mit Ollama bleibt alles auf deiner eigenen Hardware. Mit OpenAI oder Gemini werden Ereignis-Snapshots an diesen Anbieter gesendet, um die Beschreibung zu erzeugen.[^license]
 
+Ein gezeichneter Grundriss ergänzt die Prompts um Text-Kontext: wie die Räume zusammenhängen, Gehzeiten zwischen den Kameras und was Sensoren in der Nähe gerade melden. Schalte **Floor Plan in Prompts** im GenAI-Tab aus, wenn das draußen bleiben soll.
+
 [^license]: KI-Beschreibungen bauen auf Aufnahmen auf, die ein aktives camera.ui-Abo erfordern.
 
 [^genai-reads]: Braucht camera-ui-nvr 1.3.16 oder neuer.

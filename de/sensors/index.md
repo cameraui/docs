@@ -22,9 +22,11 @@ Sensoren gibt es in zwei Formen:
 - **Kamera-Hardware.** Das Plugin der Kamera registriert sie auf genau dieser Kamera: ihre Klingeltaste, ihr Spotlight, ihre Sirene oder ihre Batterie. Die Zuweisung ist fest; auf eine andere Kamera verschieben geht nicht.
 - **Eigenständig.** Alles andere, vom Smart-Plug einer Integration bis zum selbst erstellten virtuellen Sensor. Welchen Kameras er gehört, entscheidest du auf der **Sensoren**-Seite. Ein zugewiesener Sensor erscheint bei diesen Kameras und kann deren Erkennung auslösen.
 
+Löschst du eine Kamera, gehen ihre Kamera-Hardware-Sensoren mit. Ein eigenständiger Sensor, der ihr zugewiesen war, bleibt und verliert nur die Zuweisung.
+
 ## Sensoren einrichten und nutzen
 
-Plugin-Sensoren werden pro Kamera in den Kamera-Einstellungen aktiviert, und jeder Sensor im System wird auf der **Sensoren**-Seite verwaltet. Siehe **[Sensoren einrichten](/de/sensors/setup)** für beides und **[Steuerung & Status](/de/sensors/controls)**, um Status zu lesen und Zubehör zu bedienen.
+Plugin-Sensoren werden pro Kamera in den Kamera-Einstellungen aktiviert, und jeder Sensor im System wird auf der **Sensoren**-Seite verwaltet. Ein Plugin mit eigenem Bestand, etwa eine Smart-Home-Integration, bietet dort unter **Entdeckt** an, was es findet, und du wählst aus, was übernommen wird. Siehe **[Sensoren einrichten](/de/sensors/setup)** für alles davon und **[Steuerung & Status](/de/sensors/controls)**, um Status zu lesen und Zubehör zu bedienen.
 
 Virtuelle Sensoren sind die Ausnahme: die erstellst du selbst, ganz ohne Plugin. Siehe **[Virtuelle Sensoren](/de/sensors/virtual)**.
 

@@ -187,6 +187,13 @@
         },
         {
           "text": {
+            "en": "Floor plan",
+            "de": "Grundriss"
+          },
+          "link": "/cameras/floor-plan"
+        },
+        {
+          "text": {
             "en": "Camera settings",
             "de": "Kamera-Einstellungen"
           },
@@ -517,6 +524,13 @@
             "de": "Reverse-Proxy"
           },
           "link": "/remote/reverse-proxy"
+        },
+        {
+          "text": {
+            "en": "Certificate",
+            "de": "Zertifikat"
+          },
+          "link": "/remote/certificate"
         },
         {
           "text": {

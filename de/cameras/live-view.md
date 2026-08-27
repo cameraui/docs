@@ -14,7 +14,7 @@ title: Live-Ansicht
 - **Stumm / Stummschalten aufheben** bei Kameras mit Audio.
 - **Gegensprechen**, um über die Kamera zu sprechen (siehe unten).
 - **Vollbild** und **Bild-in-Bild**, um das Video in ein schwebendes Fenster zu lösen.
-- **Digitaler Zoom** per Scrollen oder Pinch, bis 5×, mit Minimap. Im Zoom ziehst du zum Verschieben.
+- **Digitaler Zoom** per Scrollen oder Pinch, bis 5×, mit Minimap. Im Zoom ziehst du zum Verschieben. Der Ausschnitt bleibt beim Scrubben auf der Zeitleiste erhalten, bis du ins Bild doppelklickst oder wieder herauszoomst.
 - **Qualität** wechselt die Quellen-Auflösung (**Hohe**, **Mittlere** oder **Niedrige Auflösung**).
 - **Kamera öffnen** öffnet die volle Kameraseite mit Aufnahmen und Zeitleiste.
 
@@ -38,7 +38,7 @@ Wenn eine Quelle in den [Kamera-Einstellungen](/de/cameras/settings) (Tab „Que
 
 camera.ui kann Live-Video auf mehrere Arten streamen. Den Modus legst du pro Kamera in ihren [Einstellungen](/de/cameras/settings) fest. Der Player hat außerdem einen Button, mit dem du beim Zuschauen zwischen WebRTC und MSE wechselst.
 
-- **Auto** wählt den besten Modus für dein Gerät und Netzwerk und ist die einfachste Wahl.
+- **Auto** startet WebRTC und MSE gleichzeitig und behält, was zuerst zustande kommt, ein Netz, das WebRTC blockiert, bekommt also trotzdem ein Bild. Kann der Codec der Kamera nicht über WebRTC laufen, geht es direkt auf MSE. Die einfachste Wahl.
 - **WebRTC** bietet die geringste Latenz.
 - **MSE** ist ein breit kompatibler Fallback.
 - **webrtc/tcp** überträgt WebRTC nur über TCP. Wähle das in den Kamera-Einstellungen, wenn Netzwerke die Ports blockieren, die WebRTC sonst nutzt. Über den Button im Player ist es nicht erreichbar.

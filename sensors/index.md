@@ -22,9 +22,11 @@ Sensors come in two flavors:
 - **Camera hardware.** A camera's own plugin registers them on that camera: its doorbell button, spotlight, siren, or battery. The assignment is fixed; you can't move them to another camera.
 - **Standalone.** Everything else, from a smart plug brought in by an integration to a virtual sensor you created. You decide which cameras it belongs to, on the **Sensors** page. An assigned sensor shows up on those cameras and can trigger their detection.
 
+Deleting a camera takes its camera-hardware sensors with it. A standalone sensor that was assigned to it stays and only loses the assignment.
+
 ## Setting up and using sensors
 
-Plugin sensors are enabled per camera from the camera's settings, and every sensor in the system is managed on the **Sensors** page. See **[Set up sensors](/sensors/setup)** for both, and **[Controls & states](/sensors/controls)** to read state and operate accessories.
+Plugin sensors are enabled per camera from the camera's settings, and every sensor in the system is managed on the **Sensors** page. A plugin with an inventory of its own, a smart-home integration for example, offers what it finds there under **Discovered**, and you pick what comes over. See **[Set up sensors](/sensors/setup)** for all of it, and **[Controls & states](/sensors/controls)** to read state and operate accessories.
 
 Virtual sensors are the exception: you create them yourself, no plugin involved. See **[Virtual sensors](/sensors/virtual)**.
 

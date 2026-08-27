@@ -15,18 +15,18 @@ Install and enable the **Home Assistant** plugin from the [Plugins](/plugins/) p
 
 Running camera.ui as the [Home Assistant app](/home-assistant/app)? Leave both empty. The plugin connects to Home Assistant on its own, no token needed.
 
-## What gets imported
+## What you can import
 
-Every Home Assistant entity of a supported kind is imported automatically:
+The plugin offers every Home Assistant entity it can map, under **Discovered** on the [Sensors page](/sensors/setup#the-sensors-page), with its name, entity id, type and room. Nothing comes over until you pick it, which matters on an installation with hundreds of entities.
 
 - **Sensors.** Motion, occupancy, contact, doorbell, smoke, leak, gas, carbon monoxide, and other supported types become camera.ui [sensors](/sensors/).
 - **Controls.** Locks, garage doors, alarm panels, switches, lights, and sirens come in as controls. Operating one in camera.ui operates it in Home Assistant.
 
-Unsupported entity types are skipped. To keep specific entities out, list them under **Excluded Entities**.
+Unsupported entity types never show up. To keep specific entities out of the offer as well, list them under **Excluded Entities**.
 
 ## Using imported sensors
 
-Imported sensors show up in the [Sensors](/sensors/) view like any other. Assign one to a camera and it becomes a detection trigger for that camera, exactly like a native sensor: a Home Assistant motion detector or door contact can then start a camera event. Imported controls appear in the camera's Overview and in [automations](/automations/). On the [Sensors page](/sensors/setup#the-sensors-page) each imported sensor shows its Home Assistant entity id as its **ID**, so you can tell two entities with the same friendly name apart, and search by it.
+Adopted sensors show up in the [Sensors](/sensors/) view like any other. Assign one to a camera and it becomes a detection trigger for that camera, exactly like a native sensor: a Home Assistant motion detector or door contact can then start a camera event. Imported controls appear in the camera's Overview and in [automations](/automations/). On the [Sensors page](/sensors/setup#the-sensors-page) each imported sensor shows its Home Assistant entity id as its **ID**, so you can tell two entities with the same friendly name apart, and search by it.
 
 ## Running the integration too
 

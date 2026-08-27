@@ -6,15 +6,20 @@ title: Browsing & filters
 
 The **Recordings** view is where you find past events across your cameras. Each event shows a thumbnail and what was detected, newest first. Related events across cameras can also appear as an **episode** card. A recording that belongs to one shows an **Open episode** button. See [Episodes](/detection/episodes).
 
-<Shot src="/img/recording/recordings-view.png" alt="Recordings view with events and filters" />
+When the list says recordings are unavailable, the NVR plugin is not running. It fills itself once the plugin answers again.
 
 ## Filtering
 
-Narrow the list to exactly what you're after:
+**Show** at the top of the sidebar picks what the list holds: **All**, only **Events**, or only **Episodes**. Episodes have no detections of their own, so in that view only camera and time range narrow them down.
+
+<Shot src="/img/recording/recordings-filters.png" alt="The filter sidebar with the Show switch, search and the room and camera filters" />
+
+The rest narrows the list to exactly what you're after:
 
 - **Camera and time range.**
+- **Rooms.** Selects the cameras placed in those rooms on the [floor plan](/cameras/floor-plan).
 - **Only with recording.** On by default. Turn it off to also see events where a trigger fired but nothing was recorded. Those events can't be downloaded or previewed.
-- **Labels.** Person, vehicle, animal, package, or other.
+- **Labels.** Person, vehicle, animal, or other.
 - **Trigger.** Motion, a doorbell, a sensor, or an audio alarm.
 - **Attributes.** Events that contain a face or a license plate.
 - **Confidence.** Hide low-confidence detections.

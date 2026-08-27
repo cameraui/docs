@@ -15,18 +15,18 @@ Installiere und aktiviere das **Home Assistant**-Plugin auf der [Plugins](/de/pl
 
 Läuft camera.ui als [Home-Assistant-App](/de/home-assistant/app)? Lass beide leer. Das Plugin verbindet sich von selbst mit Home Assistant, kein Token nötig.
 
-## Was importiert wird
+## Was du importieren kannst
 
-Jede Home-Assistant-Entität eines unterstützten Typs wird automatisch importiert:
+Das Plugin bietet jede Home-Assistant-Entität an, die es abbilden kann, unter **Entdeckt** auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite), mit Name, Entity-ID, Typ und Raum. Herüber kommt nichts, bevor du es auswählst, was bei einer Installation mit hunderten Entitäten den Unterschied macht.
 
 - **Sensoren.** Bewegung, Belegung, Kontakt, Türklingel, Rauch, Wasser, Gas, Kohlenmonoxid und weitere unterstützte Typen werden zu camera.ui-[Sensoren](/de/sensors/).
 - **Steuerungen.** Schlösser, Garagentore, Alarmanlagen, Schalter, Lichter und Sirenen kommen als Steuerungen herein. Bedienst du eine in camera.ui, bedienst du sie in Home Assistant.
 
-Nicht unterstützte Entitätstypen werden übersprungen. Um bestimmte Entitäten fernzuhalten, trage sie unter **Excluded Entities** ein.
+Nicht unterstützte Entitätstypen tauchen gar nicht erst auf. Um bestimmte Entitäten auch aus dem Angebot herauszuhalten, trage sie unter **Excluded Entities** ein.
 
 ## Importierte Sensoren nutzen
 
-Importierte Sensoren erscheinen in der [Sensoren](/de/sensors/)-Ansicht wie alle anderen. Weist du einen einer Kamera zu, wird er zu einem Erkennungs-Trigger für diese Kamera, genau wie ein nativer Sensor: Ein Home-Assistant-Bewegungsmelder oder Türkontakt kann dann ein Kamera-Ereignis starten. Importierte Steuerungen erscheinen in der Übersicht der Kamera und in [Automationen](/de/automations/). Auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite) zeigt jeder importierte Sensor seine Home-Assistant-Entity-ID als **ID**, du kannst also zwei Entitäten mit gleichem Anzeigenamen unterscheiden und danach suchen.
+Übernommene Sensoren erscheinen in der [Sensoren](/de/sensors/)-Ansicht wie alle anderen. Weist du einen einer Kamera zu, wird er zu einem Erkennungs-Trigger für diese Kamera, genau wie ein nativer Sensor: Ein Home-Assistant-Bewegungsmelder oder Türkontakt kann dann ein Kamera-Ereignis starten. Importierte Steuerungen erscheinen in der Übersicht der Kamera und in [Automationen](/de/automations/). Auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite) zeigt jeder importierte Sensor seine Home-Assistant-Entity-ID als **ID**, du kannst also zwei Entitäten mit gleichem Anzeigenamen unterscheiden und danach suchen.
 
 ## Die Integration parallel betreiben
 

@@ -30,6 +30,8 @@ The provider you pick under **GenAI** feeds two features, each with its own tab:
 
 With Ollama, everything stays on your own hardware. With OpenAI or Gemini, event snapshots are sent to that provider to generate the description.[^license]
 
+A drawn floor plan adds text context to the prompts: how the rooms connect, walking times between cameras, and what nearby sensors read at the time. Turn **Floor Plan in Prompts** off in the GenAI tab to keep that out.
+
 [^license]: AI descriptions build on recording, which requires an active camera.ui subscription.
 
 [^genai-reads]: Needs camera-ui-nvr 1.3.16 or newer.

@@ -48,7 +48,7 @@ A camera can have several **sources**, each with a **role**:
 - **High / Mid / Low Resolution** are streaming tiers. camera.ui uses the one that fits the situation, such as a low-resolution stream in a multi-camera grid and a high-resolution one at full screen.
 - **Snapshot** provides still images.
 
-One source is enough to get started. Adding a lower-resolution stream later improves performance for grids and playback.
+One source is enough to get started. Adding a lower-resolution stream later improves performance for grids and playback. Each source needs its own name within the camera; a name already in use is rejected with a note under the field. Once a source is saved its name is fixed.
 
 ### Source options
 
@@ -57,6 +57,7 @@ Each streaming source has a few options:
 - **Hot mode.** Keeps the connection to the camera always active, so there's no reconnect delay when a stream is opened.
 - **Preload.** Preloads the stream so the camera view opens with minimal delay.
 - **Mute audio.** Removes the audio track from this source. Off by default.
+- **Disable two-way audio.** Removes the talk channel from this source, so the microphone button disappears. Off by default.
 
 With hot mode and preload on, opening a stream is near-instant, whether the camera uses H.264 or H.265.
 

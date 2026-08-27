@@ -34,7 +34,9 @@ Once enabled, sensors show up in the camera's Overview and on the video. See [Co
 
 ## The Sensors page
 
-The **Sensors** page lists the sensors you manage: plugin-provided and virtual. Sensors a camera brings itself, its motion, battery, or PTZ, are hidden by default; the settings button next to the search field brings them back. Each row shows the connection state, name, **ID**, type, providing plugin, and assigned cameras. The ID is the id the sensor carries in the system it comes from, which tells two sensors with the same name apart; for a Home Assistant entity it is the entity id. Sensors you created yourself have none. On narrow screens the ID moves under the name, and search finds sensors by it. A camera-hardware row shows a lock next to its camera; a sensor hidden from your smart home carries a crossed-out eye next to its name. Two floating buttons switch between the table and a card view and start select mode, where you tick any number of sensors and hide, unhide, or delete them at once. A sensor's icon glows while it is active, so you can tell at a glance that motion is running, a door is open, a light is on, or a doorbell is ringing. Search and the sortable columns keep large setups manageable.
+The page has two lists. **Adopted sensors** holds everything camera.ui manages, plugin-provided and virtual. Sensors a camera brings itself, its motion, battery, or PTZ, are hidden by default; the settings button next to the search field brings them back. Each row shows the connection state, name, **ID**, type, providing plugin, and assigned cameras. The ID is the id the sensor carries in the system it comes from, which tells two sensors with the same name apart; for a Home Assistant entity it is the entity id. Sensors you created yourself have none. On narrow screens the ID moves under the name, and search finds sensors by it. A camera-hardware row shows a lock next to its camera; a sensor hidden from your smart home carries a crossed-out eye next to its name. A sensor's icon glows while it is active, so you can tell at a glance that motion is running, a door is open, a light is on, or a doorbell is ringing. Search and the sortable columns keep large setups manageable. The floating buttons create a virtual sensor and start select mode, where you tick any number of sensors and delete them at once.
+
+**Discovered** below it lists what plugins found and offered, with name, ID, type, room and the plugin behind it. Select a row and confirm, and the sensor moves into the list above, where it can be assigned to cameras. Nothing arrives on its own: a plugin facing a large inventory, Home Assistant with hundreds of entities for example, offers everything it understands and leaves the choice to you. **Rescan** asks the plugins again, and the list refreshes by itself while the page is open.
 
 <Shot src="/img/sensors/sensors-page.png" alt="Sensors page listing all sensors" />
 
@@ -50,8 +52,7 @@ Controllable sensors can also be operated right in this dialog.
 Each row offers a few actions:
 
 - **History.** The sensor's recorded state changes.
-- **Hide sensor.** Takes the row out of the list, for sensors you don't care about. **Show hidden** at the bottom brings them back; hiding changes nothing about the sensor itself.
-- **Delete sensor.** Only virtual sensors and disconnected plugin leftovers can be deleted. A sensor whose plugin is connected would come back on the next reconnect anyway, so the button is disabled for those.[^delete]
+- **Delete sensor.** Virtual sensors and leftovers of a plugin that is no longer connected. A sensor whose plugin is connected would come back on the next reconnect anyway, so the button is disabled for those.[^delete]
 
 ## Virtual sensors
 

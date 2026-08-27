@@ -48,6 +48,12 @@ Wenn eine Grenze erreicht ist, hängt das Weitere vom **Retention Mode** ab:
 - **Overwrite** (Standard). Die ältesten Aufnahmen werden gelöscht, um Platz zu schaffen, sodass die Aufnahme nie stoppt.
 - **Strict.** Nichts wird über das Aufbewahrungs-Fenster hinaus gelöscht. Läuft die Disk voll, pausiert die Aufnahme, bis du Platz freigibst.
 
+## Freier Speicher
+
+Unabhängig von diesen Grenzen hält camera.ui einen Teil der Disk frei. **Min Free Space (GB)** setzt diese Linie: Die Bereinigung arbeitet darauf hin, mindestens so viel verfügbar zu halten, und bei der Hälfte davon pausiert die Aufnahme. Bleibt der Wert auf 0, leitet camera.ui die Reserve aus der Größe der Disk ab, als Anteil am ganzen Volume.
+
+Setz eine eigene Linie, wenn die Aufnahmen sich eine Disk mit anderen Daten teilen. Eine abgeleitete Reserve kann auf einer großen gemeinsamen Disk deutlich größer ausfallen als gewollt, die Aufnahme pausiert dann lange vor deiner Speichergrenze. Werte unter 10 GB zählen als 10.
+
 ## Aufnahmen entfernter Kameras
 
 Wenn du eine Kamera löschst oder die Zuweisung des NVR aufhebst, bleiben ihre Aufnahmen auf der Disk. Sie zählen weiterhin zu **Max Storage**, und Aufbewahrung und Bereinigung entfernen sie weiterhin, wenn der Platz knapp wird, wie bei einer aktiven Kamera.
@@ -62,7 +68,7 @@ Wenn du das Material stattdessen behalten willst, lege eine leere Datei namens `
 
 Öffne **Metrics → Speicher**. Die **Speicherübersicht** zeigt, wie viel Disk belegt und frei ist, sowie den Anteil des NVR daran. Die Tabelle **Kameraspeicher** schlüsselt es pro Kamera auf: Größe auf der Disk, gehaltene Tage Material, die Aufnahme-Rate pro Tag und den Modus. Das hilft, den Speicher zu dimensionieren und eine Kamera zu erkennen, die mehr aufnimmt als erwartet.
 
-Wenn die Seite warnt, dass das Speichervolumen klein ist, wird der größte Teil des Volumes als Reserve freigehalten, Aufnahmen rotieren also schnell heraus. Meist ist dann die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe also den Speicherpfad. Eine eigene Warnung erscheint, wenn der freie Speicher unter 8% fällt. Unter 5% pausiert die Aufnahme.
+Wenn die Seite warnt, dass das Speichervolumen klein ist, wird der größte Teil des Volumes als Reserve freigehalten, Aufnahmen rotieren also schnell heraus. Meist ist dann die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe also den Speicherpfad. Eine eigene Warnung erscheint, wenn der freie Speicher unter 8% fällt, und ein rotes Banner, sobald die Aufnahme aus Platzmangel pausiert.
 
 ## NVR deinstallieren
 
