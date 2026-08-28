@@ -79,7 +79,7 @@ Then start it:
 docker compose -f docker-compose.worker.yml up -d
 ```
 
-The master address takes a hostname or IP, without a scheme. `CAMERA_UI_WORKER_API_PORT` is only needed if the master's HTTPS port differs from the default. To pass hardware through for decoding, use the same override files as the main deployment, see [Hardware acceleration](/install/hardware-acceleration).
+The master address takes a hostname or IP, without a scheme. `CAMERA_UI_WORKER_API_PORT` is only needed if the master's HTTPS port is not 3443, a desktop app as master listens on 3543. To pass hardware through for decoding, use the same override files as the main deployment, see [Hardware acceleration](/install/hardware-acceleration).
 
 ### Worker with the desktop app
 

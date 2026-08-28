@@ -34,16 +34,16 @@ Einmal aktiviert, erscheinen Sensoren in der Übersicht der Kamera und auf dem V
 
 ## Die Sensoren-Seite
 
-Die Seite hat zwei Listen. **Übernommene Sensoren** hält alles, was camera.ui verwaltet, von Plugins bereitgestellte und virtuelle. Sensoren, die eine Kamera selbst mitbringt, ihre Bewegung, Batterie oder PTZ, sind standardmäßig ausgeblendet; der Einstellungs-Button neben dem Suchfeld holt sie zurück. Jede Zeile zeigt Verbindungsstatus, Name, **ID**, Typ, lieferndes Plugin und zugewiesene Kameras. Die ID ist die Kennung, die der Sensor in dem System trägt, aus dem er kommt, und unterscheidet zwei Sensoren mit gleichem Namen; bei einer Home-Assistant-Entität ist es die Entity-ID. Selbst angelegte Sensoren haben keine. Auf schmalen Bildschirmen rutscht die ID unter den Namen, und die Suche findet Sensoren darüber. Eine Kamera-Hardware-Zeile trägt ein Schloss neben ihrer Kamera; ein Sensor, der fürs Smart Home ausgeblendet ist, ein durchgestrichenes Auge neben dem Namen. Das Icon eines Sensors leuchtet, solange er aktiv ist, du erkennst also auf einen Blick, dass Bewegung läuft, eine Tür offen ist, ein Licht an ist oder eine Türklingel läutet. Suche und sortierbare Spalten halten große Setups überschaubar. Die schwebenden Buttons legen einen virtuellen Sensor an und starten den Auswahlmodus, in dem du beliebig viele Sensoren markierst und auf einmal löschst.
+Die Seite hat zwei Listen. **Übernommene Sensoren** hält alles, was camera.ui verwaltet, von Plugins bereitgestellte und virtuelle. Sensoren, die eine Kamera selbst mitbringt, ihre Bewegung, Batterie oder PTZ, sind standardmäßig ausgeblendet; der Einstellungs-Button neben dem Suchfeld holt sie zurück. Jede Zeile zeigt Verbindungsstatus, Name, **ID**, Typ, lieferndes Plugin und zugewiesene Kameras. Die ID ist die Adresse, die der Sensor in dem System trägt, aus dem er kommt, und unterscheidet zwei Sensoren mit gleichem Namen; bei einer Home-Assistant-Entität ist es die Entity-ID. Sie ist ein Etikett, keine Identität: Benennst du die Entität in Home Assistant um, bleibt der Sensor derselbe, mit Kameras, Automationen und Verlauf, nur die ID ändert sich. Selbst angelegte Sensoren haben keine. Der Punkt vor dem Namen unterscheidet vier Zustände: verbunden, nicht verbunden (das Plugin ist gestoppt), nicht verfügbar (das Plugin läuft, erreicht den Sensor aber nicht, oder die Quelle meldet ihn als nicht verfügbar) und in der Quelle entfernt (die Entität wurde dort gelöscht). Von allein wird nichts gelöscht: Ein entfernter Sensor bleibt, bis du ihn löschst, damit nichts, was auf ihn verweist, still kaputtgeht. Auf schmalen Bildschirmen rutscht die ID unter den Namen, und die Suche findet Sensoren darüber. Eine Kamera-Hardware-Zeile trägt ein Schloss neben ihrer Kamera; ein Sensor, der fürs Smart Home ausgeblendet ist, ein durchgestrichenes Auge neben dem Namen. Das Icon eines Sensors leuchtet, solange er aktiv ist, du erkennst also auf einen Blick, dass Bewegung läuft, eine Tür offen ist, ein Licht an ist oder eine Türklingel läutet. Suche und sortierbare Spalten halten große Setups überschaubar. Die schwebenden Buttons legen einen virtuellen Sensor an und starten den Auswahlmodus, in dem du beliebig viele Sensoren markierst und auf einmal löschst.
 
-**Entdeckt** darunter listet, was Plugins gefunden und angeboten haben, mit Name, ID, Typ, Raum und dem Plugin dahinter. Wähl eine Zeile und bestätige, dann wandert der Sensor in die Liste darüber und lässt sich Kameras zuweisen. Von allein kommt nichts: Ein Plugin mit einem großen Bestand dahinter, etwa Home Assistant mit hunderten Entitäten, bietet alles an, was es versteht, und überlässt dir die Auswahl. **Neu scannen** fragt die Plugins erneut, und die Liste aktualisiert sich von selbst, solange die Seite offen ist.
+**Entdeckt** darunter listet, was Plugins gefunden und angeboten haben, mit Name, ID, Typ, Raum und dem Plugin dahinter. Wähl eine Zeile und bestätige, dann wandert der Sensor in die Liste darüber und lässt sich Kameras zuweisen; mit dem Auswahl-Button in der Ecke markierst du viele auf einmal und übernimmst sie gemeinsam. Von allein kommt nichts: Ein Plugin mit einem großen Bestand dahinter, etwa Home Assistant mit hunderten Entitäten, bietet alles an, was es versteht, und überlässt dir die Auswahl. **Neu scannen** fragt die Plugins erneut, und die Liste aktualisiert sich von selbst, solange die Seite offen ist.
 
 <Shot src="/img/sensors/sensors-page.png" alt="Sensoren-Seite mit allen Sensoren" />
 
 Klicke auf eine Zeile, um den Sensor zu bearbeiten:
 
 - **Name.** Wie der Sensor überall erscheint.
-- **ID.** Die Kennung des Sensors in dem System, aus dem er kommt, schreibgeschützt. Wird nur gezeigt, wenn der Sensor eine hat.
+- **ID.** Die Adresse des Sensors in dem System, aus dem er kommt, schreibgeschützt. Wird nur gezeigt, wenn der Sensor eine hat.
 - **Zugewiesene Kameras.** Wähle beliebig viele Kameras. Der Sensor erscheint bei diesen Kameras und kann deren Erkennung auslösen. Kamera-Hardware ist fest an ihre Kamera gebunden und lässt sich nicht umziehen.
 - **Sensor freigeben.** Ob der Sensor in HomeKit, Home Assistant und MQTT erscheint.
 
@@ -52,10 +52,10 @@ Steuerbare Sensoren lassen sich direkt in diesem Dialog bedienen.
 Jede Zeile bietet ein paar Aktionen:
 
 - **Verlauf.** Die aufgezeichneten Zustandsänderungen des Sensors.
-- **Sensor löschen.** Virtuelle Sensoren und Überbleibsel eines Plugins, das nicht mehr verbunden ist. Ein Sensor, dessen Plugin verbunden ist, käme beim nächsten Verbinden ohnehin zurück, deshalb ist der Button dort deaktiviert.[^delete]
+- **Sensor löschen.** Jeder übernommene oder virtuelle Sensor, verbunden oder nicht. Nur die Hardware-Sensoren einer Kamera lassen sich nicht löschen, solange ihre Kamera verbunden ist, sie kämen mit ihr zurück.[^delete]
 
 ## Virtuelle Sensoren
 
 Hinter manchen Sensoren steckt kein Plugin: die erstellst du selbst auf der **Sensoren**-Seite. Siehe [Virtuelle Sensoren](/de/sensors/virtual).
 
-[^delete]: Löschen entfernt den Sensor und seine Zuweisungen. Ein gelöschter Plugin-Sensor wird als neuer Sensor angelegt, wenn sein Plugin ihn erneut registriert, und alles, was auf den alten verwies (Automationen, Smart-Home-Freigaben), muss auf den neuen zeigen.
+[^delete]: Löschen entfernt den Sensor und seine Zuweisungen. Ein gelöschter übernommener Sensor taucht wieder unter Entdeckt auf; übernimmst du ihn erneut, entsteht ein neuer Sensor, und alles, was auf den alten verwies (Automationen, Smart-Home-Freigaben), muss auf den neuen zeigen.

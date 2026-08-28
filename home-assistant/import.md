@@ -26,7 +26,9 @@ Unsupported entity types never show up. To keep specific entities out of the off
 
 ## Using imported sensors
 
-Adopted sensors show up in the [Sensors](/sensors/) view like any other. Assign one to a camera and it becomes a detection trigger for that camera, exactly like a native sensor: a Home Assistant motion detector or door contact can then start a camera event. Imported controls appear in the camera's Overview and in [automations](/automations/). On the [Sensors page](/sensors/setup#the-sensors-page) each imported sensor shows its Home Assistant entity id as its **ID**, so you can tell two entities with the same friendly name apart, and search by it.
+Adopted sensors show up in the [Sensors](/sensors/) view like any other. Assign one to a camera and it becomes a detection trigger for that camera, exactly like a native sensor: a Home Assistant motion detector or door contact can then start a camera event. Imported controls appear in the camera's Overview and in [automations](/automations/). On the [Sensors page](/sensors/setup#the-sensors-page) each imported sensor shows its Home Assistant entity id as its **ID**, so you can tell two entities with the same friendly name apart, and search by it. The entity id is only a label: camera.ui identifies the entity by its registry id, so renaming it in Home Assistant keeps the sensor with everything assigned to it. If you delete the entity in Home Assistant, the sensor stays and is marked as removed until you delete it here too; if Home Assistant is down, it just shows as unavailable.
+
+Adopted entities are remembered by camera.ui, not by the plugin, so they survive restarts of both. Entities adopted with plugin version 1.0.11 still carry the old identity: after the update they show up under Discovered again and their old entries are marked as removed. Delete those and adopt the entities once more.
 
 ## Running the integration too
 

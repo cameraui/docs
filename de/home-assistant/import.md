@@ -26,7 +26,9 @@ Nicht unterstützte Entitätstypen tauchen gar nicht erst auf. Um bestimmte Enti
 
 ## Importierte Sensoren nutzen
 
-Übernommene Sensoren erscheinen in der [Sensoren](/de/sensors/)-Ansicht wie alle anderen. Weist du einen einer Kamera zu, wird er zu einem Erkennungs-Trigger für diese Kamera, genau wie ein nativer Sensor: Ein Home-Assistant-Bewegungsmelder oder Türkontakt kann dann ein Kamera-Ereignis starten. Importierte Steuerungen erscheinen in der Übersicht der Kamera und in [Automationen](/de/automations/). Auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite) zeigt jeder importierte Sensor seine Home-Assistant-Entity-ID als **ID**, du kannst also zwei Entitäten mit gleichem Anzeigenamen unterscheiden und danach suchen.
+Übernommene Sensoren erscheinen in der [Sensoren](/de/sensors/)-Ansicht wie alle anderen. Weist du einen einer Kamera zu, wird er zu einem Erkennungs-Trigger für diese Kamera, genau wie ein nativer Sensor: Ein Home-Assistant-Bewegungsmelder oder Türkontakt kann dann ein Kamera-Ereignis starten. Importierte Steuerungen erscheinen in der Übersicht der Kamera und in [Automationen](/de/automations/). Auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite) zeigt jeder importierte Sensor seine Home-Assistant-Entity-ID als **ID**, du kannst also zwei Entitäten mit gleichem Anzeigenamen unterscheiden und danach suchen. Die Entity-ID ist nur ein Etikett: camera.ui erkennt die Entität an ihrer Registry-ID, ein Umbenennen in Home Assistant lässt den Sensor also mit allem, was ihm zugewiesen ist, bestehen. Löschst du die Entität in Home Assistant, bleibt der Sensor und wird als entfernt markiert, bis du ihn auch hier löschst; ist Home Assistant nicht erreichbar, steht er nur auf nicht verfügbar.
+
+Übernommene Entitäten merkt sich camera.ui, nicht das Plugin, sie überstehen also Neustarts von beiden. Entitäten, die mit Plugin-Version 1.0.11 übernommen wurden, tragen noch die alte Identität: Nach dem Update tauchen sie wieder unter Entdeckt auf, und ihre alten Einträge sind als entfernt markiert. Lösch die und übernimm die Entitäten noch einmal.
 
 ## Die Integration parallel betreiben
 
