@@ -146,10 +146,10 @@ camera.ui uses these ports (already covered by host networking):
 | 2001 | tcp | RTSP |
 | 2002 | tcp | SRTP |
 | 2003 | tcp | RTMP |
-| 2004 | tcp | WebRTC |
+| 2004 | tcp/udp | WebRTC |
 | 1883 | tcp | MQTT broker, only if you enable the built-in one |
 
-WebRTC also uses UDP on ports picked per connection. Without host networking, live view falls back to TCP on 2004.
+WebRTC media runs over UDP on 2004, with TCP on the same port as fallback. Without host networking, map both.
 
 ## Data & backups
 
