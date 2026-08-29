@@ -13,7 +13,7 @@ title: Timeline & Wiedergabe
 - **Scrubbe** flüssig entlang der Timeline. camera.ui nutzt zum Scrubben den niedrig aufgelösten Stream, sodass es schnell bleibt.
 - **Wiedergabe und Pause**, 30 Sekunden zurück oder vor springen und die **Geschwindigkeit** zwischen 0.25x und 8x ändern.
 - **Sieh auf einen Blick**, was passiert ist. Ereignis-Markierungen auf der Timeline zeigen ein Vorschaubild. Klick eines an, um zu diesem Moment zu springen.
-- **Klingeln und Alarme erkennen.** Ein Türklingel-Druck, eine Sirene, eine Alarmanlage oder ein Kontakt-Ereignis erscheint als volle Ereignis-Leiste mit eigenem Icon und Vorschaubild, auch wenn die Kamera nichts gesehen hat. Es fällt auf, statt zwischen Bewegungs-Markierungen unterzugehen. Ein Klingeln während eines laufenden Bewegungs-Ereignisses erscheint sofort, nicht erst wenn die Bewegung endet.[^conf]
+- **Klingeln und Alarme erkennen.** Ein Türklingel-Druck, eine Sirene, eine Alarmanlage oder ein Kontakt-Ereignis erscheint als volle Ereignis-Leiste mit eigenem Icon und Vorschaubild, auch wenn die Kamera nichts gesehen hat. Es fällt auf, statt zwischen Bewegungs-Markierungen unterzugehen. Ein Klingeln während eines laufenden Bewegungs-Ereignisses erscheint sofort, nicht erst wenn die Bewegung endet.
 - **Nach Ereignistyp filtern.** Der Filter-Button wählt, welche Ereignistypen erscheinen, auf der Timeline und in der Erkennungsliste. Die Wahl bleibt erhalten.
 - **Nach Zone filtern.** Aktiviere im Filter **Nach Zone filtern** und markiere Bereiche im Kamerabild, um nur dort erkannte Ereignisse zu behalten.
 - **Zoome** die Timeline rein und raus, vom groben Überblick bis auf Sekunden genau. In der tiefsten Zoomstufe wird das Scrubben bildgenau und die Timeline zeigt ein **Feinsteuerung**-Badge.
@@ -52,4 +52,3 @@ Wähle den **Export**-Button auf der Timeline, um das Zuschneiden einzuschalten.
 
 Admins können aufgenommenes Material direkt aus der Timeline löschen. Wähle **Aufnahmen löschen**, zieh die Griffe über den Zeitraum, der weg soll, und dann **Auswahl löschen**. Das Material und alle Ereignisse darin werden endgültig entfernt, minutenweise, und die Änderung erscheint auf jedem offenen Gerät. Die letzten Minuten werden gerade noch geschrieben und lassen sich noch nicht löschen, warte also kurz und versuch es erneut.
 
-[^conf]: Damit diese Ereignisse auch den Filter **Nur mit Aufnahme** und den Konfidenzfilter unter Aufnahmen passieren, braucht es ein aktuelles camera-ui-nvr.

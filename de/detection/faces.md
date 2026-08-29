@@ -31,7 +31,7 @@ Gesichter, die zu keiner angelegten Person passen, sammeln sich unter **Unbekann
 
 ## Ein Gesicht ignorieren
 
-Manche Gesichter willst du nie wieder sehen, etwa einen vorbeigehenden Fremden oder den Postboten. Ignoriere eines, und camera.ui sammelt es nicht mehr.[^nvrupdate]
+Manche Gesichter willst du nie wieder sehen, etwa einen vorbeigehenden Fremden oder den Postboten. Ignoriere eines, und camera.ui sammelt es nicht mehr.
 
 - **Ein Gesicht oder eine ganze Gruppe ignorieren.** Jedes unbekannte Gesicht hat einen Ignorieren-Button, und jede Gruppe einen für alle ihre Gesichter auf einmal. Im Auswahlmodus kannst du mehrere auf einmal ignorieren.
 - **Neue Sichtungen werden verworfen.** Ist jemand ignoriert, tauchen spätere Aufnahmen nicht wieder als unbekannte Gesichter auf.
@@ -48,13 +48,11 @@ Unter **Einstellungen → [Aufnahmen](/de/recording/)** hat die Gesichtserkennun
 Pro Kamera gibt es unter [Einstellungen → Erkennung](/de/cameras/settings) zwei Gesichts-Einstellungen:
 
 - **Gesichts-Konfidenz.** Gesichter, bei denen die KI unsicherer ist als dieser Wert, werden für Ereignisse und Automationen ignoriert (0 bis 1, Standard 0,5).
-- **Trefferschwelle.** Wie sicher der Abgleich mit deinen hinterlegten Personen sein muss, bevor jemand benannt wird (0,3 bis 0,95, Standard 0,55). Höher heißt weniger falsche Namen, niedriger heißt, die Kamera erkennt Personen öfter. Eine Kamera, die die Straße hinunterschaut, darf mehr verlangen als die an der Tür.[^perc]
+- **Trefferschwelle.** Wie sicher der Abgleich mit deinen hinterlegten Personen sein muss, bevor jemand benannt wird (0,3 bis 0,95, Standard 0,55). Höher heißt weniger falsche Namen, niedriger heißt, die Kamera erkennt Personen öfter. Eine Kamera, die die Straße hinunterschaut, darf mehr verlangen als die an der Tür.
 
-[^perc]: Braucht camera-ui-nvr 1.3.16 oder neuer.
 
 ## Erneut scannen
 
 Nachdem du jemanden neu angelegt hast, wähle **Bestehende Events erneut scannen**, um vergangene Aufnahmen erneut zu prüfen und mit dem neu bekannten Gesicht zu markieren.
 
 [^license]: Gesichtserkennung (der Abgleich mit deinen angelegten Personen) baut auf Aufnahmen auf und erfordert ein aktives camera.ui-Abo. Die reine Gesichts-Detection (dass ein Gesicht da ist) gehört zur kostenlosen Erkennung.
-[^nvrupdate]: Braucht ein aktuelles camera-ui-nvr. Aktualisiere es, wenn der Ignorieren-Button fehlt.

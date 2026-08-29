@@ -24,7 +24,7 @@ Push aufs Handy braucht ein paar Dinge. Fehlt eines davon, landen Alarme weiterh
 
 ## Push bleibt privat
 
-Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui Cloud, Google und Apple reichen nur den versiegelten Umschlag weiter; Kameraname, Alarmtext und der Link darin sind für alle drei unlesbar.[^e2ee] Das Vorschaubild macht gar keinen Umweg: dein Handy lädt es direkt von deinem Server. Ist **Video in Push** an, wird der Clip genauso zugestellt: Er bleibt im versiegelten Push und streamt von deinem eigenen Server, die Cloud sieht also nie ein Bild.
+Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui Cloud, Google und Apple reichen nur den versiegelten Umschlag weiter; Kameraname, Alarmtext und der Link darin sind für alle drei unlesbar. Das Vorschaubild macht gar keinen Umweg: dein Handy lädt es direkt von deinem Server. Ist **Video in Push** an, wird der Clip genauso zugestellt: Er bleibt im versiegelten Push und streamt von deinem eigenen Server, die Cloud sieht also nie ein Bild.
 
 ## Deine Benachrichtigungs-Einstellungen
 
@@ -65,9 +65,8 @@ Mit aktivierten KI-Beschreibungen sammeln sich die Texte eines Ereignisses und k
 Manche Ereignisse sind zu wichtig, um sie zurückzuhalten. **Kritische Alarme**, etwa ein Türklingel-Läuten oder ein Alarm, werden sofort zugestellt und ignorieren sowohl den Cooldown als auch die Ruhezeiten.
 
 [^license]: Push-Benachrichtigungen an die Mobile-Apps erfordern ein aktives camera.ui-Abo.
-[^e2ee]: Die Ende-zu-Ende-Verschlüsselung braucht eine aktuelle Mobile-App und ein aktuelles NVR-Plugin. Ältere Versionen erhalten Push weiterhin, aber ohne die Verschlüsselung.
 [^device]: Die Zeile **Dieses Gerät** ist die Ausnahme. Sie betrifft nur das Handy oder den Computer, an dem du gerade bist.
 [^admin]: Den Bereich mit den System-Benachrichtigungen sehen nur Admins.
-[^nvr]: Das Senden übernimmt das NVR-Plugin, eine Kamera ohne Plugin speichert die Einstellungen also und nutzt sie, sobald eins installiert ist. Braucht camera-ui-nvr 1.3.16.
+[^nvr]: Das Senden übernimmt das NVR-Plugin, eine Kamera ohne Plugin speichert die Einstellungen also und nutzt sie, sobald eins installiert ist.
 [^ai]: KI-Beschreibungen stammen vom NVR-Plugin. Schalte sie in dessen Einstellungen ein.
 [^androidframes]: Android-Benachrichtigungen können kein Video abspielen, deshalb zieht die aktuelle App Einzelbilder aus dem Clip und blättert sie durch. Antippen öffnet weiterhin die Aufnahme.

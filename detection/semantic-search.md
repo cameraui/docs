@@ -26,4 +26,4 @@ A backend's plugin settings offer more than one CLIP model. Embeddings are only 
 
 [^license]: Semantic search builds on recording, which requires an active camera.ui subscription.
 
-[^reindex]: Needs camera-ui-nvr 1.3.16 or newer. Without a CLIP plugin the button does not appear.
+[^reindex]: Without a CLIP plugin the button does not appear.

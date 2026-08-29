@@ -6,7 +6,7 @@ title: KI-Beschreibungen
 
 camera.ui kann ein generatives KI-Modell nutzen, um zu beschreiben, was vor der Kamera passiert. Es schreibt eine kurze Zusammenfassung jedes Moments in einem Ereignis: einen Titel, was passiert ist, eine benachrichtigungstaugliche Zeile und eine Bedrohungsstufe. Es benennt Personen, Kennzeichen und erkannte Bewegung.
 
-Namen und Kennzeichen kommen aus dem, was [Gesichtserkennung](/de/detection/faces) und [Kennzeichenlesung](/de/detection/license-plates) tatsächlich bestätigt haben, nicht aus dem, was das Modell im Bild zu lesen glaubt. Eine Beschreibung hängt einem Auto also kein Kennzeichen an, das nie gelesen wurde.[^genai-reads]
+Namen und Kennzeichen kommen aus dem, was [Gesichtserkennung](/de/detection/faces) und [Kennzeichenlesung](/de/detection/license-plates) tatsächlich bestätigt haben, nicht aus dem, was das Modell im Bild zu lesen glaubt. Eine Beschreibung hängt einem Auto also kein Kennzeichen an, das nie gelesen wurde.
 
 <Shot src="/img/detection/genai-description.png" alt="Eine KI-generierte Ereignisbeschreibung" />
 
@@ -34,4 +34,3 @@ Ein gezeichneter Grundriss ergänzt die Prompts um Text-Kontext: wie die Räume 
 
 [^license]: KI-Beschreibungen bauen auf Aufnahmen auf, die ein aktives camera.ui-Abo erfordern.
 
-[^genai-reads]: Braucht camera-ui-nvr 1.3.16 oder neuer.

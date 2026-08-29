@@ -6,7 +6,7 @@ title: AI descriptions
 
 camera.ui can use a generative-AI model to describe what happens on camera. It writes a short summary of each moment in an event: a title, what happened, a notification-friendly line, and a threat level. It names people, plates, and detected movement.
 
-Names and plates come from what [face recognition](/detection/faces) and [plate reading](/detection/license-plates) actually confirmed, not from what the model thinks it can read in the picture. A description will not put a plate on a car that was never read.[^genai-reads]
+Names and plates come from what [face recognition](/detection/faces) and [plate reading](/detection/license-plates) actually confirmed, not from what the model thinks it can read in the picture. A description will not put a plate on a car that was never read.
 
 <Shot src="/img/detection/genai-description.png" alt="An AI-generated event description" />
 
@@ -34,4 +34,3 @@ A drawn floor plan adds text context to the prompts: how the rooms connect, walk
 
 [^license]: AI descriptions build on recording, which requires an active camera.ui subscription.
 
-[^genai-reads]: Needs camera-ui-nvr 1.3.16 or newer.

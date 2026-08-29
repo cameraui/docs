@@ -118,9 +118,8 @@ Once a type has been inside during a stretch of activity, that whole stretch ale
 
 The master switch, the cooldown and quiet hours are separate from the zones and apply on top.
 
-A doorbell press, a contact sensor, a siren or an audio alert is not an object detection, so an alert zone never holds it back.[^alertplugin]
+A doorbell press, a contact sensor, a siren or an audio alert is not an object detection, so an alert zone never holds it back.
 
-[^alertplugin]: Needs camera-ui-nvr 1.3.15 or newer, the **Faces** and **Plates** lists need 1.3.16. On an older plugin the zones are saved, but the camera keeps using its old object list.
 
 ## Privacy zones
 

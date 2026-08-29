@@ -10,7 +10,7 @@ Audio detection listens to a camera's audio for specific sounds, such as glass b
 
 Enable the audio plugin for a camera in [Settings → Plugins](/cameras/settings) (see [Set up sensors](/sensors/setup)). That is the whole setup: the plugin has no settings of its own, it listens for the standard sound list and takes its confidence from the camera.
 
-The sounds it recognizes are glass breaking, screaming, gunshots, alarms (smoke, car, siren), a doorbell, knocking, a dog bark, a cat, a baby crying, and speech.[^yamnet]
+The sounds it recognizes are glass breaking, screaming, gunshots, alarms (smoke, car, siren), a doorbell, knocking, a dog bark, a cat, a baby crying, and speech.
 
 ## Settings on the camera
 
@@ -20,4 +20,3 @@ Audio detection is tuned in [Settings → Detection](/cameras/settings), per cam
 - **Audio confidence.** Sounds the detector is less sure about than this are dropped (0 to 1, default 0.7). Raise it if you get false glass-break or gunshot alarms, lower it if real ones are missed.
 - **Audio timeout.** How long an audio event stays active after the last trigger (minimum 10 seconds).
 
-[^yamnet]: Needs camera-ui-audio-yamnet 1.2.4 or newer.

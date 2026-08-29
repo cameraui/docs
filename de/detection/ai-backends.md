@@ -24,9 +24,8 @@ CoreML, OpenVINO, ONNX und NCNN liefern Objekt-, Gesichts- und Kennzeichen-Erken
 
 In den Plugin-Settings eines Backends wählst du ein **Modell** pro Aufgabe (Objekt, Gesicht, Kennzeichen, CLIP). Größere Modelle sind genauer, aber schwerer. camera.ui lädt die benötigten Modelle automatisch herunter.
 
-Die Konfidenz wird hier nicht gesetzt. Objekt-, Gesichts- und Kennzeichen-Erkennung folgen den Werten in den [Erkennungs-Einstellungen](/de/cameras/settings) der Kamera, eine Kamera kann also strenger sein als die andere, und eine Änderung greift sofort.[^mlconf]
+Die Konfidenz wird hier nicht gesetzt. Objekt-, Gesichts- und Kennzeichen-Erkennung folgen den Werten in den [Erkennungs-Einstellungen](/de/cameras/settings) der Kamera, eine Kamera kann also strenger sein als die andere, und eine Änderung greift sofort.
 
-[^mlconf]: Braucht ein aktuelles KI-Backend-Plugin. Mit einem älteren nutzt das Plugin weiter seinen eigenen Schwellwert.
 
 Welche Objekttypen eine Kamera meldet, legst du in ihren [Objektzonen](/de/cameras/zones-and-masks#objektzonen) fest. Bewegung und Audio sind davon nicht betroffen.
 

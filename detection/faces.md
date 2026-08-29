@@ -31,7 +31,7 @@ Faces that don't match anyone enrolled collect under **Unknown Faces**, grouped 
 
 ## Ignoring a face
 
-Some faces you never want to see again, like a passing stranger or the mail carrier. Ignore one and camera.ui stops collecting them.[^nvrupdate]
+Some faces you never want to see again, like a passing stranger or the mail carrier. Ignore one and camera.ui stops collecting them.
 
 - **Ignore a face or a whole group.** Each unknown face has an ignore button, and every group has one for all its faces at once. In selection mode you can ignore several at a time.
 - **New sightings are dropped.** Once someone is ignored, their later shots don't come back as unknown faces.
@@ -48,13 +48,11 @@ In **Settings → [Recordings](/recording/)**, face recognition has:
 Per camera, [Settings → Detection](/cameras/settings) has two face settings:
 
 - **Face confidence.** Faces the AI is less sure about than this are ignored for events and automations (0 to 1, default 0.5).
-- **Match threshold.** How certain the match against your enrolled people has to be before someone is named (0.3 to 0.95, default 0.55). Higher means fewer wrong names, lower means the camera recognizes people more often. A camera looking down the street can demand more than the one at the door.[^perc]
+- **Match threshold.** How certain the match against your enrolled people has to be before someone is named (0.3 to 0.95, default 0.55). Higher means fewer wrong names, lower means the camera recognizes people more often. A camera looking down the street can demand more than the one at the door.
 
-[^perc]: Needs camera-ui-nvr 1.3.16 or newer.
 
 ## Rescanning
 
 After enrolling someone new, select **Rescan existing events** to re-check past recordings and tag them with the newly known face.
 
 [^license]: Face recognition (matching faces against your enrolled people) builds on recording and requires an active camera.ui subscription. Detecting that a face is present is part of the free detection.
-[^nvrupdate]: Needs a current camera-ui-nvr. Update it if the ignore button is missing.

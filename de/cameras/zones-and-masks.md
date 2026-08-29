@@ -118,9 +118,8 @@ War ein Typ während eines Aktivitäts-Abschnitts einmal drin, alarmiert dieser 
 
 Hauptschalter, Cooldown und Ruhezeiten sind von den Zonen getrennt und greifen zusätzlich.
 
-Ein Türklingel-Druck, ein Kontaktsensor, eine Sirene oder ein Audio-Alarm ist keine Objekterkennung, eine Alarmzone hält sie also nie zurück.[^alertplugin]
+Ein Türklingel-Druck, ein Kontaktsensor, eine Sirene oder ein Audio-Alarm ist keine Objekterkennung, eine Alarmzone hält sie also nie zurück.
 
-[^alertplugin]: Braucht camera-ui-nvr 1.3.15 oder neuer, die Listen **Gesichter** und **Kennzeichen** ab 1.3.16. Mit einem älteren Plugin werden die Zonen gespeichert, aber die Kamera nutzt weiter ihre alte Objektliste.
 
 ## Privatzonen
 

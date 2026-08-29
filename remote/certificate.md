@@ -12,6 +12,8 @@ The mobile apps and remote workers verify the server against camera.ui's own cer
 
 Your certificate is served only when a client asks for a name it covers. Everything else, including every connection to an IP address, still gets the internal one. Both exist side by side.
 
+The internal certificate covers `127.0.0.1`, the machine's private network addresses, and whatever you picked under **Settings → Remote → Network**: the server addresses and the local address. A public address is only included when you select it there. That is also why a browser can start warning again after you change those: the certificate is reissued for the new set, and the exception you stored was for the old one.
+
 ## Uploading your own
 
 Settings → System → Certificate → **Upload**. Uploading and removing is limited to the master account, and the desktop app has no such card.
@@ -40,12 +42,6 @@ Uploading through the interface works too, it just has to be repeated at every r
 ## Removing it
 
 Settings → System → Certificate → **Remove**. Every name goes back to the internal certificate.
-
-## When a name is both
-
-If you enter the same host name as a local address under Settings → Remote → Network, older iOS apps refuse to connect over it.[^ios] camera.ui writes a warning to the log at startup when it sees that combination. Use a name for the certificate that the apps do not use inside your network, or update the app.
-
-[^ios]: The apps pin your instance's certificate authority for local addresses, and older versions accept nothing else for those names, not even a publicly trusted certificate. Android is unaffected.
 
 ## Next steps
 

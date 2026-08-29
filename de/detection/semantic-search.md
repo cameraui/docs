@@ -26,4 +26,4 @@ Die Plugin-Einstellungen eines Backends bieten mehr als ein CLIP-Modell an. Embe
 
 [^license]: Die semantische Suche basiert auf Aufnahmen, die ein aktives camera.ui-Abo erfordern.
 
-[^reindex]: Braucht camera-ui-nvr 1.3.16 oder neuer. Ohne CLIP-Plugin erscheint der Button nicht.
+[^reindex]: Ohne CLIP-Plugin erscheint der Button nicht.

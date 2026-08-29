@@ -12,6 +12,8 @@ Die mobilen Apps und entfernte Worker prüfen den Server gegen die eigene Zertif
 
 Dein Zertifikat wird nur ausgeliefert, wenn ein Client nach einem Namen fragt, den es abdeckt. Alles andere, jede Verbindung über eine IP-Adresse eingeschlossen, bekommt weiterhin das interne. Beide existieren nebeneinander.
 
+Das interne Zertifikat deckt `127.0.0.1` ab, die privaten Netzwerkadressen der Maschine und das, was du unter **Einstellungen → Remote Zugriff → Netzwerk** ausgewählt hast: die Serveradressen und die lokale Adresse. Eine öffentliche Adresse kommt nur hinein, wenn du sie dort auswählst. Das ist auch der Grund, warum ein Browser nach einer Änderung dort wieder warnen kann: Das Zertifikat wird für den neuen Satz neu ausgestellt, und die gespeicherte Ausnahme galt dem alten.
+
 ## Eigenes Zertifikat hochladen
 
 Einstellungen → System → Zertifikat → **Hochladen**. Hochladen und Entfernen kann nur das Master-Konto, und in der Desktop-App gibt es die Karte nicht.
@@ -40,12 +42,6 @@ Damit wird die automatische Erneuerung zur Frage, wie du in dieses Verzeichnis s
 ## Wieder entfernen
 
 Einstellungen → System → Zertifikat → **Entfernen**. Alle Namen fallen auf das interne Zertifikat zurück.
-
-## Wenn ein Name doppelt vorkommt
-
-Trägst du denselben Hostnamen unter Einstellungen → Remote Zugriff → Netzwerk als lokale Adresse ein, verweigern ältere iOS-Apps die Verbindung darüber.[^ios] camera.ui schreibt beim Start eine Warnung ins Log, wenn es diese Kombination sieht. Nimm für das Zertifikat einen Namen, den die Apps im eigenen Netz nicht verwenden, oder aktualisiere die App.
-
-[^ios]: Die Apps pinnen für lokale Adressen die Zertifizierungsstelle deiner Instanz, und ältere Versionen akzeptieren für diese Namen nichts anderes, auch kein öffentlich vertrauenswürdiges Zertifikat. Android ist nicht betroffen.
 
 ## Nächste Schritte
 

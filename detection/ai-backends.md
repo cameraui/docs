@@ -24,9 +24,8 @@ CoreML, OpenVINO, ONNX, and NCNN provide object, face, and license-plate detecti
 
 In a backend's plugin settings you choose a **model** for each task (object, face, license plate, CLIP). Larger models are more accurate but heavier. camera.ui downloads the models it needs automatically.
 
-Confidence is not set here. Object, face and plate detection follow the values in the camera's [detection settings](/cameras/settings), so one camera can be stricter than another, and a change takes effect right away.[^mlconf]
+Confidence is not set here. Object, face and plate detection follow the values in the camera's [detection settings](/cameras/settings), so one camera can be stricter than another, and a change takes effect right away.
 
-[^mlconf]: Needs a current AI backend plugin. On an older one the plugin keeps using its own threshold.
 
 Which object types a camera reports is set in its [object zones](/cameras/zones-and-masks#object-zones). Motion and audio are not affected.
 

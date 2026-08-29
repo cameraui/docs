@@ -24,7 +24,7 @@ Phone push needs a few things in place. If any is missing, alerts still land in 
 
 ## Push stays private
 
-Your server seals every alert before it leaves your network. camera.ui Cloud, Google and Apple only pass the sealed envelope along; the camera name, the alert text and the link inside are unreadable to all three.[^e2ee] The thumbnail takes no detour at all: your phone loads it straight from your server. When **Video in Push** is on, the clip is delivered the same way: it stays inside the sealed push and streams from your own server, so the cloud never sees a frame.
+Your server seals every alert before it leaves your network. camera.ui Cloud, Google and Apple only pass the sealed envelope along; the camera name, the alert text and the link inside are unreadable to all three. The thumbnail takes no detour at all: your phone loads it straight from your server. When **Video in Push** is on, the clip is delivered the same way: it stays inside the sealed push and streams from your own server, so the cloud never sees a frame.
 
 ## Your notification settings
 
@@ -65,9 +65,8 @@ With AI descriptions on, an event's texts collect and come through as a single s
 Some events are too important to hold back. **Critical alerts**, like a doorbell ring or an alarm, are delivered immediately and ignore both the cooldown and quiet hours.
 
 [^license]: Push notifications to the mobile apps require an active camera.ui subscription.
-[^e2ee]: End-to-end encryption needs a current mobile app and NVR plugin. Older versions keep receiving push, but without the encryption.
 [^device]: The **This device** row is the exception. It only affects the phone or computer you are on.
 [^admin]: Only admins see the system notifications section.
-[^nvr]: Sending the push is the NVR plugin's job, so a camera without one saves the settings and starts using them once a plugin is installed. Needs camera-ui-nvr 1.3.16.
+[^nvr]: Sending the push is the NVR plugin's job, so a camera without one saves the settings and starts using them once a plugin is installed.
 [^ai]: AI descriptions come from the NVR plugin. Turn them on in its settings.
 [^androidframes]: Android notifications cannot play video, so the current app pulls frames from the clip and cycles them. Tapping still opens the recording.
