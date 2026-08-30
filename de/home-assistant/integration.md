@@ -191,14 +191,26 @@ Die Geräte-Trigger decken `start`, `end` und `recognized` ab. Für den Zustand 
 
 Die Einrichtung fügt der Home Assistant Seitenleiste einen **camera.ui**-Eintrag hinzu, der die komplette camera.ui Oberfläche einbettet. Das Panel ist **nur für Admins**: Es erscheint für Administrator-Konten und bleibt für alle anderen verborgen.
 
-## Lovelace-Card
+## Dashboard-Karten
 
-Eine camera.ui Lovelace-Card kommt mit der Integration und registriert sich selbst als Ressource, sie ist also ohne manuelle Installation bereit für ein Dashboard. Das Bundle bringt eine Einzelkamera-Card und eine Grid-Card mit.
+Drei Karten kommen mit der Integration und melden sich selbst an, sie stehen also ohne Ressourcen-Schritt in der Kartenauswahl: eine Kamera, eine Camview-Ansicht und ein Streifen mit den letzten Ereignissen. Ihre Optionen stehen unter [Dashboard-Karten](/de/home-assistant/card).
 
-Details zu Optionen und Layouts findest du auf der Seite [Lovelace-Card](/de/home-assistant/card).
+### Kartenzugriff
+
+Die Optionen der Integration legen fest, wer sie nutzen darf: standardmäßig **nur Administratoren**, wahlweise **alle Home-Assistant-Nutzer**. Die Karten erreichen camera.ui über Home Assistant mit dem Token der Integration, wer sie freigibt, gibt also jedem Home-Assistant-Nutzer das, was dieses Token sehen darf. **Viewer-Token** nimmt ein zweites camera.ui-Token, das für alle ohne Home-Assistant-Adminrechte verwendet wird, damit lässt sich ein eingeschränktes camera.ui-Konto dahinter setzen.
+
+Ist dein camera.ui-Server zu alt für die Karten, meldet Home Assistant ein Reparatur-Problem und nennt die nötige Version. Die Entitäten laufen so oder so weiter.
+
+## Aufnahmen im Medien-Browser
+
+Ereignisse mit Aufnahme erscheinen im **Medien**-Browser von Home Assistant unter camera.ui: erst die Kameras, dazu ein Eintrag **Alle Kameras**, dann die Tage, dann die Ereignisse selbst, jedes mit Vorschaubild und benannt nach Uhrzeit und Erkanntem. Ein Klick spielt den Clip ab, und zwar schon während der Export noch läuft. Jeder Eintrag lässt sich per `media_player.play_media` auf einen Fernseher oder Lautsprecher schicken.
+
+<Shot src="/img/home-assistant/media-browser.png" alt="Der Medien-Browser mit den Ereignissen eines Tages und Vorschaubildern" />
+
+**Clip-Qualität** in den Optionen bestimmt, was diese Clips nutzen: den Sub-Stream, klein und schnell, oder den Haupt-Stream in voller Qualität.
 
 ## Nächste Schritte
 
 - **[App](/de/home-assistant/app)** — camera.ui selbst als Home Assistant OS App betreiben.
-- **[Lovelace-Card](/de/home-assistant/card)** — die mitgelieferten Dashboard-Cards konfigurieren.
+- **[Dashboard-Karten](/de/home-assistant/card)** — die Karten auf einem Dashboard konfigurieren.
 - **[Sensoren](/de/sensors/setup)** — einer Kamera Sensoren zuweisen, damit sie Home Assistant erreichen.

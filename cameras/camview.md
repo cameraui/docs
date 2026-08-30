@@ -30,9 +30,10 @@ Select **Done** when you're finished. On phones the cameras sit in one column, s
 
 ## Fit the picture to the card
 
-Cameras rarely match the shape of their tile, so a wide stream in a tall slot leaves black bars. In **Rearrange**, the **Picture in the card** button offers three choices:
+Cameras rarely match the shape of their tile, so a wide stream in a tall slot leaves black bars. In **Rearrange**, the **Picture in the card** button offers four choices:
 
 - **Keep aspect ratio** shows the whole picture and lives with the bars. This is the default.
+- **Fit inside** also keeps the whole picture, sized to the card in both directions, with black bars where the shapes differ.
 - **Crop to fit** fills the card and cuts off the edges.
 - **Stretch to fit** fills the card and distorts the picture.
 

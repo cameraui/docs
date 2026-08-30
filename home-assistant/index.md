@@ -39,7 +39,7 @@ You get, per camera:
 - **Sensors** across the `binary_sensor`, `sensor`, `switch`, `light`, `siren`, `lock`, `cover`, and `alarm_control_panel` domains. Switches, lights, sirens, locks, covers, and alarm panels are controllable from Home Assistant; contact and measurement sensors are read-only.
 - **A PTZ service**, `cameraui.ptz`, for continuous, stop, move, absolute, preset, and home actions.
 
-On top of that, the integration registers the `cameraui-card` Lovelace resource, embeds the full camera.ui web UI as a sidebar panel, and fires a `cameraui_event` on the HA event bus for every detection, with device triggers wired up for the automation editor. Setup can start from zeroconf: camera.ui advertises itself over mDNS, so host and port are pre-filled and you only enter an access token.
+On top of that, the integration registers its dashboard cards, embeds the full camera.ui web UI as a sidebar panel, and fires a `cameraui_event` on the HA event bus for every detection, with device triggers wired up for the automation editor. Setup can start from zeroconf: camera.ui advertises itself over mDNS, so host and port are pre-filled and you only enter an access token.
 
 See **[Integration](/home-assistant/integration)** for the full setup.
 
@@ -63,7 +63,7 @@ MQTT discovery is documented with the rest of the broker settings on the [MQTT a
 | PTZ service | Yes | No |
 | Per-camera connectivity sensor | No separate one | Yes |
 | Embedded web UI panel | Yes | No |
-| Lovelace card auto-registered | Yes | No |
+| Dashboard cards auto-registered | Yes | No |
 | `cameraui_event` + device triggers | Yes | No |
 | Discovery | zeroconf (mDNS) | over MQTT |
 
@@ -73,16 +73,16 @@ The integration and MQTT both send camera.ui out to Home Assistant. The **Home A
 
 See **[Import from Home Assistant](/home-assistant/import)** for setup.
 
-## The Lovelace card
+## The dashboard cards
 
-The `cameraui-card` shows a camera's live stream with a PTZ overlay on your dashboards. With the integration it is registered for you automatically; you just add it to a view.
+Three cards put a camera, a camview view or the recent events on your dashboards, and a click opens the camera.ui dialog with the timeline. The integration registers them for you; you just add one to a view.
 
-See **[Lovelace card](/home-assistant/card)** for how to place and configure it.
+See **[Dashboard cards](/home-assistant/card)** for the options.
 
 ## Next steps
 
 - **[App](/home-assistant/app)** — run the camera.ui server inside Home Assistant OS.
 - **[Integration](/home-assistant/integration)** — connect a camera.ui server and get cameras, sensors, and PTZ as HA entities.
-- **[Lovelace card](/home-assistant/card)** — put a camera with PTZ on your dashboard.
+- **[Dashboard cards](/home-assistant/card)** — put cameras, a view or recent events on your dashboard.
 - **[Import from Home Assistant](/home-assistant/import)** — bring Home Assistant's own sensors and controls into camera.ui.
 

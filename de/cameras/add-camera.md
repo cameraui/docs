@@ -58,6 +58,8 @@ Jede Streaming-Quelle hat ein paar Optionen:
 - **Vorladen.** Lädt den Stream vor, sodass die Kamera-Ansicht mit minimaler Verzögerung öffnet.
 - **Audio stummschalten.** Entfernt die Audiospur dieser Quelle. Standardmäßig aus.
 - **Gegensprechen deaktivieren.** Entfernt den Rücksprechkanal dieser Quelle, der Mikrofon-Button verschwindet. Standardmäßig aus.
+- **Stream-Timeout.** Sekunden ohne Video, bevor der Stream neu verbunden wird. Leer sind es 5 Sekunden bei einer selbst eingetragenen Kamera und 60 bei einer Quelle aus einem Plugin, weil das Plugin seine Kamera ohnehin überwacht.
+- **Verbindungs-Timeout.** Sekunden, die die Kamera für jeden Verbindungsschritt bekommt. Für langsam aufwachende Kameras erhöhen, etwa ein Batteriemodell. Leer bedeutet 5.
 
 Mit aktivem Hot Modus und Vorladen öffnet ein Stream nahezu sofort, egal ob die Kamera H.264 oder H.265 nutzt.
 

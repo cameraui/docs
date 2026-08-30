@@ -30,9 +30,10 @@ Wähle **Fertig**, wenn du fertig bist. Auf dem Handy liegen die Kameras in eine
 
 ## Das Bild an die Karte anpassen
 
-Kameras passen selten zur Form ihrer Kachel, ein breiter Stream in einem hohen Platz lässt also schwarze Balken. Im Modus **Anordnen** bietet der Button **Bild in der Karte** drei Möglichkeiten:
+Kameras passen selten zur Form ihrer Kachel, ein breiter Stream in einem hohen Platz lässt also schwarze Balken. Im Modus **Anordnen** bietet der Button **Bild in der Karte** vier Möglichkeiten:
 
 - **Seitenverhältnis behalten** zeigt das ganze Bild und nimmt die Balken in Kauf. Das ist die Voreinstellung.
+- **Einpassen** zeigt ebenfalls das ganze Bild, in beide Richtungen auf die Karte gerechnet, mit schwarzen Balken wo die Formen nicht passen.
 - **Zuschneiden** füllt die Karte und schneidet die Ränder ab.
 - **Verzerren** füllt die Karte und verzerrt das Bild.
 

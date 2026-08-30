@@ -30,6 +30,10 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI 
 
 Öffnest du eine Episode, spielt sie die ganze Sequenz ab. Sie wechselt von selbst zwischen den Kameras, während die Story voranschreitet, und zeigt Name und Zeit der aktuellen Kamera. Ein Streifen unter dem Video hält einen Block pro Kamera-Abschnitt, sodass du direkt zu jedem Punkt springen oder zwischen Kameras wechseln kannst. Zoomen und Verschieben funktionieren wie in der [Live-Ansicht](/de/cameras/live-view).
 
-Deckt eine zweite Kamera denselben Raum im [Grundriss](/de/cameras/floor-plan) ab, bietet die Steuerleiste **Zweiter Winkel** an und spielt denselben Abschnitt aus dieser Sicht.
+Deckt eine zweite Kamera denselben Raum im [Grundriss](/de/cameras/floor-plan) ab, läuft im Schnitt die, die das Geschehen am nächsten hatte, und die Steuerleiste bietet mit **Zweiter Winkel** die andere Sicht auf diesen Abschnitt an.
+
+## Warum eine Episode so aussieht
+
+Das Verlaufs-Symbol an einer Episode, auf ihrer Karte und im Player, öffnet, was in sie eingeflossen ist: jedes Ereignis, das als Kandidat infrage kam, und ob es dabei blieb oder herausfiel, bei den herausgefallenen mit Grund, von „hat sich nie bewegt" bis „gehört zu einer anderen Episode". Darunter stehen die Verbindungen zwischen den verbliebenen Ereignissen, beide KI-Durchgänge mit den Bildern und Vorgaben, die das Modell bekommen hat, und seiner Antwort, sowie der entstandene Schnitt, inklusive eines Abschnitts, der herausfiel, weil ihn eine andere Kamera besser gesehen hat. **Bundle herunterladen** packt das zusammen mit dem Clip für einen Fehlerbericht.
 
 <Shot src="/img/detection/episode-player.png" alt="Der Episoden-Player mit dem Kamera-Streifen unter dem Video" />

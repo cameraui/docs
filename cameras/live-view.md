@@ -36,12 +36,14 @@ Give a source a **PiP Source** in the camera [settings](/cameras/settings) (Sour
 
 ## Streaming modes
 
-camera.ui can stream live video in a few ways. You set the mode per camera in its [settings](/cameras/settings). The player also has a button to switch between WebRTC and MSE while you watch.
+camera.ui can stream live video in a few ways. You set the mode per camera in its [settings](/cameras/settings), where a new camera starts on **Auto**. The player also has a button to switch between WebRTC and MSE while you watch.
 
 - **Auto** starts WebRTC and MSE together and keeps whichever connects first, so a network that blocks WebRTC still gets a picture. When the camera's codec cannot travel over WebRTC it goes straight to MSE. The simplest choice.
 - **WebRTC** gives the lowest latency.
 - **MSE** is a broadly compatible fallback.
 - **webrtc/tcp** sends WebRTC over TCP only. Pick it in the camera settings if some networks block the ports WebRTC normally uses. It is not available from the player button.
+
+The setting applies to the camera view. The small players elsewhere, the zone editor, shortcut previews, the floor plan hover and the event dialog, always run on Auto.
 
 ## Activity mode: Always On and Standby
 

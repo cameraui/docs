@@ -30,6 +30,10 @@ In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and tur
 
 Opening an episode plays the whole sequence. It switches between cameras on its own as the story moves, and shows the current camera's name and time. A strip below the video holds one block per camera stretch, so you can jump straight to any point or skip between cameras. Zoom and pan work as in the [live view](/cameras/live-view).
 
-When a second camera covers the same room on the [floor plan](/cameras/floor-plan), the control bar offers **Second angle**, which plays that view of the same stretch instead.
+When a second camera covers the same room on the [floor plan](/cameras/floor-plan), the cut plays whichever had the subject closest, and the control bar offers **Second angle** for the other view of that stretch.
+
+## Why an episode turned out this way
+
+The trace icon on an episode, on its card and in the player, opens what went into it: every event that was a candidate and whether it stayed or went, and for the ones that went the reason, from "never moved" to "belongs to another episode". Below that are the connections it drew between the remaining events, both AI passes with the pictures and instructions the model was given and what it answered, and the cut that came out, including a stretch that was dropped because another camera saw it better. **Download bundle** packs it together with the clip for a bug report.
 
 <Shot src="/img/detection/episode-player.png" alt="The episode player with the camera strip below the video" />

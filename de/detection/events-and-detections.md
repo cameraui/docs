@@ -34,6 +34,16 @@ Eine Kamera, die Erkennungen meldet, ohne zu sagen, wo im Bild sie waren, also d
 
 Ein Auto, das in der Einfahrt parkt, oder eine stehen gelassene Tonne würde sonst bei jeder Bewegung erneut erkannt. **Statische Objekte ignorieren** ist in den [Einstellungen → Detection](/de/cameras/settings) einer Kamera standardmäßig an: Bleibt ein Objekt eine Weile unbewegt, zählt camera.ui es nicht mehr als Erkennung, auch über spätere Ereignisse hinweg. Die Box siehst du in der Live-Ansicht weiterhin. Sobald sich das Objekt von der Stelle bewegt oder die Kamera schwenkt oder neigt, zählt es wieder.
 
+## Der Erkennungsverlauf
+
+Zu jedem Ereignis wird festgehalten, was der Detektor tatsächlich gesehen hat. Das Verlaufs-Symbol auf einer Karte unter [Aufnahmen](/de/recording/browsing), und dasselbe Symbol im Ereignis-Dialog, öffnet ihn.
+
+Er geht das Ereignis Bild für Bild durch, mit den Bildern aus der Aufnahme, und zeigt zu jedem, was gefunden wurde: die Objekte und die Tracks, zu denen sie gehören, die Bewegungsboxen, die rohen Erkennungen vor jeder Filterung und die Zonen, wie sie damals standen. Wo etwas gesehen wurde, aber kein Ereignis daraus wurde, nennt der Verlauf den Grund: unter der Konfidenzschwelle, in einer Privatsphären-Zone, außerhalb der Objektzonen, ein Label, das die Zone nicht annimmt, oder ein Track, der noch zu jung für eine Bestätigung ist. Jeder Track trägt seinen Zustand, von vorläufig über aktiv, stehend und verloren bis abgegangen.
+
+Die Bilder kommen aus der Aufnahme, ein Ereignis ohne Aufnahme zeigt seine Erkennungsdaten also trotzdem, nur ohne Bilder. Kann der Browser den Haupt-Stream nicht dekodieren, stammen die Bilder aus dem kleineren und werden über die Zeit zugeordnet statt exakt.
+
+**Bundle herunterladen** packt den ganzen Verlauf in eine Datei für einen Fehlerbericht.
+
 ## Wo Ereignisse erscheinen
 
 Ereignisse treiben den Rest von camera.ui an:

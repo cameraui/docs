@@ -36,12 +36,14 @@ Wenn eine Quelle in den [Kamera-Einstellungen](/de/cameras/settings) (Tab „Que
 
 ## Streaming-Modi
 
-camera.ui kann Live-Video auf mehrere Arten streamen. Den Modus legst du pro Kamera in ihren [Einstellungen](/de/cameras/settings) fest. Der Player hat außerdem einen Button, mit dem du beim Zuschauen zwischen WebRTC und MSE wechselst.
+camera.ui kann Live-Video auf mehrere Arten streamen. Den Modus legst du pro Kamera in ihren [Einstellungen](/de/cameras/settings) fest, eine neue Kamera startet auf **Auto**. Der Player hat außerdem einen Button, mit dem du beim Zuschauen zwischen WebRTC und MSE wechselst.
 
 - **Auto** startet WebRTC und MSE gleichzeitig und behält, was zuerst zustande kommt, ein Netz, das WebRTC blockiert, bekommt also trotzdem ein Bild. Kann der Codec der Kamera nicht über WebRTC laufen, geht es direkt auf MSE. Die einfachste Wahl.
 - **WebRTC** bietet die geringste Latenz.
 - **MSE** ist ein breit kompatibler Fallback.
 - **webrtc/tcp** überträgt WebRTC nur über TCP. Wähle das in den Kamera-Einstellungen, wenn Netzwerke die Ports blockieren, die WebRTC sonst nutzt. Über den Button im Player ist es nicht erreichbar.
+
+Die Einstellung gilt für die Kameraansicht. Die kleinen Player an anderen Stellen, der Zonen-Editor, Shortcut-Vorschauen, das Livebild im Grundriss und der Ereignis-Dialog laufen immer auf Auto.
 
 ## Aktivitätsmodus: Immer An und Standby
 

@@ -191,14 +191,26 @@ The device triggers cover `start`, `end` and `recognized`. There is no device tr
 
 Setup adds a **camera.ui** entry to the Home Assistant sidebar that embeds the full camera.ui interface. The panel is **admin only**: it appears for administrator accounts and stays hidden for everyone else.
 
-## Lovelace card
+## Dashboard cards
 
-A camera.ui Lovelace card ships with the integration and registers itself as a resource, so it's ready to add to a dashboard without a manual install. The bundle provides a single-camera card and a grid card.
+Three cards come with the integration and register themselves, so they are in the card picker without a manual resource step: a camera, a camview view, and a strip of recent events. See [Dashboard cards](/home-assistant/card) for their options.
 
-See the [Lovelace card](/home-assistant/card) page for the card options and layouts.
+### Card access
+
+The integration's options decide who may use them: **Administrators only**, the default, or **All Home Assistant users**. The cards reach camera.ui through Home Assistant using the integration's own token, so opening them up hands every Home Assistant user what that token can see. **Viewer token** takes a second camera.ui token that is used for everyone who is not a Home Assistant administrator, which is how you point them at a restricted camera.ui account instead.
+
+If your camera.ui server is too old for the cards, Home Assistant raises a repair issue naming the version it needs. The entities keep working either way.
+
+## Recordings in the media browser
+
+Events that have a recording appear in Home Assistant's **Media** browser under camera.ui: first the cameras, plus an **All cameras** entry, then the days, then the events themselves, each with a thumbnail and named by its time and what was detected. A click plays the clip, and it starts while the export is still running. Any entry can be sent to a TV or a speaker with `media_player.play_media`.
+
+<Shot src="/img/home-assistant/media-browser.png" alt="The media browser showing one day of events with thumbnails" />
+
+**Clip quality** in the options picks what those clips use: the sub stream, small and quick, or the main stream at full quality.
 
 ## Next steps
 
 - **[App](/home-assistant/app)** — run camera.ui itself as a Home Assistant OS app.
-- **[Lovelace card](/home-assistant/card)** — configure the bundled dashboard cards.
+- **[Dashboard cards](/home-assistant/card)** — configure the cards on a dashboard.
 - **[Sensors](/sensors/setup)** — assign sensors to a camera so they reach Home Assistant.

@@ -431,8 +431,8 @@
         },
         {
           "text": {
-            "en": "Lovelace card",
-            "de": "Lovelace-Card"
+            "en": "Dashboard cards",
+            "de": "Dashboard-Karten"
           },
           "link": "/home-assistant/card"
         },
