@@ -74,6 +74,8 @@ The tray icon holds the app's own settings:
 
 On Windows, left-click the tray icon to open the window, right-click for the menu.
 
+No tray icon on your Linux desktop? GNOME only shows one with the AppIndicator extension. **Switch mode…** also sits in the app menu under **File**, and starting the app a second time with `--switch-mode` opens the mode picker in the running instance, which also works for a worker without a window.
+
 <Shot src="/img/install/desktop-tray-menu.png" alt="Desktop tray menu" />
 
 [^autostart]: macOS and Windows only.

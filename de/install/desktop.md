@@ -72,6 +72,8 @@ Im Tray-Symbol stecken die Einstellungen der App selbst:
 
 Unter Windows öffnet ein Linksklick auf das Tray-Symbol das Fenster, ein Rechtsklick das Menü.
 
+Kein Tray-Symbol auf deinem Linux-Desktop? GNOME zeigt eins nur mit der AppIndicator-Erweiterung. **Modus wechseln…** steckt auch im App-Menü unter **Datei**, und ein zweiter Start der App mit `--switch-mode` öffnet die Modus-Auswahl in der laufenden Instanz, das funktioniert auch für einen Worker ohne Fenster.
+
 <Shot src="/img/install/desktop-tray-menu.png" alt="Tray-Menü der Desktop-App" />
 
 [^autostart]: Nur macOS und Windows.
