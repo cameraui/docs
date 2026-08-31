@@ -79,7 +79,7 @@ Then start it:
 docker compose -f docker-compose.worker.yml up -d
 ```
 
-The master address takes a hostname or IP, without a scheme. `CAMERA_UI_WORKER_API_PORT` is only needed if the master's HTTPS port is not 3443, a desktop app as master listens on 3543. To pass hardware through for decoding, use the same override files as the main deployment, see [Hardware acceleration](/install/hardware-acceleration).
+The master address takes a hostname or IP, without a scheme. `CAMERA_UI_WORKER_API_PORT` is only needed if the master's HTTPS port is not 3443, a desktop app as master listens on 3543. To give the worker a GPU, see [Hardware acceleration](#hardware-acceleration) below.
 
 ### Worker with the desktop app
 
@@ -92,6 +92,24 @@ Two tray options make this hands-off: **Open At Login** starts the app with the 
 ### Worker on Linux (bare-metal)
 
 Paste the snippet into the worker machine's `config.yml`, then start it with `cameraui --worker run`. To keep the machine a worker across reboots, install it as a service instead: `cameraui --worker install` (the flag is stored with the service, see [Linux (bare-metal)](/install/linux)).
+
+### Hardware acceleration
+
+A worker decodes video, so a GPU helps it exactly as much as it helps the server.
+
+In **Docker**, the override files from the main deployment do not fit: they patch a service named `cameraui`, and the worker service is called `cameraui-worker`, so layering one on top starts a second, unrelated container instead of accelerating the worker. Put the two pieces into the worker file itself, the [image flavor](/install/docker#hardware-acceleration) that matches the hardware and the device:
+
+```yaml
+services:
+  cameraui-worker:
+    image: ghcr.io/cameraui/camera.ui:intel # or :nvidia, :amd
+    devices:
+      - /dev/dri:/dev/dri
+```
+
+For NVIDIA, take the `environment` and `deploy` blocks from the [NVIDIA override](/install/docker#hardware-acceleration) as well, and install the NVIDIA Container Toolkit on the worker machine. On **bare-metal** and in the **desktop app** there is nothing to pass through, the host driver is all it takes.
+
+Which decoder a camera actually uses on a worker is set per camera, under **Frame Worker** in its [settings](/cameras/settings). The second selection there applies while the camera runs on a worker, so master and worker can sit on different hardware. [Hardware acceleration](/install/hardware-acceleration) covers host drivers and how to check what the container really got.
 
 ### Environment variables
 

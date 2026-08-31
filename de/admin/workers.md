@@ -79,7 +79,7 @@ Dann starte ihn:
 docker compose -f docker-compose.worker.yml up -d
 ```
 
-Die Master-Adresse nimmt einen Hostnamen oder eine IP an, ohne Schema. `CAMERA_UI_WORKER_API_PORT` brauchst du nur, wenn der HTTPS-Port des Masters nicht 3443 ist, eine Desktop-App als Master hört auf 3543. Um Hardware für die Dekodierung durchzureichen, nutze dieselben Override-Dateien wie beim Haupt-Deployment, siehe [Hardware-Beschleunigung](/de/install/hardware-acceleration).
+Die Master-Adresse nimmt einen Hostnamen oder eine IP an, ohne Schema. `CAMERA_UI_WORKER_API_PORT` brauchst du nur, wenn der HTTPS-Port des Masters nicht 3443 ist, eine Desktop-App als Master hört auf 3543. Wie der Worker eine GPU bekommt, steht unten unter [Hardware-Beschleunigung](#hardware-beschleunigung).
 
 ### Worker mit der Desktop-App
 
@@ -92,6 +92,24 @@ Zwei Tray-Optionen machen das wartungsfrei: **Beim Anmelden öffnen** startet di
 ### Worker unter Linux (Bare-Metal)
 
 Füge den Ausschnitt in die `config.yml` der Worker-Maschine ein und starte sie dann mit `cameraui --worker run`. Damit die Maschine auch nach einem Neustart Worker bleibt, installiere sie stattdessen als Service: `cameraui --worker install` (das Flag wird mit dem Service gespeichert, siehe [Linux (Bare-Metal)](/de/install/linux)).
+
+### Hardware-Beschleunigung
+
+Ein Worker dekodiert Video, eine GPU bringt ihm also genauso viel wie dem Server.
+
+Unter **Docker** passen die Override-Dateien des Haupt-Deployments nicht: Sie ergänzen einen Dienst namens `cameraui`, der Worker-Dienst heißt aber `cameraui-worker`. Legst du eine darüber, startet ein zweiter, unabhängiger Container, statt den Worker zu beschleunigen. Trag die beiden Teile stattdessen direkt in die Worker-Datei ein, die [Image-Variante](/de/install/docker#hardware-beschleunigung) passend zur Hardware und das Gerät:
+
+```yaml
+services:
+  cameraui-worker:
+    image: ghcr.io/cameraui/camera.ui:intel # oder :nvidia, :amd
+    devices:
+      - /dev/dri:/dev/dri
+```
+
+Für NVIDIA kommen die Blöcke `environment` und `deploy` aus dem [NVIDIA-Override](/de/install/docker#hardware-beschleunigung) dazu, und auf der Worker-Maschine muss das NVIDIA Container Toolkit installiert sein. Auf **Bare Metal** und in der **Desktop-App** gibt es nichts durchzureichen, der Treiber auf dem Host genügt.
+
+Welchen Dekoder eine Kamera auf einem Worker nutzt, legst du pro Kamera unter **Frame Worker** in ihren [Einstellungen](/de/cameras/settings) fest. Die zweite Auswahl dort gilt, solange die Kamera auf einem Worker läuft, Master und Worker können also unterschiedliche Hardware nutzen. [Hardware-Beschleunigung](/de/install/hardware-acceleration) behandelt die Treiber auf dem Host und wie du prüfst, was im Container wirklich ankommt.
 
 ### Umgebungsvariablen
 
