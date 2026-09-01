@@ -39,6 +39,8 @@ If discovery doesn't reach the server (a different subnet, for example), add it 
 
 Both paths need an [API token](/admin/security#api-tokens). Create one in camera.ui under **Settings → Account → API tokens**, then paste it into the integration.
 
+Use a token from an **admin account**. Controlling camera.ui sensors from Home Assistant (locks, covers, lights, sirens, alarm panels, PTZ) needs admin rights; with a viewer token the entities show up but their controls are rejected.
+
 Home Assistant checks the token against the server before finishing. If the token is rejected you'll see an authentication error; if the server can't be reached you'll see a connection error instead.[^ssl]
 
 [^ssl]: The server is reached over HTTPS. The integration does not verify the certificate, so a self-signed camera.ui certificate works without extra setup.

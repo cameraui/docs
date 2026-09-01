@@ -49,6 +49,11 @@ Ein schwebendes Bedienelement in der Ecke wirkt auf jede Kamera der Ansicht geme
 - Den Streaming-Modus für alle umschalten.
 - Den Activity-Modus für alle setzen (Always On, Standby, Activity).
 - Die Auflösung für alle ändern.
+- Die Erkennungs-Marker ein- oder ausschalten.
+
+## Was eine Kamera gerade sieht
+
+Erkennt eine Kamera etwas, leuchtet ihre Kachel, und kleine Symbole benennen das Erkannte: Bewegung, Person, Fahrzeug, Gesicht, Kennzeichen und so weiter. **Detections** im schwebenden Bedienelement schaltet beides für die ganze Ansicht ab, etwa für ein Wanddisplay, das ruhig bleiben soll. Die Wahl bleibt an deinem Konto gespeichert.
 
 ## Eine Kamera in den Fokus holen
 

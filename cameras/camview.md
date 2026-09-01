@@ -49,6 +49,11 @@ A floating control in the corner acts on every camera in the view together:
 - Switch the streaming mode for all.
 - Set the activity mode for all (Always On, Standby, Activity).
 - Change the resolution for all.
+- Turn the detection markers on or off.
+
+## What a camera is seeing
+
+While a camera detects something its tile glows, and small icons name what was found: motion, person, vehicle, face, plate and the rest. **Detections** in the floating control switches both off for the whole view, for a wall display that should stay calm. The choice is saved with your account.
 
 ## Focus one camera
 

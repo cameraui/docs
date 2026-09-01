@@ -38,9 +38,9 @@ A car parked in the driveway or a bin left in view would otherwise be detected a
 
 Every event keeps a record of what the detector actually saw. The trace icon on a card in [Recordings](/recording/browsing), and the same icon in the event dialog, opens it.
 
-It steps through the event frame by frame, with the pictures taken from the recording, and shows what was found on each one: the objects and the tracks they belong to, the motion boxes, the raw detections before any filtering, and the zones as they stood at the time. Where something was seen but did not become an event, the trace names the reason: under the confidence threshold, inside a privacy zone, outside the object zones, a label the zone does not accept, or a track too young to be confirmed. Every track carries its state, from tentative through active, stationary and lost to departed.
+It steps through the event frame by frame, with the pictures taken from the recording, and shows what was found on each one, keeping only a few frames around each activity so a long quiet stretch does not bury the interesting part: the objects and the tracks they belong to, the motion boxes, the raw detections before any filtering, and the zones as they stood at the time. Where something was seen but did not become an event, the trace names the reason: under the confidence threshold, inside a privacy zone, outside the object zones, a label the zone does not accept, or a track too young to be confirmed. Every track carries its state, from tentative through active, stationary and lost to departed.
 
-The pictures come from the recording, so an event without one still shows its detection data, just without frames. If the browser cannot decode the main stream, the pictures come from the smaller one and are matched by time instead of exactly.
+Mouse wheel, pinch or a double tap zoom into a frame, the same as in the live view, so a distant animal stays readable. The pictures come from the recording, so an event without one still shows its detection data, just without frames. If the browser cannot decode the main stream, the pictures come from the smaller one and are matched by time instead of exactly.
 
 **Download bundle** packs the whole trace into one file for a bug report.
 

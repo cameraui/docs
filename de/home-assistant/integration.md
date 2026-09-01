@@ -39,6 +39,8 @@ Wenn die Erkennung den Server nicht erreicht (zum Beispiel in einem anderen Subn
 
 Beide Wege brauchen einen [API-Token](/de/admin/security#api-tokens). Erstelle einen in camera.ui unter **Einstellungen → Account → API-Tokens** und füge ihn in die Integration ein.
 
+Nimm den Token eines **Admin-Accounts**. Das Steuern von camera.ui-Sensoren aus Home Assistant (Schlösser, Tore, Lichter, Sirenen, Alarmanlagen, PTZ) braucht Admin-Rechte; mit einem Viewer-Token erscheinen die Entitäten zwar, ihre Befehle werden aber abgelehnt.
+
 Home Assistant prüft den Token vor dem Abschluss gegen den Server. Wird der Token abgelehnt, siehst du einen Authentifizierungsfehler, ist der Server nicht erreichbar, stattdessen einen Verbindungsfehler.[^ssl]
 
 [^ssl]: Der Server wird über HTTPS erreicht. Die Integration prüft das Zertifikat nicht, ein selbstsigniertes camera.ui Zertifikat funktioniert also ohne zusätzliche Einrichtung.

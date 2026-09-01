@@ -32,11 +32,12 @@ You can add more than one server and switch between them, handy if you run separ
 ## Around the app
 
 - **Home.** The latest activity up top, plus camera and storage status and today's event count. Select a notification to jump straight to the recording.
-- **Camview.** A live wall of your cameras. Pick a grid or a mixed layout, rearrange the tiles, or open any camera fullscreen. **Fill wall** drops the borders and fills the screen with the wall.
+- **Camview.** A live wall of your cameras. Pick a grid or a mixed layout, rearrange the tiles, or open any camera fullscreen. **Fill wall** drops the borders and fills the screen with the wall, and **Whole picture** fits each camera into its tile with bars instead of cropping, so a 4:3 camera keeps its edges next to widescreen ones. Both are remembered per view.
 - **Events.** Your events grouped by day, with filters for persons, faces, vehicles, animals, doorbell, sensors, sounds, and motion. Select one to play it back from that moment. Keep scrolling to reach older days.
 - **Episodes.** [Episodes](/detection/episodes) show up as mosaic cards among your events and on the Home screen. Opening one plays the whole story and switches cameras on its own. Left and right jump between cameras.
 - **Sensors.** Your sensors as tiles, live from the server.
 - **Talk back.** In the fullscreen player, the microphone button speaks through the camera, if the camera supports two-way audio.
+- **PTZ.** A camera that can pan, tilt or zoom gets a move button in the player. Hold a direction to keep moving, a short press nudges. Cameras that offer them also get a home button and their presets. See [PTZ & autotrack](/sensors/ptz).
 
 Playback follows each camera's [playback source](/recording/timeline-playback#playback-quality), episodes included. On Auto a gap in the high recording plays the next quality that has footage, the same as in the web interface.
 
