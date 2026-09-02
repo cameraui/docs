@@ -56,6 +56,7 @@ The default image (`latest`) runs detection and video processing in software. Fo
 | CPU | `latest` | software | amd64 + arm64 |
 | Intel | `intel` | Quick Sync / VA-API + OpenCL | amd64 |
 | NVIDIA | `nvidia` | NVENC / NVDEC + CUDA 13 | amd64 |
+| NVIDIA (TensorRT) | `nvidia-tensorrt` | NVENC / NVDEC + CUDA 13 + TensorRT | amd64 |
 | NVIDIA (CUDA 12) | `nvidia-cuda12` | NVENC / NVDEC + CUDA 12 | amd64 |
 | AMD | `amd` | Mesa VA-API + OpenCL | amd64 |
 
@@ -106,7 +107,7 @@ Then start both files together (Intel shown here):
 docker compose -f docker-compose.yml -f docker-compose.intel.yml up -d
 ```
 
-The NVIDIA flavors also require the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) on the host. `nvidia` ships CUDA 13 and needs an NVIDIA driver 580 or newer, which covers RTX 50xx cards. `nvidia-cuda12` keeps CUDA 12 for older drivers and pairs with the ONNX Legacy plugin. Ready-made compose files for every flavor are in the [`cameraui/docker`](https://github.com/cameraui/docker) repository.
+The NVIDIA flavors also require the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) on the host. `nvidia` ships CUDA 13 and needs an NVIDIA driver 580 or newer, which covers RTX 50xx cards. `nvidia-cuda12` keeps CUDA 12 for older drivers and pairs with the ONNX Legacy plugin. `nvidia-tensorrt` adds the TensorRT runtime (about 2 GB) for the ONNX plugin's tensorrt provider. Ready-made compose files for every flavor are in the [`cameraui/docker`](https://github.com/cameraui/docker) repository.
 
 Host drivers, device passthrough for AI accelerators (Coral, Hailo, Intel NPU) and how to verify it all works are covered on the [Hardware acceleration](/install/hardware-acceleration) page.
 
