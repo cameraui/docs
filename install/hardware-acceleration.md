@@ -82,7 +82,7 @@ Intel's current OpenCL runtime only covers Gen12 and newer. The `intel` flavor t
 
 Two host-side pieces: the NVIDIA driver (e.g. `sudo ubuntu-drivers install`) and the Container Toolkit, which injects the driver libraries into containers. `sudo bash cameraui-host.sh nvidia` installs the toolkit and registers it with Docker. Then use the `nvidia` flavor override from the [Docker page](/install/docker#hardware-acceleration). Setting `NVIDIA_DRIVER_CAPABILITIES=all` also enables the OpenCL and Vulkan paths the detection plugins can use.
 
-Outside Docker (bare-metal Linux, Windows), CUDA detection with the ONNX plugin additionally needs the CUDA 12 libraries and cuDNN 9 installed system-wide from [NVIDIA](https://developer.nvidia.com/cuda-downloads). The Docker image ships these; supported cards range from GTX 900/10xx up to RTX 50xx.
+Outside Docker (bare-metal Linux, Windows), CUDA detection with the ONNX plugin additionally needs the CUDA 13 libraries and cuDNN 9 installed system-wide from [NVIDIA](https://developer.nvidia.com/cuda-downloads). In Docker, the `nvidia` image ships them and needs an NVIDIA driver 580 or newer; the `nvidia-cuda12` image keeps CUDA 12 for older drivers and pairs with the ONNX Legacy plugin. Supported cards range from GTX 900/10xx up to RTX 50xx, where RTX 50xx needs the CUDA 13 side.
 
 ## Coral Edge TPU
 
