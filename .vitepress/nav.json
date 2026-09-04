@@ -333,6 +333,13 @@
             "de": "Episoden"
           },
           "link": "/detection/episodes"
+        },
+        {
+          "text": {
+            "en": "Model training",
+            "de": "Modelltraining"
+          },
+          "link": "/detection/training"
         }
       ]
     },

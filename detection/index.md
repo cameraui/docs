@@ -50,3 +50,5 @@ flowchart LR
 Detection is provided by [plugins](/plugins/) you enable per camera: a **motion engine** and an **AI backend** that matches your hardware. You choose and tune them in a camera's [settings](/cameras/settings). See [Set up sensors](/sensors/setup) for how to enable them.
 
 Each detection becomes part of an **event**. See [Events & detections](/detection/events-and-detections) for how those are structured, and [Recording (NVR)](/recording/) for browsing them.
+
+The detection models themselves learn from frames the community labels and contributes. See [Model training](/detection/training).

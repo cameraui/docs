@@ -74,6 +74,10 @@ export default withMermaid({
         title: 'camera.ui Documentation',
       }),
     ],
+    optimizeDeps: {
+      // cjs-only mermaid deps the mermaid plugin's include list doesn't cover (fastdom since 11.17, fcose for mindmaps)
+      include: ['fastdom', 'fastdom/extensions/fastdom-promised.js', 'cytoscape-fcose'],
+    },
   },
 
   markdown: {

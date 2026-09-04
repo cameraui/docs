@@ -48,3 +48,5 @@ flowchart LR
 Erkennung wird von [Plugins](/de/plugins/) bereitgestellt, die du pro Kamera aktivierst: eine **Bewegungs-Engine** und ein **KI-Backend**, das zu deiner Hardware passt. Du wählst und justierst sie in den [Einstellungen](/de/cameras/settings) einer Kamera. Siehe [Sensoren einrichten](/de/sensors/setup), um sie zu aktivieren.
 
 Jede Erkennung wird Teil eines **Ereignisses**. Siehe [Events & Erkennungen](/de/detection/events-and-detections) für deren Aufbau und [Aufnahmen (NVR)](/de/recording/) zum Durchsehen.
+
+Die Erkennungsmodelle selbst lernen aus Frames, die die Community beschriftet und beisteuert. Siehe [Modelltraining](/de/detection/training).
