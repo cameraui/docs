@@ -10,7 +10,9 @@ Die Erkennungsmodelle von camera.ui werden auf echtem Material aus echten Instal
 
 ## Wie Frames gesammelt werden
 
-Während Erkennungs-Events speichert jede Kamera ein paar repräsentative Frames, zeitlich verteilt, damit ein langes Event die Liste nicht flutet. camera.ui behält höchstens 200 Frames pro Kamera: Ist das Limit erreicht, weichen die ältesten ungeprüften Frames, und ungeprüfte Frames werden ohnehin nach 14 Tagen gelöscht. Bestätigte Frames bleiben, bis du sie einreichst oder löschst.
+Während Erkennungs-Events speichert jede Kamera einen Frame, wenn etwas Neues auftaucht: ein neues Objekt, eine geänderte Position, ein frisches Gesicht oder Kennzeichen. Eine unveränderte Szene wiederholt sich nicht, egal wie lange das Event läuft. camera.ui behält höchstens 200 Frames pro Kamera: Ist das Limit erreicht, weichen die ältesten ungeprüften Frames, und ungeprüfte Frames werden ohnehin nach 14 Tagen gelöscht. Bestätigte Frames bleiben, bis du sie einreichst oder löschst.
+
+Eine [Privatzone](/de/cameras/zones-and-masks) wird geschwärzt, bevor der Frame gespeichert wird, dahinter wird also nie etwas gesammelt oder eingereicht.
 
 Die Sammlung ist standardmäßig an und bleibt auf deiner Platte. Zum Abschalten öffnest du das Zahnrad-Menü in der Training-Ansicht und deaktivierst **Kandidaten sammeln**. Die Ansicht sehen nur Admins.
 
@@ -22,7 +24,7 @@ Ein Frame öffnet den Editor. Ziehen zeichnet eine Box, Tipp auf Box oder Label 
 
 Was einen Frame wertvoll macht:
 
-- **Beschrifte alles Sichtbare.** Jede Person, jedes Fahrzeug, Tier und Paket im Bild, nicht nur den Auslöser des Events. Ein unbeschriftetes Objekt lernt das Modell als "kein Objekt".
+- **Beschrifte alles Sichtbare.** Jede Person, jedes Fahrzeug, Tier und Paket im Bild, nicht nur den Auslöser des Events. Ein unbeschriftetes Objekt lernt das Modell als "kein Objekt". Die Boxen, die camera.ui für dich gezeichnet hat, enthalten auch Objekte außerhalb deiner Erkennungszonen und Labels, die du nie aktiviert hast; sie gehören in die Daten, lass sie drin.
 - **Boxen eng ziehen.** Die Box umschließt das Objekt ohne Rand.
 - **Verdecktes mitdenken.** Ein teils verdecktes Objekt bekommt die Box über seine volle Ausdehnung, soweit du sie einschätzen kannst.
 - **Gesichter und Kennzeichen bekommen eigene Boxen**, zusätzlich zur Personen- oder Fahrzeug-Box.

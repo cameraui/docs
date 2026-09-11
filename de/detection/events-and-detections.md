@@ -36,7 +36,7 @@ Ein Auto, das in der Einfahrt parkt, oder eine stehen gelassene Tonne würde son
 
 ## Der Erkennungsverlauf
 
-Zu jedem Ereignis wird festgehalten, was der Detektor tatsächlich gesehen hat. Das Verlaufs-Symbol auf einer Karte unter [Aufnahmen](/de/recording/browsing), und dasselbe Symbol im Ereignis-Dialog, öffnet ihn.
+Zu jedem Ereignis wird festgehalten, was der Detektor tatsächlich gesehen hat. Das Punkte-Menü auf einer Karte unter [Aufnahmen](/de/recording/browsing), und das Verlaufs-Symbol im Ereignis-Dialog, öffnet ihn.
 
 Er geht das Ereignis Bild für Bild durch, mit den Bildern aus der Aufnahme, und zeigt zu jedem, was gefunden wurde, wobei nur einige Bilder rund um jede Aktivität bleiben, damit eine lange ruhige Strecke das Interessante nicht zudeckt: die Objekte und die Tracks, zu denen sie gehören, die Bewegungsboxen, die rohen Erkennungen vor jeder Filterung und die Zonen, wie sie damals standen. Wo etwas gesehen wurde, aber kein Ereignis daraus wurde, nennt der Verlauf den Grund: unter der Konfidenzschwelle, in einer Privatsphären-Zone, außerhalb der Objektzonen, ein Label, das die Zone nicht annimmt, oder ein Track, der noch zu jung für eine Bestätigung ist. Jeder Track trägt seinen Zustand, von vorläufig über aktiv, stehend und verloren bis abgegangen.
 

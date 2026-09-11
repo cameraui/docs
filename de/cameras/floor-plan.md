@@ -38,7 +38,7 @@ Zentimetergenauigkeit bringt nichts. Räume in ungefähr der richtigen Größe a
 ## Wofür der Plan genutzt wird
 
 - **[Episoden](/de/detection/episodes)** trennen damit Aktivität. Zwei Dinge, die gleichzeitig in verschiedenen Ecken des Grundstücks passieren, bleiben getrennte Geschichten, ein kurzer Weg vom Flur zur Einfahrt bleibt eine, und der Titel nennt die Orte. Zwei Kameras auf denselben Raum gelten als zwei Blickwinkel einer Szene: Die, die das Geschehen am nächsten hatte, läuft, die andere bietet der Player an.
-- **[KI-Beschreibungen](/de/detection/genai-descriptions)** bekommen den Aufbau, die Gehzeiten und den Zustand naher Sensoren als Kontext. **Floor Plan in Prompts** in den GenAI-Einstellungen schaltet das ab.
+- **[KI-Beschreibungen](/de/detection/genai-descriptions)** bekommen den Aufbau, die Gehzeiten und den Zustand naher Sensoren als Kontext.
 - **[Aufnahmen](/de/recording/browsing)** bekommen einen **Räume**-Filter, der die Kameras in diesen Räumen auswählt.
 
 ## Nächste Schritte

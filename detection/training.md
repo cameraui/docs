@@ -10,7 +10,9 @@ camera.ui's detection models are trained on real footage from real installations
 
 ## How frames are collected
 
-During detection events each camera saves a few representative frames, spread out so a long event doesn't flood the list. camera.ui keeps at most 200 frames per camera: once full, the oldest unreviewed frames make room, and unreviewed frames are deleted after 14 days either way. Verified frames stay until you submit or delete them.
+During detection events each camera saves a frame when something new shows up: a new object, a changed position, a fresh face or license plate. An unchanged scene doesn't repeat, however long the event runs. camera.ui keeps at most 200 frames per camera: once full, the oldest unreviewed frames make room, and unreviewed frames are deleted after 14 days either way. Verified frames stay until you submit or delete them.
+
+A [privacy zone](/cameras/zones-and-masks) is blacked out of the frame before it is saved, so nothing behind one is ever collected or submitted.
 
 Collection is on by default and stays on your disk. To stop it, open the gear menu in the Training view and turn off **Collect candidates**. The view is only visible to admins.
 
@@ -22,7 +24,7 @@ Opening a frame starts the editor. Drag to draw a box, tap a box or its label to
 
 What makes a frame useful:
 
-- **Label everything you see.** Every person, vehicle, animal and package in the frame, not just what triggered the event. An unlabeled object teaches the model that it isn't one.
+- **Label everything you see.** Every person, vehicle, animal and package in the frame, not just what triggered the event. An unlabeled object teaches the model that it isn't one. The boxes camera.ui drew for you include objects outside your detection zones and labels you never turned on; they belong in the data, leave them in.
 - **Keep boxes tight.** The box hugs the object, without a margin.
 - **Include hidden parts.** Box a partly hidden object in full, as far as you can judge its extent.
 - **Faces and license plates get their own boxes**, on top of the person or vehicle box.

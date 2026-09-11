@@ -12,25 +12,22 @@ Namen und Kennzeichen kommen aus dem, was [Gesichtserkennung](/de/detection/face
 
 ## Einen Anbieter wählen
 
-Öffne unter **Einstellungen → [Aufnahmen](/de/recording/)** den Tab **GenAI** und wähle einen Anbieter:
+Das Modell kommt aus **Einstellungen → [Assistent](/de/admin/assistant-setup)**: Gib dort unter **Plugin-Zugriff** das NVR-Plugin frei und wähle eines deiner Modelle. Das Plugin schickt seine Anfragen an camera.ui, der Schlüssel bleibt also auf dem Server. Jeder Anbieter, den der Assistent kennt, funktioniert, solange das Modell Bilder liest; das zeigt der Bildtest in der Modell-Liste.
 
-- **Ollama.** Führt ein Modell lokal auf deiner eigenen Hardware aus. Setze die **API Base URL** (zum Beispiel `http://localhost:11434`).
-- **OpenAI** oder **Gemini.** Nutzt ein Cloud-Modell. Setze deinen **API Key**.
-
-Dann legst du das **Modell** fest (etwa `llava`, `gpt-4o` oder `gemini-2.5-flash`), eine optionale **Description Language** und wie viele Bilder pro Ereignis gesendet werden. **Request Timeout** legt fest, wie lange camera.ui auf den Anbieter wartet, standardmäßig 60 Sekunden; lokale Ollama-Modelle brauchen oft mehr. **Test Connection** prüft, ob es funktioniert. Aktiviere es pro Kamera mit dem **KI-Beschreibungen**-Schalter der Kamera.
+Beschreibungen entstehen in der **Antwortsprache** der Assistenten-Einstellungen, auf Englisch, wenn sie der Oberfläche folgt, und schauen sich bis zu vier Bilder pro Ereignis an. Aktiviere sie pro Kamera mit dem **KI-Beschreibungen**-Schalter der Kamera.
 
 ## Moments und Episoden
 
-Der Anbieter, den du unter **GenAI** wählst, speist zwei Funktionen, jede mit eigenem Tab:
+Das Modell speist zwei Funktionen, jede mit eigenem Tab in den Aufnahme-Einstellungen:
 
-- **Moments.** Aktiviere hier **Enabled**, um KI-Beschreibungen dessen zu bekommen, was in einem Ereignis passiert. **Custom Instructions** nimmt Freitext-Vorgaben, die dem eingebauten Prompt hinzugefügt werden, etwa worauf zu achten ist oder wie formuliert werden soll. Die Beschreibungen eines Ereignisses gehen als eine einzige Zusammenfassungs-Benachrichtigung raus, kurz nachdem die Aktivität endet.
+- **Moments.** Aktiviere hier **Enabled**, um KI-Beschreibungen dessen zu bekommen, was in einem Ereignis passiert. **Custom Instructions** nimmt Freitext-Vorgaben, die dem eingebauten Prompt hinzugefügt werden, etwa worauf zu achten ist oder wie formuliert werden soll. Wie die Beschreibungen aufs Handy kommen, stellst du pro Kamera ein, siehe [Benachrichtigungen](/de/notifications/#pushes-mit-ki-beschreibung).
 - **Episoden.** Bündelt zusammenhängende Ereignisse über mehrere Kameras zu einer Story, mit eigenen **Custom Instructions**. Siehe [Episoden](/de/detection/episodes).
 
 ## Datenschutz
 
-Mit Ollama bleibt alles auf deiner eigenen Hardware. Mit OpenAI oder Gemini werden Ereignis-Snapshots an diesen Anbieter gesendet, um die Beschreibung zu erzeugen.[^license]
+Mit Ollama bleibt alles auf deiner eigenen Hardware. Mit einem Cloud-Anbieter werden Ereignis-Snapshots an diesen Anbieter gesendet, um die Beschreibung zu erzeugen.[^license]
 
-Ein gezeichneter Grundriss ergänzt die Prompts um Text-Kontext: wie die Räume zusammenhängen, Gehzeiten zwischen den Kameras und was Sensoren in der Nähe gerade melden. Schalte **Floor Plan in Prompts** im GenAI-Tab aus, wenn das draußen bleiben soll.
+Ein gezeichneter Grundriss ergänzt die Prompts um Text-Kontext: wie die Räume zusammenhängen, Gehzeiten zwischen den Kameras und was Sensoren in der Nähe gerade melden.
 
 [^license]: KI-Beschreibungen bauen auf Aufnahmen auf, die ein aktives camera.ui-Abo erfordern.
 

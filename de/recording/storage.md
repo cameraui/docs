@@ -48,6 +48,8 @@ Wenn eine Grenze erreicht ist, hängt das Weitere vom **Retention Mode** ab:
 - **Overwrite** (Standard). Die ältesten Aufnahmen werden gelöscht, um Platz zu schaffen, sodass die Aufnahme nie stoppt.
 - **Strict.** Nichts wird über das Aufbewahrungs-Fenster hinaus gelöscht. Läuft die Disk voll, pausiert die Aufnahme, bis du Platz freigibst.
 
+Die Bereinigung arbeitet die ältesten Stunden aller Kameras nebeneinander ab, eine Kamera mit wenig Material kann also nicht ihren ganzen Verlauf verlieren, während eine viel beschäftigte alles behält, und sie hört auf, sobald genug Platz frei ist. Momente, die du als [Favorit](/de/recording/browsing#favoriten) markiert hast, bleiben ausgespart und abspielbar, egal wie alt sie sind.
+
 ## Freier Speicher
 
 Unabhängig von diesen Grenzen hält camera.ui einen Teil der Disk frei. **Min Free Space (GB)** setzt diese Linie: Die Bereinigung arbeitet darauf hin, mindestens so viel verfügbar zu halten, und bei der Hälfte davon pausiert die Aufnahme. Bleibt der Wert auf 0, leitet camera.ui die Reserve aus der Größe der Disk ab, als Anteil am ganzen Volume.

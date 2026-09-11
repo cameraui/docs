@@ -52,13 +52,16 @@ Each camera has its own notification settings, in the camera's [settings](/camer
 - **Cooldown (seconds).** A quiet period after an alert, so one busy scene doesn't flood you. 30 seconds by default, up to 600. Doorbell and alarms bypass it.
 - **Video in push.** Attach a short clip of the moment to the push. On iPhone it plays right in the notification, on Android the expanded notification animates the clip frame by frame,[^androidframes] and the in-app alert opens with a player. Uses the lowest recorded quality. Off by default.
 
-## AI descriptions arrive as one summary
+## Pushes with an AI description
 
-With AI descriptions on, an event's texts collect and come through as a single summary, sent once the scene stays calm for a bit or the event ends.[^ai] You get the story of the whole visit instead of a buzz for every moment.
+With [AI descriptions](/detection/genai-descriptions) on, the alert carries what the AI saw instead of the bare "person detected".[^ai] **Moment Pushes** in the camera's settings is what does that, which also means the alert waits for the description. Doorbell rings and alarms still arrive immediately, and when the model does not answer in time the plain detection push goes out instead.
 
-- **The first alert stays fast.** A person still pings you right away, and the name follows the moment a known face is recognized.
-- **One alert, updated quietly.** Later moments refresh that same alert without buzzing again.
-- **Tapping opens the start.** The summary takes you to the beginning of the event, not the last moment.
+**Push Timing** decides how often a busy event reaches you:
+
+- **Per Moment.** Each moment pushes as its description is ready. This is the default.
+- **Per Event.** The descriptions collect and one push goes out after the scene has been quiet for a while, the story of the whole visit instead of a buzz per moment. Tapping it opens the beginning of the event.
+
+An alert that is already on your lock screen is updated quietly when something better arrives, a recognized name or a sharper picture, without buzzing again.
 
 ## Critical alerts
 

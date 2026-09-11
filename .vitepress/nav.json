@@ -322,8 +322,8 @@
         },
         {
           "text": {
-            "en": "AI descriptions (GenAI)",
-            "de": "KI-Beschreibungen (GenAI)"
+            "en": "AI descriptions",
+            "de": "KI-Beschreibungen"
           },
           "link": "/detection/genai-descriptions"
         },
@@ -469,6 +469,21 @@
     },
     {
       "text": {
+        "en": "Assistant",
+        "de": "Assistent"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Assistant",
+            "de": "Assistent"
+          },
+          "link": "/assistant/"
+        }
+      ]
+    },
+    {
+      "text": {
         "en": "Automations",
         "de": "Automationen"
       },
@@ -596,6 +611,13 @@
             "de": "MQTT"
           },
           "link": "/admin/mqtt"
+        },
+        {
+          "text": {
+            "en": "Assistant setup",
+            "de": "Assistent einrichten"
+          },
+          "link": "/admin/assistant-setup"
         },
         {
           "text": {

@@ -29,6 +29,10 @@ Gesichter, die zu keiner angelegten Person passen, sammeln sich unter **Unbekann
 - **Weise eine Gruppe** einer Person zu, um alle darin auf einmal anzulegen, oder weise ein einzelnes Gesicht zu.
 - **Verwirf** Gruppen oder Gesichter, die dich nicht interessieren, oder leere alle ungruppierten Gesichter.
 
+## Eine Erkennung korrigieren
+
+Nennt ein Ereignis die falsche Person, öffne dieses Gesichtsbild auf seiner Aufnahme-Karte, wähl im Punkte-Menü **Person korrigieren** und vergib den richtigen Namen, oder **Als unbekannt markieren**. Die Korrektur gilt für das ganze Ereignis, und der Ausschnitt wandert zu dieser Person, damit die Erkennung es beim nächsten Mal richtig macht. Nur für Admins.
+
 ## Ein Gesicht ignorieren
 
 Manche Gesichter willst du nie wieder sehen, etwa einen vorbeigehenden Fremden oder den Postboten. Ignoriere eines, und camera.ui sammelt es nicht mehr.

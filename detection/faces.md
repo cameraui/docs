@@ -29,6 +29,10 @@ Faces that don't match anyone enrolled collect under **Unknown Faces**, grouped 
 - **Assign a group** to a person to enroll everyone in it at once, or assign a single face.
 - **Discard** groups or faces you don't care about, or clear all ungrouped faces.
 
+## Correcting a recognition
+
+When an event names the wrong person, open that face picture on its recording card, pick **Correct person** in the dots menu and assign the right name, or **Mark as unknown**. The correction applies to the whole event, and the crop is added to that person so recognition gets it right next time. Admins only.
+
 ## Ignoring a face
 
 Some faces you never want to see again, like a passing stranger or the mail carrier. Ignore one and camera.ui stops collecting them.

@@ -23,6 +23,7 @@ The rest narrows the list to exactly what you're after:
 - **Trigger.** Motion, a doorbell, a sensor, or an audio alarm.
 - **Attributes.** Events that contain a face or a license plate.
 - **Confidence.** Hide low-confidence detections.
+- **Favorites only.** Admins only, see below.
 - **Grid search.** With a single camera selected, draw a region on its snapshot to only show events detected inside that part of the frame.
 
 You can also search by text across detected labels, faces, and plates.
@@ -42,7 +43,12 @@ Each card is one moment, newest first.
 - **Faces and plates.** When a moment has more than its scene picture, like a recognized face or a read license plate, arrows appear to step through the pictures in place, with the name or plate shown. The small tiles at the bottom mark and jump to one.
 - **Grouped cards.** A grouped card shows the event's other moments as small previews at the bottom. Each opens its own moment.
 - **Split cards.** With **Ungroup** on, each moment is its own card and shows its place in the event, like 2/3. Pointing at one highlights the other cards of the same event.
+- **The dots menu.** Holds what the card does not show itself: the [detection trace](/detection/events-and-detections#the-detection-trace), **Ask the assistant**, the download, and [**Correct person**](/detection/faces#correcting-a-recognition) when a face picture is on screen.
 - **Hold to preview.** On a phone or tablet, rest your finger on a card to play the short preview clip. Lift your finger to stop, tap to open. On a computer the preview plays on hover. It steps through the clip zoomed to whatever the moment was about, with a clock showing the time of the frame you are looking at. A card with no playable footage behind it says **No preview**. An episode card previews its cut instead: each camera in turn, with the camera name and the time.
+
+## Favorites
+
+The star on a recording or episode card keeps that moment. Automatic [cleanup](/recording/storage) deletes around a favorite, so its footage stays playable however old it gets and however tight the disk. **Favorites only** in the filter sidebar shows what you kept. Both are for admins.
 
 ## Selecting and deleting
 
@@ -51,6 +57,10 @@ Admins can delete events from here. Select the dots button in the corner to ente
 ## AI search
 
 To find moments by describing them, like "a person carrying a package", use **AI Search**. See [Semantic search](/detection/semantic-search).
+
+## Ask the assistant
+
+With the [assistant](/assistant/) set up, the filter sidebar starts with **Ask the assistant**. Type the search in your own words ("cars in the driveway yesterday", "favorites with the doorbell", "episodes from the entrance in the last hour") and the filters below are set for you: cameras and rooms, time range, event types, sensors, favorites, and an AI Search when the words describe a scene the labels cannot. A note under the box says what the filters cannot express, an exact day for example.
 
 ## Heatmap
 

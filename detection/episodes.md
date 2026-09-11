@@ -6,7 +6,7 @@ title: Episodes
 
 When several cameras see the same activity around the same time, camera.ui can bundle those sightings into one **episode**: a single title and a short story that follows the subject across cameras, in order. A person walking from the driveway to the front door becomes one episode instead of three separate events.
 
-Episodes need [AI descriptions](/detection/genai-descriptions). The AI writes the story, so a provider has to be set up first.
+Episodes need [AI descriptions](/detection/genai-descriptions). The AI writes the story, so the NVR plugin needs a model first.
 
 ## Turning it on
 

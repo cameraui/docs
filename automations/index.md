@@ -21,7 +21,7 @@ A trigger is what starts a flow. You can use more than one.
 - **Detection event.** Something detected at a camera: motion, a person, vehicle, or animal, an audio event like a doorbell or glass breaking, a recognized face, or a license plate. Filter by object, confidence, and event phase (start, update, end).
 - **Sensor change.** A sensor's state changes, like a contact sensor opening. This also covers your cameras' detection sensors: motion, objects, faces, license plates, and classifiers. Face, plate, and classifier sensors carry what was recognized, so a flow can react to a specific person, car, plate, or result, for example a bird classifier that reports the species.[^detvssensor]
 - **Schedule.** A recurring time, set with a cron expression.
-- **System event.** Something in camera.ui itself, such as a camera connecting or disconnecting, or a plugin starting or stopping.
+- **System event.** Something in camera.ui itself, such as a camera connecting or disconnecting, a plugin starting or stopping, or a plugin sending a notification. The last one turns every plugin push into a trigger, a text alert of the NVR plugin for example: the title and the notification's data fields are available as <span v-pre>`{{system.title}}`, `{{system.type}}`, `{{system.alertTitle}}`</span> and so on, so an **If/Else** condition can pick the one you mean.
 - **Webhook.** An external service calls a URL to start the flow.
 - **MQTT message.** A message arrives on an MQTT topic. Set the topic (`+` and `#` wildcards work) and choose how to match: any message, an exact payload, or a value at a JSON path like `params.switch:0.output`. Needs the MQTT connection set up in Settings.
 - **Geofence.** A user enters or leaves a location you define.
@@ -50,6 +50,7 @@ Actions are what the flow does:
 - **HTTP request.** Call an external service.
 - **MQTT publish.** Send a message to an MQTT topic. Set the topic and the payload, and turn on **Retain** if the broker should keep the message for anyone subscribing later. Wildcards aren't allowed in the topic. Needs the MQTT connection set up in Settings.
 - **Plugin call.** Run a detection or analysis plugin on an image.
+- **Ask the assistant.** Hand the situation to the [assistant](/assistant/) and use its answer: pick the user it answers for, write the question with the flow's variables, optionally pass a picture, and deliver it as push, as a conversation, or only as a variable for the next steps.
 - **Set variable** and **delay.** Hold a value, or wait before the next step.
 
 ## Utilities
@@ -61,7 +62,7 @@ Actions are what the flow does:
 
 Steps hand values to each other through **variables**. A node that produces something offers **Add output variable** in its settings: give it a name, and every step wired after it can use that value. **Variables** on a step lists what is available to it, so if a field says nothing is there, the node it should come from is not connected yet.
 
-Write a variable as `{{name}}` wherever a field takes text, for example a notification body that greets the person the camera recognized. Fields that only take one value, like a sensor value or a condition, let you pick the variable from a list instead of typing it.
+Write a variable as <span v-pre>`{{name}}`</span> wherever a field takes text, for example a notification body that greets the person the camera recognized. Fields that only take one value, like a sensor value or a condition, let you pick the variable from a list instead of typing it.
 
 Two things help when a flow grows. **Set variable** stores a value for later, useful when you need it several steps down. And **Alias** on a node puts a prefix in front of its output variables, so `result` from two different plugins becomes `cam1.result` and `cam2.result` instead of clashing.
 

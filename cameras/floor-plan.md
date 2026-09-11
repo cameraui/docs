@@ -38,7 +38,7 @@ Changes are kept only when you select **Save**. The dots button holds undo, redo
 ## What the plan is used for
 
 - **[Episodes](/detection/episodes)** use it to tell activity apart. Two things happening at the same time in different corners of the property stay separate stories, a quick walk from the hall to the drive stays one, and the title names the places. Two cameras on the same room count as two angles of one scene: the one that had the subject closest plays, and the player offers the other.
-- **[AI descriptions](/detection/genai-descriptions)** get the layout, the walking times and what nearby sensors read at the time as context. **Floor Plan in Prompts** in the GenAI settings turns that off.
+- **[AI descriptions](/detection/genai-descriptions)** get the layout, the walking times and what nearby sensors read at the time as context.
 - **[Recordings](/recording/browsing)** gains a **Rooms** filter, which selects the cameras placed in those rooms.
 
 ## Next steps

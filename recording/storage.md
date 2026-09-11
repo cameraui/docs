@@ -48,6 +48,8 @@ When a limit is reached, what happens depends on the **Retention Mode**:
 - **Overwrite** (default). The oldest recordings are deleted to make room, so recording never stops.
 - **Strict.** Nothing is deleted beyond the retention window. If the disk fills, recording pauses until you free space.
 
+Cleanup works through the oldest hours of every camera side by side, so a camera that records little cannot lose its whole history while a busy one keeps everything, and it stops as soon as enough space is free. Moments you marked as a [favorite](/recording/browsing#favorites) are carved out of it and stay playable however old they are.
+
 ## Free disk space
 
 Independent of those limits, camera.ui keeps part of the disk clear. **Min Free Space (GB)** sets that line: cleanup works to keep at least that much available, and recording pauses at half of it. Left at 0 the reserve is derived from the disk size, which is a share of the whole volume.

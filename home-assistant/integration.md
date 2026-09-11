@@ -90,7 +90,7 @@ Cameras with the matching detector get value sensors for **face**, **license pla
 
 ### Updates
 
-Home Assistant also gets **update entities** for the camera.ui server and its plugins. When an update is available, it shows up in Home Assistant's own updates list, and you can install it from there without opening the camera.ui interface.
+Home Assistant also gets **update entities** for the camera.ui server and its plugins. When an update is available, it shows up in Home Assistant's own updates list, and you can install it from there without opening the camera.ui interface. The update dialog offers to create a backup first, which writes a camera.ui [backup](/admin/backup) and stops the update if that fails. Turn **Allow updates from Home Assistant** off in the integration options to keep the updates visible without an install button.
 
 ## PTZ
 

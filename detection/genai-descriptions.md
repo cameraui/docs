@@ -12,25 +12,22 @@ Names and plates come from what [face recognition](/detection/faces) and [plate 
 
 ## Choosing a provider
 
-In **Settings → [Recordings](/recording/)**, open the **GenAI** tab and pick a provider:
+The model comes from **Settings → [Assistant](/admin/assistant-setup)**: allow the NVR plugin under **Plugin access** and pick one of your models. The plugin sends its requests to camera.ui, so the key stays on the server. Any provider the assistant supports works, as long as the model reads pictures; the picture test in the model list tells you.
 
-- **Ollama.** Runs a model locally on your own hardware. Set the **API Base URL** (for example `http://localhost:11434`).
-- **OpenAI** or **Gemini.** Use a cloud model. Set your **API Key**.
-
-Then set the **Model** (such as `llava`, `gpt-4o`, or `gemini-2.5-flash`), an optional **Description Language**, and how many images per event to send. **Request Timeout** is how long camera.ui waits for the provider, 60 seconds by default; local Ollama models often need more. **Test Connection** checks it works. Enable it per camera with the camera's **AI descriptions** toggle.
+Descriptions are written in the **Answer language** of the assistant settings, in English when it follows the interface, and look at up to four pictures per event. Enable them per camera with the camera's **AI descriptions** toggle.
 
 ## Moments and Episodes
 
-The provider you pick under **GenAI** feeds two features, each with its own tab:
+The model feeds two features, each with its own tab in the recording settings:
 
-- **Moments.** Turn on **Enabled** here to get AI descriptions of what happens in an event. **Custom Instructions** takes free-text guidance added to the built-in prompt, for example what to pay attention to or how to phrase things. An event's descriptions go out as a single summary notification a short while after the last activity.
+- **Moments.** Turn on **Enabled** here to get AI descriptions of what happens in an event. **Custom Instructions** takes free-text guidance added to the built-in prompt, for example what to pay attention to or how to phrase things. How the descriptions reach your phone is set per camera, see [Notifications](/notifications/#pushes-with-an-ai-description).
 - **Episodes.** Bundles related events across cameras into one story, with its own **Custom Instructions**. See [Episodes](/detection/episodes).
 
 ## Privacy
 
-With Ollama, everything stays on your own hardware. With OpenAI or Gemini, event snapshots are sent to that provider to generate the description.[^license]
+With Ollama, everything stays on your own hardware. With a cloud provider, event snapshots are sent to that provider to generate the description.[^license]
 
-A drawn floor plan adds text context to the prompts: how the rooms connect, walking times between cameras, and what nearby sensors read at the time. Turn **Floor Plan in Prompts** off in the GenAI tab to keep that out.
+A drawn floor plan adds text context to the prompts: how the rooms connect, walking times between cameras, and what nearby sensors read at the time.
 
 [^license]: AI descriptions build on recording, which requires an active camera.ui subscription.
 

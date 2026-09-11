@@ -52,13 +52,16 @@ Jede Kamera hat eigene Benachrichtigungs-Einstellungen, unter **Einstellungen �
 - **Sperrzeit (Sekunden).** Eine Ruhephase nach einem Alarm, damit eine belebte Szene dich nicht überflutet. Standardmäßig 30 Sekunden, bis zu 600. Türklingel und Alarme umgehen sie.
 - **Video in der Benachrichtigung.** Hängt einen kurzen Clip des Moments an den Push. Auf dem iPhone spielt er direkt in der Benachrichtigung, auf Android animiert die aufgeklappte Benachrichtigung den Clip Bild für Bild,[^androidframes] und der In-App-Alarm öffnet mit einem Player. Nutzt die niedrigste aufgezeichnete Qualität. Standardmäßig aus.
 
-## KI-Beschreibungen kommen als eine Zusammenfassung
+## Pushes mit KI-Beschreibung
 
-Mit aktivierten KI-Beschreibungen sammeln sich die Texte eines Ereignisses und kommen als eine einzige Zusammenfassung, sobald die Szene kurz ruhig bleibt oder das Ereignis endet.[^ai] Du bekommst die Story des ganzen Besuchs statt eines Summens für jeden Moment.
+Mit aktivierten [KI-Beschreibungen](/de/detection/genai-descriptions) trägt der Alarm das, was die KI gesehen hat, statt eines nackten „Person erkannt".[^ai] Dafür sorgt **Moment Pushes** in den Einstellungen der Kamera, und es bedeutet auch, dass der Alarm auf die Beschreibung wartet. Klingeln und Alarme kommen weiterhin sofort, und antwortet das Modell nicht rechtzeitig, geht stattdessen der normale Erkennungs-Push raus.
 
-- **Der erste Alarm bleibt schnell.** Eine Person pingt dich weiterhin sofort an, und der Name folgt, sobald ein bekanntes Gesicht erkannt wird.
-- **Ein Alarm, leise aktualisiert.** Spätere Momente aktualisieren denselben Alarm, ohne erneut zu summen.
-- **Tippen öffnet den Anfang.** Die Zusammenfassung bringt dich zum Beginn des Ereignisses, nicht zum letzten Moment.
+**Push Timing** entscheidet, wie oft ein lebhaftes Ereignis bei dir ankommt:
+
+- **Per Moment.** Jeder Moment pusht, sobald seine Beschreibung fertig ist. Das ist der Standard.
+- **Per Event.** Die Beschreibungen sammeln sich und ein Push geht raus, nachdem die Szene eine Weile ruhig war, die Story des ganzen Besuchs statt eines Summens pro Moment. Tippen öffnet den Beginn des Ereignisses.
+
+Ein Alarm, der schon auf dem Sperrbildschirm liegt, wird leise aktualisiert, wenn etwas Besseres kommt, ein erkannter Name oder ein schärferes Bild, ohne erneut zu summen.
 
 ## Kritische Alarme
 

@@ -21,7 +21,7 @@ Ein Trigger ist das, was einen Ablauf startet. Du kannst mehrere verwenden.
 - **Erkennungsereignis.** Etwas an einer Kamera erkannt: Bewegung, eine Person, ein Fahrzeug oder Tier, ein Audio-Ereignis wie eine Türklingel oder Glasbruch, ein erkanntes Gesicht oder ein Kennzeichen. Filtere nach Objekt, Confidence und Ereignis-Phase (Start, Update, Ende).
 - **Sensoränderung.** Der Zustand eines Sensors ändert sich, etwa ein sich öffnender Kontaktsensor. Das umfasst auch die Erkennungssensoren deiner Kameras: Bewegung, Objekte, Gesichter, Kennzeichen und Klassifizierer. Gesichts-, Kennzeichen- und Klassifizierer-Sensoren tragen das Erkannte, ein Ablauf kann also auf eine bestimmte Person, ein bestimmtes Auto, ein Kennzeichen oder ein Ergebnis reagieren, etwa einen Vogel-Klassifizierer, der die Art meldet.[^detvssensor]
 - **Zeitplan.** Eine wiederkehrende Zeit, per Cron-Ausdruck.
-- **Systemereignis.** Etwas in camera.ui selbst, etwa eine Kamera, die sich verbindet oder trennt, oder ein Plugin, das startet oder stoppt.
+- **Systemereignis.** Etwas in camera.ui selbst, etwa eine Kamera, die sich verbindet oder trennt, ein Plugin, das startet oder stoppt, oder ein Plugin, das eine Benachrichtigung sendet. Letzteres macht jeden Plugin-Push zum Auslöser, zum Beispiel einen Textalarm des NVR-Plugins: Titel und Datenfelder der Benachrichtigung stehen als <span v-pre>`{{system.title}}`, `{{system.type}}`, `{{system.alertTitle}}`</span> und so weiter bereit, eine **Wenn/Sonst**-Bedingung wählt den gemeinten aus.
 - **Webhook.** Ein externer Dienst ruft eine URL auf, um den Ablauf zu starten.
 - **MQTT-Nachricht.** Eine Nachricht geht auf einem MQTT-Topic ein. Setze das Topic (die Wildcards `+` und `#` funktionieren) und wähle den Abgleich: jede Nachricht, ein exakter Payload oder ein Wert an einem JSON-Pfad wie `params.switch:0.output`. Benötigt die MQTT-Verbindung in den Einstellungen.
 - **Geofence.** Ein Benutzer betritt oder verlässt einen von dir definierten Ort.
@@ -50,6 +50,7 @@ Aktionen sind das, was der Ablauf tut:
 - **HTTP-Anfrage.** Einen externen Dienst aufrufen.
 - **MQTT Publish.** Eine Nachricht auf ein MQTT-Topic senden. Setze Topic und Payload, und schalte **Retain** ein, wenn der Broker die Nachricht für später hinzukommende Abonnenten behalten soll. Wildcards sind im Topic nicht erlaubt. Benötigt die MQTT-Verbindung in den Einstellungen.
 - **Plugin-Aufruf.** Ein Erkennungs- oder Analyse-Plugin auf ein Bild anwenden.
+- **Assistenten fragen.** Die Lage an den [Assistenten](/de/assistant/) geben und seine Antwort nutzen: Nutzer wählen, für den er antwortet, die Frage mit den Variablen des Flows schreiben, optional ein Bild mitgeben und als Push, als Gespräch oder nur als Variable für die nächsten Schritte zustellen.
 - **Variable setzen** und **Verzögerung.** Einen Wert halten oder vor dem nächsten Schritt warten.
 
 ## Hilfsmittel
@@ -61,7 +62,7 @@ Aktionen sind das, was der Ablauf tut:
 
 Schritte reichen Werte über **Variablen** weiter. Ein Knoten, der etwas produziert, bietet in seinen Einstellungen **Ausgabevariable hinzufügen** an: Gib ihr einen Namen, und jeder dahinter verdrahtete Schritt kann den Wert nutzen. **Variablen** an einem Schritt listet, was ihm zur Verfügung steht; steht dort nichts, ist der Knoten, aus dem der Wert kommen soll, noch nicht verbunden.
 
-Geschrieben wird eine Variable als `{{name}}`, überall wo ein Feld Text annimmt, etwa im Text einer Benachrichtigung, die die erkannte Person begrüßt. Felder, die nur einen Wert annehmen, etwa ein Sensorwert oder eine Bedingung, lassen dich die Variable stattdessen aus einer Liste wählen.
+Geschrieben wird eine Variable als <span v-pre>`{{name}}`</span>, überall wo ein Feld Text annimmt, etwa im Text einer Benachrichtigung, die die erkannte Person begrüßt. Felder, die nur einen Wert annehmen, etwa ein Sensorwert oder eine Bedingung, lassen dich die Variable stattdessen aus einer Liste wählen.
 
 Zwei Dinge helfen, wenn ein Flow wächst. **Variable setzen** hält einen Wert für später fest, praktisch wenn du ihn erst einige Schritte weiter brauchst. Und **Alias** an einem Knoten stellt seinen Ausgabevariablen ein Präfix voran, aus `result` zweier Plugins wird so `cam1.result` und `cam2.result` statt eines Namenskonflikts.
 

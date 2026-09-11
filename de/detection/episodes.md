@@ -6,7 +6,7 @@ title: Episoden
 
 Wenn mehrere Kameras dieselbe Aktivität etwa zur gleichen Zeit sehen, kann camera.ui diese Sichtungen zu einer **Episode** bündeln: ein einziger Titel und eine kurze Story, die dem Geschehen der Reihe nach über die Kameras folgt. Eine Person, die von der Einfahrt zur Haustür geht, wird zu einer Episode statt zu drei getrennten Ereignissen.
 
-Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI schreibt die Story, ein Anbieter muss also zuerst eingerichtet sein.
+Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI schreibt die Story, das NVR-Plugin braucht also zuerst ein Modell.
 
 ## Einschalten
 
