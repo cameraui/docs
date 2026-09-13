@@ -10,6 +10,8 @@ Home is the first screen after you sign in. It shows every camera you have acces
 
 Above the cards, **Recent Events** is a row of recent moments you can scroll sideways. A visit with several phases shows one card per moment, like the timeline, and selecting a card opens it at that moment. Cards with a recognized face or a read license plate get arrows to browse the pictures, and resting your finger on a card (or hovering on a computer) plays a short preview. [Episodes](/detection/episodes) appear here too, as a mosaic card showing how many cameras took part. See [Events & detections](/detection/events-and-detections).
 
+The filter button in the corner decides which cameras show which kinds of detection there: person, vehicle, animal, face and license plate, each with its own list of cameras. Take vehicles off the camera facing the street, and the passing cars stay out of the row. An event only disappears when everything detected in it is hidden, so someone walking by while a car passes still shows. Hidden events are still detected, recorded and found in [Recordings](/recording/browsing). The button is filled while a filter is active, and the choice belongs to your account.
+
 If you have no cameras yet, Home says "No cameras available" and offers **Get started**, which takes admins to the Cameras page to [add one](/cameras/add-camera).
 
 ## Camera cards

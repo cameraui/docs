@@ -10,6 +10,8 @@ Die Startseite ist der erste Bildschirm nach der Anmeldung. Sie zeigt jede Kamer
 
 Über den Karten ist **Letzte Ereignisse** eine seitlich scrollbare Reihe der neuesten Momente. Ein Besuch mit mehreren Phasen zeigt eine Karte pro Moment, wie die Timeline, und ein Klick auf eine Karte öffnet sie an diesem Moment. Karten mit einem erkannten Gesicht oder einem gelesenen Kennzeichen bekommen Pfeile, um durch die Bilder zu blättern, und wenn du den Finger auf einer Karte ruhen lässt (oder am Computer darüberfährst), läuft eine kurze Vorschau. [Episoden](/de/detection/episodes) erscheinen hier ebenfalls, als Mosaik-Karte, die zeigt, wie viele Kameras beteiligt waren. Siehe [Events & Erkennungen](/de/detection/events-and-detections).
 
+Der Filter-Button in der Ecke legt fest, welche Kameras dort welche Erkennungen zeigen: Person, Fahrzeug, Tier, Gesicht und Kennzeichen, jede Art mit eigener Kameraliste. Nimm Fahrzeuge von der Kamera zur Straße, und die vorbeifahrenden Autos bleiben aus der Reihe. Ein Ereignis verschwindet erst, wenn alles darin Erkannte ausgeblendet ist, wer also vorbeigeht, während ein Auto durchfährt, erscheint trotzdem. Ausgeblendete Ereignisse werden weiter erkannt, aufgezeichnet und unter [Aufnahmen](/de/recording/browsing) gefunden. Der Button ist gefüllt, solange ein Filter aktiv ist, und die Auswahl gehört zu deinem Konto.
+
 Wenn du noch keine Kameras hast, steht dort "Keine Kameras verfügbar" und **Jetzt starten**, was Admins zur Kameras-Seite bringt, um [eine hinzuzufügen](/de/cameras/add-camera).
 
 ## Kamerakarten
