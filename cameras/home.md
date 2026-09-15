@@ -44,7 +44,13 @@ Cards you never moved are sorted by name.
 
 ## Snapshots and how they refresh
 
-The picture on a card is a still image, taken from the camera and reused across the app, so opening Home again shows the picture that is already there instead of waiting for a new one. camera.ui refreshes it on its own, every 60 seconds by default. The **Snapshot** section of the [camera settings](/cameras/settings) turns auto refresh off or sets the interval, between 10 and 60 seconds. Disabled cameras are never asked for a new one.
+The picture on a card is a still image, taken from the camera and reused across the app, so opening Home again shows the picture that is already there instead of waiting for a new one. When a camera takes a new one is set under **New picture** in the **Snapshot** section of the [camera settings](/cameras/settings):
+
+- **Regularly.** A timer takes a picture every 10 seconds to 1 hour (60 seconds by default). Looking at the camera never wakes it.
+- **When viewed.** A new picture only when someone looks at the camera and the stored one is older than the age you set.
+- **Only on request.** The camera is left alone until an automation, **Refresh snapshot** or the API asks. Made for battery cameras.
+
+A picture taken by an automation or the refresh button shows up on the cards right away, in every mode. Disabled cameras are never asked for a new one.
 
 Use **Refresh snapshot** on a card when you want a current picture immediately, for example after you moved a PTZ camera.
 

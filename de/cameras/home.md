@@ -44,7 +44,13 @@ Karten, die du nie verschoben hast, sind nach Namen sortiert.
 
 ## Snapshots und wie sie sich aktualisieren
 
-Das Bild auf einer Karte ist ein Standbild, von der Kamera geholt und in der ganzen App wiederverwendet. Öffnest du die Startseite erneut, siehst du also sofort das vorhandene Bild, statt auf ein neues zu warten. camera.ui aktualisiert es von selbst, standardmäßig alle 60 Sekunden. Im Abschnitt **Snapshot** der [Kamera-Einstellungen](/de/cameras/settings) schaltest du den Auto-Refresh ab oder setzt das Intervall, zwischen 10 und 60 Sekunden. Deaktivierte Kameras werden nie nach einem neuen Bild gefragt.
+Das Bild auf einer Karte ist ein Standbild, von der Kamera geholt und in der ganzen App wiederverwendet. Öffnest du die Startseite erneut, siehst du also sofort das vorhandene Bild, statt auf ein neues zu warten. Wann eine Kamera ein neues macht, legst du unter **Neues Bild** im Abschnitt **Snapshot** der [Kamera-Einstellungen](/de/cameras/settings) fest:
+
+- **Regelmäßig.** Ein Timer macht alle 10 Sekunden bis 1 Stunde ein Bild (Standard 60 Sekunden). Das Ansehen der Kamera weckt sie nie.
+- **Beim Ansehen.** Ein neues Bild nur, wenn jemand die Kamera ansieht und das gespeicherte älter ist als das eingestellte Alter.
+- **Nur auf Anfrage.** Die Kamera bleibt in Ruhe, bis eine Automation, **Snapshot aktualisieren** oder die API fragt. Gemacht für Akkukameras.
+
+Ein Bild, das eine Automation oder der Aktualisieren-Button geholt hat, erscheint in jedem Modus sofort auf den Karten. Deaktivierte Kameras werden nie nach einem neuen Bild gefragt.
 
 Nutze **Snapshot aktualisieren** auf einer Karte, wenn du sofort ein aktuelles Bild willst, zum Beispiel nachdem du eine PTZ-Kamera bewegt hast.
 

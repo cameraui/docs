@@ -29,7 +29,7 @@ The main configuration form, grouped into sections:
 - **Recording.** Whether and how this camera is recorded: the mode, the pre-buffer, and which streams go to disk. An installed NVR plugin does the recording. See [Recording](/recording/).
 - **Notifications.** What this camera pushes to your phone: the camera's own on/off switch, video in push, which sounds and sensors notify, the cooldown and the notification speed. Which detections notify you is set in **Zones**, on the alert zones. See [Notifications](/notifications/).
 - **Autotrack.** Let a PTZ camera follow detected objects automatically. See [PTZ & autotrack](/sensors/ptz).
-- **Snapshot.** How still images are refreshed and cached (auto-refresh, cache time, and refresh interval).
+- **Snapshot.** When the camera takes a new still image: regularly, when viewed, or only on request. See [Snapshots and how they refresh](/cameras/home#snapshots-and-how-they-refresh).
 - **Zones.** Draw motion, object, alert and privacy zones, and crossing lines. See [Zones & privacy](/cameras/zones-and-masks).
 - **Frame Worker.** Picks the decoder hardware (CUDA, VAAPI, Quick Sync, and more) and device for this camera. Auto chooses the best available. A second decoder selection applies while the camera decodes on an assigned [worker](/admin/workers), so host and worker can use different GPUs; on Same as server the worker uses the first selection. **Main stream without GPU** forces detection onto the high-resolution stream on CPU-only systems, where it costs real processing power; with a hardware decoder the high-resolution stream is already analysed when something is detected, so leave it off.
 
