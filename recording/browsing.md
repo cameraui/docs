@@ -4,7 +4,7 @@ title: Browsing & filters
 
 # Browsing & filters
 
-The **Recordings** view is where you find past events across your cameras. Each event shows a thumbnail and what was detected, newest first. Related events across cameras can also appear as an **episode** card. A recording that belongs to one shows an **Open episode** button. See [Episodes](/detection/episodes).
+The **Recordings** view is where you find past events across your cameras. Each event shows a thumbnail and what was detected, ordered by when something last happened in it. An event that runs on for hours shows while it runs, with the picture of its newest span on the card. Related events across cameras can also appear as an **episode** card. A recording that belongs to one shows an **Open episode** button. See [Episodes](/detection/episodes).
 
 When the list says recordings are unavailable, the NVR plugin is not running. It fills itself once the plugin answers again.
 
@@ -37,7 +37,7 @@ The gear in the top right opens view options.
 
 ## Reading a card
 
-Each card is one moment, newest first.
+Each card is one moment.
 
 - **Time and camera.** Shown top left. Select the card to open playback at that moment.
 - **Faces and plates.** When a moment has more than its scene picture, like a recognized face or a read license plate, arrows appear to step through the pictures in place, with the name or plate shown. The small tiles at the bottom mark and jump to one.

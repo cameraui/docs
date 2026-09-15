@@ -4,7 +4,7 @@ title: Durchsuchen & Filter
 
 # Durchsuchen & Filter
 
-Die **Aufnahmen**-Ansicht ist der Ort, an dem du vergangene Ereignisse über deine Kameras hinweg findest. Jedes Ereignis zeigt ein Thumbnail und das Erkannte, neueste zuerst. Zusammenhängende Ereignisse über mehrere Kameras können auch als **Episode**-Karte erscheinen. Eine Aufnahme, die zu einer gehört, zeigt einen **Open episode**-Button. Siehe [Episoden](/de/detection/episodes).
+Die **Aufnahmen**-Ansicht ist der Ort, an dem du vergangene Ereignisse über deine Kameras hinweg findest. Jedes Ereignis zeigt ein Thumbnail und das Erkannte, sortiert danach, wann darin zuletzt etwas passiert ist. Ein Ereignis, das stundenlang läuft, erscheint schon während es läuft, mit dem Bild seines neuesten Abschnitts auf der Karte. Zusammenhängende Ereignisse über mehrere Kameras können auch als **Episode**-Karte erscheinen. Eine Aufnahme, die zu einer gehört, zeigt einen **Open episode**-Button. Siehe [Episoden](/de/detection/episodes).
 
 Sagt die Liste, dass Aufnahmen nicht verfügbar sind, läuft das NVR-Plugin nicht. Sie füllt sich wieder, sobald das Plugin antwortet.
 
@@ -37,7 +37,7 @@ Das Zahnrad oben rechts öffnet die Ansichtsoptionen.
 
 ## Eine Karte lesen
 
-Jede Karte ist ein Moment, neueste zuerst.
+Jede Karte ist ein Moment.
 
 - **Zeit und Kamera.** Oben links. Wähle die Karte, um die Wiedergabe an diesem Moment zu öffnen.
 - **Gesichter und Kennzeichen.** Hat ein Moment mehr als sein Szenenbild, etwa ein erkanntes Gesicht oder ein gelesenes Kennzeichen, erscheinen Pfeile, um an Ort und Stelle durch die Bilder zu blättern, mit Name oder Kennzeichen. Die kleinen Kacheln unten markieren eines und springen dorthin.

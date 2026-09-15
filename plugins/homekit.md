@@ -19,6 +19,14 @@ Pairing from the same device camera.ui is open on? There is nothing to scan then
 
 Once added, the camera streams in Home and supports **HomeKit Secure Video** recording if you've set that up in Home.
 
+## Secure Video on iOS 27
+
+Cameras with an HEVC (H.265) main stream use Apple's newer secure video services. Live view at home and away, recording and two-way audio all run on the camera's own HEVC stream without transcoding, so a 4K camera no longer costs a CPU core. This needs iOS 27 or tvOS 27 on the devices you watch on and on the home hub.
+
+Cameras with an H.264 main stream stay on the classic HomeKit camera services, because Apple's new remote view only takes HEVC. The plugin picks the path from the main stream's codec when the camera is published.
+
+If your home stays on iOS 26 or older, turn on **Force legacy path** in the camera's advanced settings. The camera then uses the classic services and its HEVC stream is transcoded to H.264, as before.
+
 ## What ends up where
 
 A camera is always its own accessory, with a motion sensor on it. That motion sensor is fed by camera.ui's detection, so it works whether or not a motion sensor is assigned.
@@ -47,8 +55,9 @@ Opening a camera in Home is near-instant, taking only a few milliseconds, whethe
 Each camera's HomeKit settings include:
 
 - **QR code and PIN.** The pairing details for that camera.
-- **Hardware acceleration.** Uses the GPU, if one is available, for HomeKit Secure Video recordings. On by default.
-- **Adaptive stream source.** On by default. When you're away from home on a slow connection, camera.ui picks the source that matches the size Home asks for: high, mid, or low resolution. Turn it off to always use the primary source.
+- **Force legacy path.** Keeps the camera on the classic HomeKit services, see [Secure Video on iOS 27](#secure-video-on-ios-27). Off by default.
+- **Use Hardware Acceleration.** Uses the GPU, if one is available, when a stream has to be transcoded. On by default.
+- **Use Hardware Acceleration for HKSV.** The same for HomeKit Secure Video recordings. On by default; turn it off for a camera whose recordings break up.
 - **Port and mDNS advertiser.** Advanced networking options; the defaults are usually fine.
 - **Reset pairing.** Generate a new code and re-add the camera if pairing breaks.
 

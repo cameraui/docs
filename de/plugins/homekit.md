@@ -19,6 +19,14 @@ Du koppelst vom selben Gerät, auf dem camera.ui offen ist? Dann gibt es nichts 
 
 Einmal hinzugefügt, streamt die Kamera in Home und unterstützt **HomeKit Secure Video**-Aufnahmen, wenn du das in Home eingerichtet hast.
 
+## Secure Video ab iOS 27
+
+Kameras mit HEVC-Hauptstream (H.265) nutzen Apples neuere Secure-Video-Dienste. Live-Ansicht zu Hause und unterwegs, Aufnahme und Gegensprechen laufen direkt auf dem HEVC-Stream der Kamera, ohne Transkodierung, eine 4K-Kamera kostet also keinen CPU-Kern mehr. Dafür braucht es iOS 27 oder tvOS 27 auf den Geräten, mit denen du zuschaust, und auf der Steuerzentrale.
+
+Kameras mit H.264-Hauptstream bleiben auf den klassischen HomeKit-Kameradiensten, weil Apples neue Fernansicht nur HEVC annimmt. Welcher Weg genommen wird, entscheidet das Plugin beim Veröffentlichen der Kamera anhand des Codecs im Hauptstream.
+
+Bleibt dein Zuhause auf iOS 26 oder älter, schalte in den erweiterten Einstellungen der Kamera **Force legacy path** ein. Die Kamera nutzt dann die klassischen Dienste, und ihr HEVC-Stream wird wie bisher nach H.264 transkodiert.
+
 ## Was wo landet
 
 Eine Kamera ist immer ihr eigenes Zubehör, mit einem Bewegungssensor darauf. Diesen Bewegungssensor speist die Erkennung von camera.ui, er funktioniert also auch ohne zugewiesenen Bewegungssensor.
@@ -47,8 +55,9 @@ Eine Kamera in Home zu öffnen geht nahezu sofort und dauert nur wenige Millisek
 Die HomeKit-Einstellungen jeder Kamera umfassen:
 
 - **QR-Code und PIN.** Die Kopplungs-Details dieser Kamera.
-- **Use Hardware Acceleration.** Nutzt die GPU für HomeKit Secure Video Aufnahmen, sofern eine vorhanden ist. Standardmäßig an.
-- **Adaptive Stream Source.** Standardmäßig an. Wenn du unterwegs bist und die Verbindung langsam ist, wählt camera.ui die Quelle passend zur Größe, die Home anfragt: hohe, mittlere oder niedrige Auflösung. Schalte es aus, um immer die primäre Quelle zu nutzen.
+- **Force legacy path.** Hält die Kamera auf den klassischen HomeKit-Diensten, siehe [Secure Video ab iOS 27](#secure-video-ab-ios-27). Standardmäßig aus.
+- **Use Hardware Acceleration.** Nutzt die GPU, sofern eine vorhanden ist, wenn ein Stream transkodiert werden muss. Standardmäßig an.
+- **Use Hardware Acceleration for HKSV.** Dasselbe für HomeKit-Secure-Video-Aufnahmen. Standardmäßig an; schalte es für eine Kamera aus, deren Aufnahmen abbrechen.
 - **Port und mDNS advertiser.** Erweiterte Netzwerk-Optionen; die Standardwerte passen meist.
 - **Reset Pairing.** Einen neuen Code erzeugen und die Kamera neu hinzufügen, falls die Kopplung bricht.
 

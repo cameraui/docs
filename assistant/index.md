@@ -20,7 +20,7 @@ It also works the app for you: "show me the garden camera", "open the recording 
 
 When a request is ambiguous the assistant asks back with a small form: pick a camera, choose a time range, or type an answer. Skip the question and it continues with an assumption it names. A recap of a day or a system check comes back as a card with one row per camera or component, and the rows open the moment they describe.
 
-Next to the text box sits a microphone: the browser turns speech into text, camera.ui never receives audio. It shows up in browsers that offer speech recognition, on a secure connection.
+Next to the text box sits a microphone: the browser turns speech into text, camera.ui never receives audio. It shows up in browsers that offer speech recognition, on a secure connection, and in the iOS and Android apps, which ask for microphone and speech recognition access the first time.
 
 The paper clip attaches your own files, pasting a picture works too: pictures up to 12 MB, audio up to 25 MB, video up to 60 MB, eight files per message. The assistant hands them to the detection plugins, for "what does the object detection find on this picture" or "which sounds are in this recording". Audio and video never go to the language model, only to the plugins. Attached pictures stay with the conversation, audio and video are analyzed once and not kept.
 

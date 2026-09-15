@@ -20,7 +20,7 @@ Er bedient die App auch für dich: „zeig mir die Gartenkamera", „öffne die 
 
 Ist eine Anfrage mehrdeutig, fragt der Assistent mit einem kleinen Formular zurück: Kamera wählen, Zeitraum wählen, oder eine Antwort eintippen. Überspringst du die Frage, macht er mit einer Annahme weiter und nennt sie. Ein Tagesrückblick oder ein Systemcheck kommt als Karte mit einer Zeile pro Kamera oder Komponente, und die Zeilen öffnen den Moment, den sie beschreiben.
 
-Neben dem Textfeld sitzt ein Mikrofon: Der Browser macht aus dem Gesprochenen Text, camera.ui bekommt nie Audio. Es erscheint in Browsern mit Spracherkennung, auf einer sicheren Verbindung.
+Neben dem Textfeld sitzt ein Mikrofon: Der Browser macht aus dem Gesprochenen Text, camera.ui bekommt nie Audio. Es erscheint in Browsern mit Spracherkennung, auf einer sicheren Verbindung, und in den iOS- und Android-Apps, die beim ersten Mal nach Zugriff auf Mikrofon und Spracherkennung fragen.
 
 Die Büroklammer hängt eigene Dateien an, Einfügen eines Bildes geht auch: Bilder bis 12 MB, Audio bis 25 MB, Video bis 60 MB, acht Dateien pro Nachricht. Der Assistent gibt sie an die Erkennungs-Plugins weiter, für „was findet die Objekterkennung auf diesem Bild" oder „welche Geräusche sind in dieser Aufnahme". Audio und Video gehen nie an das Sprachmodell, nur an die Plugins. Angehängte Bilder bleiben beim Gespräch, Audio und Video werden einmal analysiert und nicht aufbewahrt.
 
