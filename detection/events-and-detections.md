@@ -36,7 +36,7 @@ A car parked in the driveway or a bin left in view would otherwise be detected a
 
 ## The detection trace
 
-Every event keeps a record of what the detector actually saw. The dots menu on a card in [Recordings](/recording/browsing), and the trace icon in the event dialog, opens it.
+Every event keeps a record of what the detector actually saw. The dots menu on a card in [Recordings](/recording/browsing), and the trace icon in the event dialog, opens it. Opened from a card it starts at the moment the card shows, from the camera view at the moment on screen. For an event that ran for hours, type a clock time above the frame strip to jump there; **Earlier frames** loads what came before.
 
 It steps through the event frame by frame, with the pictures taken from the recording, and shows what was found on each one, keeping only a few frames around each activity so a long quiet stretch does not bury the interesting part: the objects and the tracks they belong to, the motion boxes, the raw detections before any filtering, and the zones as they stood at the time. Where something was seen but did not become an event, the trace names the reason: under the confidence threshold, inside a privacy zone, outside the object zones, a label the zone does not accept, or a track too young to be confirmed. Every track carries its state, from tentative through active, stationary and lost to departed.
 

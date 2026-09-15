@@ -24,7 +24,7 @@ Neben dem Textfeld sitzt ein Mikrofon: Der Browser macht aus dem Gesprochenen Te
 
 Die Büroklammer hängt eigene Dateien an, Einfügen eines Bildes geht auch: Bilder bis 12 MB, Audio bis 25 MB, Video bis 60 MB, acht Dateien pro Nachricht. Der Assistent gibt sie an die Erkennungs-Plugins weiter, für „was findet die Objekterkennung auf diesem Bild" oder „welche Geräusche sind in dieser Aufnahme". Audio und Video gehen nie an das Sprachmodell, nur an die Plugins. Angehängte Bilder bleiben beim Gespräch, Audio und Video werden einmal analysiert und nicht aufbewahrt.
 
-Eine Aufnahme-Karte und das Menü einer Kamera bieten beide **Assistenten fragen**, was den Chat mit diesem Ereignis oder dieser Kamera öffnet.
+Eine Aufnahme-Karte und das Menü einer Kamera bieten beide **Assistenten fragen**, was den Chat mit diesem Ereignis oder dieser Kamera öffnet. Während der Wiedergabe fragt das Kamera-Menü nach dem Moment auf dem Bildschirm statt nach dem, was die Kamera gerade sieht.
 
 ## Mit einem Gespräch arbeiten
 

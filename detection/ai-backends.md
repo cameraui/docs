@@ -71,6 +71,10 @@ Some cameras detect objects on their own but report only that they saw something
 
 Under the camera's **Plugins** tab, pick an **Object Assist** plugin below **Object**. It is a second detector that locates the person or vehicle in the frame, so face and plate recognition get a proper crop to work on. See [Set up sensors](/sensors/setup).
 
+## Camera detection as a second opinion
+
+A person who is in view only for a moment, behind a fence or a clothesline, needs more than one sighting before detection counts it; a single glimpse is dropped as a flicker. If the camera also detects objects on its own (a camera plugin that reports people or vehicles, like the Reolink plugin or ONVIF analytics) while a backend here does the actual detection, the camera's report confirms that glimpse: the same kind of object at the same moment is enough, and the card shows the picture of the glimpse. The camera's report never creates a detection by itself, and nothing has to be set up for it.
+
 ## What you get
 
 Detected objects appear on the live view as boxes, drive [notifications](/notifications/), and become events you can [browse](/recording/browsing) and filter by type. They also feed [face recognition](/detection/faces), [license plates](/detection/license-plates), and [semantic search](/detection/semantic-search). A **heatmap** overlay on the player shows where objects were detected most often over a time window.

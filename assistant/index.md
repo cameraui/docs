@@ -24,7 +24,7 @@ Next to the text box sits a microphone: the browser turns speech into text, came
 
 The paper clip attaches your own files, pasting a picture works too: pictures up to 12 MB, audio up to 25 MB, video up to 60 MB, eight files per message. The assistant hands them to the detection plugins, for "what does the object detection find on this picture" or "which sounds are in this recording". Audio and video never go to the language model, only to the plugins. Attached pictures stay with the conversation, audio and video are analyzed once and not kept.
 
-A recording card and a camera's menu both offer **Ask the assistant**, which opens the chat with that event or camera already named.
+A recording card and a camera's menu both offer **Ask the assistant**, which opens the chat with that event or camera already named. During playback the camera's menu asks about the moment on screen instead of what the camera sees now.
 
 ## Working with a conversation
 

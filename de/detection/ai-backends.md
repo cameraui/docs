@@ -71,6 +71,10 @@ Manche Kameras erkennen Objekte selbst, melden aber nur, dass sie etwas gesehen 
 
 Wähle unter dem **Plugins**-Tab der Kamera unter **Objekt** ein **Objekt-Assistenz**-Plugin. Es ist ein zweiter Detektor, der die Person oder das Fahrzeug im Bild lokalisiert, damit Gesichts- und Kennzeichenerkennung einen passenden Ausschnitt bekommen. Siehe [Sensoren einrichten](/de/sensors/setup).
 
+## Kamera-Erkennung als zweite Meinung
+
+Eine Person, die nur einen Augenblick zu sehen ist, hinter einem Zaun oder einer Wäscheleine, braucht mehr als eine Sichtung, bevor die Erkennung sie zählt; ein einzelner Blick wird als Flackern verworfen. Erkennt die Kamera zusätzlich selbst Objekte (ein Kamera-Plugin, das Personen oder Fahrzeuge meldet, etwa das Reolink-Plugin oder ONVIF-Analytics), während ein Backend von hier die eigentliche Erkennung macht, bestätigt die Meldung der Kamera diesen Blick: Dieselbe Objektart im selben Moment genügt, und die Karte zeigt das Bild dieses Augenblicks. Die Meldung der Kamera erzeugt nie selbst eine Erkennung, und einrichten musst du dafür nichts.
+
 ## Was du bekommst
 
 Erkannte Objekte erscheinen in der Live-Ansicht als Boxen, treiben [Benachrichtigungen](/de/notifications/) an und werden zu Ereignissen, die du [durchsuchen](/de/recording/browsing) und nach Typ filtern kannst. Sie speisen außerdem [Gesichtserkennung](/de/detection/faces), [Kennzeichen](/de/detection/license-plates) und [semantische Suche](/de/detection/semantic-search). Eine **Heatmap**-Überlagerung im Player zeigt, wo über einen Zeitraum am häufigsten Objekte erkannt wurden.
