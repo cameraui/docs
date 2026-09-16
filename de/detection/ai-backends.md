@@ -48,7 +48,7 @@ Bewegt sich nichts, gibt es nichts herauszuschneiden, und der ganze Frame geht d
 **Metrics → Kameras** zeigt zwei Tabellen. Die erste ist die Prozess-Tabelle, eine Zeile pro Kamera, mit CPU und Speicher. Die zweite, **Erkennung**, zeigt, wohin die Zeit geht:
 
 - **Decode**, die Zeit für ein Bild: erst der Analyse-Stream, dann der hochauflösende.
-- **Verarbeitung**, das Skalieren auf die Modelleingabe und das Zurückrechnen in Boxen.
+- **Verarbeitung**, das Skalieren auf die Modelleingabe und das Zurückrechnen in Boxen. Bei einer Kamera ohne Objekterkennung steht dort das Skalieren für die Bewegungserkennung.
 - **Transport**, die Zeit, die Bild und Ergebnis zum Plugin und zurück brauchen.
 - **Analysiert**, analysierte Bilder pro Sekunde, wieder Analyse-Stream und hochauflösender Stream.
 - **Aktiv**, der Anteil der Zeit, in dem die Kamera überhaupt analysiert hat. Eine Kamera mit Bildschleife liegt bei 100%, eine Kamera, die Bewegung selbst meldet, zählt nur während Ereignissen.

@@ -48,7 +48,7 @@ When nothing is moving, there is nothing to cut out, and the whole frame goes th
 **Metrics → Cameras** shows two tables. The first is the process table, one row per camera, with CPU and memory. The second, **Detection**, shows where the time goes:
 
 - **Decode**, the time for one frame: analysis stream first, then the high-resolution stream.
-- **Processing**, scaling to the model input and turning the results back into boxes.
+- **Processing**, scaling to the model input and turning the results back into boxes. On a camera without an object detector it shows the scaling for motion.
 - **Transport**, the time the frame and the result spend on the way to the plugin and back.
 - **Analysed**, frames per second analysed, again analysis stream then high-resolution stream.
 - **Active**, the share of time the camera analysed at all. A camera with a frame loop sits at 100%, a camera that reports motion itself only counts during events.
