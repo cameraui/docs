@@ -20,7 +20,7 @@ Beschreibungen entstehen in der **Antwortsprache** der Assistenten-Einstellungen
 
 Das Modell speist zwei Funktionen, jede mit eigenem Tab in den Aufnahme-Einstellungen:
 
-- **Moments.** Aktiviere hier **Enabled**, um KI-Beschreibungen dessen zu bekommen, was in einem Ereignis passiert. **Custom Instructions** nimmt Freitext-Vorgaben, die dem eingebauten Prompt hinzugefügt werden, etwa worauf zu achten ist oder wie formuliert werden soll. Wie die Beschreibungen aufs Handy kommen, stellst du pro Kamera ein, siehe [Benachrichtigungen](/de/notifications/#pushes-mit-ki-beschreibung).
+- **Moments.** Aktiviere hier **Enabled**, um KI-Beschreibungen dessen zu bekommen, was in einem Ereignis passiert. **Custom Instructions** nimmt Freitext-Vorgaben, die dem eingebauten Prompt hinzugefügt werden, etwa worauf zu achten ist oder wie formuliert werden soll. **Model Timeout** ist die Zeit, die eine Beschreibung dauern darf, bevor der Push ohne sie rausgeht: 60 Sekunden als Standard, für ein langsames lokales Modell höher setzen. Wie die Beschreibungen aufs Handy kommen, stellst du pro Kamera ein, siehe [Benachrichtigungen](/de/notifications/#pushes-mit-ki-beschreibung).
 - **Episoden.** Bündelt zusammenhängende Ereignisse über mehrere Kameras zu einer Story, mit eigenen **Custom Instructions**. Siehe [Episoden](/de/detection/episodes).
 
 ## Datenschutz

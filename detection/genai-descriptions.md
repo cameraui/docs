@@ -20,7 +20,7 @@ Descriptions are written in the **Answer language** of the assistant settings, i
 
 The model feeds two features, each with its own tab in the recording settings:
 
-- **Moments.** Turn on **Enabled** here to get AI descriptions of what happens in an event. **Custom Instructions** takes free-text guidance added to the built-in prompt, for example what to pay attention to or how to phrase things. How the descriptions reach your phone is set per camera, see [Notifications](/notifications/#pushes-with-an-ai-description).
+- **Moments.** Turn on **Enabled** here to get AI descriptions of what happens in an event. **Custom Instructions** takes free-text guidance added to the built-in prompt, for example what to pay attention to or how to phrase things. **Model Timeout** is how long a description may take before the push goes out without it: 60 seconds by default, raise it for a slow local model. How the descriptions reach your phone is set per camera, see [Notifications](/notifications/#pushes-with-an-ai-description).
 - **Episodes.** Bundles related events across cameras into one story, with its own **Custom Instructions**. See [Episodes](/detection/episodes).
 
 ## Privacy
