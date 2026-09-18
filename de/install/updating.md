@@ -29,6 +29,10 @@ Um Vorabversionen früh auszuprobieren, aktiviere unter **Einstellungen → [Sys
 
 <Shot src="/img/install/system-update.png" alt="Beta-Updates und die Server-Version auf der System-Seite" />
 
+## Beta-Versionen von Plugins
+
+Plugins haben einen eigenen Schalter, die **Beta-Updates** des Servers erreichen sie nicht. Aktiviere im Zahnrad-Menü neben der Suche auf der [Plugins-Seite](/de/plugins/) die Option **Beta-Versionen**, dann erscheinen Vorabversionen in der Versionsauswahl eines Plugins und werden als Updates angeboten. Wieder aus, bietet die Seite stabile Versionen an; eine bereits installierte Beta bleibt, bis du eine andere Version wählst. Siehe [Plugins](/de/plugins/).
+
 ## Die Desktop-App aktualisieren
 
 Die [Desktop-App](/de/install/desktop) hält sich selbst aktuell. Beim Start installiert sie Updates von selbst, und im laufenden Betrieb prüft sie weiter. Findet sie eines, bietet die **Updates**-Seite es als Zeile **Server** an: Es zu installieren lädt das App-Update, installiert es und startet die App neu. Das geht auch von einem anderen Gerät aus, ein Mini-PC im Schrank, auf dem die App läuft, braucht also keine Tastatur. Lässt du es liegen, installiert sich das Update beim nächsten Start.

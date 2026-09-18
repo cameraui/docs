@@ -29,6 +29,10 @@ To try pre-release versions early, turn on **Beta updates** in **Settings → [S
 
 <Shot src="/img/install/system-update.png" alt="Beta updates and the server version on the System page" />
 
+## Beta versions of plugins
+
+Plugins have their own switch, and the server's **Beta updates** does not reach them. Turn on **Beta versions** in the gear menu next to the search on the [Plugins page](/plugins/), and pre-release versions show up in a plugin's version picker and are offered as updates. Off again, the page offers stable releases; a beta you already installed stays until you pick another version. See [Plugins](/plugins/).
+
 ## Updating the desktop app
 
 The [desktop app](/install/desktop) keeps itself up to date. It installs updates on its own at startup, and while it runs it keeps checking. When it finds one, the **Updates** page offers it as the **Server** row: installing it downloads the app update, installs it and relaunches. You can do that from another device, so a mini PC in a cupboard running the app does not need a keyboard. The update also installs on the next start if you leave it.
