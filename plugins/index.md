@@ -54,6 +54,24 @@ Choose **Search plugins** to open the store. The list comes from npm, so any pac
 
 Pick a plugin and install it, choosing a specific version if you like. Once installed, enable it and assign it where it's needed.
 
+## Private registry or mirror
+
+Plugins come from whichever npm registry your `.npmrc` points at, so a company mirror or a private registry works for the store, for installs and for a plugin's own dependencies. Put the file in the home directory of the user that runs camera.ui:
+
+```ini
+registry=https://npm.example.com/
+//npm.example.com/:_authToken=<token>
+```
+
+- **One registry for everything** with `registry=`, or a single scope with `@example:registry=https://npm.example.com/`.
+- **Login** with `//npm.example.com/:_authToken=<token>`, or basic auth through `//npm.example.com/:username=` plus `//npm.example.com/:_password=<base64>`. Credentials are only sent to the host and path they are written for.
+- **Token from the environment.** `CAMERAUI_NPM_TOKEN` (or `NPM_TOKEN`) replaces the token line. It applies to the registry from `registry=`, so a scope with its own registry keeps its token in `.npmrc`.
+- **Docker:** mount the file to `/root/.npmrc`. The home directory is not part of the `/data` volume.
+- **Linux service:** the home directory of the service user. **Desktop app:** the home directory of the logged-in user.
+- **Remote workers** install plugins themselves, so each one needs the same file or the same variable.
+
+The store lists packages named `camera-ui-*` or `@scope/camera-ui-*` that carry the keyword `camera-ui-plugin`. Registries without a search API, GitHub Packages for example, return no list: type the exact package name instead, and the store looks it up directly.
+
 ## Settings
 
 A plugin's own settings live on its page, under **Settings**, and apply server-wide. Settings that affect a single camera are edited in that [camera's settings](/cameras/settings) instead. Recording-plugin settings are kept with the rest of [recording](/recording/).

@@ -157,6 +157,8 @@ WebRTC-Medien laufen über UDP auf 2004, TCP auf demselben Port ist der Fallback
 
 Der gesamte Zustand liegt im `cameraui-data`-Volume: Konfiguration, Datenbank, Aufnahmen und TLS-Zertifikate. Sichere dieses Volume, um eine Kopie zu behalten. Siehe [Backup & Wiederherstellung](/de/admin/backup).
 
+Um Plugins aus einer privaten Registry oder einem Mirror zu installieren, mounte deine `.npmrc` nach `/root/.npmrc`, siehe [Private Registry oder Mirror](/de/plugins/#private-registry-oder-mirror).
+
 ## Aktualisieren
 
 Ein neues Image zu ziehen aktualisiert nicht den Server, nur das Image (OS, GPU-Bibliotheken und Launcher): Der Launcher behält die Server-Version, die im `cameraui-data`-Volume installiert ist. Aktualisiere den Server über **Einstellungen → System** oder führe `cameraui update-server -H /data` im Container aus und starte ihn danach neu. Um das Image zu aktualisieren, ziehe es neu und erstelle den Container neu:

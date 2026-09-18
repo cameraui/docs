@@ -157,6 +157,8 @@ WebRTC media runs over UDP on 2004, with TCP on the same port as fallback. Witho
 
 All state lives in the `cameraui-data` volume: config, database, recordings, and TLS certificates. Back up that volume to keep a copy. See [Backup & restore](/admin/backup).
 
+To install plugins from a private registry or a mirror, mount your `.npmrc` to `/root/.npmrc`, see [Private registry or mirror](/plugins/#private-registry-or-mirror).
+
 ## Updating
 
 Pulling a new image does not update the server, only the image (OS, GPU libraries, and launcher): the launcher keeps the server version installed in the `cameraui-data` volume. Update the server from the [Updates page](/install/updating#the-updates-page), or run `cameraui update-server -H /data` in the container, then restart it. To update the image, pull and recreate the container:

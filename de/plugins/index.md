@@ -54,6 +54,24 @@ Wähle **Plugins suchen**, um den Store zu öffnen. Die Liste stammt von npm, so
 
 Wähle ein Plugin und installiere es, bei Bedarf mit Versionswahl. Einmal installiert, aktiviere es und weise es zu, wo es gebraucht wird.
 
+## Private Registry oder Mirror
+
+Plugins kommen aus der npm-Registry, auf die deine `.npmrc` zeigt. Ein Firmen-Mirror oder eine private Registry funktioniert damit für den Store, für Installationen und für die Abhängigkeiten eines Plugins. Die Datei liegt im Home-Verzeichnis des Benutzers, der camera.ui ausführt:
+
+```ini
+registry=https://npm.example.com/
+//npm.example.com/:_authToken=<token>
+```
+
+- **Eine Registry für alles** mit `registry=`, oder nur ein Scope mit `@example:registry=https://npm.example.com/`.
+- **Anmeldung** über `//npm.example.com/:_authToken=<token>` oder Basic Auth mit `//npm.example.com/:username=` und `//npm.example.com/:_password=<base64>`. Zugangsdaten gehen nur an den Host und Pfad, für die sie eingetragen sind.
+- **Token aus der Umgebung.** `CAMERAUI_NPM_TOKEN` (oder `NPM_TOKEN`) ersetzt die Token-Zeile. Es gilt für die Registry aus `registry=`, ein Scope mit eigener Registry braucht sein Token also in der `.npmrc`.
+- **Docker:** Die Datei nach `/root/.npmrc` mounten. Das Home-Verzeichnis liegt nicht im `/data`-Volume.
+- **Linux-Dienst:** das Home-Verzeichnis des Dienst-Benutzers. **Desktop-App:** das Home-Verzeichnis des angemeldeten Benutzers.
+- **Remote-Worker** installieren Plugins selbst, jeder braucht also dieselbe Datei oder dieselbe Variable.
+
+Der Store listet Pakete mit dem Namen `camera-ui-*` oder `@scope/camera-ui-*`, die das Keyword `camera-ui-plugin` tragen. Registries ohne Such-API, zum Beispiel GitHub Packages, liefern keine Liste: Gib dann den genauen Paketnamen ein, der Store sucht ihn direkt.
+
 ## Einstellungen
 
 Die eigenen Einstellungen eines Plugins liegen auf seiner Seite unter **Einstellungen** und gelten serverweit. Einstellungen, die eine einzelne Kamera betreffen, werden stattdessen in den [Einstellungen dieser Kamera](/de/cameras/settings) bearbeitet. Aufnahme-Plugin-Einstellungen liegen beim Rest der [Aufnahmen](/de/recording/).
