@@ -16,7 +16,7 @@ The camera's status and device info, plus a live view of its sensors and accesso
 
 ## Sources
 
-Add, change, and remove the camera's stream [sources](/cameras/add-camera#sources-and-roles) here, just like when [adding a camera](/cameras/add-camera): each source's name, role (high, mid, low resolution, or snapshot), stream URLs, and options such as hot mode, preload, and mute audio (drops the audio track from that source). Each source also shows its live status, detected codecs, and stream URL.
+Add, change, and remove the camera's stream [sources](/cameras/add-camera#sources-and-roles) here, just like when [adding a camera](/cameras/add-camera): each source's name, role (high, mid, low resolution, or snapshot), stream URLs, and options such as hot mode, preload, and mute audio (drops the audio track from that source). Each source also shows its live status, its stream URL and the codecs the camera itself sends, with profile, level and sample rate where the camera reports them, for example "H.264 · High · 5.1" or "AAC · 16 kHz".
 
 ## Settings
 

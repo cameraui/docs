@@ -16,7 +16,7 @@ Status und Geräteinfo der Kamera, plus eine Live-Ansicht ihrer Sensoren und ihr
 
 ## Quellen
 
-Hier fügst du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera hinzu, änderst und entfernst sie, genau wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus, Vorladen und Audio stummschalten (entfernt die Audiospur dieser Quelle). Jede Quelle zeigt außerdem ihren Live-Status, die erkannten Codecs und die Stream-URL.
+Hier fügst du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera hinzu, änderst und entfernst sie, genau wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus, Vorladen und Audio stummschalten (entfernt die Audiospur dieser Quelle). Jede Quelle zeigt außerdem ihren Live-Status, die Stream-URL und die Codecs, die die Kamera selbst sendet, mit Profil, Level und Abtastrate, soweit die Kamera sie meldet, etwa „H.264 · High · 5.1" oder „AAC · 16 kHz".
 
 ## Einstellungen
 
