@@ -24,6 +24,10 @@ Ein Modell lässt sich Admins vorbehalten: **Für Nutzer verfügbar** in seinem 
 
 **Bilder an das Modell senden** ist ein Schalter pro Modell. Eingeschaltet geht ein Schnappschuss, den der Assistent macht, oder ein Ereignisbild aus den Aufnahmen an das Modell, damit es beschreiben kann, was es sieht, bei einem Cloud-Anbieter verlässt das Bild damit deine Maschine. Im Chat werden die Bilder immer gezeigt, egal ob das Modell sie bekommt.
 
+### Kleine Modelle und das Kontextfenster
+
+**Kontextfenster** im Modell-Dialog sagt, wie viel dieses Modell fasst. Ein Plugin-Modell bringt die Zahl selbst mit, sonst bleibt das Feld leer und es gilt das Kontextbudget aus den allgemeinen Einstellungen. Bei einem lokalen oder kleinen Modell trägst du es ein, für ein 8k-Modell also 8192, und camera.ui plant die Anfrage darum herum: Die Prozeduren wandern hinter einen `load_skill`-Aufruf, die Funktionsliste weicht einem Hinweis auf die Dokumentation, und Werkzeuge, mit denen die Frage nicht anfängt, stehen nur noch mit Namen da und werden geholt, wenn das Modell sie will. Weggenommen wird dem Modell nichts, es fragt nach, was es braucht. Dasselbe passiert bei einem großen Modell in einer großen Installation, wo viele Plugins und verbundene Server die Werkzeugliste über das Fenster hinaus wachsen lassen.
+
 ### Modelle ohne Werkzeuge oder Bilder
 
 Für den Nutzer wird nichts abgeschaltet: Jedes Modell lässt sich wählen, der Assistent passt sich an und sagt, was fehlt.

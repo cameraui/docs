@@ -24,6 +24,10 @@ A model can be kept for admins: switch off **Available to users** in its dialog 
 
 **Send images to the model** is a switch per model. With it on, a snapshot the assistant takes or an event picture from the recordings goes to the model so it can describe what it sees, which with a cloud provider means the picture leaves your machine. The pictures are always shown in the chat, whether the model receives them or not.
 
+### Small models and the context window
+
+**Context window** in the model dialog says how much this model holds. A plugin model brings the number itself, for everything else it is empty and the context budget from the general settings applies. Set it for a local or small model, 8192 for an 8k model for example, and camera.ui plans the request around it: the procedures move behind a `load_skill` call, the feature list gives way to a hint at the documentation, and tools the question did not start from are listed by name and fetched when the model wants them. Nothing is taken away from the model, it asks for what it needs. The same happens on a large model in a big installation, where many plugins and connected servers push the tool list past what the window can carry.
+
 ### Models without tools or pictures
 
 Nothing is switched off for the user: every model can be picked, the assistant adapts and says what is missing.
