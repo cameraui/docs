@@ -13,6 +13,7 @@ Der Assistent arbeitet mit Modellen, die du mitbringst. An camera.ui wird nichts
 - **Ollama.** Läuft auf eigener Hardware, nichts verlässt dein Netzwerk. [Ollama](https://ollama.com) installieren, ein Modell mit Tool-Calling laden und die **Server-URL** eintragen, falls Ollama nicht auf der camera.ui-Maschine läuft.
 - **OpenAI-kompatibler Server.** Jeder Server mit OpenAI-Chat-Completions-API: LM Studio, vLLM, LiteLLM, llama.cpp. **Server-URL** eintragen und, falls nötig, einen **API-Schlüssel**.
 - **OpenAI, Anthropic, Google Gemini, OpenRouter.** Cloud-Anbieter. Den **API-Schlüssel** deines Kontos einfügen oder den Schlüssel eines schon hinzugefügten Modells desselben Anbieters übernehmen. Der Schlüssel liegt verschlüsselt auf dem Server und erreicht weder den Browser noch ein Plugin. Der Anbieter rechnet pro Token ab.
+- **Ein Plugin.** Ein Plugin kann sein eigenes Modell mitbringen, es erscheint dann in der Anbieterliste, etwa als **Apple LLM (Plugin)**, ohne Schlüssel und ohne Adresse. Das Modell antwortet auf dem Rechner, auf dem das Plugin läuft. Das Apple-LLM-Plugin nutzt Apples Modell auf dem Gerät, auf einem Mac mit Apple Silicon und eingeschalteter Apple Intelligence (macOS 26, Bilder ab macOS 27). Es fasst nur ein kurzes Gespräch: gut für Fragen zu deinen Kameras und zur Dokumentation, schwächer bei langen Aufgaben mit vielen Schritten.
 
 <Shot src="/img/admin/assistant-models.png" alt="Die Modell-Liste mit Standard-Stern und den Badges für Werkzeuge und Bilder" />
 

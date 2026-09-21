@@ -57,7 +57,7 @@ Jede Streaming-Quelle hat ein paar Optionen:
 - **Hot Modus.** Hält die Verbindung zur Kamera dauerhaft aktiv, sodass es beim Öffnen eines Streams keine Reconnect-Verzögerung gibt.
 - **Vorladen.** Lädt den Stream vor, sodass die Kamera-Ansicht mit minimaler Verzögerung öffnet.
 - **Audio stummschalten.** Entfernt die Audiospur dieser Quelle. Standardmäßig aus.
-- **Gegensprechen deaktivieren.** Entfernt den Rücksprechkanal dieser Quelle, der Mikrofon-Button verschwindet. Standardmäßig aus.
+- **Gegensprechen deaktivieren.** Entfernt den Rücksprechkanal dieser Quelle, der Mikrofon-Button verschwindet, und camera.ui fragt die Kamera nicht mehr danach. Standardmäßig aus.
 - **Stream-Timeout.** Sekunden ohne Video, bevor der Stream neu verbunden wird. Leer sind es 5 Sekunden bei einer selbst eingetragenen Kamera und 60 bei einer Quelle aus einem Plugin, weil das Plugin seine Kamera ohnehin überwacht.
 - **Verbindungs-Timeout.** Sekunden, die die Kamera für jeden Verbindungsschritt bekommt. Für langsam aufwachende Kameras erhöhen, etwa ein Batteriemodell. Leer bedeutet 5.
 

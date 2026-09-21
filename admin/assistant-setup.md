@@ -13,6 +13,7 @@ The assistant works with models you bring. Nothing is sent to camera.ui. Add the
 - **Ollama.** Runs on your own hardware, nothing leaves your network. Install [Ollama](https://ollama.com), pull a model that supports tool calling, and enter the **Server URL** if Ollama does not run on the camera.ui machine.
 - **OpenAI-compatible server.** Any server speaking the OpenAI chat completions API: LM Studio, vLLM, LiteLLM, llama.cpp. Enter its **Server URL** and, if it requires one, an **API key**.
 - **OpenAI, Anthropic, Google Gemini, OpenRouter.** Cloud providers. Paste the **API key** of your account, or reuse the key of a model you already added for the same provider. The key is stored encrypted on the server and never reaches the browser or a plugin. The provider bills you per token.
+- **A plugin.** A plugin can bring its own model, it then shows up in the provider list as **Apple LLM (plugin)** for example, with no key and no address to fill in. The model answers on the machine the plugin runs on. The Apple LLM plugin runs Apple's on-device model on a Mac with Apple Silicon and Apple Intelligence turned on (macOS 26, pictures from macOS 27). It holds only a short conversation: good for questions about your cameras and the documentation, weaker on long tasks with many steps.
 
 <Shot src="/img/admin/assistant-models.png" alt="The model list with the default star and the badges for tools and pictures" />
 

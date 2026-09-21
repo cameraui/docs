@@ -57,7 +57,7 @@ Each streaming source has a few options:
 - **Hot mode.** Keeps the connection to the camera always active, so there's no reconnect delay when a stream is opened.
 - **Preload.** Preloads the stream so the camera view opens with minimal delay.
 - **Mute audio.** Removes the audio track from this source. Off by default.
-- **Disable two-way audio.** Removes the talk channel from this source, so the microphone button disappears. Off by default.
+- **Disable two-way audio.** Removes the talk channel from this source, so the microphone button disappears, and camera.ui no longer asks the camera for it. Off by default.
 - **Stream timeout.** Seconds without video before the stream is reconnected. Left empty it is 5 seconds for a camera you entered yourself and 60 for a source a plugin provides, since the plugin already watches its camera.
 - **Connection timeout.** Seconds the camera gets for each step of connecting. Raise it for cameras that wake up slowly, a battery model for example. Empty means 5.
 
