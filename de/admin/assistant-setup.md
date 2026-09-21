@@ -28,6 +28,8 @@ Ein Modell lässt sich Admins vorbehalten: **Für Nutzer verfügbar** in seinem 
 
 **Kontextfenster** im Modell-Dialog sagt, wie viel dieses Modell fasst. Ein Plugin-Modell bringt die Zahl selbst mit, sonst bleibt das Feld leer und es gilt das Kontextbudget aus den allgemeinen Einstellungen. Bei einem lokalen oder kleinen Modell trägst du es ein, für ein 8k-Modell also 8192, und camera.ui plant die Anfrage darum herum: Die Prozeduren wandern hinter einen `load_skill`-Aufruf, die Funktionsliste weicht einem Hinweis auf die Dokumentation, und Werkzeuge, mit denen die Frage nicht anfängt, stehen nur noch mit Namen da und werden geholt, wenn das Modell sie will. Weggenommen wird dem Modell nichts, es fragt nach, was es braucht. Dasselbe passiert bei einem großen Modell in einer großen Installation, wo viele Plugins und verbundene Server die Werkzeugliste über das Fenster hinaus wachsen lassen.
 
+**Werkzeuge vorab auswählen** im selben Dialog hilft Modellen, die Werkzeuge vor ihrer Nase aufrufen, sich in einer langen Liste aber verlieren. camera.ui fragt das Modell dann vorab kurz, welche Werkzeuge die Frage braucht, und bietet nur diese zusammen mit knappen Regeln an. Das kostet einen zusätzlichen Aufruf pro Frage. Ein Plugin-Modell schaltet es selbst ein, wenn es das braucht, bei großen Modellen bleibt es aus.
+
 ### Modelle ohne Werkzeuge oder Bilder
 
 Für den Nutzer wird nichts abgeschaltet: Jedes Modell lässt sich wählen, der Assistent passt sich an und sagt, was fehlt.

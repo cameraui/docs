@@ -28,6 +28,8 @@ A model can be kept for admins: switch off **Available to users** in its dialog 
 
 **Context window** in the model dialog says how much this model holds. A plugin model brings the number itself, for everything else it is empty and the context budget from the general settings applies. Set it for a local or small model, 8192 for an 8k model for example, and camera.ui plans the request around it: the procedures move behind a `load_skill` call, the feature list gives way to a hint at the documentation, and tools the question did not start from are listed by name and fetched when the model wants them. Nothing is taken away from the model, it asks for what it needs. The same happens on a large model in a big installation, where many plugins and connected servers push the tool list past what the window can carry.
 
+**Pick the tools first** in the same dialog helps models that call the tools in front of them but get lost in a long list. camera.ui then asks the model one short question beforehand, which tools this question needs, and offers only those with a short set of rules. That costs one extra call per question. A plugin model switches it on by itself when it needs it, for large models leave it off.
+
 ### Models without tools or pictures
 
 Nothing is switched off for the user: every model can be picked, the assistant adapts and says what is missing.
