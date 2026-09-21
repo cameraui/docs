@@ -4,7 +4,7 @@ title: Face recognition
 
 # Face recognition
 
-Face recognition spots faces on your cameras, recognizes people you have enrolled, and groups the ones it doesn't know yet.[^license] It builds on [object detection](/detection/ai-backends), so it needs an AI backend with face support enabled on the camera. If the camera detects objects itself without reporting where they are (many Reolink models), enable [Object Assist](/detection/ai-backends#object-assist) so faces get a proper crop.
+Face recognition spots faces on your cameras, recognizes people you have enrolled, and groups the ones it doesn't know yet.[^license] It builds on [object detection](/detection/ai-backends), and the camera needs an AI backend in two places under its **Plugins** tab: **Face** finds the faces, **Face Recognition** turns each one into something camera.ui can compare. Without the second one faces are found but never named. If the camera detects objects itself without reporting where they are (many Reolink models), enable [Object Assist](/detection/ai-backends#object-assist) so faces get a proper crop.
 
 <Shot src="/img/detection/faces-view.png" alt="Faces view with known and unknown faces" />
 
@@ -15,12 +15,19 @@ Open the **Faces** view. It has two sections: **Known Faces** and **Unknown Face
 To add someone:
 
 1. Select **Add Face**.
-2. Enter a **name**, pick the **face detection plugin**, and drop in a clear photo of the person.
+2. Enter a **name** and drop in a clear photo of the person.
 3. Select **Enroll**. camera.ui checks the photo for a face and tells you if it can't find one.
 
 The person is now recognized in future events, with their name shown as an attribute on detections.
 
 <Shot src="/img/detection/faces-enroll.png" alt="Enroll face dialog" />
+
+## Getting good results
+
+- **Camera position.** Mount a camera meant for faces at about head height, or with a shallow angle. Looking down steeply it sees forehead and hair, different people start to look alike, and recognition mixes them up.
+- **Pictures per person.** At least 10 pictures are recommended, from different situations (daylight, night, with a cap). With fewer the person is often missed, and their dialog says so.
+- **Unclear faces get no name.** A face seen from the side, from above, or blurred is neither named nor collected under Unknown Faces. The person is recognized in the next picture that shows them clearly.
+- **Small faces.** A face smaller than about 40 pixels in the camera picture is too small to recognize.
 
 ## Unknown faces
 
@@ -46,14 +53,19 @@ Some faces you never want to see again, like a passing stranger or the mail carr
 
 In **Settings → [Recordings](/recording/)**, face recognition has:
 
-- **Max training images.** How many photos to keep per person (5 to 15); camera.ui keeps the best ones.
+- **Max training images.** How many photos to keep per person (5 to 40, default 20). At the limit the picture most like another one of the same person makes way.
 - **Max unknown people.** How many unknown groups are kept (10 to 500). Once the limit is hit, the group that was seen longest ago is dropped. Raise it for busy outdoor cameras.
 
 Per camera, [Settings → Detection](/cameras/settings) has two face settings:
 
 - **Face confidence.** Faces the AI is less sure about than this are ignored for events and automations (0 to 1, default 0.5).
-- **Match threshold.** How certain the match against your enrolled people has to be before someone is named (0.3 to 0.95, default 0.55). Higher means fewer wrong names, lower means the camera recognizes people more often. A camera looking down the street can demand more than the one at the door.
+- **Recognize faces.** How certain the match against your enrolled people has to be before someone is named: **Strict**, **Balanced** (default) or **Relaxed**. Strict gives fewer wrong names, Relaxed recognizes people more often.
 
+## Changing the recognition model
+
+The model is a setting of the AI backend (**Face Embedding Model**), shared by all its cameras. After a change camera.ui embeds the enrolled pictures again by itself. **Re-embed faces**, bottom left in the Faces view and admins only, starts it by hand. Recognition is patchy until it finishes. Pictures in which the new model finds no clear face are removed, and the dialog names the people this affected.
+
+To try a model, open the AI backend's page and its **Face Recognition** tab: drop a picture and it shows who camera.ui takes it for and how sure it is.
 
 ## Rescanning
 
