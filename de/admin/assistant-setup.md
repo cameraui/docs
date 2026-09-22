@@ -57,7 +57,7 @@ Die Karte **Verhalten** begrenzt einen Lauf:
 - **Kontextbudget.** Wie viel von einem langen Gespräch das Modell sieht. Ollama-Modelle bekommen ein Kontextfenster dieser Größe plus Reserve für die Anweisungen und die Antwort, auf schwacher Hardware also niedriger setzen. Ohne diesen Wert nutzt Ollama seinen Standard von 4k, schneidet die Anweisungen ab, und der Assistent behauptet dann, er könne deine Kameras nicht ansehen.
 - **Gespräche pro Nutzer** und **Bilder pro Gespräch.** Was der Verlauf auf der Platte belegt. Die ältesten fallen zuerst weg. Standard 50 und 24.
 - **Zusätzliche Anweisungen.** Ergänzen die eingebauten Anweisungen, für Hausregeln und Kamera-Hinweise, etwa welche Kamera auf die Straße zeigt.
-- **Fakten über Nutzer merken.** Lässt den Assistenten Fakten wie Namen über Gespräche hinweg behalten. Standardmäßig an, und jeder Nutzer sieht und löscht seine eigene Liste im Chat.
+- **Fakten über Nutzer merken.** Lässt den Assistenten Fakten wie Namen über Gespräche hinweg behalten. Standardmäßig an, und jeder Nutzer sieht und löscht seine eigene Liste im Chat. Ein Modell mit einem Fenster unter 16k Tokens merkt sich nur, was du ihm ausdrücklich sagst, nichts, was es selbst aufschnappt.
 
 **Auf Standard zurücksetzen** stellt diese Werte wieder her, die zusätzlichen Anweisungen bleiben. Vor dem Speichern ändert sich nichts.
 

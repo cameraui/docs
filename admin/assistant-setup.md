@@ -57,7 +57,7 @@ The **Behavior** card bounds a run:
 - **Context budget.** How much of a long conversation the model sees. Ollama models get a context window of this size plus headroom for the instructions and the answer, so lower it on small hardware. Without it Ollama would use its 4k default and cut off the instructions, and the assistant would then claim it cannot look at your cameras.
 - **Conversations kept per user** and **Pictures kept per conversation.** What the history takes on disk. Older ones go first. Defaults 50 and 24.
 - **Additional instructions.** Appended to the built-in instructions, for house rules and camera hints, for example which camera points at the street.
-- **Remember facts about users.** Lets the assistant keep facts like names across conversations. On by default, and every user sees and clears their own list in the chat.
+- **Remember facts about users.** Lets the assistant keep facts like names across conversations. On by default, and every user sees and clears their own list in the chat. A model with a window under 16k tokens only remembers what you ask it to remember, nothing it picks up on its own.
 
 **Reset to defaults** puts these values back, the additional instructions stay. Nothing changes before you save.
 
