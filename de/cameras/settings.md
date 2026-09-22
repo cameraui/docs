@@ -4,11 +4,9 @@ title: Kamera-Einstellungen
 
 # Kamera-Einstellungen
 
-Jede Kamera hat einen Einstellungs-Drawer, in dem du konfigurierst, wie sie sich verbindet, was sie erkennt und wie sie sich verhält. Öffne ihn mit der **Einstellungen**-Schaltfläche (Zahnrad) an der Kamera. Sie steht Admins zur Verfügung.
+Admins öffnen den Einstellungs-Drawer einer Kamera mit der **Einstellungen**-Schaltfläche (Zahnrad) an der Kamera.
 
 <Shot src="/img/cameras/settings-drawer.png" alt="Kamera-Einstellungs-Drawer" />
-
-Der Drawer hat vier Tabs.
 
 ## Übersicht
 
@@ -16,7 +14,7 @@ Status und Geräteinfo der Kamera, plus eine Live-Ansicht ihrer Sensoren und ihr
 
 ## Quellen
 
-Hier fügst du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera hinzu, änderst und entfernst sie, genau wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus, Vorladen und Audio stummschalten (entfernt die Audiospur dieser Quelle). Jede Quelle zeigt außerdem ihren Live-Status, die Stream-URL und die Codecs, die die Kamera selbst sendet, mit Profil, Level und Abtastrate, soweit die Kamera sie meldet, etwa „H.264 · High · 5.1" oder „AAC · 16 kHz".
+Hier verwaltest du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus, Vorladen und Audio stummschalten (entfernt die Audiospur dieser Quelle). Jede Quelle zeigt außerdem ihren Live-Status, die Stream-URL und die Codecs, die die Kamera selbst sendet, mit Profil, Level und Abtastrate, soweit die Kamera sie meldet, etwa „H.264 · High · 5.1" oder „AAC · 16 kHz".
 
 ## Einstellungen
 
@@ -24,7 +22,7 @@ Das Haupt-Konfigurationsformular, gegliedert in Bereiche:
 
 - **Allgemein.** Name, Raum, Kameratyp und ob die Kamera deaktiviert ist (hier entfernst du auch eine Kamera). Der Raum wird aus den vorhandenen gewählt oder hier angelegt; er gruppiert die [Startseite](/de/cameras/home) und ist der Raum, in dem die Kamera im [Grundriss](/de/cameras/floor-plan) steht.
 - **Branding.** Hersteller, Modell und weitere Gerätedetails.
-- **Interface.** Alles dazu, wie diese Kamera angezeigt und abgespielt wird: [Streaming-Modus und -Quelle](/de/cameras/live-view#streaming-modi), die [Wiedergabe-Quelle](/de/recording/timeline-playback#wiedergabequalität) für Aufnahmen, der [Aktivitätsmodus](/de/cameras/live-view#aktivitätsmodus-immer-an-und-standby) und das Anzeige-Seitenverhältnis. Fürs Verhältnis wähle einen Preset (16:9, 4:3, 1:1 und mehr) oder gib ein eigenes `Breite:Höhe` wie `21:9` ein, mit einer Live-Vorschau der Kamera in diesem Verhältnis.
+- **Interface.** Alles dazu, wie diese Kamera angezeigt und abgespielt wird: [Streaming-Modus und -Quelle](/de/cameras/live-view#streaming-modi), die [Wiedergabe-Quelle](/de/recording/timeline-playback#wiedergabequalität) für Aufnahmen, der [Aktivitätsmodus](/de/cameras/live-view#aktivitätsmodus-immer-an-und-standby) und das Anzeige-Seitenverhältnis. Fürs Verhältnis wähle einen Preset (16:9, 4:3, 1:1 und mehr) oder gib ein eigenes `Breite:Höhe` wie `21:9` ein.
 - **Erkennung.** Feinabstimmung pro Kamera für Bewegungs-, Objekt-, Audio-, Gesichts-, Kennzeichen- und Sensor-Erkennung: Empfindlichkeit, Konfidenz, Timeouts, Trigger und Umgang mit statischen Objekten, plus ein Snooze-Schalter. Jeder Abschnitt hat neben seiner Überschrift einen Button, der ihn auf die Standardwerte zurücksetzt. Die Konfidenzwerte, die die KI-Backends nutzen, kommen von hier, eine Änderung greift also sofort. Welche Objekttypen die Kamera meldet, legst du unter **Zonen** fest. Siehe [Erkennung & KI](/de/detection/).
 - **Aufnahme.** Ob und wie diese Kamera aufgezeichnet wird: Modus, Vorpuffer und welche Streams auf die Disk gehen. Die Aufnahme übernimmt ein installiertes NVR-Plugin. Siehe [Aufnahmen](/de/recording/).
 - **Benachrichtigungen.** Was diese Kamera aufs Handy schickt: der eigene An/Aus-Schalter der Kamera, Video in der Benachrichtigung, welche Geräusche und Sensoren melden, die Sperrzeit und die Geschwindigkeit. Welche Erkennungen dich benachrichtigen, legst du unter **Zonen** an den Alarmzonen fest. Siehe [Benachrichtigungen](/de/notifications/).

@@ -16,7 +16,7 @@ Semantic search needs an AI backend that provides **CLIP** (CoreML, OpenVINO, or
 
 In [Recordings](/recording/browsing), open **AI Search** and describe what you're looking for. camera.ui ranks events by how well they match, and you can raise **Min. Match Score** to keep only close matches.
 
-Each CLIP model has its own range of raw scores, so the percentage is scaled per model. A close match reads high whichever model you use, and a **Min. Match Score** you set once means the same thing after a model change.
+The percentage is scaled per CLIP model, so a **Min. Match Score** means the same after a model change.
 
 ## Changing the CLIP model
 

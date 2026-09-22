@@ -1,10 +1,10 @@
 # Desktop-App
 
-Die Desktop-App ist die empfohlene Art, camera.ui auf **macOS und Windows** zu betreiben. Ein Download installiert Server und Viewer zusammen, sodass du mit wenigen Klicks ein laufendes Setup hast. Sie läuft auch auf Linux, dort ist allerdings ein [Docker](/de/install/docker)- oder [Proxmox](/de/install/proxmox)-Server die bessere Wahl (siehe [Welche Installation?](/de/install/)).
+Die Desktop-App ist die empfohlene Art, camera.ui auf **macOS und Windows** zu betreiben. Ein Download installiert Server und Viewer zusammen. Sie läuft auch auf Linux, dort ist allerdings ein [Docker](/de/install/docker)- oder [Proxmox](/de/install/proxmox)-Server die bessere Wahl (siehe [Welche Installation?](/de/install/)).
 
 ## Download
 
-Lade den Installer für deine Plattform herunter, direkt hier oder von der [Download-Seite](https://cameraui.com/#download). Die Links zeigen immer auf das neueste Release.
+Die Installer liegen hier und auf der [Download-Seite](https://cameraui.com/#download). Die Links zeigen immer auf das neueste Release.
 
 | Plattform | Download |
 |---|---|
@@ -20,17 +20,17 @@ Lade den Installer für deine Plattform herunter, direkt hier oder von der [Down
 
 ### macOS
 
-Öffne die heruntergeladene `.dmg` und ziehe **camera.ui** in deinen Programme-Ordner, dann starte es von dort. Die App ist von Apple signiert und notarisiert, sie öffnet sich also ohne zusätzliche Warnungen.
+Zieh **camera.ui** aus der `.dmg` in den Programme-Ordner. Die App ist signiert und notarisiert, sie öffnet sich also ohne Warnungen.
 
 ### Windows
 
-Führe die heruntergeladene `.exe` aus. Der Installer lässt dich den Installationsort wählen und richtet die App für den aktuellen Benutzer ein, sodass keine Administratorrechte nötig sind.
+Die `.exe` installiert für den aktuellen Benutzer, Administratorrechte sind nicht nötig.
 
-Windows zeigt möglicherweise eine **SmartScreen**-Warnung, weil die App noch nicht code-signiert ist. Wähle **Weitere Informationen → Trotzdem ausführen**, um fortzufahren.
+Die App ist noch nicht code-signiert, **SmartScreen** warnt deshalb eventuell. Wähle **Weitere Informationen → Trotzdem ausführen**.
 
 ### Linux
 
-Installiere die `.deb` mit deinem Paketmanager:
+Die `.deb` installieren:
 
 ```bash
 sudo apt install ./camera.ui-*.deb
@@ -44,35 +44,34 @@ chmod +x camera.ui-*.AppImage
 ```
 
 ::: tip Nimm die `.AppImage`, wenn du automatische Updates willst
-Nur die `.AppImage` aktualisiert sich selbst. Eine `.deb`-Installation bleibt auf ihrer Version. Aktualisiere sie, indem du die neue `.deb` herunterlädst und installierst.
+Nur die `.AppImage` aktualisiert sich selbst. Eine `.deb`-Installation bleibt auf ihrer Version, bis du eine neuere `.deb` installierst.
 :::
 
 ## Erster Start: wählen, wie es läuft
 
-Beim ersten Öffnen fragt die App **„Wie soll camera.ui laufen?"** und bietet vier Modi:
+Beim ersten Start fragt die App **„Wie soll camera.ui laufen?"**:
 
-- **Server.** Betreibt den camera.ui-Server auf diesem Gerät. Das ist die All-in-One-Option und das, was die meisten auf macOS und Windows wählen.
-- **Worker.** Übernimmt einen Teil der Arbeit für einen anderen camera.ui-Server in deinem Netzwerk. Gib die Adresse des Hauptservers und einen Pairing-Code aus dessen **Workers**-Einstellungen ein. Siehe [Worker](/de/admin/workers#worker-mit-der-desktop-app).
-- **Viewer · Direkt.** Verbindet sich per Adresse mit einem vorhandenen Server, zum Beispiel einer anderen Maschine in deinem Netzwerk.
+- **Server.** Betreibt den camera.ui-Server auf diesem Gerät. Die All-in-One-Option.
+- **Worker.** Übernimmt einen Teil der Arbeit für einen anderen camera.ui-Server in deinem Netzwerk. Braucht die Adresse des Hauptservers und einen Pairing-Code aus dessen **Workers**-Einstellungen. Siehe [Worker](/de/admin/workers#worker-mit-der-desktop-app).
+- **Viewer · Direkt.** Verbindet sich per Adresse mit einem vorhandenen Server.
 - **Viewer · Cloud.** Meldet sich über cloud.cameraui.com an, um einen Server über [camera.ui Cloud](/de/remote/cloud) zu erreichen.
 
 <Shot src="/img/install/desktop-mode-picker.png" alt="Erststart-Modus-Auswahl der Desktop-App" />
 
-Im **Server**-Modus startet die App den Server, öffnet die Oberfläche und führt dich durch die [Ersteinrichtung](/de/intro/getting-started). In einem **Viewer**-Modus verbindet sie sich mit einem Server, den du bereits hast. Im **Worker**-Modus gibt es kein Fenster, nur das Tray-Symbol und eine Statusanzeige.
+Der **Server**-Modus geht weiter mit der [Ersteinrichtung](/de/intro/getting-started). Im **Worker**-Modus gibt es kein Fenster, nur das Tray-Symbol und eine Statusanzeige.
 
 ## Das Tray-Symbol
 
 Im Tray-Symbol stecken die Einstellungen der App selbst:
 
-- **Öffnen.** Holt das Fenster zurück.
-- **Beim Anmelden öffnen.** Startet camera.ui, sobald du dich anmeldest. Es landet direkt im Tray: kein Fenster, kein Splash. Öffne es bei Bedarf über das Tray-Symbol.[^autostart]
-- **In den Tray schließen.** Standardmäßig aus. Schaltest du es ein, wird das Fenster beim Schließen nur versteckt, ein Server auf diesem Gerät läuft also weiter.[^closetotray]
+- **Beim Anmelden öffnen.** Startet camera.ui beim Anmelden, direkt in den Tray ohne Fenster.[^autostart]
+- **In den Tray schließen.** Standardmäßig aus. Eingeschaltet versteckt Schließen das Fenster nur, ein Server auf diesem Gerät läuft weiter.[^closetotray]
 - **Modus wechseln….** Ändert, wie die App läuft, ohne Neuinstallation.
 - **Beenden.** Stoppt die App, im Server-Modus auch den Server.
 
 Unter Windows öffnet ein Linksklick auf das Tray-Symbol das Fenster, ein Rechtsklick das Menü.
 
-Kein Tray-Symbol auf deinem Linux-Desktop? GNOME zeigt eins nur mit der AppIndicator-Erweiterung. **Modus wechseln…** steckt auch im App-Menü unter **Datei**, und ein Start der App mit `--switch-mode` öffnet die Modus-Auswahl: in der laufenden Instanz, wenn eine läuft, sonst bei diesem Start. Beides funktioniert auch für einen Worker, der kein eigenes Fenster hat.
+GNOME zeigt ein Tray-Symbol nur mit der AppIndicator-Erweiterung. **Modus wechseln…** steckt auch im App-Menü unter **Datei**, und ein Start der App mit `--switch-mode` öffnet die Modus-Auswahl: in der laufenden Instanz, wenn eine läuft, sonst bei diesem Start. Beides funktioniert auch für einen Worker, der kein eigenes Fenster hat.
 
 <Shot src="/img/install/desktop-tray-menu.png" alt="Tray-Menü der Desktop-App" />
 
@@ -81,24 +80,22 @@ Kein Tray-Symbol auf deinem Linux-Desktop? GNOME zeigt eins nur mit der AppIndic
 
 ## macOS-Berechtigungen
 
-Auf macOS 15 und neuer fragt das System beim ersten Start nach Zugriff auf das **lokale Netzwerk**. Erlaube ihn, sonst kann die App deine Kameras im Netzwerk nicht erreichen. Beim ersten Gegensprechen fragt macOS zusätzlich nach **Mikrofon**-Zugriff, und beim ersten Tippen auf **„Mein Standort"** beim Geofence-Trigger in den [Automatisierungen](/de/automations/) fragt es nach **Standort**-Zugriff.
+Auf macOS 15 und neuer erlaubst du beim ersten Start den Zugriff auf das **lokale Netzwerk**, sonst erreicht die App deine Kameras nicht. Gegensprechen fragt nach **Mikrofon**-Zugriff, **„Mein Standort"** beim Geofence-Trigger in den [Automatisierungen](/de/automations/) nach **Standort**-Zugriff.
 
 ## Updates
 
-Die Desktop-App hält sich selbst aktuell. Sie prüft beim Start und regelmäßig im Betrieb auf Updates und lädt sie dann für dich herunter und installiert sie. Im Server-Modus aktualisiert sie außerdem den gebündelten Server, bevor sie ihn startet, sodass App und Server synchron bleiben.
+Die App prüft beim Start und regelmäßig im Betrieb auf Updates und installiert sie selbst. Im Server-Modus aktualisiert sie den gebündelten Server, bevor sie ihn startet. Die [Updates-Seite](/de/install/updating#die-updates-seite) stößt ein Update von jedem Gerät aus an.
 
-Du kannst es auch über die [Updates-Seite](/de/install/updating#die-updates-seite) anstoßen, von jedem Gerät aus: Die App lädt das Update, installiert es und startet neu. Praktisch, wenn die Maschine im Schrank steht und keine Tastatur hat.
-
-Eine Ausnahme unter Linux: nur die `.AppImage` aktualisiert sich selbst. Wenn du die `.deb` installiert hast, aktualisiere sie, indem du die neue `.deb` von der [Download-Seite](https://cameraui.com) herunterlädst und installierst.
+Unter Linux aktualisiert sich nur die `.AppImage` selbst; eine `.deb` aktualisierst du über die [Download-Seite](https://cameraui.com).
 
 ## Wo deine Daten liegen
 
-Im Server-Modus werden deine Einstellungen und Aufnahmen in einem `camera.ui/volume`-Ordner innerhalb des benutzerbezogenen Datenordners der App gespeichert:
+Im Server-Modus liegen Einstellungen und Aufnahmen im benutzerbezogenen Datenordner der App:
 
 - **macOS:** `~/Library/Application Support/camera.ui/camera.ui/volume`
 - **Windows:** `%APPDATA%\camera.ui\camera.ui\volume`
 - **Linux:** `~/.config/camera.ui/camera.ui/volume`
 
-Die Aufnahmen müssen dort nicht bleiben. Zeig mit den Aufnahme-Einstellungen auf eine andere Disk, etwa eine externe Platte, dann ziehen nur die Aufnahmen um. Der eine Ort, den du meiden solltest, ist eine Netzwerkfreigabe, siehe [Speicher & Aufbewahrung](/de/recording/storage#wo-aufnahmen-liegen).
+Über die Aufnahme-Einstellungen ziehen die Aufnahmen auf eine andere Disk um, etwa eine externe Platte. Meide eine Netzwerkfreigabe, siehe [Speicher & Aufbewahrung](/de/recording/storage#wo-aufnahmen-liegen).
 
 Siehe [Backup & Wiederherstellung](/de/admin/backup), um eine Kopie zu behalten.

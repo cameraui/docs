@@ -1,8 +1,8 @@
 # What is camera.ui?
 
-**camera.ui** is a self-hosted platform for your security cameras. It combines live viewing, continuous and event-based recording, on-device AI detection, and smart-home integration in one modern interface, all on hardware you own.
+**camera.ui** is a self-hosted platform for your security cameras. It combines live viewing, continuous and event-based recording, on-device AI detection, and smart-home integration in one interface, all on hardware you own.
 
-Because everything runs on your own server, your footage stays on hardware you control. There is no mandatory cloud, and no third party holds a copy of your recordings. Remote access is available when you want it, always on your terms.
+There is no mandatory cloud, and no third party holds a copy of your recordings. Remote access is optional.
 
 ::: tip New here?
 Head to **[Getting started](/intro/getting-started)** for a guided first run, or jump straight to **[Installation](/install/)**.
@@ -23,21 +23,19 @@ If something is missing or unclear, tell us on [Discord](https://discord.gg/bBGn
 
 ## Live demo
 
-Want to look around before installing? Take a look at the **[live demo](https://demo.cameraui.com/)**.
+Try the **[live demo](https://demo.cameraui.com/)** before installing.
 
 ## Run it your way
 
-camera.ui adapts to your setup:
-
 - **Desktop app** for macOS, Windows, and Linux. The easiest way to get started, running the server and viewer in one app.
 - **Server** for always-on setups: Docker, Proxmox, or bare-metal Linux.
-- **Mobile apps** for iOS and Android, to keep an eye on your cameras while you're out.
+- **Mobile apps** for iOS and Android.
 
 Not sure which to pick? See **[Which installation?](/install/)**.
 
 ## How it works
 
-A single server does the heavy lifting. It connects to your cameras, records footage, runs detection, and serves the web interface, while the desktop and mobile apps act as viewers. For the bigger picture, read **[How it works](/intro/architecture)**.
+One server connects to your cameras, records, runs detection and serves the web interface. The desktop and mobile apps are viewers. More in **[How it works](/intro/architecture)**.
 
 ## Next steps
 

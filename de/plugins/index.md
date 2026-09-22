@@ -4,55 +4,55 @@ title: Plugins
 
 # Plugins
 
-Plugins erweitern camera.ui. Das meiste, was es über die Live-Ansicht hinaus kann, stammt von Plugins, die du installierst: die [KI-Backends und Bewegungs-Engines](/de/detection/), die die Erkennung antreiben, Audio-Erkennung, Smart-Home-Bridges wie [HomeKit](/de/plugins/homekit) und Integrationen für verschiedene Kamera-Marken. Plugins zu verwalten ist eine Admin-Aufgabe.
+Das meiste, was camera.ui über die Live-Ansicht hinaus kann, kommt aus Plugins: die [KI-Backends und Bewegungs-Engines](/de/detection/) hinter der Erkennung, Audio-Erkennung, Smart-Home-Bridges wie [HomeKit](/de/plugins/homekit) und Integrationen für Kamera-Marken. Plugins zu verwalten ist eine Admin-Aufgabe.
 
 ## Zwei Dinge, getrennt gehalten
 
-- **Ein Plugin installieren** fügt es deinem Server hinzu, einmalig. Darum geht es in diesem Abschnitt.
+- **Ein Plugin installieren** fügt es deinem Server hinzu, einmalig. Darum geht es auf dieser Seite.
 - **Ein Plugin zuweisen** entscheidet, welche Kamera es nutzt, etwa welche Bewegungs-Engine eine Kamera fährt. Das geschieht pro Kamera, in [Sensoren einrichten](/de/sensors/setup).
 
 ## Plugins verwalten
 
 <Shot src="/img/plugins/plugins-list.png" alt="Die Plugins-Seite" />
 
-Öffne **Plugins** aus dem Menü, um alles Installierte zu sehen, jeweils als Karte mit Live-Status (Bereit, Gestartet, Gestoppt, Fehler). Von einer Karte aus kannst du:
+**Plugins** listet alles Installierte, jede Karte mit Live-Status (Bereit, Gestartet, Gestoppt, Fehler). Von einer Karte aus kannst du:
 
 - Es **aktivieren oder deaktivieren** und seinen Prozess **starten, stoppen oder neu starten**.
-- Es **aktualisieren**, wenn eine neue Version verfügbar ist: Die Karte zeigt einen Update-Button, der sofort startet, ohne Dialog. Klick ihn erneut, während er läuft, um die Live-Ausgabe der Installation zu sehen. Für Release Notes oder eine **bestimmte Version** nimm das Karten-Menü.
-- Seine **Einstellungen öffnen** oder seine **Logs** ansehen, wenn etwas klemmt.
+- Es **aktualisieren**: Der Update-Button startet sofort, ein erneuter Klick während des Laufs zeigt die Live-Ausgabe der Installation. Für Release Notes oder eine **bestimmte Version** nimm das Karten-Menü.
+- Seine **Einstellungen öffnen** oder seine **Logs** ansehen.
 - Es **deinstallieren**, optional samt gespeicherter Daten.
 
 Aufnahmen sind die Ausnahme: Wenn du die gespeicherten Daten eines Aufnahme-Plugins löschst, bleibt das Videomaterial erhalten.
 
-Sind Plugins veraltet, aktualisiert ein **Alle aktualisieren**-Button in der Werkzeugleiste alle auf einmal und meldet das Ergebnis. Während ein Update-Lauf von der [Updates-Seite](/de/install/updating) läuft, bleiben die Plugins gestoppt und die Buttons hier deaktiviert, bis er fertig ist.
+**Alle aktualisieren** in der Werkzeugleiste aktualisiert jedes veraltete Plugin. Während ein Update-Lauf von der [Updates-Seite](/de/install/updating) läuft, sind die Plugins gestoppt und lassen sich hier nicht verwalten.
 
 Der Zahnrad-Button neben der Suchleiste enthält zwei Einstellungen, beide standardmäßig aus:
 
 - **Beta-Versionen.** Zeigt Vorabversionen in der Versionsauswahl und bietet Beta-Releases als Updates an.
 - **Plugin-Build-Skripte erlauben.** Lässt Plugins beim Installieren oder Aktualisieren Install-Skripte und native Builds ausführen. Nur für Plugins aktivieren, denen du vertraust.
 
-Wechsle mit dem Button neben dem Plus zwischen den Karten und einer kompakten **Tabellenansicht**; die Tabelle listet jedes Plugin mit Status, Version und Aktionen pro Zeile, und deine Wahl bleibt erhalten. Beide Ansichten zeigen den Paketnamen unter dem Anzeigenamen.
+Der Button neben dem Plus wechselt zu einer kompakten **Tabellenansicht** mit Status, Version und Aktionen pro Zeile; deine Wahl bleibt erhalten.
 
-Installationen, Updates und Deinstallationen laufen über eine Warteschlange auf dem Server, zwei gleichzeitig, sodass das Aktualisieren vieler Plugins eine kleine Maschine nicht überlastet. Jeder offene Browser sieht, was wartet und was läuft, egal wer es gestartet hat.
+Installationen, Updates und Deinstallationen laufen über eine Warteschlange auf dem Server, zwei gleichzeitig. Jeder offene Browser sieht die Warteschlange, egal wer sie gestartet hat.
 
-Plugins laufen als eigener Prozess, sodass ein sich fehlverhaltendes Plugin nicht den Rest mitreißt. Sie können in Node, Python oder Go geschrieben sein; ein kleines Abzeichen auf jeder Karte zeigt, welche. Ein Plugin, das für eine andere Plugin-API gebaut wurde, startet nicht in kryptische Fehler: Seine Karte sagt, ob das Plugin oder camera.ui ein Update braucht, und du bekommst eine Benachrichtigung.
+Jedes Plugin läuft in einem eigenen Prozess, ein abstürzendes Plugin reißt also nicht den Rest mit. Ein Abzeichen auf der Karte zeigt die Sprache (Node, Python oder Go). Ein Plugin, das für eine andere Plugin-API gebaut wurde, startet nicht: Seine Karte sagt, ob das Plugin oder camera.ui ein Update braucht, und du bekommst eine Benachrichtigung.
 
 ### Mehrere auf einmal verwalten
 
-Der Auswahl-Button startet eine Auswahl in beiden Ansichten. Wähle die Plugins, die du willst, und aktualisiere, aktiviere, deaktiviere oder deinstalliere sie alle in einem Schritt, mit einer kurzen Zusammenfassung, was geklappt hat und was nicht.
+Der Auswahl-Button funktioniert in beiden Ansichten: mehrere Plugins in einem Schritt aktualisieren, aktivieren, deaktivieren oder deinstallieren.
 
 ## Ein Plugin installieren
 
 <Shot src="/img/plugins/plugin-store.png" alt="Der Plugin-Store" />
 
-Wähle **Plugins suchen**, um den Store zu öffnen. Die Liste stammt von npm, sodass jedes als camera.ui-Plugin veröffentlichte Paket erscheinen kann und der Katalog keine feste Liste ist, aber camera.ui kuratiert darüber, was du siehst:
+**Plugins suchen** öffnet den Store. Die Liste stammt von npm, jedes veröffentlichte camera.ui-Plugin kann also erscheinen; camera.ui kuratiert darüber:
 
 - **Vertrauen.** Jedes Plugin ist als **Offiziell** (von camera.ui veröffentlicht), **Verifiziert** (ein vom camera.ui-Team geprüftes Community-Plugin) oder **Community** (von beliebigen Personen veröffentlicht, nicht geprüft) gekennzeichnet. Du kannst nach Vertrauensstufe filtern.
 - **Sicherheit.** Als bösartig oder kompromittiert bekannte Plugins werden blockiert: Sie erscheinen nicht, lassen sich nicht installieren, und ein bereits installiertes wird automatisch deaktiviert, falls es später blockiert wird.
 - **Kompatibilität.** Der Store markiert ein Plugin, das ein neueres camera.ui braucht, und die Installation einer Version, die auf deinem Server nicht laufen kann, wird mit Begründung abgelehnt.
-- **Durchsuchen.** Filtere nach Kategorie, starte bei den empfohlenen Plugins und sortiere nach Name, wöchentlichen Downloads oder letzter Aktualisierung. Jeder Eintrag zeigt sein Logo, eine kurze Beschreibung und seine Download-Zahlen.
+- **Durchsuchen.** Filtere nach Kategorie, starte bei den empfohlenen Plugins und sortiere nach Name, wöchentlichen Downloads oder letzter Aktualisierung.
 
-Wähle ein Plugin und installiere es, bei Bedarf mit Versionswahl. Einmal installiert, aktiviere es und weise es zu, wo es gebraucht wird.
+Beim Installieren lässt sich eine bestimmte Version wählen. Danach das Plugin aktivieren und zuweisen, wo es gebraucht wird.
 
 ## Private Registry oder Mirror
 

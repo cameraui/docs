@@ -60,12 +60,6 @@ entities:
 
 - **entities.** Limits the strip to these cameras. Left out, it shows every camera.
 
-## Coming from the old cards
-
-`custom:cameraui-card` keeps its name and switches to the new camera card by itself. Its old options (`title` aside) no longer apply: pick the new ones in the card editor.
-
-`custom:cameraui-grid-card` is gone. A dashboard still using it shows "Custom element doesn't exist" until you rebuild it with **camera.ui View** or a sections view.
-
 ## Next steps
 
 - **[Home Assistant integration](/home-assistant/integration)** — entities, automations, card access and the media browser.

@@ -4,15 +4,15 @@ title: Certificate
 
 # Certificate
 
-camera.ui generates its own certificate on first start and serves it on every connection. Browsers do not know the issuer, so they warn. You can replace that warning for your own domain by uploading a certificate you obtained yourself, without putting a [reverse proxy](/remote/reverse-proxy) in front.
+camera.ui generates its own certificate on first start and serves it on every connection. Browsers do not know the issuer, so they warn. For your own domain you can upload a certificate you obtained yourself, no [reverse proxy](/remote/reverse-proxy) needed.
 
 ## What the built-in certificate is for
 
 The mobile apps and remote workers verify the server against camera.ui's own certificate authority. They reach the server by IP address, and no public issuer signs certificates for private addresses, so that part keeps running on the internal certificate no matter what you upload.
 
-Your certificate is served only when a client asks for a name it covers. Everything else, including every connection to an IP address, still gets the internal one. Both exist side by side.
+Your certificate is served only when a client asks for a name it covers. Everything else, including every connection to an IP address, still gets the internal one.
 
-The internal certificate covers `127.0.0.1`, the machine's private network addresses, and whatever you picked under **Settings → Remote → Network**: the server addresses and the local address. A public address is only included when you select it there. That is also why a browser can start warning again after you change those: the certificate is reissued for the new set, and the exception you stored was for the old one.
+The internal certificate covers `127.0.0.1`, the machine's private network addresses, and whatever you picked under **Settings → Remote Access → Network**: the server addresses and the local address. A public address is only included when you select it there. Changing those reissues the certificate, so a browser exception stored for the old one no longer applies and the warning returns.
 
 ## Uploading your own
 
@@ -32,12 +32,12 @@ camera.ui uses the new certificate immediately. The streaming engine keeps its o
 
 Uploaded files live in `certs/custom/` inside the storage directory, as `cert.pem`, `key.pem` and `chain.pem`. camera.ui watches them, so a replaced file is picked up without a restart.
 
-That makes automatic renewal a matter of writing to that directory:
+For automatic renewal, write to that directory:
 
 - **Docker.** Mount your certificate directory over `certs/custom`, read-only.
 - **Bare metal.** A certbot deploy hook that copies `fullchain.pem` and `privkey.pem` there under those names.
 
-Uploading through the interface works too, it just has to be repeated at every renewal. Let's Encrypt certificates are valid for 90 days.
+An upload through the interface has to be repeated at every renewal. Let's Encrypt certificates are valid for 90 days.
 
 ## Removing it
 

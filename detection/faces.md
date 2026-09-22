@@ -10,15 +10,7 @@ Face recognition spots faces on your cameras, recognizes people you have enrolle
 
 ## Enrolling a known face
 
-Open the **Faces** view. It has two sections: **Known Faces** and **Unknown Faces**.
-
-To add someone:
-
-1. Select **Add Face**.
-2. Enter a **name** and drop in a clear photo of the person.
-3. Select **Enroll**. camera.ui checks the photo for a face and tells you if it can't find one.
-
-The person is now recognized in future events, with their name shown as an attribute on detections.
+In the **Faces** view (sections **Known Faces** and **Unknown Faces**), **Add Face** takes a **name** and a clear photo of the person; **Enroll** rejects a photo without a face. From then on the person is recognized in new events, with their name as an attribute on detections.
 
 <Shot src="/img/detection/faces-enroll.png" alt="Enroll face dialog" />
 
@@ -42,9 +34,9 @@ When an event names the wrong person, open that face picture on its recording ca
 
 ## Ignoring a face
 
-Some faces you never want to see again, like a passing stranger or the mail carrier. Ignore one and camera.ui stops collecting them.
+Ignore a face you never want to see again (a passing stranger, the mail carrier) and camera.ui stops collecting it.
 
-- **Ignore a face or a whole group.** Each unknown face has an ignore button, and every group has one for all its faces at once. In selection mode you can ignore several at a time.
+- **Ignore a face or a whole group.** Unknown faces and groups each have an ignore button; selection mode ignores several at once.
 - **New sightings are dropped.** Once someone is ignored, their later shots don't come back as unknown faces.
 - **Ignored faces sit in their own list.** They collect under **Ignored Faces** at the bottom of the Unknown Faces section.
 - **Restore to undo.** **Restore** on an ignored face lets that person show up again.
@@ -53,8 +45,8 @@ Some faces you never want to see again, like a passing stranger or the mail carr
 
 In **Settings → [Recordings](/recording/)**, face recognition has:
 
-- **Max training images.** How many photos to keep per person (5 to 40, default 20). At the limit the picture most like another one of the same person makes way.
-- **Max unknown people.** How many unknown groups are kept (10 to 500). Once the limit is hit, the group that was seen longest ago is dropped. Raise it for busy outdoor cameras.
+- **Max Training Images.** How many photos to keep per person (5 to 40, default 20). At the limit the picture most like another one of the same person makes way.
+- **Max Unknown People.** How many unknown groups are kept (10 to 500). Once the limit is hit, the group that was seen longest ago is dropped. Raise it for busy outdoor cameras.
 
 Per camera, [Settings → Detection](/cameras/settings) has two face settings:
 

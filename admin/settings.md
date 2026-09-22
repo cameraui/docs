@@ -4,7 +4,7 @@ title: Settings overview
 
 # Settings overview
 
-Most of how camera.ui is configured lives under **Settings**, reached from the menu. Some settings are personal to your account; others are server-wide and need an admin.
+Most configuration lives under **Settings** in the menu. Some settings are personal to your account; others are server-wide and need an admin.
 
 ## Personal settings
 
@@ -27,9 +27,9 @@ Available to admins:
 
 ## Admin tools
 
-Beyond Settings, the menu has more admin tools:
+The menu has more admin tools:
 
-- **Metrics** for how the server and each camera are doing, in three tabs you can also swipe between on a phone: **Overview** with the system and process tables, **Cameras** with what detection costs per camera, and **Storage** with the disk breakdown. See [What detection costs](/detection/ai-backends#what-detection-costs).
+- **Metrics** for how the server and each camera are doing, in three tabs: **Overview** with the system and process tables, **Cameras** with what detection costs per camera, and **Storage** with the disk breakdown. See [What detection costs](/detection/ai-backends#what-detection-costs).
 - **[Updates](/install/updating#the-updates-page)** for the server, the plugins and the workers in one list.
 - **[Automations](/automations/)** for connecting events to actions.
 - **[Logs](/admin/logs)** and a **terminal** for troubleshooting.

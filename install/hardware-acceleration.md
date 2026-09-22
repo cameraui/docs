@@ -6,7 +6,7 @@ title: Hardware acceleration
 
 camera.ui accelerates two things: the **video pipeline** (decoding camera streams for detection, live view and snapshots, and encoding for streaming) and **AI inference** (object detection and everything built on it).
 
-**Video acceleration is automatic on every platform.** camera.ui probes the hardware at runtime, picks the best available backend and falls back to software if there is none, so there is nothing to configure. AI accelerators are automatic too once the hardware is reachable; on Docker that means passing the device through once (covered below).
+**Video acceleration is automatic on every platform.** camera.ui probes the hardware at runtime, picks the best available backend and falls back to software if there is none. AI accelerators are automatic too once the hardware is reachable; on Docker that means passing the device through (below).
 
 ## What runs where
 
@@ -17,11 +17,11 @@ camera.ui accelerates two things: the **video pipeline** (decoding camera stream
 | **Linux x64** (Docker, bare-metal, Proxmox) | NVIDIA (CUDA/NVENC), Intel (VA-API/QSV), AMD (VA-API), plus Vulkan/OpenCL | OpenVINO (Intel GPU/NPU), ONNX (CUDA/TensorRT), NCNN (Vulkan), Coral, Hailo |
 | **Linux arm64** (Rockchip) | Rockchip (RKMPP) | Coral, Hailo, NCNN (CPU/NEON) |
 
-The table shows what camera.ui **can** use. The matching GPU driver still has to be installed on the host. camera.ui probes every backend at startup and only picks ones that actually work; anything whose driver is missing is skipped silently, never an error.
+The table shows what camera.ui **can** use. The matching GPU driver still has to be installed on the host. A backend whose driver is missing is skipped silently, never an error.
 
-On the **desktop app** there is nothing to set up: macOS ships video acceleration as part of the OS, and on Windows the graphics driver comes with the system. Hardware is detected automatically. Each detection plugin logs what every model runs on (`Loaded model: …`) and shows it under **Active Hardware** in its plugin settings.
+The **desktop app** needs no setup: macOS ships video acceleration with the OS, Windows uses the system graphics driver. Each detection plugin logs what every model runs on (`Loaded model: …`) and shows it under **Active Hardware** in its plugin settings.
 
-The rest of this page is for **Linux and Docker**, where hardware has to cross the container boundary. That always takes the same three steps:
+The rest of this page is for **Linux and Docker**, where hardware has to cross the container boundary in three steps:
 
 1. **Host driver.** The kernel-side driver must be installed on the host (the only part a Docker image can never ship).
 2. **Device passthrough.** The device node goes into the `devices:` section of your compose file.
@@ -41,7 +41,7 @@ sudo bash cameraui-host.sh hailo     # build + install the Hailo PCIe kernel dri
 sudo bash cameraui-host.sh coral     # install the gasket/apex driver (PCIe/M.2 Coral)
 ```
 
-`check` prints a ✓/✗ line for every accelerator class with the fix for anything missing. Run it first. It tells you which of the sections below apply to your machine.
+`check` prints a ✓/✗ line for every accelerator class with the fix for anything missing. Run it first.
 
 ## Verify from the container
 
@@ -67,7 +67,7 @@ If a device shows `✗` here but exists on the host, it is missing from your com
 
 ## Intel / AMD GPU
 
-The driver is part of the Linux kernel, so there is nothing to install on the host. Use the `intel` or `amd` flavor and pass `/dev/dri`:
+The driver is part of the kernel, nothing to install on the host. Use the `intel` or `amd` flavor and pass `/dev/dri`:
 
 ```yaml
     devices:
@@ -115,7 +115,7 @@ The kernel driver is built from source on the host: `sudo bash cameraui-host.sh 
       - /dev/hailo0:/dev/hailo0
 ```
 
-The userspace runtime ships inside the Hailo plugin. Nothing else to install.
+The userspace runtime ships inside the Hailo plugin.
 
 ## Intel NPU (Core Ultra)
 

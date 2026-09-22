@@ -1,14 +1,12 @@
 # Welche Installation?
 
-camera.ui hat einen **Server**, der die Arbeit erledigt, und **Apps** (Desktop, Mobile, Browser), die ihn anzeigen. Den Server installierst du einmal, alles andere verbindet sich nur damit.
-
-Die beste Installationsart hängt vor allem davon ab, **auf welcher Plattform** du ihn betreibst.
+camera.ui hat einen **Server**, der die Arbeit erledigt, und **Apps** (Desktop, Mobile, Browser), die sich mit ihm verbinden. Welche Installationsart passt, hängt von der Plattform ab, auf der der Server läuft.
 
 ## Die schnelle Antwort
 
-- **macOS oder Windows** → die **[Desktop-App](/de/install/desktop)** (empfohlen). Eine Ein-Klick-Installation, die Server und Viewer zusammen betreibt, geeignet für den durchgehenden 24/7-Betrieb.
-- **Linux** → **[Docker](/de/install/docker)** (oder **[Proxmox](/de/install/proxmox)**, falls du es nutzt). Das ist die empfohlene Art, einen dedizierten Linux-Server zu betreiben, mit GPU-Beschleunigung.
-- **Willst du nur vom Handy aus zusehen?** → die **[Mobile-Apps](/de/install/mobile)**. Du brauchst trotzdem einen Server, der irgendwo läuft.
+- **macOS oder Windows** → die **[Desktop-App](/de/install/desktop)** (empfohlen). Betreibt Server und Viewer zusammen, geeignet für 24/7-Betrieb.
+- **Linux** → **[Docker](/de/install/docker)** (oder **[Proxmox](/de/install/proxmox)**), mit GPU-Beschleunigung.
+- **Nur Handy** → die **[Mobile-Apps](/de/install/mobile)**. Sie brauchen trotzdem einen Server, der irgendwo läuft.
 
 ## Eine Methode wählen
 
@@ -26,5 +24,5 @@ Für durchgehende Aufnahme eignen sich ein kleiner **Intel N100** Mini-PC (mit [
 
 ## Ein paar Hinweise
 
-- **Ein Server genügt.** Die Desktop-App, die Mobile-Apps und ein Browser sind alle Viewer desselben Servers. Installiere den Server einmal und verbinde dich dann über [Remote-Zugriff](/de/remote/) von überall.
-- **Die Desktop-App kann auch nur Viewer sein.** Wenn du bereits einen Server woanders betreibst, installiere die Desktop-App im Viewer-Modus, um ihn anzusehen. Siehe [Desktop-App](/de/install/desktop).
+- **Ein Server genügt.** Desktop-App, Mobile-Apps und Browser zeigen alle denselben Server. Von außerhalb deines Netzes geht es über [Remote-Zugriff](/de/remote/).
+- **Die Desktop-App kann auch nur Viewer sein.** Im Viewer-Modus zeigt sie einen Server, der woanders läuft. Siehe [Desktop-App](/de/install/desktop).

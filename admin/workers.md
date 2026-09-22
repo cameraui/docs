@@ -8,11 +8,7 @@ title: Workers
 
 A **worker** is a second machine that takes on part of a server's processing. The main server (the **master**) keeps the UI, the settings and the recordings; workers contribute compute. Manage them in **Workers** (in the menu).
 
-Typical reasons for a worker:
-
-- **Busy cameras.** Decoding and detection for selected cameras move to the worker, freeing the master's CPU and GPU for the rest.
-- **Hardware the master lacks.** An entire plugin can run on a worker, for example a detection backend that needs a GPU the master doesn't have, or a plugin the master's platform can't load.
-- **Growing setups.** When you add cameras, add a worker instead of replacing the server.
+A worker takes over decoding and detection for selected cameras, or runs an entire plugin, for example a detection backend that needs a GPU the master doesn't have, or a plugin the master's platform can't load.
 
 ## How workers work
 
@@ -22,7 +18,7 @@ A worker is a regular camera.ui installation started in worker mode. It has no U
 - **Paired once, then on its own.** A one-time pairing code is exchanged for the worker's own credentials. Nothing is shared between workers, each one can be revoked independently, and after the first start the worker reconnects by itself.
 - **Assignments follow the worker.** Cameras and plugins you [assign](#camera-and-plugin-assignments) run on the worker, fall back to the master while it's offline, and move back when it returns (see [Failover](#failover)).
 
-Master and worker don't need the same installation type, any mix works: a Docker server with an old laptop running the [desktop app](#worker-with-the-desktop-app) as its worker, a desktop-app server with a [Docker worker](#worker-in-docker) on a mini PC, a bare-metal Linux server with both. The camera.ui version should match across machines; the [workers list](#the-workers-list) warns when it doesn't.
+Master and worker can mix installation types: a Docker server with a [desktop app](#worker-with-the-desktop-app) worker, a desktop-app server with a [Docker worker](#worker-in-docker), and so on. The camera.ui version should match across machines; the [workers list](#the-workers-list) warns when it doesn't.
 
 ## Enable workers
 
@@ -30,7 +26,7 @@ Turn on **Enable Workers** on the master and set a **Master Address**, the LAN I
 
 ## Pair a worker
 
-Click **Generate Pairing Code** to create a one-time code (valid for 15 minutes). Along with it you get a ready-made configuration snippet:
+**Generate Pairing Code** creates a one-time code (valid for 15 minutes) and a configuration snippet:
 
 ```yaml
 worker:
@@ -43,13 +39,13 @@ worker:
     - pluginHost
 ```
 
-The code can only be used once, and only for the first start: the worker exchanges it for its own credentials and reconnects by itself afterwards. How the snippet reaches the worker depends on the installation, see the next sections.
+Only the first start needs the code. How the snippet reaches the worker depends on the installation:
 
 ## Set up the worker machine
 
 ### Worker in Docker
 
-A worker runs from the same image as the server, just started in worker mode. Save this as `docker-compose.worker.yml` on the second machine, with your master's address and the pairing code from above:
+A worker runs from the same image as the server. Save this as `docker-compose.worker.yml` on the second machine, with your master's address and the pairing code from above:
 
 ```yaml
 name: cameraui-worker
@@ -83,9 +79,9 @@ The master address takes a hostname or IP, without a scheme. `CAMERA_UI_WORKER_A
 
 ### Worker with the desktop app
 
-An old laptop or a mini PC with the [desktop app](/install/desktop) installed can join as a worker too. Choose **Worker** in the mode picker on first start (or later via **Switch mode…** in the tray menu), enter the master's address and the pairing code, and connect. Instead of the normal interface the app shows a small status window with the connection state. If the address is wrong or the code has expired, the picker reopens and shows what failed.
+A machine with the [desktop app](/install/desktop) joins as a worker when you choose **Worker** in the mode picker on first start (or later via **Switch mode…** in the tray menu) and enter the master's address and the pairing code. The app then shows only a status window. If the address is wrong or the code has expired, the picker reopens with the error.
 
-Two tray options make this hands-off: **Open At Login** starts the app with the system, minimized to the tray, and **Close to tray** keeps the worker running in the background when the window is closed.[^trayopts] The address takes a hostname or IP, with `:port` only when the master's HTTPS port differs from the default.
+Two tray options: **Open At Login** starts the app with the system, minimized to the tray, and **Close to tray** keeps the worker running in the background when the window is closed.[^trayopts] The address takes a hostname or IP, with `:port` only when the master's HTTPS port differs from the default.
 
 [^trayopts]: Open At Login is offered on Windows and macOS. Close to tray is offered on Windows and Linux; on macOS, closing the window leaves the app running anyway.
 
@@ -95,9 +91,7 @@ Paste the snippet into the worker machine's `config.yml`, then start it with `ca
 
 ### Hardware acceleration
 
-A worker decodes video, so a GPU helps it exactly as much as it helps the server.
-
-In **Docker**, the override files from the main deployment do not fit: they patch a service named `cameraui`, and the worker service is called `cameraui-worker`, so layering one on top starts a second, unrelated container instead of accelerating the worker. Put the two pieces into the worker file itself, the [image flavor](/install/docker#hardware-acceleration) that matches the hardware and the device:
+In **Docker**, the override files from the main deployment do not fit: they patch the service `cameraui`, not `cameraui-worker`, so layering one on top starts a second, unrelated container. Put the [image flavor](/install/docker#hardware-acceleration) that matches the hardware and the device into the worker file itself:
 
 ```yaml
 services:
@@ -113,23 +107,23 @@ Which decoder a camera actually uses on a worker is set per camera, under **Fram
 
 ### Environment variables
 
-You can pass the same values as environment variables instead, which is usually easier in a container. `CAMERA_UI_WORKER=true` starts worker mode without the `--worker` option, and `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` and `CAMERA_UI_WORKER_CAPABILITIES` (comma-separated) cover the rest of the snippet. No `config.yml` is needed then, and if you set both, the environment variable wins.
+The snippet values can also be set as environment variables. `CAMERA_UI_WORKER=true` starts worker mode without the `--worker` option, and `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` and `CAMERA_UI_WORKER_CAPABILITIES` (comma-separated) cover the rest of the snippet. No `config.yml` is needed then, and if you set both, the environment variable wins.
 
-Leave the capabilities unset and the worker offers everything, which is what most setups want; the master still only assigns what you give it. Set them to restrict a worker to a single job, for example only hosting plugins.
+Without capabilities the worker offers everything; the master still only assigns what you give it. Set them to restrict a worker to one job, for example only hosting plugins.
 
 ## The workers list
 
-Once paired, a worker appears in the **Workers** list showing its online/offline status, platform (OS/architecture), process ID, version, and live CPU and memory use. A warning is shown if a worker's version differs from the master's. When a worker is behind, a small dot appears on the **Updates** entry in the navigation, the same marker the server and plugins use for a pending update.
+Once paired, a worker appears in the **Workers** list showing its online/offline status, platform (OS/architecture), process ID, version, and live CPU and memory use. A warning is shown if a worker's version differs from the master's. When a worker is behind, a dot appears on the **Updates** entry in the navigation.
 
-The list is also where you see a worker that thinks it is connected but is not. A worker that fails to link up at startup, or loses the link later, says so in its [log](/admin/logs) with the reason instead of sitting there looking online. Cameras and plugins running on a worker show up in **Metrics** with the worker's name and its load.
+A worker that fails to link up at startup, or loses the link later, logs the reason in its [log](/admin/logs) instead of looking online. Cameras and plugins running on a worker show up in **Metrics** with the worker's name and its load.
 
-The [Updates page](/install/updating#the-updates-page) lists every lagging worker next to the server and the plugins, and a lagging worker shows an **Update** button right in the list too: the worker installs the version the master is heading for and restarts itself. Normally that is the version the master runs; when a server update is waiting, it is that one, so the worker does not have to be updated twice. Workers running the desktop app update the same way, the app installs its update and relaunches. Only a worker still on a version before 2.1.0 needs a different route, it does not understand the update command yet, so bring it up once by hand: on Docker, exec into the container, run `cameraui update-server -H /data` and restart the container (pulling the worker image won't change the version). From then on the button covers them too. See [Updating](/install/updating).
+The [Updates page](/install/updating#the-updates-page) lists every lagging worker next to the server and the plugins, and a lagging worker shows an **Update** button right in the list too: the worker installs the version the master is heading for and restarts itself. Normally that is the version the master runs; when a server update is waiting, it is that one, so the worker does not have to be updated twice. Desktop-app workers update the same way. See [Updating](/install/updating).
 
 ## Camera and plugin assignments
 
 Under **Camera Assignments**, choose which camera each worker decodes and detects on; cameras left as **Local** stay on the main server.
 
-Under **Plugin Assignments**, an entire plugin can run on a worker instead of the main server, for example a detection backend that needs hardware the main server lacks. Only workers whose platform is compatible with the plugin are offered. The worker installs and runs the plugin; it's still configured normally in the UI.
+Under **Plugin Assignments**, an entire plugin can run on a worker instead of the main server. Only workers whose platform is compatible with the plugin are offered. The worker installs and runs the plugin; it's still configured normally in the UI.
 
 ## Failover
 

@@ -4,7 +4,7 @@ title: Building automations
 
 # Building automations
 
-Automations connect what happens at your cameras to actions camera.ui can take. You build them visually: drag **nodes** onto a canvas and connect them into a flow. Automations are an admin feature.
+Automations connect what happens at your cameras to actions: drag **nodes** onto a canvas and wire them into a flow. Automations are an admin feature.
 
 <Shot src="/img/automations/editor-canvas.png" alt="Automation editor canvas" />
 
@@ -12,11 +12,11 @@ Automations connect what happens at your cameras to actions camera.ui can take. 
 
 A flow runs from left to right: a **trigger** starts it, optional **conditions** decide whether it continues, and **actions** do something. **Utilities** help pass data between steps.
 
-Open **Automations** from the menu, then create one with the **+** button. A new flow starts empty and disabled, so you can build it before it runs.
+A new flow (**+** on the **Automations** page) starts empty and disabled.
 
 ## Triggers
 
-A trigger is what starts a flow. You can use more than one.
+A flow can have more than one trigger.
 
 - **Detection event.** Something detected at a camera: motion, a person, vehicle, or animal, an audio event like a doorbell or glass breaking, a recognized face, or a license plate. Filter by object, confidence, and event phase (start, update, end).
 - **Sensor change.** A sensor's state changes, like a contact sensor opening. This also covers your cameras' detection sensors: motion, objects, faces, license plates, and classifiers. Face, plate, and classifier sensors carry what was recognized, so a flow can react to a specific person, car, plate, or result, for example a bird classifier that reports the species.[^detvssensor]
@@ -25,13 +25,11 @@ A trigger is what starts a flow. You can use more than one.
 - **Webhook.** An external service calls a URL to start the flow.
 - **MQTT message.** A message arrives on an MQTT topic. Set the topic (`+` and `#` wildcards work) and choose how to match: any message, an exact payload, or a value at a JSON path like `params.switch:0.output`. Needs the MQTT connection set up in Settings.
 - **Geofence.** A user enters or leaves a location you define.
-- **Manual.** You run the flow yourself with the Run button, useful while building and testing.
+- **Manual.** Started with the **Run** button, for testing.
 
-[Virtual sensors](/sensors/virtual) work here too. You create them on the Sensors page, then set them with a **Control sensor** action and react to them with a **Sensor change** trigger.
+[Virtual sensors](/sensors/virtual) are set with a **Control sensor** action and trigger through **Sensor change**.
 
 ## Conditions
-
-Conditions decide whether a flow continues:
 
 - **If / else.** Branch on a comparison.
 - **Switch.** Branch on several possible values.
@@ -40,13 +38,11 @@ Conditions decide whether a flow continues:
 
 ## Actions
 
-Actions are what the flow does:
-
 - **Send notification.** Push an alert with a title, message, and severity.
-- **Notifications on/off.** Mute or unmute push. Under **Applies to** pick **Everyone**, **One camera**, or **One user**. Muting one camera stops its push while every other camera keeps notifying, so you can silence the street camera during the day and turn it back on at night. Muted alerts still land in the in-app bell and the events still show up on the timeline. Critical alerts always come through.
+- **Notifications on/off.** Mute or unmute push. Under **Applies to** pick **Everyone**, **One camera**, or **One user**. Muting one camera leaves the others notifying. Muted alerts still land in the in-app bell and the events still show up on the timeline. Critical alerts always come through.
 - **Capture snapshot.** Take a fresh image from a camera.
 - **Control sensor.** Set an accessory, such as turning on a light or locking a door. Values can be fixed or taken from a variable.
-- **Camera control.** Change one or more of a camera's settings in one step: snooze detections, disable the camera, recording (on/off, mode, pre-buffer, and which streams it records), detection thresholds and timeouts, PTZ autotrack (on/off, which object types it tracks, return to home, minimum confidence), and snapshot refresh. So "record just the main stream while the disk is full" is an automation.
+- **Camera control.** Change one or more of a camera's settings in one step: snooze detections, disable the camera, recording (on/off, mode, pre-buffer, and which streams it records), detection thresholds and timeouts, PTZ autotrack (on/off, which object types it tracks, return to home, minimum confidence), and snapshot refresh.
 - **HTTP request.** Call an external service.
 - **MQTT publish.** Send a message to an MQTT topic. Set the topic and the payload, and turn on **Retain** if the broker should keep the message for anyone subscribing later. Wildcards aren't allowed in the topic. Needs the MQTT connection set up in Settings.
 - **Plugin call.** Run a detection or analysis plugin on an image.
@@ -60,22 +56,22 @@ Actions are what the flow does:
 
 ## Passing values between steps
 
-Steps hand values to each other through **variables**. A node that produces something offers **Add output variable** in its settings: give it a name, and every step wired after it can use that value. **Variables** on a step lists what is available to it, so if a field says nothing is there, the node it should come from is not connected yet.
+Steps hand values on through **variables**. A node that produces something offers **Add output variable** in its settings: name it, and every step wired after it can use the value. **Variables** on a step lists what is available; if it is empty, the source node isn't connected yet.
 
-Write a variable as <span v-pre>`{{name}}`</span> wherever a field takes text, for example a notification body that greets the person the camera recognized. Fields that only take one value, like a sensor value or a condition, let you pick the variable from a list instead of typing it.
+Write a variable as <span v-pre>`{{name}}`</span> in any text field. Fields that only take one value, like a sensor value or a condition, let you pick the variable from a list instead of typing it.
 
-Two things help when a flow grows. **Set variable** stores a value for later, useful when you need it several steps down. And **Alias** on a node puts a prefix in front of its output variables, so `result` from two different plugins becomes `cam1.result` and `cam2.result` instead of clashing.
+**Set variable** stores a value for steps further down. **Alias** on a node prefixes its output variables, so `result` from two different plugins becomes `cam1.result` and `cam2.result` instead of clashing.
 
 A misspelled name is caught on save, with **Unknown variable** naming the one it could not resolve.
 
 ## Options and running
 
-In the toolbar you can name the flow, turn it **Enabled** on or off, and set two behaviors:
+The toolbar holds the name, **Enabled**, and two behaviors:
 
 - **Ignore repeated events**, so a burst of triggers runs the flow once.
 - **Wait for completion**, so a new trigger waits until the current run finishes.
 
-Save with the **Save** button. If your flow has a **Manual** trigger, a **Run** button lets you test it. In the list, each automation shows when it last ran, and camera.ui disables one automatically if it points at a camera or sensor you've removed, with a notice to fix it. On the list you can select several automations at once to enable, disable, or delete them together.
+camera.ui disables an automation automatically if it points at a camera or sensor you've removed, with a notice to fix it. The list shows each automation's last run and lets you enable, disable or delete several at once.
 
 To share automations, see [Blueprints & store](/automations/blueprints).
 

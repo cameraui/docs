@@ -4,9 +4,9 @@ title: KI-Beschreibungen
 
 # KI-Beschreibungen
 
-camera.ui kann ein generatives KI-Modell nutzen, um zu beschreiben, was vor der Kamera passiert. Es schreibt eine kurze Zusammenfassung jedes Moments in einem Ereignis: einen Titel, was passiert ist, eine benachrichtigungstaugliche Zeile und eine Bedrohungsstufe. Es benennt Personen, Kennzeichen und erkannte Bewegung.
+Ein generatives KI-Modell schreibt eine kurze Zusammenfassung jedes Moments in einem Ereignis: einen Titel, was passiert ist, eine benachrichtigungstaugliche Zeile und eine Bedrohungsstufe. Es benennt Personen, Kennzeichen und erkannte Bewegung.
 
-Namen und Kennzeichen kommen aus dem, was [Gesichtserkennung](/de/detection/faces) und [Kennzeichenlesung](/de/detection/license-plates) tatsächlich bestätigt haben, nicht aus dem, was das Modell im Bild zu lesen glaubt. Eine Beschreibung hängt einem Auto also kein Kennzeichen an, das nie gelesen wurde.
+Namen und Kennzeichen kommen aus dem, was [Gesichtserkennung](/de/detection/faces) und [Kennzeichenlesung](/de/detection/license-plates) tatsächlich bestätigt haben, nicht aus dem, was das Modell im Bild zu lesen glaubt.
 
 <Shot src="/img/detection/genai-description.png" alt="Eine KI-generierte Ereignisbeschreibung" />
 
@@ -20,12 +20,12 @@ Beschreibungen entstehen in der **Antwortsprache** der Assistenten-Einstellungen
 
 Das Modell speist zwei Funktionen, jede mit eigenem Tab in den Aufnahme-Einstellungen:
 
-- **Moments.** Aktiviere hier **Enabled**, um KI-Beschreibungen dessen zu bekommen, was in einem Ereignis passiert. **Custom Instructions** nimmt Freitext-Vorgaben, die dem eingebauten Prompt hinzugefügt werden, etwa worauf zu achten ist oder wie formuliert werden soll. **Model Timeout** ist die Zeit, die eine Beschreibung dauern darf, bevor der Push ohne sie rausgeht: 60 Sekunden als Standard, für ein langsames lokales Modell höher setzen. Wie die Beschreibungen aufs Handy kommen, stellst du pro Kamera ein, siehe [Benachrichtigungen](/de/notifications/#pushes-mit-ki-beschreibung).
+- **Moments.** **Enabled** schaltet KI-Beschreibungen von Ereignissen ein. **Custom Instructions** ergänzt den eingebauten Prompt um Freitext-Vorgaben. **Model Timeout** ist die Zeit, die eine Beschreibung dauern darf, bevor der Push ohne sie rausgeht: 60 Sekunden als Standard, für ein langsames lokales Modell höher setzen. Wie die Beschreibungen aufs Handy kommen, stellst du pro Kamera ein, siehe [Benachrichtigungen](/de/notifications/#pushes-mit-ki-beschreibung).
 - **Episoden.** Bündelt zusammenhängende Ereignisse über mehrere Kameras zu einer Story, mit eigenen **Custom Instructions**. Siehe [Episoden](/de/detection/episodes).
 
 ## Datenschutz
 
-Mit Ollama bleibt alles auf deiner eigenen Hardware. Mit einem Cloud-Anbieter werden Ereignis-Snapshots an diesen Anbieter gesendet, um die Beschreibung zu erzeugen.[^license]
+Mit einem lokalen Modell (Ollama, ein lokaler OpenAI-kompatibler Server, ein Plugin-Modell) bleibt alles auf deiner eigenen Hardware. Mit einem Cloud-Anbieter werden Ereignis-Snapshots an diesen Anbieter gesendet, um die Beschreibung zu erzeugen.[^license]
 
 Ein gezeichneter Grundriss ergänzt die Prompts um Text-Kontext: wie die Räume zusammenhängen, Gehzeiten zwischen den Kameras und was Sensoren in der Nähe gerade melden.
 

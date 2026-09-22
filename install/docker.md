@@ -1,6 +1,6 @@
 # Docker
 
-Docker is the recommended way to run the camera.ui server on Linux. The image is built on Ubuntu 24.04 and stays small: on first start it downloads and installs the server itself, so updates don't need a new image. There is one image per hardware target, published as `ghcr.io/cameraui/camera.ui`.
+Docker is the recommended way to run the camera.ui server on Linux. The image is built on Ubuntu 24.04 and downloads the server itself on first start, so server updates don't need a new image. There is one image per hardware target, published as `ghcr.io/cameraui/camera.ui`.
 
 ## Before you start
 
@@ -39,9 +39,7 @@ Start it:
 docker compose up -d
 ```
 
-Then open `https://<host>:3443`. The first boot downloads and installs the server, which takes a few minutes. Follow along with `docker compose logs -f`.
-
-Your browser shows a self-signed certificate warning on first visit, and the app then walks you through first-run setup. See [Getting started](/intro/getting-started) for what comes next.
+Then open `https://<host>:3443`. The first boot downloads the server and takes a few minutes (`docker compose logs -f` shows progress). The certificate is self-signed, so the browser warns on first visit. Next: [Getting started](/intro/getting-started).
 
 ::: tip First boot needs internet
 On first start the container downloads the server from the npm registry. If your host can't resolve it, add public DNS resolvers (`1.1.1.1`, `8.8.8.8`) to the service.
@@ -49,7 +47,7 @@ On first start the container downloads the server from the npm registry. If your
 
 ## Hardware acceleration
 
-The default image (`latest`) runs detection and video processing in software. For better performance, pick the flavor that matches your hardware and layer its override on top of the base file.
+The default image (`latest`) runs detection and video processing in software. For acceleration, layer the override of the flavor that matches your hardware on top of the base file.
 
 | Flavor | Tag | Hardware acceleration | Arch |
 |---|---|---|---|
@@ -101,7 +99,7 @@ services:
 
 :::
 
-Then start both files together (Intel shown here):
+Start both files together (Intel shown):
 
 ```bash
 docker compose -f docker-compose.yml -f docker-compose.intel.yml up -d
@@ -109,15 +107,15 @@ docker compose -f docker-compose.yml -f docker-compose.intel.yml up -d
 
 The NVIDIA flavors also require the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) on the host. `nvidia` ships CUDA 13 and needs an NVIDIA driver 580 or newer, which covers RTX 50xx cards. `nvidia-cuda12` keeps CUDA 12 for older drivers and pairs with the ONNX Legacy plugin. `nvidia-tensorrt` adds the TensorRT runtime (about 2 GB) for the ONNX plugin's tensorrt provider. Ready-made compose files for every flavor are in the [`cameraui/docker`](https://github.com/cameraui/docker) repository.
 
-Host drivers, device passthrough for AI accelerators (Coral, Hailo, Intel NPU) and how to verify it all works are covered on the [Hardware acceleration](/install/hardware-acceleration) page.
+Host drivers, device passthrough for AI accelerators (Coral, Hailo, Intel NPU) and verification: [Hardware acceleration](/install/hardware-acceleration).
 
 ## Networking
 
-Host networking (the compose default) is recommended. camera.ui uses it for mDNS / Bonjour (HomeKit pairing, ONVIF discovery) and for WebRTC live view. If you can't use host networking, publish the [ports](#ports) below explicitly instead.
+Host networking (the compose default) is recommended: camera.ui needs it for mDNS / Bonjour (HomeKit pairing, ONVIF discovery) and WebRTC live view. Without it, publish the [ports](#ports) explicitly.
 
 ## Storage for recordings
 
-By default, recordings live in the `/data` volume alongside everything else. To keep them on a separate, dedicated disk, bind-mount it and point the NVR at it:
+By default, recordings live in the `/data` volume. For a separate disk, bind-mount it and point the NVR at it:
 
 ```yaml
     volumes:
@@ -133,7 +131,7 @@ Use a dedicated local disk for `/recordings`, not a network share. See [System r
 
 A worker is a second machine that takes over camera work (decoding, detection, plugins) from your main server. It runs no UI and no streaming engine of its own. It uses the same image as the server, started in worker mode with `CAMERA_UI_WORKER=true`.
 
-Enable workers on the main server first and generate a pairing code there. The compose file for the worker machine, the environment variables it takes, and how to assign cameras to it are on [Workers](/admin/workers#worker-in-docker).
+Enable workers on the main server and generate a pairing code there first. Compose file, environment variables and camera assignment: [Workers](/admin/workers#worker-in-docker).
 
 `CAMERA_UI_WORKER_CAPABILITIES` narrows what the worker takes on: `frameDecoding` for decoding and detection, `pluginHost` for running plugins. Leave it unset and the worker offers both.
 
@@ -155,13 +153,13 @@ WebRTC media runs over UDP on 2004, with TCP on the same port as fallback. Witho
 
 ## Data & backups
 
-All state lives in the `cameraui-data` volume: config, database, recordings, and TLS certificates. Back up that volume to keep a copy. See [Backup & restore](/admin/backup).
+All state lives in the `cameraui-data` volume: config, database, recordings, and TLS certificates. See [Backup & restore](/admin/backup).
 
 To install plugins from a private registry or a mirror, mount your `.npmrc` to `/root/.npmrc`, see [Private registry or mirror](/plugins/#private-registry-or-mirror).
 
 ## Updating
 
-Pulling a new image does not update the server, only the image (OS, GPU libraries, and launcher): the launcher keeps the server version installed in the `cameraui-data` volume. Update the server from the [Updates page](/install/updating#the-updates-page), or run `cameraui update-server -H /data` in the container, then restart it. To update the image, pull and recreate the container:
+Pulling a new image updates only the image (OS, GPU libraries, launcher), not the server installed in the volume. Update the server from the [Updates page](/install/updating#the-updates-page), or run `cameraui update-server -H /data` in the container and restart it. The image:
 
 ```bash
 docker compose pull

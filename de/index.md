@@ -1,8 +1,8 @@
 # Was ist camera.ui?
 
-**camera.ui** ist eine selbstgehostete Plattform für deine Überwachungskameras. Sie vereint Live-Ansicht, durchgehende und ereignisbasierte Aufnahme, KI-Erkennung direkt auf dem Gerät und Smart-Home-Integration in einer modernen Oberfläche, komplett auf Hardware, die dir gehört.
+**camera.ui** ist eine selbstgehostete Plattform für deine Überwachungskameras. Sie vereint Live-Ansicht, durchgehende und ereignisbasierte Aufnahme, KI-Erkennung direkt auf dem Gerät und Smart-Home-Integration in einer Oberfläche, komplett auf Hardware, die dir gehört.
 
-Da alles auf deinem eigenen Server läuft, bleiben deine Aufnahmen auf Hardware, die du kontrollierst. Es gibt keine Cloud-Pflicht, und kein Dritter hält eine Kopie deiner Aufnahmen. Remote-Zugriff steht bereit, wenn du ihn willst, immer zu deinen Bedingungen.
+Es gibt keine Cloud-Pflicht, und kein Dritter hält eine Kopie deiner Aufnahmen. Remote-Zugriff ist optional.
 
 ::: tip Neu hier?
 Starte mit den **[ersten Schritten](/de/intro/getting-started)** für eine geführte Einrichtung, oder geh direkt zur **[Installation](/de/install/)**.
@@ -23,21 +23,19 @@ Fehlt etwas oder ist unklar? Sag uns auf [Discord](https://discord.gg/bBGnGcbz8N
 
 ## Live-Demo
 
-Vor der Installation reinschauen? Wirf einen Blick auf die **[Live-Demo](https://demo.cameraui.com/)**.
+Probier vor der Installation die **[Live-Demo](https://demo.cameraui.com/)** aus.
 
 ## Betreibe es, wie du willst
 
-camera.ui passt sich deinem Setup an:
-
 - **Desktop-App** für macOS, Windows und Linux. Der einfachste Einstieg, mit Server und Viewer in einer App.
 - **Server** für Always-on-Setups: Docker, Proxmox oder Bare-Metal-Linux.
-- **Mobile Apps** für iOS und Android, um deine Kameras auch unterwegs im Blick zu behalten.
+- **Mobile Apps** für iOS und Android.
 
 Unsicher, was passt? Siehe **[Welche Installation?](/de/install/)**.
 
 ## Wie es funktioniert
 
-Ein einzelner Server übernimmt die Hauptarbeit. Er verbindet sich mit deinen Kameras, nimmt auf, führt die Erkennung aus und liefert die Weboberfläche aus, während die Desktop- und Mobile-Apps als Viewer dienen. Den größeren Zusammenhang findest du unter **[Wie es funktioniert](/de/intro/architecture)**.
+Ein Server verbindet sich mit deinen Kameras, nimmt auf, führt die Erkennung aus und liefert die Weboberfläche aus. Die Desktop- und Mobile-Apps sind Viewer. Mehr unter **[Wie es funktioniert](/de/intro/architecture)**.
 
 ## Nächste Schritte
 

@@ -6,7 +6,7 @@ title: Zones & privacy
 
 Zones mark parts of the camera picture and give that area a job. There are five kinds, each with one job and its own tab in the editor: **Motion**, **Objects**, **Alerts**, **Privacy** and **Lines**.
 
-One rule runs through all of them: **a kind only narrows things down once it exists.** No motion zone means motion counts everywhere, no object zone means every object type counts everywhere, no alert zone means everything that is detected may alert you. You only draw the kind you actually want to limit.
+One rule runs through all of them: **a kind only narrows things down once it exists.** No motion zone means motion counts everywhere, no object zone means every object type counts everywhere, no alert zone means everything that is detected may alert you.
 
 ::: warning Cameras that detect on their own
 Reolink AI, Eufy, ONVIF events and plugins that report detections tell camera.ui **what** they saw, usually without saying **where**. Without a box there is nothing to place, so no zone can judge such a report and only the type lists still apply:
@@ -21,7 +21,7 @@ Two ways out. Let camera.ui detect for the camera: pick an [AI backend](/detecti
 
 ## Opening the editor
 
-Open a camera's [settings](/cameras/settings) and go to the **Settings** tab. Under **Zones** you see what the camera already has, each with its color, name and type (Motion zone, Object zone, Alert zone, Privacy zone or Line crossing). The pencil on an entry opens the editor on that tab, the bin deletes it.
+Open a camera's [settings](/cameras/settings) and go to the **Settings** tab. Under **Zones** you see what the camera already has, each with its color, name and type (Motion zone, Object zone, Alert zone, Privacy zone or Line crossing).
 
 Below the list, **Edit zones** opens the editor over the camera image.
 
@@ -31,9 +31,7 @@ Motion, object and alert zones start out covering the whole image, so you drag t
 
 ## Motion zones
 
-Motion zones say **where motion counts**. A motion zone is just a name, an area and a color.
-
-Only motion inside the zone counts, everything outside it is ignored. Draw several and motion counts in any of them. Motion is always judged by touch: as soon as movement reaches the zone, it counts. Without a motion zone the whole image counts.
+Motion zones say **where motion counts**. Only motion inside a zone counts, in any of them if there are several. Motion is always judged by touch: as soon as movement reaches the zone, it counts.
 
 ## Object zones
 
@@ -55,15 +53,13 @@ There is no way to cut a hole out of a zone. To keep an area out of detection, d
 
 ### Which types survive
 
-The types you list add up to what the camera reports. Once every object zone carries a type list, those lists together are what the camera detects: a type that appears on none of them is dropped everywhere on that camera.
+Once every object zone carries a type list, those lists together are what the camera detects: a type that appears on none of them is dropped everywhere on that camera.
 
 **Recognize faces** and **Read plates** count as types here. If every object zone has a list and none of them carries **Recognize faces**, the camera stops recognizing faces entirely, not just in one corner.
 
 ### Counting without recognizing
 
-A zone can count people and cars without identifying them. Under **Identification**, **Recognize faces** and **Read plates** decide whether what counts in this zone also gets a name. Drop both and the zone still detects the person and the car, but no face lands in your face list and no name or plate reaches the event or the push.
-
-A pavement zone that watches for people without collecting the faces of everyone walking past is the case this is for.
+Drop both **Recognize faces** and **Read plates** and the zone still detects the person and the car, but no face lands in your face list and no name or plate reaches the event or the push.
 
 A zone that lists person and nothing else no longer recognizes faces. Tick **Person** and **Recognize faces** together to get the person counted and named; **Recognize faces** alone finds nothing.
 
@@ -78,9 +74,7 @@ It does not lower CPU use, it only holds the result back.
 
 ## Alert zones
 
-An object zone decides what gets detected. An **alert zone** decides what gets you notified, and changes nothing else. Detection, events and recordings are untouched by it.
-
-Without an alert zone the camera alerts on everything it detects. Draw one to narrow that down.
+An **alert zone** decides what gets you notified and changes nothing else: detection, events and recordings are untouched by it.
 
 Once a camera has an alert zone, the zones decide its alerts:
 
@@ -88,7 +82,7 @@ Once a camera has an alert zone, the zones decide its alerts:
 - The same type outside that zone stays quiet.
 - A type that no alert zone lists stays quiet everywhere on the camera.
 
-Draw one alert zone over the driveway with person and vehicle on it, and someone on the road still lands on the timeline and in the recording, while only the driveway rings your phone. Watch the third point: animal is then on no zone, so animals stop alerting on that camera. Give a type a zone covering the whole image if it should keep alerting everywhere.
+With one alert zone over the driveway listing person and vehicle, someone on the road still lands on the timeline and in the recording, but only the driveway alerts. Animal is then on no zone, so animals stop alerting on that camera. Give a type a zone covering the whole image if it should keep alerting everywhere.
 
 An alert zone with no types selected alerts on every type from inside it.
 
@@ -123,7 +117,7 @@ A doorbell press, a contact sensor, a siren or an audio alert is not an object d
 
 ## Privacy zones
 
-A privacy zone covers an area in black, for example a neighbour's window or a public pavement. It is always black and has no color of its own.
+A privacy zone covers an area in black, for example a neighbour's window or a public pavement.
 
 **Detections inside** decides what happens to detections there:
 
@@ -161,15 +155,13 @@ Sometimes camera.ui cannot paint the black area, for example on a hardware frame
 - **Send it anyway.** The picture goes out uncovered. This is the default.
 - **Send no picture.** No picture is produced at all.
 
-Set it to **Send no picture** if an uncovered picture would be worse than none.
-
 ## Lines (line-crossing)
 
-On the **Lines** tab, draw a line across the image to detect when something crosses it. **Crossing direction** picks when it fires:
+A line detects when something crosses it. **Crossing direction** picks when it fires:
 
 - **A ↔ B both ways** triggers in either direction.
 - **A → B** or **B → A** triggers on a crossing in one direction.
 
 <Shot src="/img/cameras/zone-editor-lines.png" alt="Zone editor in the Lines tab, with a line across a gateway" />
 
-Like object zones, a line can be limited to specific types: person, vehicle and animal. A new line starts with all three selected. A crossing fires only when something moves across the line in the chosen direction, so you can alert on someone coming through a gate rather than just appearing in view. A line never filters detection.
+A line can be limited to person, vehicle and animal; a new line starts with all three selected. A line never filters detection.

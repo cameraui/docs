@@ -10,22 +10,22 @@ The HomeKit plugin adds your cameras and sensors to **Apple Home**. Cameras stre
 
 ## Setup
 
-1. On the **Plugins** page, search for and install the **HomeKit** plugin, then enable it.
+1. Install and enable the **HomeKit** plugin.
 2. Assign it to the cameras you want in Home, on the plugin's **Cameras** tab or from a [camera's Plugins tab](/sensors/setup).
 3. Open a camera's **HomeKit settings**. Each camera is added to Home individually and has its own **QR code** and **PIN**.
-4. In the Apple **Home** app, choose **Add Accessory** and scan the camera's QR code, or enter its PIN. Repeat for each camera.
+4. In the Apple **Home** app, choose **Add Accessory** and scan the camera's QR code, or enter its PIN.
 
-Pairing from the same device camera.ui is open on? There is nothing to scan then, so use **More options** in the Home app and type the PIN. The copy button next to it puts the PIN on your clipboard.
+To pair on the device camera.ui is open on, choose **More options** in the Home app and type the PIN; the copy button next to it copies the PIN.
 
-Once added, the camera streams in Home and supports **HomeKit Secure Video** recording if you've set that up in Home.
+**HomeKit Secure Video** recording works once you've set it up in Home.
 
 ## Secure Video on iOS 27
 
-Cameras with an HEVC (H.265) main stream use Apple's newer secure video services. Live view at home and away, recording and two-way audio all run on the camera's own HEVC stream without transcoding, so a 4K camera no longer costs a CPU core. This needs iOS 27 or tvOS 27 on the devices you watch on and on the home hub.
+Cameras with an HEVC (H.265) main stream use Apple's newer secure video services. Live view at home and away, recording and two-way audio all run on the camera's own HEVC stream without transcoding, so a 4K camera doesn't cost a CPU core. This needs iOS 27 or tvOS 27 on the devices you watch on and on the home hub.
 
 Cameras with an H.264 main stream stay on the classic HomeKit camera services, because Apple's new remote view only takes HEVC. The plugin picks the path from the main stream's codec when the camera is published.
 
-If your home stays on iOS 26 or older, turn on **Force legacy path** in the camera's advanced settings. The camera then uses the classic services and its HEVC stream is transcoded to H.264, as before.
+If your home stays on iOS 26 or older, turn on **Force legacy path** in the camera's advanced settings. The camera then uses the classic services and its HEVC stream is transcoded to H.264.
 
 ## What ends up where
 
@@ -48,7 +48,7 @@ Whether a sensor comes across at all is the **Expose sensor** toggle on the [Sen
 
 ## Fast streaming
 
-Opening a camera in Home is near-instant, taking only a few milliseconds, whether the camera uses H.264 or H.265. This relies on the source being kept ready, so enable [hot mode and preload](/cameras/add-camera#source-options) on the cameras you bridge.
+Opening a camera in Home takes a few milliseconds, with H.264 or H.265, as long as the source is kept ready: enable [hot mode and preload](/cameras/add-camera#source-options) on the cameras you bridge.
 
 ## Settings
 

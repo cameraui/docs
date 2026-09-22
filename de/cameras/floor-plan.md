@@ -12,11 +12,11 @@ Er ist live: Eine Kamera leuchtet auf, während sie etwas sieht, Sensoren zeigen
 
 ## Zeichnen
 
-Fang mit einer **Ebene** an. Der Button oben links hält sie, daneben liegen Hinzufügen, Umbenennen, Verschieben und Entfernen. Ein Haus mit Keller, Erdgeschoss und Obergeschoss hat drei.
+Fang mit einer **Ebene** an, eine pro Stockwerk. Sie liegen hinter dem Button oben links.
 
 Dann ziehst du Teile aus der Palette auf die Fläche. Am Telefon öffnet der Plus-Button dieselbe Palette.
 
-- **Räume.** Zieh **Neuer Raum** hinein und schieb das Rechteck zurecht. Es rastet am Raster ein, und der Maßstab in der Ecke sagt dir, was die Größe bedeutet. Ein Raum um die Ecke, etwa ein L-förmiger Hof, wird aus mehreren Rechtecken gezeichnet: Zeichne das zweite und setze sein **Gehört zu** auf das erste, dann zählen beide als ein Raum.
+- **Räume.** Zieh **Neuer Raum** hinein und schieb das Rechteck zurecht. Ein Raum um die Ecke, etwa ein L-förmiger Hof, wird aus mehreren Rechtecken gezeichnet: Zeichne das zweite und setze sein **Gehört zu** auf das erste, dann zählen beide als ein Raum.
 - **Art.** Ein Raum ist **Innen**, **Außen, auf dem Grundstück** oder **Außenwelt**. Das Letzte ist Straße, Gehweg, Nachbargrundstück: Wer von dort kommt, wurde vorher nirgends gesehen, camera.ui sucht dann keine frühere Sichtung. Zeichne das Tor oder den Vorweg dorthin, wo man hereinkommt.
 - **Verbindungen.** Räume, die sich nur eine Wand teilen, sind nicht verbunden. Setz eine **Tür**, einen **Offenen Durchgang** oder eine **Treppe** auf die gemeinsame Wand, schieb sie auf der Wand entlang und zieh an den Punkten die Breite. Zwischen zwei Ebenen ist die Verbindung immer eine Treppe.
 - **Kameras.** Zieh eine Kamera in den Raum, den sie beobachtet, und stell rechts **Blickrichtung**, **Blickwinkel** und **Reichweite** ein. Der Kegel auf dem Plan folgt. Eine Kamera ohne Raum trägt nichts zum räumlichen Kontext bei.

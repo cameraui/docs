@@ -16,7 +16,7 @@ Die semantische Suche braucht ein KI-Backend, das **CLIP** bereitstellt (CoreML,
 
 Öffne in den [Aufnahmen](/de/recording/browsing) die **KI-Suche** und beschreibe, was du suchst. camera.ui ordnet Ereignisse danach, wie gut sie passen, und du kannst **Min. Übereinstimmung** erhöhen, um nur enge Treffer zu behalten.
 
-Jedes CLIP-Modell hat seinen eigenen Wertebereich, die Prozentzahl wird deshalb pro Modell skaliert. Ein enger Treffer liest sich hoch, egal welches Modell läuft, und eine einmal gesetzte **Min. Übereinstimmung** bedeutet nach einem Modellwechsel dasselbe.
+Die Prozentzahl wird pro CLIP-Modell skaliert, eine **Min. Übereinstimmung** bedeutet nach einem Modellwechsel also dasselbe.
 
 ## Das CLIP-Modell wechseln
 

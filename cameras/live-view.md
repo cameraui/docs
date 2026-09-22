@@ -22,13 +22,13 @@ When you review recordings, the player also offers rewind, fast-forward, and pla
 
 ## Detection boxes
 
-With **Detections** on, the player draws a box around everything the camera currently sees, with the type, the confidence and the track number. A camera that reports a detection without saying where it is gets no box, there is nothing to draw around.
+With **Detections** on, the player draws a box around everything the camera currently sees, with the type, the confidence and the track number. A camera that reports a detection without a position gets no box.
 
 An object that has settled, a car parked in the driveway or a bin left at the kerb, keeps its box but gets a faded label and a timer counting how long it has been standing there. A settled object triggers no new events and no notifications, see [stationary objects](/detection/events-and-detections#stationary-objects). It goes back to a normal box as soon as it moves again. On a small card the labels are left out and only the box remains.
 
 ## Two-way talk
 
-The **Intercom** button sends audio from your device's microphone to the camera's speaker, so you can talk through a doorbell or camera. It is available on cameras that support two-way audio, and your browser or the app asks for microphone access the first time.
+The **Intercom** button sends your microphone to the camera's speaker, on cameras that support two-way audio.
 
 ## Second stream overlay
 
@@ -36,9 +36,9 @@ Give a source a **PiP Source** in the camera [settings](/cameras/settings) (Sour
 
 ## Streaming modes
 
-camera.ui can stream live video in a few ways. You set the mode per camera in its [settings](/cameras/settings), where a new camera starts on **Auto**. The player also has a button to switch between WebRTC and MSE while you watch.
+You set the streaming mode per camera in its [settings](/cameras/settings), where a new camera starts on **Auto**. The player also has a button to switch between WebRTC and MSE while you watch.
 
-- **Auto** starts WebRTC and MSE together and keeps whichever connects first, so a network that blocks WebRTC still gets a picture. When the camera's codec cannot travel over WebRTC it goes straight to MSE. The simplest choice.
+- **Auto** starts WebRTC and MSE together and keeps whichever connects first, so a network that blocks WebRTC still gets a picture. When the camera's codec cannot travel over WebRTC it goes straight to MSE.
 - **WebRTC** gives the lowest latency.
 - **MSE** is a broadly compatible fallback.
 - **webrtc/tcp** sends WebRTC over TCP only. Pick it in the camera settings if some networks block the ports WebRTC normally uses. It is not available from the player button.
@@ -47,15 +47,15 @@ The setting applies to the camera view. The small players elsewhere, the zone ed
 
 ## Activity mode: Always On and Standby
 
-Each camera has an **Activity mode** that controls when its stream runs, balancing responsiveness against resource use:
+Each camera has an **Activity mode** that controls when its stream runs:
 
-- **Always On** keeps the stream live at all times, for instant viewing.
-- **Standby** starts the stream when you open the camera and stops it again a few seconds later. The player then shows "Stream paused to conserve resources. Click on stream to resume." Click the video to watch again.
+- **Always On** keeps the stream live at all times.
+- **Standby** starts the stream when you open the camera and stops it again a few seconds later. Click the video to resume.
 - **Activity** keeps the stream running while there is activity and lets it rest otherwise.
 
 ## Shortcuts
 
-**Shortcuts** are controls you place on the video to jump to another camera or operate a sensor. Turn on **Edit Shortcuts** on the player to add them. See [Shortcuts](/cameras/shortcuts) for the full feature.
+**Shortcuts** are controls you place on the video to jump to another camera or operate a sensor. Turn on **Edit Shortcuts** on the player to add them. See [Shortcuts](/cameras/shortcuts).
 
 ## More options
 

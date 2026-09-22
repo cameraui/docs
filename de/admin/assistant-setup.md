@@ -8,12 +8,12 @@ Alles, was der [Assistent](/de/assistant/) braucht, liegt unter **Einstellungen 
 
 ## Modell wählen
 
-Der Assistent arbeitet mit Modellen, die du mitbringst. An camera.ui wird nichts gesendet. Füge sie mit **Modell hinzufügen** hinzu, beliebig viele, lokale und Cloud-Modelle nebeneinander.
+Der Assistent nutzt Modelle, die du mitbringst; an camera.ui wird nichts gesendet. **Modell hinzufügen** nimmt beliebig viele auf, lokale und Cloud-Modelle nebeneinander.
 
 - **Ollama.** Läuft auf eigener Hardware, nichts verlässt dein Netzwerk. [Ollama](https://ollama.com) installieren, ein Modell mit Tool-Calling laden und die **Server-URL** eintragen, falls Ollama nicht auf der camera.ui-Maschine läuft.
 - **OpenAI-kompatibler Server.** Jeder Server mit OpenAI-Chat-Completions-API: LM Studio, vLLM, LiteLLM, llama.cpp. **Server-URL** eintragen und, falls nötig, einen **API-Schlüssel**.
 - **OpenAI, Anthropic, Google Gemini, OpenRouter.** Cloud-Anbieter. Den **API-Schlüssel** deines Kontos einfügen oder den Schlüssel eines schon hinzugefügten Modells desselben Anbieters übernehmen. Der Schlüssel liegt verschlüsselt auf dem Server und erreicht weder den Browser noch ein Plugin. Der Anbieter rechnet pro Token ab.
-- **Ein Plugin.** Ein Plugin kann sein eigenes Modell mitbringen, es erscheint dann in der Anbieterliste, etwa als **Apple LLM (Plugin)**, ohne Schlüssel und ohne Adresse. Das Modell antwortet auf dem Rechner, auf dem das Plugin läuft. Das Apple-LLM-Plugin nutzt Apples Modell auf dem Gerät, auf einem Mac mit Apple Silicon und eingeschalteter Apple Intelligence (macOS 26, Bilder ab macOS 27). Es fasst nur ein kurzes Gespräch: gut für Fragen zu deinen Kameras und zur Dokumentation, schwächer bei langen Aufgaben mit vielen Schritten.
+- **Ein Plugin.** Plugin-Modelle erscheinen in der Anbieterliste, etwa **Apple LLM (Plugin)**, und antworten auf dem Rechner, auf dem das Plugin läuft. Das Apple-LLM-Plugin braucht einen Mac mit Apple Silicon und Apple Intelligence (macOS 26, Bilder ab macOS 27). Es fasst nur ein kurzes Gespräch: gut für Fragen zu Kameras und Doku, schwach bei langen Aufgaben mit vielen Schritten.
 
 <Shot src="/img/admin/assistant-models.png" alt="Die Modell-Liste mit Standard-Stern und den Badges für Werkzeuge und Bilder" />
 
@@ -27,15 +27,15 @@ Ein Modell lässt sich Admins vorbehalten: **Für Nutzer verfügbar** in seinem 
 
 ### Kleine Modelle und das Kontextfenster
 
-**Kontextfenster** im Modell-Dialog sagt, wie viel dieses Modell fasst. Ein Plugin-Modell bringt die Zahl selbst mit, sonst bleibt das Feld leer und es gilt das Kontextbudget aus den allgemeinen Einstellungen. Bei einem lokalen oder kleinen Modell trägst du es ein, für ein 8k-Modell also 8192, und camera.ui plant die Anfrage darum herum: Die Prozeduren wandern hinter einen `load_skill`-Aufruf, die Funktionsliste weicht einem Hinweis auf die Dokumentation, und Werkzeuge, mit denen die Frage nicht anfängt, stehen nur noch mit Namen da und werden geholt, wenn das Modell sie will. Weggenommen wird dem Modell nichts, es fragt nach, was es braucht. Dasselbe passiert bei einem großen Modell in einer großen Installation, wo viele Plugins und verbundene Server die Werkzeugliste über das Fenster hinaus wachsen lassen.
+**Kontextfenster** im Modell-Dialog sagt, wie viel dieses Modell fasst. Ein Plugin-Modell bringt die Zahl selbst mit, sonst bleibt das Feld leer und es gilt das Kontextbudget aus den allgemeinen Einstellungen. Bei einem lokalen oder kleinen Modell trägst du es ein, für ein 8k-Modell also 8192, und camera.ui plant die Anfrage darum herum: Die Prozeduren wandern hinter einen `load_skill`-Aufruf, die Funktionsliste weicht einem Hinweis auf die Dokumentation, und Werkzeuge, mit denen die Frage nicht anfängt, stehen nur noch mit Namen da und werden geholt, wenn das Modell sie will. Dasselbe passiert bei einem großen Modell in einer großen Installation, wo viele Plugins und verbundene Server die Werkzeugliste über das Fenster hinaus wachsen lassen.
 
-**Werkzeuge vorab auswählen** im selben Dialog hilft Modellen, die Werkzeuge vor ihrer Nase aufrufen, sich in einer langen Liste aber verlieren. camera.ui fragt das Modell dann vorab kurz, welche Werkzeuge die Frage braucht, und bietet nur diese zusammen mit knappen Regeln an. Das kostet einen zusätzlichen Aufruf pro Frage. Ein Plugin-Modell schaltet es selbst ein, wenn es das braucht, bei großen Modellen bleibt es aus.
+**Werkzeuge vorab auswählen** im selben Dialog hilft Modellen, die sich in einer langen Werkzeugliste verlieren: Ein zusätzlicher Aufruf pro Frage fragt das Modell, welche Werkzeuge es braucht, und nur diese werden mit knappen Regeln angeboten. Ein Plugin-Modell schaltet es selbst ein, wenn es das braucht; bei großen Modellen bleibt es aus.
 
 ### Modelle ohne Werkzeuge oder Bilder
 
 Für den Nutzer wird nichts abgeschaltet: Jedes Modell lässt sich wählen, der Assistent passt sich an und sagt, was fehlt.
 
-- **Keine Werkzeuge.** Das Modell kann nur plaudern. Es kann in der Instanz nichts nachschlagen, Fragen zu Kameras, Aufnahmen oder Einstellungen bleiben unbeantwortet.
+- **Keine Werkzeuge.** Das Modell kann nur plaudern; Fragen zu Kameras, Aufnahmen oder Einstellungen bleiben unbeantwortet.
 - **Keine Bilder.** Schnappschüsse und Ereignisbilder erscheinen weiter im Chat, das Modell bekommt stattdessen den Text der Werkzeugergebnisse.
 
 Manche Modelle bestehen beide Tests und rufen Werkzeuge trotzdem unzuverlässig auf, etwa mit erfundenen Ids. Kommen Antworten leer oder falsch zurück, probiere ein größeres Modell.
@@ -59,11 +59,11 @@ Die Karte **Verhalten** begrenzt einen Lauf:
 - **Zusätzliche Anweisungen.** Ergänzen die eingebauten Anweisungen, für Hausregeln und Kamera-Hinweise, etwa welche Kamera auf die Straße zeigt.
 - **Fakten über Nutzer merken.** Lässt den Assistenten Fakten wie Namen über Gespräche hinweg behalten. Standardmäßig an, und jeder Nutzer sieht und löscht seine eigene Liste im Chat. Ein Modell mit einem Fenster unter 16k Tokens merkt sich nur, was du ihm ausdrücklich sagst, nichts, was es selbst aufschnappt.
 
-**Auf Standard zurücksetzen** stellt diese Werte wieder her, die zusätzlichen Anweisungen bleiben. Vor dem Speichern ändert sich nichts.
+**Auf Standard zurücksetzen** stellt diese Werte wieder her, die zusätzlichen Anweisungen bleiben.
 
 ## Shell-Befehle
 
-Standardmäßig aus. **Shell-Befehle** lässt Admins den Assistenten um Host-Diagnosen bitten, die die anderen Werkzeuge nicht beantworten: Plattenbelegung, ob eine Kamera im Netz antwortet, Prozesse, Container-Logs. Der Assistent führt einen Befehl nach dem anderen auf dem Server aus, auf dem camera.ui läuft, und jeder Befehl wird dir mit der genauen Befehlszeile gezeigt, bevor er läuft. Du erlaubst ihn, bearbeitest ihn oder lehnst ihn ab. Die Ausgabe ist gedeckelt, ein Befehl wird nach standardmäßig 30 Sekunden abgebrochen, und das Werkzeug taucht weder im MCP-Server noch in geplanten Prompts oder Automationen auf. Was du erlaubst, läuft mit den Rechten des camera.ui-Prozesses, lies den Befehl also, bevor du klickst. Ist der Schalter aus und eine Frage bräuchte ihn, trägt die Antwort den Schalter selbst, sodass ein Admin ihn direkt im Chat einschalten kann.
+Standardmäßig aus. **Shell-Befehle** lässt Admins den Assistenten um Host-Diagnosen bitten, die die anderen Werkzeuge nicht beantworten: Plattenbelegung, ob eine Kamera im Netz antwortet, Prozesse, Container-Logs. Der Assistent führt einen Befehl nach dem anderen auf dem Server aus, auf dem camera.ui läuft, und jeder Befehl wird dir vorher mit der genauen Befehlszeile gezeigt, zum Erlauben, Bearbeiten oder Ablehnen. Die Ausgabe ist gedeckelt, ein Befehl wird nach standardmäßig 30 Sekunden abgebrochen, und das Werkzeug taucht weder im MCP-Server noch in geplanten Prompts oder Automationen auf. Was du erlaubst, läuft mit den Rechten des camera.ui-Prozesses. Ist der Schalter aus und eine Frage bräuchte ihn, trägt die Antwort den Schalter, sodass ein Admin ihn im Chat einschalten kann.
 
 ## MCP: die Instanz aus anderen KI-Werkzeugen nutzen
 
@@ -75,9 +75,9 @@ Standardmäßig werden nur lesende Werkzeuge angeboten: Kameras, Schnappschüsse
 
 ## Externe MCP-Server
 
-Andere Systeme mit MCP-Server können dem Assistenten ihre Werkzeuge leihen. Füge einen unter **Externe MCP-Server** mit Namen, URL und Zugangstoken hinzu; das Token liegt verschlüsselt. Der Zustand neben dem Namen zeigt, ob der Server geantwortet hat und wie viele Werkzeuge er anbietet. **Selbstsigniertes Zertifikat akzeptieren** ist für Server im eigenen Netzwerk da. Bevor ein Werkzeug eines solchen Servers läuft, bestätigt der Nutzer es, außer der Server markiert es als nur lesend. Viele Server markieren gar nichts, Home Assistant zum Beispiel. Unter **Werkzeuge** hat der Tab des Servers das Feld **Ohne Nachfrage ausführen**: Die dort gewählten Werkzeuge laufen ohne Bestätigung, auch in geplanten Prompts und Automationen. Wähle also nur Werkzeuge, die lesen, und speichere. Im Chat erscheinen diese Werkzeuge als eigene Gruppe und lassen sich pro Gespräch abschalten.
+Andere Systeme mit MCP-Server können dem Assistenten ihre Werkzeuge leihen. Füge einen unter **Externe MCP-Server** mit Namen, URL und Zugangstoken hinzu; das Token liegt verschlüsselt. Der Zustand neben dem Namen zeigt, ob der Server geantwortet hat und wie viele Werkzeuge er anbietet. **Selbstsigniertes Zertifikat akzeptieren** ist für Server im eigenen Netzwerk da. Bevor ein Werkzeug eines solchen Servers läuft, bestätigt der Nutzer es, außer der Server markiert es als nur lesend. Viele Server markieren gar nichts, Home Assistant zum Beispiel. Unter **Werkzeuge** hat der Tab des Servers das Feld **Ohne Nachfrage ausführen**: Die dort gewählten Werkzeuge laufen ohne Bestätigung, auch in geplanten Prompts und Automationen. Wähle also nur Werkzeuge, die lesen. Im Chat bilden diese Werkzeuge eine eigene Gruppe, die sich pro Gespräch abschalten lässt.
 
-Für Home Assistant die Integration **Model Context Protocol Server** aktivieren, im Home-Assistant-Profil ein langlebiges Zugangstoken anlegen und `http://<home-assistant>:8123/api/mcp` als URL eintragen. Der Assistent kann dann Zustände lesen und Lichter, Szenen und Klima über die Werkzeuge von Home Assistant schalten, und er kann sie in Automationen einbauen („wenn nachts jemand an der Tür ist, mach das Flurlicht an").
+Für Home Assistant die Integration **Model Context Protocol Server** aktivieren, im Home-Assistant-Profil ein langlebiges Zugangstoken anlegen und `http://<home-assistant>:8123/api/mcp` als URL eintragen. Der Assistent kann dann Zustände lesen und Lichter, Szenen und Klima über die Werkzeuge von Home Assistant schalten, und er kann sie in Automationen einbauen.
 
 ## Nächste Schritte
 

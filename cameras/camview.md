@@ -4,7 +4,7 @@ title: Camview
 
 # Camview
 
-Camview shows several cameras at once in a grid. You can build custom layouts, arrange them how you like, and control every camera in a layout together.
+Camview shows several cameras at once in a grid.
 
 <Shot src="/img/cameras/camview-grid.png" alt="Camview multi-camera grid" />
 
@@ -12,28 +12,22 @@ Camview shows several cameras at once in a grid. You can build custom layouts, a
 
 1. Open **Camview** and select **New View**.
 2. Give the view a name and pick a grid size, from a single camera up to 26.
-3. Select **Next**, then fill the slots. On a wide screen, drag cameras from the list on the right into the slots. On a narrow screen, tap the plus in a slot and pick a camera from the list.
-4. Save the view.
-
-You can create several views and switch between them from the view selector at the top.
+3. Select **Next** and fill the slots: drag cameras in from the list on the right, or on a narrow screen tap the plus in a slot.
 
 ## Arrange the grid
 
-Turn on **Rearrange** to drag tiles around. On a computer you can also resize a tile by its bottom-right corner, and two helpers make this quick:
+Turn on **Rearrange** to drag tiles around. On a computer you can also resize a tile by its bottom-right corner, with two helpers:
 
 - **Auto-arrange** packs the tiles together with no gaps.
 - **Fit aspect ratios** sizes each tile to its camera's configured aspect ratio.
 
-While you drag the handle, the tile's pixel size shows in its top left corner. Tiles stay where you drop them, and each one has a faint outline so you can see the slots.
-
-Select **Done** when you're finished. On phones the cameras sit in one column, so Rearrange only changes their order, and resizing and the rearrange helpers aren't available there. A view itself is saved to your account. The arrangement is kept in the browser you made it in, and phones and computers keep their own, so a grid tuned for your desktop stays tidy on mobile. **Edit** and **Delete** for a view are in the top bar.
+On phones the cameras sit in one column, so Rearrange only changes their order, and resizing and the rearrange helpers aren't available there. A view itself is saved to your account. The arrangement is kept in the browser you made it in, and phones and computers keep their own.
 
 ## Fit the picture to the card
 
-Cameras rarely match the shape of their tile, so a wide stream in a tall slot leaves black bars. In **Rearrange**, the **Picture in the card** button offers four choices:
+In **Rearrange**, the **Picture in the card** button offers four choices:
 
-- **Keep aspect ratio** shows the whole picture and lives with the bars. This is the default.
-- **Fit inside** also keeps the whole picture, sized to the card in both directions, with black bars where the shapes differ.
+- **Keep aspect ratio** (default) and **Fit inside** show the whole picture, with black bars where the shapes differ.
 - **Crop to fit** fills the card and cuts off the edges.
 - **Stretch to fit** fills the card and distorts the picture.
 
@@ -53,7 +47,7 @@ A floating control in the corner acts on every camera in the view together:
 
 ## What a camera is seeing
 
-While a camera detects something its tile glows, and small icons name what was found: motion, person, vehicle, face, plate and the rest. **Detections** in the floating control switches both off for the whole view, for a wall display that should stay calm. The choice is saved with your account.
+While a camera detects something its tile glows, and small icons name what was found: motion, person, vehicle, face, plate and the rest. **Detections** in the floating control switches both off for the whole view. The choice is saved with your account.
 
 ## Focus one camera
 
@@ -65,4 +59,4 @@ Open the timeline to scrub through recordings for the whole view at the same tim
 
 ## Performance
 
-Camview streams each camera at its **low resolution** so a full grid stays smooth, which matters most on phones and tablets. A single view holds up to **26** cameras. Add a low-resolution [source](/cameras/add-camera#sources-and-roles) to your cameras for the best results here.
+Camview streams each camera at its **low resolution** so a full grid stays smooth. A single view holds up to **26** cameras. Give your cameras a low-resolution [source](/cameras/add-camera#sources-and-roles).

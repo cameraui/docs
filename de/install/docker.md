@@ -1,6 +1,6 @@
 # Docker
 
-Docker ist die empfohlene Art, den camera.ui-Server auf Linux zu betreiben. Das Image basiert auf Ubuntu 24.04 und bleibt klein: Beim ersten Start lädt und installiert es den Server selbst, sodass Updates kein neues Image brauchen. Es gibt ein Image pro Hardware-Ziel, veröffentlicht als `ghcr.io/cameraui/camera.ui`.
+Docker ist die empfohlene Art, den camera.ui-Server auf Linux zu betreiben. Das Image basiert auf Ubuntu 24.04 und lädt den Server beim ersten Start selbst, Server-Updates brauchen also kein neues Image. Es gibt ein Image pro Hardware-Ziel, veröffentlicht als `ghcr.io/cameraui/camera.ui`.
 
 ## Bevor du startest
 
@@ -39,9 +39,7 @@ Starte es:
 docker compose up -d
 ```
 
-Öffne dann `https://<host>:3443`. Der erste Boot lädt und installiert den Server, was ein paar Minuten dauert. Verfolge das mit `docker compose logs -f`.
-
-Dein Browser zeigt beim ersten Besuch eine Warnung wegen des selbstsignierten Zertifikats, und die App führt dich anschließend durch die Ersteinrichtung. Was danach kommt, steht unter [Erste Schritte](/de/intro/getting-started).
+Öffne dann `https://<host>:3443`. Der erste Boot lädt den Server und dauert ein paar Minuten (`docker compose logs -f` zeigt den Fortschritt). Das Zertifikat ist selbstsigniert, der Browser warnt also beim ersten Besuch. Weiter geht es unter [Erste Schritte](/de/intro/getting-started).
 
 ::: tip Erster Boot braucht Internet
 Beim ersten Start lädt der Container den Server aus der npm-Registry. Falls dein Host sie nicht auflösen kann, füge dem Service öffentliche DNS-Resolver hinzu (`1.1.1.1`, `8.8.8.8`).
@@ -49,7 +47,7 @@ Beim ersten Start lädt der Container den Server aus der npm-Registry. Falls dei
 
 ## Hardware-Beschleunigung
 
-Das Standard-Image (`latest`) führt Erkennung und Video-Verarbeitung in Software aus. Für mehr Leistung wählst du den Flavor, der zu deiner Hardware passt, und legst sein Override über die Basisdatei.
+Das Standard-Image (`latest`) führt Erkennung und Video-Verarbeitung in Software aus. Für Beschleunigung legst du das Override des Flavors, der zu deiner Hardware passt, über die Basisdatei.
 
 | Flavor | Tag | Hardware-Beschleunigung | Arch |
 |---|---|---|---|
@@ -101,7 +99,7 @@ services:
 
 :::
 
-Starte dann beide Dateien zusammen (hier Intel):
+Beide Dateien zusammen starten (hier Intel):
 
 ```bash
 docker compose -f docker-compose.yml -f docker-compose.intel.yml up -d
@@ -109,15 +107,15 @@ docker compose -f docker-compose.yml -f docker-compose.intel.yml up -d
 
 Die NVIDIA-Flavors benötigen zusätzlich das [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) auf dem Host. `nvidia` bringt CUDA 13 mit und braucht einen NVIDIA-Treiber ab 580, das deckt auch RTX-50xx-Karten ab. `nvidia-cuda12` bleibt für ältere Treiber bei CUDA 12 und gehört zum ONNX-Legacy-Plugin. `nvidia-tensorrt` bringt zusätzlich die TensorRT-Runtime mit (rund 2 GB) für den tensorrt-Provider des ONNX-Plugins. Fertige compose-Dateien für jeden Flavor liegen im Repository [`cameraui/docker`](https://github.com/cameraui/docker).
 
-Host-Treiber, Device-Passthrough für KI-Beschleuniger (Coral, Hailo, Intel NPU) und wie du verifizierst, dass alles funktioniert, findest du auf der Seite [Hardware-Beschleunigung](/de/install/hardware-acceleration).
+Host-Treiber, Device-Passthrough für KI-Beschleuniger (Coral, Hailo, Intel NPU) und die Prüfung: [Hardware-Beschleunigung](/de/install/hardware-acceleration).
 
 ## Netzwerk
 
-Host-Networking (der compose-Standard) wird empfohlen. camera.ui nutzt es für mDNS / Bonjour (HomeKit-Pairing, ONVIF-Suche) und für die WebRTC-Live-Ansicht. Falls du kein Host-Networking nutzen kannst, veröffentliche stattdessen die [Ports](#ports) unten explizit.
+Host-Networking (der compose-Standard) wird empfohlen: camera.ui braucht es für mDNS / Bonjour (HomeKit-Pairing, ONVIF-Suche) und die WebRTC-Live-Ansicht. Ohne veröffentlichst du die [Ports](#ports) explizit.
 
 ## Speicher für Aufnahmen
 
-Standardmäßig liegen Aufnahmen im `/data`-Volume neben allem anderen. Um sie auf einer separaten, dedizierten Disk zu halten, binde diese ein und richte den NVR darauf aus:
+Standardmäßig liegen Aufnahmen im `/data`-Volume. Für eine eigene Disk bindest du sie ein und richtest den NVR darauf aus:
 
 ```yaml
     volumes:
@@ -133,9 +131,9 @@ Nutze für `/recordings` eine dedizierte lokale Disk, keine Netzwerkfreigabe. Si
 
 Ein Worker ist eine zweite Maschine, die Kamera-Arbeit (Decoding, Erkennung, Plugins) von deinem Hauptserver übernimmt. Er hat keine eigene UI und keine eigene Streaming-Engine. Er nutzt dasselbe Image wie der Server, gestartet im Worker-Modus mit `CAMERA_UI_WORKER=true`.
 
-Aktiviere Workers zuerst auf dem Hauptserver und generiere dort einen Pairing-Code. Die compose-Datei für die Worker-Maschine, ihre Umgebungsvariablen und wie du ihr Kameras zuweist, stehen unter [Worker](/de/admin/workers#worker-in-docker).
+Aktiviere zuerst Workers auf dem Hauptserver und generiere dort einen Pairing-Code. compose-Datei, Umgebungsvariablen und Kamera-Zuweisung: [Worker](/de/admin/workers#worker-in-docker).
 
-`CAMERA_UI_WORKER_CAPABILITIES` legt fest, was der Worker übernimmt: `frameDecoding` für Decoding und Erkennung, `pluginHost` für das Ausführen von Plugins. Setze mindestens einen Wert, sonst startet der Worker nicht.
+`CAMERA_UI_WORKER_CAPABILITIES` legt fest, was der Worker übernimmt: `frameDecoding` für Decoding und Erkennung, `pluginHost` für das Ausführen von Plugins. Ohne den Wert bietet der Worker beides an.
 
 ## Ports
 
@@ -155,13 +153,13 @@ WebRTC-Medien laufen über UDP auf 2004, TCP auf demselben Port ist der Fallback
 
 ## Daten & Backups
 
-Der gesamte Zustand liegt im `cameraui-data`-Volume: Konfiguration, Datenbank, Aufnahmen und TLS-Zertifikate. Sichere dieses Volume, um eine Kopie zu behalten. Siehe [Backup & Wiederherstellung](/de/admin/backup).
+Der gesamte Zustand liegt im `cameraui-data`-Volume: Konfiguration, Datenbank, Aufnahmen und TLS-Zertifikate. Siehe [Backup & Wiederherstellung](/de/admin/backup).
 
 Um Plugins aus einer privaten Registry oder einem Mirror zu installieren, mounte deine `.npmrc` nach `/root/.npmrc`, siehe [Private Registry oder Mirror](/de/plugins/#private-registry-oder-mirror).
 
 ## Aktualisieren
 
-Ein neues Image zu ziehen aktualisiert nicht den Server, nur das Image (OS, GPU-Bibliotheken und Launcher): Der Launcher behält die Server-Version, die im `cameraui-data`-Volume installiert ist. Aktualisiere den Server über **Einstellungen → System** oder führe `cameraui update-server -H /data` im Container aus und starte ihn danach neu. Um das Image zu aktualisieren, ziehe es neu und erstelle den Container neu:
+Ein neues Image aktualisiert nur das Image (OS, GPU-Bibliotheken, Launcher), nicht den Server im Volume. Aktualisiere den Server über die [Updates-Seite](/de/install/updating#die-updates-seite) oder führe `cameraui update-server -H /data` im Container aus und starte ihn neu. Das Image:
 
 ```bash
 docker compose pull

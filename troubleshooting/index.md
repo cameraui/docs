@@ -4,14 +4,12 @@ title: Troubleshooting
 
 # Troubleshooting
 
-When something isn't working, this page covers the most common issues and where to look. The **[Logs](/admin/logs)** are the best place to see what the server is actually doing.
+The most common issues and where to look. The **[Logs](/admin/logs)** show what the server is actually doing.
 
 ## A camera won't connect
 
-If a camera shows offline or won't load:
-
 - Check the camera's **[sources](/cameras/settings)**. The Sources tab shows each stream's live status, detected codecs, and URL.
-- Make sure the **stream URL and credentials** are correct. Testing the RTSP URL in a player like VLC confirms the camera itself is reachable.
+- Make sure the **stream URL and credentials** are correct. Test the RTSP URL in a player like VLC to rule out the camera itself.
 - Confirm the camera is on the **same network** as the server, or otherwise reachable from it.
 - For brand or discovery-based cameras, check the relevant **[protocol](/cameras/protocols)** or [plugin](/plugins/).
 
@@ -36,14 +34,14 @@ The OpenVINO plugin logs `libOpenCL.so.1: cannot open shared object file` when t
 
 - Check the **[notification settings](/notifications/)** on the device: the master switch, quiet hours, and whether the device is registered.
 - Check the **camera's** notification settings: which objects, sounds, and sensors it alerts on.
-- For **push to a phone**, you need the native [mobile app](/install/mobile) (a browser gets no push), [camera.ui Cloud](/remote/cloud) set up, and a tap on **Sync this device**. If push worked before and went quiet, the app usually notices and shows a note with a **Fix** button; one tap sets the phone up again. See [Getting push on your phone](/notifications/#getting-push-on-your-phone).
+- For **push to a phone**, you need the native [mobile app](/install/mobile) (a browser gets no push), [camera.ui Cloud](/remote/cloud) set up, and a tap on **Sync this device**. If push went quiet, the app usually shows a note with a **Fix** button that sets the phone up again. See [Getting push on your phone](/notifications/#getting-push-on-your-phone).
 
 ## Recording isn't working
 
 - Recording needs an **active subscription**. See [Recording](/recording/).
 - Confirm the camera's **recording mode** is set, either continuous or event.
 - Check **[storage](/recording/storage)**: a full disk with **Strict** retention pauses recording until you free space.
-- If **Settings → Recordings** warns that the storage volume is small, recordings are on a small disk and rotate away quickly. Either the disk really is that small, or a storage mount you expected never mounted. Check the path in **[storage](/recording/storage)**.
+- If **Settings → Recordings** warns that the storage volume is small, recordings rotate away quickly. Either the disk really is that small, or a storage mount you expected never mounted: check the path in **[storage](/recording/storage)**.
 
 ## Can't reach the server remotely
 
@@ -55,9 +53,9 @@ The OpenVINO plugin logs `libOpenCL.so.1: cannot open shared object file` when t
 
 ## I can't sign in
 
-If you know the account but not the password, another administrator can set a new one in **Settings → [Users](/admin/users)**: open the user's menu, choose **Edit**, and enter a new password.
+If you know the account but not the password, another administrator can set a new one in **Settings → [Users](/admin/users)** (user menu → **Edit**).
 
-The **master** account is the exception. It can only be changed by itself, so nobody else can reset it, and there is no command-line way either. Restoring a [backup](/admin/backup) from a time when you still knew the password brings the old accounts back with it. Without such a backup the only way in is a fresh install, so keep the master password somewhere you will find it again.
+The **master** account is the exception. Only the master itself can change it: no other administrator and no command line can reset it. Restoring a [backup](/admin/backup) from a time when you still knew the password brings the old accounts back with it. Without such a backup the only way in is a fresh install, so keep the master password somewhere you will find it again.
 
 ## Getting more detail
 

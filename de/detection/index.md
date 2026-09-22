@@ -4,11 +4,11 @@ title: Erkennung & KI
 
 # Erkennung & KI
 
-Erkennung ist, wie camera.ui versteht, was in deinem Video passiert: Bewegung, Personen und Fahrzeuge, Gesichter, Kennzeichen und Geräusche. Sie läuft auf deiner eigenen Hardware, und die Ergebnisse werden zu Ereignissen, die du durchsuchen, über die du benachrichtigt werden und nach denen du suchen kannst.
+Erkennung läuft auf deiner eigenen Hardware und erfasst Bewegung, Personen und Fahrzeuge, Gesichter, Kennzeichen und Geräusche. Die Ergebnisse werden zu Ereignissen, die du durchsehen, durchsuchen und dir melden lassen kannst.
 
 ## Wie Erkennung funktioniert
 
-Erkennung ist gestuft, damit sie effizient bleibt:
+Erkennung ist gestuft:
 
 1. **Bewegung** läuft durchgehend und günstig. Sie bemerkt nur, dass sich etwas geändert hat.
 2. Wenn ein Trigger auslöst, wacht die schwerere **KI** auf. Sie führt Objekterkennung aus (Personen, Fahrzeuge, Tiere) und schaut dann genauer auf das Gefundene: Gesichter bei den erkannten Personen, Kennzeichen bei den Fahrzeugen und einen semantischen Fingerabdruck für die Suche. Bewegung ist der übliche Trigger. Auch ein erkanntes Geräusch weckt die KI, ebenso ein anderer Sensor, zum Beispiel ein Kontaktsensor an einer Tür.
@@ -45,7 +45,7 @@ flowchart LR
 
 ## Plugins erledigen die Arbeit
 
-Erkennung wird von [Plugins](/de/plugins/) bereitgestellt, die du pro Kamera aktivierst: eine **Bewegungs-Engine** und ein **KI-Backend**, das zu deiner Hardware passt. Du wählst und justierst sie in den [Einstellungen](/de/cameras/settings) einer Kamera. Siehe [Sensoren einrichten](/de/sensors/setup), um sie zu aktivieren.
+Erkennung wird von [Plugins](/de/plugins/) bereitgestellt, die du pro Kamera aktivierst: eine **Bewegungs-Engine** und ein **KI-Backend**, das zu deiner Hardware passt. Du wählst und justierst sie in den [Einstellungen](/de/cameras/settings) einer Kamera, siehe [Sensoren einrichten](/de/sensors/setup).
 
 Jede Erkennung wird Teil eines **Ereignisses**. Siehe [Events & Erkennungen](/de/detection/events-and-detections) für deren Aufbau und [Aufnahmen (NVR)](/de/recording/) zum Durchsehen.
 

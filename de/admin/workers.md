@@ -8,11 +8,7 @@ title: Worker
 
 Ein **Worker** ist eine zweite Maschine, die einen Teil der Verarbeitung eines Servers übernimmt. Der Hauptserver (der **Master**) behält die Oberfläche, die Einstellungen und die Aufnahmen; Worker steuern Rechenleistung bei. Verwalte sie unter **Workers** (im Menü).
 
-Typische Gründe für einen Worker:
-
-- **Ausgelastete Kameras.** Dekodierung und Erkennung ausgewählter Kameras wandern auf den Worker und machen CPU und GPU des Masters für den Rest frei.
-- **Hardware, die dem Master fehlt.** Ein ganzes Plugin kann auf einem Worker laufen, etwa ein Erkennungs-Backend, das eine GPU braucht, die der Master nicht hat, oder ein Plugin, das die Plattform des Masters nicht laden kann.
-- **Wachsende Setups.** Kommen Kameras dazu, stellst du einen Worker daneben, statt den Server zu ersetzen.
+Ein Worker übernimmt Dekodierung und Erkennung ausgewählter Kameras oder führt ein ganzes Plugin aus, etwa ein Erkennungs-Backend, das eine GPU braucht, die der Master nicht hat, oder ein Plugin, das die Plattform des Masters nicht laden kann.
 
 ## Wie Worker funktionieren
 
@@ -22,7 +18,7 @@ Ein Worker ist eine normale camera.ui-Installation, die im Worker-Modus gestarte
 - **Einmal gekoppelt, dann selbstständig.** Ein einmaliger Pairing-Code wird gegen eigene Zugangsdaten des Workers getauscht. Zwischen Workern wird nichts geteilt, jeder lässt sich einzeln widerrufen, und nach dem ersten Start verbindet sich der Worker von selbst wieder.
 - **Zuweisungen folgen dem Worker.** [Zugewiesene](#kamera-und-plugin-zuweisungen) Kameras und Plugins laufen auf dem Worker, fallen auf den Master zurück, solange er offline ist, und wandern zurück, sobald er wiederkommt (siehe [Ausfallsicherung](#ausfallsicherung)).
 
-Master und Worker brauchen nicht dieselbe Installationsart, jede Mischung funktioniert: ein Docker-Server mit einem alten Laptop, auf dem die [Desktop-App](#worker-mit-der-desktop-app) als Worker läuft, ein Desktop-App-Server mit einem [Docker-Worker](#worker-in-docker) auf einem Mini-PC, ein Bare-Metal-Linux-Server mit beidem. Die camera.ui-Version sollte auf allen Maschinen übereinstimmen; die [Worker-Liste](#die-worker-liste) warnt, wenn nicht.
+Master und Worker können Installationsarten mischen: ein Docker-Server mit einem [Desktop-App](#worker-mit-der-desktop-app)-Worker, ein Desktop-App-Server mit einem [Docker-Worker](#worker-in-docker) und so weiter. Die camera.ui-Version sollte auf allen Maschinen übereinstimmen; die [Worker-Liste](#die-worker-liste) warnt, wenn nicht.
 
 ## Worker aktivieren
 
@@ -30,7 +26,7 @@ Aktiviere **Workers aktivieren** auf dem Master und setze eine **Master-Adresse*
 
 ## Einen Worker koppeln
 
-Klicke auf **Pairing-Code generieren**, um einen einmaligen Code zu erzeugen (15 Minuten gültig). Dazu gibt es einen fertigen Konfigurationsausschnitt:
+**Pairing-Code generieren** erzeugt einen einmaligen Code (15 Minuten gültig) und einen Konfigurationsausschnitt:
 
 ```yaml
 worker:
@@ -43,13 +39,13 @@ worker:
     - pluginHost
 ```
 
-Der Code lässt sich nur einmal verwenden, und nur der erste Start braucht ihn: Der Worker tauscht ihn gegen eigene Zugangsdaten und verbindet sich danach von selbst wieder. Wie der Ausschnitt auf den Worker kommt, hängt von der Installation ab, siehe die nächsten Abschnitte.
+Nur der erste Start braucht den Code. Wie der Ausschnitt auf den Worker kommt, hängt von der Installation ab:
 
 ## Die Worker-Maschine einrichten
 
 ### Worker in Docker
 
-Ein Worker läuft aus demselben Image wie der Server, nur im Worker-Modus gestartet. Speichere das hier als `docker-compose.worker.yml` auf der zweiten Maschine, mit der Adresse deines Masters und dem Pairing-Code von oben:
+Ein Worker läuft aus demselben Image wie der Server. Speichere das hier als `docker-compose.worker.yml` auf der zweiten Maschine, mit der Adresse deines Masters und dem Pairing-Code von oben:
 
 ```yaml
 name: cameraui-worker
@@ -83,9 +79,9 @@ Die Master-Adresse nimmt einen Hostnamen oder eine IP an, ohne Schema. `CAMERA_U
 
 ### Worker mit der Desktop-App
 
-Auch ein alter Laptop oder ein Mini-PC mit installierter [Desktop-App](/de/install/desktop) kann als Worker beitreten. Wähle beim ersten Start **Worker** im Modus-Dialog (oder später über **Modus wechseln…** im Tray-Menü), gib die Adresse des Masters und den Pairing-Code ein und verbinde. Statt der normalen Oberfläche zeigt die App ein kleines Statusfenster mit dem Verbindungsstatus. Stimmt die Adresse nicht oder ist der Code abgelaufen, öffnet sich der Dialog erneut und zeigt, was fehlgeschlagen ist.
+Eine Maschine mit der [Desktop-App](/de/install/desktop) tritt als Worker bei, wenn du beim ersten Start **Worker** im Modus-Dialog wählst (oder später über **Modus wechseln…** im Tray-Menü) und Adresse des Masters und Pairing-Code eingibst. Die App zeigt dann nur ein Statusfenster. Stimmt die Adresse nicht oder ist der Code abgelaufen, öffnet sich der Dialog erneut mit dem Fehler.
 
-Zwei Tray-Optionen machen das wartungsfrei: **Beim Anmelden öffnen** startet die App mit dem System, minimiert in den Tray, und **In den Tray schließen** lässt den Worker im Hintergrund weiterlaufen, wenn das Fenster geschlossen wird.[^trayopts] Die Adresse nimmt einen Hostnamen oder eine IP an, mit `:Port` nur, wenn der HTTPS-Port des Masters vom Standard abweicht.
+Zwei Tray-Optionen: **Beim Anmelden öffnen** startet die App mit dem System, minimiert in den Tray, und **In den Tray schließen** lässt den Worker im Hintergrund weiterlaufen, wenn das Fenster geschlossen wird.[^trayopts] Die Adresse nimmt einen Hostnamen oder eine IP an, mit `:Port` nur, wenn der HTTPS-Port des Masters vom Standard abweicht.
 
 [^trayopts]: Beim Anmelden öffnen gibt es unter Windows und macOS. In den Tray schließen gibt es unter Windows und Linux; unter macOS läuft die App beim Schließen des Fensters ohnehin weiter.
 
@@ -95,9 +91,7 @@ Füge den Ausschnitt in die `config.yml` der Worker-Maschine ein und starte sie 
 
 ### Hardware-Beschleunigung
 
-Ein Worker dekodiert Video, eine GPU bringt ihm also genauso viel wie dem Server.
-
-Unter **Docker** passen die Override-Dateien des Haupt-Deployments nicht: Sie ergänzen einen Dienst namens `cameraui`, der Worker-Dienst heißt aber `cameraui-worker`. Legst du eine darüber, startet ein zweiter, unabhängiger Container, statt den Worker zu beschleunigen. Trag die beiden Teile stattdessen direkt in die Worker-Datei ein, die [Image-Variante](/de/install/docker#hardware-beschleunigung) passend zur Hardware und das Gerät:
+Unter **Docker** passen die Override-Dateien des Haupt-Deployments nicht: Sie ergänzen den Dienst `cameraui`, nicht `cameraui-worker`, eine darübergelegte Datei startet also einen zweiten, unabhängigen Container. Trag die [Image-Variante](/de/install/docker#hardware-beschleunigung) passend zur Hardware und das Gerät direkt in die Worker-Datei ein:
 
 ```yaml
 services:
@@ -113,23 +107,23 @@ Welchen Dekoder eine Kamera auf einem Worker nutzt, legst du pro Kamera unter **
 
 ### Umgebungsvariablen
 
-Alternativ kannst du dieselben Werte als Umgebungsvariablen setzen, was in einem Container meist einfacher ist. `CAMERA_UI_WORKER=true` startet den Worker-Modus ohne die Option `--worker`, und `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` sowie `CAMERA_UI_WORKER_CAPABILITIES` (kommagetrennt) decken den Rest des Ausschnitts ab. Eine `config.yml` ist dann nicht nötig, und wenn du beides setzt, gewinnt die Umgebungsvariable.
+Die Werte des Ausschnitts lassen sich auch als Umgebungsvariablen setzen. `CAMERA_UI_WORKER=true` startet den Worker-Modus ohne die Option `--worker`, und `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` sowie `CAMERA_UI_WORKER_CAPABILITIES` (kommagetrennt) decken den Rest des Ausschnitts ab. Eine `config.yml` ist dann nicht nötig, und wenn du beides setzt, gewinnt die Umgebungsvariable.
 
-Lässt du die Capabilities weg, bietet der Worker alles an, was die meisten Setups wollen; der Master weist trotzdem nur zu, was du ihm gibst. Setze sie, um einen Worker auf eine einzige Aufgabe zu beschränken, etwa nur das Hosten von Plugins.
+Ohne Capabilities bietet der Worker alles an; der Master weist trotzdem nur zu, was du ihm gibst. Setze sie, um einen Worker auf eine Aufgabe zu beschränken, etwa nur das Hosten von Plugins.
 
 ## Die Worker-Liste
 
-Sobald gekoppelt, erscheint ein Worker in der **Workers**-Liste mit Online-/Offline-Status, Plattform (Betriebssystem/Architektur), Prozess-ID, Version sowie Live-CPU- und Speichernutzung. Weicht die Version eines Workers von der des Masters ab, wird ein Hinweis angezeigt. Hängt ein Worker zurück, erscheint ein kleiner Punkt am **Updates**-Eintrag in der Navigation, dasselbe Zeichen, das Server und Plugins für ein ausstehendes Update nutzen.
+Sobald gekoppelt, erscheint ein Worker in der **Workers**-Liste mit Online-/Offline-Status, Plattform (Betriebssystem/Architektur), Prozess-ID, Version sowie Live-CPU- und Speichernutzung. Weicht die Version eines Workers von der des Masters ab, wird ein Hinweis angezeigt. Hängt ein Worker zurück, erscheint ein Punkt am **Updates**-Eintrag in der Navigation.
 
-In der Liste siehst du auch einen Worker, der sich für verbunden hält und es nicht ist. Ein Worker, der sich beim Start nicht anmelden kann oder die Verbindung später verliert, schreibt das mit Grund in sein [Log](/de/admin/logs), statt einfach online auszusehen. Kameras und Plugins, die auf einem Worker laufen, tauchen in **Metrics** mit dem Namen des Workers und seiner Last auf.
+Ein Worker, der sich beim Start nicht anmelden kann oder die Verbindung später verliert, schreibt den Grund in sein [Log](/de/admin/logs), statt online auszusehen. Kameras und Plugins, die auf einem Worker laufen, tauchen in **Metrics** mit dem Namen des Workers und seiner Last auf.
 
-Die [Updates-Seite](/de/install/updating#die-updates-seite) listet jeden zurückhängenden Worker neben Server und Plugins, und in der Workers-Liste zeigt er weiterhin einen **Aktualisieren**-Button: Der Worker installiert die Version, auf die der Master zusteuert, und startet sich selbst neu. Normalerweise ist das die Version, die der Master fährt; steht ein Server-Update an, ist es dieses, der Worker muss also nicht zweimal aktualisiert werden. Worker mit der Desktop-App laufen genauso, die App installiert ihr Update und startet neu. Nur ein Worker auf einer Version vor 2.1.0 braucht einen anderen Weg, er versteht das Update-Kommando noch nicht, bring ihn einmal von Hand auf Stand: Bei Docker geh per exec in den Container, führe `cameraui update-server -H /data` aus und starte den Container neu (das Worker-Image zu ziehen ändert die Version nicht). Ab dann deckt der Button auch sie ab. Siehe [Aktualisieren](/de/install/updating).
+Die [Updates-Seite](/de/install/updating#die-updates-seite) listet jeden zurückhängenden Worker neben Server und Plugins, und in der Workers-Liste zeigt er weiterhin einen **Aktualisieren**-Button: Der Worker installiert die Version, auf die der Master zusteuert, und startet sich selbst neu. Normalerweise ist das die Version, die der Master fährt; steht ein Server-Update an, ist es dieses, der Worker muss also nicht zweimal aktualisiert werden. Worker mit der Desktop-App laufen genauso. Siehe [Aktualisieren](/de/install/updating).
 
 ## Kamera- und Plugin-Zuweisungen
 
 Unter **Kamera-Zuweisungen** wählst du, welche Kamera jeder Worker dekodiert und auf der er erkennt; als **Lokal** belassene Kameras bleiben auf dem Hauptserver.
 
-Unter **Plugin-Zuweisungen** kann ein ganzes Plugin auf einem Worker statt auf dem Hauptserver laufen, etwa ein Erkennungs-Backend, das Hardware braucht, die dem Hauptserver fehlt. Es werden nur Worker angeboten, deren Plattform mit dem Plugin kompatibel ist. Der Worker installiert und startet das Plugin; konfiguriert wird es weiterhin ganz normal in der Oberfläche.
+Unter **Plugin-Zuweisungen** kann ein ganzes Plugin auf einem Worker statt auf dem Hauptserver laufen. Es werden nur Worker angeboten, deren Plattform mit dem Plugin kompatibel ist. Der Worker installiert und startet das Plugin; konfiguriert wird es weiterhin ganz normal in der Oberfläche.
 
 ## Ausfallsicherung
 

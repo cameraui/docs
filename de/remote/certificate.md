@@ -4,15 +4,15 @@ title: Zertifikat
 
 # Zertifikat
 
-camera.ui erzeugt beim ersten Start ein eigenes Zertifikat und liefert es bei jeder Verbindung aus. Browser kennen den Aussteller nicht und warnen deshalb. Für deine eigene Domain kannst du diese Warnung abstellen, indem du ein selbst besorgtes Zertifikat hochlädst, ganz ohne [Reverse-Proxy](/de/remote/reverse-proxy) davor.
+camera.ui erzeugt beim ersten Start ein eigenes Zertifikat und liefert es bei jeder Verbindung aus. Browser kennen den Aussteller nicht und warnen deshalb. Für deine eigene Domain kannst du ein selbst besorgtes Zertifikat hochladen, ganz ohne [Reverse-Proxy](/de/remote/reverse-proxy).
 
 ## Wofür das eingebaute Zertifikat da ist
 
 Die mobilen Apps und entfernte Worker prüfen den Server gegen die eigene Zertifizierungsstelle von camera.ui. Sie erreichen den Server über IP-Adressen, und für private Adressen stellt kein öffentlicher Aussteller ein Zertifikat aus. Dieser Teil läuft deshalb weiter über das interne Zertifikat, egal was du hochlädst.
 
-Dein Zertifikat wird nur ausgeliefert, wenn ein Client nach einem Namen fragt, den es abdeckt. Alles andere, jede Verbindung über eine IP-Adresse eingeschlossen, bekommt weiterhin das interne. Beide existieren nebeneinander.
+Dein Zertifikat wird nur ausgeliefert, wenn ein Client nach einem Namen fragt, den es abdeckt. Alles andere, jede Verbindung über eine IP-Adresse eingeschlossen, bekommt weiterhin das interne.
 
-Das interne Zertifikat deckt `127.0.0.1` ab, die privaten Netzwerkadressen der Maschine und das, was du unter **Einstellungen → Remote Zugriff → Netzwerk** ausgewählt hast: die Serveradressen und die lokale Adresse. Eine öffentliche Adresse kommt nur hinein, wenn du sie dort auswählst. Das ist auch der Grund, warum ein Browser nach einer Änderung dort wieder warnen kann: Das Zertifikat wird für den neuen Satz neu ausgestellt, und die gespeicherte Ausnahme galt dem alten.
+Das interne Zertifikat deckt `127.0.0.1` ab, die privaten Netzwerkadressen der Maschine und das, was du unter **Einstellungen → Remote Zugriff → Netzwerk** ausgewählt hast: die Serveradressen und die lokale Adresse. Eine öffentliche Adresse kommt nur hinein, wenn du sie dort auswählst. Eine Änderung dort stellt das Zertifikat neu aus, eine im Browser gespeicherte Ausnahme für das alte greift dann nicht mehr und die Warnung kommt zurück.
 
 ## Eigenes Zertifikat hochladen
 
@@ -32,12 +32,12 @@ camera.ui nutzt das neue Zertifikat sofort. Die Streaming-Engine hält eine eige
 
 Hochgeladene Dateien liegen im Speicherverzeichnis unter `certs/custom/`, als `cert.pem`, `key.pem` und `chain.pem`. camera.ui beobachtet sie, eine ersetzte Datei greift also ohne Neustart.
 
-Damit wird die automatische Erneuerung zur Frage, wie du in dieses Verzeichnis schreibst:
+Für die automatische Erneuerung schreibst du in dieses Verzeichnis:
 
 - **Docker.** Dein Zertifikatsverzeichnis schreibgeschützt über `certs/custom` mounten.
 - **Bare Metal.** Ein certbot-Deploy-Hook, der `fullchain.pem` und `privkey.pem` unter diesen Namen dorthin kopiert.
 
-Über die Oberfläche geht es auch, dann musst du es bei jeder Erneuerung wiederholen. Let's-Encrypt-Zertifikate sind 90 Tage gültig.
+Ein Upload über die Oberfläche muss bei jeder Erneuerung wiederholt werden. Let's-Encrypt-Zertifikate sind 90 Tage gültig.
 
 ## Wieder entfernen
 

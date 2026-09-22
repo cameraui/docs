@@ -6,7 +6,7 @@ title: Episodes
 
 When several cameras see the same activity around the same time, camera.ui can bundle those sightings into one **episode**: a single title and a short story that follows the subject across cameras, in order. A person walking from the driveway to the front door becomes one episode instead of three separate events.
 
-Episodes need [AI descriptions](/detection/genai-descriptions). The AI writes the story, so the NVR plugin needs a model first.
+Episodes need [AI descriptions](/detection/genai-descriptions): the NVR plugin needs a model to write the story.
 
 ## Turning it on
 
@@ -21,14 +21,14 @@ In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and tur
 ## Where episodes show up
 
 - **Home.** Episodes appear in the **Recent Events** row as a mosaic card, showing how many cameras took part.
-- **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it. Episode cards follow the filters like everything else there: type, search, audio, attributes, sensors and a custom date range all apply to them.
+- **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it. The filters (type, search, audio, attributes, sensors, custom date range) apply to episode cards too.
 - **Apple TV.** Episodes are available in the Apple TV app too.
 
 <Shot src="/img/detection/episode-card.png" alt="An episode mosaic card in the recordings view" />
 
 ## The episode player
 
-Opening an episode plays the whole sequence. It switches between cameras on its own as the story moves, and shows the current camera's name and time. A strip below the video holds one block per camera stretch, so you can jump straight to any point or skip between cameras. Zoom and pan work as in the [live view](/cameras/live-view).
+An episode plays as one sequence, switching cameras as the story moves and showing the current camera's name and time. The strip below the video has one block per camera stretch. Zoom and pan work as in the [live view](/cameras/live-view).
 
 When a second camera covers the same room on the [floor plan](/cameras/floor-plan), the cut plays whichever had the subject closest, and the control bar offers **Second angle** for the other view of that stretch.
 

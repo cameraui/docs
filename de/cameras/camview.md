@@ -4,7 +4,7 @@ title: Camview
 
 # Camview
 
-Camview zeigt mehrere Kameras gleichzeitig in einem Raster. Du kannst eigene Layouts bauen, sie nach Belieben anordnen und alle Kameras eines Layouts gemeinsam steuern.
+Camview zeigt mehrere Kameras gleichzeitig in einem Raster.
 
 <Shot src="/img/cameras/camview-grid.png" alt="Camview Multi-Kamera-Raster" />
 
@@ -12,28 +12,22 @@ Camview zeigt mehrere Kameras gleichzeitig in einem Raster. Du kannst eigene Lay
 
 1. Öffne **Camview** und wähle **Neue Ansicht**.
 2. Gib der Ansicht einen Namen und wähle eine Rastergröße, von einer einzelnen Kamera bis zu 26.
-3. Wähle **Weiter**, und fülle dann die Felder. Auf einem breiten Bildschirm ziehst du die Kameras aus der Liste rechts in die Felder. Auf einem schmalen Bildschirm tippst du auf das Plus in einem Feld und wählst eine Kamera aus der Liste.
-4. Speichere die Ansicht.
-
-Du kannst mehrere Ansichten erstellen und oben über die Ansichtsauswahl zwischen ihnen wechseln.
+3. Wähle **Weiter** und fülle die Felder: Zieh Kameras aus der Liste rechts hinein, oder tippe auf einem schmalen Bildschirm auf das Plus in einem Feld.
 
 ## Das Raster anordnen
 
-Aktiviere **Anordnen**, um Kacheln zu verschieben. Am Computer kannst du eine Kachel zusätzlich an der unteren rechten Ecke in der Größe ändern, und zwei Helfer machen das schnell:
+Aktiviere **Anordnen**, um Kacheln zu verschieben. Am Computer kannst du eine Kachel zusätzlich an der unteren rechten Ecke in der Größe ändern, mit zwei Helfern:
 
 - **Automatisch anordnen** packt die Kacheln lückenlos zusammen.
 - **Seitenverhältnisse anpassen** bringt jede Kachel auf das konfigurierte Seitenverhältnis ihrer Kamera.
 
-Während du am Griff ziehst, steht die Pixelgröße der Kachel oben links in ihr. Kacheln bleiben liegen, wo du sie ablegst, und jede hat einen zarten Rahmen, damit du die Plätze siehst.
-
-Wähle **Fertig**, wenn du fertig bist. Auf dem Handy liegen die Kameras in einer Spalte, dort ändert **Anordnen** nur die Reihenfolge; Größe ändern und die Anordnen-Helfer gibt es dort nicht. Die Ansicht selbst wird in deinem Konto gespeichert. Die Anordnung bleibt in dem Browser, in dem du sie erstellt hast, und Handy und Computer behalten jeweils ihre eigene, sodass ein für den Desktop abgestimmtes Raster auf dem Handy aufgeräumt bleibt. **Bearbeiten** und **Löschen** einer Ansicht findest du in der oberen Leiste.
+Auf dem Handy liegen die Kameras in einer Spalte, dort ändert **Anordnen** nur die Reihenfolge; Größe ändern und die Anordnen-Helfer gibt es dort nicht. Die Ansicht selbst wird in deinem Konto gespeichert. Die Anordnung bleibt in dem Browser, in dem du sie erstellt hast, und Handy und Computer behalten jeweils ihre eigene.
 
 ## Das Bild an die Karte anpassen
 
-Kameras passen selten zur Form ihrer Kachel, ein breiter Stream in einem hohen Platz lässt also schwarze Balken. Im Modus **Anordnen** bietet der Button **Bild in der Karte** vier Möglichkeiten:
+Im Modus **Anordnen** bietet der Button **Bild in der Karte** vier Möglichkeiten:
 
-- **Seitenverhältnis behalten** zeigt das ganze Bild und nimmt die Balken in Kauf. Das ist die Voreinstellung.
-- **Einpassen** zeigt ebenfalls das ganze Bild, in beide Richtungen auf die Karte gerechnet, mit schwarzen Balken wo die Formen nicht passen.
+- **Seitenverhältnis behalten** (Standard) und **Einpassen** zeigen das ganze Bild, mit schwarzen Balken, wo die Formen nicht passen.
 - **Zuschneiden** füllt die Karte und schneidet die Ränder ab.
 - **Verzerren** füllt die Karte und verzerrt das Bild.
 
@@ -47,13 +41,13 @@ Ein schwebendes Bedienelement in der Ecke wirkt auf jede Kamera der Ansicht geme
 - Alle stumm- oder lautschalten.
 - Mit allen Kameras gleichzeitig gegensprechen.
 - Den Streaming-Modus für alle umschalten.
-- Den Activity-Modus für alle setzen (Always On, Standby, Activity).
+- Den Aktivitätsmodus für alle setzen (Immer An, Standby, Aktivität).
 - Die Auflösung für alle ändern.
 - Die Erkennungs-Marker ein- oder ausschalten.
 
 ## Was eine Kamera gerade sieht
 
-Erkennt eine Kamera etwas, leuchtet ihre Kachel, und kleine Symbole benennen das Erkannte: Bewegung, Person, Fahrzeug, Gesicht, Kennzeichen und so weiter. **Detections** im schwebenden Bedienelement schaltet beides für die ganze Ansicht ab, etwa für ein Wanddisplay, das ruhig bleiben soll. Die Wahl bleibt an deinem Konto gespeichert.
+Erkennt eine Kamera etwas, leuchtet ihre Kachel, und kleine Symbole benennen das Erkannte: Bewegung, Person, Fahrzeug, Gesicht, Kennzeichen und so weiter. **Erkennungen** im schwebenden Bedienelement schaltet beides für die ganze Ansicht ab. Die Wahl bleibt an deinem Konto gespeichert.
 
 ## Eine Kamera in den Fokus holen
 
@@ -65,4 +59,4 @@ Klicke auf eine Kachel, um sie auf die ganze Ansicht zu vergrößern, und klicke
 
 ## Leistung
 
-Camview streamt jede Kamera in **niedriger Auflösung**, damit ein volles Raster flüssig bleibt, was vor allem auf Handys und Tablets zählt. Eine einzelne Ansicht fasst bis zu **26** Kameras. Füge deinen Kameras eine niedrig aufgelöste [Quelle](/de/cameras/add-camera#quellen-und-rollen) hinzu, um hier die besten Ergebnisse zu erzielen.
+Camview streamt jede Kamera in **niedriger Auflösung**, damit ein volles Raster flüssig bleibt. Eine einzelne Ansicht fasst bis zu **26** Kameras. Gib deinen Kameras dafür eine niedrig aufgelöste [Quelle](/de/cameras/add-camera#quellen-und-rollen).

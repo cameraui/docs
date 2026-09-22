@@ -12,18 +12,18 @@ Ein **Blueprint** ist eine Automation als Datei gespeichert, sodass du sie siche
 
 ## Importieren
 
-Wähle in der **Automations**-Liste **Blueprint importieren** und nimm eine `.blueprint.json`-Datei. camera.ui fügt sie als neue Automation hinzu, **deaktiviert**, sodass du sie prüfen und anpassen kannst, bevor du sie einschaltest. Importierte Abläufe bekommen frische interne IDs, sodass es beim doppelten Import desselben Blueprints keine Konflikte gibt.
+Wähle in der **Automations**-Liste **Blueprint importieren** und nimm eine `.blueprint.json`-Datei. Sie kommt als neue Automation dazu, **deaktiviert**. Importierte Abläufe bekommen frische interne IDs, sodass es beim doppelten Import desselben Blueprints keine Konflikte gibt.
 
 ## Teilen
 
-Um eine Automation zu teilen, exportiere sie und sende die Datei. Die andere Person importiert sie auf ihrem eigenen Server.
+Exportiere die Automation und schick die Datei; die andere Person importiert sie auf ihrem Server.
 
 ## Community-Blueprints
 
 <Shot src="/img/automations/blueprint-store.png" alt="Der Community-Automatisierungen-Store" />
 
-Wähle in der **Automations**-Liste **Community-Automatisierungen durchsuchen**, um den Store zu öffnen. Er listet Blueprints, die von der camera.ui-Community geteilt wurden, mit Suche, einem Kategoriefilter und einer Reihe empfohlener Blueprints.
+**Community-Automatisierungen durchsuchen** in der **Automations**-Liste öffnet den Store mit Blueprints der camera.ui-Community.
 
-Öffnest du einen Blueprint, siehst du vor dem Import, was er benötigt: erforderliche Plugins (mit einem Link zum Plugin-Store, falls eines fehlt) und benötigte Eingaben wie eine Kamera, Benachrichtigungsempfänger oder einen Sensor. Über **Importieren** führt dich der Assistent durch die Eingaben des Blueprints. Kameras, Sensoren, Plugins und Benachrichtigungsempfänger wählst du selbst aus, und wo der Blueprint einen einfachen Wert braucht, tippst du ihn ein, etwa ein MQTT-Topic. Manche Felder sind schon mit einem Vorschlag gefüllt, den du überschreiben kannst. Die Seite eines Blueprints listet diese Textfelder nicht auf, erwarte beim Import also ein paar Felder mehr. Enthält der Blueprint keine Referenzen zum Verknüpfen, wird er direkt importiert. In beiden Fällen landet er **deaktiviert** in deiner Automations-Liste, genau wie beim manuellen Import einer Datei.
+Die Seite eines Blueprints listet, was er braucht: erforderliche Plugins (mit einem Link zum Plugin-Store, falls eines fehlt) und benötigte Eingaben wie eine Kamera, Benachrichtigungsempfänger oder einen Sensor. **Importieren** fragt dann nach deinen eigenen Kameras, Sensoren, Plugins und Empfängern, dazu nach einfachen Werten wie einem MQTT-Topic, manche mit Vorschlag vorausgefüllt. Diese Textfelder stehen nicht auf der Seite, erwarte beim Import also ein paar Felder mehr. Ein Blueprint ohne Referenzen zum Verknüpfen wird direkt importiert. In beiden Fällen landet er **deaktiviert**.
 
 Der Store ist ein öffentliches Repository, [cameraui/automations](https://github.com/cameraui/automations), das camera.ui zur Laufzeit liest. Aus der App heraus kann man nichts hochladen: Um eines beizusteuern, öffne einen Pull Request gegen dieses Repository mit deinem exportierten Blueprint.

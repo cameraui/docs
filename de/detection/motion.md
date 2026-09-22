@@ -8,7 +8,7 @@ Bewegung ist die erste und günstigste Stufe der [Erkennung](/de/detection/). Si
 
 ## Eine Bewegungs-Engine wählen
 
-camera.ui bietet mehrere Bewegungs-Plugins, sodass du die CPU-Last an deine Hardware anpassen kannst. Aktiviere eine pro Kamera in den [Einstellungen](/de/cameras/settings) unter dem Plugins-Tab (siehe [Sensoren einrichten](/de/sensors/setup)):
+camera.ui bietet mehrere Bewegungs-Plugins. Aktiviere eine pro Kamera in den [Einstellungen](/de/cameras/settings) unter dem Plugins-Tab (siehe [Sensoren einrichten](/de/sensors/setup)):
 
 - **Rust Motion.** Schnell und effizient; ein guter Standard für die meisten Setups.
 - **OpenCV.** Mehrere Algorithmen mit feiner Justierung.
@@ -28,7 +28,7 @@ Jede Engine bietet eigene Einstellungen (etwa Fläche, Schwellwert und Weichzeic
 
 Wenn eine Kamera zu empfindlich ist (eine viel befahrene Straße, ein schwankender Baum), begrenze mit [Zonen](/de/cameras/zones-and-masks), wo Bewegung zählt.
 
-Auch die eingeblendete Uhrzeit einer Kamera kann Bewegung auslösen, vor allem nachts und bei höherer Bewegungs-Auflösung, weil die wechselnden Ziffern wie Bewegung aussehen. Wenn du Bewegungs-Ereignisse ohne erkennbaren Anlass bekommst, zeichne eine Bewegungszone, die die Ecke mit der Uhrzeit ausspart.
+Auch die eingeblendete Uhrzeit einer Kamera kann Bewegung auslösen, vor allem nachts und bei höherer Bewegungs-Auflösung. Das Zeichen dafür sind Bewegungs-Ereignisse ohne erkennbaren Anlass: Zeichne eine Bewegungszone, die die Ecke mit der Uhrzeit ausspart.
 
 ## Die Kaskade
 

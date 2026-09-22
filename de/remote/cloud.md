@@ -16,21 +16,21 @@ Push-Benachrichtigungen sind das Einzige, das tatsächlich durch die Cloud läuf
 
 <Shot src="/img/remote/remote-settings.png" alt="Die Cloud-Karte unter Einstellungen, Remote" />
 
-Öffne unter **Einstellungen → Remote Zugriff** die **Cloud**-Karte und schalte **Aktiviert** ein. Gib dem Server einen **Namen**; so erscheint er in deinem Cloud-Dashboard, was praktisch ist, sobald du mehrere hast.
+Öffne unter **Einstellungen → Remote Zugriff** die **Cloud**-Karte und schalte **Aktiviert** ein. Unter seinem **Namen** erscheint der Server in deinem Cloud-Dashboard.
 
 Die **Status**-Zeile zeigt, ob der Server **Registriert** ist, und eine **Tunnel**-Anzeige zeigt die Live-Verbindung. Um einen Server zu verbinden, wähle **Server registrieren** und schließe die Kopplung ab. Zeigt der Status **Neu-Authentifizierung nötig**, hat der Server seine Cloud-Zugangsdaten verloren: wähle **Neu verbinden** und koppel erneut. Einen registrierten Server nimmst du mit **Server deregistrieren** wieder aus deinem Konto. Denselben Ablauf auf dem Handy beschreibt [Mobile Apps koppeln](/de/remote/pairing).
 
 ## Cloud hält die direkte Verbindung aktiv
 
-Solange die Cloud aktiv ist, behält dein Server zusätzlich eine öffentliche Adresse, damit die Apps ihn erreichen. Deshalb ist der Schalter **Aktiviert** in der Karte **Direkte Verbindung** fest eingeschaltet, und die Zeile **Externe URL** zeigt die verwendete Adresse.
+Solange die Cloud aktiv ist, behält dein Server zusätzlich eine öffentliche Adresse für die Apps. Deshalb ist der Schalter **Aktiviert** in der Karte **Direkte Verbindung** fest eingeschaltet, und **Externe URL** zeigt die verwendete Adresse.
 
-Wenn du keine direkte Adresse eingerichtet hast oder die konfigurierte nicht erreichbar ist, startet camera.ui stattdessen einen temporären Cloudflare-Tunnel. In beiden Fällen musst du am Router nichts ändern. Wenn du lieber deine eigene Adresse nutzt, richte sie unter [Direkte Verbindung](/de/remote/) ein.
+Wenn du keine direkte Adresse eingerichtet hast oder die konfigurierte nicht erreichbar ist, startet camera.ui stattdessen einen temporären Cloudflare-Tunnel. Für eine eigene Adresse richte sie unter [Direkte Verbindung](/de/remote/) ein.
 
-Der Rückfall ist nicht dauerhaft. camera.ui prüft deine eigene Adresse weiter und geht zurück, sobald sie antwortet, eine eigene Domain jede Minute, einen Cloudflare-Tunnel etwa alle zehn Minuten. Ein Neustart ist nicht nötig. Solange der Rückfall aktiv ist, zeigt **External URL** die temporäre Adresse, und ein erneut fehlgeschlagener Cloudflare-Versuch vergibt eine neue.
+Der Rückfall ist nicht dauerhaft. camera.ui prüft deine eigene Adresse weiter und geht zurück, sobald sie antwortet, eine eigene Domain jede Minute, einen Cloudflare-Tunnel etwa alle zehn Minuten. Ein Neustart ist nicht nötig. Solange der Rückfall aktiv ist, zeigt **Externe URL** die temporäre Adresse, und ein erneut fehlgeschlagener Cloudflare-Versuch vergibt eine neue.
 
 ## Das Cloud-Dashboard
 
-Mit der Anmeldung an deinem camera.ui-Konto bekommst du ein Dashboard, das alle deine registrierten Server beim Namen auflistet. Von dort wählst du einen Server zum Verbinden. Du kannst einen Server auch per Einladung mit einem anderen camera.ui-Konto **teilen**, sodass Familienmitglieder mit eigenem Login zugreifen.
+Das Dashboard in deinem camera.ui-Konto listet deine registrierten Server beim Namen, dort wählst du einen zum Verbinden. Per Einladung kannst du einen Server mit einem anderen camera.ui-Konto **teilen**, das sich dann mit eigenem Login anmeldet.
 
 ## Ausschalten
 

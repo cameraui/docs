@@ -17,8 +17,6 @@ Jeder Sensor ist ein eigenes Objekt. Er behält Name, Einstellungen und Verlauf,
 
 ## Kamera-Hardware und eigenständige Sensoren
 
-Sensoren gibt es in zwei Formen:
-
 - **Kamera-Hardware.** Das Plugin der Kamera registriert sie auf genau dieser Kamera: ihre Klingeltaste, ihr Spotlight, ihre Sirene oder ihre Batterie. Die Zuweisung ist fest; auf eine andere Kamera verschieben geht nicht.
 - **Eigenständig.** Alles andere, vom Smart-Plug einer Integration bis zum selbst erstellten virtuellen Sensor. Welchen Kameras er gehört, entscheidest du auf der **Sensoren**-Seite. Ein zugewiesener Sensor erscheint bei diesen Kameras und kann deren Erkennung auslösen.
 
@@ -26,9 +24,9 @@ Löschst du eine Kamera, gehen ihre Kamera-Hardware-Sensoren mit. Ein eigenstän
 
 ## Sensoren einrichten und nutzen
 
-Plugin-Sensoren werden pro Kamera in den Kamera-Einstellungen aktiviert, und jeder Sensor im System wird auf der **Sensoren**-Seite verwaltet. Ein Plugin mit eigenem Bestand, etwa eine Smart-Home-Integration, bietet dort unter **Entdeckt** an, was es findet, und du wählst aus, was übernommen wird. Siehe **[Sensoren einrichten](/de/sensors/setup)** für alles davon und **[Steuerung & Status](/de/sensors/controls)**, um Status zu lesen und Zubehör zu bedienen.
+Plugin-Sensoren werden pro Kamera aktiviert, und jeder Sensor wird auf der **Sensoren**-Seite verwaltet, wo Integrationen unter **Entdeckt** anbieten, was sie finden. Siehe **[Sensoren einrichten](/de/sensors/setup)** und **[Steuerung & Status](/de/sensors/controls)**, um Status zu lesen und Zubehör zu bedienen.
 
-Virtuelle Sensoren sind die Ausnahme: die erstellst du selbst, ganz ohne Plugin. Siehe **[Virtuelle Sensoren](/de/sensors/virtual)**.
+Virtuelle Sensoren brauchen kein Plugin, siehe **[Virtuelle Sensoren](/de/sensors/virtual)**.
 
 ## Freigabe ins Smart Home
 
@@ -36,4 +34,4 @@ Jeder Sensor hat einen Schalter **Sensor freigeben**. Freigegebene Sensoren ersc
 
 ## In Automationen
 
-Sensoren können außerdem [Automationen](/de/automations/) antreiben. Zum Beispiel eine Aktion auslösen, wenn ein Kontaktsensor öffnet, oder ein Licht einschalten, wenn Bewegung erkannt wird.
+Sensoren können [Automationen](/de/automations/) auslösen, etwa ein öffnender Kontakt, und Automationen können Zubehör wie ein Licht bedienen.

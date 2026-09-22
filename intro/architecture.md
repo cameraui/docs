@@ -31,17 +31,15 @@ flowchart LR
 
 ## From camera to notification
 
-Here is what happens behind a single detection:
-
 1. **Streaming.** The streaming engine connects to each camera and turns its feed into browser-friendly live video (WebRTC and MSE). Streams are kept "warm" so live view and snapshots load instantly.
-2. **Per-camera analysis.** Every camera gets its own **frame worker**, a dedicated background process that decodes the video and runs detection. Because each camera runs on its own, a problem with one never affects the others.
-3. **Layered detection.** Cheap motion detection runs first. Only when it sees movement does it wake the heavier AI: object detection, then faces, license plates, classification, and semantic (CLIP) analysis. Audio is analyzed in parallel. This "cascade" keeps CPU and GPU use low.[^detect]
+2. **Per-camera analysis.** Every camera gets its own **frame worker**, a background process that decodes the video and runs detection. A problem with one camera does not affect the others.
+3. **Layered detection.** Cheap motion detection runs first and only wakes the heavier AI on movement: object detection, then faces, license plates, classification, and semantic (CLIP) analysis. Audio is analyzed in parallel. This "cascade" keeps CPU and GPU use low.[^detect]
 4. **Events & recording.** When detection fires, the server builds an **event** with segments, thumbnails, and the objects, faces, or plates it found. The **NVR plugin** records the footage, stores it, and serves it back for playback.[^license]
 5. **Notifications.** Events can trigger push notifications and run [automations](/automations/).[^license]
 
 ## Plugins make it extensible
 
-A lot of what camera.ui does is delivered by **plugins**, add-ons you install from an in-app store. Each plugin runs in its own isolated process, so a misbehaving plugin can't take down the server, and it restarts automatically if it crashes.
+Much of camera.ui is delivered by **plugins** from the in-app store. Each plugin runs in its own process, so a failing plugin can't take down the server, and it restarts automatically after a crash.
 
 Plugins provide:
 
@@ -54,9 +52,9 @@ Learn more under [Plugins](/plugins/).
 
 ## Apps: desktop, mobile, web
 
-You use camera.ui through the same interface everywhere, but the apps don't all play the same role:
+Every app shows the same interface, but their roles differ:
 
-- The **[desktop app](/install/desktop)** can be the **server itself** (running camera.ui on your machine, the simplest all-in-one setup), a **viewer** that connects to another server, or a **worker** that helps another server with decoding, detection, or a plugin. You choose on first launch, and can switch anytime. For worker setup, see [Scaling across machines](#scaling-across-machines).
+- The **[desktop app](/install/desktop)** can be the **server itself** (all-in-one), a **viewer** that connects to another server, or a **worker** that helps another server with decoding, detection, or a plugin. You choose on first launch, and can switch anytime. See [Scaling across machines](#scaling-across-machines).
 - The **[mobile apps](/install/mobile)** and the **browser** are always **viewers**.
 
 How viewers reach the server:
@@ -69,11 +67,11 @@ You can also save more than one server as an **Instance** and switch between the
 
 ## Scaling across machines
 
-For larger setups, you can add extra machines as **workers**. A worker takes over the decoding and detection for some cameras, offloading the main server, or it can run an entire plugin instead (useful for a detector that needs specific hardware the main server lacks). Cameras and plugins assigned to a worker automatically **fall back** to the main server if that worker goes offline, and move back to the worker once it reconnects. See [Workers](/admin/workers).
+Extra machines can join as **workers**. A worker takes over decoding and detection for some cameras, or runs an entire plugin (for a detector that needs hardware the main server lacks). Cameras and plugins assigned to a worker **fall back** to the main server while the worker is offline and move back once it reconnects. See [Workers](/admin/workers).
 
 ## Reaching it from outside
 
-On your local network you connect directly. To reach your server from anywhere, camera.ui offers several options: camera.ui Cloud, Cloudflare tunnels, a custom domain, or direct port-forwarding. All of them are optional and entirely your choice. See [Remote access](/remote/).
+From outside your network you can use camera.ui Cloud, a Cloudflare tunnel, a custom domain or port-forwarding. All are optional. See [Remote access](/remote/).
 
 [^detect]: Detection needs a detection plugin that matches your hardware (CoreML, ONNX, OpenVINO, NCNN, or an edge accelerator like Coral or Hailo). See [Detection & AI](/detection/).
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback, export, face recognition, semantic search, and AI descriptions, plus push notifications. Live view and real-time detection are free.

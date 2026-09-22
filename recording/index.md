@@ -4,10 +4,10 @@ title: Recording (NVR)
 
 # Recording (NVR)
 
-camera.ui records your cameras so you can go back and watch what happened. Recording and everything in this section need an active camera.ui subscription.[^license]
+Recording and everything in this section need an active camera.ui subscription.[^license]
 
-::: info Trying recording during the beta
-Subscriptions aren't open for purchase yet. To test recording, create your camera.ui account at [cloud.cameraui.com](https://cloud.cameraui.com/), then ask for a trial on our [Discord](https://discord.gg/bBGnGcbz8N).
+::: info Preview phase
+Subscriptions aren't open yet. While camera.ui is in preview, recording is free for everyone with a camera.ui account, no card needed: create one at [cloud.cameraui.com](https://cloud.cameraui.com/) and follow the steps below. If the license does not activate, ask on our [Discord](https://discord.gg/bBGnGcbz8N).
 :::
 
 
@@ -19,13 +19,13 @@ Recording comes from the **camera.ui NVR** plugin, which is installed by default
 2. Open **Settings → Recordings** and, in the **License & Cloud** card, click the **cloud icon** and sign in.
 3. Your license then activates automatically. If the status doesn't update, use the **Refetch License** button.
 
-Once the license is active, cameras you add start recording on their own, as long as your subscription still has a free camera slot. A new camera records continuously in every stream quality. You can change the mode, pick which qualities to record, or turn recording off in the camera's recording settings.
+With an active license, new cameras start recording on their own while a camera slot is free: continuously, in every stream quality. Mode, qualities and on/off are in the camera's recording settings.
 
 ### Camera slots
 
-The **License** card in **Settings → Recordings** shows how many recording slots your plan includes, how many cameras are active, and how many currently use a slot.
+The **License & Cloud** card in **Settings → Recordings** shows how many recording slots your plan includes, how many cameras are active, and how many currently use a slot.
 
-Slots go to your enabled cameras in order. A camera past the limit keeps detecting, keeps its events and its live view, and simply does not record, without a warning of its own, so check the numbers on that card if footage is missing from one camera. Turning off recording on a camera you care less about frees its slot for another.
+Slots go to your enabled cameras in order. A camera past the limit keeps detecting, its events and its live view, but does not record and shows no warning, so check that card if footage is missing from one camera. Turning off recording on a camera frees its slot for another.
 
 If your subscription lapses, recording stops and playback, export, face recognition and search ask for a valid license. **Nothing on disk is deleted**, it all comes back when the license is valid again. A failed cloud check is not the same thing: recording carries on while camera.ui retries.
 
@@ -35,13 +35,13 @@ If your subscription lapses, recording stops and playback, export, face recognit
 
 Each camera records in one of three modes, set in its recording settings:
 
-- **Continuous.** Records around the clock. You always have footage, at the cost of the most storage.
-- **Event.** Records only when something happens (motion, an object, a sensor). A **pre-buffer** keeps a few seconds before each trigger, so you don't miss the lead-up.
-- **Ad-hoc.** Connects to the camera only when an event fires. Useful for cameras that stop sending events while a stream is open, such as some battery cameras.
+- **Continuous.** Records around the clock. Uses the most storage.
+- **Event.** Records only when something happens (motion, an object, a sensor). A **pre-buffer** keeps a few seconds before each trigger.
+- **Ad-hoc.** Connects to the camera only when an event fires. For cameras that stop sending events while a stream is open, such as some battery cameras.
 
 ## Quality
 
-You choose which stream qualities to record, **high**, **mid**, or **low**, and can keep more than one. Recording a low-resolution stream as well makes scrubbing the [timeline](/recording/timeline-playback) fast and smooth.
+Record one or more stream qualities: **high**, **mid**, **low**. Also recording the low stream makes scrubbing the [timeline](/recording/timeline-playback) fast.
 
 ## Next
 

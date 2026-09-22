@@ -24,24 +24,19 @@ CoreML, OpenVINO, ONNX, and NCNN provide object, face, and license-plate detecti
 
 In a backend's plugin settings you choose a **model** for each task (object, face, license plate, CLIP). Larger models are more accurate but heavier. camera.ui downloads the models it needs automatically.
 
-Confidence is not set here. Object, face and plate detection follow the values in the camera's [detection settings](/cameras/settings), so one camera can be stricter than another, and a change takes effect right away.
-
+Confidence is not set here but per camera in [Settings → Detection](/cameras/settings), for object, face and plate detection alike, and a change takes effect right away. Objects have one value per type, each between 0.3 and 1: **Person Confidence**, **Vehicle Confidence** and **Animal Confidence**.
 
 Which object types a camera reports is set in its [object zones](/cameras/zones-and-masks#object-zones). Motion and audio are not affected.
 
-Object confidence is set per type in [Settings → Detection](/cameras/settings): **Person Confidence**, **Vehicle Confidence** and **Animal Confidence** each have their own value between 0.3 and 1. Raise one if a camera reports that type when it isn't there, lower it if real ones are missed.
+Next to the confidence values is **Object timeout**, in seconds (minimum 10, default 15). It only matters for cameras that report objects on their own, like many Reolink models: it caps how long such a detection stays active when the camera never sends an end signal. Frame-based backends ignore it.
 
-Next to it is **Object timeout**, in seconds (minimum 10, default 15). It only matters for cameras that report objects on their own, like many Reolink models: it caps how long such a detection stays active when the camera never sends an end signal. Frame-based backends ignore it.
-
-Below it is **Ignore stationary objects**, on by default. Objects that stay put across events, like a car parked in the driveway, stop triggering new object events until they move again. Turn it off if you want every event to report the objects it sees, even the ones that never move.
+Below it is **Ignore stationary objects**, on by default, see [Stationary objects](/detection/events-and-detections#stationary-objects).
 
 ## Where detection looks
 
-A detection model works on a small square, often 640 pixels. Sending it the whole camera picture means squeezing a 4K frame into that square, and a person at the end of the driveway ends up a few pixels tall, too small to recognize.
+A detection model works on a small square, often 640 pixels. Squeezed into it, a 4K frame leaves a person at the end of the driveway a few pixels tall. camera.ui instead cuts the moving areas out of the full-resolution frame, several per frame if the movement is spread out, runs the model on those and maps the boxes back onto the picture, so small and distant objects get found. Nothing to set up.
 
-So camera.ui does not send the whole picture. It cuts the areas where something is moving out of the full-resolution frame and runs the model on those, several per frame if the movement is spread out, then puts the boxes back on the original picture. A distant car or a cat at night arrives at something close to its real size. Nothing to set up, and nothing changes for you except that smaller and further-away things get found.
-
-When nothing is moving, there is nothing to cut out, and the whole frame goes through. The **Zoom** column in the metrics below shows how often a camera got to work this way.
+When nothing is moving, the whole frame goes through. The **Zoom** column in the metrics below shows how often a camera worked this way.
 
 ## What detection costs
 
@@ -57,11 +52,11 @@ When nothing is moving, there is nothing to cut out, and the whole frame goes th
 
 <Shot src="/img/admin/metrics-detection.png" alt="The detection table in Metrics, Cameras" />
 
-**Show inference** switches the same table to the time inside each detector: **Motion**, **Object**, **Face**, **Plate**, **Classifier** and **CLIP**. Point at a cell to see the plugin, the model and the device it runs on, and a camera running on a [worker](/admin/workers) names that worker. Values are averages since the camera started, so **Reset** is worth a click after you change a model. **Copy** puts both views for every camera on the clipboard as text, which is the quick way into a bug report.
+**Show inference** switches the same table to the time inside each detector: **Motion**, **Object**, **Face**, **Plate**, **Classifier** and **CLIP**. Point at a cell to see the plugin, the model and the device it runs on, and a camera running on a [worker](/admin/workers) names that worker. Values are averages since the camera started; use **Reset** after changing a model. **Copy** puts both views for every camera on the clipboard as text.
 
 ### Benchmark
 
-**Benchmark** loads the object detector with test frames and reports how many detections per second it manages. Pick the cameras to include, **Select all** takes the lot, and start it. The result names the machine and the detections per second, in total and per camera, with each camera's plugin, model and device. **Copy** puts the result on the clipboard, which is what you want for a bug report or when comparing two backends.
+**Benchmark** loads the object detector of the cameras you pick with test frames and reports how many detections per second the machine manages, in total and per camera, with each camera's plugin, model and device. **Copy** puts the result on the clipboard.
 
 Detection pauses on every camera while the run is going, including the ones you did not pick, and continues when it is done. Only admins can run it.
 
@@ -73,7 +68,7 @@ Under the camera's **Plugins** tab, pick an **Object Assist** plugin below **Obj
 
 ## Camera detection as a second opinion
 
-A person who is in view only for a moment, behind a fence or a clothesline, needs more than one sighting before detection counts it; a single glimpse is dropped as a flicker. If the camera also detects objects on its own (a camera plugin that reports people or vehicles, like the Reolink plugin or ONVIF analytics) while a backend here does the actual detection, the camera's report confirms that glimpse: the same kind of object at the same moment is enough, and the card shows the picture of the glimpse. The camera's report never creates a detection by itself, and nothing has to be set up for it.
+Detection needs more than one sighting, so a person seen only for a moment (behind a fence or a clothesline) is dropped as a flicker. If the camera also detects objects on its own (a camera plugin that reports people or vehicles, like the Reolink plugin or ONVIF analytics) while a backend here does the detection, a camera report of the same kind of object at the same moment confirms that glimpse, and the card shows its picture. The camera's report never creates a detection by itself. Nothing to set up.
 
 ## What you get
 

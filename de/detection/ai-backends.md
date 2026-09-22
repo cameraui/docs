@@ -24,24 +24,19 @@ CoreML, OpenVINO, ONNX und NCNN liefern Objekt-, Gesichts- und Kennzeichen-Erken
 
 In den Plugin-Settings eines Backends wählst du ein **Modell** pro Aufgabe (Objekt, Gesicht, Kennzeichen, CLIP). Größere Modelle sind genauer, aber schwerer. camera.ui lädt die benötigten Modelle automatisch herunter.
 
-Die Konfidenz wird hier nicht gesetzt. Objekt-, Gesichts- und Kennzeichen-Erkennung folgen den Werten in den [Erkennungs-Einstellungen](/de/cameras/settings) der Kamera, eine Kamera kann also strenger sein als die andere, und eine Änderung greift sofort.
-
+Die Konfidenz wird nicht hier gesetzt, sondern pro Kamera unter [Einstellungen → Erkennung](/de/cameras/settings), für Objekt-, Gesichts- und Kennzeichen-Erkennung gleichermaßen, und eine Änderung greift sofort. Objekte haben einen Wert pro Typ, je zwischen 0,3 und 1: **Personen-Konfidenz**, **Fahrzeug-Konfidenz** und **Tier-Konfidenz**.
 
 Welche Objekttypen eine Kamera meldet, legst du in ihren [Objektzonen](/de/cameras/zones-and-masks#objektzonen) fest. Bewegung und Audio sind davon nicht betroffen.
 
-Die Objekt-Konfidenz wird pro Typ unter [Einstellungen → Erkennung](/de/cameras/settings) gesetzt: **Personen-Konfidenz**, **Fahrzeug-Konfidenz** und **Tier-Konfidenz** haben je einen eigenen Wert zwischen 0,3 und 1. Erhöhe einen Wert, wenn eine Kamera diesen Typ meldet, obwohl er nicht da ist; senke ihn, wenn echte übersehen werden.
+Neben den Konfidenz-Werten liegt **Objekt Timeout** in Sekunden (mindestens 10, Standard 15). Es betrifft nur Kameras, die Objekte selbst melden, etwa viele Reolink-Modelle: Es begrenzt, wie lange so eine Erkennung aktiv bleibt, wenn die Kamera kein Ende-Signal sendet. Frame-basierte Backends ignorieren es.
 
-Daneben liegt **Objekt Timeout** in Sekunden (mindestens 10, Standard 15). Es betrifft nur Kameras, die Objekte selbst melden, etwa viele Reolink-Modelle: Es begrenzt, wie lange so eine Erkennung aktiv bleibt, wenn die Kamera kein Ende-Signal sendet. Frame-basierte Backends ignorieren es.
-
-Darunter liegt **Statische Objekte ignorieren**, standardmäßig an. Objekte, die über Ereignisse hinweg unbewegt bleiben, etwa ein geparktes Auto in der Einfahrt, lösen keine neuen Objekt-Ereignisse mehr aus, bis sie sich wieder bewegen. Schalte es aus, wenn jedes Ereignis alle gesehenen Objekte melden soll, auch die unbewegten.
+Darunter liegt **Statische Objekte ignorieren**, standardmäßig an, siehe [Unbewegte Objekte](/de/detection/events-and-detections#unbewegte-objekte).
 
 ## Wohin die Erkennung schaut
 
-Ein Erkennungsmodell arbeitet auf einem kleinen Quadrat, oft 640 Pixel. Das ganze Kamerabild dorthin zu schicken heißt, einen 4K-Frame in dieses Quadrat zu quetschen, und eine Person am Ende der Einfahrt landet als ein paar Pixel, zu klein zum Erkennen.
+Ein Erkennungsmodell arbeitet auf einem kleinen Quadrat, oft 640 Pixel. In dieses Quadrat gequetscht, bleiben von einer Person am Ende der Einfahrt in einem 4K-Frame nur ein paar Pixel übrig. camera.ui schneidet deshalb die Bereiche mit Bewegung aus dem Frame in voller Auflösung heraus, bei verteilter Bewegung auch mehrere pro Frame, lässt das Modell darauf laufen und legt die Boxen zurück aufs Bild. So werden auch kleine und entfernte Objekte gefunden. Nichts einzurichten.
 
-camera.ui schickt deshalb nicht das ganze Bild. Es schneidet die Bereiche, in denen sich etwas bewegt, aus dem Frame in voller Auflösung heraus und lässt das Modell darauf laufen, bei verteilter Bewegung auch mehrere pro Frame, und legt die Boxen danach wieder auf das Originalbild. Ein entferntes Auto oder eine Katze bei Nacht kommt so in etwa in ihrer echten Größe an. Nichts einzurichten, und für dich ändert sich nur, dass kleinere und weiter entfernte Dinge gefunden werden.
-
-Bewegt sich nichts, gibt es nichts herauszuschneiden, und der ganze Frame geht durch. Die Spalte **Zoom** in den Metriken unten zeigt, wie oft eine Kamera so arbeiten konnte.
+Bewegt sich nichts, geht der ganze Frame durch. Die Spalte **Zoom** in den Metriken unten zeigt, wie oft eine Kamera so gearbeitet hat.
 
 ## Was Erkennung kostet
 
@@ -57,11 +52,11 @@ Bewegt sich nichts, gibt es nichts herauszuschneiden, und der ganze Frame geht d
 
 <Shot src="/img/admin/metrics-detection.png" alt="Die Erkennungs-Tabelle unter Metrics, Kameras" />
 
-**Inferenz anzeigen** schaltet dieselbe Tabelle auf die Zeit innerhalb jedes Detektors um: **Bewegung**, **Objekt**, **Gesicht**, **Kennzeichen**, **Klassifizierer** und **CLIP**. Zeig auf eine Zelle, um Plugin, Modell und Gerät zu sehen; eine Kamera auf einem [Worker](/de/admin/workers) nennt diesen Worker. Die Werte sind Durchschnitte seit dem Start der Kamera, nach einem Modellwechsel lohnt sich also **Zurücksetzen**. **Kopieren** legt beide Ansichten für jede Kamera als Text in die Zwischenablage, der schnelle Weg in einen Fehlerbericht.
+**Inferenz anzeigen** schaltet dieselbe Tabelle auf die Zeit innerhalb jedes Detektors um: **Bewegung**, **Objekt**, **Gesicht**, **Kennzeichen**, **Klassifizierer** und **CLIP**. Zeig auf eine Zelle, um Plugin, Modell und Gerät zu sehen; eine Kamera auf einem [Worker](/de/admin/workers) nennt diesen Worker. Die Werte sind Durchschnitte seit dem Start der Kamera; nach einem Modellwechsel **Zurücksetzen**. **Kopieren** legt beide Ansichten für jede Kamera als Text in die Zwischenablage.
 
 ### Benchmark
 
-**Benchmark** belastet den Objekt-Detektor mit Testbildern und meldet, wie viele Erkennungen pro Sekunde er schafft. Wähle die Kameras aus, **Alle auswählen** nimmt alle, und starte. Das Ergebnis nennt die Maschine und die Erkennungen pro Sekunde, insgesamt und je Kamera, mit Plugin, Modell und Gerät jeder Kamera. **Kopieren** legt das Ergebnis in die Zwischenablage, genau richtig für einen Fehlerbericht oder den Vergleich zweier Backends.
+**Benchmark** belastet den Objekt-Detektor der gewählten Kameras mit Testbildern und meldet, wie viele Erkennungen pro Sekunde die Maschine schafft, insgesamt und je Kamera, mit Plugin, Modell und Gerät jeder Kamera. **Kopieren** legt das Ergebnis in die Zwischenablage.
 
 Während des Laufs pausiert die Erkennung an jeder Kamera, auch an denen, die du nicht gewählt hast, und läuft danach weiter. Nur Admins können ihn starten.
 
@@ -73,7 +68,7 @@ Wähle unter dem **Plugins**-Tab der Kamera unter **Objekt** ein **Objekt-Assist
 
 ## Kamera-Erkennung als zweite Meinung
 
-Eine Person, die nur einen Augenblick zu sehen ist, hinter einem Zaun oder einer Wäscheleine, braucht mehr als eine Sichtung, bevor die Erkennung sie zählt; ein einzelner Blick wird als Flackern verworfen. Erkennt die Kamera zusätzlich selbst Objekte (ein Kamera-Plugin, das Personen oder Fahrzeuge meldet, etwa das Reolink-Plugin oder ONVIF-Analytics), während ein Backend von hier die eigentliche Erkennung macht, bestätigt die Meldung der Kamera diesen Blick: Dieselbe Objektart im selben Moment genügt, und die Karte zeigt das Bild dieses Augenblicks. Die Meldung der Kamera erzeugt nie selbst eine Erkennung, und einrichten musst du dafür nichts.
+Die Erkennung braucht mehr als eine Sichtung, eine Person, die nur einen Augenblick zu sehen ist (hinter einem Zaun oder einer Wäscheleine), wird also als Flackern verworfen. Erkennt die Kamera zusätzlich selbst Objekte (ein Kamera-Plugin, das Personen oder Fahrzeuge meldet, etwa das Reolink-Plugin oder ONVIF-Analytics), während ein Backend von hier die Erkennung macht, bestätigt eine Kamera-Meldung derselben Objektart im selben Moment diesen Blick, und die Karte zeigt sein Bild. Die Meldung der Kamera erzeugt nie selbst eine Erkennung. Nichts einzurichten.
 
 ## Was du bekommst
 

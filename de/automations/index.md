@@ -4,7 +4,7 @@ title: Automationen erstellen
 
 # Automationen erstellen
 
-Automationen verbinden, was an deinen Kameras passiert, mit Aktionen, die camera.ui ausführen kann. Du baust sie visuell: Ziehe **Nodes** auf eine Arbeitsfläche und verbinde sie zu einem Ablauf. Automationen sind eine Admin-Funktion.
+Automationen verbinden, was an deinen Kameras passiert, mit Aktionen: Ziehe **Nodes** auf eine Arbeitsfläche und verbinde sie zu einem Ablauf. Automationen sind eine Admin-Funktion.
 
 <Shot src="/img/automations/editor-canvas.png" alt="Automations-Editor-Canvas" />
 
@@ -12,11 +12,11 @@ Automationen verbinden, was an deinen Kameras passiert, mit Aktionen, die camera
 
 Ein Ablauf läuft von links nach rechts: Ein **Trigger** startet ihn, optionale **Bedingungen** entscheiden, ob es weitergeht, und **Aktionen** tun etwas. **Hilfsmittel** helfen, Daten zwischen den Schritten weiterzugeben.
 
-Öffne **Automatisierungen** aus dem Menü und erstelle mit der **+**-Schaltfläche eine neue. Ein neuer Ablauf startet leer und deaktiviert, sodass du ihn bauen kannst, bevor er läuft.
+Ein neuer Ablauf (**+** auf der Seite **Automatisierungen**) startet leer und deaktiviert.
 
 ## Trigger
 
-Ein Trigger ist das, was einen Ablauf startet. Du kannst mehrere verwenden.
+Ein Ablauf kann mehrere Trigger haben.
 
 - **Erkennungsereignis.** Etwas an einer Kamera erkannt: Bewegung, eine Person, ein Fahrzeug oder Tier, ein Audio-Ereignis wie eine Türklingel oder Glasbruch, ein erkanntes Gesicht oder ein Kennzeichen. Filtere nach Objekt, Confidence und Ereignis-Phase (Start, Update, Ende).
 - **Sensoränderung.** Der Zustand eines Sensors ändert sich, etwa ein sich öffnender Kontaktsensor. Das umfasst auch die Erkennungssensoren deiner Kameras: Bewegung, Objekte, Gesichter, Kennzeichen und Klassifizierer. Gesichts-, Kennzeichen- und Klassifizierer-Sensoren tragen das Erkannte, ein Ablauf kann also auf eine bestimmte Person, ein bestimmtes Auto, ein Kennzeichen oder ein Ergebnis reagieren, etwa einen Vogel-Klassifizierer, der die Art meldet.[^detvssensor]
@@ -25,13 +25,11 @@ Ein Trigger ist das, was einen Ablauf startet. Du kannst mehrere verwenden.
 - **Webhook.** Ein externer Dienst ruft eine URL auf, um den Ablauf zu starten.
 - **MQTT-Nachricht.** Eine Nachricht geht auf einem MQTT-Topic ein. Setze das Topic (die Wildcards `+` und `#` funktionieren) und wähle den Abgleich: jede Nachricht, ein exakter Payload oder ein Wert an einem JSON-Pfad wie `params.switch:0.output`. Benötigt die MQTT-Verbindung in den Einstellungen.
 - **Geofence.** Ein Benutzer betritt oder verlässt einen von dir definierten Ort.
-- **Manuell.** Du startest den Ablauf selbst mit der **Ausführen**-Schaltfläche, nützlich beim Bauen und Testen.
+- **Manuell.** Startet über **Ausführen**, zum Testen.
 
-[Virtuelle Sensoren](/de/sensors/virtual) funktionieren hier ebenfalls. Du erstellst sie auf der Sensoren-Seite, setzt sie dann mit einer **Sensor steuern**-Aktion und reagierst mit einem **Sensoränderung**-Trigger darauf.
+[Virtuelle Sensoren](/de/sensors/virtual) setzt du mit einer **Sensor steuern**-Aktion, reagieren lässt sich auf sie mit **Sensoränderung**.
 
 ## Bedingungen
-
-Bedingungen entscheiden, ob ein Ablauf weiterläuft:
 
 - **Wenn / Sonst.** Verzweigen anhand eines Vergleichs.
 - **Verzweigung.** Verzweigen anhand mehrerer möglicher Werte.
@@ -40,13 +38,11 @@ Bedingungen entscheiden, ob ein Ablauf weiterläuft:
 
 ## Aktionen
 
-Aktionen sind das, was der Ablauf tut:
-
 - **Benachrichtigung senden.** Einen Alarm mit Titel, Nachricht und Schweregrad senden.
-- **Benachrichtigungen an/aus.** Push stummschalten oder wieder freigeben. Unter **Gilt für** wählst du **Alle**, **Eine Kamera** oder **Einen Nutzer**. Schaltest du eine Kamera stumm, hört ihr Push auf, während alle anderen Kameras weiter melden, du kannst also tagsüber die Straßenkamera ruhigstellen und nachts wieder anschalten. Stummgeschaltete Alarme landen weiterhin in der In-App-Glocke, und die Ereignisse erscheinen weiter auf der Timeline. Kritische Alarme kommen immer durch.
+- **Benachrichtigungen an/aus.** Push stummschalten oder wieder freigeben. Unter **Gilt für** wählst du **Alle**, **Eine Kamera** oder **Einen Nutzer**. Eine stummgeschaltete Kamera betrifft die anderen nicht. Stummgeschaltete Alarme landen weiterhin in der In-App-Glocke, und die Ereignisse erscheinen weiter auf der Timeline. Kritische Alarme kommen immer durch.
 - **Schnappschuss.** Ein frisches Bild einer Kamera aufnehmen.
 - **Sensor steuern.** Ein Zubehör setzen, etwa ein Licht einschalten oder eine Tür verriegeln. Werte können fest sein oder aus einer Variable kommen.
-- **Kamera-Steuerung.** Eine oder mehrere Einstellungen einer Kamera in einem Schritt ändern: Erkennung pausieren, Kamera deaktivieren, Aufnahme (an/aus, Modus, Vorpuffer und welche Streams aufgezeichnet werden), Erkennungs-Schwellwerte und Timeouts, PTZ-Autotrack (an/aus, verfolgte Objekttypen, Rückkehr zur Ausgangsposition, Mindest-Konfidenz) und die Snapshot-Aktualisierung. "Nur den Hauptstream aufnehmen, solange die Disk voll ist" ist damit eine Automation.
+- **Kamera-Steuerung.** Eine oder mehrere Einstellungen einer Kamera in einem Schritt ändern: Erkennung pausieren, Kamera deaktivieren, Aufnahme (an/aus, Modus, Vorpuffer und welche Streams aufgezeichnet werden), Erkennungs-Schwellwerte und Timeouts, PTZ-Autotrack (an/aus, verfolgte Objekttypen, Rückkehr zur Ausgangsposition, Mindest-Konfidenz) und die Snapshot-Aktualisierung.
 - **HTTP-Anfrage.** Einen externen Dienst aufrufen.
 - **MQTT Publish.** Eine Nachricht auf ein MQTT-Topic senden. Setze Topic und Payload, und schalte **Retain** ein, wenn der Broker die Nachricht für später hinzukommende Abonnenten behalten soll. Wildcards sind im Topic nicht erlaubt. Benötigt die MQTT-Verbindung in den Einstellungen.
 - **Plugin-Aufruf.** Ein Erkennungs- oder Analyse-Plugin auf ein Bild anwenden.
@@ -60,22 +56,22 @@ Aktionen sind das, was der Ablauf tut:
 
 ## Werte zwischen Schritten weitergeben
 
-Schritte reichen Werte über **Variablen** weiter. Ein Knoten, der etwas produziert, bietet in seinen Einstellungen **Ausgabevariable hinzufügen** an: Gib ihr einen Namen, und jeder dahinter verdrahtete Schritt kann den Wert nutzen. **Variablen** an einem Schritt listet, was ihm zur Verfügung steht; steht dort nichts, ist der Knoten, aus dem der Wert kommen soll, noch nicht verbunden.
+Schritte reichen Werte über **Variablen** weiter. Ein Knoten, der etwas produziert, bietet in seinen Einstellungen **Ausgabevariable hinzufügen** an: Gib ihr einen Namen, und jeder dahinter verdrahtete Schritt kann den Wert nutzen. **Variablen** an einem Schritt listet, was verfügbar ist; ist die Liste leer, ist der Quell-Knoten noch nicht verbunden.
 
-Geschrieben wird eine Variable als <span v-pre>`{{name}}`</span>, überall wo ein Feld Text annimmt, etwa im Text einer Benachrichtigung, die die erkannte Person begrüßt. Felder, die nur einen Wert annehmen, etwa ein Sensorwert oder eine Bedingung, lassen dich die Variable stattdessen aus einer Liste wählen.
+Geschrieben wird eine Variable als <span v-pre>`{{name}}`</span>, in jedem Textfeld. Felder, die nur einen Wert annehmen, etwa ein Sensorwert oder eine Bedingung, lassen dich die Variable stattdessen aus einer Liste wählen.
 
-Zwei Dinge helfen, wenn ein Flow wächst. **Variable setzen** hält einen Wert für später fest, praktisch wenn du ihn erst einige Schritte weiter brauchst. Und **Alias** an einem Knoten stellt seinen Ausgabevariablen ein Präfix voran, aus `result` zweier Plugins wird so `cam1.result` und `cam2.result` statt eines Namenskonflikts.
+**Variable setzen** hält einen Wert für spätere Schritte fest. **Alias** an einem Knoten stellt seinen Ausgabevariablen ein Präfix voran, aus `result` zweier Plugins wird so `cam1.result` und `cam2.result` statt eines Namenskonflikts.
 
 Ein Tippfehler fällt beim Speichern auf, **Unbekannte Variable** nennt dann die, die nicht aufgelöst werden konnte.
 
 ## Optionen und Ausführen
 
-In der Toolbar kannst du den Ablauf benennen, **Aktiviert** an- oder ausschalten und zwei Verhalten setzen:
+Die Toolbar enthält den Namen, **Aktiviert** und zwei Verhalten:
 
 - **Wiederholte Ereignisse ignorieren**, sodass ein Schwung Trigger den Ablauf einmal ausführt.
 - **Auf Abschluss warten**, sodass ein neuer Trigger wartet, bis der aktuelle Lauf fertig ist.
 
-Speichere mit der **Speichern**-Schaltfläche. Hat dein Ablauf einen **Manuell**-Trigger, kannst du ihn mit **Ausführen** testen. In der Liste zeigt jede Automation, wann sie zuletzt lief, und camera.ui deaktiviert eine automatisch, wenn sie auf eine entfernte Kamera oder einen entfernten Sensor zeigt, mit einem Hinweis zum Korrigieren. In der Liste kannst du mehrere Automationen auf einmal auswählen, um sie zusammen zu aktivieren, zu deaktivieren oder zu löschen.
+camera.ui deaktiviert eine Automation automatisch, wenn sie auf eine entfernte Kamera oder einen entfernten Sensor zeigt, mit einem Hinweis zum Korrigieren. In der Liste siehst du, wann jede Automation zuletzt lief, und kannst mehrere auf einmal aktivieren, deaktivieren oder löschen.
 
 Zum Teilen von Automationen siehe [Blueprints & Store](/de/automations/blueprints).
 

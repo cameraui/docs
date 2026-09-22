@@ -4,27 +4,25 @@ title: Speicher & Aufbewahrung
 
 # Speicher & Aufbewahrung
 
-Aufnahmen können viel Speicher belegen, daher gibt dir camera.ui Kontrolle darüber, wo sie liegen und wie lange sie behalten werden.
-
 ## Wo Aufnahmen liegen
 
 Standardmäßig liegen Aufnahmen bei den übrigen camera.ui-Daten. Ab mehr als ein paar Kameras lege sie auf eine **dedizierte lokale Disk**, getrennt von der System-Disk. Siehe [Systemanforderungen](/de/intro/requirements#speicher-fur-aufnahmen).
 
-Eine an die Maschine angeschlossene Disk ist in Ordnung, ebenso ein Speicherpfad, der ein Symlink darauf ist. Eine **Netzwerkfreigabe (NAS, SMB, NFS) nicht**, und den Grund lohnt es zu kennen: In dem Ordner liegt mehr als Video. Erkennungs-Ereignisse, die Timeline-Markierungen und der Suchindex liegen als Datenbanken neben dem Material, damit sie mitwandern, wenn du die Disk umziehst. Diese Datenbanken brauchen Dateisperren, die Netzwerk-Dateisysteme nicht zuverlässig bereitstellen. Kaputt geht dort also die Ereignis-Datenbank, nicht ein Videobild. Liegt dein Speicher auf einem NAS, lass camera.ui stattdessen auf dem NAS laufen und nimm dort lokal auf.
+Eine lokale Disk oder ein Symlink darauf ist in Ordnung. Eine **Netzwerkfreigabe (NAS, SMB, NFS) nicht**: Erkennungs-Ereignisse, Timeline-Markierungen und Suchindex liegen als Datenbanken neben dem Material, und die brauchen Dateisperren, die Netzwerk-Dateisysteme nicht zuverlässig bereitstellen. Kaputt geht dort die Ereignis-Datenbank, nicht das Video. Liegt dein Speicher auf einem NAS, lass camera.ui auf dem NAS laufen und nimm dort lokal auf.
 
 ## Aufnahmen auf eine andere Platte umziehen
 
-Den Speicherpfad zu ändern nimmt deine Aufnahmen nicht mit. camera.ui fängt am neuen Ort bei null an, und der alte Ordner behält Material und Ereignisse dort, wo sie sind. Zieh die Daten selbst um:
+Den Speicherpfad zu ändern zieht deine Aufnahmen nicht um: camera.ui fängt am neuen Ort bei null an, der alte Ordner bleibt, wie er ist. So ziehst du die Daten um:
 
 1. Stoppe den Server.
-2. Verschiebe den kompletten Speicherordner auf die neue Platte, einschließlich der Ordner `events` und `clip` neben dem Material. Darin liegen deine Ereignisse, die Marker der Zeitleiste und der Suchindex, und sie gehören zu genau diesem Material.
+2. Verschiebe den kompletten Speicherordner auf die neue Platte, einschließlich der Ordner `events` und `clip`. Darin liegen Ereignisse, Zeitleisten-Marker und Suchindex zu diesem Material.
 3. Starte den Server und trag den neuen Pfad unter **Einstellungen → Aufnahmen** ein.
 
-Nichts darin speichert einen absoluten Pfad, Zeitleiste, Ereignisse und Suche funktionieren am neuen Ort also ohne Neuaufbau. Lässt du `events` und `clip` zurück, kommt das Material ohne sie an, und aus den Videodateien lassen sie sich nicht wiederherstellen. Hinterlegte Gesichter sind so oder so nicht betroffen, sie liegen außerhalb des Aufnahmeordners.
+Nichts darin speichert einen absoluten Pfad, am neuen Ort funktioniert also alles ohne Neuaufbau. Ohne `events` und `clip` kommt nur das nackte Material an, und aus den Videodateien lassen sie sich nicht wiederherstellen. Hinterlegte Gesichter liegen außerhalb des Aufnahmeordners und sind nicht betroffen.
 
 ## Grobe Dimensionierung
 
-Durchgehende Aufnahme schreibt den aufgezeichneten Stream auf die Disk, die Größe richtet sich also nach dessen Bitrate. Als Faustregel:
+Bei durchgehender Aufnahme richtet sich die Größe nach der Bitrate des Streams:
 
 **GB pro Tag, pro Kamera ≈ Bitrate in Mbit/s × 10,8**
 
@@ -34,33 +32,31 @@ Durchgehende Aufnahme schreibt den aufgezeichneten Stream auf die Disk, die Grö
 | 4K H.264 | 8 Mbit/s | ~86 GB | ~600 GB |
 | H.265 (HEVC) | etwa halbe Bitrate | grob die Hälfte davon | grob die Hälfte davon |
 
-Ereignis-Aufnahme schreibt nur rund um Bewegung oder Erkennungen und braucht daher nur einen Bruchteil davon, je nachdem wie belebt die Szene ist. Im Zweifel mit einem Aufbewahrungs-Fenster oder einer Speichergrenze starten und die Pro-Kamera-Rate (unten) eine Woche beobachten.
+Ereignis-Aufnahme braucht einen Bruchteil davon, je nachdem wie belebt die Szene ist. Im Zweifel ein Aufbewahrungs-Fenster oder eine Speichergrenze setzen und die Pro-Kamera-Rate (unten) eine Woche beobachten.
 
 ## Wie lange sie behalten werden
-
-Zwei Grenzen entscheiden, wann altes Material entfernt wird:
 
 - **Retention (Days).** Material bis zu so vielen Tagen behalten (0 bedeutet keine Tagesgrenze).
 - **Max Storage (GB).** Den gesamten Platz begrenzen, den Aufnahmen nutzen dürfen (0 bedeutet keine Grenze).
 
-Wenn eine Grenze erreicht ist, hängt das Weitere vom **Retention Mode** ab:
+Ist eine Grenze erreicht, entscheidet der **Retention Mode**:
 
 - **Overwrite** (Standard). Die ältesten Aufnahmen werden gelöscht, um Platz zu schaffen, sodass die Aufnahme nie stoppt.
 - **Strict.** Nichts wird über das Aufbewahrungs-Fenster hinaus gelöscht. Läuft die Disk voll, pausiert die Aufnahme, bis du Platz freigibst.
 
-Die Bereinigung arbeitet die ältesten Stunden aller Kameras nebeneinander ab, eine Kamera mit wenig Material kann also nicht ihren ganzen Verlauf verlieren, während eine viel beschäftigte alles behält, und sie hört auf, sobald genug Platz frei ist. Momente, die du als [Favorit](/de/recording/browsing#favoriten) markiert hast, bleiben ausgespart und abspielbar, egal wie alt sie sind.
+Die Bereinigung nimmt die ältesten Stunden aller Kameras nebeneinander, eine ruhige Kamera verliert also nicht ihren ganzen Verlauf, während eine belebte alles behält, und sie hört auf, sobald genug Platz frei ist. [Favoriten](/de/recording/browsing#favoriten) bleiben ausgespart und abspielbar, egal wie alt sie sind.
 
 ## Freier Speicher
 
-Unabhängig von diesen Grenzen hält camera.ui einen Teil der Disk frei. **Min Free Space (GB)** setzt diese Linie: Die Bereinigung arbeitet darauf hin, mindestens so viel verfügbar zu halten, und bei der Hälfte davon pausiert die Aufnahme. Bleibt der Wert auf 0, leitet camera.ui die Reserve aus der Größe der Disk ab, als Anteil am ganzen Volume.
+Unabhängig von diesen Grenzen hält **Min Free Space (GB)** einen Teil der Disk frei: Die Bereinigung hält mindestens so viel verfügbar, bei der Hälfte davon pausiert die Aufnahme. Bei 0 ist die Reserve ein Anteil am ganzen Volume.
 
-Setz eine eigene Linie, wenn die Aufnahmen sich eine Disk mit anderen Daten teilen. Eine abgeleitete Reserve kann auf einer großen gemeinsamen Disk deutlich größer ausfallen als gewollt, die Aufnahme pausiert dann lange vor deiner Speichergrenze. Werte unter 10 GB zählen als 10.
+Setz einen eigenen Wert, wenn die Aufnahmen sich eine Disk mit anderen Daten teilen, sonst kann die abgeleitete Reserve auf einer großen Disk die Aufnahme lange vor deiner Speichergrenze pausieren. Werte unter 10 GB zählen als 10.
 
 ## Aufnahmen entfernter Kameras
 
-Wenn du eine Kamera löschst oder die Zuweisung des NVR aufhebst, bleiben ihre Aufnahmen auf der Disk. Sie zählen weiterhin zu **Max Storage**, und Aufbewahrung und Bereinigung entfernen sie weiterhin, wenn der Platz knapp wird, wie bei einer aktiven Kamera.
+Wenn du eine Kamera löschst oder die Zuweisung des NVR aufhebst, bleiben ihre Aufnahmen auf der Disk. Sie zählen weiterhin zu **Max Storage** und werden wie bei einer aktiven Kamera gealtert und bereinigt.
 
-Wenn du das Material stattdessen behalten willst, lege eine leere Datei namens `.cameraui-keep` in den Ordner der Kamera in deinem Aufnahmeverzeichnis. camera.ui lässt den Ordner dann unangetastet: nicht mitgezählt, nicht gelöscht, auch nicht bei knappem Platz.[^keepmarker]
+Um das Material zu behalten, lege eine leere Datei namens `.cameraui-keep` in den Ordner der Kamera in deinem Aufnahmeverzeichnis. camera.ui lässt den Ordner dann unangetastet: nicht mitgezählt, nicht gelöscht, auch nicht bei knappem Platz.[^keepmarker]
 
 [^keepmarker]: Die Datei wirkt nur bei Kameras, die camera.ui nicht mehr kennt. Der Ordner einer aktiven Kamera folgt so oder so der Aufbewahrung und der Speichergrenze.
 
@@ -68,10 +64,10 @@ Wenn du das Material stattdessen behalten willst, lege eine leere Datei namens `
 
 <Shot src="/img/recording/storage-stats.png" alt="Speicher-Nutzungsstatistik" />
 
-Öffne **Metrics → Speicher**. Die **Speicherübersicht** zeigt, wie viel Disk belegt und frei ist, sowie den Anteil des NVR daran. Die Tabelle **Kameraspeicher** schlüsselt es pro Kamera auf: Größe auf der Disk, gehaltene Tage Material, die Aufnahme-Rate pro Tag und den Modus. Das hilft, den Speicher zu dimensionieren und eine Kamera zu erkennen, die mehr aufnimmt als erwartet.
+**Metrics → Speicher** zeigt die Belegung in der **Speicherübersicht** und pro Kamera in der Tabelle **Kameraspeicher**: Größe auf der Disk, gehaltene Tage Material, Aufnahme-Rate pro Tag und Modus.
 
-Wenn die Seite warnt, dass das Speichervolumen klein ist, wird der größte Teil des Volumes als Reserve freigehalten, Aufnahmen rotieren also schnell heraus. Meist ist dann die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe also den Speicherpfad. Eine eigene Warnung erscheint, wenn der freie Speicher unter 8% fällt, und ein rotes Banner, sobald die Aufnahme aus Platzmangel pausiert.
+Eine Warnung, dass das Speichervolumen klein ist, heißt: Der größte Teil wird als Reserve freigehalten, Aufnahmen rotieren schnell heraus. Meist ist die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe den Speicherpfad. Eigene Warnungen erscheinen, wenn der freie Speicher unter 8% fällt und sobald die Aufnahme aus Platzmangel pausiert.
 
 ## NVR deinstallieren
 
-Beim Deinstallieren des NVR-Plugins mit **Gespeicherte Daten ebenfalls löschen** werden dessen Einstellungen, Datenbanken und Caches entfernt, dein Aufnahmeordner bleibt aber liegen. Er ist durch eine Datei `.cameraui-keep` darin geschützt. Sollen die Aufnahmen mit dem Plugin verschwinden, lösche zuerst diese Datei und deinstalliere dann.
+Beim Deinstallieren des NVR-Plugins mit **Gespeicherte Daten ebenfalls löschen** werden dessen Einstellungen, Datenbanken und Caches entfernt, dein Aufnahmeordner bleibt, geschützt durch eine Datei `.cameraui-keep` darin. Sollen die Aufnahmen mit weg, lösche zuerst diese Datei und deinstalliere dann.

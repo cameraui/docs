@@ -6,7 +6,7 @@ title: Hardware-Beschleunigung
 
 camera.ui beschleunigt zwei Dinge: die **Video-Pipeline** (Dekodieren der Kamera-Streams für Erkennung, Live-Ansicht und Snapshots sowie Enkodieren fürs Streaming) und die **KI-Inferenz** (Objekterkennung und alles, was darauf aufbaut).
 
-**Video-Beschleunigung ist auf jeder Plattform automatisch.** camera.ui prüft die Hardware zur Laufzeit, wählt das beste verfügbare Backend und fällt auf Software zurück, wenn keins da ist, sodass es nichts zu konfigurieren gibt. Auch KI-Beschleuniger arbeiten automatisch, sobald die Hardware erreichbar ist; unter Docker heißt das: das Device einmal durchreichen (siehe unten).
+**Video-Beschleunigung ist auf jeder Plattform automatisch.** camera.ui prüft die Hardware zur Laufzeit, wählt das beste verfügbare Backend und fällt auf Software zurück, wenn keins da ist. Auch KI-Beschleuniger arbeiten automatisch, sobald die Hardware erreichbar ist; unter Docker heißt das: das Device durchreichen (siehe unten).
 
 ## Was läuft wo
 
@@ -17,11 +17,11 @@ camera.ui beschleunigt zwei Dinge: die **Video-Pipeline** (Dekodieren der Kamera
 | **Linux x64** (Docker, bare-metal, Proxmox) | NVIDIA (CUDA/NVENC), Intel (VA-API/QSV), AMD (VA-API), dazu Vulkan/OpenCL | OpenVINO (Intel GPU/NPU), ONNX (CUDA/TensorRT), NCNN (Vulkan), Coral, Hailo |
 | **Linux arm64** (Rockchip) | Rockchip (RKMPP) | Coral, Hailo, NCNN (CPU/NEON) |
 
-Die Tabelle zeigt, was camera.ui nutzen **kann**. Der passende GPU-Treiber muss trotzdem auf dem Host installiert sein. camera.ui probiert beim Start jedes Backend aus und wählt nur, was wirklich funktioniert; alles, dessen Treiber fehlt, wird still übersprungen und erzeugt nie einen Fehler.
+Die Tabelle zeigt, was camera.ui nutzen **kann**. Der passende GPU-Treiber muss trotzdem auf dem Host installiert sein. Ein Backend, dessen Treiber fehlt, wird still übersprungen und erzeugt nie einen Fehler.
 
-Auf der **Desktop-App** gibt es nichts einzurichten: macOS bringt die Video-Beschleunigung als Teil des Betriebssystems mit, und unter Windows kommt der Grafiktreiber mit dem System. Die Hardware wird automatisch erkannt. Jedes Erkennungs-Plugin loggt, worauf jedes Modell läuft (`Loaded model: …`), und zeigt es unter **Active Hardware** in seinen Plugin-Einstellungen.
+Die **Desktop-App** braucht keine Einrichtung: macOS bringt die Video-Beschleunigung mit dem Betriebssystem mit, Windows nutzt den System-Grafiktreiber. Jedes Erkennungs-Plugin loggt, worauf jedes Modell läuft (`Loaded model: …`), und zeigt es unter **Active Hardware** in seinen Plugin-Einstellungen.
 
-Der Rest dieser Seite ist für **Linux und Docker**, wo Hardware die Container-Grenze überwinden muss. Das sind immer dieselben drei Schritte:
+Der Rest dieser Seite ist für **Linux und Docker**, wo Hardware in drei Schritten die Container-Grenze überwinden muss:
 
 1. **Host-Treiber.** Der kernelseitige Treiber muss auf dem Host installiert sein (der einzige Teil, den ein Docker-Image nie mitliefern kann).
 2. **Device-Passthrough.** Der Device-Node kommt in den `devices:`-Abschnitt deiner Compose-Datei.
@@ -41,7 +41,7 @@ sudo bash cameraui-host.sh hailo     # Hailo-PCIe-Kernel-Treiber bauen + install
 sudo bash cameraui-host.sh coral     # gasket/apex-Treiber installieren (PCIe/M.2-Coral)
 ```
 
-`check` gibt für jede Beschleuniger-Klasse eine ✓/✗-Zeile mit dem passenden Fix aus. Führe es zuerst aus. Es sagt dir, welche der folgenden Abschnitte deine Maschine betreffen.
+`check` gibt für jede Beschleuniger-Klasse eine ✓/✗-Zeile mit dem passenden Fix aus. Führe es zuerst aus.
 
 ## Aus dem Container verifizieren
 
@@ -67,7 +67,7 @@ Zeigt ein Device hier `✗`, existiert aber auf dem Host, fehlt es in deiner Com
 
 ## Intel / AMD GPU
 
-Der Treiber ist Teil des Linux-Kernels, auf dem Host ist also nichts zu installieren. Nutze den `intel`- oder `amd`-Flavor und reiche `/dev/dri` durch:
+Der Treiber ist Teil des Kernels, auf dem Host ist nichts zu installieren. Nutze den `intel`- oder `amd`-Flavor und reiche `/dev/dri` durch:
 
 ```yaml
     devices:
@@ -115,7 +115,7 @@ Der Kernel-Treiber wird auf dem Host aus dem Quellcode gebaut: `sudo bash camera
       - /dev/hailo0:/dev/hailo0
 ```
 
-Die Userspace-Runtime liefert das Hailo-Plugin selbst mit. Sonst ist nichts zu installieren.
+Die Userspace-Runtime liefert das Hailo-Plugin selbst mit.
 
 ## Intel NPU (Core Ultra)
 

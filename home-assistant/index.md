@@ -4,33 +4,31 @@ title: Home Assistant
 
 # Home Assistant
 
-camera.ui works with Home Assistant in two ways that have nothing to do with each other. You can **run camera.ui inside Home Assistant** with the app, and you can **connect an existing camera.ui to Home Assistant** with the integration. They are separate jobs, so you can do either or both: the app runs the server, the integration surfaces its cameras and sensors as HA entities.
+camera.ui and Home Assistant meet in two independent ways: the app **runs camera.ui inside Home Assistant**, the integration **connects a camera.ui server to Home Assistant** and surfaces its cameras and sensors as HA entities. Use either or both.
 
 <Shot src="/img/home-assistant/devices.png" alt="camera.ui devices and entities in Home Assistant" />
 
 ## Running vs connecting
 
-- **The app runs camera.ui.** It installs the camera.ui server as a Home Assistant OS app, so your cameras, recordings, and detection live on the same box as HA. This is a way to host camera.ui, nothing more.
-- **The integration connects camera.ui.** It talks to a camera.ui server (the app, or a Docker/desktop install anywhere on your network) and creates one HA device per camera with live streams, sensors, and PTZ. This is how entities show up in HA.
+- **The app runs camera.ui.** It installs the camera.ui server as a Home Assistant OS app, so your cameras, recordings, and detection live on the same box as HA.
+- **The integration connects camera.ui.** It talks to a camera.ui server (the app, or a Docker/desktop install anywhere on your network) and creates one HA device per camera with live streams, sensors, and PTZ.
 
-If you run the app, you still add the integration to get entities into Home Assistant. If your camera.ui already runs elsewhere, you only need the integration.
+The app alone creates no entities: add the integration as well. If camera.ui already runs elsewhere, you only need the integration.
 
 ## Getting entities in: pick one transport
 
-There are two independent ways to get camera.ui cameras and sensors into Home Assistant as entities:
+Two independent transports bring camera.ui cameras and sensors into Home Assistant:
 
 1. **The integration** (recommended). A custom component that pushes entities to HA over a local connection. No broker needed.
 2. **MQTT discovery**. An opt-in on the camera.ui server's MQTT bridge that publishes Home Assistant discovery configs to your broker.
 
-These two do **not** merge. Home Assistant treats them as unrelated, so running both leaves you with two copies of every camera: two devices, two motion sensors, two of everything. Pick one.
-
 ::: danger Do not run both
-The integration and MQTT discovery duplicate each other. Pick one. Use the integration unless you specifically want to route camera.ui through an existing MQTT broker.
+The two do **not** merge: running both leaves you with two copies of every camera, device and sensor. Use the integration unless you specifically want to route camera.ui through an existing MQTT broker.
 :::
 
 ## The integration
 
-Recommended for most setups. It connects straight to camera.ui with no MQTT broker involved. Live camera changes arrive by push, and it re-checks the camera list once a minute as a backstop.
+Live camera changes arrive by push, and it re-checks the camera list once a minute as a backstop.
 
 You get, per camera:
 
@@ -45,9 +43,9 @@ See **[Integration](/home-assistant/integration)** for the full setup.
 
 ## MQTT discovery
 
-Use this only if you already run an MQTT broker and want camera.ui to speak through it. Its one real advantage is that it needs no custom component and no HACS: the camera.ui server publishes retained discovery configs, and Home Assistant's built-in MQTT integration picks them up.
+For setups that already run an MQTT broker. It needs no custom component and no HACS: the camera.ui server publishes retained discovery configs, and Home Assistant's built-in MQTT integration picks them up.
 
-You turn it on in the camera.ui server's MQTT settings (enable HA discovery). You get status, motion, and object binary sensors, a snapshot camera image, and the same controllable sensor domains as the integration. What you do not get: a live stream (snapshot only), the PTZ service, the sidebar panel, the auto-registered card, or the `cameraui_event` bus events. MQTT does add one thing the integration handles differently: a dedicated per-camera connectivity sensor.
+You turn it on in the camera.ui server's MQTT settings (enable HA discovery). You get status, motion, and object binary sensors, a snapshot camera image, and the same controllable sensor domains as the integration. What you do not get: a live stream (snapshot only), the PTZ service, the sidebar panel, the auto-registered cards, or the `cameraui_event` bus events. In return it adds a dedicated per-camera connectivity sensor.
 
 MQTT discovery is documented with the rest of the broker settings on the [MQTT admin page](/admin/mqtt).
 
@@ -69,13 +67,13 @@ MQTT discovery is documented with the rest of the broker settings on the [MQTT a
 
 ## Bringing Home Assistant sensors in
 
-The integration and MQTT both send camera.ui out to Home Assistant. The **Home Assistant plugin** goes the other way: it imports Home Assistant's own sensors and controls into camera.ui, where you can assign them to cameras and use them as detection triggers. It is separate from the two transports above and does not clash with them.
+The integration and MQTT both send camera.ui out to Home Assistant. The **Home Assistant plugin** goes the other way: it imports Home Assistant's own sensors and controls into camera.ui, where you can assign them to cameras and use them as detection triggers. It does not clash with either transport.
 
 See **[Import from Home Assistant](/home-assistant/import)** for setup.
 
 ## The dashboard cards
 
-Three cards put a camera, a camview view or the recent events on your dashboards, and a click opens the camera.ui dialog with the timeline. The integration registers them for you; you just add one to a view.
+Three cards put a camera, a camview view or the recent events on your dashboards, and a click opens the camera.ui dialog with the timeline. The integration registers them.
 
 See **[Dashboard cards](/home-assistant/card)** for the options.
 

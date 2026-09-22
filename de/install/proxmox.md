@@ -7,7 +7,7 @@ title: Proxmox
 camera.ui läuft auf Proxmox VE in einem LXC-Container, der Docker beherbergt. Ein Befehl auf dem Proxmox-Host richtet alles ein: Container, Docker und camera.ui.
 
 ::: tip Warum ein LXC und keine VM?
-Ein LXC kann die iGPU **teilen**: `/dev/dri` bleibt gleichzeitig für den Host und andere Container nutzbar, während eine VM mit PCIe-Passthrough die GPU monopolisiert. Zusammen mit dem geringeren Overhead ist das das Standard-Muster für NVRs auf Proxmox. Für NVIDIA-Karten ist eine VM die bessere Wahl (siehe unten).
+Ein LXC kann die iGPU **teilen**: `/dev/dri` bleibt gleichzeitig für den Host und andere Container nutzbar, während eine VM mit PCIe-Passthrough die GPU monopolisiert, und ein LXC hat weniger Overhead. Für NVIDIA-Karten ist eine VM die bessere Wahl (siehe unten).
 :::
 
 ## Schnellstart
@@ -19,9 +19,9 @@ curl -fsSLO https://raw.githubusercontent.com/cameraui/docker/main/proxmox/insta
 bash install-cameraui-lxc.sh
 ```
 
-Das Script lädt das Ubuntu-24.04-LXC-Template, erstellt einen **unprivilegierten** Container mit Nesting (der empfohlene Weg für Docker auf Proxmox, da privilegierte Container auf aktuellen Proxmox-Versionen Dockers AppArmor-Profil nicht mehr laden können), installiert Docker darin, deployt camera.ui via Docker Compose und gibt die URL der Web-UI aus. Getestet mit Proxmox VE 9.
+Das Script lädt das Ubuntu-24.04-LXC-Template, erstellt einen **unprivilegierten** Container mit Nesting (privilegierte Container können auf aktuellen Proxmox-Versionen Dockers AppArmor-Profil nicht mehr laden), installiert Docker darin, deployt camera.ui via Docker Compose und gibt die URL der Web-UI aus. Getestet mit Proxmox VE 9.
 
-Alles ist über Umgebungsvariablen einstellbar:
+Umgebungsvariablen:
 
 | Variable | Default | Bedeutung |
 |---|---|---|
@@ -39,19 +39,19 @@ Beispiel für eine Intel-Maschine: `FLAVOR=intel bash install-cameraui-lxc.sh`
 
 ## Shell im Container öffnen
 
-Das Script legt den Container ohne Root-Passwort an, über die Proxmox-Konsole oder SSH kommst du also nicht hinein. Nimm stattdessen die Shell des Hosts:
+Das Script legt den Container ohne Root-Passwort an, über die Proxmox-Konsole oder SSH kommst du also nicht hinein. Von der Shell des Hosts:
 
 ```bash
 pct enter <CTID>
 ```
 
-Damit landest du in einer Root-Shell im Container. Für einzelne Befehle musst du gar nicht erst hineinwechseln:
+Einzelne Befehle:
 
 ```bash
 pct exec <CTID> -- docker logs cameraui
 ```
 
-Wenn du dich lieber wie gewohnt anmelden möchtest, vergib einmal ein Passwort. Danach funktionieren Konsole und SSH:
+Konsole und SSH funktionieren, sobald du ein Passwort vergibst:
 
 ```bash
 pct exec <CTID> -- passwd
@@ -59,9 +59,9 @@ pct exec <CTID> -- passwd
 
 ## Hardware-Beschleunigung
 
-- **Intel / AMD iGPU.** `FLAVOR=intel` (oder `amd`) setzen. Das Script reicht den GPU-Render-Node über Proxmox' Device-Passthrough in den Container und verdrahtet ihn bis zu Docker durch. Sonst nichts zu konfigurieren; die Details stehen auf der Seite [Hardware-Beschleunigung](/de/install/hardware-acceleration).
-- **NVIDIA.** Nutze eine **VM mit PCIe-Passthrough** statt eines LXC. In der VM hast du ein normales Linux und folgst dem Standard-[Docker-Setup](/de/install/docker) mit dem `nvidia`-Flavor. Ein LXC würde erfordern, den NVIDIA-Treiber auf dem Proxmox-Host und die Userspace-Bibliotheken im Container dauerhaft versionsgleich zu halten. Eine VM vermeidet das komplett, und Proxmox' VM-Passthrough ist ausgezeichnet. Der Trade-off: Die VM monopolisiert die Karte. Brauchen andere Dienste auf dem Host dieselbe GPU (Ollama, Jellyfin), siehe [NVIDIA im LXC](#nvidia-im-lxc-experimentell) unten.
-- **KI-Beschleuniger (Coral, Hailo).** Gleiches Muster wie überall: den [Host-Treiber](/de/install/hardware-acceleration#host-prüfen) auf dem Proxmox-Host installieren, dann den Device-Node (`/dev/apex_0`, `/dev/hailo0`) in den Container reichen.
+- **Intel / AMD iGPU.** `FLAVOR=intel` (oder `amd`) setzen. Das Script reicht den GPU-Render-Node durch den Container bis zu Docker, sonst ist nichts zu konfigurieren. Details: [Hardware-Beschleunigung](/de/install/hardware-acceleration).
+- **NVIDIA.** Nutze eine **VM mit PCIe-Passthrough** statt eines LXC. Darin folgst du dem Standard-[Docker-Setup](/de/install/docker) mit dem `nvidia`-Flavor. Ein LXC müsste Host-Treiber und Userspace-Bibliotheken im Container dauerhaft versionsgleich halten. Die VM monopolisiert dafür die Karte. Brauchen andere Dienste auf dem Host dieselbe GPU (Ollama, Jellyfin), siehe [NVIDIA im LXC](#nvidia-im-lxc-experimentell) unten.
+- **KI-Beschleuniger (Coral, Hailo).** Den [Host-Treiber](/de/install/hardware-acceleration#host-prüfen) auf dem Proxmox-Host installieren, dann den Device-Node (`/dev/apex_0`, `/dev/hailo0`) in den Container reichen.
 
 ### NVIDIA im LXC (experimentell)
 
@@ -96,21 +96,21 @@ pct set <CTID> -mp0 /mnt/nas/recordings,mp=/mnt/recordings
 Setze dann den NVR-**Speicherpfad** auf `/mnt/recordings` (Einstellungen → Aufnahmen → Speicher), oder siehe den [Speicher-Abschnitt](/de/install/docker#speicher-für-aufnahmen) der Docker-Seite.
 
 ::: warning FUSE-Mounts (mergerfs, rclone) brauchen Sonderbehandlung
-Ein FUSE-Mount (etwa ein **mergerfs**-Pool, der mehrere Platten zusammenfasst) propagiert **nicht** wie ein normales Dateisystem in einen (unprivilegierten) Container. Ist der FUSE-Mount nicht **vor dem Container-Start** auf dem Host aktiv, sieht der Container den leeren Mountpoint auf der Root-Disk des Hosts statt den Pool. Aufnahmen landen dann auf der kleinen OS-Platte und werden innerhalb von Minuten wieder rotiert, obwohl der Pool Terabytes frei hat.
+Ein FUSE-Mount (etwa ein **mergerfs**-Pool, der mehrere Platten zusammenfasst) propagiert **nicht** wie ein normales Dateisystem in einen (unprivilegierten) Container. Ist der FUSE-Mount nicht **vor dem Container-Start** auf dem Host aktiv, sieht der Container den leeren Mountpoint auf der Root-Disk des Hosts statt den Pool. Aufnahmen landen dann auf der kleinen OS-Platte und werden innerhalb von Minuten wieder rotiert.
 
 Mounte den Pool auf dem Host **vor** dem Container-Start (z.B. per fstab-Eintrag oder systemd-Unit mit `Before=pve-container@<CTID>.service`) und stelle sicher, dass der Mount in den Container geteilt wird. Danach immer **aus dem Container heraus verifizieren**.
 :::
 
 ## Speichergröße verifizieren
 
-Nach dem Setzen eines eigenen Speicherpfads prüfen, ob der Container wirklich das volle Volume sieht. Dieser eine Check fängt fast jedes Mount-Problem ab:
+Nach dem Setzen eines eigenen Speicherpfads prüfen, ob der Container das volle Volume sieht:
 
 ```bash
 pct exec <CTID> -- df -h /mnt/recordings
 ```
 
-Die angezeigte Größe muss zu deiner echten Platte oder deinem Pool passen. Zeigt sie stattdessen die kleine Container-Root-Größe, ist der Mount nicht propagiert. Dann die Schritte oben erneut prüfen. Der NVR loggt seinen aufgelösten Speicher samt Größe außerdem bei jedem Start und zeigt in **Einstellungen → Aufnahmen** eine Warnung, wenn das Volume unerwartet klein ist.
+Die angezeigte Größe muss zu deiner echten Platte oder deinem Pool passen. Zeigt sie die kleine Container-Root-Größe, ist der Mount nicht propagiert. Der NVR loggt seinen aufgelösten Speicher samt Größe außerdem bei jedem Start und zeigt in **Einstellungen → Aufnahmen** eine Warnung, wenn das Volume unerwartet klein ist.
 
 ## Verifizieren
 
-Bei jedem Start loggt der Container, welche Devices tatsächlich angekommen sind. Siehe [Aus dem Container verifizieren](/de/install/hardware-acceleration#aus-dem-container-verifizieren). Die camera.ui-UI ist unter `https://<container-ip>:3443` erreichbar (das Script gibt die IP am Ende aus; der Container taucht außerdem mit seinem Hostnamen in der Geräteliste deines Routers auf).
+Bei jedem Start loggt der Container, welche Devices tatsächlich angekommen sind. Siehe [Aus dem Container verifizieren](/de/install/hardware-acceleration#aus-dem-container-verifizieren). Die camera.ui-UI ist unter `https://<container-ip>:3443` erreichbar (das Script gibt die IP am Ende aus).

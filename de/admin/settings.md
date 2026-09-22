@@ -4,7 +4,7 @@ title: Einstellungen-Überblick
 
 # Einstellungen-Überblick
 
-Das meiste, wie camera.ui konfiguriert wird, liegt unter **Einstellungen**, erreichbar über das Menü. Manche Einstellungen sind persönlich für dein Konto, andere serverweit und brauchen einen Admin.
+Die meiste Konfiguration liegt unter **Einstellungen** im Menü. Manche Einstellungen sind persönlich für dein Konto, andere serverweit und brauchen einen Admin.
 
 ## Persönliche Einstellungen
 
@@ -27,9 +27,9 @@ Für Admins verfügbar:
 
 ## Admin-Werkzeuge
 
-Über die Einstellungen hinaus hat das Menü weitere Admin-Werkzeuge:
+Das Menü hat weitere Admin-Werkzeuge:
 
-- **Metrics** dazu, wie es dem Server und jeder Kamera geht, in drei Tabs, zwischen denen du am Handy auch wischen kannst: **Übersicht** mit den System- und Prozess-Tabellen, **Kameras** mit dem, was Erkennung pro Kamera kostet, und **Speicher** mit der Aufschlüsselung der Platte. Siehe [Was Erkennung kostet](/de/detection/ai-backends#was-erkennung-kostet).
+- **Metrics** dazu, wie es dem Server und jeder Kamera geht, in drei Tabs: **Übersicht** mit den System- und Prozess-Tabellen, **Kameras** mit dem, was Erkennung pro Kamera kostet, und **Speicher** mit der Aufschlüsselung der Platte. Siehe [Was Erkennung kostet](/de/detection/ai-backends#was-erkennung-kostet).
 - **[Updates](/de/install/updating#die-updates-seite)** für Server, Plugins und Worker in einer Liste.
 - **[Automationen](/de/automations/)** zum Verbinden von Ereignissen mit Aktionen.
 - **[Logs](/de/admin/logs)** und ein **Terminal** zur Fehlersuche.

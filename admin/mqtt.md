@@ -10,7 +10,7 @@ The **Settings → MQTT** page (admins only) connects camera.ui to an MQTT broke
 
 ## Turning it on
 
-Switch **Enabled** on, pick a mode, fill in the connection, and **Save**. Every save restarts the connection, so a wrong value shows up right away in the status card at the top of the page.
+Switch **Enabled** on and fill in the connection. Every save restarts the connection, so a wrong value shows up right away in the status card at the top.
 
 ## Mode
 
@@ -21,19 +21,17 @@ Switch **Enabled** on, pick a mode, fill in the connection, and **Save**. Every 
 
 ### Built-in broker
 
-There's nothing to install. camera.ui starts the broker on **Port** (default `1883`) and shows the **Broker address** as a read-only field with a copy button, in the form `mqtt://<server host>:<port>`. Point your MQTT devices at that address.
-
-The credentials next to it are what those devices need:
+camera.ui starts the broker on **Port** (default `1883`) and shows the **Broker address** as a read-only field with a copy button, in the form `mqtt://<server host>:<port>`. Devices log in with:
 
 - **Username.** Defaults to `cameraui`.
-- **Password.** Generated randomly on first start. It has its own copy button, and you can replace it with your own.[^anon]
+- **Password.** Generated randomly on first start, replaceable with your own.[^anon]
 
 ### External broker
 
 - **Host.** The broker's hostname or IP, for example `192.168.1.10`.
 - **Port.** Defaults to `1883`.
 - **Protocol.** `mqtt:// (TCP)` or `mqtts:// (TLS)`. Default is `mqtt://`.
-- **Username** and **Password.** Leave both empty for an anonymous broker. The password field stays masked after saving. Leave it empty to keep the stored one, type a new one to replace it.
+- **Username** and **Password.** Leave both empty for an anonymous broker. An empty password field after saving keeps the stored password.
 
 ## Client ID and topic prefix
 
@@ -52,7 +50,7 @@ The TLS fields appear for an external broker on `mqtts://`.
 
 ## Testing and status
 
-**Test connection** opens a short-lived, separate connection with the values currently in the form and reports back as a toast. It doesn't save anything. For the built-in broker, save first: the test connects to the running broker, so it fails while the broker isn't up yet.[^test]
+**Test connection** opens a short-lived, separate connection with the values currently in the form, without saving. For the built-in broker, save first: the test connects to the running broker.[^test]
 
 The status card at the top shows the live state of the connection:
 

@@ -8,9 +8,7 @@ License-plate recognition reads plate numbers from vehicles. It builds on [objec
 
 ## Setup
 
-In the backend's plugin settings, license plates use two models, a **detector** that finds the plate and an **OCR model** that reads the characters. camera.ui downloads them automatically. Both confidences are set on the camera.
-
-Finding a plate and reading it are two jobs, so [Settings → Detection](/cameras/settings) has one confidence for each, plus a length filter:
+In the backend's plugin settings, license plates use two models, a **detector** that finds the plate and an **OCR model** that reads the characters. camera.ui downloads them automatically. Each has its own confidence on the camera in [Settings → Detection](/cameras/settings), next to a length filter:
 
 - **Plate detection.** Plates found with less confidence than this are not read at all (0 to 1, default 0.3).
 - **Plate reading.** Readings the OCR is less sure about than this are ignored (0 to 1, default 0.9).

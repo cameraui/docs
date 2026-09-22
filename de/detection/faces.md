@@ -10,15 +10,7 @@ Gesichtserkennung erkennt Gesichter an deinen Kameras, identifiziert Personen, d
 
 ## Ein bekanntes Gesicht anlegen
 
-Öffne die **Gesichter**-Ansicht. Sie hat zwei Bereiche: **Bekannte Gesichter** und **Unbekannte Gesichter**.
-
-So fügst du jemanden hinzu:
-
-1. Wähle **Gesicht hinzufügen**.
-2. Gib einen **Namen** ein und zieh ein klares Foto der Person hinein.
-3. Wähle **Registrieren**. camera.ui prüft das Foto auf ein Gesicht und sagt dir, wenn es keines findet.
-
-Die Person wird nun in künftigen Ereignissen erkannt, ihr Name erscheint als Attribut an den Erkennungen.
+In der **Gesichter**-Ansicht (Bereiche **Bekannte Gesichter** und **Unbekannte Gesichter**) nimmt **Gesicht hinzufügen** einen **Namen** und ein klares Foto der Person; **Registrieren** lehnt ein Foto ohne Gesicht ab. Ab dann wird die Person in neuen Ereignissen erkannt, ihr Name erscheint als Attribut an den Erkennungen.
 
 <Shot src="/img/detection/faces-enroll.png" alt="Gesicht-anlegen-Dialog" />
 
@@ -42,9 +34,9 @@ Nennt ein Ereignis die falsche Person, öffne dieses Gesichtsbild auf seiner Auf
 
 ## Ein Gesicht ignorieren
 
-Manche Gesichter willst du nie wieder sehen, etwa einen vorbeigehenden Fremden oder den Postboten. Ignoriere eines, und camera.ui sammelt es nicht mehr.
+Ignorierst du ein Gesicht, das du nie wieder sehen willst (ein vorbeigehender Fremder, der Postbote), sammelt camera.ui es nicht mehr.
 
-- **Ein Gesicht oder eine ganze Gruppe ignorieren.** Jedes unbekannte Gesicht hat einen Ignorieren-Button, und jede Gruppe einen für alle ihre Gesichter auf einmal. Im Auswahlmodus kannst du mehrere auf einmal ignorieren.
+- **Ein Gesicht oder eine ganze Gruppe ignorieren.** Unbekannte Gesichter und Gruppen haben je einen Ignorieren-Button; im Auswahlmodus ignorierst du mehrere auf einmal.
 - **Neue Sichtungen werden verworfen.** Ist jemand ignoriert, tauchen spätere Aufnahmen nicht wieder als unbekannte Gesichter auf.
 - **Ignorierte Gesichter liegen in einer eigenen Liste.** Sie sammeln sich unter **Ignorierte Gesichter** am Ende des Bereichs Unbekannte Gesichter.
 - **Wiederherstellen zum Rückgängigmachen.** **Wiederherstellen** an einem ignorierten Gesicht lässt die Person wieder erscheinen.

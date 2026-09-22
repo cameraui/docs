@@ -4,32 +4,21 @@ title: Logs & Konsole
 
 # Logs & Konsole
 
-Wenn etwas nicht funktioniert, zeigt die **Logs**-Ansicht (im Menü, nur Admins), was der Server tut.
+Die **Logs**-Ansicht (im Menü, nur Admins) zeigt das Server-Log.
 
 <Shot src="/img/admin/logs.png" alt="Die Logs-Ansicht" />
 
 ## Die Logs lesen
 
-Logs streamen live. Du kannst:
-
-- Nach Quelle filtern: **All**, eine Systemkomponente (**Server**, **go2rtc**, **nats**, **tunnel**), eine bestimmte **Kamera** oder ein bestimmtes **Plugin**.
-- Die sichtbaren Zeilen **durchsuchen**.
-- Das Log **herunterladen**, um es bei einer Anfrage um Hilfe zu teilen, mit **Alles kopieren** in die Zwischenablage übernehmen oder **löschen**.
-- Den Text vergrößern und verkleinern.
+Logs streamen live. Filtere nach Quelle (**All**, eine Systemkomponente wie **Server**, **go2rtc**, **nats**, **tunnel**, eine **Kamera** oder ein **Plugin**), **durchsuche** die sichtbaren Zeilen, oder **lade** das Log **herunter**, nutze **Alles kopieren** oder **lösche** es.
 
 ## Konsole
 
-Die **Konsole** (im Menü, für jeden Benutzer verfügbar) zeigt das Log der App selbst, nicht das des Servers. Nutze sie, wenn die App sich merkwürdig verhält: eine Ansicht bleibt leer, ein Stream startet nicht, ein Button tut nichts.
+Die **Konsole** (im Menü, für jeden Benutzer verfügbar) zeigt das Log der App selbst, nicht das des Servers: die Stelle zum Nachsehen, wenn eine Ansicht leer bleibt, ein Stream nicht startet oder ein Button nichts tut.
 
-Sie sammelt Einträge nur, solange **Protokolle aufzeichnen** aktiv ist, und weist dich darauf hin, wenn es aus ist. Aktiviere es unter **Einstellungen → Erscheinungsbild**. Im selben Abschnitt gibt es **Ausführliches Logging**, das Debug-Einträge ergänzt.
+Sie sammelt Einträge nur, solange **Protokolle aufzeichnen** unter **Einstellungen → Erscheinungsbild** aktiv ist. Im selben Abschnitt gibt es **Ausführliches Logging**, das Debug-Einträge ergänzt.
 
-In der Konsole kannst du:
-
-- Über das Menü **Level** nach Level filtern: Debug, Log, Info, Warnung, Fehler.
-- Die sichtbaren Zeilen **durchsuchen**.
-- Die Ausgabe **kopieren**, als Textdatei **exportieren / teilen** oder **leeren**.
-
-Neue Zeilen scrollen von selbst ins Bild. Scrollst du hoch, um etwas zu lesen, hört das auf, die Zeile bleibt also stehen; scroll wieder nach unten, dann folgt sie wieder.
+Das Menü **Level** filtert nach Debug, Log, Info, Warnung und Fehler. **Exportieren / teilen** speichert die Ausgabe als Textdatei.
 
 Bei Problemen mit der App hilft der Konsolen-Export, bei Problemen mit dem Server der Logs-Download.
 

@@ -4,32 +4,21 @@ title: Logs & console
 
 # Logs & console
 
-When something isn't working, the **Logs** view (in the menu, admins only) shows what the server is doing.
+The **Logs** view (in the menu, admins only) shows the server log.
 
 <Shot src="/img/admin/logs.png" alt="The Logs view" />
 
 ## Reading the logs
 
-Logs stream live. You can:
-
-- Filter by source: **All**, a system component (**Server**, **go2rtc**, **nats**, **tunnel**), a specific **camera**, or a specific **plugin**.
-- **Search** the visible lines.
-- **Download** the log to share when asking for help, **copy all** of it to the clipboard, or **delete** it.
-- Zoom the text in and out.
+Logs stream live. Filter by source (**All**, a system component such as **Server**, **go2rtc**, **nats**, **tunnel**, a **camera** or a **plugin**), **search** the visible lines, or **download**, **copy all** or **delete** the log.
 
 ## Console
 
-The **Console** (in the menu, available to every user) shows the log of the app itself, not the server. Use it when the app misbehaves: a view stays empty, a stream won't play, a button does nothing.
+The **Console** (in the menu, available to every user) shows the log of the app itself, not the server: the place to look when a view stays empty, a stream won't play or a button does nothing.
 
-It only collects entries while **Record logs** is on, and tells you when it isn't. Turn it on in **Settings → Appearance**. The same section has **Verbose logging**, which adds debug-level entries.
+It only collects entries while **Record logs** is on, in **Settings → Appearance**. The same section has **Verbose logging**, which adds debug-level entries.
 
-In the Console you can:
-
-- Filter by level with the **Levels** menu: Debug, Log, Info, Warning, Error.
-- **Search** the visible lines.
-- **Copy** the output, **Export / share** it as a text file, or **Clear** it.
-
-New lines scroll into view as they arrive. Scroll up to read something and it stops following, so the line you are looking at stays put; scroll back to the bottom to have it follow again.
+The **Levels** menu filters by Debug, Log, Info, Warning and Error. **Export / share** saves the output as a text file.
 
 For problems with the app, the Console export is the useful thing to attach. For problems with the server, the Logs download.
 

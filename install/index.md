@@ -1,16 +1,12 @@
 # Which installation?
 
-camera.ui has one **server** that does the work, and **apps** (desktop, mobile, browser) that view it. You install the server once, and everything else just connects to it.
-
-The best way to install depends mostly on **which platform** you'll run it on.
+camera.ui has one **server** that does the work, and **apps** (desktop, mobile, browser) that connect to it. Which install method fits depends on the platform the server runs on.
 
 ## The quick answer
 
-- **macOS or Windows** → the **[desktop app](/install/desktop)** (recommended). A one-click install that runs the server and the viewer together, suitable for continuous 24/7 operation.
-- **Linux** → **[Docker](/install/docker)** (or **[Proxmox](/install/proxmox)** if you run it). This is the recommended way to run a dedicated Linux server, with GPU acceleration.
-- **Just want to watch on your phone?** → the **[mobile apps](/install/mobile)**. You'll still need a server running somewhere.
-
-
+- **macOS or Windows** → the **[desktop app](/install/desktop)** (recommended). Runs the server and the viewer together, fit for 24/7 operation.
+- **Linux** → **[Docker](/install/docker)** (or **[Proxmox](/install/proxmox)**), with GPU acceleration.
+- **Phone only** → the **[mobile apps](/install/mobile)**. They still need a server running somewhere.
 
 ## Choose a method
 
@@ -28,5 +24,5 @@ For always-on recording, a small **Intel N100** mini-PC (with [Docker](/install/
 
 ## A few notes
 
-- **One server is enough.** The desktop app, the mobile apps, and a browser are all viewers of the same server. Install the server once, then connect from anywhere with [remote access](/remote/).
-- **The desktop app can also be just a viewer.** If you already run a server elsewhere, install the desktop app in Viewer mode to watch it. See [Desktop app](/install/desktop).
+- **One server is enough.** Desktop app, mobile apps and browser all view the same server. From outside your network, use [remote access](/remote/).
+- **The desktop app can also be just a viewer.** Install it in Viewer mode to watch a server running elsewhere. See [Desktop app](/install/desktop).

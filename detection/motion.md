@@ -8,7 +8,7 @@ Motion is the first and cheapest layer of [detection](/detection/). It watches f
 
 ## Choosing a motion engine
 
-camera.ui offers several motion plugins, so you can match CPU use to your hardware. Enable one for a camera in its [settings](/cameras/settings) under the Plugins tab (see [Set up sensors](/sensors/setup)):
+camera.ui offers several motion plugins. Enable one for a camera in its [settings](/cameras/settings) under the Plugins tab (see [Set up sensors](/sensors/setup)):
 
 - **Rust Motion.** Fast and efficient; a good default for most setups.
 - **OpenCV.** Several algorithms with fine-grained tuning.
@@ -28,7 +28,7 @@ Each engine exposes its own settings (such as area, threshold, and blur) in its 
 
 If a camera is too sensitive (a busy road, a swaying tree), limit where motion counts with [zones](/cameras/zones-and-masks).
 
-A camera's on-screen timestamp can trigger motion too, mostly at night and at higher motion resolutions, because the changing digits look like movement. If you get motion events with nothing in frame, draw a motion zone that leaves out the timestamp corner.
+A camera's on-screen timestamp can trigger motion too, mostly at night and at higher motion resolutions. Motion events with nothing in frame are the sign: draw a motion zone that leaves out the timestamp corner.
 
 ## The cascade
 

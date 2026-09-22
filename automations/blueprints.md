@@ -12,18 +12,18 @@ Open an automation and choose **Export blueprint**. camera.ui downloads a `.blue
 
 ## Importing
 
-On the **Automations** list, choose **Import blueprint** and pick a `.blueprint.json` file. camera.ui adds it as a new automation, **disabled**, so you can review and adjust it before turning it on. Imported flows get fresh internal IDs, so importing the same blueprint twice won't clash.
+On the **Automations** list, choose **Import blueprint** and pick a `.blueprint.json` file. It is added as a new automation, **disabled**. Imported flows get fresh internal IDs, so importing the same blueprint twice won't clash.
 
 ## Sharing
 
-To share an automation, export it and send the file. The other person imports it on their own server.
+Export the automation and send the file; the other person imports it on their server.
 
 ## Community blueprints
 
 <Shot src="/img/automations/blueprint-store.png" alt="The community automations store" />
 
-On the **Automations** list, choose **Browse community automations** to open the store. It lists blueprints shared by the camera.ui community, with search, a category filter, and a featured row.
+**Browse community automations** on the **Automations** list opens the store of blueprints shared by the camera.ui community.
 
-Opening a blueprint shows what it needs before you import it: required plugins (with a link to the plugin store if one is missing) and required inputs such as a camera, notification recipients, or a sensor. Choosing **Import** walks you through the blueprint's inputs. You pick your own cameras, sensors, plugins, and notification recipients from dropdowns, and you type in plain values where the blueprint needs one, such as an MQTT topic. Some fields arrive with a default already filled in, which you can overwrite. A blueprint's page doesn't list the typed values, so expect a few more fields during import. If the blueprint has no references to bind, it imports directly. Either way it lands in your automations list **disabled**, same as a manually imported file.
+A blueprint's page lists what it needs: required plugins (with a link to the plugin store if one is missing) and required inputs such as a camera, notification recipients or a sensor. **Import** then asks for your own cameras, sensors, plugins and recipients, plus plain values such as an MQTT topic, some prefilled with a default. The page doesn't list the plain values, so expect a few more fields during import. A blueprint with no references to bind imports directly. Either way it lands **disabled**.
 
 The store is a public repository, [cameraui/automations](https://github.com/cameraui/automations), that camera.ui reads at runtime. There is no upload from inside the app: to add one, open a pull request against that repository with your exported blueprint.

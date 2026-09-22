@@ -6,7 +6,7 @@ title: Zonen & Privatsphäre
 
 Zonen markieren Teile des Kamerabilds und geben diesem Bereich eine Aufgabe. Es gibt fünf Arten, jede mit einer Aufgabe und einem eigenen Tab im Editor: **Bewegung**, **Objekte**, **Alarme**, **Privat** und **Linien**.
 
-Eine Regel zieht sich durch alle: **Eine Art schränkt erst ein, wenn es sie gibt.** Ohne Bewegungszone zählt Bewegung überall, ohne Objektzone zählt jeder Objekttyp überall, ohne Alarmzone darf alles Erkannte dich alarmieren. Du zeichnest also nur die Art, die du wirklich begrenzen willst.
+Eine Regel zieht sich durch alle: **Eine Art schränkt erst ein, wenn es sie gibt.** Ohne Bewegungszone zählt Bewegung überall, ohne Objektzone zählt jeder Objekttyp überall, ohne Alarmzone darf alles Erkannte dich alarmieren.
 
 ::: warning Kameras, die selbst erkennen
 Reolink AI, Eufy, ONVIF-Events und Plugins, die Erkennungen melden, sagen camera.ui **was** sie gesehen haben, meist ohne zu sagen **wo**. Ohne Box gibt es nichts zu verorten, keine Zone kann so eine Meldung bewerten, und es gelten nur noch die Typenlisten:
@@ -21,7 +21,7 @@ Zwei Auswege. Lass camera.ui für die Kamera erkennen: Wähle ein [KI-Backend](/
 
 ## Den Editor öffnen
 
-Öffne die [Einstellungen](/de/cameras/settings) einer Kamera und gehe zum **Einstellungen**-Tab. Unter **Zonen** siehst du, was die Kamera schon hat, jeweils mit Farbe, Name und Typ (Bewegungszone, Objektzone, Alarmzone, Privatzone oder Linienüberquerung). Der Stift an einem Eintrag öffnet den Editor auf diesem Tab, der Papierkorb löscht ihn.
+Öffne die [Einstellungen](/de/cameras/settings) einer Kamera und gehe zum **Einstellungen**-Tab. Unter **Zonen** siehst du, was die Kamera schon hat, jeweils mit Farbe, Name und Typ (Bewegungszone, Objektzone, Alarmzone, Privatzone oder Linienüberquerung).
 
 Unter der Liste öffnet **Zonen bearbeiten** den Editor über dem Kamerabild.
 
@@ -31,9 +31,7 @@ Bewegungs-, Objekt- und Alarmzonen decken anfangs das ganze Bild ab, du ziehst d
 
 ## Bewegungszonen
 
-Bewegungszonen sagen, **wo Bewegung zählt**. Eine Bewegungszone ist nur ein Name, eine Fläche und eine Farbe.
-
-Nur Bewegung innerhalb der Zone zählt, alles außerhalb wird ignoriert. Zeichnest du mehrere, zählt Bewegung in jeder davon. Bewegung wird immer per Berührung bewertet: Sobald etwas die Zone erreicht, zählt es. Ohne Bewegungszone zählt das ganze Bild.
+Bewegungszonen sagen, **wo Bewegung zählt**. Nur Bewegung innerhalb einer Zone zählt, bei mehreren in jeder davon. Bewegung wird immer per Berührung bewertet: Sobald etwas die Zone erreicht, zählt es.
 
 ## Objektzonen
 
@@ -55,15 +53,13 @@ Ein Loch aus einer Zone herauszuschneiden geht nicht. Willst du einen Bereich vo
 
 ### Welche Typen übrig bleiben
 
-Die Typen, die du aufführst, ergeben zusammen, was die Kamera meldet. Sobald jede Objektzone eine Typenliste trägt, ist die Summe dieser Listen das, was die Kamera erkennt: Ein Typ, der auf keiner davon steht, wird an dieser Kamera überall verworfen.
+Sobald jede Objektzone eine Typenliste trägt, ist die Summe dieser Listen das, was die Kamera erkennt: Ein Typ, der auf keiner davon steht, wird an dieser Kamera überall verworfen.
 
 **Gesichter erkennen** und **Kennzeichen lesen** zählen hier als Typen. Trägt jede Objektzone eine Liste und keine davon **Gesichter erkennen**, erkennt die Kamera überhaupt keine Gesichter mehr, nicht nur in einer Ecke.
 
 ### Zählen ohne zu erkennen
 
-Eine Zone kann Personen und Autos zählen, ohne sie zu identifizieren. Unter **Identifizierung** entscheiden **Gesichter erkennen** und **Kennzeichen lesen**, ob das, was in dieser Zone zählt, auch einen Namen bekommt. Nimm beide raus, und die Zone erkennt weiterhin die Person und das Auto, aber kein Gesicht landet in deiner Gesichterliste, und kein Name und kein Kennzeichen erreicht das Ereignis oder den Push.
-
-Eine Gehweg-Zone, die auf Personen achtet, ohne die Gesichter aller Vorbeigehenden zu sammeln, ist der Fall dafür.
+Nimm **Gesichter erkennen** und **Kennzeichen lesen** beide raus, und die Zone erkennt weiterhin die Person und das Auto, aber kein Gesicht landet in deiner Gesichterliste, und kein Name und kein Kennzeichen erreicht das Ereignis oder den Push.
 
 Eine Zone, auf der nur `person` steht, erkennt keine Gesichter mehr. Wähle **Person** und **Gesichter erkennen** zusammen, damit die Person gezählt und benannt wird; **Gesichter erkennen** allein findet nichts.
 
@@ -78,9 +74,7 @@ Es senkt die CPU-Last nicht, es hält nur das Ergebnis zurück.
 
 ## Alarmzonen
 
-Eine Objektzone entscheidet, was erkannt wird. Eine **Alarmzone** entscheidet, worüber du benachrichtigt wirst, und ändert sonst nichts. Erkennung, Ereignisse und Aufnahmen bleiben davon unberührt.
-
-Ohne Alarmzone alarmiert die Kamera bei allem, was sie erkennt. Zeichne eine, um das einzugrenzen.
+Eine **Alarmzone** entscheidet, worüber du benachrichtigt wirst, und ändert sonst nichts: Erkennung, Ereignisse und Aufnahmen bleiben davon unberührt.
 
 Sobald eine Kamera eine Alarmzone hat, entscheiden die Zonen über ihre Alarme:
 
@@ -88,7 +82,7 @@ Sobald eine Kamera eine Alarmzone hat, entscheiden die Zonen über ihre Alarme:
 - Derselbe Typ außerhalb dieser Zone bleibt still.
 - Ein Typ, den keine Alarmzone führt, bleibt überall an dieser Kamera still.
 
-Zeichne eine Alarmzone über die Einfahrt mit `person` und `vehicle`, und jemand auf der Straße landet weiterhin auf der Timeline und in der Aufnahme, während nur die Einfahrt dein Handy klingeln lässt. Achte auf den dritten Punkt: `animal` steht dann auf keiner Zone, Tiere alarmieren an dieser Kamera also nicht mehr. Gib einem Typ eine Zone über das ganze Bild, wenn er überall weiter alarmieren soll.
+Mit einer Alarmzone über der Einfahrt mit `person` und `vehicle` landet jemand auf der Straße weiterhin auf der Timeline und in der Aufnahme, aber nur die Einfahrt alarmiert. `animal` steht dann auf keiner Zone, Tiere alarmieren an dieser Kamera also nicht mehr. Gib einem Typ eine Zone über das ganze Bild, wenn er überall weiter alarmieren soll.
 
 Eine Alarmzone ohne ausgewählte Typen alarmiert bei jedem Typ, der darin ist.
 
@@ -104,7 +98,7 @@ Eine Zone kann auch benennen, für wen sie meldet. Die Liste **Labels** hat eine
 
 **Kennzeichen** funktioniert genauso, nur tippst du die Kennzeichen selbst ein, statt sie zu wählen. Wähle nichts, dann meldet jedes Kennzeichen.
 
-Beide Listen halten nur Personen und Fahrzeuge zurück. Ein Tier, eine Türklingel oder ein Audio-Alarm wird nie danach beurteilt.
+Beide Listen halten nur Personen und Fahrzeuge zurück.
 
 Wen die Kamera nicht identifizieren konnte, zählt als unbekanntes Gesicht, egal ob die Erkennung scheiterte oder nie ein Gesicht zu sehen war. Eine Person auf der [Ignorierliste](/de/detection/faces) bleibt so oder so still. Und hat die Objektzone über diesem Bereich **Gesichter erkennen** aus, wird dort niemand identifiziert, also zählen alle als unbekannt.
 
@@ -123,7 +117,7 @@ Ein Türklingel-Druck, ein Kontaktsensor, eine Sirene oder ein Audio-Alarm ist k
 
 ## Privatzonen
 
-Eine Privatzone verdeckt einen Bereich schwarz, etwa ein Nachbarfenster oder einen öffentlichen Gehweg. Sie ist immer schwarz und hat keine eigene Farbe.
+Eine Privatzone verdeckt einen Bereich schwarz, etwa ein Nachbarfenster oder einen öffentlichen Gehweg.
 
 **Erkennungen darin** entscheidet, was dort mit Erkennungen passiert:
 
@@ -161,15 +155,13 @@ Manchmal kann camera.ui den schwarzen Bereich nicht zeichnen, etwa bei einem Har
 - **Trotzdem senden.** Das Bild geht unverdeckt raus. Das ist die Voreinstellung.
 - **Kein Bild senden.** Es wird gar kein Bild erzeugt.
 
-Stell es auf **Kein Bild senden**, wenn ein unverdecktes Bild schlimmer wäre als gar keins.
-
 ## Linien (Linienüberquerung)
 
-Im Tab **Linien** zeichnest du eine Linie über das Bild, um zu erkennen, wenn etwas sie überquert. **Überquerungsrichtung** legt fest, wann sie auslöst:
+Eine Linie erkennt, wenn etwas sie überquert. **Überquerungsrichtung** legt fest, wann sie auslöst:
 
 - **A ↔ B beide Richtungen** löst in beide Richtungen aus.
 - **A → B** oder **B → A** löst bei einer Überquerung in eine Richtung aus.
 
 <Shot src="/img/cameras/zone-editor-lines.png" alt="Zonen-Editor im Tab Linien, mit einer Linie über einer Toreinfahrt" />
 
-Wie Objektzonen lässt sich auch eine Linie auf bestimmte Typen begrenzen: `person`, `vehicle` und `animal`. Eine neue Linie startet mit allen dreien. Eine Überquerung löst nur aus, wenn sich etwas in der gewählten Richtung über die Linie bewegt, sodass du bei jemandem alarmieren kannst, der durch ein Tor kommt, statt nur im Bild aufzutauchen. Eine Linie filtert die Erkennung nie.
+Eine Linie lässt sich auf `person`, `vehicle` und `animal` begrenzen; eine neue Linie startet mit allen dreien. Eine Linie filtert die Erkennung nie.

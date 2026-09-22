@@ -60,12 +60,6 @@ entities:
 
 - **entities.** Begrenzt den Streifen auf diese Kameras. Ohne die Angabe zeigt er alle.
 
-## Von den alten Karten kommen
-
-`custom:cameraui-card` behält seinen Namen und wechselt von selbst auf die neue Kamera-Karte. Ihre alten Optionen (bis auf `title`) gelten nicht mehr: Wähle die neuen im Karten-Editor.
-
-`custom:cameraui-grid-card` gibt es nicht mehr. Ein Dashboard, das sie noch nutzt, zeigt „Custom element doesn't exist", bis du es mit **camera.ui View** oder einer Abschnitts-Ansicht neu aufbaust.
-
 ## Nächste Schritte
 
 - **[Home-Assistant-Integration](/de/home-assistant/integration)** — Entitäten, Automationen, Kartenzugriff und der Medien-Browser.

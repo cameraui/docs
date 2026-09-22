@@ -4,11 +4,11 @@ title: Detection & AI
 
 # Detection & AI
 
-Detection is how camera.ui understands what's in your video: movement, people and vehicles, faces, license plates, and sounds. It runs on your own hardware, and the results become events you can browse, get notified about, and search.
+Detection runs on your own hardware and picks up movement, people and vehicles, faces, license plates, and sounds. The results become events you can browse, get notified about, and search.
 
 ## How detection works
 
-Detection is layered, so it stays efficient:
+Detection is layered:
 
 1. **Motion** runs continuously and cheaply. It just notices that something changed.
 2. When a trigger fires, the heavier **AI** wakes up. It runs object detection (people, vehicles, animals), then looks closer at what it found: faces on the people it sees, license plates on the vehicles, and a semantic fingerprint for search. Motion is the usual trigger. A detected sound wakes the AI too, and so can another sensor, for example a door contact.
@@ -47,7 +47,7 @@ flowchart LR
 
 ## Plugins do the work
 
-Detection is provided by [plugins](/plugins/) you enable per camera: a **motion engine** and an **AI backend** that matches your hardware. You choose and tune them in a camera's [settings](/cameras/settings). See [Set up sensors](/sensors/setup) for how to enable them.
+Detection is provided by [plugins](/plugins/) you enable per camera: a **motion engine** and an **AI backend** that matches your hardware. You choose and tune them in a camera's [settings](/cameras/settings), see [Set up sensors](/sensors/setup).
 
 Each detection becomes part of an **event**. See [Events & detections](/detection/events-and-detections) for how those are structured, and [Recording (NVR)](/recording/) for browsing them.
 

@@ -8,7 +8,7 @@ Audio detection listens to a camera's audio for specific sounds, such as glass b
 
 ## Setup
 
-Enable the audio plugin for a camera in [Settings → Plugins](/cameras/settings) (see [Set up sensors](/sensors/setup)). That is the whole setup: the plugin has no settings of its own, it listens for the standard sound list and takes its confidence from the camera.
+Enable the audio plugin for a camera in [Settings → Plugins](/cameras/settings) (see [Set up sensors](/sensors/setup)). The plugin has no settings of its own: it listens for the standard sound list and takes its confidence from the camera.
 
 The sounds it recognizes are glass breaking, screaming, gunshots, alarms (smoke, car, siren), a doorbell, knocking, a dog bark, a cat, a baby crying, and speech.
 
@@ -16,7 +16,7 @@ The sounds it recognizes are glass breaking, screaming, gunshots, alarms (smoke,
 
 Audio detection is tuned in [Settings → Detection](/cameras/settings), per camera:
 
-- **Min. volume (dBFS).** Audio frames below this level are skipped, so quiet background noise is never analysed. Ranges from -100 (silence) to 0 (maximum), default -40.
-- **Audio confidence.** Sounds the detector is less sure about than this are dropped (0 to 1, default 0.7). Raise it if you get false glass-break or gunshot alarms, lower it if real ones are missed.
+- **Min. volume (dBFS).** Audio frames below this level are skipped. Ranges from -100 (silence) to 0 (maximum), default -40.
+- **Audio confidence.** Sounds the detector is less sure about than this are dropped (0 to 1, default 0.7).
 - **Audio timeout.** How long an audio event stays active after the last trigger (minimum 10 seconds).
 

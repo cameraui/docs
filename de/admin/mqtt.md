@@ -10,7 +10,7 @@ Die Seite **Einstellungen → MQTT** (nur Admins) verbindet camera.ui mit einem 
 
 ## Aktivieren
 
-Schalte **Aktiviert** ein, wähle einen Modus, trage die Verbindung ein und **Speichern**. Jedes Speichern startet die Verbindung neu, ein falscher Wert zeigt sich also sofort in der Statuskarte oben auf der Seite.
+Schalte **Aktiviert** ein und trage die Verbindung ein. Jedes Speichern startet die Verbindung neu, ein falscher Wert zeigt sich also sofort in der Statuskarte oben.
 
 ## Modus
 
@@ -21,19 +21,17 @@ Schalte **Aktiviert** ein, wähle einen Modus, trage die Verbindung ein und **Sp
 
 ### Eingebauter Broker
 
-Es ist nichts zu installieren. camera.ui startet den Broker auf **Port** (Standard `1883`) und zeigt die **Broker-Adresse** als schreibgeschütztes Feld mit Kopierbutton, in der Form `mqtt://<Server-Host>:<Port>`. Richte deine MQTT-Geräte auf diese Adresse aus.
-
-Die Zugangsdaten daneben brauchen diese Geräte:
+camera.ui startet den Broker auf **Port** (Standard `1883`) und zeigt die **Broker-Adresse** als schreibgeschütztes Feld mit Kopierbutton, in der Form `mqtt://<Server-Host>:<Port>`. Geräte melden sich an mit:
 
 - **Benutzername.** Standard ist `cameraui`.
-- **Passwort.** Wird beim ersten Start zufällig erzeugt. Es hat einen eigenen Kopierbutton, und du kannst es durch ein eigenes ersetzen.[^anon]
+- **Passwort.** Wird beim ersten Start zufällig erzeugt und lässt sich durch ein eigenes ersetzen.[^anon]
 
 ### Externer Broker
 
 - **Host.** Hostname oder IP des Brokers, zum Beispiel `192.168.1.10`.
 - **Port.** Standard ist `1883`.
 - **Protokoll.** `mqtt:// (TCP)` oder `mqtts:// (TLS)`. Standard ist `mqtt://`.
-- **Benutzername** und **Passwort.** Für einen anonymen Broker beides leer lassen. Das Passwortfeld bleibt nach dem Speichern maskiert. Leer lassen behält das gespeicherte Passwort, ein neues ersetzt es.
+- **Benutzername** und **Passwort.** Für einen anonymen Broker beides leer lassen. Ein leeres Passwortfeld nach dem Speichern behält das gespeicherte Passwort.
 
 ## Client-ID und Topic-Präfix
 
@@ -52,7 +50,7 @@ Die TLS-Felder erscheinen bei einem externen Broker mit `mqtts://`.
 
 ## Test und Status
 
-**Verbindung testen** öffnet mit den aktuellen Werten aus dem Formular eine kurze, separate Verbindung und meldet das Ergebnis als Toast. Gespeichert wird dabei nichts. Beim eingebauten Broker zuerst speichern: Der Test verbindet sich mit dem laufenden Broker und schlägt fehl, solange dieser nicht läuft.[^test]
+**Verbindung testen** öffnet mit den aktuellen Werten aus dem Formular eine kurze, separate Verbindung, ohne zu speichern. Beim eingebauten Broker zuerst speichern: Der Test verbindet sich mit dem laufenden Broker.[^test]
 
 Die Statuskarte oben zeigt den Live-Zustand der Verbindung:
 

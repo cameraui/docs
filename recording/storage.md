@@ -4,27 +4,25 @@ title: Storage & retention
 
 # Storage & retention
 
-Recordings can use a lot of disk, so camera.ui gives you control over where they're stored and how long they're kept.
-
 ## Where recordings are stored
 
 By default, recordings live with the rest of camera.ui's data. For more than a couple of cameras, put them on a **dedicated local disk**, separate from the system disk. See [System requirements](/intro/requirements#storage-for-recordings).
 
-A disk plugged into the machine is fine, and so is a storage path that is a symlink to one. A **network share (NAS, SMB, NFS) is not**, and the reason is worth knowing: the folder holds more than video. Detection events, the timeline markers and the search index sit next to the footage as databases, so they travel with it when you move the disk. Those databases need file locking that network filesystems do not provide reliably, so what breaks there is the event database, not a frame of video. If your storage lives on a NAS, run camera.ui on the NAS instead and record locally from there.
+A local disk, or a symlink to one, is fine. A **network share (NAS, SMB, NFS) is not**: detection events, timeline markers and the search index sit next to the footage as databases, and those need file locking that network filesystems do not provide reliably. What breaks there is the event database, not the video. If your storage lives on a NAS, run camera.ui on the NAS and record locally there.
 
 ## Moving recordings to another disk
 
-Changing the storage path does not take your recordings with it. camera.ui starts fresh at the new location, and the old folder keeps its footage and its events where they are. Move the data yourself:
+Changing the storage path does not move your recordings: camera.ui starts fresh at the new location and the old folder stays as it is. To move the data:
 
 1. Stop the server.
-2. Move the whole storage folder to the new disk, including the `events` and `clip` folders next to the footage. Those hold your events, the timeline markers and the search index, and they belong to that footage.
+2. Move the whole storage folder to the new disk, including the `events` and `clip` folders. They hold your events, timeline markers and search index for that footage.
 3. Start the server and set the new path in **Settings → Recordings**.
 
-Nothing inside stores an absolute path, so the timeline, the events and the search work at the new location without a rebuild. Leave the `events` and `clip` folders behind and the footage arrives without any of them, with no way to recreate them from the video files. Enrolled faces are not affected either way, they live outside the recordings folder.
+Nothing inside stores an absolute path, so everything works at the new location without a rebuild. Without `events` and `clip` the footage arrives bare, and they cannot be recreated from the video files. Enrolled faces live outside the recordings folder and are not affected.
 
 ## Rough sizing
 
-Continuous recording writes the recorded stream to disk, so the size follows its bitrate. A rough guide:
+Continuous recording size follows the stream's bitrate:
 
 **GB per day, per camera ≈ bitrate in Mbit/s × 10.8**
 
@@ -34,33 +32,31 @@ Continuous recording writes the recorded stream to disk, so the size follows its
 | 4K H.264 | 8 Mbit/s | ~86 GB | ~600 GB |
 | H.265 (HEVC) | about half the bitrate | roughly half the above | roughly half the above |
 
-Event recording only writes around motion or detections, so it uses a fraction of that, depending on how busy the scene is. When in doubt, start with a retention window or a storage cap and watch the per-camera rate (below) for a week.
+Event recording uses a fraction of that, depending on how busy the scene is. When in doubt, set a retention window or storage cap and watch the per-camera rate (below) for a week.
 
 ## How long they're kept
-
-Two limits decide when old footage is removed:
 
 - **Retention (Days).** Keep footage for up to this many days (0 means no day limit).
 - **Max Storage (GB).** Cap the total space recordings may use (0 means no cap).
 
-When a limit is reached, what happens depends on the **Retention Mode**:
+When a limit is reached, the **Retention Mode** decides:
 
 - **Overwrite** (default). The oldest recordings are deleted to make room, so recording never stops.
 - **Strict.** Nothing is deleted beyond the retention window. If the disk fills, recording pauses until you free space.
 
-Cleanup works through the oldest hours of every camera side by side, so a camera that records little cannot lose its whole history while a busy one keeps everything, and it stops as soon as enough space is free. Moments you marked as a [favorite](/recording/browsing#favorites) are carved out of it and stay playable however old they are.
+Cleanup takes the oldest hours of all cameras side by side, so a quiet camera cannot lose its whole history while a busy one keeps everything, and it stops once enough space is free. [Favorites](/recording/browsing#favorites) are skipped and stay playable however old they are.
 
 ## Free disk space
 
-Independent of those limits, camera.ui keeps part of the disk clear. **Min Free Space (GB)** sets that line: cleanup works to keep at least that much available, and recording pauses at half of it. Left at 0 the reserve is derived from the disk size, which is a share of the whole volume.
+Independent of those limits, **Min Free Space (GB)** keeps part of the disk clear: cleanup works to keep at least that much available, and recording pauses at half of it. At 0 the reserve is a share of the whole volume.
 
-Set your own line when the recordings share a disk with other data. A derived reserve on a large shared disk can be far bigger than you want, so recording pauses long before your storage cap is reached. Values below 10 GB count as 10.
+Set your own value when the recordings share a disk with other data, otherwise the derived reserve on a large disk can pause recording long before your storage cap is reached. Values below 10 GB count as 10.
 
 ## Footage from removed cameras
 
-If you delete a camera, or unassign the NVR from it, its recordings stay on disk. They still count towards **Max Storage**, and retention and cleanup still remove them when the disk gets tight, like an active camera's recordings.
+If you delete a camera or unassign the NVR from it, its recordings stay on disk. They still count towards **Max Storage** and are aged out and cleaned up like an active camera's.
 
-To keep that footage instead, put an empty file named `.cameraui-keep` into the camera's folder in your recordings directory. camera.ui then leaves the folder alone: not counted, not aged out, not touched when space runs low.[^keepmarker]
+To keep that footage, put an empty file named `.cameraui-keep` into the camera's folder in your recordings directory. camera.ui then leaves the folder alone: not counted, not aged out, not touched when space runs low.[^keepmarker]
 
 [^keepmarker]: The marker only applies to cameras camera.ui no longer knows. The folder of an active camera follows retention and the storage cap either way.
 
@@ -68,10 +64,10 @@ To keep that footage instead, put an empty file named `.cameraui-keep` into the 
 
 <Shot src="/img/recording/storage-stats.png" alt="Storage usage statistics" />
 
-Open **Metrics → Storage**. The **Storage Overview** shows how much disk is used and free, and the NVR's share of it. The **Camera Storage** table breaks it down per camera: size on disk, days of footage held, the recording rate per day, and the mode. This helps you size storage and spot a camera recording more than expected.
+**Metrics → Storage** shows disk usage in the **Storage Overview** and, in the **Camera Storage** table, per camera: size on disk, days of footage held, recording rate per day, and mode.
 
-If the page warns that the storage volume is small, most of the volume is kept free as headroom, so recordings rotate out quickly. That usually means the larger disk you meant to use isn't mounted, so check the storage path. A separate warning appears when free disk space drops below 8%, and a red banner once recording has paused for lack of space.
+A warning that the storage volume is small means most of it is held as headroom and recordings rotate out quickly. Usually the larger disk you meant to use isn't mounted, so check the storage path. Separate warnings appear when free space drops below 8% and once recording has paused for lack of space.
 
 ## Uninstalling the NVR
 
-Uninstalling the NVR plugin with **Also delete stored data** removes its settings, databases and caches, but leaves your recordings folder in place. The folder is protected by a `.cameraui-keep` file inside it. If the recordings should go with the plugin, delete that file first, then uninstall.
+Uninstalling the NVR plugin with **Also delete stored data** removes its settings, databases and caches but keeps your recordings folder, which is protected by a `.cameraui-keep` file inside it. To delete the recordings too, remove that file first, then uninstall.

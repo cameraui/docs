@@ -4,7 +4,7 @@ title: Apple TV
 
 # Apple TV
 
-The Apple TV app puts your cameras on the big screen: a live wall, your events with playback, and your sensors.[^license] It's a viewer, so the server runs elsewhere (on your [desktop](/install/desktop) or a [server install](/install/)) and the app connects to it.
+The Apple TV app puts your cameras on the big screen: a live wall, your events with playback, and your sensors.[^license] It connects to a server running elsewhere (the [desktop app](/install/desktop) or a [server install](/install/)).
 
 <Shot src="/img/install/tv-app.png" alt="The camera.ui Apple TV app" />
 
@@ -20,24 +20,23 @@ Currently in **beta**. Join through [TestFlight](https://testflight.apple.com/jo
 
 The app connects straight to your server, not through camera.ui Cloud.
 
-On the same network, the app finds your server on its own, just pick it from the list. You can also add one by address:
+On the same network the app lists your server by itself. You can also add one by address:
 
 - **On your network.** Enter the server's local address, for example `https://192.168.1.20:3443`.
 - **From anywhere.** Enter your own public address, set up with a [custom domain](/remote/custom-domain) and a [reverse proxy](/remote/reverse-proxy).
 
 Sign in with your username and password, plus a two-factor code if you use one, or paste an API token.[^token]
 
-You can add more than one server and switch between them, handy if you run separate servers at home and elsewhere.
+You can add several servers and switch between them.
 
 ## Around the app
 
-- **Home.** The latest activity up top, plus camera and storage status and today's event count. Select a notification to jump straight to the recording.
-- **Camview.** A live wall of your cameras. Pick a grid or a mixed layout, rearrange the tiles, or open any camera fullscreen. **Fill wall** drops the borders and fills the screen with the wall, and **Whole picture** fits each camera into its tile with bars instead of cropping, so a 4:3 camera keeps its edges next to widescreen ones. Both are remembered per view.
-- **Events.** Your events grouped by day, with filters for persons, faces, vehicles, animals, doorbell, sensors, sounds, and motion. Select one to play it back from that moment. Keep scrolling to reach older days.
-- **Episodes.** [Episodes](/detection/episodes) show up as mosaic cards among your events and on the Home screen. Opening one plays the whole story and switches cameras on its own. Left and right jump between cameras.
-- **Sensors.** Your sensors as tiles, live from the server.
+- **Home.** The latest activity up top, plus camera and storage status and today's event count. Selecting a notification opens its recording.
+- **Camview.** A live wall of your cameras. Grid or mixed layout, rearrangeable tiles, fullscreen per camera. **Fill wall** drops the borders and fills the screen, **Whole picture** letterboxes each camera in its tile instead of cropping it. Both are remembered per view.
+- **Events.** Your events grouped by day, with filters for persons, faces, vehicles, animals, doorbell, sensors, sounds, and motion. Selecting one plays it back from that moment.
+- **Episodes.** [Episodes](/detection/episodes) show up as mosaic cards among your events and on the Home screen. Opening one plays the whole story and switches cameras by itself. Left and right jump between cameras.
 - **Talk back.** In the fullscreen player, the microphone button speaks through the camera, if the camera supports two-way audio.
-- **PTZ.** A camera that can pan, tilt or zoom gets a move button in the player. Hold a direction to keep moving, a short press nudges. Cameras that offer them also get a home button and their presets. See [PTZ & autotrack](/sensors/ptz).
+- **PTZ.** A camera that can pan, tilt or zoom gets a move button in the player. Hold a direction to keep moving, a short press nudges. Home position and presets appear when the camera has them. See [PTZ & autotrack](/sensors/ptz).
 
 Playback follows each camera's [playback source](/recording/timeline-playback#playback-quality), episodes included. On Auto a gap in the high recording plays the next quality that has footage, the same as in the web interface.
 
@@ -45,15 +44,15 @@ Playback follows each camera's [playback source](/recording/timeline-playback#pl
 
 The Sensors page lays out every sensor as a tile, grouped by type, with its current state.[^sensors]
 
-- **Click to toggle.** Select a light, switch, siren, lock, or garage to flip it.
-- **Hold for more.** Hold the select button, or press play/pause, to open a panel with brightness, volume, alarm modes, or lock and garage controls.
-- **Stays in sync.** New sensors show up on their own, removed ones disappear, and states update as they change.
+- **Click to toggle.** Lights, switches, sirens, locks and garages flip on select.
+- **Hold for more.** Holding select, or pressing play/pause, opens brightness, volume, alarm modes, or lock and garage controls.
+- **Live.** Sensors and states update as they change on the server.
 
 ## Updates
 
-The app updates through TestFlight during the beta, like any other Apple TV app.
+During the beta the app updates through TestFlight.
 
-If your server or its recording plugin is older than the app needs, the app shows an **Update needed** screen naming exactly what to bring up to date, instead of empty lists and missing pictures. Update camera.ui on the server, then reopen the app. The current beta needs camera.ui 2.1.6 or newer and the recording plugin at 1.3.13 or newer.
+If the server or its recording plugin is older than the app needs, the app shows an **Update needed** screen naming what to update. Update it on the server, then reopen the app.
 
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback. Live view is free.
 [^appstore]: The app moves to the App Store with the public release.

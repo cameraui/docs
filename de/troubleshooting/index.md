@@ -4,14 +4,12 @@ title: Fehlerbehebung
 
 # Fehlerbehebung
 
-Wenn etwas nicht funktioniert, deckt diese Seite die häufigsten Probleme ab und wo du nachsiehst. Die **[Logs](/de/admin/logs)** sind der beste Ort, um zu sehen, was der Server tatsächlich tut.
+Die häufigsten Probleme und wo du nachsiehst. Die **[Logs](/de/admin/logs)** zeigen, was der Server tatsächlich tut.
 
 ## Eine Kamera verbindet sich nicht
 
-Wenn eine Kamera offline zeigt oder nicht lädt:
-
 - Prüfe die **[Quellen](/de/cameras/settings)** der Kamera. Der Sources-Tab zeigt für jeden Stream den Live-Status, die erkannten Codecs und die URL.
-- Stelle sicher, dass **Stream-URL und Zugangsdaten** stimmen. Die RTSP-URL in einem Player wie VLC zu testen bestätigt, dass die Kamera selbst erreichbar ist.
+- Stelle sicher, dass **Stream-URL und Zugangsdaten** stimmen. Teste die RTSP-URL in einem Player wie VLC, um die Kamera selbst auszuschließen.
 - Bestätige, dass die Kamera im **selben Netzwerk** wie der Server ist oder von ihm erreichbar.
 - Prüfe bei Marken- oder Discovery-basierten Kameras das passende **[Protokoll](/de/cameras/protocols)** oder [Plugin](/de/plugins/).
 
@@ -36,14 +34,14 @@ Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn
 
 - Prüfe die **[Benachrichtigungs-Einstellungen](/de/notifications/)** auf dem Gerät: Hauptschalter, Ruhezeiten und ob das Gerät registriert ist.
 - Prüfe die Benachrichtigungs-Einstellungen der **Kamera**: welche Objekte, Geräusche und Sensoren sie meldet.
-- Für **Push aufs Handy** brauchst du die native [Mobile-App](/de/install/mobile) (ein Browser bekommt keinen Push), eingerichtete [camera.ui Cloud](/de/remote/cloud) und einen Tipp auf **Dieses Gerät synchronisieren**. Kam Push vorher an und ist dann verstummt, merkt die App das meist selbst und zeigt einen Hinweis mit einem **Beheben**-Button; ein Tipp richtet das Handy wieder ein. Siehe [Push aufs Handy bekommen](/de/notifications/#push-aufs-handy-bekommen).
+- Für **Push aufs Handy** brauchst du die native [Mobile-App](/de/install/mobile) (ein Browser bekommt keinen Push), eingerichtete [camera.ui Cloud](/de/remote/cloud) und einen Tipp auf **Dieses Gerät synchronisieren**. Ist Push verstummt, zeigt die App meist einen Hinweis mit einem **Beheben**-Button, der das Handy wieder einrichtet. Siehe [Push aufs Handy bekommen](/de/notifications/#push-aufs-handy-bekommen).
 
 ## Aufnahme funktioniert nicht
 
 - Aufnahmen brauchen ein **aktives Abo**. Siehe [Aufnahmen](/de/recording/).
 - Bestätige, dass der **Aufnahme-Modus** der Kamera gesetzt ist, Continuous oder Event.
 - Prüfe den **[Speicher](/de/recording/storage)**: eine volle Disk mit **Strict**-Retention pausiert die Aufnahme, bis du Platz freigibst.
-- Wenn **Einstellungen → Aufnahmen** warnt, dass das Speichervolumen klein ist, liegen die Aufnahmen auf einer kleinen Disk und rotieren schnell weg. Entweder ist die Disk wirklich so klein, oder ein erwarteter Speicher-Mount wurde nie eingehängt. Prüfe den Pfad unter **[Speicher](/de/recording/storage)**.
+- Wenn **Einstellungen → Aufnahmen** warnt, dass das Speichervolumen klein ist, rotieren die Aufnahmen schnell weg. Entweder ist die Disk wirklich so klein, oder ein erwarteter Speicher-Mount wurde nie eingehängt: prüfe den Pfad unter **[Speicher](/de/recording/storage)**.
 
 ## Server remote nicht erreichbar
 
@@ -55,9 +53,9 @@ Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn
 
 ## Ich komme nicht rein
 
-Kennst du das Konto, aber nicht das Passwort, kann ein anderer Administrator unter **Einstellungen → [Benutzer](/de/admin/users)** ein neues setzen: Menü des Benutzers öffnen, **Bearbeiten** wählen, neues Passwort eintragen.
+Kennst du das Konto, aber nicht das Passwort, kann ein anderer Administrator unter **Einstellungen → [Benutzer](/de/admin/users)** ein neues setzen (Benutzermenü → **Bearbeiten**).
 
-Das **Master**-Konto ist die Ausnahme. Es kann nur sich selbst ändern, niemand sonst kann es zurücksetzen, und über die Kommandozeile geht es auch nicht. Ein [Backup](/de/admin/backup) aus einer Zeit, als du das Passwort noch kanntest, bringt die alten Konten mit zurück. Ohne so ein Backup hilft nur eine Neuinstallation, bewahre das Master-Passwort also dort auf, wo du es wiederfindest.
+Das **Master**-Konto ist die Ausnahme. Nur der Master selbst kann es ändern: weder ein anderer Administrator noch die Kommandozeile kann es zurücksetzen. Ein [Backup](/de/admin/backup) aus einer Zeit, als du das Passwort noch kanntest, bringt die alten Konten mit zurück. Ohne so ein Backup hilft nur eine Neuinstallation, bewahre das Master-Passwort also dort auf, wo du es wiederfindest.
 
 ## Mehr Details bekommen
 

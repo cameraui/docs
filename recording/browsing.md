@@ -4,9 +4,9 @@ title: Browsing & filters
 
 # Browsing & filters
 
-The **Recordings** view is where you find past events across your cameras. Each event shows a thumbnail and what was detected, ordered by when something last happened in it. An event that runs on for hours shows while it runs, with the picture of its newest span on the card. Related events across cameras can also appear as an **episode** card. A recording that belongs to one shows an **Open episode** button. See [Episodes](/detection/episodes).
+The **Recordings** view lists past events across your cameras, ordered by when something last happened in them. An event that runs for hours shows while it runs, with its newest span on the card. Related events across cameras can appear as an **episode** card, and a recording that belongs to one shows **Open episode**. See [Episodes](/detection/episodes).
 
-When the list says recordings are unavailable, the NVR plugin is not running. It fills itself once the plugin answers again.
+When the list says recordings are unavailable, the NVR plugin is not running. The list fills once the plugin answers again.
 
 ## Filtering
 
@@ -14,7 +14,7 @@ When the list says recordings are unavailable, the NVR plugin is not running. It
 
 <Shot src="/img/recording/recordings-filters.png" alt="The filter sidebar with the Show switch, search and the room and camera filters" />
 
-The rest narrows the list to exactly what you're after:
+The other filters:
 
 - **Camera and time range.**
 - **Rooms.** Selects the cameras placed in those rooms on the [floor plan](/cameras/floor-plan).
@@ -30,37 +30,37 @@ You can also search by text across detected labels, faces, and plates.
 
 ## View options
 
-The gear in the top right opens view options.
+Behind the gear, top right:
 
 - **Ungroup.** One card per moment instead of one card per event. Off by default. Your choice is saved to your account, so it follows you to other devices.
-- **Only with recording.** The same filter as in the sidebar, kept here for quick access.
+- **Only with recording.** The same filter as in the sidebar.
 
 ## Reading a card
 
 Each card is one moment.
 
-- **Time and camera.** Shown top left. Select the card to open playback at that moment.
-- **Faces and plates.** When a moment has more than its scene picture, like a recognized face or a read license plate, arrows appear to step through the pictures in place, with the name or plate shown. The small tiles at the bottom mark and jump to one.
+- **Time and camera.** Selecting the card opens playback at that moment.
+- **Faces and plates.** When a moment also has a recognized face or a read plate, arrows step through its pictures in place, with the name or plate shown. The small tiles at the bottom jump to one.
 - **Grouped cards.** A grouped card shows the event's other moments as small previews at the bottom. Each opens its own moment.
-- **Split cards.** With **Ungroup** on, each moment is its own card and shows its place in the event, like 2/3. Pointing at one highlights the other cards of the same event.
+- **Split cards.** With **Ungroup** on, each card shows its place in the event, like 2/3. Hovering one highlights the other cards of the same event.
 - **The dots menu.** Holds what the card does not show itself: the [detection trace](/detection/events-and-detections#the-detection-trace), **Ask the assistant**, the download, and [**Correct person**](/detection/faces#correcting-a-recognition) when a face picture is on screen.
-- **Hold to preview.** On a phone or tablet, rest your finger on a card to play the short preview clip. Lift your finger to stop, tap to open. On a computer the preview plays on hover. It steps through the clip zoomed to whatever the moment was about, with a clock showing the time of the frame you are looking at. A card with no playable footage behind it says **No preview**. An episode card previews its cut instead: each camera in turn, with the camera name and the time.
+- **Hold to preview.** On a phone or tablet, hold a card to play its short preview (lift to stop, tap to open). On a computer it plays on hover. The preview is zoomed to what the moment was about, with a clock for the frame's time. **No preview** means there is no playable footage. An episode card previews its cut: each camera in turn, with name and time.
 
 ## Favorites
 
-The star on a recording or episode card keeps that moment. Automatic [cleanup](/recording/storage) deletes around a favorite, so its footage stays playable however old it gets and however tight the disk. **Favorites only** in the filter sidebar shows what you kept. Both are for admins.
+The star on a recording or episode card keeps that moment: automatic [cleanup](/recording/storage) skips it, so its footage stays playable however old it gets and however tight the disk. **Favorites only** in the filter sidebar lists them. Both are admin-only.
 
 ## Selecting and deleting
 
-Admins can delete events from here. Select the dots button in the corner to enter select mode, then pick single events, several, or all the ones loaded, and delete them. They disappear everywhere at once: Home, the timeline, this list, and every open browser. The recorded video stays on disk until the normal cleanup removes it.[^delete-disk]
+Admins can delete events here: the dots button in the corner enters select mode for single events, several, or all loaded ones. Deleted events disappear everywhere at once: Home, the timeline, this list, and every open browser.[^delete-disk]
 
 ## AI search
 
-To find moments by describing them, like "a person carrying a package", use **AI Search**. See [Semantic search](/detection/semantic-search).
+**AI Search** finds moments by description, like "a person carrying a package". See [Semantic search](/detection/semantic-search).
 
 ## Ask the assistant
 
-With the [assistant](/assistant/) set up, the filter sidebar starts with **Ask the assistant**. Type the search in your own words ("cars in the driveway yesterday", "favorites with the doorbell", "episodes from the entrance in the last hour") and the filters below are set for you: cameras and rooms, time range, event types, sensors, favorites, and an AI Search when the words describe a scene the labels cannot. A note under the box says what the filters cannot express, an exact day for example.
+With the [assistant](/assistant/) set up, the filter sidebar starts with **Ask the assistant**. Type the search in your own words ("cars in the driveway yesterday", "favorites with the doorbell", "episodes from the entrance in the last hour") and it sets the filters below: cameras and rooms, time range, event types, sensors, favorites, and an AI Search when the words describe a scene the labels cannot. A note under the box says what the filters cannot express, an exact day for example.
 
 ## Heatmap
 

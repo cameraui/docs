@@ -16,7 +16,7 @@ Für Always-on-Server ohne Docker: camera.ui wird über npm installiert und läu
   sudo apt-get install -y nodejs
   ```
 
-Das war's. Alles andere (FFmpeg, go2rtc und eine portable Python-Runtime für die Erkennungs-Plugins) lädt und verwaltet camera.ui selbst.
+FFmpeg, go2rtc und eine portable Python-Runtime für die Erkennungs-Plugins lädt und verwaltet camera.ui selbst.
 
 ## Installation
 
@@ -25,7 +25,7 @@ sudo npm install -g camera.ui
 sudo cameraui install --user cameraui
 ```
 
-`cameraui install` legt den Service-User an, falls er nicht existiert, registriert einen systemd-Service namens `cameraui` und startet ihn beim Boot. Der erste Start lädt und installiert den Server, gib ihm also ein paar Minuten und schau in einem zweiten Terminal mit `sudo cameraui logs --user cameraui` zu. Die Web-UI läuft danach auf `https://<host>:3443`.
+`cameraui install` legt den Service-User an, falls er nicht existiert, registriert einen systemd-Service namens `cameraui` und startet ihn beim Boot. Der erste Start lädt den Server und dauert ein paar Minuten (`sudo cameraui logs --user cameraui` zeigt den Fortschritt). Die Web-UI läuft danach auf `https://<host>:3443`.
 
 Braucht der Service-User GPU-Zugriff für Hardware-Beschleunigung, füge ihn den `video`/`render`-Gruppen deiner Distribution hinzu. `--group video` greift nur, wenn der Install den User anlegt. Existiert der User schon, führe `sudo usermod -aG video cameraui` aus und starte den Service neu.
 
@@ -51,7 +51,7 @@ sudo cameraui update-server 1.2.3        # oder eine bestimmte Version pinnen
 
 Der Service läuft unter einem eigenen User, alles außer `status` braucht also sudo und dasselbe `--user`, mit dem du installiert hast. Hast du mit `-H <pfad>` installiert, gib stattdessen das an.
 
-camera.ui aktualisiert den Server auch über die Web-UI; `update-server` ist das CLI-Pendant.
+Die [Updates-Seite](/de/install/updating#die-updates-seite) macht dasselbe in der Weboberfläche; `update-server` ist das CLI-Pendant.
 
 ## Daten
 
@@ -67,7 +67,7 @@ Video-Beschleunigung ist [automatisch](/de/install/hardware-acceleration), auf B
 - **Coral Edge TPU:** die `libedgetpu`-Runtime plus (bei PCIe/M.2) der gasket-Kernel-Treiber, siehe [Coral-Abschnitt](/de/install/hardware-acceleration#coral-edge-tpu)
 - **Hailo:** der Kernel-Treiber, siehe [Hailo-Abschnitt](/de/install/hardware-acceleration#hailo-8-hailo-8l)
 
-Device-Passthrough braucht es nirgends. Bare-Metal sieht die Hardware direkt, und camera.ui greift sie automatisch ab. Die Erkennungs-Plugins loggen, was sie gefunden haben (`Available devices: …`).
+Device-Passthrough braucht es nicht. Die Erkennungs-Plugins loggen, was sie gefunden haben (`Available devices: …`).
 
 ## Deinstallation
 

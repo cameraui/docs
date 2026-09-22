@@ -1,6 +1,6 @@
 # System requirements
 
-What camera.ui needs depends on **how you run it** and **what you ask it to do**. Live-viewing a couple of cameras is light. Recording many cameras around the clock with AI detection needs real hardware. Use the table below as a guide, and scale up with your camera count, recording, and detection.
+What camera.ui needs depends on **how you run it** and **what you ask it to do**. Live-viewing a couple of cameras is light; recording many cameras around the clock with AI detection needs real hardware.
 
 ## At a glance
 
@@ -13,7 +13,7 @@ What camera.ui needs depends on **how you run it** and **what you ask it to do**
 | Recordings | a separate, dedicated disk, sized to your cameras and retention | |
 
 ::: tip Known-good hardware
-A small **Intel N100** mini-PC or an **Apple Silicon Mac (M1 or newer)** comfortably runs a typical setup (several cameras with recording and AI detection) at low power. Both are well-suited as quiet, always-on servers.
+A small **Intel N100** mini-PC or an **Apple Silicon Mac (M1 or newer)** comfortably runs a typical setup (several cameras with recording and AI detection) at low power.
 :::
 
 What pushes you higher: more cameras, higher resolutions, continuous recording, and especially **AI detection**, which is far lighter with a supported GPU, accelerator, or Apple Silicon (see below).
@@ -23,12 +23,12 @@ What pushes you higher: more cameras, higher resolutions, continuous recording, 
 You can run the camera.ui server on **Linux, macOS, or Windows**:
 
 - **Linux.** In [Docker](/install/docker), on [Proxmox](/install/proxmox), or [bare-metal](/install/linux). Ubuntu 24.04 (or newer) is the tested baseline. A bare-metal install only needs Node.js 24, since camera.ui manages everything else (FFmpeg, go2rtc, a portable Python runtime) itself; the Docker images bundle everything.
-- **macOS.** Through the [desktop app](/install/desktop) in Server mode. Apple Silicon Macs (M1 and newer) are an excellent fit: low power, with full hardware acceleration including the Neural Engine.
+- **macOS.** Through the [desktop app](/install/desktop) in Server mode. Apple Silicon Macs (M1 and newer) run it at low power with full hardware acceleration, including the Neural Engine.
 - **Windows.** Through the [desktop app](/install/desktop) in Server mode.
 
 ### Hardware acceleration
 
-Detection and video processing run in software on any CPU, but a GPU, accelerator, or Apple Silicon lowers CPU use significantly, which matters once you have several cameras or use AI detection.
+Detection and video processing run in software on any CPU, but a GPU, accelerator, or Apple Silicon lowers CPU use significantly.
 
 | Platform | Acceleration | Notes |
 |---|---|---|
@@ -45,11 +45,11 @@ On Linux, pick the [Docker flavor](/install/docker) that matches your GPU. On ma
 
 ## Storage for recordings
 
-[Recordings](/recording/storage) can grow large. How much space you need depends on your camera count, resolution and bitrate, [recording mode](/recording/), and how long you keep footage.
+How much space [recordings](/recording/storage) need depends on your camera count, resolution and bitrate, [recording mode](/recording/), and how long you keep footage.
 
 Use a **dedicated local disk** for recordings, separate from the system disk and not a network share (NAS). Continuous recording writes constantly, and the recordings folder also holds the databases that index your events, which network shares cannot lock reliably. See [Storage & retention](/recording/storage#where-recordings-are-stored).
 
-camera.ui shows each camera's recording rate per day and lets you cap usage with the **Quota** and **Retention** settings, so storage never fills up unexpectedly.
+camera.ui shows each camera's recording rate per day and lets you cap usage with the **Quota** and **Retention** settings.
 
 ## Desktop app
 
@@ -64,6 +64,6 @@ The [mobile apps](/install/mobile) are viewers with minimal requirements:
 
 ## Cameras
 
-Almost any IP camera works: anything that provides an **RTSP** or **ONVIF** stream (H.264 or H.265). Local cameras like these give the best results. See [Connection protocols](/cameras/protocols) for the full list.[^cloud]
+Almost any IP camera works: anything that provides an **RTSP** or **ONVIF** stream (H.264 or H.265). See [Connection protocols](/cameras/protocols) for the full list.[^cloud]
 
 [^cloud]: Cameras that depend on a vendor cloud (such as Ring or Nest) can be connected, either directly or through a plugin, but they are **not recommended** and **not covered by support**. Use local RTSP / ONVIF cameras for a reliable experience.

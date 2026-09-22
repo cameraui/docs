@@ -4,20 +4,18 @@ title: Export & Download
 
 # Export & Download
 
-Du kannst Aufnahmen als Datei speichern, um sie zu behalten oder zu teilen, entweder einen einzelnen Clip oder mehrere Kameras und Tage auf einmal.
-
 ## Einen Clip exportieren
 
 <Shot src="/img/recording/export-trim.png" alt="Einen Clip auf der Timeline zuschneiden" />
 
-Zieh auf der [Timeline](/de/recording/timeline-playback) die Trim-Griffe, um Anfang und Ende des gewünschten Teils zu wählen, und exportiere dann. camera.ui erzeugt eine **MP4**-Datei und bietet dir einen Download. Der Clip wird in der Qualität gespeichert, die du gerade siehst, vorher auf eine niedrigere Qualität umzuschalten gibt dir also eine kleinere Datei.
+Zieh auf der [Timeline](/de/recording/timeline-playback) die Trim-Griffe auf Anfang und Ende und exportiere eine **MP4**. Der Clip wird in der Qualität gespeichert, die du gerade siehst, eine niedrigere Qualität gibt also eine kleinere Datei.
 
 ## Mehrere Aufnahmen exportieren
 
 <Shot src="/img/recording/export-recordings.png" alt="Der Dialog „Aufnahmen exportieren“" />
 
-In der Ansicht Aufnahmen öffnet die Download-Schaltfläche den Dialog „Aufnahmen exportieren“, um mehr als einen Clip auf einmal zu exportieren. Wähle eine oder mehrere Kameras, einen Zeitbereich über mehrere Tage, eine Qualität (Beste Qualität oder Kleinste Dateien) und optional ein Zeitraffer-Intervall. camera.ui erzeugt pro Kamera und Tag eine MP4-Datei (der erste und letzte Tag decken den gewählten Zeitraum ab, die Tage dazwischen werden komplett exportiert) und schätzt die Gesamtgröße, bevor du exportierst. Erzeugt der Export mehr als eine Datei, kommen sie als ein einzelnes ZIP. Eine einzelne Datei wird direkt als MP4 heruntergeladen. Dieser Dialog behält seine eigene Qualitätswahl, unabhängig davon, was du gerade siehst.
+Die Download-Schaltfläche in der Ansicht Aufnahmen öffnet „Aufnahmen exportieren“: eine oder mehrere Kameras, ein Zeitbereich über mehrere Tage, eine Qualität (Beste Qualität oder Kleinste Dateien) und optional ein Zeitraffer-Intervall. Du bekommst pro Kamera und Tag eine MP4 (erster und letzter Tag auf den gewählten Zeitraum begrenzt, die Tage dazwischen komplett) und vorab eine Größenschätzung. Mehrere Dateien kommen als ein ZIP, eine einzelne direkt als MP4. Die Qualitätswahl des Dialogs ist unabhängig davon, was du gerade siehst.
 
 ## Zeitraffer
 
-Beide Export-Varianten können statt eines normalen Clips einen **Zeitraffer** erzeugen, der einen langen Zeitraum in einen kurzen Clip komprimiert, indem er Bilder in einem Intervall abtastet. Gut, um einen ganzen Tag schnell durchzusehen.
+Beide Export-Varianten können stattdessen einen **Zeitraffer** erzeugen, der Bilder in einem Intervall abtastet und so einen langen Zeitraum in einen kurzen Clip komprimiert.

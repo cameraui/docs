@@ -1,8 +1,8 @@
 # Connection protocols
 
-When you [add a camera manually](/cameras/add-camera#add-a-camera-manually), each stream URL begins with a **protocol** that tells camera.ui how to connect. RTSP is the default and works with almost any IP camera. In the add-camera dialog you paste the full stream URL. camera.ui reads the protocol from the URL and shows it under the field as the detected protocol. The **(i)** button next to the URL field opens help for that protocol, with URL formats and examples.
+When you [add a camera manually](/cameras/add-camera#add-a-camera-manually), each stream URL begins with a **protocol**. camera.ui reads it from the URL and shows it under the field. The **(i)** button next to the field opens help for that protocol, with URL formats and examples.
 
-A stream URL has to start with one of the protocols camera.ui supports. If it doesn't, the source won't save and the field tells you the protocol isn't supported. The **(i)** help only becomes available once camera.ui recognizes the protocol you typed, so it's a quick way to check a URL.
+A URL with an unsupported protocol won't save. The **(i)** help only appears once camera.ui recognizes the protocol, which makes it a quick check for a URL.
 
 ## RTSP (recommended)
 
@@ -12,7 +12,7 @@ A stream URL has to start with one of the protocols camera.ui supports. If it do
 rtsp://username:password@192.168.1.123:554/path
 ```
 
-The path after the address is specific to your camera, so check its manual or app for the exact RTSP URL. Many cameras offer a main (high-resolution) and a sub (low-resolution) stream; you can add each as a separate [source](/cameras/add-camera#sources-and-roles).
+The path after the address is camera-specific; the camera's manual or app has it. Many cameras offer a main (high-resolution) and a sub (low-resolution) stream; you can add each as a separate [source](/cameras/add-camera#sources-and-roles).
 
 ## Other common protocols
 

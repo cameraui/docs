@@ -6,9 +6,7 @@ title: Integration
 
 The **camera.ui integration** connects an existing camera.ui server to Home Assistant. Your cameras, their sensors, motion and object detection, PTZ controls and the full camera.ui interface all show up inside Home Assistant.
 
-It talks to the server directly over your local network, so events arrive by push the moment they happen. You don't need an MQTT broker or any cloud service.
-
-This page covers the custom integration (domain `cameraui`). If you run Home Assistant OS and want camera.ui to run as a managed app instead, see the [App](/home-assistant/app) page.
+It talks to the server directly over your local network, and events arrive by push. No MQTT broker or cloud service is involved. The integration's domain is `cameraui`. To run camera.ui itself inside Home Assistant OS, see the [App](/home-assistant/app) page.
 
 ## Install
 
@@ -19,8 +17,6 @@ The integration is distributed through [HACS](https://hacs.xyz) as a custom repo
 3. Restart Home Assistant.
 
 ## Connecting
-
-Once installed, Home Assistant needs to find your server and authenticate against it.
 
 ### Discovery
 
@@ -37,11 +33,11 @@ If discovery doesn't reach the server (a different subnet, for example), add it 
 
 ### API token
 
-Both paths need an [API token](/admin/security#api-tokens). Create one in camera.ui under **Settings → Account → API tokens**, then paste it into the integration.
+Both paths need an [API token](/admin/security#api-tokens). Create one in camera.ui under **Settings → Account → API tokens**.
 
 Use a token from an **admin account**. Controlling camera.ui sensors from Home Assistant (locks, covers, lights, sirens, alarm panels, PTZ) needs admin rights; with a viewer token the entities show up but their controls are rejected.
 
-Home Assistant checks the token against the server before finishing. If the token is rejected you'll see an authentication error; if the server can't be reached you'll see a connection error instead.[^ssl]
+Setup checks the token against the server: a rejected token gives an authentication error, an unreachable server a connection error.[^ssl]
 
 [^ssl]: The server is reached over HTTPS. The integration does not verify the certificate, so a self-signed camera.ui certificate works without extra setup.
 
@@ -72,9 +68,9 @@ Every [exposed sensor](/sensors/) in camera.ui is mirrored into Home Assistant o
 
 Camera hardware (a camera's own spotlight, siren or battery) lands on the camera's device. Every other sensor becomes a device of its own, linked below its camera when it is assigned to exactly one. Whether a sensor comes across at all is the **Expose sensor** toggle on the [Sensors page](/sensors/setup#the-sensors-page). Camera hardware has no toggle, it always follows its camera.
 
-The controllable ones work both ways: a **switch** and a **siren** turn on and off, a **light** turns on and off (and dims, if it reports brightness), a **cover** opens and closes, a **lock** locks and unlocks, and an **alarm panel** arms home, away or night and disarms. Commands are sent straight to camera.ui.
+The controllable ones work both ways: a **switch** and a **siren** turn on and off, a **light** turns on and off (and dims, if it reports brightness), a **cover** opens and closes, a **lock** locks and unlocks, and an **alarm panel** arms home, away or night and disarms.
 
-This surface is driven live. Add, rename, re-assign, expose or delete a sensor in camera.ui and the matching Home Assistant entity appears, updates or disappears without a restart. A sensor whose plugin is offline shows as unavailable.
+Adding, renaming, re-assigning, exposing or deleting a sensor in camera.ui updates the matching Home Assistant entity live, without a restart. A sensor whose plugin is offline shows as unavailable.
 
 ### Motion and object detection
 
@@ -90,7 +86,7 @@ Cameras with the matching detector get value sensors for **face**, **license pla
 
 ### Updates
 
-Home Assistant also gets **update entities** for the camera.ui server and its plugins. When an update is available, it shows up in Home Assistant's own updates list, and you can install it from there without opening the camera.ui interface. The update dialog offers to create a backup first, which writes a camera.ui [backup](/admin/backup) and stops the update if that fails. Turn **Allow updates from Home Assistant** off in the integration options to keep the updates visible without an install button.
+Home Assistant also gets **update entities** for the camera.ui server and its plugins. Available updates show up in Home Assistant's updates list and install from there. The update dialog offers to create a backup first, which writes a camera.ui [backup](/admin/backup) and stops the update if that fails. Turn **Allow updates from Home Assistant** off in the integration options to keep the updates visible without an install button.
 
 ## PTZ
 
@@ -127,7 +123,7 @@ Each camera device offers three triggers in the automation editor:
 
 ### The event bus
 
-The integration also fires a `cameraui_event` on the Home Assistant event bus. Unlike a single "something was detected" event, several of these fire across one detection's lifecycle:
+The integration also fires a `cameraui_event` on the Home Assistant event bus, several times across one detection's lifecycle:
 
 | `state` | When |
 |---|---|
@@ -185,7 +181,7 @@ automation:
           entity_id: light.driveway
 ```
 
-The device triggers cover `start`, `end` and `recognized`. There is no device trigger for the `object` state, so use the event bus for that one.[^objecttrigger]
+There is no device trigger for the `object` state, so use the event bus for that one.[^objecttrigger]
 
 [^objecttrigger]: The three device triggers map to `start`, `end` and `recognized`. To react to a specific object label appearing mid-detection, listen for `cameraui_event` with `state: object` as shown above.
 
@@ -195,13 +191,11 @@ Setup adds a **camera.ui** entry to the Home Assistant sidebar that embeds the f
 
 ## Dashboard cards
 
-Three cards come with the integration and register themselves, so they are in the card picker without a manual resource step: a camera, a camview view, and a strip of recent events. See [Dashboard cards](/home-assistant/card) for their options.
+Three cards come with the integration and register themselves: a camera, a camview view, and a strip of recent events. See [Dashboard cards](/home-assistant/card) for their options.
 
 ### Card access
 
 The integration's options decide who may use them: **Administrators only**, the default, or **All Home Assistant users**. The cards reach camera.ui through Home Assistant using the integration's own token, so opening them up hands every Home Assistant user what that token can see. **Viewer token** takes a second camera.ui token that is used for everyone who is not a Home Assistant administrator, which is how you point them at a restricted camera.ui account instead.
-
-If your camera.ui server is too old for the cards, Home Assistant raises a repair issue naming the version it needs. The entities keep working either way.
 
 ## Recordings in the media browser
 

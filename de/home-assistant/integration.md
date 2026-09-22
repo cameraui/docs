@@ -6,9 +6,7 @@ title: Integration
 
 Die **camera.ui Integration** verbindet einen bestehenden camera.ui Server mit Home Assistant. Deine Kameras, ihre Sensoren, Bewegungs- und Objekterkennung, PTZ-Steuerung und die komplette camera.ui Oberfläche erscheinen direkt in Home Assistant.
 
-Sie spricht den Server direkt über dein lokales Netzwerk an, Ereignisse kommen also per Push in dem Moment an, in dem sie passieren. Du brauchst keinen MQTT-Broker und keinen Cloud-Dienst.
-
-Diese Seite behandelt die Custom-Integration (Domain `cameraui`). Wenn du Home Assistant OS nutzt und camera.ui stattdessen als verwaltetes App laufen lassen willst, siehe die Seite [App](/de/home-assistant/app).
+Sie spricht den Server direkt über dein lokales Netzwerk an, Ereignisse kommen per Push. Kein MQTT-Broker und kein Cloud-Dienst ist beteiligt. Die Domain der Integration ist `cameraui`. Um camera.ui selbst in Home Assistant OS laufen zu lassen, siehe die Seite [App](/de/home-assistant/app).
 
 ## Installation
 
@@ -19,8 +17,6 @@ Die Integration wird über [HACS](https://hacs.xyz) als Custom-Repository vertei
 3. Starte Home Assistant neu.
 
 ## Verbinden
-
-Nach der Installation muss Home Assistant deinen Server finden und sich an ihm anmelden.
 
 ### Erkennung
 
@@ -37,11 +33,11 @@ Wenn die Erkennung den Server nicht erreicht (zum Beispiel in einem anderen Subn
 
 ### API-Token
 
-Beide Wege brauchen einen [API-Token](/de/admin/security#api-tokens). Erstelle einen in camera.ui unter **Einstellungen → Account → API-Tokens** und füge ihn in die Integration ein.
+Beide Wege brauchen einen [API-Token](/de/admin/security#api-tokens). Erstelle einen in camera.ui unter **Einstellungen → Account → API-Tokens**.
 
 Nimm den Token eines **Admin-Accounts**. Das Steuern von camera.ui-Sensoren aus Home Assistant (Schlösser, Tore, Lichter, Sirenen, Alarmanlagen, PTZ) braucht Admin-Rechte; mit einem Viewer-Token erscheinen die Entitäten zwar, ihre Befehle werden aber abgelehnt.
 
-Home Assistant prüft den Token vor dem Abschluss gegen den Server. Wird der Token abgelehnt, siehst du einen Authentifizierungsfehler, ist der Server nicht erreichbar, stattdessen einen Verbindungsfehler.[^ssl]
+Die Einrichtung prüft den Token gegen den Server: ein abgelehnter Token ergibt einen Authentifizierungsfehler, ein unerreichbarer Server einen Verbindungsfehler.[^ssl]
 
 [^ssl]: Der Server wird über HTTPS erreicht. Die Integration prüft das Zertifikat nicht, ein selbstsigniertes camera.ui Zertifikat funktioniert also ohne zusätzliche Einrichtung.
 
@@ -72,9 +68,9 @@ Jeder [freigegebene Sensor](/de/sensors/) in camera.ui wird auf der passenden Pl
 
 Kamera-Hardware (das eigene Spotlight, die Sirene oder die Batterie einer Kamera) landet am Gerät der Kamera. Jeder andere Sensor wird ein eigenes Gerät und hängt unter seiner Kamera, wenn er genau einer zugewiesen ist. Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigeben** auf der [Sensoren-Seite](/de/sensors/setup#die-sensoren-seite). Kamera-Hardware hat keinen Schalter, sie folgt immer ihrer Kamera.
 
-Die steuerbaren funktionieren in beide Richtungen: ein **switch** und eine **siren** schalten an und aus, ein **light** schaltet an und aus (und dimmt, wenn es Helligkeit meldet), ein **cover** öffnet und schließt, ein **lock** ver- und entriegelt, und ein **alarm_control_panel** aktiviert Home, Away oder Night und deaktiviert. Befehle gehen direkt an camera.ui.
+Die steuerbaren funktionieren in beide Richtungen: ein **switch** und eine **siren** schalten an und aus, ein **light** schaltet an und aus (und dimmt, wenn es Helligkeit meldet), ein **cover** öffnet und schließt, ein **lock** ver- und entriegelt, und ein **alarm_control_panel** aktiviert Home, Away oder Night und deaktiviert.
 
-Diese Oberfläche wird live gepflegt. Fügst du in camera.ui einen Sensor hinzu, benennst ihn um, weist ihn neu zu, gibst ihn frei oder löschst ihn, erscheint die passende Home Assistant Entität, aktualisiert sich oder verschwindet, ohne Neustart. Ein Sensor, dessen Plugin offline ist, zeigt sich als nicht verfügbar.
+Fügst du in camera.ui einen Sensor hinzu, benennst ihn um, weist ihn neu zu, gibst ihn frei oder löschst ihn, folgt die passende Home Assistant Entität live, ohne Neustart. Ein Sensor, dessen Plugin offline ist, zeigt sich als nicht verfügbar.
 
 ### Bewegungs- und Objekterkennung
 
@@ -90,7 +86,7 @@ Kameras mit dem passenden Detektor bekommen Wert-Sensoren für **face**, **licen
 
 ### Updates
 
-Home Assistant bekommt außerdem **Update-Entitäten** für den camera.ui-Server und seine Plugins. Ist ein Update verfügbar, taucht es in der eigenen Updates-Liste von Home Assistant auf, und du kannst es von dort installieren, ohne die camera.ui-Oberfläche zu öffnen. Der Update-Dialog bietet an, vorher eine Sicherung anzulegen: Dann schreibt camera.ui zuerst ein [Backup](/de/admin/backup) und bricht das Update ab, wenn das schiefgeht. Schalte **Updates aus Home Assistant erlauben** in den Optionen der Integration aus, um die Updates sichtbar zu lassen, aber ohne Installieren-Knopf.
+Home Assistant bekommt außerdem **Update-Entitäten** für den camera.ui-Server und seine Plugins. Verfügbare Updates erscheinen in der Updates-Liste von Home Assistant und lassen sich von dort installieren. Der Update-Dialog bietet an, vorher eine Sicherung anzulegen: Dann schreibt camera.ui zuerst ein [Backup](/de/admin/backup) und bricht das Update ab, wenn das schiefgeht. Schalte **Updates aus Home Assistant erlauben** in den Optionen der Integration aus, um die Updates sichtbar zu lassen, aber ohne Installieren-Knopf.
 
 ## PTZ
 
@@ -127,7 +123,7 @@ Jedes Kameragerät bietet drei Trigger im Automatisierungs-Editor:
 
 ### Der Event-Bus
 
-Die Integration feuert außerdem ein `cameraui_event` auf dem Home Assistant Event-Bus. Anders als ein einzelnes "etwas wurde erkannt"-Ereignis feuern mehrere davon über den Verlauf einer Erkennung:
+Die Integration feuert außerdem ein `cameraui_event` auf dem Home Assistant Event-Bus, mehrmals über den Verlauf einer Erkennung:
 
 | `state` | Wann |
 |---|---|
@@ -185,7 +181,7 @@ automation:
           entity_id: light.driveway
 ```
 
-Die Geräte-Trigger decken `start`, `end` und `recognized` ab. Für den Zustand `object` gibt es keinen Geräte-Trigger, nutze dafür den Event-Bus.[^objecttrigger]
+Für den Zustand `object` gibt es keinen Geräte-Trigger, nutze dafür den Event-Bus.[^objecttrigger]
 
 [^objecttrigger]: Die drei Geräte-Trigger entsprechen `start`, `end` und `recognized`. Um auf ein bestimmtes Objekt-Label mitten in einer Erkennung zu reagieren, lausche wie oben gezeigt auf `cameraui_event` mit `state: object`.
 
@@ -195,13 +191,11 @@ Die Einrichtung fügt der Home Assistant Seitenleiste einen **camera.ui**-Eintra
 
 ## Dashboard-Karten
 
-Drei Karten kommen mit der Integration und melden sich selbst an, sie stehen also ohne Ressourcen-Schritt in der Kartenauswahl: eine Kamera, eine Camview-Ansicht und ein Streifen mit den letzten Ereignissen. Ihre Optionen stehen unter [Dashboard-Karten](/de/home-assistant/card).
+Drei Karten kommen mit der Integration und melden sich selbst an: eine Kamera, eine Camview-Ansicht und ein Streifen mit den letzten Ereignissen. Ihre Optionen stehen unter [Dashboard-Karten](/de/home-assistant/card).
 
 ### Kartenzugriff
 
 Die Optionen der Integration legen fest, wer sie nutzen darf: standardmäßig **nur Administratoren**, wahlweise **alle Home-Assistant-Nutzer**. Die Karten erreichen camera.ui über Home Assistant mit dem Token der Integration, wer sie freigibt, gibt also jedem Home-Assistant-Nutzer das, was dieses Token sehen darf. **Viewer-Token** nimmt ein zweites camera.ui-Token, das für alle ohne Home-Assistant-Adminrechte verwendet wird, damit lässt sich ein eingeschränktes camera.ui-Konto dahinter setzen.
-
-Ist dein camera.ui-Server zu alt für die Karten, meldet Home Assistant ein Reparatur-Problem und nennt die nötige Version. Die Entitäten laufen so oder so weiter.
 
 ## Aufnahmen im Medien-Browser
 

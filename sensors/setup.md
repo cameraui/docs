@@ -4,11 +4,11 @@ title: Set up sensors
 
 # Set up sensors
 
-Most sensors come from [plugins](/plugins/). To give a camera a sensor, you enable the plugin that provides it and turn the sensor on, all from the camera's settings. Every sensor in the system, including ones that belong to no camera, is then managed on the **Sensors** page. Both need admin.
+Most sensors come from [plugins](/plugins/): you enable the providing plugin and the sensor in the camera's settings. Every sensor, including ones without a camera, is managed on the **Sensors** page. Both need admin.
 
 ## Open the Plugins tab
 
-Open a camera's [settings](/cameras/settings) and go to the **Plugins** tab. It is grouped into categories:
+The **Plugins** tab in a camera's [settings](/cameras/settings) is grouped into categories:
 
 - **Detection.** The detectors: motion, object, audio, face, and license plate.
 - **Accessories.** Controllable accessories and state sensors, such as lights, locks, switches, sirens, and contact sensors.
@@ -16,7 +16,7 @@ Open a camera's [settings](/cameras/settings) and go to the **Plugins** tab. It 
 - **Hub.** Smart-home and platform integrations, such as a HomeKit bridge.
 - **More.** Enable or disable whole plugins for this camera.
 
-A camera added through a plugin (such as ONVIF or a cloud camera) also has a category for that plugin, holding its settings.
+A camera added through a plugin (such as ONVIF or Reolink) also has a category for that plugin, holding its settings.
 
 <Shot src="/img/sensors/plugins-tab.png" alt="Camera settings Plugins tab" />
 
@@ -24,19 +24,23 @@ A camera added through a plugin (such as ONVIF or a cloud camera) also has a cat
 
 Within a category, pick a **sensor type**, then choose the **plugin** that should provide it. Detection types take one provider at a time; accessories can come from several plugins. Each enabled sensor appears in the **Sensors** list, where you can rename it.
 
-A doorbell sensor assigned to a camera starts a camera event on every ring automatically, no need to enable it under Detection. Doorbells you assigned before this release keep their current setting.
+A doorbell sensor assigned to a camera starts a camera event on every ring, without enabling it under Detection.
 
 ## Configure settings
 
-Many plugins and sensors have their own options, shown right there as a form: plugin settings that apply to this camera, and per-sensor settings. Changes take effect immediately.
+Plugin settings for this camera and per-sensor settings appear as a form in the same place. Changes take effect immediately.
 
-Once enabled, sensors show up in the camera's Overview and on the video. See [Controls & states](/sensors/controls) to use them, and [PTZ & autotrack](/sensors/ptz) for PTZ cameras.
+Enabled sensors show up in the camera's Overview and on the video. See [Controls & states](/sensors/controls) to use them, and [PTZ & autotrack](/sensors/ptz) for PTZ cameras.
 
 ## The Sensors page
 
-The page has two lists. **Adopted sensors** holds everything camera.ui manages, plugin-provided and virtual. Sensors a camera brings itself, its motion, battery, or PTZ, are listed too, but only where their plugin is enabled for that category on that camera: the settings button next to the search field holds **Show only enabled camera sensors** for that, on by default, and **Hide camera sensors** to leave them out altogether. Turning both off shows everything, which is what you want when cleaning up. Each row shows the connection state, name, **ID**, type, providing plugin, and assigned cameras. The ID is the address the sensor has in the system it comes from, which tells two sensors with the same name apart; for a Home Assistant entity it is the entity id. It is a label, not the identity: rename the entity in Home Assistant and the sensor stays the same, with its cameras, automations and history, only the ID changes. Sensors you created yourself have none. The dot in front of the name tells four states apart: connected, not connected (the plugin is stopped), unavailable (the plugin runs but cannot reach the sensor, or the source reports it as unavailable), and removed in the source (the entity was deleted there). Nothing is deleted on its own: a removed sensor stays until you delete it, so nothing that referenced it breaks silently. On narrow screens the ID moves under the name, and search finds sensors by it. A camera-hardware row shows a lock next to its camera; a sensor hidden from your smart home carries a crossed-out eye next to its name. A sensor's icon glows while it is active, so you can tell at a glance that motion is running, a door is open, a light is on, or a doorbell is ringing. Search and the sortable columns keep large setups manageable. The floating buttons create a virtual sensor and start select mode, where you tick any number of sensors and delete them at once.
+The page has two lists. **Adopted sensors** holds everything camera.ui manages, plugin-provided and virtual. A camera's own sensors (motion, battery, PTZ) are listed only where their plugin is enabled for that category on that camera. The settings button next to the search field holds **Show only enabled camera sensors** (on by default) and **Hide camera sensors**; turn both off to see everything when cleaning up.
 
-**Discovered** below it lists what plugins found and offered, with name, ID, type, room and the plugin behind it. Select a row and confirm, and the sensor moves into the list above, where it can be assigned to cameras; the select button in the corner lets you tick many and adopt them at once. Nothing arrives on its own: a plugin facing a large inventory, Home Assistant with hundreds of entities for example, offers everything it understands and leaves the choice to you. **Rescan** asks the plugins again, and the list refreshes by itself while the page is open.
+Each row shows the connection state, name, **ID**, type, providing plugin and assigned cameras. The ID is the sensor's address in its source system (for Home Assistant, the entity id) and tells same-named sensors apart; search matches it too. It is a label, not the identity: rename the entity in Home Assistant and the sensor keeps its cameras, automations and history, only the ID changes. Sensors you created yourself have none.
+
+The dot before the name shows one of four states: connected, not connected (the plugin is stopped), unavailable (the plugin runs but cannot reach the sensor, or the source reports it as unavailable), and removed in the source (the entity was deleted there). Nothing is deleted on its own: a removed sensor stays until you delete it, so nothing that referenced it breaks silently. A lock next to the camera marks camera hardware, a crossed-out eye marks a sensor hidden from your smart home, and the icon glows while the sensor is active. The floating buttons create a virtual sensor and start select mode for deleting several at once.
+
+**Discovered** lists what plugins found, with name, ID, type, room and plugin. Nothing is adopted on its own: a plugin like Home Assistant offers everything it understands and leaves the choice to you. An adopted sensor (one row, or many via the select button) moves into the list above, where it can be assigned to cameras. **Rescan** asks the plugins again; the list also refreshes by itself while the page is open.
 
 <Shot src="/img/sensors/sensors-page.png" alt="Sensors page listing all sensors" />
 
@@ -49,13 +53,13 @@ Click a row to edit the sensor:
 
 Controllable sensors can also be operated right in this dialog.
 
-Each row offers a few actions:
+Row actions:
 
 - **History.** The sensor's recorded state changes.
 - **Delete sensor.** Any adopted or virtual sensor, connected or not. Only a camera's own hardware sensors cannot be deleted while their camera is connected, they would come back with it.[^delete]
 
 ## Virtual sensors
 
-Some sensors have no plugin behind them: you create those yourself on the **Sensors** page. See [Virtual sensors](/sensors/virtual).
+Sensors without a plugin behind them are created on the **Sensors** page, see [Virtual sensors](/sensors/virtual).
 
 [^delete]: Deleting removes the sensor and its assignments. A deleted adopted sensor shows up under Discovered again; adopting it once more creates a new sensor, and anything that referenced the old one (automations, smart-home exports) must be pointed at the new one.

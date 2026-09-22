@@ -16,7 +16,7 @@ For always-on servers without Docker: camera.ui installs from npm and runs as a 
   sudo apt-get install -y nodejs
   ```
 
-That's it. Everything else (FFmpeg, go2rtc, and a portable Python runtime for the detection plugins) camera.ui downloads and manages itself.
+FFmpeg, go2rtc and a portable Python runtime for the detection plugins are downloaded and managed by camera.ui.
 
 ## Install
 
@@ -25,7 +25,7 @@ sudo npm install -g camera.ui
 sudo cameraui install --user cameraui
 ```
 
-`cameraui install` creates the service user if it doesn't exist, registers a systemd service named `cameraui` and starts it on boot. The first start downloads and installs the server, so give it a few minutes and follow along with `sudo cameraui logs --user cameraui` in a second terminal. The web UI then runs on `https://<host>:3443`.
+`cameraui install` creates the service user if it doesn't exist, registers a systemd service named `cameraui` and starts it on boot. The first start downloads the server and takes a few minutes (`sudo cameraui logs --user cameraui` shows progress). The web UI then runs on `https://<host>:3443`.
 
 If the service user needs GPU access for hardware acceleration, add it to your distribution's `video`/`render` groups. `--group video` only applies when the install creates the user. For an existing user, run `sudo usermod -aG video cameraui` and restart the service.
 
@@ -67,7 +67,7 @@ Video acceleration is [automatic](/install/hardware-acceleration), but on bare m
 - **Coral Edge TPU:** the `libedgetpu` runtime plus (for PCIe/M.2) the gasket kernel driver, see the [Coral section](/install/hardware-acceleration#coral-edge-tpu)
 - **Hailo:** the kernel driver, see the [Hailo section](/install/hardware-acceleration#hailo-8-hailo-8l)
 
-No device passthrough is needed anywhere. Bare metal sees the hardware directly, and camera.ui picks it up automatically. The detection plugins log what they found (`Available devices: …`).
+No device passthrough is needed. The detection plugins log what they found (`Available devices: …`).
 
 ## Uninstall
 

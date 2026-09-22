@@ -20,7 +20,7 @@ Collection is on by default and stays on your disk. To stop it, open the gear me
 
 Opening a frame starts the editor. Drag to draw a box, tap a box or its label to change it, double tap to zoom. On a keyboard, the question mark button in the editor lists the shortcuts.
 
-Frames in a row often show the same objects. **Show boxes of the previous image** in the editor's toolbar (or `V`) draws the boxes of the frame before as dashed outlines, leaving out the ones this frame already has. The plus on an outline takes that box over, `Shift` + `V` takes all of them.
+**Show boxes of the previous image** (`V`) draws the boxes of the frame before as outlines, the plus on one takes it over, `Shift` + `V` takes all.
 
 <Shot src="/img/detection/training-editor.png" alt="Training editor with labeled boxes" />
 
@@ -37,6 +37,6 @@ What makes a frame useful:
 
 ## Submitting to the pool
 
-The submit button in the floating button group at the bottom right sends every verified frame of the selected camera. It stays greyed out until a frame is verified, and the filter next to the search (**All**, **New**, **Verified**) does not narrow it. To send only some of them, **Select candidates** starts the selection, then tick the frames and submit them with the cloud button. The upload runs in the background, a banner shows the progress, and each submitted frame leaves the local list. Submitting requires your server to be signed in to [camera.ui Cloud](/remote/cloud).
+The submit button at the bottom right sends every verified frame of the selected camera, whatever the list filter shows. To send only some, use **Select candidates**. Submitted frames leave the local list. Submitting requires your server to be signed in to [camera.ui Cloud](/remote/cloud).
 
 **My contributions** in the toolbar lists everything you have submitted, with the frame, its labels, and whether it is still waiting (**Submitted**) or already used (**In training**). Images and labels are tied to your cameraui.com account; deleting a contribution removes it from the pool.

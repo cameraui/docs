@@ -6,18 +6,18 @@ title: Virtual sensors
 
 A **virtual sensor** is a sensor with no plugin behind it. You create it yourself, camera.ui holds its state, and you set that state from the UI or from an [automation](/automations/).
 
-Use one to mirror an external device or a state into camera.ui: a doorbell you trigger from an automation, a contact you flip when a message arrives over MQTT, a switch that stands for something no plugin reports. Once created, a virtual sensor behaves like any other [sensor](/sensors/). You can assign it to cameras, place it on the video as a [shortcut](/cameras/shortcuts), export it to your smart home, and use it as an automation trigger.
+Typical uses: a doorbell you trigger from an automation, a contact you flip when an MQTT message arrives, a switch for something no plugin reports. Otherwise it behaves like any other [sensor](/sensors/): assign it to cameras, place it on the video as a [shortcut](/cameras/shortcuts), export it to your smart home, use it as an automation trigger.
 
 Creating, renaming, and deleting virtual sensors needs admin.
 
 ## Create a virtual sensor
 
-Open the **Sensors** page and click **Create virtual sensor**. Fill in:
+**Create virtual sensor** on the **Sensors** page asks for:
 
-- **Type.** What the sensor represents. Pick it once, it can't be changed later.
+- **Type.** What the sensor represents. Can't be changed later.
 - **Name.** How the sensor appears in camera.ui, for example "Front Door". Two virtual sensors of the same type can't share a name.
 
-The sensor starts in its idle state: off, closed, locked, or disarmed, depending on the type. It belongs to no camera yet; click its row to assign cameras and it shows up in their Overview right away.[^cameradelete]
+The sensor starts in its idle state: off, closed, locked, or disarmed, depending on the type. It belongs to no camera until you assign cameras from its row; it then shows up in their Overview.[^cameradelete]
 
 <Shot src="/img/sensors/virtual-sensors-list.png" alt="Virtual sensors on the Sensors page" />
 
@@ -51,13 +51,13 @@ There are 23 types:
 
 ## Control it
 
-On an assigned camera's **Overview** tab, Doorbell, Switch, Light, Siren, Lock, Garage, and Security System sit there with their controls and work the same as the plugin-provided ones, see [Controls & states](/sensors/controls). The same controls appear in the sensor's edit dialog on the **Sensors** page, which also covers sensors assigned to no camera.
+Doorbell, Switch, Light, Siren, Lock, Garage and Security System get the same controls as plugin-provided ones (see [Controls & states](/sensors/controls)): on an assigned camera's **Overview** tab, and in the sensor's edit dialog on the **Sensors** page, which also covers sensors assigned to no camera.
 
 Contact, Occupancy, Smoke, Leak, Temperature, Humidity, Gas, Carbon Monoxide, Heat, Cold, Vibration, Tamper, Problem, Power, Illuminance, and CO₂ are read-only. Their value comes from an automation.
 
-Lock, Garage, and Security System follow what you set immediately. There is no hardware to report back, so they never sit in a "locking" or "opening" state.
+Lock, Garage and Security System switch immediately, with no "locking" or "opening" state in between.
 
-camera.ui remembers the last state of a virtual sensor, so it survives a restart.
+The last state survives a restart.
 
 ## Control it from an automation
 
@@ -65,9 +65,9 @@ In the [automation editor](/automations/), a **Control sensor** action sets a vi
 
 ## Rename or delete
 
-Both happen on the **Sensors** page: click the row to rename the sensor, use the delete button on the row to remove it.[^delete]
+On the **Sensors** page: click the row to rename, use the row's delete button to remove.[^delete]
 
-Renaming changes the name everywhere, in the Overview, on shortcuts, and in automations. Automations that use the sensor keep working.
+A new name applies everywhere (Overview, shortcuts, automations), and automations using the sensor keep working.
 
 [^cameradelete]: Deleting a camera only removes the assignment. The sensor itself stays and can be assigned to other cameras.
 

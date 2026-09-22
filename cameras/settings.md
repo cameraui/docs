@@ -4,11 +4,9 @@ title: Camera settings
 
 # Camera settings
 
-Every camera has a settings drawer where you configure how it connects, what it detects, and how it behaves. Open it with the **Settings** (cog) button on the camera. It is available to admins.
+Admins open a camera's settings drawer with the **Settings** (cog) button on the camera.
 
 <Shot src="/img/cameras/settings-drawer.png" alt="Camera settings drawer" />
-
-The drawer has four tabs.
 
 ## Overview
 
@@ -16,7 +14,7 @@ The camera's status and device info, plus a live view of its sensors and accesso
 
 ## Sources
 
-Add, change, and remove the camera's stream [sources](/cameras/add-camera#sources-and-roles) here, just like when [adding a camera](/cameras/add-camera): each source's name, role (high, mid, low resolution, or snapshot), stream URLs, and options such as hot mode, preload, and mute audio (drops the audio track from that source). Each source also shows its live status, its stream URL and the codecs the camera itself sends, with profile, level and sample rate where the camera reports them, for example "H.264 · High · 5.1" or "AAC · 16 kHz".
+Manage the camera's stream [sources](/cameras/add-camera#sources-and-roles) as in [adding a camera](/cameras/add-camera): each source's name, role (high, mid, low resolution, or snapshot), stream URLs, and options such as hot mode, preload, and mute audio (drops the audio track from that source). Each source also shows its live status, its stream URL and the codecs the camera itself sends, with profile, level and sample rate where the camera reports them, for example "H.264 · High · 5.1" or "AAC · 16 kHz".
 
 ## Settings
 
@@ -24,7 +22,7 @@ The main configuration form, grouped into sections:
 
 - **General.** Name, room, camera type, and whether the camera is disabled (also where you remove a camera). The room is picked from the rooms you already have, or created here; it groups the [home view](/cameras/home) and is the room the camera sits in on the [floor plan](/cameras/floor-plan).
 - **Branding.** Manufacturer, model, and other device details.
-- **Interface.** Everything about how this camera is shown and played: the [streaming mode and source](/cameras/live-view#streaming-modes), the [playback source](/recording/timeline-playback#playback-quality) for recordings, the [activity mode](/cameras/live-view#activity-mode-always-on-and-standby), and the display aspect ratio. For the ratio, pick a preset (16:9, 4:3, 1:1, and more) or type a custom `width:height` like `21:9`, with a live preview of the camera framed at that ratio.
+- **Interface.** Everything about how this camera is shown and played: the [streaming mode and source](/cameras/live-view#streaming-modes), the [playback source](/recording/timeline-playback#playback-quality) for recordings, the [activity mode](/cameras/live-view#activity-mode-always-on-and-standby), and the display aspect ratio. For the ratio, pick a preset (16:9, 4:3, 1:1, and more) or type a custom `width:height` like `21:9`.
 - **Detection.** Per-camera tuning for motion, object, audio, face, license plate and sensor detection: sensitivity, confidence, timeouts, triggers and stationary-object handling, plus a snooze switch. Every section has a reset button next to its heading that puts that section back to its defaults. The confidence values the AI backends use come from here, so a change applies right away. Which object types the camera reports is set in **Zones**. See [Detection & AI](/detection/).
 - **Recording.** Whether and how this camera is recorded: the mode, the pre-buffer, and which streams go to disk. An installed NVR plugin does the recording. See [Recording](/recording/).
 - **Notifications.** What this camera pushes to your phone: the camera's own on/off switch, video in push, which sounds and sensors notify, the cooldown and the notification speed. Which detections notify you is set in **Zones**, on the alert zones. See [Notifications](/notifications/).

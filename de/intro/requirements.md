@@ -1,6 +1,6 @@
 # Systemanforderungen
 
-Was camera.ui braucht, hängt davon ab, **wie du es betreibst** und **was du von ihm verlangst**. Ein paar Kameras live ansehen ist leichtgewichtig. Viele Kameras rund um die Uhr mit KI-Erkennung aufzunehmen braucht echte Hardware. Nutze die Tabelle unten als Orientierung und skaliere mit Kameraanzahl, Aufnahme und Erkennung nach oben.
+Was camera.ui braucht, hängt davon ab, **wie du es betreibst** und **was du von ihm verlangst**. Ein paar Kameras live ansehen ist leichtgewichtig, viele Kameras rund um die Uhr mit KI-Erkennung aufzunehmen braucht echte Hardware.
 
 ## Auf einen Blick
 
@@ -13,7 +13,7 @@ Was camera.ui braucht, hängt davon ab, **wie du es betreibst** und **was du von
 | Aufnahmen | eine eigene, dedizierte Disk, passend zu deinen Kameras und der Aufbewahrung | |
 
 ::: tip Bewährte Hardware
-Ein kleiner **Intel N100** Mini-PC oder ein **Apple-Silicon-Mac (M1 oder neuer)** bewältigt ein typisches Setup (mehrere Kameras mit Aufnahme und KI-Erkennung) bei geringem Stromverbrauch. Beide eignen sich gut als leise Always-on-Server.
+Ein kleiner **Intel N100** Mini-PC oder ein **Apple-Silicon-Mac (M1 oder neuer)** bewältigt ein typisches Setup (mehrere Kameras mit Aufnahme und KI-Erkennung) bei geringem Stromverbrauch.
 :::
 
 Was den Bedarf erhöht: mehr Kameras, höhere Auflösungen, durchgehende Aufnahme und besonders **KI-Erkennung**, die mit einer unterstützten GPU, einem Beschleuniger oder Apple Silicon deutlich leichter läuft (siehe unten).
@@ -23,12 +23,12 @@ Was den Bedarf erhöht: mehr Kameras, höhere Auflösungen, durchgehende Aufnahm
 Du kannst den camera.ui-Server auf **Linux, macOS oder Windows** betreiben:
 
 - **Linux.** In [Docker](/de/install/docker), auf [Proxmox](/de/install/proxmox) oder [Bare-Metal](/de/install/linux). Ubuntu 24.04 (oder neuer) ist die getestete Basis. Eine Bare-Metal-Installation benötigt nur Node.js 24, da camera.ui alles Weitere (FFmpeg, go2rtc, eine portable Python-Runtime) selbst verwaltet; die Docker-Images bringen alles mit.
-- **macOS.** Über die [Desktop-App](/de/install/desktop) im Server-Modus. Apple-Silicon-Macs (M1 und neuer) passen hervorragend: geringer Stromverbrauch, mit voller Hardware-Beschleunigung inklusive Neural Engine.
+- **macOS.** Über die [Desktop-App](/de/install/desktop) im Server-Modus. Apple-Silicon-Macs (M1 und neuer) laufen mit geringem Stromverbrauch und voller Hardware-Beschleunigung inklusive Neural Engine.
 - **Windows.** Über die [Desktop-App](/de/install/desktop) im Server-Modus.
 
 ### Hardware-Beschleunigung
 
-Erkennung und Video-Verarbeitung laufen auf jeder CPU in Software, aber eine GPU, ein Beschleuniger oder Apple Silicon senkt die CPU-Last deutlich, was zählt, sobald du mehrere Kameras hast oder KI-Erkennung nutzt.
+Erkennung und Video-Verarbeitung laufen auf jeder CPU in Software, aber eine GPU, ein Beschleuniger oder Apple Silicon senkt die CPU-Last deutlich.
 
 | Plattform | Beschleunigung | Hinweis |
 |---|---|---|
@@ -45,11 +45,11 @@ Wähle auf Linux den [Docker-Flavor](/de/install/docker), der zu deiner GPU pass
 
 ## Speicher für Aufnahmen
 
-[Aufnahmen](/de/recording/storage) können groß werden. Wie viel Platz du brauchst, hängt von Kameraanzahl, Auflösung und Bitrate, [Aufnahme-Modus](/de/recording/) und der Aufbewahrungsdauer ab.
+Wie viel Platz [Aufnahmen](/de/recording/storage) brauchen, hängt von Kameraanzahl, Auflösung und Bitrate, [Aufnahme-Modus](/de/recording/) und der Aufbewahrungsdauer ab.
 
 Nutze für Aufnahmen eine **dedizierte lokale Disk**, getrennt von der System-Disk und keine Netzwerkfreigabe (NAS). Durchgehende Aufnahme schreibt permanent, und im Aufnahmeordner liegen außerdem die Datenbanken, die deine Ereignisse indizieren, die Netzwerkfreigaben nicht zuverlässig sperren können. Siehe [Speicher & Aufbewahrung](/de/recording/storage#wo-aufnahmen-liegen).
 
-camera.ui zeigt für jede Kamera die Aufnahme-Rate pro Tag und lässt dich den Verbrauch über die Einstellungen **Kontingent** und **Aufbewahrung** begrenzen, damit der Speicher nie unerwartet volläuft.
+camera.ui zeigt für jede Kamera die Aufnahme-Rate pro Tag und lässt dich den Verbrauch über die Einstellungen **Kontingent** und **Aufbewahrung** begrenzen.
 
 ## Desktop-App
 
@@ -64,6 +64,6 @@ Die [Mobile-Apps](/de/install/mobile) sind Viewer mit minimalen Anforderungen:
 
 ## Kameras
 
-Nahezu jede IP-Kamera funktioniert: alles, was einen **RTSP**- oder **ONVIF**-Stream liefert (H.264 oder H.265). Lokale Kameras wie diese liefern die besten Ergebnisse. Die vollständige Liste findest du unter [Verbindungs-Protokolle](/de/cameras/protocols).[^cloud]
+Nahezu jede IP-Kamera funktioniert: alles, was einen **RTSP**- oder **ONVIF**-Stream liefert (H.264 oder H.265). Die vollständige Liste findest du unter [Verbindungs-Protokolle](/de/cameras/protocols).[^cloud]
 
 [^cloud]: Kameras, die von einer Hersteller-Cloud abhängen (etwa Ring oder Nest), lassen sich verbinden, entweder direkt oder über ein Plugin, sind aber **nicht empfehlenswert** und **nicht durch den Support abgedeckt**. Nutze lokale RTSP-/ONVIF-Kameras für ein zuverlässiges Erlebnis.

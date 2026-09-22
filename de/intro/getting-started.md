@@ -1,6 +1,6 @@
 # Erste Schritte
 
-Diese Anleitung bringt dich von einer frischen Installation bis zu deiner ersten Kamera. Sie setzt voraus, dass der camera.ui-Server bereits läuft. Falls nicht, beginne mit der [Installation](/de/install/).
+Vom laufenden Server bis zur ersten Kamera. Ist der Server noch nicht installiert, beginne mit der [Installation](/de/install/).
 
 ## 1. camera.ui öffnen
 
@@ -10,7 +10,7 @@ camera.ui läuft über **HTTPS**. Wie du es öffnest, hängt von der Installatio
 - **Server** (Docker, Proxmox, Bare-Metal). Öffne `https://<server-ip>:3443` im Browser, oder `https://localhost:3443` auf derselben Maschine.
 
 ::: warning Zertifikatswarnung beim ersten Besuch
-camera.ui sichert die Verbindung mit einem **selbstsignierten Zertifikat**, daher zeigt dein Browser beim ersten Mal eine Warnung („Diese Verbindung ist nicht sicher"). In deinem lokalen Netzwerk ist das erwartet. Wähle **Erweitert → Fortfahren**, um weiterzumachen. Die Warnung kannst du später entfernen, indem du das Zertifikat unter **Einstellungen → System → Zertifikat** installierst.
+camera.ui nutzt ein **selbstsigniertes Zertifikat**, daher warnt der Browser beim ersten Besuch. Weiter geht es mit **Erweitert → Fortfahren**. Die Warnung verschwindet, wenn du das Zertifikat unter **Einstellungen → System → Zertifikat** installierst.
 :::
 
 <Shot src="/img/getting-started/cert-warning.png" alt="Browser-Zertifikatswarnung" />
@@ -26,36 +26,30 @@ Diese ersetzt du im nächsten Schritt.
 
 ## 3. Ersteinrichtung
 
-Bei der ersten Anmeldung führt dich camera.ui durch einen kurzen Einrichtungs-Assistenten:
+Die erste Anmeldung öffnet einen Einrichtungs-Assistenten:
 
 **Willkommen → Erscheinungsbild → Konto → Fertig**
 
 ### Willkommen
 
-Wähle, wie du starten möchtest:
-
-- **Neue Installation.** Einen frischen Server einrichten. Das wählen die meisten.
-- **Aus Backup wiederherstellen.** Wechsel von einer anderen camera.ui-Installation? Lade dein Backup-Archiv hoch, und camera.ui stellt deine Einstellungen wieder her und startet neu.
+- **Neue Installation.** Einen frischen Server einrichten.
+- **Aus Backup wiederherstellen.** Ein Backup-Archiv einer anderen camera.ui-Installation hochladen. camera.ui stellt deine Einstellungen wieder her und startet neu.
 
 ### Erscheinungsbild
 
-Wähle dein **Theme** (hell, dunkel oder dem System folgen) und deine **Sprache**. Beides kannst du jederzeit später ändern.
+**Theme** (hell, dunkel oder dem System folgen) und **Sprache**.
 
 ### Konto
 
-Richte dein eigenes Konto ein. Es ersetzt das Standard-`admin` / `admin`:
-
-- Einen **Benutzernamen**
-- Ein **Passwort** (zweimal eingeben)
-- Optional einen Avatar
+Dein eigener Benutzername, Passwort und optional ein Avatar. Dieses Konto ersetzt das Standard-`admin` / `admin`.
 
 ::: tip Wähle ein starkes Passwort
-Das ist ein Administrator-Konto. Verwende ein starkes, einzigartiges Passwort, besonders wenn du camera.ui jemals von außerhalb deines lokalen Netzwerks erreichen willst.
+Das ist ein Administrator-Konto. Verwende ein starkes, einzigartiges Passwort, besonders wenn du camera.ui von außerhalb deines Netzwerks erreichen willst.
 :::
 
 ### Fertig
 
-Wähle **Viel Spaß!**, um zu speichern. camera.ui meldet dich ab, damit das neue Konto wirksam wird. Melde dich dann erneut mit dem **gerade festgelegten Benutzernamen und Passwort** an.
+**Viel Spaß!** speichert und meldet dich ab. Melde dich dann mit dem **gerade festgelegten Benutzernamen und Passwort** wieder an.
 
 ## 4. Deine erste Kamera hinzufügen
 
@@ -71,15 +65,13 @@ Die vollständige Anleitung findest du unter **[Kamera hinzufügen](/de/cameras/
 
 Die Seitenleiste links ist nach Zweck gruppiert. Deine täglichen Seiten liegen oben. Eine Gruppe **Verwalten** hält Kameras, Sensoren, Gesichter, Automationen, Plugins und Instanzen. Eine Gruppe **System** fasst die Diagnose-Seiten und startet eingeklappt. Auf dem Handy erscheinen dieselben Gruppen im Menü.
 
-Die Reihenfolge kannst du ändern. Wähle den **Stift** oben in der Seitenleiste, um zu bearbeiten: zieh eine Seite an eine andere Stelle oder in eine andere Gruppe, blende mit dem **Auge** eine Settings-Seite aus, die du nicht brauchst, und wähle dann den **Haken**, wenn du fertig bist. **Auf Standard zurücksetzen** stellt die ursprüngliche Anordnung wieder her. In einer langen Liste scrollt sie mit, wenn du einen Eintrag nach oben oder unten ziehst. Deine Anordnung wird mit deinem Konto gespeichert, folgt dir also in jeden Browser und auf jedes Gerät.
+Der **Stift** oben in der Seitenleiste startet den Bearbeiten-Modus: zieh Seiten an eine andere Stelle oder in eine andere Gruppe, blende Settings-Seiten mit dem **Auge** aus und bestätige mit dem **Haken**. **Auf Standard zurücksetzen** stellt die ursprüngliche Anordnung wieder her. Die Anordnung wird mit deinem Konto gespeichert und folgt dir in jeden Browser und auf jedes Gerät.
 
 <Shot src="/img/getting-started/sidebar-edit.png" alt="Die Seitenleiste im Bearbeiten-Modus, mit Gruppen und Ziehpunkten" />
 
 Unter **Einstellungen → Erscheinungsbild** kannst du außerdem die Settings-Seiten als eigene Gruppe in die Seitenleiste aufnehmen und wählen, welche Gruppen sich einklappen lassen.
 
 ## Nächste Schritte
-
-Sobald deine Kamera verbunden ist:
 
 - **[Live-Ansicht](/de/cameras/live-view)** — Kameras live ansehen
 - **[Aufnahmen (NVR)](/de/recording/)** — 24/7- oder Ereignis-Aufnahme aktivieren

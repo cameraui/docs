@@ -8,12 +8,12 @@ Everything the [assistant](/assistant/) needs sits under **Settings → Assistan
 
 ## Choosing a model
 
-The assistant works with models you bring. Nothing is sent to camera.ui. Add them with **Add model**, as many as you like, local and cloud side by side.
+The assistant uses models you bring; nothing is sent to camera.ui. **Add model** takes as many as you like, local and cloud side by side.
 
 - **Ollama.** Runs on your own hardware, nothing leaves your network. Install [Ollama](https://ollama.com), pull a model that supports tool calling, and enter the **Server URL** if Ollama does not run on the camera.ui machine.
 - **OpenAI-compatible server.** Any server speaking the OpenAI chat completions API: LM Studio, vLLM, LiteLLM, llama.cpp. Enter its **Server URL** and, if it requires one, an **API key**.
 - **OpenAI, Anthropic, Google Gemini, OpenRouter.** Cloud providers. Paste the **API key** of your account, or reuse the key of a model you already added for the same provider. The key is stored encrypted on the server and never reaches the browser or a plugin. The provider bills you per token.
-- **A plugin.** A plugin can bring its own model, it then shows up in the provider list as **Apple LLM (plugin)** for example, with no key and no address to fill in. The model answers on the machine the plugin runs on. The Apple LLM plugin runs Apple's on-device model on a Mac with Apple Silicon and Apple Intelligence turned on (macOS 26, pictures from macOS 27). It holds only a short conversation: good for questions about your cameras and the documentation, weaker on long tasks with many steps.
+- **A plugin.** Plugin models show up in the provider list, **Apple LLM (plugin)** for example, and answer on the machine the plugin runs on. The Apple LLM plugin needs a Mac with Apple Silicon and Apple Intelligence (macOS 26, pictures from macOS 27). It holds only a short conversation: fine for questions about cameras and the docs, weak on long multi-step tasks.
 
 <Shot src="/img/admin/assistant-models.png" alt="The model list with the default star and the badges for tools and pictures" />
 
@@ -27,15 +27,15 @@ A model can be kept for admins: switch off **Available to users** in its dialog 
 
 ### Small models and the context window
 
-**Context window** in the model dialog says how much this model holds. A plugin model brings the number itself, for everything else it is empty and the context budget from the general settings applies. Set it for a local or small model, 8192 for an 8k model for example, and camera.ui plans the request around it: the procedures move behind a `load_skill` call, the feature list gives way to a hint at the documentation, and tools the question did not start from are listed by name and fetched when the model wants them. Nothing is taken away from the model, it asks for what it needs. The same happens on a large model in a big installation, where many plugins and connected servers push the tool list past what the window can carry.
+**Context window** in the model dialog says how much this model holds. A plugin model brings the number itself, for everything else it is empty and the context budget from the general settings applies. Set it for a local or small model, 8192 for an 8k model for example, and camera.ui plans the request around it: the procedures move behind a `load_skill` call, the feature list gives way to a hint at the documentation, and tools the question did not start from are listed by name and fetched when the model wants them. The same happens on a large model in a big installation, where many plugins and connected servers push the tool list past what the window can carry.
 
-**Pick the tools first** in the same dialog helps models that call the tools in front of them but get lost in a long list. camera.ui then asks the model one short question beforehand, which tools this question needs, and offers only those with a short set of rules. That costs one extra call per question. A plugin model switches it on by itself when it needs it, for large models leave it off.
+**Pick the tools first** in the same dialog helps models that get lost in a long tool list: one extra call per question asks the model which tools it needs, and only those are offered, with a short set of rules. A plugin model switches it on by itself when it needs it; leave it off for large models.
 
 ### Models without tools or pictures
 
 Nothing is switched off for the user: every model can be picked, the assistant adapts and says what is missing.
 
-- **No tools.** The model can only chat. It cannot look anything up in the instance, so questions about cameras, recordings or settings stay unanswered.
+- **No tools.** The model can only chat; questions about cameras, recordings or settings stay unanswered.
 - **No pictures.** Snapshots and event pictures still appear in the chat, the model gets the text of the tool results instead.
 
 Some models pass both tests and still call tools unreliably, with invented ids for example. When answers come back empty or wrong, try a larger model.
@@ -59,11 +59,11 @@ The **Behavior** card bounds a run:
 - **Additional instructions.** Appended to the built-in instructions, for house rules and camera hints, for example which camera points at the street.
 - **Remember facts about users.** Lets the assistant keep facts like names across conversations. On by default, and every user sees and clears their own list in the chat. A model with a window under 16k tokens only remembers what you ask it to remember, nothing it picks up on its own.
 
-**Reset to defaults** puts these values back, the additional instructions stay. Nothing changes before you save.
+**Reset to defaults** puts these values back, the additional instructions stay.
 
 ## Shell commands
 
-Off by default. **Shell commands** lets admins ask the assistant for host diagnostics the other tools cannot answer: disk usage, whether a camera answers on the network, processes, container logs. The assistant runs one command at a time on the server that hosts camera.ui, and every command is shown with the exact command line before it runs. You allow it, edit it, or reject it. Output is capped, a command is killed after 30 seconds by default, and the tool never appears in the MCP server, in scheduled prompts or in automations. What you allow runs with the rights of the camera.ui process, so read the command before you click. While the switch is off and a question would need it, the answer carries the switch itself, so an admin can turn it on right in the chat.
+Off by default. **Shell commands** lets admins ask the assistant for host diagnostics the other tools cannot answer: disk usage, whether a camera answers on the network, processes, container logs. The assistant runs one command at a time on the server that hosts camera.ui, and every command is shown with the exact command line to allow, edit or reject before it runs. Output is capped, a command is killed after 30 seconds by default, and the tool never appears in the MCP server, in scheduled prompts or in automations. What you allow runs with the rights of the camera.ui process. While the switch is off and a question would need it, the answer carries the switch, so an admin can turn it on in the chat.
 
 ## MCP: use the instance from other AI tools
 
@@ -75,9 +75,9 @@ By default only reading tools are offered: cameras, snapshots, system status, re
 
 ## External MCP servers
 
-Other systems that offer an MCP server can lend the assistant their tools. Add one under **External MCP servers** with a name, its URL and an access token; the token is stored encrypted. The state next to the name shows whether the server answered and how many tools it offers. **Accept a self-signed certificate** is there for servers in your own network. Before a tool of such a server runs, the user confirms it, unless the server marks the tool as read-only. Many servers mark nothing, Home Assistant for example. Under **Tools**, the tab of the server has the field **Run without asking**: the tools picked there run without confirmation, in scheduled prompts and automations too, so pick only tools that read, then save. In the chat these tools appear as their own group, so they can be switched off per conversation.
+Other systems that offer an MCP server can lend the assistant their tools. Add one under **External MCP servers** with a name, its URL and an access token; the token is stored encrypted. The state next to the name shows whether the server answered and how many tools it offers. **Accept a self-signed certificate** is there for servers in your own network. Before a tool of such a server runs, the user confirms it, unless the server marks the tool as read-only. Many servers mark nothing, Home Assistant for example. Under **Tools**, the tab of the server has the field **Run without asking**: the tools picked there run without confirmation, in scheduled prompts and automations too, so pick only tools that read. In the chat these tools form their own group that can be switched off per conversation.
 
-For Home Assistant enable the **Model Context Protocol Server** integration, create a long-lived access token in your Home Assistant profile and enter `http://<home-assistant>:8123/api/mcp` as the URL. The assistant can then read states and switch lights, scenes and climate through Home Assistant's own tools, and it can wire them into automations ("when someone is at the door at night, turn on the hall light").
+For Home Assistant enable the **Model Context Protocol Server** integration, create a long-lived access token in your Home Assistant profile and enter `http://<home-assistant>:8123/api/mcp` as the URL. The assistant can then read states and switch lights, scenes and climate through Home Assistant's own tools, and it can wire them into automations.
 
 ## Next steps
 

@@ -6,7 +6,7 @@ title: Episoden
 
 Wenn mehrere Kameras dieselbe Aktivität etwa zur gleichen Zeit sehen, kann camera.ui diese Sichtungen zu einer **Episode** bündeln: ein einziger Titel und eine kurze Story, die dem Geschehen der Reihe nach über die Kameras folgt. Eine Person, die von der Einfahrt zur Haustür geht, wird zu einer Episode statt zu drei getrennten Ereignissen.
 
-Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI schreibt die Story, das NVR-Plugin braucht also zuerst ein Modell.
+Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions): Das NVR-Plugin braucht ein Modell, das die Story schreibt.
 
 ## Einschalten
 
@@ -21,14 +21,14 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions). Die KI 
 ## Wo Episoden erscheinen
 
 - **Home.** Episoden erscheinen in der **Recent Events**-Reihe als Mosaik-Karte, die zeigt, wie viele Kameras beteiligt waren.
-- **Aufnahmen.** Dieselbe Mosaik-Karte erscheint in der Liste. Eine Aufnahme, die zu einer Episode gehört, zeigt einen **Open episode**-Button, der dorthin springt. Episoden-Karten folgen den Filtern wie alles andere dort: Typ, Suche, Audio, Attribute, Sensoren und ein eigener Zeitraum greifen auch für sie.
+- **Aufnahmen.** Dieselbe Mosaik-Karte erscheint in der Liste. Eine Aufnahme, die zu einer Episode gehört, zeigt einen **Open episode**-Button, der dorthin springt. Die Filter (Typ, Suche, Audio, Attribute, Sensoren, eigener Zeitraum) greifen auch für Episoden-Karten.
 - **Apple TV.** Episoden gibt es auch in der Apple-TV-App.
 
 <Shot src="/img/detection/episode-card.png" alt="Eine Episoden-Mosaik-Karte in der Aufnahmen-Ansicht" />
 
 ## Der Episoden-Player
 
-Öffnest du eine Episode, spielt sie die ganze Sequenz ab. Sie wechselt von selbst zwischen den Kameras, während die Story voranschreitet, und zeigt Name und Zeit der aktuellen Kamera. Ein Streifen unter dem Video hält einen Block pro Kamera-Abschnitt, sodass du direkt zu jedem Punkt springen oder zwischen Kameras wechseln kannst. Zoomen und Verschieben funktionieren wie in der [Live-Ansicht](/de/cameras/live-view).
+Eine Episode läuft als eine Sequenz, wechselt mit der Story zwischen den Kameras und zeigt Name und Zeit der aktuellen Kamera. Der Streifen unter dem Video hat einen Block pro Kamera-Abschnitt. Zoomen und Verschieben funktionieren wie in der [Live-Ansicht](/de/cameras/live-view).
 
 Deckt eine zweite Kamera denselben Raum im [Grundriss](/de/cameras/floor-plan) ab, läuft im Schnitt die, die das Geschehen am nächsten hatte, und die Steuerleiste bietet mit **Zweiter Winkel** die andere Sicht auf diesen Abschnitt an.
 

@@ -4,7 +4,7 @@ title: Apple TV
 
 # Apple TV
 
-Die Apple-TV-App bringt deine Kameras auf den großen Bildschirm: eine Live-Wand, deine Ereignisse mit Wiedergabe und deine Sensoren.[^license] Sie ist ein Viewer, der Server läuft also woanders (auf deinem [Desktop](/de/install/desktop) oder einer [Server-Installation](/de/install/)), und die App verbindet sich mit ihm.
+Die Apple-TV-App bringt deine Kameras auf den großen Bildschirm: eine Live-Wand, deine Ereignisse mit Wiedergabe und deine Sensoren.[^license] Sie verbindet sich mit einem Server, der woanders läuft (der [Desktop-App](/de/install/desktop) oder einer [Server-Installation](/de/install/)).
 
 <Shot src="/img/install/tv-app.png" alt="Die camera.ui Apple-TV-App" />
 
@@ -20,24 +20,23 @@ Derzeit in der **Beta**. Tritt über [TestFlight](https://testflight.apple.com/j
 
 Die App verbindet sich direkt mit deinem Server, nicht über camera.ui Cloud.
 
-Im selben Netzwerk findet die App deinen Server von selbst, wähl ihn einfach aus der Liste. Du kannst auch einen per Adresse hinzufügen:
+Im selben Netzwerk listet die App deinen Server von selbst. Du kannst auch einen per Adresse hinzufügen:
 
 - **Im lokalen Netzwerk.** Gib die lokale Adresse des Servers ein, zum Beispiel `https://192.168.1.20:3443`.
 - **Von überall.** Gib deine eigene öffentliche Adresse ein, eingerichtet mit einer [eigenen Domain](/de/remote/custom-domain) und einem [Reverse-Proxy](/de/remote/reverse-proxy).
 
 Melde dich mit Benutzername und Passwort an, dazu einem Zwei-Faktor-Code, falls du einen nutzt, oder füge einen API-Token ein.[^token]
 
-Du kannst mehrere Server hinzufügen und zwischen ihnen wechseln, praktisch, wenn du zu Hause und woanders getrennte Server betreibst.
+Du kannst mehrere Server hinzufügen und zwischen ihnen wechseln.
 
 ## Rund um die App
 
-- **Home.** Oben die neueste Aktivität, dazu Kamera- und Speicher-Status und die heutige Ereigniszahl. Wähl eine Benachrichtigung, um direkt zur Aufnahme zu springen.
-- **Camview.** Eine Live-Wand deiner Kameras. Wähl ein Raster oder ein gemischtes Layout, ordne die Kacheln um oder öffne eine Kamera im Vollbild. **Fill wall** lässt die Ränder weg und füllt den Bildschirm mit der Wand, und **Whole picture** passt jede Kamera mit Balken in ihre Kachel ein, statt sie zu beschneiden, eine 4:3-Kamera behält so ihre Ränder neben Breitbild-Kameras. Beides bleibt pro Ansicht gespeichert.
-- **Ereignisse.** Deine Ereignisse nach Tag gruppiert, mit Filtern für Personen, Gesichter, Fahrzeuge, Tiere, Türklingel, Sensoren, Geräusche und Bewegung. Wähl eines, um es ab diesem Moment abzuspielen. Scroll weiter, um ältere Tage zu erreichen.
+- **Home.** Oben die neueste Aktivität, dazu Kamera- und Speicher-Status und die heutige Ereigniszahl. Eine Benachrichtigung öffnet ihre Aufnahme.
+- **Camview.** Eine Live-Wand deiner Kameras. Raster oder gemischtes Layout, umsortierbare Kacheln, Vollbild pro Kamera. **Fill wall** lässt die Ränder weg und füllt den Bildschirm, **Whole picture** passt jede Kamera mit Balken in ihre Kachel ein, statt sie zu beschneiden. Beides bleibt pro Ansicht gespeichert.
+- **Ereignisse.** Deine Ereignisse nach Tag gruppiert, mit Filtern für Personen, Gesichter, Fahrzeuge, Tiere, Türklingel, Sensoren, Geräusche und Bewegung. Ein Ereignis spielt ab diesem Moment ab.
 - **Episoden.** [Episoden](/de/detection/episodes) erscheinen als Mosaik-Karten zwischen deinen Ereignissen und auf dem Home-Screen. Öffnest du eine, spielt sie die ganze Story und wechselt von selbst zwischen den Kameras. Links und rechts springen zwischen den Kameras.
-- **Sensoren.** Deine Sensoren als Kacheln, live vom Server.
 - **Gegensprechen.** Im Vollbild-Player spricht der Mikrofon-Button über die Kamera, sofern sie Gegensprechen unterstützt.
-- **PTZ.** Eine Kamera, die schwenken, neigen oder zoomen kann, bekommt im Player einen Bewegen-Button. Halte eine Richtung, um weiter zu fahren, ein kurzer Druck rückt ein Stück. Kameras, die sie anbieten, bekommen zusätzlich einen Home-Button und ihre Presets. Siehe [PTZ & Autotrack](/de/sensors/ptz).
+- **PTZ.** Eine Kamera, die schwenken, neigen oder zoomen kann, bekommt im Player einen Bewegen-Button. Halte eine Richtung, um weiter zu fahren, ein kurzer Druck rückt ein Stück. Home-Position und Presets erscheinen, wenn die Kamera sie hat. Siehe [PTZ & Autotrack](/de/sensors/ptz).
 
 Die Wiedergabe folgt der [Wiedergabe-Quelle](/de/recording/timeline-playback#wiedergabequalität) jeder Kamera, Episoden eingeschlossen. Bei Auto spielt eine Lücke in der High-Aufnahme die nächste Qualität mit Material, genau wie im Webinterface.
 
@@ -45,15 +44,15 @@ Die Wiedergabe folgt der [Wiedergabe-Quelle](/de/recording/timeline-playback#wie
 
 Die Sensoren-Seite legt jeden Sensor als Kachel an, nach Typ gruppiert, mit seinem aktuellen Zustand.[^sensors]
 
-- **Klick zum Umschalten.** Wähl ein Licht, einen Schalter, eine Sirene, ein Schloss oder ein Garagentor, um es umzulegen.
-- **Halten für mehr.** Halte die Auswahltaste, oder drück Play/Pause, um ein Panel mit Helligkeit, Lautstärke, Alarmmodi oder Schloss- und Garagensteuerung zu öffnen.
-- **Bleibt synchron.** Neue Sensoren erscheinen von selbst, entfernte verschwinden, und Zustände aktualisieren sich, wenn sie sich ändern.
+- **Klick zum Umschalten.** Lichter, Schalter, Sirenen, Schlösser und Garagentore schalten beim Auswählen um.
+- **Halten für mehr.** Auswahltaste halten oder Play/Pause öffnet Helligkeit, Lautstärke, Alarmmodi oder Schloss- und Garagensteuerung.
+- **Live.** Sensoren und Zustände aktualisieren sich, sobald sie sich auf dem Server ändern.
 
 ## Updates
 
-Die App aktualisiert sich während der Beta über TestFlight, wie jede andere Apple-TV-App.
+Während der Beta aktualisiert sich die App über TestFlight.
 
-Ist dein Server oder sein Aufnahme-Plugin älter als die App braucht, zeigt die App einen **Update needed**-Screen, der genau nennt, was zu aktualisieren ist, statt leerer Listen und fehlender Bilder. Aktualisiere camera.ui auf dem Server und öffne die App erneut. Die aktuelle Beta braucht camera.ui ab 2.1.6 und das Aufnahme-Plugin ab 1.3.13.
+Ist der Server oder sein Aufnahme-Plugin älter als die App braucht, zeigt die App einen **Update needed**-Screen, der nennt, was zu aktualisieren ist. Aktualisiere es auf dem Server und öffne die App erneut.
 
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe. Die Live-Ansicht ist kostenlos.
 [^appstore]: Mit dem öffentlichen Release wechselt die App in den App Store.

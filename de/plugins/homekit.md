@@ -10,22 +10,22 @@ Das HomeKit-Plugin fügt deine Kameras und Sensoren zu **Apple Home** hinzu. Kam
 
 ## Einrichtung
 
-1. Suche und installiere auf der **Plugins**-Seite das **HomeKit**-Plugin und aktiviere es.
+1. Installiere und aktiviere das **HomeKit**-Plugin.
 2. Weise es den Kameras zu, die du in Home willst, im **Cameras**-Tab des Plugins oder über den [Plugins-Tab einer Kamera](/de/sensors/setup).
 3. Öffne die **HomeKit-Einstellungen** einer Kamera. Jede Kamera wird einzeln zu Home hinzugefügt und hat ihren eigenen **QR-Code** und **PIN**.
-4. Wähle in der Apple-**Home**-App **Gerät hinzufügen** und scanne den QR-Code der Kamera, oder gib ihren PIN ein. Wiederhole das für jede Kamera.
+4. Wähle in der Apple-**Home**-App **Gerät hinzufügen** und scanne den QR-Code der Kamera, oder gib ihren PIN ein.
 
-Du koppelst vom selben Gerät, auf dem camera.ui offen ist? Dann gibt es nichts zu scannen: nimm in der Home-App **Weitere Optionen** und tippe den PIN ein. Der Kopier-Button daneben legt ihn in die Zwischenablage.
+Koppelst du auf dem Gerät, auf dem camera.ui offen ist, nimm in der Home-App **Weitere Optionen** und tippe den PIN ein; der Kopier-Button daneben kopiert ihn.
 
-Einmal hinzugefügt, streamt die Kamera in Home und unterstützt **HomeKit Secure Video**-Aufnahmen, wenn du das in Home eingerichtet hast.
+**HomeKit Secure Video**-Aufnahmen funktionieren, sobald du sie in Home eingerichtet hast.
 
 ## Secure Video ab iOS 27
 
-Kameras mit HEVC-Hauptstream (H.265) nutzen Apples neuere Secure-Video-Dienste. Live-Ansicht zu Hause und unterwegs, Aufnahme und Gegensprechen laufen direkt auf dem HEVC-Stream der Kamera, ohne Transkodierung, eine 4K-Kamera kostet also keinen CPU-Kern mehr. Dafür braucht es iOS 27 oder tvOS 27 auf den Geräten, mit denen du zuschaust, und auf der Steuerzentrale.
+Kameras mit HEVC-Hauptstream (H.265) nutzen Apples neuere Secure-Video-Dienste. Live-Ansicht zu Hause und unterwegs, Aufnahme und Gegensprechen laufen direkt auf dem HEVC-Stream der Kamera, ohne Transkodierung, eine 4K-Kamera kostet also keinen CPU-Kern. Dafür braucht es iOS 27 oder tvOS 27 auf den Geräten, mit denen du zuschaust, und auf der Steuerzentrale.
 
 Kameras mit H.264-Hauptstream bleiben auf den klassischen HomeKit-Kameradiensten, weil Apples neue Fernansicht nur HEVC annimmt. Welcher Weg genommen wird, entscheidet das Plugin beim Veröffentlichen der Kamera anhand des Codecs im Hauptstream.
 
-Bleibt dein Zuhause auf iOS 26 oder älter, schalte in den erweiterten Einstellungen der Kamera **Force legacy path** ein. Die Kamera nutzt dann die klassischen Dienste, und ihr HEVC-Stream wird wie bisher nach H.264 transkodiert.
+Bleibt dein Zuhause auf iOS 26 oder älter, schalte in den erweiterten Einstellungen der Kamera **Force legacy path** ein. Die Kamera nutzt dann die klassischen Dienste, und ihr HEVC-Stream wird nach H.264 transkodiert.
 
 ## Was wo landet
 
@@ -48,7 +48,7 @@ Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigebe
 
 ## Schnelles Streaming
 
-Eine Kamera in Home zu öffnen geht nahezu sofort und dauert nur wenige Millisekunden, egal ob die Kamera H.264 oder H.265 nutzt. Das setzt voraus, dass die Quelle bereitgehalten wird, aktiviere also [Hot Modus und Vorladen](/de/cameras/add-camera#quellen-optionen) an den Kameras, die du bridgest.
+Eine Kamera in Home zu öffnen dauert wenige Millisekunden, mit H.264 oder H.265, solange die Quelle bereitgehalten wird: Aktiviere [Hot Modus und Vorladen](/de/cameras/add-camera#quellen-optionen) an den Kameras, die du bridgest.
 
 ## Einstellungen
 

@@ -4,23 +4,21 @@ title: Notifications
 
 # Notifications
 
-camera.ui alerts you when something happens at a camera, with a thumbnail and a link to open the moment.
-
 ## Where alerts arrive
 
-- **In the app.** Every alert appears in the in-app list (the bell), on any device, always up to date.
-- **Desktop app.** While it's running, including in the tray, it shows native system notifications for the server it's connected to. It stays quiet while the window is in front, since the bell already shows the alert. No cloud or account is needed.
+- **In the app.** Every alert lands in the in-app list (the bell), on every device.
+- **Desktop app.** While it's running, including in the tray, it shows native system notifications for the server it's connected to, except while its window is in front. No cloud or account needed.
 - **Phone (push).** The [mobile app](/install/mobile) gets push even when it's closed, delivered end-to-end encrypted through camera.ui Cloud.[^license]
 
 ## Getting push on your phone
 
-Phone push needs a few things in place. If any is missing, alerts still land in the in-app bell, but the phone stays quiet:
+Phone push needs all of these. If one is missing, alerts only land in the in-app bell:
 
 1. **The native app.** Push only reaches the [mobile app](/install/mobile) from the App Store or Play Store. A browser or the web app (PWA) shows the in-app bell, but never push.
 2. **camera.ui Cloud.** Push is delivered through [camera.ui Cloud](/remote/cloud), so the server needs it enabled and [paired](/remote/pairing) to your account. It also needs an active subscription.
 3. **On, and synced.** In the app, open **Settings → Notifications**, turn the master switch on, and tap **Sync this device** once. Repeat on every phone, for every server you connect to.
 
-**Push repairs itself after a reinstall.** Reinstalling the app, clearing its data, or switching to a new phone resets the push token. The app checks with the server on its own and re-registers in the background. If it can't, for example because the phone's notification permission is off, a note saying **Push notifications stopped working** appears on any screen with a **Fix** button. One tap sets the phone up again. You can also open **Settings → Notifications** and tap **Re-sync**. The **This device** row only asks for a sync when the server really doesn't know this phone.
+**Push repairs itself after a reinstall.** Reinstalling the app, clearing its data or a new phone resets the push token, and the app re-registers with the server in the background. If it can't (the phone's notification permission is off, say), a **Push notifications stopped working** note with a **Fix** button appears on any screen. **Re-sync** in **Settings → Notifications** does the same. The **This device** row only asks for a sync when the server really doesn't know this phone.
 
 ## Push stays private
 
@@ -30,18 +28,18 @@ Your server seals every alert before it leaves your network. camera.ui Cloud, Go
 
 <Shot src="/img/notifications/notification-settings.png" alt="Notification settings" />
 
-Open **Settings → Notifications** to control your alerts. These settings belong to your account, so they apply on every device you sign in on.[^device]
+**Settings → Notifications** belongs to your account and applies on every device you sign in on.[^device]
 
-- **Master switch.** Turn every notification on or off. It's off for a new account, so turn it on first. The other sections only appear once it's on.
+- **Master switch.** All notifications on or off. Off for a new account, and the other sections only appear once it's on.
 - **This device.** On a phone, tap **Sync this device** once to start receiving push. In the desktop app, this switches native notifications on or off for that computer alone.
 - **Quiet hours.** Silence non-critical alerts during a daily window. Critical alerts still come through, and the in-app list stays current.
 - **System notifications.** Alerts about camera.ui itself: server and app updates, plugin updates, and a plugin crashing or recovering. Each one has its own switch.[^admin]
-- **Plugin notifications.** Alerts that plugins send, such as a camera going offline or storage filling up. You can switch each plugin on or off. Tapping a camera offline or online alert opens that camera's log, where the reason for the outage is usually shown.
+- **Plugin notifications.** Alerts that plugins send, such as a camera going offline or storage filling up. Each plugin has its own switch. Tapping a camera offline or online alert opens that camera's log, where the reason for the outage is usually shown.
 - **Devices.** The phones and other targets your alerts go to. Rename one, switch **Active** off to pause it, or remove it to unregister it for good.
 
 ## What each camera alerts you about
 
-Each camera has its own notification settings, in the camera's [settings](/cameras/settings) under **Notifications**, so you only get pinged for what matters there:[^nvr]
+Each camera has its own notification settings, in the camera's [settings](/cameras/settings) under **Notifications**:[^nvr]
 
 - **Send notifications.** The camera's own switch. Off means this camera never pushes, while its events still land on the timeline and in the app. On by default.
 - **Which objects alert you.** Set by the camera's [alert zones](/cameras/zones-and-masks#alert-zones), not here. Without an alert zone the camera alerts on everything it detects. Draw one to narrow it down by type and by area.
@@ -49,23 +47,23 @@ Each camera has its own notification settings, in the camera's [settings](/camer
 - **Notify for sounds.** Which sounds, such as alarms or glass breaking.
 - **Notify for sensors.** A doorbell, a contact sensor, a siren, or a security system.
 - **Notification speed.** How long to wait for a good picture. **Immediate** sends right away, with a picture only if one is ready. **Balanced** (the default) waits up to 2 seconds, **Best** up to 4. A recognized face always sends immediately, and the picture is updated quietly afterwards.
-- **Cooldown (seconds).** A quiet period after an alert, so one busy scene doesn't flood you. 30 seconds by default, up to 600. Doorbell and alarms bypass it.
+- **Cooldown (seconds).** A quiet period after an alert. 30 seconds by default, up to 600. Doorbell and alarms bypass it.
 - **Video in push.** Attach a short clip of the moment to the push. On iPhone it plays right in the notification, on Android the expanded notification animates the clip frame by frame,[^androidframes] and the in-app alert opens with a player. Uses the lowest recorded quality. Off by default.
 
 ## Pushes with an AI description
 
-With [AI descriptions](/detection/genai-descriptions) on, the alert carries what the AI saw instead of the bare "person detected".[^ai] **Moment Pushes** in the camera's settings is what does that, which also means the alert waits for the description. Doorbell rings and alarms still arrive immediately, and when the model does not answer in time the plain detection push goes out instead.
+With [AI descriptions](/detection/genai-descriptions) on, the alert carries what the AI saw instead of the bare "person detected".[^ai] This is **Moment Pushes** in the camera's settings, and the alert waits for the description. Doorbell rings and alarms still arrive immediately, and when the model does not answer in time the plain detection push goes out instead.
 
 **Push Timing** decides how often a busy event reaches you:
 
 - **Per Moment.** Each moment pushes as its description is ready. This is the default.
-- **Per Event.** The descriptions collect and one push goes out after the scene has been quiet for a while, the story of the whole visit instead of a buzz per moment. Tapping it opens the beginning of the event.
+- **Per Event.** The descriptions collect and one push goes out after the scene has been quiet for a while. Tapping it opens the beginning of the event.
 
 An alert that is already on your lock screen is updated quietly when something better arrives, a recognized name or a sharper picture, without buzzing again.
 
 ## Critical alerts
 
-Some events are too important to hold back. **Critical alerts**, like a doorbell ring or an alarm, are delivered immediately and ignore both the cooldown and quiet hours.
+**Critical alerts**, like a doorbell ring or an alarm, are delivered immediately and ignore both the cooldown and quiet hours.
 
 [^license]: Push notifications to the mobile apps require an active camera.ui subscription.
 [^device]: The **This device** row is the exception. It only affects the phone or computer you are on.

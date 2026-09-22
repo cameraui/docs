@@ -4,11 +4,9 @@ title: Benutzer & Rollen
 
 # Benutzer & Rollen
 
-camera.ui unterstützt mehrere Benutzerkonten, jedes mit einer Rolle, die bestimmt, was es darf. Verwalte sie unter **Einstellungen → Benutzer** (nur Admins).
+Jedes Konto hat eine Rolle, die bestimmt, was es darf. Verwaltet werden die Konten unter **Einstellungen → Benutzer** (nur Admins).
 
 ## Rollen
-
-Es gibt drei Rollen:
 
 - **Benutzer.** Alltäglicher Zugriff: die Kameraliste, Live-Ansicht, Aufnahmen, Kameransicht und die eigenen Konto-Einstellungen. Die **Kameras**-Seite öffnet als schlichte Liste zum Antippen jeder Kamera; Entdeckung, Hinzufügen und Kamera-Einstellungen bleiben bei Admins.
 - **Admin.** Alles, was ein Benutzer kann, plus Verwalten von Kameras, Plugins, Automatisierungen, Benutzern und allen Server-Einstellungen.
@@ -20,16 +18,12 @@ Der Zugriff wird über die Rolle bestimmt, nicht pro Kamera; es gibt keine kamer
 
 <Shot src="/img/admin/users.png" alt="Die Liste registrierter Benutzer" />
 
-Unter **Einstellungen → Benutzer** zeigt die Liste **Registrierte Benutzer** alle an. Von dort kannst du:
-
-- **Einen neuen Benutzer anlegen**, mit Benutzername, Passwort und Rolle (Benutzer oder Admin).
-- Einen Benutzer **bearbeiten**, um Details oder Rolle zu ändern.
-- Einen Benutzer **entfernen**.
+In der Liste **Registrierte Benutzer** legst du Konten an, bearbeitest und entfernst sie. Ein neues Konto bekommt die Rolle Benutzer oder Admin.
 
 ## Derzeit angemeldete Benutzer
 
-Unter den registrierten Benutzern zeigt die Liste **Derzeit angemeldete Benutzer** jede aktive Sitzung über alle Konten hinweg, mit Gerät, Adresse und Typ. Deine eigene Sitzung ist markiert. Nutze **Abmelden** in einer Zeile, um diese Sitzung zu beenden.
+Unter den registrierten Benutzern zeigt die Liste **Derzeit angemeldete Benutzer** jede aktive Sitzung über alle Konten hinweg, mit Gerät, Adresse und Typ. **Abmelden** in einer Zeile beendet diese Sitzung.
 
 ## Das erste Konto
 
-camera.ui startet mit einem einzigen Master-Konto (Benutzername `admin`, Passwort `admin`). Ändere dessen Passwort sofort; beim ersten Login wirst du dazu aufgefordert.
+camera.ui startet mit einem einzigen Master-Konto (Benutzername `admin`, Passwort `admin`). Beim ersten Login wirst du aufgefordert, das Passwort zu ändern.

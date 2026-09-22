@@ -4,16 +4,14 @@ title: Shortcuts
 
 # Shortcuts
 
-Shortcuts are controls you place directly on a camera's video. A shortcut points at another **camera** or a **sensor**, and what it does depends on whether you hover or click. Shortcuts are saved per camera and per user, so everyone can arrange their own.
+Shortcuts are controls you place directly on a camera's video. A shortcut points at another **camera** or a **sensor**, and what it does depends on whether you hover or click. Shortcuts are saved per camera and per user.
 
 ## Camera shortcuts
 
 A camera shortcut puts a neighbouring camera one move away:
 
 - **Hover** to preview that camera inline, without leaving the one you're watching. While reviewing a recording, the preview shows that camera at the same moment and follows along as you scrub.
-- **Click** to switch to that camera. When you're reviewing the past, it opens at the same timestamp, so you can follow a person from one camera to the next without losing your place.
-
-For example, while reviewing footage a person walks out of camera A's view toward camera B. Hover B's shortcut to keep watching, or click it to jump to B at that exact moment.
+- **Click** to switch to that camera. When you're reviewing the past, it opens at the same timestamp.
 
 ## Sensor shortcuts
 
@@ -28,8 +26,7 @@ Controlling accessories requires admin. See [Sensors & accessories](/sensors/) f
 
 1. On the camera, click the **Shortcuts** button in the toolbar to show your shortcuts, then click the pencil (**Edit Shortcuts**) that appears on the video. The toolbar button on its own only shows or hides the shortcuts you already have.
 2. Click anywhere on the video to drop a shortcut, then choose a **Camera** or a **Sensor** as its target.
-3. Drag a shortcut to reposition it. Positions are stored relative to the frame, so they stay put when the video resizes.
+3. Drag a shortcut to reposition it.
 4. Long-press a shortcut to remove it.
-5. Select **Finish Editing** when you're done.
 
 <Shot src="/img/cameras/shortcuts-overlay.png" alt="Shortcuts overlay on a camera" />

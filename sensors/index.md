@@ -17,8 +17,6 @@ Every sensor is its own entity. It keeps its name, settings, and history no matt
 
 ## Camera hardware and standalone sensors
 
-Sensors come in two flavors:
-
 - **Camera hardware.** A camera's own plugin registers them on that camera: its doorbell button, spotlight, siren, or battery. The assignment is fixed; you can't move them to another camera.
 - **Standalone.** Everything else, from a smart plug brought in by an integration to a virtual sensor you created. You decide which cameras it belongs to, on the **Sensors** page. An assigned sensor shows up on those cameras and can trigger their detection.
 
@@ -26,9 +24,9 @@ Deleting a camera takes its camera-hardware sensors with it. A standalone sensor
 
 ## Setting up and using sensors
 
-Plugin sensors are enabled per camera from the camera's settings, and every sensor in the system is managed on the **Sensors** page. A plugin with an inventory of its own, a smart-home integration for example, offers what it finds there under **Discovered**, and you pick what comes over. See **[Set up sensors](/sensors/setup)** for all of it, and **[Controls & states](/sensors/controls)** to read state and operate accessories.
+Plugin sensors are enabled per camera, and every sensor is managed on the **Sensors** page, where integrations offer what they find under **Discovered**. See **[Set up sensors](/sensors/setup)**, and **[Controls & states](/sensors/controls)** to read state and operate accessories.
 
-Virtual sensors are the exception: you create them yourself, no plugin involved. See **[Virtual sensors](/sensors/virtual)**.
+Virtual sensors need no plugin, see **[Virtual sensors](/sensors/virtual)**.
 
 ## Export to your smart home
 
@@ -36,4 +34,4 @@ Each sensor has an **Expose sensor** toggle. Exposed sensors show up in HomeKit,
 
 ## In automations
 
-Sensors can also drive [automations](/automations/). For example, trigger an action when a contact sensor opens, or turn on a light when motion is detected.
+Sensors can trigger [automations](/automations/), a contact opening for example, and automations can operate accessories such as a light.

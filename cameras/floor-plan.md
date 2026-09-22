@@ -12,11 +12,11 @@ It is live: a camera lights up while it sees something, sensors show their state
 
 ## Drawing
 
-Start with a **level**. The button in the top left holds them, next to it are add, rename, reorder and remove. A house with a basement, a ground floor and an upper floor has three.
+Start with a **level**, one per floor. They live behind the button in the top left.
 
 Then drag pieces from the palette onto the canvas. On a phone the plus button opens the same palette.
 
-- **Rooms.** Drag **New room** in, then move and resize the rectangle. It snaps to the grid, and the scale bar in the corner tells you what the size means. A room around a corner, an L-shaped yard for example, is drawn as several rectangles: draw the second one and set its **Belongs to** to the first, and the two count as one room.
+- **Rooms.** Drag **New room** in, then move and resize the rectangle. A room around a corner, an L-shaped yard for example, is drawn as several rectangles: draw the second one and set its **Belongs to** to the first, and the two count as one room.
 - **Kind.** A room is **Inside**, **Outside, on the property**, or **Outside world**. The last one is the street, the pavement, a neighbour's land: someone arriving from there was not seen anywhere before, so camera.ui does not look for an earlier sighting. Draw the gate or the front path as the place where they get in.
 - **Connections.** Rooms that only share a wall are not connected. Put a **Door**, an **Open passage** or **Stairs** on the shared wall, slide it along the wall and drag its dots to set the width. Between two levels the connection is always stairs.
 - **Cameras.** Drag a camera into the room it watches, then set **Direction**, **Field of view** and **Range** on the right. The cone on the plan follows. A camera without a room adds nothing to the spatial context.

@@ -4,9 +4,9 @@ title: Durchsuchen & Filter
 
 # Durchsuchen & Filter
 
-Die **Aufnahmen**-Ansicht ist der Ort, an dem du vergangene Ereignisse über deine Kameras hinweg findest. Jedes Ereignis zeigt ein Thumbnail und das Erkannte, sortiert danach, wann darin zuletzt etwas passiert ist. Ein Ereignis, das stundenlang läuft, erscheint schon während es läuft, mit dem Bild seines neuesten Abschnitts auf der Karte. Zusammenhängende Ereignisse über mehrere Kameras können auch als **Episode**-Karte erscheinen. Eine Aufnahme, die zu einer gehört, zeigt einen **Open episode**-Button. Siehe [Episoden](/de/detection/episodes).
+Die **Aufnahmen**-Ansicht listet vergangene Ereignisse über deine Kameras hinweg, sortiert danach, wann darin zuletzt etwas passiert ist. Ein Ereignis, das stundenlang läuft, erscheint schon während es läuft, mit seinem neuesten Abschnitt auf der Karte. Zusammenhängende Ereignisse über mehrere Kameras können als **Episode**-Karte erscheinen, und eine Aufnahme, die zu einer gehört, zeigt **Open episode**. Siehe [Episoden](/de/detection/episodes).
 
-Sagt die Liste, dass Aufnahmen nicht verfügbar sind, läuft das NVR-Plugin nicht. Sie füllt sich wieder, sobald das Plugin antwortet.
+Sagt die Liste, dass Aufnahmen nicht verfügbar sind, läuft das NVR-Plugin nicht. Die Liste füllt sich wieder, sobald das Plugin antwortet.
 
 ## Filtern
 
@@ -14,7 +14,7 @@ Sagt die Liste, dass Aufnahmen nicht verfügbar sind, läuft das NVR-Plugin nich
 
 <Shot src="/img/recording/recordings-filters.png" alt="Die Filter-Seitenleiste mit dem Anzeigen-Schalter, der Suche und den Filtern für Raum und Kamera" />
 
-Der Rest grenzt die Liste auf genau das ein, was du suchst:
+Die weiteren Filter:
 
 - **Kamera und Zeitraum.**
 - **Räume.** Wählt die Kameras aus, die im [Grundriss](/de/cameras/floor-plan) in diesen Räumen stehen.
@@ -30,37 +30,37 @@ Du kannst außerdem per Text über erkannte Labels, Gesichter und Kennzeichen su
 
 ## Ansichtsoptionen
 
-Das Zahnrad oben rechts öffnet die Ansichtsoptionen.
+Hinter dem Zahnrad oben rechts:
 
 - **Ungroup.** Eine Karte pro Moment statt einer pro Ereignis. Standardmäßig aus. Deine Wahl wird in deinem Konto gespeichert und folgt dir auf andere Geräte.
-- **Nur mit Aufnahme.** Derselbe Filter wie in der Seitenleiste, hier für den schnellen Zugriff.
+- **Nur mit Aufnahme.** Derselbe Filter wie in der Seitenleiste.
 
 ## Eine Karte lesen
 
 Jede Karte ist ein Moment.
 
-- **Zeit und Kamera.** Oben links. Wähle die Karte, um die Wiedergabe an diesem Moment zu öffnen.
-- **Gesichter und Kennzeichen.** Hat ein Moment mehr als sein Szenenbild, etwa ein erkanntes Gesicht oder ein gelesenes Kennzeichen, erscheinen Pfeile, um an Ort und Stelle durch die Bilder zu blättern, mit Name oder Kennzeichen. Die kleinen Kacheln unten markieren eines und springen dorthin.
+- **Zeit und Kamera.** Die Karte öffnet die Wiedergabe an diesem Moment.
+- **Gesichter und Kennzeichen.** Hat ein Moment auch ein erkanntes Gesicht oder ein gelesenes Kennzeichen, blättern Pfeile an Ort und Stelle durch seine Bilder, mit Name oder Kennzeichen. Die kleinen Kacheln unten springen zu einem.
 - **Gruppierte Karten.** Eine gruppierte Karte zeigt die anderen Momente des Ereignisses als kleine Vorschauen unten. Jede öffnet ihren eigenen Moment.
-- **Geteilte Karten.** Mit **Ungroup** an ist jeder Moment eine eigene Karte und zeigt seine Position im Ereignis, etwa 2/3. Zeigst du auf eine, werden die anderen Karten desselben Ereignisses hervorgehoben.
+- **Geteilte Karten.** Mit **Ungroup** an zeigt jede Karte ihre Position im Ereignis, etwa 2/3. Zeigst du auf eine, werden die anderen Karten desselben Ereignisses hervorgehoben.
 - **Das Punkte-Menü.** Enthält, was die Karte nicht selbst zeigt: den [Erkennungsverlauf](/de/detection/events-and-detections#der-erkennungsverlauf), **Assistenten fragen**, den Download und [**Person korrigieren**](/de/detection/faces#eine-erkennung-korrigieren), wenn gerade ein Gesichtsbild zu sehen ist.
-- **Halten für Vorschau.** Auf Handy oder Tablet lässt du den Finger auf einer Karte ruhen, um den kurzen Vorschau-Clip abzuspielen. Finger heben stoppt, Tippen öffnet. Am Computer läuft die Vorschau beim Darüberfahren. Sie geht den Clip durch, herangezoomt auf das, worum es in dem Moment ging, mit einer Uhr für das gerade gezeigte Bild. Eine Karte ohne abspielbares Material sagt **Keine Vorschau**. Eine Episoden-Karte zeigt stattdessen ihren Schnitt: eine Kamera nach der anderen, mit Kameraname und Uhrzeit.
+- **Halten für Vorschau.** Auf Handy oder Tablet hältst du eine Karte gedrückt, um ihre kurze Vorschau abzuspielen (loslassen stoppt, Tippen öffnet). Am Computer läuft sie beim Darüberfahren. Die Vorschau ist auf das herangezoomt, worum es in dem Moment ging, mit einer Uhr für das gezeigte Bild. **Keine Vorschau** heißt, es gibt kein abspielbares Material. Eine Episoden-Karte zeigt ihren Schnitt: eine Kamera nach der anderen, mit Name und Uhrzeit.
 
 ## Favoriten
 
-Der Stern auf einer Aufnahme- oder Episoden-Karte behält diesen Moment. Die automatische [Bereinigung](/de/recording/storage) löscht um einen Favoriten herum, sein Material bleibt also abspielbar, egal wie alt es ist und wie knapp die Platte wird. **Nur Favoriten** in der Filter-Seitenleiste zeigt, was du behalten hast. Beides ist Admins vorbehalten.
+Der Stern auf einer Aufnahme- oder Episoden-Karte behält diesen Moment: Die automatische [Bereinigung](/de/recording/storage) spart ihn aus, sein Material bleibt also abspielbar, egal wie alt es ist und wie knapp die Platte wird. **Nur Favoriten** in der Filter-Seitenleiste listet sie. Beides ist Admins vorbehalten.
 
 ## Auswählen und löschen
 
-Admins können Ereignisse hier löschen. Wähl den Punkte-Button in der Ecke, um in den Auswahlmodus zu gehen, und wähle dann einzelne Ereignisse, mehrere oder alle geladenen und lösche sie. Sie verschwinden überall auf einmal: Home, Timeline, diese Liste und jeder offene Browser. Das aufgenommene Video bleibt auf der Festplatte, bis die normale Bereinigung es entfernt.[^delete-disk]
+Admins können Ereignisse hier löschen: Der Punkte-Button in der Ecke startet den Auswahlmodus für einzelne Ereignisse, mehrere oder alle geladenen. Gelöschte Ereignisse verschwinden überall auf einmal: Home, Timeline, diese Liste und jeder offene Browser.[^delete-disk]
 
 ## KI-Suche
 
-Um Momente durch Beschreibung zu finden, etwa „eine Person, die ein Paket trägt", nutze die **KI-Suche**. Siehe [Semantische Suche](/de/detection/semantic-search).
+Die **KI-Suche** findet Momente per Beschreibung, etwa „eine Person, die ein Paket trägt". Siehe [Semantische Suche](/de/detection/semantic-search).
 
 ## Assistent fragen
 
-Ist der [Assistent](/de/assistant/) eingerichtet, beginnt die Filter-Seitenleiste mit **Assistent fragen**. Schreib die Suche in eigenen Worten („Autos in der Einfahrt gestern", „Favoriten mit Klingel", „Episoden vom Eingang der letzten Stunde") und die Filter darunter werden für dich gesetzt: Kameras und Räume, Zeitraum, Ereignistypen, Sensoren, Favoriten und eine KI-Suche, wenn die Worte eine Szene beschreiben, die die Labels nicht abdecken. Ein Hinweis unter dem Feld sagt, was die Filter nicht ausdrücken können, etwa einen genauen Tag.
+Ist der [Assistent](/de/assistant/) eingerichtet, beginnt die Filter-Seitenleiste mit **Assistenten fragen**. Schreib die Suche in eigenen Worten („Autos in der Einfahrt gestern", „Favoriten mit Klingel", „Episoden vom Eingang der letzten Stunde") und die Filter darunter werden gesetzt: Kameras und Räume, Zeitraum, Ereignistypen, Sensoren, Favoriten und eine KI-Suche, wenn die Worte eine Szene beschreiben, die die Labels nicht abdecken. Ein Hinweis unter dem Feld sagt, was die Filter nicht ausdrücken können, etwa einen genauen Tag.
 
 ## Heatmap
 

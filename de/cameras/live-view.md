@@ -22,13 +22,13 @@ Beim Durchsehen von Aufnahmen bietet der Player außerdem Zurückspulen, Vorspul
 
 ## Erkennungsboxen
 
-Ist **Erkennungen** an, zeichnet der Player um alles, was die Kamera gerade sieht, eine Box mit Typ, Konfidenz und Track-Nummer. Eine Kamera, die eine Erkennung meldet, ohne zu sagen wo, bekommt keine Box, es gibt nichts zu umranden.
+Ist **Erkennungen** an, zeichnet der Player um alles, was die Kamera gerade sieht, eine Box mit Typ, Konfidenz und Track-Nummer. Eine Kamera, die eine Erkennung ohne Position meldet, bekommt keine Box.
 
 Ein Objekt, das sich niedergelassen hat, ein geparktes Auto in der Einfahrt oder eine abgestellte Mülltonne, behält seine Box, bekommt aber ein blasses Label und einen Timer, der zeigt, wie lange es dort schon steht. Ein niedergelassenes Objekt löst keine neuen Ereignisse und keine Benachrichtigungen aus, siehe [unbewegte Objekte](/de/detection/events-and-detections#unbewegte-objekte). Bewegt es sich wieder, wird die Box wieder normal. Auf einer kleinen Karte fallen die Labels weg und nur die Box bleibt.
 
 ## Gegensprechen
 
-Die **Gegensprechanlage**-Schaltfläche sendet Audio vom Mikrofon deines Geräts an den Lautsprecher der Kamera, sodass du durch eine Türklingel oder Kamera sprechen kannst. Sie ist bei Kameras mit Zwei-Wege-Audio verfügbar, und dein Browser oder die App fragt beim ersten Mal nach Mikrofon-Zugriff.
+Die **Gegensprechanlage**-Schaltfläche sendet dein Mikrofon an den Lautsprecher der Kamera, bei Kameras mit Zwei-Wege-Audio.
 
 ## Zweiter Stream als Overlay
 
@@ -36,9 +36,9 @@ Wenn eine Quelle in den [Kamera-Einstellungen](/de/cameras/settings) (Tab „Que
 
 ## Streaming-Modi
 
-camera.ui kann Live-Video auf mehrere Arten streamen. Den Modus legst du pro Kamera in ihren [Einstellungen](/de/cameras/settings) fest, eine neue Kamera startet auf **Auto**. Der Player hat außerdem einen Button, mit dem du beim Zuschauen zwischen WebRTC und MSE wechselst.
+Den Streaming-Modus legst du pro Kamera in ihren [Einstellungen](/de/cameras/settings) fest, eine neue Kamera startet auf **Auto**. Der Player hat außerdem einen Button, mit dem du beim Zuschauen zwischen WebRTC und MSE wechselst.
 
-- **Auto** startet WebRTC und MSE gleichzeitig und behält, was zuerst zustande kommt, ein Netz, das WebRTC blockiert, bekommt also trotzdem ein Bild. Kann der Codec der Kamera nicht über WebRTC laufen, geht es direkt auf MSE. Die einfachste Wahl.
+- **Auto** startet WebRTC und MSE gleichzeitig und behält, was zuerst zustande kommt, ein Netz, das WebRTC blockiert, bekommt also trotzdem ein Bild. Kann der Codec der Kamera nicht über WebRTC laufen, geht es direkt auf MSE.
 - **WebRTC** bietet die geringste Latenz.
 - **MSE** ist ein breit kompatibler Fallback.
 - **webrtc/tcp** überträgt WebRTC nur über TCP. Wähle das in den Kamera-Einstellungen, wenn Netzwerke die Ports blockieren, die WebRTC sonst nutzt. Über den Button im Player ist es nicht erreichbar.
@@ -47,15 +47,15 @@ Die Einstellung gilt für die Kameraansicht. Die kleinen Player an anderen Stell
 
 ## Aktivitätsmodus: Immer An und Standby
 
-Jede Kamera hat einen **Aktivitätsmodus**, der steuert, wann ihr Stream läuft, und Reaktionsfreude gegen Ressourcenverbrauch abwägt:
+Jede Kamera hat einen **Aktivitätsmodus**, der steuert, wann ihr Stream läuft:
 
-- **Immer An** hält den Stream jederzeit live, für sofortige Ansicht.
-- **Standby** startet den Stream, wenn du die Kamera öffnest, und stoppt ihn wenige Sekunden später wieder. Der Player zeigt dann „Stream pausiert, um Ressourcen zu schonen. Klicken Sie auf den Stream, um fortzufahren.“ Klick aufs Video, um weiterzuschauen.
+- **Immer An** hält den Stream jederzeit live.
+- **Standby** startet den Stream, wenn du die Kamera öffnest, und stoppt ihn wenige Sekunden später wieder. Ein Klick aufs Video setzt ihn fort.
 - **Aktivität** lässt den Stream laufen, während Aktivität herrscht, und ruhen, wenn nicht.
 
 ## Shortcuts
 
-**Shortcuts** sind Bedienelemente, die du aufs Video legst, um zu einer anderen Kamera zu springen oder einen Sensor zu bedienen. Aktiviere **Shortcuts bearbeiten** im Player, um sie hinzuzufügen. Siehe [Shortcuts](/de/cameras/shortcuts) für das vollständige Feature.
+**Shortcuts** sind Bedienelemente, die du aufs Video legst, um zu einer anderen Kamera zu springen oder einen Sensor zu bedienen. Aktiviere **Shortcuts bearbeiten** im Player, um sie hinzuzufügen. Siehe [Shortcuts](/de/cameras/shortcuts).
 
 ## Weitere Optionen
 

@@ -1,8 +1,8 @@
 # Verbindungs-Protokolle
 
-Wenn du eine [Kamera manuell hinzufügst](/de/cameras/add-camera#eine-kamera-manuell-hinzufugen), beginnt jede Stream-URL mit einem **Protokoll**, das camera.ui sagt, wie es sich verbindet. RTSP ist die Vorgabe und funktioniert mit nahezu jeder IP-Kamera. Im Hinzufügen-Dialog fügst du die komplette Stream-URL ein. camera.ui liest das Protokoll aus der URL und zeigt es unter dem Feld als erkanntes Protokoll an. Die **(i)**-Schaltfläche neben dem URL-Feld öffnet die Hilfe zu diesem Protokoll, mit URL-Formaten und Beispielen.
+Wenn du eine [Kamera manuell hinzufügst](/de/cameras/add-camera#eine-kamera-manuell-hinzufugen), beginnt jede Stream-URL mit einem **Protokoll**. camera.ui liest es aus der URL und zeigt es unter dem Feld an. Die **(i)**-Schaltfläche neben dem Feld öffnet die Hilfe zu diesem Protokoll, mit URL-Formaten und Beispielen.
 
-Eine Stream-URL muss mit einem Protokoll beginnen, das camera.ui unterstützt. Sonst lässt sich die Quelle nicht speichern und das Feld meldet, dass das Protokoll nicht unterstützt wird. Die **(i)**-Hilfe steht erst zur Verfügung, wenn camera.ui das eingegebene Protokoll erkennt, damit lässt sich eine URL schnell prüfen.
+Eine URL mit nicht unterstütztem Protokoll lässt sich nicht speichern. Die **(i)**-Hilfe erscheint erst, wenn camera.ui das Protokoll erkennt, damit lässt sich eine URL schnell prüfen.
 
 ## RTSP (empfohlen)
 
@@ -12,7 +12,7 @@ Eine Stream-URL muss mit einem Protokoll beginnen, das camera.ui unterstützt. S
 rtsp://benutzer:passwort@192.168.1.123:554/pfad
 ```
 
-Der Pfad nach der Adresse ist kameraspezifisch, schau also im Handbuch oder der App deiner Kamera nach der genauen RTSP-URL. Viele Kameras bieten einen Haupt-Stream (hohe Auflösung) und einen Sub-Stream (niedrige Auflösung); du kannst jeden als eigene [Quelle](/de/cameras/add-camera#quellen-und-rollen) hinzufügen.
+Der Pfad nach der Adresse ist kameraspezifisch, er steht im Handbuch oder in der App der Kamera. Viele Kameras bieten einen Haupt-Stream (hohe Auflösung) und einen Sub-Stream (niedrige Auflösung); du kannst jeden als eigene [Quelle](/de/cameras/add-camera#quellen-und-rollen) hinzufügen.
 
 ## Weitere gängige Protokolle
 

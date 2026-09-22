@@ -31,17 +31,15 @@ flowchart LR
 
 ## Von der Kamera zur Benachrichtigung
 
-Das passiert hinter einer einzelnen Erkennung:
-
 1. **Streaming.** Die Streaming-Engine verbindet sich mit jeder Kamera und wandelt deren Feed in browserfreundliches Live-Video um (WebRTC und MSE). Streams werden „warm" gehalten, damit Live-Ansicht und Snapshots sofort laden.
-2. **Analyse pro Kamera.** Jede Kamera bekommt ihren eigenen **Frame-Worker**, einen dedizierten Hintergrundprozess, der das Video dekodiert und die Erkennung ausführt. Da jede Kamera für sich läuft, beeinträchtigt ein Problem bei einer niemals die anderen.
-3. **Gestufte Erkennung.** Zuerst läuft die günstige Bewegungserkennung. Erst wenn sie Bewegung sieht, weckt sie die schwerere KI: Objekterkennung, dann Gesichter, Kennzeichen, Klassifizierung und semantische (CLIP-)Analyse. Audio wird parallel analysiert. Diese „Kaskade" hält CPU- und GPU-Last niedrig.[^detect]
+2. **Analyse pro Kamera.** Jede Kamera bekommt ihren eigenen **Frame-Worker**, einen Hintergrundprozess, der das Video dekodiert und die Erkennung ausführt. Ein Problem bei einer Kamera beeinträchtigt die anderen nicht.
+3. **Gestufte Erkennung.** Zuerst läuft die günstige Bewegungserkennung und weckt die schwerere KI nur bei Bewegung: Objekterkennung, dann Gesichter, Kennzeichen, Klassifizierung und semantische (CLIP-)Analyse. Audio wird parallel analysiert. Diese „Kaskade" hält CPU- und GPU-Last niedrig.[^detect]
 4. **Ereignisse & Aufnahme.** Wenn die Erkennung auslöst, baut der Server ein **Ereignis** mit Segmenten, Thumbnails und den gefundenen Objekten, Gesichtern oder Kennzeichen. Das **NVR-Plugin** nimmt das Material auf, speichert es und liefert es für die Wiedergabe zurück.[^license]
 5. **Benachrichtigungen.** Ereignisse können Push-Benachrichtigungen auslösen und [Automationen](/de/automations/) ausführen.[^license]
 
 ## Plugins machen es erweiterbar
 
-Vieles von dem, was camera.ui kann, wird über **Plugins** geliefert, Erweiterungen, die du aus einem In-App-Store installierst. Jedes Plugin läuft in seinem eigenen isolierten Prozess, sodass ein fehlerhaftes Plugin den Server nicht lahmlegen kann, und es startet automatisch neu, falls es abstürzt.
+Vieles an camera.ui kommt über **Plugins** aus dem In-App-Store. Jedes Plugin läuft in einem eigenen Prozess, ein fehlerhaftes Plugin legt den Server also nicht lahm, und nach einem Absturz startet es automatisch neu.
 
 Plugins liefern:
 
@@ -54,9 +52,9 @@ Mehr dazu unter [Plugins](/de/plugins/).
 
 ## Apps: Desktop, Mobile, Web
 
-Du nutzt camera.ui überall über dieselbe Oberfläche, aber die Apps spielen nicht alle dieselbe Rolle:
+Alle Apps zeigen dieselbe Oberfläche, aber ihre Rollen unterscheiden sich:
 
-- Die **[Desktop-App](/de/install/desktop)** kann der **Server selbst** sein (sie betreibt camera.ui auf deiner Maschine, das einfachste All-in-One-Setup), ein **Viewer**, der sich mit einem anderen Server verbindet, oder ein **Worker**, der einen anderen Server beim Dekodieren, bei der Erkennung oder mit einem Plugin unterstützt. Du wählst das beim ersten Start und kannst jederzeit wechseln. Zur Einrichtung als Worker siehe [Über mehrere Maschinen skalieren](#uber-mehrere-maschinen-skalieren).
+- Die **[Desktop-App](/de/install/desktop)** kann der **Server selbst** sein (All-in-One), ein **Viewer**, der sich mit einem anderen Server verbindet, oder ein **Worker**, der einen anderen Server beim Dekodieren, bei der Erkennung oder mit einem Plugin unterstützt. Du wählst das beim ersten Start und kannst jederzeit wechseln. Siehe [Über mehrere Maschinen skalieren](#uber-mehrere-maschinen-skalieren).
 - Die **[Mobile-Apps](/de/install/mobile)** und der **Browser** sind immer **Viewer**.
 
 Wie Viewer den Server erreichen:
@@ -69,11 +67,11 @@ Du kannst außerdem mehr als einen Server als **Instanz** speichern und in derse
 
 ## Über mehrere Maschinen skalieren
 
-Für größere Setups kannst du zusätzliche Maschinen als **Worker** hinzufügen. Ein Worker übernimmt das Dekodieren und die Erkennung für einige Kameras und entlastet so den Hauptserver, oder er führt stattdessen ein ganzes Plugin aus (nützlich für einen Detektor, der spezielle Hardware braucht, die dem Hauptserver fehlt). Kameras und Plugins, die einem Worker zugewiesen sind, fallen automatisch auf den Hauptserver **zurück**, falls dieser Worker offline geht, und wandern zurück zum Worker, sobald er sich wieder verbindet. Siehe [Worker](/de/admin/workers).
+Zusätzliche Maschinen können als **Worker** mitarbeiten. Ein Worker übernimmt Dekodieren und Erkennung für einige Kameras oder führt ein ganzes Plugin aus (für einen Detektor, der Hardware braucht, die dem Hauptserver fehlt). Kameras und Plugins eines Workers fallen **zurück** auf den Hauptserver, solange der Worker offline ist, und wandern zurück, sobald er sich wieder verbindet. Siehe [Worker](/de/admin/workers).
 
 ## Von außen erreichen
 
-In deinem lokalen Netzwerk verbindest du dich direkt. Um deinen Server von überall zu erreichen, bietet camera.ui mehrere Optionen: camera.ui Cloud, Cloudflare-Tunnel, eine eigene Domain oder direktes Port-Forwarding. Alle sind optional und ganz deine Entscheidung. Siehe [Remote-Zugriff](/de/remote/).
+Von außerhalb deines Netzwerks nutzt du camera.ui Cloud, einen Cloudflare-Tunnel, eine eigene Domain oder Port-Forwarding. Alles davon ist optional. Siehe [Remote-Zugriff](/de/remote/).
 
 [^detect]: Erkennung benötigt ein Detection-Plugin, das zu deiner Hardware passt (CoreML, ONNX, OpenVINO, NCNN oder einen Edge-Beschleuniger wie Coral oder Hailo). Siehe [Erkennung & KI](/de/detection/).
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe, Export, Gesichtserkennung, semantische Suche und KI-Beschreibungen, dazu Push-Benachrichtigungen. Live-Ansicht und Echtzeit-Erkennung sind kostenlos.

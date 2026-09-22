@@ -1,6 +1,6 @@
 # Mobile Apps
 
-Die Mobile-Apps sind Companion-Viewer für iOS und Android. Mit ihnen siehst du deine Kameras live, durchsuchst Aufnahmen und erhältst unterwegs Benachrichtigungen. Der Server läuft woanders (auf deinem [Desktop](/de/install/desktop) oder einer [Server-Installation](/de/install/)); die Mobile-App verbindet sich mit ihm.
+Die Apps für iOS und Android sind Viewer für Live-Ansicht, Aufnahmen und Benachrichtigungen. Sie verbinden sich mit einem Server, der woanders läuft (der [Desktop-App](/de/install/desktop) oder einer [Server-Installation](/de/install/)).
 
 <Shot src="/img/install/mobile-app.png" alt="Die camera.ui Mobile-App" />
 
@@ -18,31 +18,31 @@ Die Mobile-Apps sind Companion-Viewer für iOS und Android. Mit ihnen siehst du 
 
 ## Mit deinem Server verbinden
 
-Melde dich mit deinem camera.ui-Konto an (Google, Apple oder E-Mail), und deine gekoppelten Server erscheinen. Von da wählt die App den besten Weg von selbst:
+Melde dich mit deinem camera.ui-Konto an (Google, Apple oder E-Mail), und deine gekoppelten Server erscheinen. Den Weg wählt die App selbst:
 
-- **Zu Hause.** Im selben Netzwerk wie der Server verbindet sich die App direkt über dein lokales Netzwerk, Live-Ansicht startet also schneller und mit weniger Verzögerung. Dem Zertifikat des Servers für lokale Adressen vertraut sie automatisch.
-- **Unterwegs.** Außerhalb des Netzwerks erreicht sie den Server über **camera.ui Cloud**.
+- **Zu Hause.** Im Netzwerk des Servers verbindet sie sich direkt, Live-Ansicht startet also schneller. Dem Zertifikat des Servers für lokale Adressen vertraut sie automatisch.
+- **Unterwegs.** Außerhalb des Netzwerks geht es über **camera.ui Cloud**.
 
-So oder so verbindet das Konto die App mit deinem Server. Dafür sind serverseitig zwei Dinge nötig:
+Serverseitig braucht das:
 
 - [Remote-Zugriff über camera.ui Cloud](/de/remote/cloud) aktiviert.
 - Der Server mit deinem Konto [gekoppelt](/de/remote/pairing).
 
 ## Benachrichtigungen
 
-Mit installierter und angemeldeter App erhältst du Push-Benachrichtigungen für Ereignisse direkt auf dein Handy. Unter [Benachrichtigungen](/de/notifications/) wählst du, worüber du alarmiert wirst.[^license]
+Eine angemeldete App erhält Push-Benachrichtigungen für Ereignisse. Worüber du alarmiert wirst, stellst du unter [Benachrichtigungen](/de/notifications/) ein.[^license]
 
 ## Biometrische Anmeldung
 
-Aktiviere unter **Einstellungen → Konto** die **Biometrische Anmeldung**, um dich statt mit Passwort mit Face ID oder Touch ID anzumelden. camera.ui speichert deine Zugangsdaten dafür im sicheren Speicher des Geräts; melde dich nach dem Aktivieren einmal ab und wieder an, damit sie gespeichert werden. Schaltest du die Option wieder aus, werden die gespeicherten Zugangsdaten entfernt.
+**Einstellungen → Konto → Biometrische Anmeldung** meldet dich mit Face ID oder Touch ID statt mit Passwort an. Die Zugangsdaten liegen im sicheren Speicher des Geräts; melde dich nach dem Aktivieren einmal ab und wieder an, damit sie gespeichert werden. Ausschalten entfernt sie.
 
 ## App-Sperre
 
-Für eine zusätzliche Ebene auf dem Gerät selbst aktivierst du in den Einstellungen der App die **App-Sperre mit Face ID / Fingerabdruck**. Ist sie aktiv, verlangt die App bei jedem Start eine biometrische Authentifizierung (oder ersatzweise den Geräte-Passcode), und erneut, wenn du nach ein paar Minuten im Hintergrund zurückkommst. Kurz wegwechseln und zurück fragt nicht neu. Das ist getrennt von der biometrischen Anmeldung: Die Anmeldung spart dir das Passwort-Tippen, die App-Sperre prüft zusätzlich am Gerät selbst.
+Die **App-Sperre mit Face ID / Fingerabdruck** in den Einstellungen der App verlangt bei jedem Start eine biometrische Prüfung (ersatzweise den Geräte-Passcode), und erneut nach ein paar Minuten im Hintergrund. Kurzes Wegwechseln fragt nicht neu. Sie ist unabhängig von der biometrischen Anmeldung.
 
 ## Updates
 
-Die Apps aktualisieren sich über den App Store und Google Play wie jede andere App (während der Beta über TestFlight auf iOS und den Testing-Track im Play Store auf Android) und erhalten zusätzlich Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).
+Die Apps aktualisieren sich über den App Store und Google Play (während der Beta: TestFlight auf iOS, der Testing-Track im Play Store auf Android), dazu kommen Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).
 
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe, Export, Gesichtserkennung, semantische Suche und KI-Beschreibungen, dazu Push-Benachrichtigungen. Live-Ansicht und Echtzeit-Erkennung sind kostenlos.
 [^appstore]: Mit dem öffentlichen Release wechselt die App in den App Store.
