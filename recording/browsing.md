@@ -40,7 +40,7 @@ Behind the gear, top right:
 Each card is one moment.
 
 - **Time and camera.** Selecting the card opens playback at that moment.
-- **Faces and plates.** When a moment also has a recognized face or a read plate, arrows step through its pictures in place, with the name or plate shown. The small tiles at the bottom jump to one. With several people in one moment, the main picture lists every name and counts the unknown faces, like Azra +1.
+- **Faces and plates.** When a moment also has a recognized face or a read plate, arrows step through its pictures in place, one per face or plate, with the name or plate shown. The small tiles at the bottom jump to one. With several people in one moment, the main picture lists every name and counts the unknown faces, like Azra +1.
 - **Grouped cards.** A grouped card shows the event's other moments as small previews at the bottom. Each opens its own moment.
 - **Split cards.** With **Ungroup** on, each card shows its place in the event, like 2/3. Hovering one highlights the other cards of the same event.
 - **The dots menu.** Holds what the card does not show itself: the [detection trace](/detection/events-and-detections#the-detection-trace), **Ask the assistant**, the download, and [**Correct person**](/detection/faces#correcting-a-recognition) when a face picture is on screen.

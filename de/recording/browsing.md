@@ -40,7 +40,7 @@ Hinter dem Zahnrad oben rechts:
 Jede Karte ist ein Moment.
 
 - **Zeit und Kamera.** Die Karte öffnet die Wiedergabe an diesem Moment.
-- **Gesichter und Kennzeichen.** Hat ein Moment auch ein erkanntes Gesicht oder ein gelesenes Kennzeichen, blättern Pfeile an Ort und Stelle durch seine Bilder, mit Name oder Kennzeichen. Die kleinen Kacheln unten springen zu einem. Sind mehrere Personen im Moment, nennt das Hauptbild alle Namen und zählt die unbekannten Gesichter mit, etwa Azra +1.
+- **Gesichter und Kennzeichen.** Hat ein Moment auch ein erkanntes Gesicht oder ein gelesenes Kennzeichen, blättern Pfeile an Ort und Stelle durch seine Bilder, eines pro Gesicht oder Kennzeichen, mit Name oder Kennzeichen. Die kleinen Kacheln unten springen zu einem. Sind mehrere Personen im Moment, nennt das Hauptbild alle Namen und zählt die unbekannten Gesichter mit, etwa Azra +1.
 - **Gruppierte Karten.** Eine gruppierte Karte zeigt die anderen Momente des Ereignisses als kleine Vorschauen unten. Jede öffnet ihren eigenen Moment.
 - **Geteilte Karten.** Mit **Aufteilen** an zeigt jede Karte ihre Position im Ereignis, etwa 2/3. Zeigst du auf eine, werden die anderen Karten desselben Ereignisses hervorgehoben.
 - **Das Punkte-Menü.** Enthält, was die Karte nicht selbst zeigt: den [Erkennungsverlauf](/de/detection/events-and-detections#der-erkennungsverlauf), **Assistenten fragen**, den Download und [**Person korrigieren**](/de/detection/faces#eine-erkennung-korrigieren), wenn gerade ein Gesichtsbild zu sehen ist.
