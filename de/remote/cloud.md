@@ -30,7 +30,9 @@ Der Rückfall ist nicht dauerhaft. camera.ui prüft deine eigene Adresse weiter 
 
 ## Das Cloud-Dashboard
 
-Das Dashboard in deinem camera.ui-Konto listet deine registrierten Server beim Namen, dort wählst du einen zum Verbinden. Per Einladung kannst du einen Server mit einem anderen camera.ui-Konto **teilen**, das sich dann mit eigenem Login anmeldet.
+Das Dashboard listet deine registrierten Server beim Namen, dort wählst du einen zum Verbinden. Im Browser liegt es unter [cloud.cameraui.com](https://cloud.cameraui.com/), in den mobilen Apps ist es die Cloud-Server-Liste. Per Einladung kannst du einen Server mit einem anderen camera.ui-Konto **teilen**, das sich dann mit eigenem Login anmeldet.
+
+Das Papierkorb-Symbol neben einem Server entfernt ihn aus deinem Konto, auch wenn du den Server selbst nicht mehr erreichst. Damit wird sein Platz in deinem Tarif frei, und ein neuer Server, der bei **Server-Limit deines Tarifs erreicht** hängen geblieben ist, lässt sich danach verbinden. Bei einem mit dir geteilten Server beendet der Papierkorb nur deinen eigenen Zugriff.
 
 ## Ausschalten
 

@@ -19,6 +19,8 @@ Aufnahmen kommen vom **camera.ui NVR**-Plugin (standardmäßig installiert) und 
 2. Öffne **Einstellungen → Aufnahmen** und klicke in der Karte **Lizenz & Cloud** auf das **Cloud-Icon** und melde dich an.
 3. Deine Lizenz aktiviert sich dann automatisch. Aktualisiert sich der Status nicht, nutze den **Refetch License**-Button.
 
+Endet die Anmeldung mit **Server-Limit deines Tarifs erreicht**, hält noch ein anderer Server die Lizenz, zum Beispiel eine frühere Testinstallation. Entferne diesen Server im [Cloud-Dashboard](/de/remote/cloud#das-cloud-dashboard) und melde dich erneut an.
+
 Mit aktiver Lizenz nehmen neue Kameras von selbst auf, solange ein Kamera-Slot frei ist: durchgehend, in allen Stream-Qualitäten. Modus, Qualitäten und An/Aus stehen in den Aufnahme-Einstellungen der Kamera.
 
 ### Kamera-Slots

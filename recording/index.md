@@ -19,6 +19,8 @@ Recording comes from the **camera.ui NVR** plugin, which is installed by default
 2. Open **Settings → Recordings** and, in the **License & Cloud** card, click the **cloud icon** and sign in.
 3. Your license then activates automatically. If the status doesn't update, use the **Refetch License** button.
 
+If signing in ends with **Server limit reached for your plan**, the license is still held by another server, an earlier test install for example. Remove that server in the [cloud dashboard](/remote/cloud#the-cloud-dashboard) and sign in again.
+
 With an active license, new cameras start recording on their own while a camera slot is free: continuously, in every stream quality. Mode, qualities and on/off are in the camera's recording settings.
 
 ### Camera slots

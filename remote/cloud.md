@@ -30,7 +30,9 @@ The fallback is not permanent. camera.ui keeps checking your own address and goe
 
 ## The cloud dashboard
 
-The dashboard in your camera.ui account lists your registered servers by name, and you pick one to connect to. You can **share a server** with another camera.ui account by invite, who then signs in with their own login.
+The dashboard lists your registered servers by name, and you pick one to connect to. It is at [cloud.cameraui.com](https://cloud.cameraui.com/) in a browser and is the cloud server list in the mobile apps. You can **share a server** with another camera.ui account by invite, who then signs in with their own login.
+
+The bin icon next to a server removes it from your account, also when you can no longer reach the server itself. That frees its place in your plan, so a new server that stopped at **Server limit reached for your plan** can connect afterwards. On a server shared with you, the bin only ends your own access.
 
 ## Turning it off
 
