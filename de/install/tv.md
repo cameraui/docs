@@ -27,22 +27,22 @@ Im selben Netzwerk listet die App deinen Server von selbst. Du kannst auch einen
 
 Melde dich mit Benutzername und Passwort an, dazu einem Zwei-Faktor-Code, falls du einen nutzt, oder füge einen API-Token ein.[^token]
 
-Du kannst mehrere Server hinzufügen und zwischen ihnen wechseln.
+Du kannst mehrere Server hinzufügen und unter **Einstellungen → Switch server** zwischen ihnen wechseln. Mit nur einem Server öffnet die App ihn direkt. Mit mehreren startet sie in der Serverauswahl, außer du schaltest in den Einstellungen des gewünschten Servers **Open at launch** ein.
 
 ## Rund um die App
 
-- **Home.** Oben die neueste Aktivität, dazu Kamera- und Speicher-Status und die heutige Ereigniszahl. Eine Benachrichtigung öffnet ihre Aufnahme.
+- **Home.** Oben die neueste Aktivität, dazu Kamera- und Speicher-Status und die heutige Ereigniszahl. Eine Benachrichtigung öffnet ihre Aufnahme. Die neueste Aktivität folgt dem [Filter der Letzten Ereignisse](/de/cameras/home) deines Kontos.
 - **Camview.** Eine Live-Wand deiner Kameras. Raster oder gemischtes Layout, umsortierbare Kacheln, Vollbild pro Kamera. **Fill wall** lässt die Ränder weg und füllt den Bildschirm, **Whole picture** passt jede Kamera mit Balken in ihre Kachel ein, statt sie zu beschneiden. Beides bleibt pro Ansicht gespeichert.
 - **Ereignisse.** Deine Ereignisse nach Tag gruppiert, mit Filtern für Personen, Gesichter, Fahrzeuge, Tiere, Türklingel, Sensoren, Geräusche und Bewegung. Ein Ereignis spielt ab diesem Moment ab.
 - **Episoden.** [Episoden](/de/detection/episodes) erscheinen als Mosaik-Karten zwischen deinen Ereignissen und auf dem Home-Screen. Öffnest du eine, spielt sie die ganze Story und wechselt von selbst zwischen den Kameras. Links und rechts springen zwischen den Kameras.
 - **Gegensprechen.** Im Vollbild-Player spricht der Mikrofon-Button über die Kamera, sofern sie Gegensprechen unterstützt.
-- **PTZ.** Eine Kamera, die schwenken, neigen oder zoomen kann, bekommt im Player einen Bewegen-Button. Halte eine Richtung, um weiter zu fahren, ein kurzer Druck rückt ein Stück. Home-Position und Presets erscheinen, wenn die Kamera sie hat. Siehe [PTZ & Autotrack](/de/sensors/ptz).
+- **PTZ.** Eine Kamera, die schwenken, neigen oder zoomen kann, bekommt im Player einen Bewegen-Button. Halte eine Richtung, um weiter zu fahren, ein kurzer Druck rückt ein Stück. Home-Position und Presets erscheinen, wenn die Kamera sie hat. Nur für Admin-Konten. Siehe [PTZ & Autotrack](/de/sensors/ptz).
 
 Die Wiedergabe folgt der [Wiedergabe-Quelle](/de/recording/timeline-playback#wiedergabequalität) jeder Kamera, Episoden eingeschlossen. Bei Auto spielt eine Lücke in der High-Aufnahme die nächste Qualität mit Material, genau wie im Webinterface.
 
 ### Sensoren
 
-Die Sensoren-Seite legt jeden Sensor als Kachel an, nach Typ gruppiert, mit seinem aktuellen Zustand.[^sensors]
+Die Sensoren-Seite legt jeden Sensor als Kachel an, nach Typ gruppiert, mit seinem aktuellen Zustand.[^sensors] Schalten können nur Admin-Konten, andere Konten sehen nur die Zustände.
 
 - **Klick zum Umschalten.** Lichter, Schalter, Sirenen, Schlösser und Garagentore schalten beim Auswählen um.
 - **Halten für mehr.** Auswahltaste halten oder Play/Pause öffnet Helligkeit, Lautstärke, Alarmmodi oder Schloss- und Garagensteuerung.

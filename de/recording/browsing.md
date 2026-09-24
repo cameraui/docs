@@ -32,7 +32,7 @@ Du kannst außerdem per Text über erkannte Labels, Gesichter und Kennzeichen su
 
 Hinter dem Zahnrad oben rechts:
 
-- **Ungroup.** Eine Karte pro Moment statt einer pro Ereignis. Standardmäßig aus. Deine Wahl wird in deinem Konto gespeichert und folgt dir auf andere Geräte.
+- **Aufteilen.** Eine Karte pro Moment statt einer pro Ereignis. Nur Ereignisse mit mehreren Momenten werden aufgeteilt, die meisten haben einen. Episoden bleiben, **Ereignisse** unter **Anzeigen** blendet sie aus. Standardmäßig aus. Deine Wahl wird in deinem Konto gespeichert und folgt dir auf andere Geräte.
 - **Nur mit Aufnahme.** Derselbe Filter wie in der Seitenleiste.
 
 ## Eine Karte lesen
@@ -40,9 +40,9 @@ Hinter dem Zahnrad oben rechts:
 Jede Karte ist ein Moment.
 
 - **Zeit und Kamera.** Die Karte öffnet die Wiedergabe an diesem Moment.
-- **Gesichter und Kennzeichen.** Hat ein Moment auch ein erkanntes Gesicht oder ein gelesenes Kennzeichen, blättern Pfeile an Ort und Stelle durch seine Bilder, mit Name oder Kennzeichen. Die kleinen Kacheln unten springen zu einem.
+- **Gesichter und Kennzeichen.** Hat ein Moment auch ein erkanntes Gesicht oder ein gelesenes Kennzeichen, blättern Pfeile an Ort und Stelle durch seine Bilder, mit Name oder Kennzeichen. Die kleinen Kacheln unten springen zu einem. Sind mehrere Personen im Moment, nennt das Hauptbild alle Namen und zählt die unbekannten Gesichter mit, etwa Azra +1.
 - **Gruppierte Karten.** Eine gruppierte Karte zeigt die anderen Momente des Ereignisses als kleine Vorschauen unten. Jede öffnet ihren eigenen Moment.
-- **Geteilte Karten.** Mit **Ungroup** an zeigt jede Karte ihre Position im Ereignis, etwa 2/3. Zeigst du auf eine, werden die anderen Karten desselben Ereignisses hervorgehoben.
+- **Geteilte Karten.** Mit **Aufteilen** an zeigt jede Karte ihre Position im Ereignis, etwa 2/3. Zeigst du auf eine, werden die anderen Karten desselben Ereignisses hervorgehoben.
 - **Das Punkte-Menü.** Enthält, was die Karte nicht selbst zeigt: den [Erkennungsverlauf](/de/detection/events-and-detections#der-erkennungsverlauf), **Assistenten fragen**, den Download und [**Person korrigieren**](/de/detection/faces#eine-erkennung-korrigieren), wenn gerade ein Gesichtsbild zu sehen ist.
 - **Halten für Vorschau.** Auf Handy oder Tablet hältst du eine Karte gedrückt, um ihre kurze Vorschau abzuspielen (loslassen stoppt, Tippen öffnet). Am Computer läuft sie beim Darüberfahren. Die Vorschau ist auf das herangezoomt, worum es in dem Moment ging, mit einer Uhr für das gezeigte Bild. **Keine Vorschau** heißt, es gibt kein abspielbares Material. Eine Episoden-Karte zeigt ihren Schnitt: eine Kamera nach der anderen, mit Name und Uhrzeit.
 

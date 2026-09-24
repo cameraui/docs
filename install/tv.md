@@ -27,22 +27,22 @@ On the same network the app lists your server by itself. You can also add one by
 
 Sign in with your username and password, plus a two-factor code if you use one, or paste an API token.[^token]
 
-You can add several servers and switch between them.
+You can add several servers and switch between them under **Settings → Switch server**. With a single server the app opens it right away. With several it starts on the server picker, unless you turn on **Open at launch** in the settings of the server it should open.
 
 ## Around the app
 
-- **Home.** The latest activity up top, plus camera and storage status and today's event count. Selecting a notification opens its recording.
+- **Home.** The latest activity up top, plus camera and storage status and today's event count. Selecting a notification opens its recording. Recent activity follows the [Recent Events filter](/cameras/home) of your account.
 - **Camview.** A live wall of your cameras. Grid or mixed layout, rearrangeable tiles, fullscreen per camera. **Fill wall** drops the borders and fills the screen, **Whole picture** letterboxes each camera in its tile instead of cropping it. Both are remembered per view.
 - **Events.** Your events grouped by day, with filters for persons, faces, vehicles, animals, doorbell, sensors, sounds, and motion. Selecting one plays it back from that moment.
 - **Episodes.** [Episodes](/detection/episodes) show up as mosaic cards among your events and on the Home screen. Opening one plays the whole story and switches cameras by itself. Left and right jump between cameras.
 - **Talk back.** In the fullscreen player, the microphone button speaks through the camera, if the camera supports two-way audio.
-- **PTZ.** A camera that can pan, tilt or zoom gets a move button in the player. Hold a direction to keep moving, a short press nudges. Home position and presets appear when the camera has them. See [PTZ & autotrack](/sensors/ptz).
+- **PTZ.** A camera that can pan, tilt or zoom gets a move button in the player. Hold a direction to keep moving, a short press nudges. Home position and presets appear when the camera has them. Admin accounts only. See [PTZ & autotrack](/sensors/ptz).
 
 Playback follows each camera's [playback source](/recording/timeline-playback#playback-quality), episodes included. On Auto a gap in the high recording plays the next quality that has footage, the same as in the web interface.
 
 ### Sensors
 
-The Sensors page lays out every sensor as a tile, grouped by type, with its current state.[^sensors]
+The Sensors page lays out every sensor as a tile, grouped by type, with its current state.[^sensors] Switching them takes an admin account, other accounts see the states only.
 
 - **Click to toggle.** Lights, switches, sirens, locks and garages flip on select.
 - **Hold for more.** Holding select, or pressing play/pause, opens brightness, volume, alarm modes, or lock and garage controls.
