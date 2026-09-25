@@ -24,7 +24,7 @@ Du kannst auf einen Türklingel-Druck (Trigger) filtern und alarmieren oder nur,
 
 ## Das Bild eines Ereignisses
 
-Jede Karte, jeder Push und jede KI-Beschreibung zeigt ein Bild für den Moment, und camera.ui wählt Frame und Ausschnitt dafür. Es rahmt das Motiv, eine Person kommt also als ganze Person an und nicht als Nahaufnahme einer Schulter. Wird später im selben Ereignis ein Gesicht erkannt, fällt der „Unknown"-Ausschnitt weg, statt neben dem Namen stehen zu bleiben.
+Jede Karte, jeder Push und jede KI-Beschreibung zeigt ein Bild für den Moment, und camera.ui wählt Frame und Ausschnitt dafür. Es rahmt das Motiv, eine Person kommt also als ganze Person an und nicht als Nahaufnahme einer Schulter. Was sich zur selben Zeit im Bild bewegt, kommt mit in den Rahmen, was still steht, nicht. Wird später im selben Ereignis ein Gesicht erkannt, fällt der „Unknown"-Ausschnitt weg, statt neben dem Namen stehen zu bleiben.
 
 Eine Kamera, die Erkennungen meldet, ohne zu sagen, wo im Bild sie waren, etwa viele Reolink- und ONVIF-Kameras, liefert nichts zum Rahmen. Stattdessen wird der bewegte Teil des Bildes gerahmt, was ungenauer ist. Ein [Objekt-Assistenz](/de/detection/ai-backends#objekt-assistenz)-Plugin gibt diesen Kameras echte Boxen.
 

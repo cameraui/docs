@@ -24,7 +24,7 @@ You can filter and alert on a doorbell press (a trigger) or only when a person i
 
 ## The picture an event carries
 
-Every card, push and AI description shows one picture for the moment, and camera.ui picks the frame and the crop for it. It frames the subject, so a person arrives as a whole person, not as a close-up of a shoulder. When a face is recognized later in the same event, the "Unknown" crop is dropped rather than kept alongside the name.
+Every card, push and AI description shows one picture for the moment, and camera.ui picks the frame and the crop for it. It frames the subject, so a person arrives as a whole person, not as a close-up of a shoulder. Whatever moves in the picture at the same time is framed with it, whatever stands still is not. When a face is recognized later in the same event, the "Unknown" crop is dropped rather than kept alongside the name.
 
 A camera that reports detections without saying where in the frame they were, many Reolink and ONVIF cameras, gives nothing to frame. The moving part of the picture is framed instead, which is less precise. An [object assist](/detection/ai-backends#object-assist) plugin gives those cameras real boxes.
 

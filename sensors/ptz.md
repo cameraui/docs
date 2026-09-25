@@ -41,6 +41,8 @@ In the camera's [settings](/cameras/settings), under **Autotrack**:
 
 The size limits apply when autotrack picks a target. A target it is already following stays followed as it gets smaller, and a target that grows past the largest size keeps its place while the camera waits.
 
+When the target is hidden for a moment, the camera holds its position for up to three seconds and keeps following it once it shows up again. After that it follows the largest target in view.
+
 If you move the camera yourself, with the joystick or your camera's own app, autotrack pauses for 45 seconds, counted from when you stop moving.
 
 <Shot src="/img/sensors/ptz-autotrack.png" alt="PTZ autotrack settings" />

@@ -41,6 +41,8 @@ In den [Einstellungen](/de/cameras/settings) der Kamera unter **Autotrack**:
 
 Die Größengrenzen greifen, wenn Autotrack ein Ziel auswählt. Ein Ziel, dem es bereits folgt, bleibt verfolgt, wenn es kleiner wird, und ein Ziel, das die obere Grenze überschreitet, behält seinen Platz, während die Kamera wartet.
 
+Ist das Ziel kurz verdeckt, hält die Kamera bis zu drei Sekunden ihre Position und folgt ihm weiter, sobald es wieder auftaucht. Danach folgt sie dem größten Ziel im Bild.
+
 Wenn du die Kamera selbst bewegst, per Joystick oder mit der App deiner Kamera, pausiert Autotrack für 45 Sekunden, gezählt ab dem Moment, in dem du aufhörst.
 
 <Shot src="/img/sensors/ptz-autotrack.png" alt="PTZ-Autotrack-Einstellungen" />
