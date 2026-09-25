@@ -125,6 +125,8 @@ Unter **Kamera-Zuweisungen** wählst du, welche Kamera jeder Worker dekodiert un
 
 Unter **Plugin-Zuweisungen** kann ein ganzes Plugin auf einem Worker statt auf dem Hauptserver laufen. Es werden nur Worker angeboten, deren Plattform mit dem Plugin kompatibel ist. Der Worker installiert und startet das Plugin; konfiguriert wird es weiterhin ganz normal in der Oberfläche.
 
+Ein Plugin auf einem Worker nutzt die Netzwerkadressen des Workers, nicht die **Server-Adressen** des Hauptservers. Wähle sie über **Worker bearbeiten** in der Worker-Liste; leer lauscht das Plugin auf allen. Eine Änderung startet die Plugins auf diesem Worker neu.
+
 ## Ausfallsicherung
 
 Worker senden alle 5 Sekunden einen Heartbeat und gelten nach 15 Sekunden ohne Heartbeat als offline. Trennt sich ein Worker, fallen seine zugewiesenen Kameras und Plugins automatisch auf den Hauptserver zurück (ein Plugin nur, wenn die Plattform des Hauptservers es ausführen kann). Verbindet sich der Worker erneut, werden seine Kameras und Plugins automatisch wieder zu ihm verschoben.

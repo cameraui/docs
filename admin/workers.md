@@ -125,6 +125,8 @@ Under **Camera Assignments**, choose which camera each worker decodes and detect
 
 Under **Plugin Assignments**, an entire plugin can run on a worker instead of the main server. Only workers whose platform is compatible with the plugin are offered. The worker installs and runs the plugin; it's still configured normally in the UI.
 
+A plugin on a worker uses the worker's own network addresses, not the **Server addresses** of the main server. Choose them with **Edit Worker** in the workers list; left empty, the plugin listens on all of them. Changing them restarts the plugins on that worker.
+
 ## Failover
 
 Workers send a heartbeat every 5 seconds and are considered offline after 15 seconds without one. If a worker disconnects, its assigned cameras and plugins fall back to the main server automatically (a plugin only falls back if the main server's platform can run it). When the worker reconnects, its cameras and plugins are automatically re-homed to it.
