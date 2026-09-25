@@ -13,7 +13,7 @@ title: Live-Ansicht
 - **Wiedergabe / Pause** des Live-Streams.
 - **Stumm / Stummschalten aufheben** bei Kameras mit Audio.
 - **Gegensprechen**, um über die Kamera zu sprechen (siehe unten).
-- **Vollbild** und **Bild-in-Bild**, um das Video in ein schwebendes Fenster zu lösen.
+- **Vollbild** und **Bild-in-Bild**, um das Video in ein schwebendes Fenster zu lösen. Im Vollbild hat die Steuerleiste zusätzlich **Shortcuts** und einen Zeitleisten-Button, der die Zeitleiste über das Video legt.
 - **Digitaler Zoom** per Scrollen oder Pinch, bis 5×, mit Minimap. Im Zoom ziehst du zum Verschieben. Der Ausschnitt bleibt beim Scrubben auf der Zeitleiste erhalten, bis du ins Bild doppelklickst oder wieder herauszoomst.
 - **Qualität** wechselt die Quellen-Auflösung (**Hohe**, **Mittlere** oder **Niedrige Auflösung**).
 - **Kamera öffnen** öffnet die volle Kameraseite mit Aufnahmen und Zeitleiste.
