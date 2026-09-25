@@ -13,7 +13,7 @@ Open any camera to watch it live.
 - **Play / pause** the live stream.
 - **Mute / unmute** for cameras with audio.
 - **Two-way talk** to speak through the camera (see below).
-- **Fullscreen** and **Picture-in-Picture** to pop the video into a floating window. In fullscreen the dots in the control bar switch **Shortcuts**, the **Timeline** over the video, the **PiP Source** overlay and **Picture-in-Picture**.
+- **Fullscreen** and **Picture-in-Picture** to pop the video into a floating window. In fullscreen the dots in the control bar switch **Shortcuts**, the **Timeline** over the video and the **PiP Source** overlay. On a phone held upright, the timeline sits at the bottom of the screen, below the picture.
 - **Digital zoom** by scrolling or pinching, up to 5×, with a minimap. Drag to pan when zoomed in. The crop holds while you scrub the timeline, until you double-click the picture or zoom back out.
 - **Quality** switches the source resolution (**High**, **Mid**, or **Low Resolution**).
 - **Open camera** opens the full camera page with recordings and the timeline.
