@@ -24,7 +24,7 @@ Das Steuern von Zubehör erfordert Admin-Rechte. Siehe [Sensoren & Zubehör](/de
 
 ## Shortcuts hinzufügen und bearbeiten
 
-1. Klicke an der Kamera auf die Schaltfläche **Shortcuts** in der Werkzeugleiste (im Vollbild in der Steuerleiste), um deine Shortcuts anzuzeigen, und dann auf den Stift (**Shortcuts bearbeiten**), der auf dem Video erscheint. Die Schaltfläche allein zeigt oder versteckt nur die Shortcuts, die du bereits hast.
+1. Klicke an der Kamera auf die Schaltfläche **Shortcuts** in der Werkzeugleiste (im Vollbild im Menü der Steuerleiste), um deine Shortcuts anzuzeigen, und dann auf den Stift (**Shortcuts bearbeiten**), der auf dem Video erscheint. Die Schaltfläche allein zeigt oder versteckt nur die Shortcuts, die du bereits hast.
 2. Klicke irgendwo auf das Video, um einen Shortcut zu setzen, und wähle dann eine **Kamera** oder einen **Sensor** als Ziel.
 3. Ziehe einen Shortcut, um ihn neu zu positionieren.
 4. Per Long-Press entfernst du einen Shortcut.

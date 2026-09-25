@@ -53,7 +53,7 @@ While a camera detects something its tile glows, and small icons name what was f
 
 Click a tile to expand it to the full view, click it again to go back to the grid. Views with a single camera stay as they are.
 
-The fullscreen button in a tile's control bar shows that camera alone. There the control bar also has **Shortcuts** and a timeline for this camera. If you play back recordings there, the other cameras pick up the same point in time when you leave fullscreen.
+The fullscreen button in a tile's control bar shows that camera alone. There the dots in the control bar also offer **Shortcuts** and a **Timeline** for this camera. If you play back recordings there, the other cameras pick up the same point in time when you leave fullscreen.
 
 ## Playback across the grid
 

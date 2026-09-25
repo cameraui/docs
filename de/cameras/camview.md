@@ -53,7 +53,7 @@ Erkennt eine Kamera etwas, leuchtet ihre Kachel, und kleine Symbole benennen das
 
 Klicke auf eine Kachel, um sie auf die ganze Ansicht zu vergrößern, und klicke erneut, um zurück zum Raster zu kommen. Ansichten mit nur einer Kamera bleiben, wie sie sind.
 
-Der Vollbild-Button in der Steuerleiste einer Kachel zeigt diese Kamera allein. Dort hat die Steuerleiste zusätzlich **Shortcuts** und eine Zeitleiste für diese Kamera. Spielst du dort Aufnahmen ab, übernehmen die anderen Kameras beim Verlassen des Vollbilds denselben Zeitpunkt.
+Der Vollbild-Button in der Steuerleiste einer Kachel zeigt diese Kamera allein. Dort bieten die Punkte in der Steuerleiste zusätzlich **Shortcuts** und eine **Zeitleiste** für diese Kamera. Spielst du dort Aufnahmen ab, übernehmen die anderen Kameras beim Verlassen des Vollbilds denselben Zeitpunkt.
 
 ## Wiedergabe über das ganze Raster
 
