@@ -22,6 +22,7 @@ The other filters:
 - **Labels.** Person, vehicle, animal, or other.
 - **Trigger.** Motion, a doorbell, a sensor, or an audio alarm.
 - **Attributes.** Events that contain a face or a license plate.
+- **Vehicles.** Color and type of a vehicle, read from the picture. See [Find an object](/detection/find-object#vehicle-color-and-type).
 - **Confidence.** Hide low-confidence detections.
 - **Favorites only.** Admins only, see below.
 - **Grid search.** With a single camera selected, draw a region on its snapshot to only show events detected inside that part of the frame.
@@ -54,13 +55,14 @@ The star on a recording or episode card keeps that moment: automatic [cleanup](/
 
 Admins can delete events here: the dots button in the corner enters select mode for single events, several, or all loaded ones. Deleted events disappear everywhere at once: Home, the timeline, this list, and every open browser.[^delete-disk]
 
-## AI search
+## Search
 
-**AI Search** finds moments by description, like "a person carrying a package". See [Semantic search](/detection/semantic-search).
+The search in the filter sidebar has one field, and the buttons above it switch what it searches. A running search stays when you switch.
 
-## Ask the assistant
-
-With the [assistant](/assistant/) set up, the filter sidebar starts with **Ask the assistant**. Type the search in your own words ("cars in the driveway yesterday", "favorites with the doorbell", "episodes from the entrance in the last hour") and it sets the filters below: cameras and rooms, time range, event types, sensors, favorites, and an AI Search when the words describe a scene the labels cannot. A note under the box says what the filters cannot express, an exact day for example.
+- **Search.** Titles and labels, as you type.
+- **AI Search.** Moments by description, like "a person carrying a package". See [Semantic search](/detection/semantic-search).
+- **Ask the assistant.** With the [assistant](/assistant/) set up. Type the search in your own words ("cars in the driveway yesterday", "favorites with the doorbell", "episodes from the entrance in the last hour") and it sets the filters below: cameras and rooms, time range, event types, vehicle color and type, sensors, favorites, and an AI Search when the words describe a scene the labels cannot. A note under the box says what the filters cannot express, an exact day for example.
+- **Search by picture.** A picture of a person or a vehicle, see [Find an object](/detection/find-object#search-by-picture).
 
 ## Heatmap
 

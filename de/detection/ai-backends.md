@@ -17,12 +17,12 @@ camera.ui liefert sechs KI-Backends als Plugins. Wähle das für deine Hardware 
 - **Coral.** Für eine Coral Edge TPU, mit CPU-Fallback. Nur Linux.
 - **Hailo.** Für einen Hailo-8- / Hailo-8L-Beschleuniger. Nur Linux.
 
-CoreML, OpenVINO, ONNX und NCNN liefern Objekt-, Gesichts- und Kennzeichen-Erkennung. CoreML, OpenVINO und ONNX liefern zusätzlich CLIP für die [semantische Suche](/de/detection/semantic-search). Coral und Hailo sind Edge-AI-Beschleuniger-Backends, die nur Objekterkennung liefern (keine Gesichts- oder Kennzeichen-Erkennung, kein CLIP).
+CoreML, OpenVINO, ONNX und NCNN liefern Objekt-, Gesichts- und Kennzeichen-Erkennung sowie die Personen-Wiedererkennung und die Segmentierung für die [Objektsuche](/de/detection/find-object). CoreML, OpenVINO und ONNX liefern zusätzlich CLIP für die [semantische Suche](/de/detection/semantic-search). Coral und Hailo sind Edge-AI-Beschleuniger-Backends, die nur Objekterkennung liefern (keine Gesichts- oder Kennzeichen-Erkennung, kein CLIP).
 
 
 ## Modelle und Confidence
 
-In den Plugin-Settings eines Backends wählst du ein **Modell** pro Aufgabe (Objekt, Gesicht, Kennzeichen, CLIP). Größere Modelle sind genauer, aber schwerer. camera.ui lädt die benötigten Modelle automatisch herunter.
+In den Plugin-Settings eines Backends wählst du ein **Modell** pro Aufgabe (Objekt, Gesicht, Kennzeichen, Segmentierung, CLIP). Größere Modelle sind genauer, aber schwerer. camera.ui lädt die benötigten Modelle automatisch herunter.
 
 Die Konfidenz wird nicht hier gesetzt, sondern pro Kamera unter [Einstellungen → Erkennung](/de/cameras/settings), für Objekt-, Gesichts- und Kennzeichen-Erkennung gleichermaßen, und eine Änderung greift sofort. Objekte haben einen Wert pro Typ, je zwischen 0,3 und 1: **Personen-Konfidenz**, **Fahrzeug-Konfidenz** und **Tier-Konfidenz**.
 
@@ -52,7 +52,7 @@ Bewegt sich nichts, geht der ganze Frame durch. Die Spalte **Zoom** in den Metri
 
 <Shot src="/img/admin/metrics-detection.png" alt="Die Erkennungs-Tabelle unter Metrics, Kameras" />
 
-**Inferenz anzeigen** schaltet dieselbe Tabelle auf die Zeit innerhalb jedes Detektors um: **Bewegung**, **Objekt**, **Gesicht**, **Kennzeichen**, **Klassifizierer** und **CLIP**. Zeig auf eine Zelle, um Plugin, Modell und Gerät zu sehen; eine Kamera auf einem [Worker](/de/admin/workers) nennt diesen Worker. Die Werte sind Durchschnitte seit dem Start der Kamera; nach einem Modellwechsel **Zurücksetzen**. **Kopieren** legt beide Ansichten für jede Kamera als Text in die Zwischenablage.
+**Inferenz anzeigen** schaltet dieselbe Tabelle auf die Zeit innerhalb jedes Detektors um: **Bewegung**, **Objekt**, **Gesicht**, **Erkennung**, **Re-ID**, **Kennzeichen**, **Klassifizierer** und **CLIP**. Zeig auf eine Zelle, um Plugin, Modell und Gerät zu sehen; eine Kamera auf einem [Worker](/de/admin/workers) nennt diesen Worker. Die Werte sind Durchschnitte seit dem Start der Kamera; nach einem Modellwechsel **Zurücksetzen**. **Kopieren** legt beide Ansichten für jede Kamera als Text in die Zwischenablage.
 
 ### Benchmark
 

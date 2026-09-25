@@ -12,6 +12,7 @@ Each camera's **timeline** scrubs through its recorded footage, with marks where
 
 - **Scrub** along the timeline. Scrubbing uses the low-resolution stream.
 - **Play and pause**, skip 30 seconds back or forward, and change the **speed** between 0.25x and 8x.
+- **Find an object.** Pause, click a person or a vehicle, and get the moments that show it. See [Find an object](/detection/find-object).
 - **Event marks** show a thumbnail. Click one to jump to that moment.
 - **Rings and alarms.** A doorbell press, siren, security system or contact event shows as a full event bar with its own icon and a snapshot, even when the camera saw nothing. A ring during a running motion event appears right away, not after the motion ends.
 - **Filter by event type.** The filter button picks which event types show on the timeline and in the detections list. The choice is remembered.

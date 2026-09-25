@@ -322,6 +322,13 @@
         },
         {
           "text": {
+            "en": "Find an object",
+            "de": "Objekt suchen"
+          },
+          "link": "/detection/find-object"
+        },
+        {
+          "text": {
             "en": "AI descriptions",
             "de": "KI-Beschreibungen"
           },

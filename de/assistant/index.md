@@ -16,7 +16,7 @@ Sobald ein Admin ihn [eingerichtet](/de/admin/assistant-setup) hat, sehen ihn al
 
 Der Assistent antwortet in deiner Oberflächensprache, solange **Antwortsprache** nicht auf eine feste Sprache steht. Jedes Werkzeug, das er benutzt hat, erscheint als Karte unter der Antwort, mit Argumenten und Ergebnis.
 
-Er bedient die App auch für dich: „zeig mir die Gartenkamera", „öffne die Aufnahme vom Tor um 7:12" oder „geh zu den Automationen" öffnet die passende Seite, und auf einer Kameraseite bewegt und zoomt er die Zeitleiste. Das tut er nur, wenn du etwas sehen oder machen willst, eine reine Frage wird im Chat beantwortet. Die Aufnahmen-Seite hat ein eigenes Feld für den Assistenten, siehe [Aufnahmen durchsuchen](/de/recording/browsing#assistent-fragen).
+Er bedient die App auch für dich: „zeig mir die Gartenkamera", „öffne die Aufnahme vom Tor um 7:12" oder „geh zu den Automationen" öffnet die passende Seite, und auf einer Kameraseite bewegt und zoomt er die Zeitleiste. Das tut er nur, wenn du etwas sehen oder machen willst, eine reine Frage wird im Chat beantwortet. Die Aufnahmen-Seite hat ein eigenes Feld für den Assistenten, siehe [Aufnahmen durchsuchen](/de/recording/browsing#suche).
 
 Ist eine Anfrage mehrdeutig, fragt der Assistent mit einem kleinen Formular zurück: Kamera wählen, Zeitraum wählen, oder eine Antwort eintippen. Überspringst du die Frage, macht er mit einer Annahme weiter und nennt sie. Ein Tagesrückblick oder ein Systemcheck kommt als Karte mit einer Zeile pro Kamera oder Komponente, und die Zeilen öffnen den Moment, den sie beschreiben.
 

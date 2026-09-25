@@ -17,12 +17,12 @@ camera.ui ships six AI backends as plugins. Pick the one for your hardware and e
 - **Coral.** For a Coral Edge TPU, with a CPU fallback. Linux only.
 - **Hailo.** For a Hailo-8 / Hailo-8L accelerator. Linux only.
 
-CoreML, OpenVINO, ONNX, and NCNN provide object, face, and license-plate detection. CoreML, OpenVINO, and ONNX also provide CLIP for [semantic search](/detection/semantic-search). Coral and Hailo are edge-AI accelerator backends that provide object detection only (no faces, license plates, or CLIP).
+CoreML, OpenVINO, ONNX, and NCNN provide object, face, and license-plate detection, and person re-identification and segmentation for [finding an object](/detection/find-object). CoreML, OpenVINO, and ONNX also provide CLIP for [semantic search](/detection/semantic-search). Coral and Hailo are edge-AI accelerator backends that provide object detection only (no faces, license plates, or CLIP).
 
 
 ## Models and confidence
 
-In a backend's plugin settings you choose a **model** for each task (object, face, license plate, CLIP). Larger models are more accurate but heavier. camera.ui downloads the models it needs automatically.
+In a backend's plugin settings you choose a **model** for each task (object, face, license plate, segmentation, CLIP). Larger models are more accurate but heavier. camera.ui downloads the models it needs automatically.
 
 Confidence is not set here but per camera in [Settings → Detection](/cameras/settings), for object, face and plate detection alike, and a change takes effect right away. Objects have one value per type, each between 0.3 and 1: **Person Confidence**, **Vehicle Confidence** and **Animal Confidence**.
 
@@ -52,7 +52,7 @@ When nothing is moving, the whole frame goes through. The **Zoom** column in the
 
 <Shot src="/img/admin/metrics-detection.png" alt="The detection table in Metrics, Cameras" />
 
-**Show inference** switches the same table to the time inside each detector: **Motion**, **Object**, **Face**, **Plate**, **Classifier** and **CLIP**. Point at a cell to see the plugin, the model and the device it runs on, and a camera running on a [worker](/admin/workers) names that worker. Values are averages since the camera started; use **Reset** after changing a model. **Copy** puts both views for every camera on the clipboard as text.
+**Show inference** switches the same table to the time inside each detector: **Motion**, **Object**, **Face**, **Recognition**, **Re-ID**, **Plate**, **Classifier** and **CLIP**. Point at a cell to see the plugin, the model and the device it runs on, and a camera running on a [worker](/admin/workers) names that worker. Values are averages since the camera started; use **Reset** after changing a model. **Copy** puts both views for every camera on the clipboard as text.
 
 ### Benchmark
 

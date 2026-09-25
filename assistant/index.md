@@ -16,7 +16,7 @@ Once an admin has [set it up](/admin/assistant-setup), every user sees the Assis
 
 The assistant answers in your interface language unless **Answer language** is set to a fixed one. Every tool it used appears as a card under the answer with its arguments and result.
 
-It also works the app for you: "show me the garden camera", "open the recording of the gate from 7:12" or "go to the automations" opens the matching page, and on a camera page it moves and zooms the timeline. It does that only when you ask to see or do something, a plain question is answered in the chat. The recordings page has its own box for the assistant, see [Browsing recordings](/recording/browsing#ask-the-assistant).
+It also works the app for you: "show me the garden camera", "open the recording of the gate from 7:12" or "go to the automations" opens the matching page, and on a camera page it moves and zooms the timeline. It does that only when you ask to see or do something, a plain question is answered in the chat. The recordings page has its own box for the assistant, see [Browsing recordings](/recording/browsing#search).
 
 When a request is ambiguous the assistant asks back with a small form: pick a camera, choose a time range, or type an answer. Skip the question and it continues with an assumption it names. A recap of a day or a system check comes back as a card with one row per camera or component, and the rows open the moment they describe.
 

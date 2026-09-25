@@ -10,7 +10,7 @@ Die meisten Sensoren stammen von [Plugins](/de/plugins/): Du aktivierst das lief
 
 Der **Plugins**-Tab in den [Einstellungen](/de/cameras/settings) einer Kamera ist in Kategorien gegliedert:
 
-- **Detection.** Die Detektoren: Bewegung, Objekt, Audio, Gesicht und Kennzeichen.
+- **Detection.** Die Detektoren: Bewegung, Objekt, Audio, Gesicht, Gesichtserkennung, Personen-Wiedererkennung, Segmentierung und Kennzeichen.
 - **Accessories.** Steuerbares Zubehör und Zustandssensoren, etwa Lichter, Schlösser, Schalter, Sirenen und Kontaktsensoren.
 - **Core.** Single-Provider-Sensoren wie PTZ und Batterie.
 - **Hub.** Smart-Home- und Plattform-Integrationen, etwa eine HomeKit-Bridge.

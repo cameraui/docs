@@ -22,6 +22,7 @@ Die weiteren Filter:
 - **Labels.** Person, Fahrzeug, Tier oder Sonstige.
 - **Auslöser.** Bewegung, eine Türklingel, ein Sensor oder ein Alarmgeräusch.
 - **Attribute.** Ereignisse, die ein Gesicht oder ein Kennzeichen enthalten.
+- **Fahrzeuge.** Farbe und Typ eines Fahrzeugs, aus dem Bild gelesen. Siehe [Objekt suchen](/de/detection/find-object#farbe-und-typ-von-fahrzeugen).
 - **Konfidenz.** Erkennungen mit niedriger Konfidenz ausblenden.
 - **Nur Favoriten.** Nur für Admins, siehe unten.
 - **Rastersuche.** Ist genau eine Kamera ausgewählt, kannst du einen Bereich auf ihrem Snapshot markieren, um nur Ereignisse anzuzeigen, die in diesem Teil des Bildes erkannt wurden.
@@ -54,13 +55,14 @@ Der Stern auf einer Aufnahme- oder Episoden-Karte behält diesen Moment: Die aut
 
 Admins können Ereignisse hier löschen: Der Punkte-Button in der Ecke startet den Auswahlmodus für einzelne Ereignisse, mehrere oder alle geladenen. Gelöschte Ereignisse verschwinden überall auf einmal: Home, Timeline, diese Liste und jeder offene Browser.[^delete-disk]
 
-## KI-Suche
+## Suche
 
-Die **KI-Suche** findet Momente per Beschreibung, etwa „eine Person, die ein Paket trägt". Siehe [Semantische Suche](/de/detection/semantic-search).
+Die Suche in der Filter-Seitenleiste hat ein Feld, die Knöpfe darüber schalten um, was es durchsucht. Eine laufende Suche bleibt beim Umschalten bestehen.
 
-## Assistent fragen
-
-Ist der [Assistent](/de/assistant/) eingerichtet, beginnt die Filter-Seitenleiste mit **Assistenten fragen**. Schreib die Suche in eigenen Worten („Autos in der Einfahrt gestern", „Favoriten mit Klingel", „Episoden vom Eingang der letzten Stunde") und die Filter darunter werden gesetzt: Kameras und Räume, Zeitraum, Ereignistypen, Sensoren, Favoriten und eine KI-Suche, wenn die Worte eine Szene beschreiben, die die Labels nicht abdecken. Ein Hinweis unter dem Feld sagt, was die Filter nicht ausdrücken können, etwa einen genauen Tag.
+- **Suche.** Titel und Labels, schon beim Tippen.
+- **KI-Suche.** Momente per Beschreibung, etwa „eine Person, die ein Paket trägt". Siehe [Semantische Suche](/de/detection/semantic-search).
+- **Assistent fragen.** Wenn der [Assistent](/de/assistant/) eingerichtet ist. Schreib die Suche in eigenen Worten („Autos in der Einfahrt gestern", „Favoriten mit Klingel", „Episoden vom Eingang der letzten Stunde") und die Filter darunter werden gesetzt: Kameras und Räume, Zeitraum, Ereignistypen, Farbe und Typ von Fahrzeugen, Sensoren, Favoriten und eine KI-Suche, wenn die Worte eine Szene beschreiben, die die Labels nicht abdecken. Ein Hinweis unter dem Feld sagt, was die Filter nicht ausdrücken können, etwa einen genauen Tag.
+- **Suche per Bild.** Ein Bild einer Person oder eines Fahrzeugs, siehe [Objekt suchen](/de/detection/find-object#suche-per-bild).
 
 ## Heatmap
 

@@ -10,7 +10,7 @@ Most sensors come from [plugins](/plugins/): you enable the providing plugin and
 
 The **Plugins** tab in a camera's [settings](/cameras/settings) is grouped into categories:
 
-- **Detection.** The detectors: motion, object, audio, face, and license plate.
+- **Detection.** The detectors: motion, object, audio, face, face recognition, person re-ID, segmentation, and license plate.
 - **Accessories.** Controllable accessories and state sensors, such as lights, locks, switches, sirens, and contact sensors.
 - **Core.** Single-provider sensors such as PTZ and battery.
 - **Hub.** Smart-home and platform integrations, such as a HomeKit bridge.
