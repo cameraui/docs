@@ -22,6 +22,8 @@ Ein Frame öffnet den Editor. Ziehen zeichnet eine Box, Tipp auf Box oder Label 
 
 **Boxen des vorherigen Bildes zeigen** (`V`) zeichnet die Boxen des Frames davor als Umrisse ein, das Plus an einem übernimmt ihn, `Shift` + `V` alle.
 
+Erkennungen unter der Erkennungsschwelle der Kamera erscheinen gepunktet mit ihrem Score. Das Plus an einer beschriftet sie; lass die stehen, die nichts zeigen.
+
 <Shot src="/img/detection/training-editor.png" alt="Training-Editor mit beschrifteten Boxen" />
 
 Was einen Frame wertvoll macht:

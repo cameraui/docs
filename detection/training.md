@@ -22,6 +22,8 @@ Opening a frame starts the editor. Drag to draw a box, tap a box or its label to
 
 **Show boxes of the previous image** (`V`) draws the boxes of the frame before as outlines, the plus on one takes it over, `Shift` + `V` takes all.
 
+Detections below the camera's detection threshold show as dotted outlines with their score. The plus on one labels it; leave the ones that show nothing.
+
 <Shot src="/img/detection/training-editor.png" alt="Training editor with labeled boxes" />
 
 What makes a frame useful:
