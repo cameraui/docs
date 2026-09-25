@@ -10,7 +10,7 @@ Die Kennzeichenerkennung liest Nummernschilder von Fahrzeugen. Sie baut auf der 
 
 In den Plugin-Settings des Backends nutzen Kennzeichen zwei Modelle, einen **Detektor**, der das Schild findet, und ein **OCR-Modell**, das die Zeichen liest. camera.ui lädt sie automatisch herunter. Jedes hat eine eigene Konfidenz an der Kamera unter [Einstellungen → Erkennung](/de/cameras/settings), dazu kommt ein Längenfilter:
 
-- **Kennzeichen-Erkennung.** Kennzeichen, die mit weniger Sicherheit gefunden werden, werden gar nicht erst gelesen (0 bis 1, Standard 0,3).
+- **Kennzeichen-Erkennung.** Kennzeichen, die mit weniger Sicherheit gefunden werden, werden ignoriert (0 bis 1, Standard 0,3).
 - **Kennzeichen-Lesung.** Lesungen, bei denen die OCR unsicherer ist als dieser Wert, werden ignoriert (0 bis 1, Standard 0,9).
 - **Min. Kennzeichenlänge.** Kürzere Lesungen werden als Fragmente verworfen (Standard 4 Zeichen).
 

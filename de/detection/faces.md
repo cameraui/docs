@@ -20,6 +20,7 @@ In der **Gesichter**-Ansicht (Bereiche **Bekannte Gesichter** und **Unbekannte G
 - **Bilder pro Person.** Mindestens 10 Bilder sind empfohlen, aus verschiedenen Situationen (Tageslicht, Nacht, mit Mütze). Mit weniger wird die Person oft nicht erkannt, ihr Dialog weist darauf hin.
 - **Unklare Gesichter bekommen keinen Namen.** Ein Gesicht von der Seite, von oben oder verwischt wird weder benannt noch unter Unbekannte Gesichter gesammelt. Erkannt wird die Person im nächsten Bild, das sie klar zeigt.
 - **Kleine Gesichter.** Ein Gesicht, das im Kamerabild kleiner als etwa 40 Pixel ist, ist zum Erkennen zu klein.
+- **Ein Bild reicht nicht.** Eine Person, der die Kamera folgt, bekommt einen Namen, sobald zwei Bilder ihres Gesichts übereinstimmen, und camera.ui prüft weiter, solange sie im Bild ist. Widersprechen sich die Bilder, bleibt die Person ohne Namen, statt den Namen eines anderen zu bekommen.
 
 ## Unbekannte Gesichter
 

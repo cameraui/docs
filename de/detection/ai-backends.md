@@ -26,6 +26,8 @@ In den Plugin-Settings eines Backends wählst du ein **Modell** pro Aufgabe (Obj
 
 Die Konfidenz wird nicht hier gesetzt, sondern pro Kamera unter [Einstellungen → Erkennung](/de/cameras/settings), für Objekt-, Gesichts- und Kennzeichen-Erkennung gleichermaßen, und eine Änderung greift sofort. Objekte haben einen Wert pro Typ, je zwischen 0,3 und 1: **Personen-Konfidenz**, **Fahrzeug-Konfidenz** und **Tier-Konfidenz**.
 
+Das Backend meldet alles ab 0,25. Unter deinem Wert startet eine Erkennung weder ein Ereignis noch eine Benachrichtigung oder einen Sensor-Zustand, sie hilft camera.ui nur, eine bereits verfolgte Person oder ein Fahrzeug weiter zu verfolgen.
+
 Welche Objekttypen eine Kamera meldet, legst du in ihren [Objektzonen](/de/cameras/zones-and-masks#objektzonen) fest. Bewegung und Audio sind davon nicht betroffen.
 
 Neben den Konfidenz-Werten liegt **Objekt Timeout** in Sekunden (mindestens 10, Standard 15). Es betrifft nur Kameras, die Objekte selbst melden, etwa viele Reolink-Modelle: Es begrenzt, wie lange so eine Erkennung aktiv bleibt, wenn die Kamera kein Ende-Signal sendet. Frame-basierte Backends ignorieren es.

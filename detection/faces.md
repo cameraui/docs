@@ -20,6 +20,7 @@ In the **Faces** view (sections **Known Faces** and **Unknown Faces**), **Add Fa
 - **Pictures per person.** At least 10 pictures are recommended, from different situations (daylight, night, with a cap). With fewer the person is often missed, and their dialog says so.
 - **Unclear faces get no name.** A face seen from the side, from above, or blurred is neither named nor collected under Unknown Faces. The person is recognized in the next picture that shows them clearly.
 - **Small faces.** A face smaller than about 40 pixels in the camera picture is too small to recognize.
+- **One picture is not enough.** A person the camera follows gets a name once two pictures of the face agree, and camera.ui keeps checking while they stay in view. When the pictures disagree, the person stays unnamed rather than getting someone else's name.
 
 ## Unknown faces
 

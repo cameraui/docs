@@ -26,6 +26,8 @@ In a backend's plugin settings you choose a **model** for each task (object, fac
 
 Confidence is not set here but per camera in [Settings → Detection](/cameras/settings), for object, face and plate detection alike, and a change takes effect right away. Objects have one value per type, each between 0.3 and 1: **Person Confidence**, **Vehicle Confidence** and **Animal Confidence**.
 
+The backend reports everything from 0.25 up. Below your value a detection never starts an event, a notification or a sensor state, it only helps camera.ui keep following a person or vehicle it already tracks.
+
 Which object types a camera reports is set in its [object zones](/cameras/zones-and-masks#object-zones). Motion and audio are not affected.
 
 Next to the confidence values is **Object timeout**, in seconds (minimum 10, default 15). It only matters for cameras that report objects on their own, like many Reolink models: it caps how long such a detection stays active when the camera never sends an end signal. Frame-based backends ignore it.

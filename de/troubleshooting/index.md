@@ -55,7 +55,13 @@ Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn
 
 Kennst du das Konto, aber nicht das Passwort, kann ein anderer Administrator unter **Einstellungen → [Benutzer](/de/admin/users)** ein neues setzen (Benutzermenü → **Bearbeiten**).
 
-Das **Master**-Konto ist die Ausnahme. Nur der Master selbst kann es ändern: weder ein anderer Administrator noch die Kommandozeile kann es zurücksetzen. Ein [Backup](/de/admin/backup) aus einer Zeit, als du das Passwort noch kanntest, bringt die alten Konten mit zurück. Ohne so ein Backup hilft nur eine Neuinstallation, bewahre das Master-Passwort also dort auf, wo du es wiederfindest.
+Das **Master**-Konto ist die Ausnahme: kein anderer Administrator kann es ändern. Zum Zurücksetzen legst du eine leere Datei namens `reset-password` im `volume`-Ordner von camera.ui an und startest camera.ui neu:
+
+- **Docker.** `/data/volume` im Container, zum Beispiel `docker exec <container> touch /data/volume/reset-password`.
+- **Linux.** `~/.camera.ui/volume` des Service-Users.
+- **Desktop-App.** Der Ordner unter [Wo deine Daten liegen](/de/install/desktop#wo-deine-daten-liegen).
+
+Danach meldet sich der Master mit seinem Benutzernamen und dem Passwort `admin` an und muss sofort ein neues Passwort setzen. Seine Sitzungen sind abgemeldet und die Zwei-Faktor-Authentifizierung ist aus. Das Log nennt das Konto, die Datei löscht sich selbst.
 
 ## Mehr Details bekommen
 
