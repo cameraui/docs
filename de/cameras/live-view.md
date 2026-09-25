@@ -34,6 +34,8 @@ Die **Gegensprechanlage**-Schaltfläche sendet dein Mikrofon an den Lautsprecher
 
 Wenn eine Quelle in den [Kamera-Einstellungen](/de/cameras/settings) (Tab „Quellen“) eine **Bild-in-Bild Quelle** hat, bekommt der Player den Button **PiP ein-/ausblenden**. Der zweite Stream wird dann klein über dem Video angezeigt. Ein Klick auf das Overlay tauscht die beiden Streams.
 
+Die Bild-in-Bild Quelle kann auch ein Stream einer anderen Kamera sein, die Liste gruppiert sie nach Kamera. Das passt für ein zweites Objektiv desselben Geräts, etwa das Tele-Objektiv einer Dual-Lens-Kamera, das als eigene Kamera angelegt ist. Ein Klick auf dieses Overlay öffnet die andere Kamera mit ihrer Zeitleiste und ihren Aufnahmen, beim Durchsehen von Aufnahmen am selben Zeitpunkt, und die Kamera, von der du kommst, wird ihr Overlay.
+
 ## Streaming-Modi
 
 Den Streaming-Modus legst du pro Kamera in ihren [Einstellungen](/de/cameras/settings) fest, eine neue Kamera startet auf **Auto**. Der Player hat außerdem einen Button, mit dem du beim Zuschauen zwischen WebRTC und MSE wechselst.

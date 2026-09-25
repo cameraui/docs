@@ -32,10 +32,12 @@ A disabled camera only offers Settings.
 
 ## Arranging the cards
 
-A floating control in the corner appears once you have more than one camera:
+A floating control sits in the corner:
 
-- **Group by room** switches from one flat grid to sections per room, using the **Room** you set in the camera settings. Cameras without a room land in **Default**, which comes first, and the remaining rooms are sorted by name. **Show all cameras** switches back.
-- **Enable drag** / **Disable drag** toggles moving the cards. The order is kept; in the grouped view you reorder within a room.
+- **Group by room** (with more than one camera) switches from one flat grid to sections per room, using the **Room** you set in the camera settings. Cameras without a room land in **Default**, which comes first, and the remaining rooms are sorted by name. **Show all cameras** switches back.
+- **Edit layout** / **Lock layout** unlocks the cards. Unlocked, you can drag them to a new place, and the eye button on a card hides it from Home or shows it again. Hidden cameras stay on the page, dimmed, until you lock the layout. The order is kept; in the grouped view you reorder within a room.
+
+Hiding only changes Home. The camera keeps streaming, detecting and recording, its events still show in **Recent Events**, and selection mode leaves it out. Hidden cameras belong to your account.
 
 Cards you never moved are sorted by name.
 

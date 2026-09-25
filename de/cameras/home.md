@@ -32,10 +32,12 @@ Eine deaktivierte Kamera bietet nur Einstellungen.
 
 ## Die Karten anordnen
 
-Ein schwebendes Bedienelement in der Ecke erscheint, sobald du mehr als eine Kamera hast:
+Ein schwebendes Bedienelement sitzt in der Ecke:
 
-- **Nach Raum gruppieren** wechselt vom flachen Raster zu Abschnitten pro Raum, anhand des **Raum**, den du in den Kamera-Einstellungen gesetzt hast. Kameras ohne Raum landen unter **Standard**, das zuerst kommt, die übrigen Räume sind nach Namen sortiert. **Alle Kameras anzeigen** wechselt zurück.
-- **Ziehen aktivieren** / **Ziehen deaktivieren** schaltet das Verschieben der Karten. Die Reihenfolge bleibt erhalten; in der gruppierten Ansicht sortierst du innerhalb eines Raums.
+- **Nach Raum gruppieren** (ab zwei Kameras) wechselt vom flachen Raster zu Abschnitten pro Raum, anhand des **Raum**, den du in den Kamera-Einstellungen gesetzt hast. Kameras ohne Raum landen unter **Standard**, das zuerst kommt, die übrigen Räume sind nach Namen sortiert. **Alle Kameras anzeigen** wechselt zurück.
+- **Layout bearbeiten** / **Layout sperren** entsperrt die Karten. Entsperrt kannst du sie verschieben, und der Augen-Button auf einer Karte blendet sie auf der Startseite aus oder wieder ein. Ausgeblendete Kameras bleiben abgedunkelt sichtbar, bis du das Layout sperrst. Die Reihenfolge bleibt erhalten; in der gruppierten Ansicht sortierst du innerhalb eines Raums.
+
+Ausblenden ändert nur die Startseite. Die Kamera streamt, erkennt und nimmt weiter auf, ihre Ereignisse erscheinen weiter unter **Letzte Ereignisse**, und der Auswahlmodus lässt sie aus. Ausgeblendete Kameras gehören zu deinem Konto.
 
 Karten, die du nie verschoben hast, sind nach Namen sortiert.
 

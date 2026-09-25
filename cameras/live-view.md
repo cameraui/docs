@@ -34,6 +34,8 @@ The **Intercom** button sends your microphone to the camera's speaker, on camera
 
 Give a source a **PiP Source** in the camera [settings](/cameras/settings) (Sources tab) and the player gets a **Toggle PiP** button. It shows that second stream as a small overlay on the video. Click the overlay to swap the two streams.
 
+The PiP Source can also be a stream of another camera, the list groups them by camera. That fits a second lens of the same device, such as the tele lens of a dual-lens camera added as a camera of its own. Clicking that overlay opens the other camera with its timeline and recordings, at the same moment while you review footage, and the camera you came from becomes its overlay.
+
 ## Streaming modes
 
 You set the streaming mode per camera in its [settings](/cameras/settings), where a new camera starts on **Auto**. The player also has a button to switch between WebRTC and MSE while you watch.
