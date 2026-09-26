@@ -10,7 +10,7 @@ Die Erkennungsmodelle von camera.ui werden auf echtem Material aus echten Instal
 
 ## Wie Frames gesammelt werden
 
-Während Erkennungs-Events speichert jede Kamera einen Frame, wenn etwas Neues auftaucht: ein neues Objekt, eine geänderte Position, ein frisches Gesicht oder Kennzeichen. Eine unveränderte Szene wiederholt sich nicht, egal wie lange das Event läuft. camera.ui behält höchstens 200 Frames pro Kamera: Ist das Limit erreicht, weichen die ältesten ungeprüften Frames, und ungeprüfte Frames werden ohnehin nach 14 Tagen gelöscht. Bestätigte Frames bleiben, bis du sie einreichst oder löschst.
+Während Erkennungs-Events speichert jede Kamera einen Frame, wenn etwas Neues auftaucht: ein neues Objekt, eine geänderte Position, ein frisches Gesicht oder Kennzeichen. Eine unveränderte Szene wiederholt sich nicht, egal wie lange das Event läuft. Aus den Sekunden um so einen Moment behält sie einen Frame und bevorzugt Objekte, bei denen die Erkennung unsicher war, kleine Objekte und Tiere vor großen, eindeutigen; jedes zehnte Mal behält sie stattdessen den ersten Frame, damit gewöhnliche Szenen erhalten bleiben. camera.ui behält höchstens 200 Frames pro Kamera: Ist das Limit erreicht, weichen die ältesten ungeprüften Frames, und ungeprüfte Frames werden ohnehin nach 14 Tagen gelöscht. Bestätigte Frames bleiben, bis du sie einreichst oder löschst.
 
 Eine [Privatzone](/de/cameras/zones-and-masks) wird geschwärzt, bevor der Frame gespeichert wird, dahinter wird also nie etwas gesammelt oder eingereicht.
 
