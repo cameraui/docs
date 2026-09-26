@@ -10,7 +10,7 @@ camera.ui's detection models are trained on real footage from real installations
 
 ## How frames are collected
 
-During detection events each camera saves a frame when something new shows up: a new object, a changed position, a fresh face or license plate. An unchanged scene doesn't repeat, however long the event runs. Of the few seconds around such a moment it keeps one frame and prefers objects the detector was unsure about, small ones and animals over large, obvious ones; every tenth time it keeps the first frame instead, so ordinary scenes stay in the mix. camera.ui keeps at most 200 frames per camera: once full, the oldest unreviewed frames make room, and unreviewed frames are deleted after 14 days either way. Verified frames stay until you submit or delete them.
+During detection events each camera saves a frame when something new shows up: a new object, a changed position, a fresh face or license plate. An unchanged scene doesn't repeat, however long the event runs. Of the few seconds around such a moment it keeps one frame and prefers objects the detector was unsure about, small ones and animals over large, obvious ones; about one time in ten, picked at random, it keeps the first frame instead, so ordinary scenes stay in the mix. camera.ui keeps at most 200 frames per camera: once full, the oldest unreviewed frames make room, and unreviewed frames are deleted after 14 days either way. Verified frames stay until you submit or delete them.
 
 A [privacy zone](/cameras/zones-and-masks) is blacked out of the frame before it is saved, so nothing behind one is ever collected or submitted.
 
