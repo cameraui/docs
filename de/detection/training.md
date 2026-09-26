@@ -28,7 +28,8 @@ Erkennungen unter der Erkennungsschwelle der Kamera erscheinen gepunktet mit ihr
 
 Was einen Frame wertvoll macht:
 
-- **Beschrifte alles Sichtbare.** Jede Person, jedes Fahrzeug, Tier und Paket im Bild, nicht nur den Auslöser des Events. Ein unbeschriftetes Objekt lernt das Modell als "kein Objekt". Die Boxen, die camera.ui für dich gezeichnet hat, enthalten auch Objekte außerhalb deiner Erkennungszonen und Labels, die du nie aktiviert hast; sie gehören in die Daten, lass sie drin.
+- **Beschrifte alles Sichtbare.** Jede Person, jedes Fahrzeug, Tier und Paket im Bild, nicht nur den Auslöser des Events, auch geparkte Autos und Fahrzeuge, die am Bildrand angeschnitten sind. Ein unbeschriftetes Objekt lernt das Modell als "kein Objekt". Die Boxen, die camera.ui für dich gezeichnet hat, enthalten auch Objekte außerhalb deiner Erkennungszonen und Labels, die du nie aktiviert hast; sie gehören in die Daten, lass sie drin.
+- **Abbildungen von Menschen sind keine Personen.** Eine Person auf einem Plakat, Bildschirm oder Foto bekommt keine Box. Entferne die, die camera.ui dort gezeichnet hat.
 - **Boxen eng ziehen.** Die Box umschließt das Objekt ohne Rand.
 - **Verdecktes mitdenken.** Ein teils verdecktes Objekt bekommt die Box über seine volle Ausdehnung, soweit du sie einschätzen kannst.
 - **Gesichter und Kennzeichen bekommen eigene Boxen**, zusätzlich zur Personen- oder Fahrzeug-Box.

@@ -28,7 +28,8 @@ Detections below the camera's detection threshold show as dotted outlines with t
 
 What makes a frame useful:
 
-- **Label everything you see.** Every person, vehicle, animal and package in the frame, not just what triggered the event. An unlabeled object teaches the model that it isn't one. The boxes camera.ui drew for you include objects outside your detection zones and labels you never turned on; they belong in the data, leave them in.
+- **Label everything you see.** Every person, vehicle, animal and package in the frame, not just what triggered the event, parked cars and vehicles cut off at the edge of the picture included. An unlabeled object teaches the model that it isn't one. The boxes camera.ui drew for you include objects outside your detection zones and labels you never turned on; they belong in the data, leave them in.
+- **Pictures of people are not people.** A person on a poster, a screen or a photo gets no box. Remove the one camera.ui drew there.
 - **Keep boxes tight.** The box hugs the object, without a margin.
 - **Include hidden parts.** Box a partly hidden object in full, as far as you can judge its extent.
 - **Faces and license plates get their own boxes**, on top of the person or vehicle box.

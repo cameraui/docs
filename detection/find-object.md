@@ -27,7 +27,7 @@ How well people are found by name depends on [face recognition](/detection/faces
 
 One card per moment, the surest first: the name or the plate, then the face, then the look-alikes by clothing or look, best match first. Where a match is a comparison, **More precise** and **Broader** set how close it has to be.
 
-- **On the camera page** the matches replace the recordings below the player (on a phone in the sheet), and the timeline shows only the matching events. A card on this camera shows that moment as a still for the next click, a card of another camera opens that camera at the moment, with the matches still open.
+- **On the camera page** the matches replace the recordings below the player (on a phone in the sheet), and the timeline shows only the matching events. Turning off **Matches only** in the timeline's filter menu shows all events again. A card on this camera shows that moment as a still for the next click, a card of another camera opens that camera at the moment, with the matches still open.
 - **In the recording and the episode player** the matches open in a column beside the player (on a phone in place of the timeline). A card shows the moment in the same window, on the same camera as a still for the next click. A match outside the episode opens there as a recording.
 
 **Show all in Recordings** lists the matches in [Recordings](/recording/browsing), where the camera, room and time range filters narrow them and **End search** returns to the normal list.

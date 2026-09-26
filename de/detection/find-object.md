@@ -27,7 +27,7 @@ Wie gut Personen über ihren Namen gefunden werden, hängt an der [Gesichtserken
 
 Eine Karte pro Moment, die sichersten zuerst: Name oder Kennzeichen, dann das Gesicht, dann die ähnlich Aussehenden nach Kleidung oder Aussehen, der beste Treffer zuerst. Ist ein Treffer ein Vergleich, legen **Präziser** und **Breiter** fest, wie nah er sein muss.
 
-- **Auf der Kameraseite** ersetzen die Treffer die Aufnahmen unter dem Player (auf dem Handy im Sheet), und die Zeitleiste zeigt nur die passenden Ereignisse. Eine Karte dieser Kamera zeigt den Moment als Standbild für den nächsten Klick, eine Karte einer anderen Kamera öffnet diese Kamera zu dem Moment, die Treffer bleiben offen.
+- **Auf der Kameraseite** ersetzen die Treffer die Aufnahmen unter dem Player (auf dem Handy im Sheet), und die Zeitleiste zeigt nur die passenden Ereignisse. Ohne **Nur Treffer** im Filtermenü der Zeitleiste sind wieder alle Ereignisse zu sehen. Eine Karte dieser Kamera zeigt den Moment als Standbild für den nächsten Klick, eine Karte einer anderen Kamera öffnet diese Kamera zu dem Moment, die Treffer bleiben offen.
 - **Im Aufnahme- und im Episoden-Player** öffnen sich die Treffer in einer Spalte neben dem Player (auf dem Handy statt der Zeitleiste). Eine Karte zeigt den Moment im selben Fenster, bei derselben Kamera als Standbild für den nächsten Klick. Ein Treffer außerhalb der Episode öffnet sich dort als Aufnahme.
 
 **Alle in den Aufnahmen zeigen** listet die Treffer in den [Aufnahmen](/de/recording/browsing), dort grenzen die Filter für Kamera, Raum und Zeitraum sie ein, und **Suche beenden** führt zur normalen Liste zurück.
