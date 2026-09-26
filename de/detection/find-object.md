@@ -10,7 +10,7 @@ Halte das Live-Bild oder eine Aufnahme an, klicke auf eine Person oder ein Fahrz
 
 **Objekt suchen** liegt in der Steuerleiste des Kamera-Players, des Aufnahme-Players und des Episoden-Players (bei einem kleinen Player im Punkte-Menü). Es hält das Bild an. Klick auf eine Person oder ein Fahrzeug: camera.ui sieht sich diese Stelle mit der Erkennung an, die der Kamera zugewiesen ist, rahmt das Objekt dort ein, liest Gesicht, Kleidung, Kennzeichen oder Aussehen und listet die Treffer. Die Suche bleibt für den nächsten Klick an, bis du sie mit demselben Knopf oder <kbd>Esc</kbd> beendest, dann läuft das Bild weiter.
 
-Ist der Kamera keine Objekterkennung zugewiesen, fehlt der Knopf. Das Bild wird mit den Modellen und Schwellen gelesen, die für die Kamera eingestellt sind. Kann die Erkennung der Kamera selbst kein Bild prüfen, liest es das KI-Backend, das als **Objekt-Assistenz** eingetragen ist; ohne sie sagt die Suche das.
+Ohne das NVR-Plugin oder ohne eine der Kamera zugewiesene Objekterkennung fehlt der Knopf. Das Bild wird mit den Modellen und Schwellen gelesen, die für die Kamera eingestellt sind. Kann die Erkennung der Kamera selbst kein Bild prüfen, liest es das KI-Backend, das als **Objekt-Assistenz** eingetragen ist; ohne sie sagt die Suche das.
 
 Mit einem KI-Backend als **Segmentierung** im **Plugins**-Tab der Kamera bekommt das Objekt seinen Umriss statt eines Rahmens, und wo sich Personen oder Fahrzeuge überlagern, wählt ein Klick das unter dem Zeiger.
 
@@ -25,7 +25,7 @@ Wie gut Personen über ihren Namen gefunden werden, hängt an der [Gesichtserken
 
 ## Die Treffer
 
-Eine Karte pro Moment, die sichersten zuerst: Name oder Kennzeichen, dann das Gesicht, dann die ähnlich Aussehenden nach Kleidung oder Aussehen, der beste Treffer zuerst. Ist ein Treffer ein Vergleich, legen **Präziser** und **Breiter** fest, wie nah er sein muss.
+Eine Karte pro Moment, die sichersten zuerst: Name oder Kennzeichen, dann das Gesicht, dann die ähnlich Aussehenden nach Kleidung oder Aussehen, der beste Treffer zuerst. Ist ein Treffer ein Vergleich, legt ein Regler von **Präziser** bis **Breiter** fest, wie nah er sein muss.
 
 - **Auf der Kameraseite** ersetzen die Treffer die Aufnahmen unter dem Player (auf dem Handy im Sheet), und die Zeitleiste zeigt nur die passenden Ereignisse. Ohne **Nur Treffer** im Filtermenü der Zeitleiste sind wieder alle Ereignisse zu sehen. Eine Karte dieser Kamera zeigt den Moment als Standbild für den nächsten Klick, eine Karte einer anderen Kamera öffnet diese Kamera zu dem Moment, die Treffer bleiben offen.
 - **Im Aufnahme- und im Episoden-Player** öffnen sich die Treffer in einer Spalte neben dem Player (auf dem Handy statt der Zeitleiste). Eine Karte zeigt den Moment im selben Fenster, bei derselben Kamera als Standbild für den nächsten Klick. Ein Treffer außerhalb der Episode öffnet sich dort als Aufnahme.

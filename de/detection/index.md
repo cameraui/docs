@@ -40,6 +40,7 @@ flowchart LR
 - **[Kennzeichen](/de/detection/license-plates)** — Kennzeichen lesen.
 - **[Audio](/de/detection/audio)** — Geräusche wie Glasbruch, Alarme oder Hundebellen.
 - **[Semantische Suche](/de/detection/semantic-search)** — Momente finden, indem du sie in Worten beschreibst.
+- **[Objekt suchen](/de/detection/find-object)** — eine Person oder ein Fahrzeug anklicken und die Momente bekommen, die sie zeigen.
 - **[KI-Beschreibungen](/de/detection/genai-descriptions)** — eine schriftliche Zusammenfassung des Geschehens.
 - **[Episoden](/de/detection/episodes)** — zusammenhängende Sichtungen über mehrere Kameras als eine Story.
 

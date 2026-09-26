@@ -49,6 +49,7 @@ The OpenVINO plugin logs `libOpenCL.so.1: cannot open shared object file` when t
 - Confirm cloud access is **enabled** and the server is **registered**, with the tunnel connected.
 - For a direct connection, use **Test connection** to check the address is reachable.
 - The mobile apps need [camera.ui Cloud](/remote/cloud) to connect from outside your network.
+- Behind a login proxy such as Pangolin or Authelia, a browser stuck on **Cannot reach your home server** needs its site data for camera.ui cleared once, see [Reverse proxy](/remote/reverse-proxy#behind-a-login-proxy).
 - If the app connects over the internet while you're at home, check the **Network** card on the same page: an IP address missing from **Server addresses**, or a **Local address** that doesn't answer, sends the app out over the internet instead.
 
 ## I can't sign in
@@ -58,8 +59,10 @@ If you know the account but not the password, another administrator can set a ne
 The **master** account is the exception: no other administrator can change it. To reset it, create an empty file named `reset-password` in camera.ui's `volume` folder and restart camera.ui:
 
 - **Docker.** `/data/volume` in the container, for example `docker exec <container> touch /data/volume/reset-password`.
+- **Proxmox.** The same inside the LXC: `pct exec <CTID> -- docker exec cameraui touch /data/volume/reset-password`.
 - **Linux.** `~/.camera.ui/volume` of the service user.
 - **Desktop app.** The folder under [Where your data lives](/install/desktop#where-your-data-lives).
+- **Home Assistant app.** `/data/volume` inside the app. The sidebar panel signs in without a password, only the direct address on port 3443 asks for it.
 
 The master then signs in with its username and the password `admin` and has to set a new password right away. Its sessions are signed out and two-factor authentication is off. The log names the account, and the file removes itself.
 

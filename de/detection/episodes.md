@@ -21,7 +21,7 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions): Das NVR
 ## Wo Episoden erscheinen
 
 - **Home.** Episoden erscheinen in der **Recent Events**-Reihe als Mosaik-Karte, die zeigt, wie viele Kameras beteiligt waren.
-- **Aufnahmen.** Dieselbe Mosaik-Karte erscheint in der Liste. Eine Aufnahme, die zu einer Episode gehört, zeigt einen **Open episode**-Button, der dorthin springt. Die Filter (Typ, Suche, Audio, Attribute, Sensoren, eigener Zeitraum) greifen auch für Episoden-Karten.
+- **Aufnahmen.** Dieselbe Mosaik-Karte erscheint in der Liste. Eine Aufnahme, die zu einer Episode gehört, zeigt einen **Episode öffnen**-Button, der dorthin springt. Episoden-Karten folgen den Filtern für Kamera und Zeitraum; jeder andere Filter (Labels, Trigger, Attribute, Fahrzeuge, Suche) blendet sie aus.
 - **Apple TV.** Episoden gibt es auch in der Apple-TV-App.
 
 <Shot src="/img/detection/episode-card.png" alt="Eine Episoden-Mosaik-Karte in der Aufnahmen-Ansicht" />

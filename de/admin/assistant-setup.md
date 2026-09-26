@@ -48,7 +48,7 @@ Plugins können deine Modelle ebenfalls nutzen, das NVR-Plugin für [Ereignisbes
 
 **Nachdenken** legt fest, wie lange das Modell überlegt, bevor es antwortet. *Modellstandard* schickt nichts mit und überlässt es dem Anbieter, *Aus* bittet um eine direkte Antwort, *Kurz* und *Gründlich* fordern kurzes oder langes Überlegen. Die Einstellung wird auf das abgebildet, was der jeweilige Anbieter anbietet, und ein Modell ohne Reasoning ignoriert sie. Teilt das Modell sein Überlegen mit, zeigt die Antwort einen ausklappbaren Block **Denkt nach**.
 
-Unter jeder Antwort steht eine kleine Zeile mit den gesendeten und empfangenen Tokens, der Dauer, der Ausgabegeschwindigkeit und, bei Cloud-Anbietern mit bekanntem Listenpreis, geschätzten Kosten. **Verbrauch** summiert das pro Nutzer oder Plugin, Modell und Monat, Chats und geplante Prompts zusammen. Die Schätzung nutzt öffentliche Listenpreise und die Tokens, die der Anbieter gemeldet hat; es zählt die Rechnung deines Anbieters.
+Unter jeder Antwort steht eine kleine Zeile mit den gesendeten und empfangenen Tokens, der Dauer, der Ausgabegeschwindigkeit und, bei einem Modell mit bekanntem Listenpreis, geschätzten Kosten. **Verbrauch** summiert das pro Nutzer oder Plugin, Modell und Monat, Chats und geplante Prompts zusammen. Die Schätzung nutzt öffentliche Listenpreise und die Tokens, die der Anbieter gemeldet hat; es zählt die Rechnung deines Anbieters.
 
 Die Karte **Verhalten** begrenzt einen Lauf:
 

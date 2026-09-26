@@ -58,8 +58,8 @@ Each camera's HomeKit settings include:
 - **Force legacy path.** Keeps the camera on the classic HomeKit services, see [Secure Video on iOS 27](#secure-video-on-ios-27). Off by default.
 - **Use Hardware Acceleration.** Uses the GPU, if one is available, when a stream has to be transcoded. On by default.
 - **Use Hardware Acceleration for HKSV.** The same for HomeKit Secure Video recordings. On by default; turn it off for a camera whose recordings break up.
-- **Port and mDNS advertiser.** Advanced networking options; the defaults are usually fine.
-- **Reset pairing.** Generate a new code and re-add the camera if pairing breaks.
+- **Override Port and mDNS advertiser.** Under **Advanced**: a fixed port instead of an automatic one (0), and the backend that announces the camera on the network.
+- **Reset Pairing.** Generate a new code and re-add the camera if pairing breaks.
 
 The plugin's own settings hold the same set for the sensor bridge: its QR code, PIN, port, mDNS advertiser, and a **Reset Bridge Pairing** button.
 
@@ -67,3 +67,4 @@ The plugin's own settings hold the same set for the sensor bridge: its QR code, 
 
 - Each camera is its own HomeKit accessory, so you add cameras one at a time. Standalone sensors share the one bridge and only need a single pairing.
 - Cameras that support two-way audio can be talked to from the Home app.
+- Cameras and the bridge listen on the **Server addresses** under **Settings → Remote Access → Network**, or for a plugin on a worker on the addresses set with **Edit Worker** (see [Workers](/admin/workers#camera-and-plugin-assignments)). With none set they listen on all of them; if streams stutter or fail, pick the wired LAN address. An address that does not exist on the machine is skipped, and the log names it with the addresses it found.

@@ -27,7 +27,7 @@ Im selben Netzwerk listet die App deinen Server von selbst. Du kannst auch einen
 
 Melde dich mit Benutzername und Passwort an, dazu einem Zwei-Faktor-Code, falls du einen nutzt, oder füge einen API-Token ein.[^token]
 
-Du kannst mehrere Server hinzufügen und unter **Einstellungen → Switch server** zwischen ihnen wechseln. Mit nur einem Server öffnet die App ihn direkt. Mit mehreren startet sie in der Serverauswahl, außer du schaltest in den Einstellungen des gewünschten Servers **Open at launch** ein.
+Du kannst mehrere Server hinzufügen und unter **Settings → Switch server** zwischen ihnen wechseln. Mit nur einem Server öffnet die App ihn direkt. Mit mehreren startet sie in der Serverauswahl, außer **Open at launch** steht in den Settings eines Servers auf **This server**.
 
 ## Rund um die App
 

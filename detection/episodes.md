@@ -21,7 +21,7 @@ In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and tur
 ## Where episodes show up
 
 - **Home.** Episodes appear in the **Recent Events** row as a mosaic card, showing how many cameras took part.
-- **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it. The filters (type, search, audio, attributes, sensors, custom date range) apply to episode cards too.
+- **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it. Episode cards follow the camera and time range filters; any other filter (labels, triggers, attributes, vehicles, search) hides them.
 - **Apple TV.** Episodes are available in the Apple TV app too.
 
 <Shot src="/img/detection/episode-card.png" alt="An episode mosaic card in the recordings view" />

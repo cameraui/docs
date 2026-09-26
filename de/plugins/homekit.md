@@ -58,7 +58,7 @@ Die HomeKit-Einstellungen jeder Kamera umfassen:
 - **Force legacy path.** Hält die Kamera auf den klassischen HomeKit-Diensten, siehe [Secure Video ab iOS 27](#secure-video-ab-ios-27). Standardmäßig aus.
 - **Use Hardware Acceleration.** Nutzt die GPU, sofern eine vorhanden ist, wenn ein Stream transkodiert werden muss. Standardmäßig an.
 - **Use Hardware Acceleration for HKSV.** Dasselbe für HomeKit-Secure-Video-Aufnahmen. Standardmäßig an; schalte es für eine Kamera aus, deren Aufnahmen abbrechen.
-- **Port und mDNS advertiser.** Erweiterte Netzwerk-Optionen; die Standardwerte passen meist.
+- **Override Port und mDNS advertiser.** Unter **Advanced**: ein fester Port statt eines automatischen (0) und das Backend, das die Kamera im Netzwerk ankündigt.
 - **Reset Pairing.** Einen neuen Code erzeugen und die Kamera neu hinzufügen, falls die Kopplung bricht.
 
 Die Einstellungen des Plugins selbst halten dasselbe Set für die Sensor-Bridge: ihren QR-Code, PIN, Port, mDNS advertiser und einen Button **Reset Bridge Pairing**.
@@ -67,3 +67,4 @@ Die Einstellungen des Plugins selbst halten dasselbe Set für die Sensor-Bridge:
 
 - Jede Kamera ist ihr eigenes HomeKit-Zubehör, du fügst Kameras also einzeln hinzu. Eigenständige Sensoren teilen sich die eine Bridge und brauchen nur eine einzige Kopplung.
 - Kameras mit Zwei-Wege-Audio kannst du aus der Home-App ansprechen.
+- Kameras und Bridge lauschen auf den **Server-Adressen** unter **Einstellungen → Remote Zugriff → Netzwerk**, bei einem Plugin auf einem Worker auf den Adressen aus **Worker bearbeiten** (siehe [Worker](/de/admin/workers#kamera-und-plugin-zuweisungen)). Ist keine gesetzt, lauschen sie auf allen; stocken oder scheitern Streams, wähle die kabelgebundene LAN-Adresse. Eine Adresse, die es auf der Maschine nicht gibt, wird übersprungen, und das Log nennt sie zusammen mit den gefundenen Adressen.

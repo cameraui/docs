@@ -27,7 +27,7 @@ On the same network the app lists your server by itself. You can also add one by
 
 Sign in with your username and password, plus a two-factor code if you use one, or paste an API token.[^token]
 
-You can add several servers and switch between them under **Settings → Switch server**. With a single server the app opens it right away. With several it starts on the server picker, unless you turn on **Open at launch** in the settings of the server it should open.
+You can add several servers and switch between them under **Settings → Switch server**. With a single server the app opens it right away. With several it starts on the server picker, unless **Open at launch** in one server's settings is set to **This server**.
 
 ## Around the app
 

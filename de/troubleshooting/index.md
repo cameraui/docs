@@ -49,6 +49,7 @@ Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn
 - Bestätige, dass der Cloud-Zugriff **aktiviert** und der Server **registriert** ist, mit verbundenem Tunnel.
 - Nutze bei einer direkten Verbindung **Verbindung testen**, um zu prüfen, ob die Adresse erreichbar ist.
 - Die Mobile-Apps brauchen [camera.ui Cloud](/de/remote/cloud), um von außerhalb deines Netzwerks zu verbinden.
+- Hinter einem Login-Proxy wie Pangolin oder Authelia braucht ein Browser, der bei **Server nicht erreichbar** hängt, einmal gelöschte Websitedaten für camera.ui, siehe [Reverse-Proxy](/de/remote/reverse-proxy#hinter-einem-login-proxy).
 - Verbindet die App über das Internet, obwohl du zuhause bist, schau in die Karte **Netzwerk** auf derselben Seite: Eine bei **Server-Adressen** fehlende IP oder eine **Lokale Adresse**, die nicht antwortet, schickt die App nach draußen.
 
 ## Ich komme nicht rein
@@ -58,8 +59,10 @@ Kennst du das Konto, aber nicht das Passwort, kann ein anderer Administrator unt
 Das **Master**-Konto ist die Ausnahme: kein anderer Administrator kann es ändern. Zum Zurücksetzen legst du eine leere Datei namens `reset-password` im `volume`-Ordner von camera.ui an und startest camera.ui neu:
 
 - **Docker.** `/data/volume` im Container, zum Beispiel `docker exec <container> touch /data/volume/reset-password`.
+- **Proxmox.** Dasselbe im LXC: `pct exec <CTID> -- docker exec cameraui touch /data/volume/reset-password`.
 - **Linux.** `~/.camera.ui/volume` des Service-Users.
 - **Desktop-App.** Der Ordner unter [Wo deine Daten liegen](/de/install/desktop#wo-deine-daten-liegen).
+- **Home-Assistant-App.** `/data/volume` in der App. Das Seitenleisten-Panel meldet ohne Passwort an, nur die direkte Adresse auf Port 3443 fragt danach.
 
 Danach meldet sich der Master mit seinem Benutzernamen und dem Passwort `admin` an und muss sofort ein neues Passwort setzen. Seine Sitzungen sind abgemeldet und die Zwei-Faktor-Authentifizierung ist aus. Das Log nennt das Konto, die Datei löscht sich selbst.
 

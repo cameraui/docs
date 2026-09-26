@@ -31,7 +31,7 @@ In the camera's [settings](/cameras/settings), under **Autotrack**:
 - **Minimum confidence.** Only track detections above this confidence score.
 - **Dead zone.** A central area where a target can move without the camera adjusting.
 - **Tracking speed.** How aggressively the camera moves to re-center the target. Higher is snappier, lower is smoother.
-- **Motion prediction.** Aims ahead of a moving target by this many milliseconds, covering the time the camera needs to move and settle. Lower it if the camera overshoots, raise it for fast targets. The prediction fades out as the target slows down. Set it to 0 to turn it off.
+- **Motion prediction.** Aims ahead of a moving target by this many milliseconds, covering the time the camera needs to move and settle. Lower it if the camera overshoots, raise it for fast targets. The prediction fades out as the target slows down. 1500 by default, up to 4000. Set it to 0 to turn it off.
 - **Pan-rate calibration.** Calibrates how far each move step travels on your camera. Lower it if the camera stops short of the target, raise it if it overshoots.
 - **Return to home.** Move the camera back to its home position when no target is seen for a while.
 - **Wait before returning.** How long to wait without a target before returning home.

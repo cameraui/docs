@@ -31,7 +31,7 @@ In den [Einstellungen](/de/cameras/settings) der Kamera unter **Autotrack**:
 - **Minimale Konfidenz.** Nur Erkennungen über diesem Konfidenz-Wert verfolgen.
 - **Totzone.** Ein zentraler Bereich, in dem sich ein Ziel bewegen kann, ohne dass die Kamera nachregelt.
 - **Verfolgungsgeschwindigkeit.** Wie energisch die Kamera nachzieht, um das Ziel zu zentrieren. Höher ist schneller, niedriger ist sanfter.
-- **Bewegungsvorhersage.** Zielt einem bewegten Objekt um so viele Millisekunden voraus, passend zu der Zeit, die die Kamera zum Fahren und Einschwingen braucht. Kleiner, wenn die Kamera überschießt, größer bei schnellen Zielen. Die Vorhersage klingt aus, wenn das Ziel langsamer wird. Auf 0 gesetzt schaltet sie ab.
+- **Bewegungsvorhersage.** Zielt einem bewegten Objekt um so viele Millisekunden voraus, passend zu der Zeit, die die Kamera zum Fahren und Einschwingen braucht. Kleiner, wenn die Kamera überschießt, größer bei schnellen Zielen. Die Vorhersage klingt aus, wenn das Ziel langsamer wird. Standard 1500, höchstens 4000. Auf 0 gesetzt schaltet sie ab.
 - **Schwenkraten-Kalibrierung.** Kalibriert, wie weit ein Bewegungsschritt bei deiner Kamera schwenkt. Kleiner, wenn die Kamera vor dem Ziel stoppt, größer, wenn sie überschießt.
 - **Zur Home-Position zurückkehren.** Die Kamera zur Home-Position zurückfahren, wenn länger kein Ziel erkannt wird.
 - **Wartezeit vor Rückkehr.** Wie lange ohne Ziel gewartet wird, bevor die Kamera zurückkehrt.

@@ -26,7 +26,7 @@ In a backend's plugin settings you choose a **model** for each task (object, fac
 
 Confidence is not set here but per camera in [Settings → Detection](/cameras/settings), for object, face and plate detection alike, and a change takes effect right away. Objects have one value per type, each between 0.3 and 1: **Person Confidence**, **Vehicle Confidence** and **Animal Confidence**.
 
-The backend reports everything from 0.25 up. Below your value a detection never starts an event, a notification or a sensor state, it only helps camera.ui keep following a person or vehicle it already tracks.
+The backend reports everything from 0.25 up. Below your value a detection never starts an event, a notification or a sensor state, it only helps camera.ui keep following an object it already tracks.
 
 Which object types a camera reports is set in its [object zones](/cameras/zones-and-masks#object-zones). Motion and audio are not affected.
 

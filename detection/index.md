@@ -42,6 +42,7 @@ flowchart LR
 - **[License plates](/detection/license-plates)** — read plate numbers.
 - **[Audio](/detection/audio)** — sounds like glass breaking, alarms, or a dog barking.
 - **[Semantic search](/detection/semantic-search)** — find moments by describing them in words.
+- **[Find an object](/detection/find-object)** — click a person or vehicle and get the moments that show it.
 - **[AI descriptions](/detection/genai-descriptions)** — a written summary of what happened.
 - **[Episodes](/detection/episodes)** — related sightings across cameras told as one story.
 

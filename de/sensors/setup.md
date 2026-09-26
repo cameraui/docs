@@ -10,11 +10,11 @@ Die meisten Sensoren stammen von [Plugins](/de/plugins/): Du aktivierst das lief
 
 Der **Plugins**-Tab in den [Einstellungen](/de/cameras/settings) einer Kamera ist in Kategorien gegliedert:
 
-- **Detection.** Die Detektoren: Bewegung, Objekt, Audio, Gesicht, Gesichtserkennung, Personen-Wiedererkennung, Segmentierung und Kennzeichen.
-- **Accessories.** Steuerbares Zubehör und Zustandssensoren, etwa Lichter, Schlösser, Schalter, Sirenen und Kontaktsensoren.
-- **Core.** Single-Provider-Sensoren wie PTZ und Batterie.
+- **Erkennung.** Die Detektoren: Bewegung, Objekt, Audio, Gesicht, Gesichtserkennung, Personen-Wiedererkennung, Segmentierung, Kennzeichen und CLIP.
+- **Zubehör.** Steuerbares Zubehör und Zustandssensoren, etwa Lichter, Schlösser, Schalter, Sirenen und Kontaktsensoren.
+- **Kern.** Single-Provider-Sensoren wie PTZ und Batterie.
 - **Hub.** Smart-Home- und Plattform-Integrationen, etwa eine HomeKit-Bridge.
-- **More.** Ganze Plugins für diese Kamera aktivieren oder deaktivieren.
+- **Mehr.** Ganze Plugins für diese Kamera aktivieren oder deaktivieren.
 
 Eine Kamera, die über ein Plugin hinzugefügt wurde (etwa ONVIF oder Reolink), hat zusätzlich eine Kategorie für dieses Plugin mit dessen Einstellungen.
 
@@ -22,9 +22,9 @@ Eine Kamera, die über ein Plugin hinzugefügt wurde (etwa ONVIF oder Reolink), 
 
 ## Sensoren zuweisen und aktivieren
 
-Wähle innerhalb einer Kategorie einen **Sensor-Typ** und dann das **Plugin**, das ihn bereitstellen soll. Detection-Typen nehmen jeweils einen Anbieter; Zubehör kann von mehreren Plugins kommen. Jeder aktivierte Sensor erscheint in der **Sensors**-Liste, wo du ihn umbenennen kannst.
+Wähle innerhalb einer Kategorie einen **Sensor-Typ** und dann das **Plugin**, das ihn bereitstellen soll. Erkennungs-Typen nehmen jeweils einen Anbieter; Zubehör kann von mehreren Plugins kommen. Jeder aktivierte Sensor erscheint in der **Sensoren**-Liste, wo du ihn umbenennen kannst.
 
-Eine Türklingel, die einer Kamera zugewiesen ist, startet bei jedem Läuten ein Kamera-Ereignis, ohne dass du sie unter Detection aktivieren musst.
+Eine Türklingel, die einer Kamera zugewiesen ist, startet bei jedem Läuten ein Kamera-Ereignis, ohne dass du sie unter Erkennung aktivieren musst.
 
 ## Einstellungen konfigurieren
 

@@ -4,7 +4,7 @@ title: Durchsuchen & Filter
 
 # Durchsuchen & Filter
 
-Die **Aufnahmen**-Ansicht listet vergangene Ereignisse über deine Kameras hinweg, sortiert danach, wann darin zuletzt etwas passiert ist. Ein Ereignis, das stundenlang läuft, erscheint schon während es läuft, mit seinem neuesten Abschnitt auf der Karte. Zusammenhängende Ereignisse über mehrere Kameras können als **Episode**-Karte erscheinen, und eine Aufnahme, die zu einer gehört, zeigt **Open episode**. Siehe [Episoden](/de/detection/episodes).
+Die **Aufnahmen**-Ansicht listet vergangene Ereignisse über deine Kameras hinweg, sortiert danach, wann darin zuletzt etwas passiert ist. Ein Ereignis, das stundenlang läuft, erscheint schon während es läuft, mit seinem neuesten Abschnitt auf der Karte. Zusammenhängende Ereignisse über mehrere Kameras können als **Episode**-Karte erscheinen, und eine Aufnahme, die zu einer gehört, zeigt **Episode öffnen**. Siehe [Episoden](/de/detection/episodes).
 
 Sagt die Liste, dass Aufnahmen nicht verfügbar sind, läuft das NVR-Plugin nicht. Die Liste füllt sich wieder, sobald das Plugin antwortet.
 
@@ -26,8 +26,6 @@ Die weiteren Filter:
 - **Konfidenz.** Erkennungen mit niedriger Konfidenz ausblenden.
 - **Nur Favoriten.** Nur für Admins, siehe unten.
 - **Rastersuche.** Ist genau eine Kamera ausgewählt, kannst du einen Bereich auf ihrem Snapshot markieren, um nur Ereignisse anzuzeigen, die in diesem Teil des Bildes erkannt wurden.
-
-Du kannst außerdem per Text über erkannte Labels, Gesichter und Kennzeichen suchen.
 
 ## Ansichtsoptionen
 
@@ -59,7 +57,7 @@ Admins können Ereignisse hier löschen: Der Punkte-Button in der Ecke startet d
 
 Die Suche in der Filter-Seitenleiste hat ein Feld, die Knöpfe darüber schalten um, was es durchsucht. Eine laufende Suche bleibt beim Umschalten bestehen.
 
-- **Suche.** Titel und Labels, schon beim Tippen.
+- **Suche.** Labels, Namen, Kennzeichen und der Text von KI-Beschreibungen, schon beim Tippen.
 - **KI-Suche.** Momente per Beschreibung, etwa „eine Person, die ein Paket trägt". Siehe [Semantische Suche](/de/detection/semantic-search).
 - **Assistent fragen.** Wenn der [Assistent](/de/assistant/) eingerichtet ist. Schreib die Suche in eigenen Worten („Autos in der Einfahrt gestern", „Favoriten mit Klingel", „Episoden vom Eingang der letzten Stunde") und die Filter darunter werden gesetzt: Kameras und Räume, Zeitraum, Ereignistypen, Farbe und Typ von Fahrzeugen, Sensoren, Favoriten und eine KI-Suche, wenn die Worte eine Szene beschreiben, die die Labels nicht abdecken. Ein Hinweis unter dem Feld sagt, was die Filter nicht ausdrücken können, etwa einen genauen Tag.
 - **Suche per Bild.** Ein Bild einer Person oder eines Fahrzeugs, siehe [Objekt suchen](/de/detection/find-object#suche-per-bild).

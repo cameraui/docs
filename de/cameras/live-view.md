@@ -67,6 +67,6 @@ Kameras mit Schwenken, Neigen und Zoomen bekommen oben rechts im Player eine eig
 
 ## Die Kameraseite
 
-**Kamera öffnen** (oder eine Kamera aus der Liste wählen) öffnet ihre volle Seite: den Live-Player, einen **Aufnahmen**-Tab, eine Liste zum Wechseln zwischen **Kameras**, **Freigaben** für Admins und ein **Zeitleiste**-Panel zum Durchspringen des Materials. Mit dem Griff zwischen Player und Tabs verteilst du die Höhe zwischen beiden, die Seite merkt sich die Aufteilung, ein Doppelklick auf den Griff setzt sie zurück. Das **Einstellungen**-Zahnrad (Admins) öffnet den [Kamera-Einstellungen](/de/cameras/settings)-Drawer, in dem Quellen, Zonen, PTZ, Erkennung und mehr einer Kamera leben.
+**Kamera öffnen** (oder eine Kamera aus der Liste wählen) öffnet ihre volle Seite: den Live-Player, einen **Aufnahmen**-Tab, eine Liste zum Wechseln zwischen **Kameras**, **Freigaben** für Admins und ein **Zeitleiste**-Panel zum Durchspringen des Materials. Mit dem Griff zwischen Player und Tabs verteilst du die Höhe zwischen beiden, der Browser merkt sich die Aufteilung, ein Doppelklick auf den Griff setzt sie zurück. Das **Einstellungen**-Zahnrad (Admins) öffnet den [Kamera-Einstellungen](/de/cameras/settings)-Drawer, in dem Quellen, Zonen, PTZ, Erkennung und mehr einer Kamera leben.
 
 Um mehrere Kameras gleichzeitig anzusehen, nutze [Camview](/de/cameras/camview).

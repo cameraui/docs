@@ -10,7 +10,7 @@ Pause the live picture or a recording, click a person or a vehicle, and camera.u
 
 **Find this object** sits in the control bar of the camera player, the recording player and the episode player (in the dots menu on a small player). It pauses the picture. Click a person or a vehicle: camera.ui looks at that spot with the detection assigned to the camera, frames the object it finds there, reads its face, clothing, plate or look, and lists the matches. The search stays on for the next click until you turn it off with the same button or <kbd>Esc</kbd>, then the picture plays on.
 
-Without object detection assigned to the camera the button does not appear. The picture is read with the models and confidences set for the camera. When the camera's own detection cannot read a picture, the AI backend set as its **Object Assist** reads it; without one the search says so.
+Without the NVR plugin, or without object detection assigned to the camera, the button does not appear. The picture is read with the models and confidences set for the camera. When the camera's own detection cannot read a picture, the AI backend set as its **Object Assist** reads it; without one the search says so.
 
 With an AI backend as **Segmentation** in the camera's **Plugins** tab, the object gets its outline instead of a box, and where people or vehicles overlap, a click picks the one under the pointer.
 
@@ -25,7 +25,7 @@ How well people are found by name depends on [face recognition](/detection/faces
 
 ## The matches
 
-One card per moment, the surest first: the name or the plate, then the face, then the look-alikes by clothing or look, best match first. Where a match is a comparison, **More precise** and **Broader** set how close it has to be.
+One card per moment, the surest first: the name or the plate, then the face, then the look-alikes by clothing or look, best match first. Where a match is a comparison, a slider from **More precise** to **Broader** sets how close it has to be.
 
 - **On the camera page** the matches replace the recordings below the player (on a phone in the sheet), and the timeline shows only the matching events. Turning off **Matches only** in the timeline's filter menu shows all events again. A card on this camera shows that moment as a still for the next click, a card of another camera opens that camera at the moment, with the matches still open.
 - **In the recording and the episode player** the matches open in a column beside the player (on a phone in place of the timeline). A card shows the moment in the same window, on the same camera as a still for the next click. A match outside the episode opens there as a recording.

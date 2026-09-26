@@ -105,6 +105,10 @@ This listener binds to the same address as the main port, so it is unencrypted o
 
 Cameras show a placeholder, the event row never fills, and nothing updates. That is a WebSocket problem, not an authentication problem. In the browser's developer tools, filter the network tab by WS and reload. A failing entry with status 502 or 400 confirms it, and your proxy's error log names the reason.
 
+## Behind a login proxy
+
+With Pangolin, Authelia or another proxy that asks for its own login, page loads always go through the proxy, so it can ask again once its session runs out. If a browser still stays on **Cannot reach your home server**, clear its site data for camera.ui once and open the page again.
+
 ## Telling camera.ui about the address
 
 Once the proxy works, enter the public address under **Settings → Remote Access** as described in [Custom domain](/remote/custom-domain).

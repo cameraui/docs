@@ -48,7 +48,7 @@ Plugins can use your models too, the NVR plugin for [event descriptions](/detect
 
 **Thinking** sets how long the model reasons before it answers. *Model default* sends nothing and leaves it to the provider, *Off* asks for a direct answer, *Brief* and *Thorough* request short or long reasoning. The setting is mapped to what each provider offers, and a model without reasoning ignores it. When the model shares its reasoning, the answer shows a collapsible **Thinking** block.
 
-Under every answer a small line shows the tokens sent and received, the time it took, the output speed and, for cloud providers with a known list price, an estimated cost. **Usage** adds it up per user or plugin, model and month, chats and scheduled prompts together. The estimate uses public list prices and the tokens the provider reported; the invoice of your provider is what counts.
+Under every answer a small line shows the tokens sent and received, the time it took, the output speed and, for a model with a known list price, an estimated cost. **Usage** adds it up per user or plugin, model and month, chats and scheduled prompts together. The estimate uses public list prices and the tokens the provider reported; the invoice of your provider is what counts.
 
 The **Behavior** card bounds a run:
 

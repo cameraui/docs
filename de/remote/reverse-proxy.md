@@ -105,6 +105,10 @@ Dieser Listener bindet sich an dieselbe Adresse wie der Hauptport, ist also in d
 
 Kameras zeigen einen Platzhalter, die Event-Zeile füllt sich nie, nichts aktualisiert sich. Das ist ein WebSocket-Problem, kein Anmeldeproblem. Filtere in den Entwicklertools des Browsers den Netzwerk-Tab nach WS und lade neu. Ein fehlgeschlagener Eintrag mit Status 502 oder 400 bestätigt es, das Fehlerprotokoll deines Proxys nennt den Grund.
 
+## Hinter einem Login-Proxy
+
+Mit Pangolin, Authelia oder einem anderen Proxy mit eigener Anmeldung laufen Seitenaufrufe immer über den Proxy, damit er erneut fragen kann, wenn seine Sitzung abläuft. Bleibt ein Browser trotzdem bei **Server nicht erreichbar** stehen, lösche dort einmal die Websitedaten von camera.ui und öffne die Seite neu.
+
 ## camera.ui die Adresse mitteilen
 
 Sobald der Proxy läuft, trägst du die öffentliche Adresse unter **Einstellungen → Remote Zugriff** ein, wie unter [Eigene Domain](/de/remote/custom-domain) beschrieben.

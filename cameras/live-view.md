@@ -67,6 +67,6 @@ Cameras with pan, tilt and zoom get their own bar at the top right of the player
 
 ## The camera page
 
-**Open camera** (or selecting a camera from the list) opens its full page: the live player, a **Recordings** tab, a list to switch between **Cameras**, **Shares** for admins, and a **Timeline** panel for jumping through footage. Drag the handle between the player and the tabs to give either more height; the page keeps that split, a double-click on the handle resets it. The **Settings** cog (admins) opens the [camera settings](/cameras/settings) drawer, where a camera's sources, zones, PTZ, detection, and more live.
+**Open camera** (or selecting a camera from the list) opens its full page: the live player, a **Recordings** tab, a list to switch between **Cameras**, **Shares** for admins, and a **Timeline** panel for jumping through footage. Drag the handle between the player and the tabs to give either more height; the browser keeps that split, a double-click on the handle resets it. The **Settings** cog (admins) opens the [camera settings](/cameras/settings) drawer, where a camera's sources, zones, PTZ, detection, and more live.
 
 To watch several cameras at once, use [Camview](/cameras/camview).
