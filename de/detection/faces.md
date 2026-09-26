@@ -17,10 +17,21 @@ In der **Gesichter**-Ansicht (Bereiche **Bekannte Gesichter** und **Unbekannte G
 ## Gute Ergebnisse bekommen
 
 - **Position der Kamera.** Häng eine Kamera für Gesichter etwa auf Kopfhöhe oder mit flachem Winkel auf. Schaut sie steil nach unten, sieht sie Stirn und Haare, verschiedene Personen sehen sich dann ähnlich, und die Erkennung verwechselt sie.
-- **Bilder pro Person.** Mindestens 10 Bilder sind empfohlen, aus verschiedenen Situationen (Tageslicht, Nacht, mit Mütze). Mit weniger wird die Person oft nicht erkannt, ihr Dialog weist darauf hin.
+- **Bilder pro Person.** Mindestens 10 Bilder sind empfohlen, aus verschiedenen Situationen (Tageslicht, Nacht, mit Mütze). Jeder weitere Blick bis zum Maximum hilft. Mit weniger wird die Person oft nicht erkannt, ihr Dialog weist darauf hin.
 - **Unklare Gesichter bekommen keinen Namen.** Ein Gesicht von der Seite, von oben oder verwischt wird weder benannt noch unter Unbekannte Gesichter gesammelt. Erkannt wird die Person im nächsten Bild, das sie klar zeigt.
 - **Kleine Gesichter.** Ein Gesicht, das im Kamerabild kleiner als etwa 40 Pixel ist, ist zum Erkennen zu klein.
-- **Ein Bild reicht nicht.** Eine Person, der die Kamera folgt, bekommt einen Namen, sobald zwei Bilder ihres Gesichts übereinstimmen, und camera.ui prüft weiter, solange sie im Bild ist. Widersprechen sich die Bilder, bleibt die Person ohne Namen, statt den Namen eines anderen zu bekommen.
+- **Ein Bild reicht nicht.** Eine Person, der die Kamera folgt, bekommt einen Namen, sobald drei Bilder ihres Gesichts übereinstimmen, und camera.ui prüft weiter, solange sie im Bild ist, ein klarer Blick spät in einem langen Besuch zählt also noch. Widersprechen sich die Bilder, bleibt die Person ohne Namen, statt den Namen eines anderen zu bekommen. Ein Bild, das zwei hinterlegten Personen etwa gleich nahe kommt, zählt für keine von beiden. Bei einer Kamera, deren eigene KI Personen meldet, werden Gesichter nur bei ihren Meldungen gelesen, und ein Bild benennt sie.
+
+## Die Bilder einer Person
+
+Eine Person unter **Bekannte Gesichter** öffnet sich mit ihren Trainingsbildern. Eine Markierung an einem Bild sagt, was es mit der Erkennung macht, ein Tipp darauf zeigt den Grund:
+
+- **Kein klares Gesicht.** Abgewandt, von oben oder verwischt. So ein Bild verschlechtert die Erkennung, entfern es.
+- **Gesicht nur teilweise sichtbar.** Behalte es nur, solange bessere Bilder dieser Ansicht fehlen.
+- **Auch bei … hinterlegt.** Dasselbe Bild ist auch bei einer anderen Person hinterlegt. Behalte es nur bei der richtigen.
+- **Doppelt vorhanden.** Eins der beiden reicht.
+
+Beim Zuweisen eines unbekannten Gesichts warnt camera.ui, wenn es schon bei jemandem hinterlegt oder nur teilweise sichtbar ist. Unklare Gesichter landen gar nicht erst unter Unbekannte Gesichter.
 
 ## Unbekannte Gesichter
 
