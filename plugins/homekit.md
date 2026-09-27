@@ -50,6 +50,10 @@ Whether a sensor comes across at all is the **Expose sensor** toggle on the [Sen
 
 Opening a camera in Home takes a few milliseconds, with H.264 or H.265, as long as the source is kept ready: enable [hot mode and preload](/cameras/add-camera#source-options) on the cameras you bridge.
 
+Hot mode on the main stream also decides whether HomeKit Secure Video recordings include the seconds before an event. Without it the camera is not kept connected, a recording opens the stream when the event starts and has nothing from before. Plugins switch hot mode off for battery cameras, so they can sleep.
+
+The picture in Home follows the camera's [snapshot setting](/cameras/home#snapshots-and-how-they-refresh). While an event runs or the doorbell rings, HomeKit fetches a fresh one.
+
 ## Settings
 
 Each camera's HomeKit settings include:

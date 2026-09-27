@@ -50,6 +50,10 @@ Ob ein Sensor überhaupt rüberkommt, entscheidet der Schalter **Sensor freigebe
 
 Eine Kamera in Home zu öffnen dauert wenige Millisekunden, mit H.264 oder H.265, solange die Quelle bereitgehalten wird: Aktiviere [Hot Modus und Vorladen](/de/cameras/add-camera#quellen-optionen) an den Kameras, die du bridgest.
 
+Der Hot Modus des Hauptstreams entscheidet auch, ob Aufnahmen von HomeKit Secure Video die Sekunden vor einem Ereignis enthalten. Ohne ihn bleibt die Kamera nicht verbunden, eine Aufnahme öffnet den Stream erst mit dem Ereignis und hat nichts davor. Plugins schalten den Hot Modus bei Akku-Kameras ab, damit sie schlafen können.
+
+Das Bild in Home folgt der [Snapshot-Einstellung](/de/cameras/home#snapshots-und-wie-sie-sich-aktualisieren) der Kamera. Solange ein Ereignis läuft oder die Klingel läutet, holt HomeKit ein frisches.
+
 ## Einstellungen
 
 Die HomeKit-Einstellungen jeder Kamera umfassen:
