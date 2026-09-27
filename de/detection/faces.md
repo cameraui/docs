@@ -44,7 +44,7 @@ Gesichter, die zu keiner angelegten Person passen, sammeln sich unter **Unbekann
 
 ## Eine Erkennung korrigieren
 
-Nennt ein Ereignis die falsche Person, öffne dieses Gesichtsbild auf seiner Aufnahme-Karte, wähl im Punkte-Menü **Person korrigieren** und vergib den richtigen Namen, oder **Als unbekannt markieren**. Nur dieses Gesicht ändert sich: Andere Gesichter der Aufnahme behalten ihren Namen, auch wenn sie denselben tragen. Der Ausschnitt wandert zu dieser Person, damit die Erkennung es beim nächsten Mal richtig macht. Nur für Admins.
+Nennt ein Ereignis die falsche Person, öffne dieses Gesichtsbild auf seiner Aufnahme-Karte, wähl im Punkte-Menü **Person korrigieren** und vergib den richtigen Namen, oder **Als unbekannt markieren**. Nur dieses Gesicht ändert sich: Andere Gesichter der Aufnahme behalten ihren Namen, auch wenn sie denselben tragen. Der Ausschnitt wandert zu dieser Person, damit die Erkennung es beim nächsten Mal richtig macht, außer er zeigt kein klares Gesicht: Dann ändert sich nur der Name. Der Dialog sagt das vorher und warnt, wenn der Ausschnitt nur teilweise sichtbar oder schon bei jemand anderem hinterlegt ist. Nur für Admins.
 
 ## Ein Gesicht ignorieren
 
