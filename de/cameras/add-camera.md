@@ -17,6 +17,8 @@ Die Kameras-Seite listet Geräte, die **entdeckt** wurden und bereit zum Hinzuf�
 3. **Kamera bestätigen** zeigt **Name**, **Raum** und die **Quellen**, die camera.ui aus der Kamera gelesen hat. Passe sie bei Bedarf an.
 4. Wähle **Kamera hinzufügen**. Die Kamera wandert zu **Verbundene Kameras**.
 
+Ein Plugin teilt camera.ui außerdem mit, ob eine Kamera mit Akku läuft und ob sie eine Klingel ist. Eine Akku-Kamera wird so angelegt, dass sie schlafen kann: Hot Modus aus, neue Bilder **Nur auf Anfrage**, Live-Ansicht in **Standby** und Aufnahme **Ad-hoc**. Eine Klingel wird als Klingel angelegt.
+
 Das Augen-Symbol blendet ein Gerät aus, **Ausgeblendete Geräte anzeigen** holt es zurück.
 
 <Shot src="/img/cameras/discovered-devices.png" alt="Kameras-Seite mit entdeckten Geräten" />

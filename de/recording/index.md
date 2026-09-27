@@ -21,7 +21,7 @@ Aufnahmen kommen vom **camera.ui NVR**-Plugin (standardmäßig installiert) und 
 
 Endet die Anmeldung mit **Server-Limit deines Tarifs erreicht**, hält noch ein anderer Server die Lizenz, zum Beispiel eine frühere Testinstallation. Entferne diesen Server im [Cloud-Dashboard](/de/remote/cloud#das-cloud-dashboard) und melde dich erneut an.
 
-Mit aktiver Lizenz nehmen neue Kameras von selbst auf, solange ein Kamera-Slot frei ist: durchgehend, in allen Stream-Qualitäten. Modus, Qualitäten und An/Aus stehen in den Aufnahme-Einstellungen der Kamera.
+Mit aktiver Lizenz nehmen neue Kameras von selbst auf, solange ein Kamera-Slot frei ist: durchgehend, in allen Stream-Qualitäten. Eine Akku-Kamera, die ihr Plugin als solche meldet, startet stattdessen in **Ad-hoc**. Modus, Qualitäten und An/Aus stehen in den Aufnahme-Einstellungen der Kamera.
 
 ### Kamera-Slots
 

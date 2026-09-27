@@ -17,6 +17,8 @@ The Cameras page lists devices that have been **discovered**, ready for you to a
 3. **Confirm camera** shows the **Name**, **Room** and **Sources** camera.ui read from the camera. Adjust them if needed.
 4. Select **Add camera**. The camera moves to **Adopted cameras**.
 
+A plugin also tells camera.ui whether a camera runs on battery and whether it is a doorbell. A battery camera is added so it can sleep: hot mode off, new pictures **Only on request**, live view in **Standby** and **Ad-hoc** recording. A doorbell is added as a doorbell.
+
 The eye icon hides a device; **Show hidden devices** brings it back.
 
 <Shot src="/img/cameras/discovered-devices.png" alt="Cameras page with discovered devices" />

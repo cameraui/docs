@@ -21,7 +21,7 @@ Recording comes from the **camera.ui NVR** plugin, which is installed by default
 
 If signing in ends with **Server limit reached for your plan**, the license is still held by another server, an earlier test install for example. Remove that server in the [cloud dashboard](/remote/cloud#the-cloud-dashboard) and sign in again.
 
-With an active license, new cameras start recording on their own while a camera slot is free: continuously, in every stream quality. Mode, qualities and on/off are in the camera's recording settings.
+With an active license, new cameras start recording on their own while a camera slot is free: continuously, in every stream quality. A battery camera that its plugin reports as one starts in **Ad-hoc** instead. Mode, qualities and on/off are in the camera's recording settings.
 
 ### Camera slots
 
