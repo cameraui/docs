@@ -505,6 +505,13 @@
         },
         {
           "text": {
+            "en": "Variables",
+            "de": "Variablen"
+          },
+          "link": "/automations/variables"
+        },
+        {
+          "text": {
             "en": "Blueprints & store",
             "de": "Blueprints & Store"
           },

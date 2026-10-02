@@ -12,12 +12,12 @@ Mit der **Zeitleiste** einer Kamera scrubbst du durch ihr aufgenommenes Material
 
 - **Scrubbe** entlang der Timeline. Zum Scrubben dient der niedrig aufgelöste Stream.
 - **Wiedergabe und Pause**, 30 Sekunden zurück oder vor springen und die **Geschwindigkeit** zwischen 0.25x und 8x ändern.
-- **Objekt suchen.** Anhalten, eine Person oder ein Fahrzeug anklicken und die Momente sehen, die es zeigen. Siehe [Objekt suchen](/de/detection/find-object).
+- **Objekt suchen.** Nur für Admins. Anhalten, eine Person oder ein Fahrzeug anklicken und die Momente sehen, die es zeigen. Siehe [Objekt suchen](/de/detection/find-object).
 - **Ereignis-Markierungen** zeigen ein Vorschaubild. Ein Klick springt zu diesem Moment.
 - **Klingeln und Alarme.** Ein Türklingel-Druck, eine Sirene, eine Alarmanlage oder ein Kontakt-Ereignis erscheint als volle Ereignis-Leiste mit eigenem Icon und Vorschaubild, auch wenn die Kamera nichts gesehen hat. Ein Klingeln während eines laufenden Bewegungs-Ereignisses erscheint sofort, nicht erst wenn die Bewegung endet.
 - **Nach Ereignistyp filtern.** Der Filter-Button wählt, welche Ereignistypen auf der Timeline und in der Erkennungsliste erscheinen. Die Wahl bleibt erhalten.
 - **Nach Zone filtern.** Aktiviere im Filter **Nach Zone filtern** und markiere Bereiche im Kamerabild, um nur dort erkannte Ereignisse zu behalten.
-- **Zoome** vom Überblick bis auf Sekunden. In der tiefsten Stufe ist das Scrubben bildgenau und die Timeline zeigt ein **Feinsteuerung**-Badge.
+- **Zoome** vom Überblick bis auf Sekunden. In der tiefsten Stufe ist das Scrubben bildgenau in der Wiedergabequalität und die Timeline zeigt ein **Feinsteuerung**-Badge. Dauert ein volles Bild zu lange, kommt beim Ziehen der niedrig aufgelöste Stream und das Bild wird scharf, sobald du loslässt.
 - **Springe zu einem Tag** über den Kalender. Tage mit Material sind hervorgehoben.
 
 ## Wiedergabequalität

@@ -28,7 +28,7 @@ click: popup
 ```
 
 - **entity.** Required. A camera.ui camera entity.
-- **mode.** `snapshot` (default) shows the tile with its refreshing picture, `live` runs the player.
+- **mode.** `snapshot` (default) shows the tile with its refreshing picture, `live` runs the player in the camera's [activity mode](/cameras/live-view#activity-mode-always-on-and-standby).
 - **click.** What a click does: `popup` (default) opens the camera.ui dialog, `ha` jumps to the camera in the sidebar panel, `none` does nothing.
 - **title.** Overrides the name shown on the card.
 - **fit.** `contain` (default) shows the whole picture, `cover` fills the card and crops.
@@ -46,6 +46,7 @@ view: Garden
 
 - **view.** The name of the view to show. Without it the card asks you to pick one.
 - **rearrange.** Set to `false` to hide the rearrange button, so the layout cannot be changed from the dashboard.
+- **activity_mode.** `per-camera` (default) runs each camera in its own [activity mode](/cameras/live-view#activity-mode-always-on-and-standby). `always-on`, `activity` or `standby` sets one mode for the whole view.
 
 ## camera.ui Events
 

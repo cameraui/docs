@@ -21,7 +21,7 @@ In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and tur
 ## Where episodes show up
 
 - **Home.** Episodes appear in the **Recent Events** row as a mosaic card, showing how many cameras took part.
-- **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it. Episode cards follow the camera and time range filters; any other filter (labels, triggers, attributes, vehicles, search) hides them.
+- **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it. Episode cards follow the camera, time range, **Only with recording** and **Favorites only** filters; any other filter (labels, triggers, attributes, vehicles, search) hides them.
 - **Apple TV.** Episodes are available in the Apple TV app too.
 
 <Shot src="/img/detection/episode-card.png" alt="An episode mosaic card in the recordings view" />
@@ -34,6 +34,6 @@ When a second camera covers the same room on the [floor plan](/cameras/floor-pla
 
 ## Why an episode turned out this way
 
-The trace icon on an episode, on its card and in the player, opens what went into it: every event that was a candidate and whether it stayed or went, and for the ones that went the reason, from "never moved" to "belongs to another episode". Below that are the connections it drew between the remaining events, both AI passes with the pictures and instructions the model was given and what it answered, and the cut that came out, including a stretch that was dropped because another camera saw it better. **Download bundle** packs it together with the clip for a bug report.
+Admins open what went into an episode with the trace icon on its card and in the player: every event that was a candidate and whether it stayed or went, and for the ones that went the reason, from "never moved" to "belongs to another episode". Below that are the connections it drew between the remaining events, both AI passes with the pictures and instructions the model was given and what it answered, and the cut that came out, including a stretch that was dropped because another camera saw it better. **Download bundle** packs it together with the clip for a bug report.
 
 <Shot src="/img/detection/episode-player.png" alt="The episode player with the camera strip below the video" />

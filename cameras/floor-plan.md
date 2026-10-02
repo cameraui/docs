@@ -6,7 +6,7 @@ title: Floor plan
 
 The floor plan is a drawing of your home with the cameras and sensors on it, under **Floor Plan** in the menu. Everyone can look at it, drawing needs admin.
 
-It is live: a camera lights up while it sees something, sensors show their state and can be operated right on the plan. The drawing is also read by camera.ui itself. It knows which rooms connect, how long it takes to walk from one camera to the next, and which sensor sits at which door.
+It is live: a camera lights up while it sees something, sensors show their state, and admins can operate them right on the plan. The drawing is also read by camera.ui itself. It knows which rooms connect, how long it takes to walk from one camera to the next, and which sensor sits at which door.
 
 <Shot src="/img/cameras/floor-plan.png" alt="Floor plan with rooms, camera view cones and sensors" />
 
@@ -32,7 +32,7 @@ Changes are kept only when you select **Save**. The dots button holds undo, redo
 
 - A camera's cone lights up while the camera sees something, with icons for what was detected.
 - Point at a camera for its live picture and **Open camera**.
-- Point at a sensor for its state, and for an accessory its control: a light toggles, an alarm panel offers its modes.
+- Point at a sensor for its state. Admins also get an accessory's control there: a light toggles, an alarm panel offers its modes.
 - **Blind spots** hatches every part of a room that no camera covers.
 
 ## What the plan is used for

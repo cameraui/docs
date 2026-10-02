@@ -52,8 +52,10 @@ Die Einstellung gilt für die Kameraansicht. Die kleinen Player an anderen Stell
 Jede Kamera hat einen **Aktivitätsmodus**, der steuert, wann ihr Stream läuft:
 
 - **Immer An** hält den Stream jederzeit live.
-- **Standby** startet den Stream, wenn du die Kamera öffnest, und stoppt ihn wenige Sekunden später wieder. Ein Klick aufs Video setzt ihn fort.
+- **Standby** lässt den Stream aus, bis du aufs Video klickst. Er stoppt wenige Sekunden nach deinem letzten Klick oder nach dem ersten Bild wieder, je nachdem, was später kommt. Solange Gegensprechen, PTZ-Steuerung, Vollbild oder Bild-in-Bild aktiv sind oder ein Menü des Players offen ist, bleibt er an.
 - **Aktivität** lässt den Stream laufen, während Aktivität herrscht, und ruhen, wenn nicht.
+
+Die Einstellung gilt für die Kameraansicht und für die [Home-Assistant-Kamerakarte](/de/home-assistant/card#camera-ui-camera) im Modus `live`. [Camview](/de/cameras/camview) und die Home-Assistant-[Ansichtskarte](/de/home-assistant/card#camera-ui-view) folgen ihr ebenfalls, solange dort kein Modus für die ganze Ansicht gesetzt ist. Die kleinen Player an anderen Stellen bleiben immer an: Zonen-Editor, Shortcut-Vorschauen, Livebild im Grundriss und Ereignis-Dialog.
 
 ## Shortcuts
 

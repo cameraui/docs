@@ -34,13 +34,13 @@ A camera that reports detections without saying where in the frame they were, ma
 
 ## The detection trace
 
-Every event keeps a record of what the detector actually saw. The dots menu on a card in [Recordings](/recording/browsing), and the trace icon in the event dialog, opens it. Opened from a card it starts at the moment the card shows, from the camera view at the moment on screen. For an event that ran for hours, type a clock time above the frame strip to jump there; **Earlier frames** loads what came before.
+Every event keeps a record of what the detector actually saw. Admins open it from the dots menu on a card in [Recordings](/recording/browsing) or the trace icon in the event dialog. Opened from a card it starts at the moment the card shows, from the camera view at the moment on screen. For an event that ran for hours, type a clock time above the frame strip to jump there; **Earlier frames** loads what came before.
 
 It steps through the event frame by frame with pictures from the recording, keeping only a few frames around each activity, and shows per frame the objects and the tracks they belong to, the motion boxes, the raw detections from 25 % confidence up, the camera's own detection reports, and the zones as they stood at the time. Where something was seen but did not become an event, the trace names the reason: under the confidence threshold, inside a privacy zone, outside the object zones, a label the zone does not accept, or a track too young to be confirmed. Faces and plates dropped by the camera's settings show dashed, with the setting they missed. When a less certain sighting kept a track going, the track shows that frame's confidence next to the last certain one. Each face read shows whom it matched, or who came closest when nobody did (both people when two came about equally close), and how many reads agree on the name. Every track carries its state, from tentative through active, stationary and lost to departed.
 
 Frames zoom like the live view (wheel, pinch, double tap). An event without a recording shows its detection data without frames. If the browser cannot decode the main stream, the pictures come from the smaller one and are matched by time instead of exactly.
 
-**Download bundle** packs the whole trace into one file for a bug report.
+**Download bundle** packs the whole trace into one file for a bug report. The video in it covers the whole event, or the 10 minutes around the selected frame when the event ran longer.
 
 ## Where events show up
 

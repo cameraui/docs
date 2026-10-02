@@ -34,13 +34,13 @@ Eine Kamera, die Erkennungen meldet, ohne zu sagen, wo im Bild sie waren, etwa v
 
 ## Der Erkennungsverlauf
 
-Zu jedem Ereignis wird festgehalten, was der Detektor tatsächlich gesehen hat. Das Punkte-Menü auf einer Karte unter [Aufnahmen](/de/recording/browsing), und das Verlaufs-Symbol im Ereignis-Dialog, öffnet ihn. Von einer Karte aus beginnt er beim Moment, den die Karte zeigt, aus der Kameraansicht beim Moment auf dem Bildschirm. Bei einem Ereignis, das stundenlang lief, tippst du über dem Bilderstreifen eine Uhrzeit ein und springst dorthin; **Frühere Bilder** lädt, was davor kam.
+Zu jedem Ereignis wird festgehalten, was der Detektor tatsächlich gesehen hat. Admins öffnen ihn über das Punkte-Menü auf einer Karte unter [Aufnahmen](/de/recording/browsing) oder das Verlaufs-Symbol im Ereignis-Dialog. Von einer Karte aus beginnt er beim Moment, den die Karte zeigt, aus der Kameraansicht beim Moment auf dem Bildschirm. Bei einem Ereignis, das stundenlang lief, tippst du über dem Bilderstreifen eine Uhrzeit ein und springst dorthin; **Frühere Bilder** lädt, was davor kam.
 
 Er geht das Ereignis Bild für Bild mit Bildern aus der Aufnahme durch, behält nur einige Bilder rund um jede Aktivität und zeigt zu jedem Bild die Objekte und die Tracks, zu denen sie gehören, die Bewegungsboxen, die rohen Erkennungen ab 25 % Konfidenz, die Meldungen der kamera-eigenen Erkennung sowie die Zonen, wie sie damals standen. Wo etwas gesehen wurde, aber kein Ereignis daraus wurde, nennt der Verlauf den Grund: unter der Konfidenzschwelle, in einer Privatsphären-Zone, außerhalb der Objektzonen, ein Label, das die Zone nicht annimmt, oder ein Track, der noch zu jung für eine Bestätigung ist. Gesichter und Kennzeichen, die an den Einstellungen der Kamera gescheitert sind, erscheinen gestrichelt, mit der Einstellung, die sie verfehlt haben. Hat eine unsicherere Sichtung einen Track weitergetragen, zeigt der Track die Konfidenz dieses Bildes neben der letzten sicheren. Jedes gelesene Gesicht zeigt, wen es getroffen hat oder wer am nächsten kam, wenn niemand passte (beide Personen, wenn zwei etwa gleich nahe kamen), und wie viele Lesungen sich auf den Namen einigen. Jeder Track trägt seinen Zustand, von vorläufig über aktiv, stehend und verloren bis abgegangen.
 
 Gezoomt wird wie in der Live-Ansicht (Mausrad, Pinch, Doppeltipp). Ein Ereignis ohne Aufnahme zeigt seine Erkennungsdaten ohne Bilder. Kann der Browser den Haupt-Stream nicht dekodieren, stammen die Bilder aus dem kleineren und werden über die Zeit zugeordnet statt exakt.
 
-**Bundle herunterladen** packt den ganzen Verlauf in eine Datei für einen Fehlerbericht.
+**Paket herunterladen** packt den ganzen Verlauf in eine Datei für einen Fehlerbericht. Das Video darin zeigt das ganze Ereignis, bei längeren Ereignissen die 10 Minuten um das ausgewählte Bild.
 
 ## Wo Ereignisse erscheinen
 

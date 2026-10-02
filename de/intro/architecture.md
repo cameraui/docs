@@ -54,7 +54,7 @@ Mehr dazu unter [Plugins](/de/plugins/).
 
 Alle Apps zeigen dieselbe Oberfläche, aber ihre Rollen unterscheiden sich:
 
-- Die **[Desktop-App](/de/install/desktop)** kann der **Server selbst** sein (All-in-One), ein **Viewer**, der sich mit einem anderen Server verbindet, oder ein **Worker**, der einen anderen Server beim Dekodieren, bei der Erkennung oder mit einem Plugin unterstützt. Du wählst das beim ersten Start und kannst jederzeit wechseln. Siehe [Über mehrere Maschinen skalieren](#uber-mehrere-maschinen-skalieren).
+- Die **[Desktop-App](/de/install/desktop)** kann der **Server selbst** sein (All-in-One), ein **Viewer**, der sich mit einem anderen Server verbindet, oder ein **Worker**, der einen anderen Server beim Dekodieren, bei der Erkennung oder mit einem Plugin unterstützt. Du wählst das beim ersten Start und kannst jederzeit wechseln. Siehe [Über mehrere Maschinen skalieren](#über-mehrere-maschinen-skalieren).
 - Die **[Mobile-Apps](/de/install/mobile)** und der **Browser** sind immer **Viewer**.
 
 Wie Viewer den Server erreichen:

@@ -1,7 +1,12 @@
+import { readdir, readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import footnote from 'markdown-it-footnote';
 import llmstxt from 'vitepress-plugin-llms';
 import { withMermaid } from 'vitepress-plugin-mermaid';
+
 import nav from './nav.json';
+
+import type { SiteConfig } from 'vitepress';
 
 type Lang = 'en' | 'de';
 
@@ -27,6 +32,50 @@ function topnav(lang: Lang, prefix = '') {
 }
 
 const EDIT_PATTERN = 'https://github.com/cameraui/docs/edit/main/:path';
+const SLUG_SEPARATORS = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'“”‘’<>,.?/]+/g;
+
+// vitepress' default slugify without the accent stripping, so DE anchors keep their umlauts (#host-prüfen)
+function slugify(text: string): string {
+  return text
+    .normalize('NFC')
+    .replace(/[\u0000-\u001f]/g, '')
+    .replace(SLUG_SEPARATORS, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/^(\d)/, '_$1')
+    .toLowerCase();
+}
+
+function pageFile(ids: Map<string, Set<string>>, path: string): string | undefined {
+  const candidates = path === '' || path.endsWith('/') ? [`${path}index.html`] : [`${path}.html`, `${path}/index.html`];
+  return candidates.find((file) => ids.has(file));
+}
+
+// vitepress' dead-link check drops the #hash, so anchors are checked against the rendered ids
+async function checkAnchors(siteConfig: SiteConfig) {
+  const { outDir } = siteConfig;
+  const site = new URL(siteConfig.site.base, 'https://docs.invalid');
+  const files = (await readdir(outDir, { recursive: true })).filter((file) => file.endsWith('.html'));
+  const pages = await Promise.all(
+    files.map(async (file) => [file, await readFile(join(outDir, file), 'utf8')] as const),
+  );
+  const ids = new Map(
+    pages.map(([file, html]) => [file, new Set(Array.from(html.matchAll(/\sid="([^"]+)"/g), (m) => m[1]))] as const),
+  );
+  const broken: string[] = [];
+
+  for (const [file, html] of pages) {
+    const pageUrl = new URL(file.replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, ''), site);
+    for (const [, href] of html.matchAll(/<a\s[^>]*?href="([^"]*#[^"]+)"/g)) {
+      const url = new URL(href, pageUrl);
+      if (url.origin !== site.origin) continue;
+      const target = pageFile(ids, decodeURIComponent(url.pathname.slice(site.pathname.length)).replace(/\.html$/, ''));
+      if (target && !ids.get(target)?.has(decodeURIComponent(url.hash.slice(1)))) broken.push(`${file}: ${href}`);
+    }
+  }
+
+  if (broken.length) throw new Error(`${broken.length} links point to a missing anchor:\n${broken.join('\n')}`);
+}
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
@@ -37,6 +86,7 @@ export default withMermaid({
   ignoreDeadLinks: false,
   sitemap: { hostname: 'https://docs.cameraui.com' },
   srcExclude: ['README.md'],
+  buildEnd: checkAnchors,
 
   head: [
     [
@@ -81,6 +131,7 @@ export default withMermaid({
   },
 
   markdown: {
+    anchor: { slugify },
     config: (md) => {
       md.use(footnote);
     },

@@ -117,7 +117,9 @@ Sobald gekoppelt, erscheint ein Worker in der **Workers**-Liste mit Online-/Offl
 
 Ein Worker, der sich beim Start nicht anmelden kann oder die Verbindung später verliert, schreibt den Grund in sein [Log](/de/admin/logs), statt online auszusehen. Kameras und Plugins, die auf einem Worker laufen, tauchen in **Metrics** mit dem Namen des Workers und seiner Last auf.
 
-Die [Updates-Seite](/de/install/updating#die-updates-seite) listet jeden zurückhängenden Worker neben Server und Plugins, und in der Workers-Liste zeigt er weiterhin einen **Aktualisieren**-Button: Der Worker installiert die Version, auf die der Master zusteuert, und startet sich selbst neu. Normalerweise ist das die Version, die der Master fährt; steht ein Server-Update an, ist es dieses, der Worker muss also nicht zweimal aktualisiert werden. Worker mit der Desktop-App laufen genauso. Siehe [Aktualisieren](/de/install/updating).
+Die [Updates-Seite](/de/install/updating#die-updates-seite) listet jeden zurückhängenden Online-Worker neben Server und Plugins, und in der Workers-Liste zeigt er weiterhin einen **Aktualisieren**-Button: Der Worker installiert die Version, auf die der Master zusteuert, und startet sich selbst neu. Normalerweise ist das die Version, die der Master fährt; steht ein Server-Update an, ist es dieses, der Worker muss also nicht zweimal aktualisiert werden. Worker mit der Desktop-App laufen genauso. Siehe [Aktualisieren](/de/install/updating).
+
+Ein Worker auf einem Release, das sich nicht mehr mit diesem Master verbinden kann, bleibt offline, auch wenn er läuft. Weder die Updates-Seite noch sein **Aktualisieren**-Button erreichen ihn dann. Das [Log](/de/admin/logs) des Masters nennt den Worker und die Version, die er braucht. Aktualisiere ihn auf seiner eigenen Maschine, siehe [Aktualisieren](/de/install/updating).
 
 ## Kamera- und Plugin-Zuweisungen
 

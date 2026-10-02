@@ -125,7 +125,7 @@ Standardmäßig liegen Aufnahmen im `/data`-Volume. Für eine eigene Disk bindes
       - CAMERAUI_PLUGIN_NVR_STORAGE_PATH=/recordings
 ```
 
-Nutze für `/recordings` eine dedizierte lokale Disk, keine Netzwerkfreigabe. Siehe [Systemanforderungen](/de/intro/requirements#speicher-fur-aufnahmen).
+Nutze für `/recordings` eine dedizierte lokale Disk, keine Netzwerkfreigabe. Siehe [Systemanforderungen](/de/intro/requirements#speicher-für-aufnahmen).
 
 ## Workers
 

@@ -6,7 +6,7 @@ title: Speicher & Aufbewahrung
 
 ## Wo Aufnahmen liegen
 
-Standardmäßig liegen Aufnahmen bei den übrigen camera.ui-Daten. Ab mehr als ein paar Kameras lege sie auf eine **dedizierte lokale Disk**, getrennt von der System-Disk. Siehe [Systemanforderungen](/de/intro/requirements#speicher-fur-aufnahmen).
+Standardmäßig liegen Aufnahmen bei den übrigen camera.ui-Daten. Ab mehr als ein paar Kameras lege sie auf eine **dedizierte lokale Disk**, getrennt von der System-Disk. Siehe [Systemanforderungen](/de/intro/requirements#speicher-für-aufnahmen).
 
 Eine lokale Disk oder ein Symlink darauf ist in Ordnung. Eine **Netzwerkfreigabe (NAS, SMB, NFS) nicht**: Erkennungs-Ereignisse, Timeline-Markierungen und Suchindex liegen als Datenbanken neben dem Material, und die brauchen Dateisperren, die Netzwerk-Dateisysteme nicht zuverlässig bereitstellen. Kaputt geht dort die Ereignis-Datenbank, nicht das Video. Liegt dein Speicher auf einem NAS, lass camera.ui auf dem NAS laufen und nimm dort lokal auf.
 

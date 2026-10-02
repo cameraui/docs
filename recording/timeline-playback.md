@@ -12,12 +12,12 @@ Each camera's **timeline** scrubs through its recorded footage, with marks where
 
 - **Scrub** along the timeline. Scrubbing uses the low-resolution stream.
 - **Play and pause**, skip 30 seconds back or forward, and change the **speed** between 0.25x and 8x.
-- **Find an object.** Pause, click a person or a vehicle, and get the moments that show it. See [Find an object](/detection/find-object).
+- **Find an object.** Admins only. Pause, click a person or a vehicle, and get the moments that show it. See [Find an object](/detection/find-object).
 - **Event marks** show a thumbnail. Click one to jump to that moment.
 - **Rings and alarms.** A doorbell press, siren, security system or contact event shows as a full event bar with its own icon and a snapshot, even when the camera saw nothing. A ring during a running motion event appears right away, not after the motion ends.
 - **Filter by event type.** The filter button picks which event types show on the timeline and in the detections list. The choice is remembered.
 - **Filter by zone.** In the filter, turn on **Filter by zone** and mark areas on the camera picture to keep only events detected inside them.
-- **Zoom** from an overview down to seconds. At the deepest level scrubbing is frame-accurate and the timeline shows a **Fine Scrubbing** badge.
+- **Zoom** from an overview down to seconds. At the deepest level scrubbing is frame-accurate in the playback quality and the timeline shows a **Fine Scrubbing** badge. When a full picture takes too long to load, dragging shows the low-resolution stream and the picture turns sharp when you let go.
 - **Jump to a day** with the calendar. Days with footage are highlighted.
 
 ## Playback quality

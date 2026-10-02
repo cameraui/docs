@@ -10,7 +10,7 @@ Pause the live picture or a recording, click a person or a vehicle, and camera.u
 
 **Find this object** sits in the control bar of the camera player, the recording player and the episode player (in the dots menu on a small player). It pauses the picture. Click a person or a vehicle: camera.ui looks at that spot with the detection assigned to the camera, frames the object it finds there, reads its face, clothing, plate or look, and lists the matches. The search stays on for the next click until you turn it off with the same button or <kbd>Esc</kbd>, then the picture plays on.
 
-Without the NVR plugin, or without object detection assigned to the camera, the button does not appear. The picture is read with the models and confidences set for the camera. When the camera's own detection cannot read a picture, the AI backend set as its **Object Assist** reads it; without one the search says so.
+Only admins get the button, and only with the NVR plugin and object detection assigned to the camera. The picture is read with the models and confidences set for the camera. When the camera's own detection cannot read a picture, the AI backend set as its **Object Assist** reads it; without one the search says so.
 
 With an AI backend as **Segmentation** in the camera's **Plugins** tab, the object gets its outline instead of a box, and where people or vehicles overlap, a click picks the one under the pointer.
 
@@ -34,7 +34,7 @@ One card per moment, the surest first: the name or the plate, then the face, the
 
 ## Search by picture
 
-In [Recordings](/recording/browsing#search), **Search by picture** takes a picture of a person or a vehicle: drop it on the field or anywhere on the list, or choose one. Click the person or the vehicle in it, and the list shows the matches as above. The picture is read with the plugins and models of the camera that has most of them assigned.
+In [Recordings](/recording/browsing#search), **Search by picture** (admins only) takes a picture of a person or a vehicle: drop it on the field or anywhere on the list, or choose one. Click the person or the vehicle in it, and the list shows the matches as above. The picture is read with the plugins and models of the camera that has most of them assigned.
 
 ## Trying the models
 

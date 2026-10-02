@@ -1,6 +1,6 @@
 # Verbindungs-Protokolle
 
-Wenn du eine [Kamera manuell hinzufügst](/de/cameras/add-camera#eine-kamera-manuell-hinzufugen), beginnt jede Stream-URL mit einem **Protokoll**. camera.ui liest es aus der URL und zeigt es unter dem Feld an. Die **(i)**-Schaltfläche neben dem Feld öffnet die Hilfe zu diesem Protokoll, mit URL-Formaten und Beispielen.
+Wenn du eine [Kamera manuell hinzufügst](/de/cameras/add-camera#eine-kamera-manuell-hinzufügen), beginnt jede Stream-URL mit einem **Protokoll**. camera.ui liest es aus der URL und zeigt es unter dem Feld an. Die **(i)**-Schaltfläche neben dem Feld öffnet die Hilfe zu diesem Protokoll, mit URL-Formaten und Beispielen.
 
 Eine URL mit nicht unterstütztem Protokoll lässt sich nicht speichern. Die **(i)**-Hilfe erscheint erst, wenn camera.ui das Protokoll erkennt, damit lässt sich eine URL schnell prüfen.
 

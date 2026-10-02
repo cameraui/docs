@@ -21,7 +21,7 @@ Ein Ablauf kann mehrere Trigger haben.
 - **Erkennungsereignis.** Etwas an einer Kamera erkannt: Bewegung, eine Person, ein Fahrzeug oder Tier, ein Audio-Ereignis wie eine Türklingel oder Glasbruch, ein erkanntes Gesicht oder ein Kennzeichen. Filtere nach Objekt, Confidence und Ereignis-Phase (Start, Update, Ende).
 - **Sensoränderung.** Der Zustand eines Sensors ändert sich, etwa ein sich öffnender Kontaktsensor. Das umfasst auch die Erkennungssensoren deiner Kameras: Bewegung, Objekte, Gesichter, Kennzeichen und Klassifizierer. Gesichts-, Kennzeichen- und Klassifizierer-Sensoren tragen das Erkannte, ein Ablauf kann also auf eine bestimmte Person, ein bestimmtes Auto, ein Kennzeichen oder ein Ergebnis reagieren, etwa einen Vogel-Klassifizierer, der die Art meldet.[^detvssensor]
 - **Zeitplan.** Eine wiederkehrende Zeit, per Cron-Ausdruck.
-- **Systemereignis.** Etwas in camera.ui selbst, etwa eine Kamera, die sich verbindet oder trennt, ein Plugin, das startet oder stoppt, oder ein Plugin, das eine Benachrichtigung sendet. Letzteres macht jeden Plugin-Push zum Auslöser, zum Beispiel einen Textalarm des NVR-Plugins: Titel und Datenfelder der Benachrichtigung stehen als <span v-pre>`{{system.title}}`, `{{system.type}}`, `{{system.alertTitle}}`</span> und so weiter bereit, eine **Wenn/Sonst**-Bedingung wählt den gemeinten aus.
+- **Systemereignis.** Etwas in camera.ui selbst, etwa eine Kamera, die sich verbindet oder trennt, ein Plugin, das startet oder stoppt, oder ein Plugin, das eine Benachrichtigung sendet. Letzteres macht jeden Plugin-Push zum Auslöser, zum Beispiel einen Textalarm des NVR-Plugins: Titel und Datenfelder der Benachrichtigung werden zu [Variablen](/de/automations/variables#systemereignis), eine **Wenn/Sonst**-Bedingung wählt den gemeinten aus.
 - **Webhook.** Ein externer Dienst ruft eine URL auf, um den Ablauf zu starten.
 - **MQTT-Nachricht.** Eine Nachricht geht auf einem MQTT-Topic ein. Setze das Topic (die Wildcards `+` und `#` funktionieren) und wähle den Abgleich: jede Nachricht, ein exakter Payload oder ein Wert an einem JSON-Pfad wie `params.switch:0.output`. Benötigt die MQTT-Verbindung in den Einstellungen.
 - **Geofence.** Ein Benutzer betritt oder verlässt einen von dir definierten Ort.
@@ -58,7 +58,7 @@ Ein Ablauf kann mehrere Trigger haben.
 
 Schritte reichen Werte über **Variablen** weiter. Ein Knoten, der etwas produziert, bietet in seinen Einstellungen **Ausgabevariable hinzufügen** an: Gib ihr einen Namen, und jeder dahinter verdrahtete Schritt kann den Wert nutzen. **Variablen** an einem Schritt listet, was verfügbar ist; ist die Liste leer, ist der Quell-Knoten noch nicht verbunden.
 
-Geschrieben wird eine Variable als <span v-pre>`{{name}}`</span>, in jedem Textfeld. Felder, die nur einen Wert annehmen, etwa ein Sensorwert oder eine Bedingung, lassen dich die Variable stattdessen aus einer Liste wählen.
+Geschrieben wird eine Variable als <span v-pre>`{{name}}`</span>, in jedem Textfeld. Felder, die nur einen Wert annehmen, etwa ein Sensorwert oder eine Bedingung, lassen dich die Variable stattdessen aus einer Liste wählen. Was jeder Trigger und jede Aktion bereitstellt und welche Werte möglich sind, steht unter [Variablen](/de/automations/variables).
 
 **Variable setzen** hält einen Wert für spätere Schritte fest. **Alias** an einem Knoten stellt seinen Ausgabevariablen ein Präfix voran, aus `result` zweier Plugins wird so `cam1.result` und `cam2.result` statt eines Namenskonflikts.
 

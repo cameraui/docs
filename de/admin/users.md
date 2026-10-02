@@ -8,7 +8,7 @@ Jedes Konto hat eine Rolle, die bestimmt, was es darf. Verwaltet werden die Kont
 
 ## Rollen
 
-- **Benutzer.** Alltäglicher Zugriff: die Kameraliste, Live-Ansicht, Aufnahmen, Kameransicht und die eigenen Konto-Einstellungen. Die **Kameras**-Seite öffnet als schlichte Liste zum Antippen jeder Kamera; Entdeckung, Hinzufügen und Kamera-Einstellungen bleiben bei Admins.
+- **Benutzer.** Alltäglicher Zugriff: die Kameraliste, Live-Ansicht, Aufnahmen, Kameransicht und die eigenen Konto-Einstellungen. Die **Kameras**-Seite öffnet als schlichte Liste zum Antippen jeder Kamera; Entdeckung, Hinzufügen und Kamera-Einstellungen bleiben bei Admins. Ein Benutzer-Konto sieht die Quell-Adressen einer Kamera nur als Protokoll, Host und Port, ohne Zugangsdaten, Pfade oder Tokens.
 - **Admin.** Alles, was ein Benutzer kann, plus Verwalten von Kameras, Plugins, Automatisierungen, Benutzern und allen Server-Einstellungen.
 - **Master.** Das Hauptkonto. Wie ein Admin, plus es kann den Server zurücksetzen. Es kann nicht gelöscht werden, und seine Rolle lässt sich nicht ändern, auch nicht von ihm selbst. Nur der Master kann seinen eigenen Benutzernamen, sein Passwort und seinen Avatar bearbeiten; andere Admins bekommen dabei einen Fehler.
 

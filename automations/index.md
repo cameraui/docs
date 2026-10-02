@@ -21,7 +21,7 @@ A flow can have more than one trigger.
 - **Detection event.** Something detected at a camera: motion, a person, vehicle, or animal, an audio event like a doorbell or glass breaking, a recognized face, or a license plate. Filter by object, confidence, and event phase (start, update, end).
 - **Sensor change.** A sensor's state changes, like a contact sensor opening. This also covers your cameras' detection sensors: motion, objects, faces, license plates, and classifiers. Face, plate, and classifier sensors carry what was recognized, so a flow can react to a specific person, car, plate, or result, for example a bird classifier that reports the species.[^detvssensor]
 - **Schedule.** A recurring time, set with a cron expression.
-- **System event.** Something in camera.ui itself, such as a camera connecting or disconnecting, a plugin starting or stopping, or a plugin sending a notification. The last one turns every plugin push into a trigger, a text alert of the NVR plugin for example: the title and the notification's data fields are available as <span v-pre>`{{system.title}}`, `{{system.type}}`, `{{system.alertTitle}}`</span> and so on, so an **If/Else** condition can pick the one you mean.
+- **System event.** Something in camera.ui itself, such as a camera connecting or disconnecting, a plugin starting or stopping, or a plugin sending a notification. The last one turns every plugin push into a trigger, a text alert of the NVR plugin for example: its title and data fields become [variables](/automations/variables#system-event), so an **If/Else** condition can pick the one you mean.
 - **Webhook.** An external service calls a URL to start the flow.
 - **MQTT message.** A message arrives on an MQTT topic. Set the topic (`+` and `#` wildcards work) and choose how to match: any message, an exact payload, or a value at a JSON path like `params.switch:0.output`. Needs the MQTT connection set up in Settings.
 - **Geofence.** A user enters or leaves a location you define.
@@ -58,7 +58,7 @@ A flow can have more than one trigger.
 
 Steps hand values on through **variables**. A node that produces something offers **Add output variable** in its settings: name it, and every step wired after it can use the value. **Variables** on a step lists what is available; if it is empty, the source node isn't connected yet.
 
-Write a variable as <span v-pre>`{{name}}`</span> in any text field. Fields that only take one value, like a sensor value or a condition, let you pick the variable from a list instead of typing it.
+Write a variable as <span v-pre>`{{name}}`</span> in any text field. Fields that only take one value, like a sensor value or a condition, let you pick the variable from a list instead of typing it. What each trigger and action provides, and which values it can take, is listed under [Variables](/automations/variables).
 
 **Set variable** stores a value for steps further down. **Alias** on a node prefixes its output variables, so `result` from two different plugins becomes `cam1.result` and `cam2.result` instead of clashing.
 

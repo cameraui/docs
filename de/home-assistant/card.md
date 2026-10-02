@@ -28,7 +28,7 @@ click: popup
 ```
 
 - **entity.** Pflicht. Eine camera.ui-Kamera-Entität.
-- **mode.** `snapshot` (Standard) zeigt die Kachel mit ihrem sich auffrischenden Bild, `live` startet den Player.
+- **mode.** `snapshot` (Standard) zeigt die Kachel mit ihrem sich auffrischenden Bild, `live` startet den Player im [Aktivitätsmodus](/de/cameras/live-view#aktivitätsmodus-immer-an-und-standby) der Kamera.
 - **click.** Was ein Klick tut: `popup` (Standard) öffnet den camera.ui-Dialog, `ha` springt zur Kamera im Seitenleisten-Panel, `none` tut nichts.
 - **title.** Überschreibt den Namen auf der Karte.
 - **fit.** `contain` (Standard) zeigt das ganze Bild, `cover` füllt die Karte und schneidet ab.
@@ -46,6 +46,7 @@ view: Garten
 
 - **view.** Der Name der Ansicht. Ohne ihn bittet die Karte dich, eine auszuwählen.
 - **rearrange.** Auf `false` setzen, um den Anordnen-Button auszublenden, damit sich das Layout vom Dashboard aus nicht ändern lässt.
+- **activity_mode.** `per-camera` (Standard) startet jede Kamera in ihrem eigenen [Aktivitätsmodus](/de/cameras/live-view#aktivitätsmodus-immer-an-und-standby). `always-on`, `activity` oder `standby` setzt einen Modus für die ganze Ansicht.
 
 ## camera.ui Events
 

@@ -6,7 +6,7 @@ title: Grundriss
 
 Der Grundriss ist eine Zeichnung deines Zuhauses mit den Kameras und Sensoren darauf, im Menü unter **Grundriss**. Ansehen darf ihn jeder, zeichnen nur ein Admin.
 
-Er ist live: Eine Kamera leuchtet auf, während sie etwas sieht, Sensoren zeigen ihren Zustand und lassen sich direkt auf dem Plan schalten. Die Zeichnung liest auch camera.ui selbst. Sie weiß dadurch, welche Räume zusammenhängen, wie lange man von einer Kamera zur nächsten braucht und welcher Sensor an welcher Tür sitzt.
+Er ist live: Eine Kamera leuchtet auf, während sie etwas sieht, Sensoren zeigen ihren Zustand, Admins schalten sie direkt auf dem Plan. Die Zeichnung liest auch camera.ui selbst. Sie weiß dadurch, welche Räume zusammenhängen, wie lange man von einer Kamera zur nächsten braucht und welcher Sensor an welcher Tür sitzt.
 
 <Shot src="/img/cameras/floor-plan.png" alt="Grundriss mit Räumen, Sichtkegeln der Kameras und Sensoren" />
 
@@ -32,7 +32,7 @@ Zentimetergenauigkeit bringt nichts. Räume in ungefähr der richtigen Größe a
 
 - Der Kegel einer Kamera leuchtet, während sie etwas sieht, mit Symbolen für das Erkannte.
 - Zeig auf eine Kamera für ihr Livebild und **Kamera öffnen**.
-- Zeig auf einen Sensor für seinen Zustand, bei einem Gerät auch für die Bedienung: Ein Licht schaltet, eine Alarmanlage bietet ihre Modi an.
+- Zeig auf einen Sensor für seinen Zustand. Admins bedienen dort auch Geräte: Ein Licht schaltet, eine Alarmanlage bietet ihre Modi an.
 - **Blinde Bereiche** schraffiert jeden Teil eines Raums, den keine Kamera abdeckt.
 
 ## Wofür der Plan genutzt wird

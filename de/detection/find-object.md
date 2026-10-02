@@ -10,7 +10,7 @@ Halte das Live-Bild oder eine Aufnahme an, klicke auf eine Person oder ein Fahrz
 
 **Objekt suchen** liegt in der Steuerleiste des Kamera-Players, des Aufnahme-Players und des Episoden-Players (bei einem kleinen Player im Punkte-Menü). Es hält das Bild an. Klick auf eine Person oder ein Fahrzeug: camera.ui sieht sich diese Stelle mit der Erkennung an, die der Kamera zugewiesen ist, rahmt das Objekt dort ein, liest Gesicht, Kleidung, Kennzeichen oder Aussehen und listet die Treffer. Die Suche bleibt für den nächsten Klick an, bis du sie mit demselben Knopf oder <kbd>Esc</kbd> beendest, dann läuft das Bild weiter.
 
-Ohne das NVR-Plugin oder ohne eine der Kamera zugewiesene Objekterkennung fehlt der Knopf. Das Bild wird mit den Modellen und Schwellen gelesen, die für die Kamera eingestellt sind. Kann die Erkennung der Kamera selbst kein Bild prüfen, liest es das KI-Backend, das als **Objekt-Assistenz** eingetragen ist; ohne sie sagt die Suche das.
+Den Knopf bekommen nur Admins, und nur mit dem NVR-Plugin und einer der Kamera zugewiesenen Objekterkennung. Das Bild wird mit den Modellen und Schwellen gelesen, die für die Kamera eingestellt sind. Kann die Erkennung der Kamera selbst kein Bild prüfen, liest es das KI-Backend, das als **Objekt-Assistenz** eingetragen ist; ohne sie sagt die Suche das.
 
 Mit einem KI-Backend als **Segmentierung** im **Plugins**-Tab der Kamera bekommt das Objekt seinen Umriss statt eines Rahmens, und wo sich Personen oder Fahrzeuge überlagern, wählt ein Klick das unter dem Zeiger.
 
@@ -34,7 +34,7 @@ Eine Karte pro Moment, die sichersten zuerst: Name oder Kennzeichen, dann das Ge
 
 ## Suche per Bild
 
-In den [Aufnahmen](/de/recording/browsing#suche) nimmt **Suche per Bild** ein Bild einer Person oder eines Fahrzeugs: auf das Feld oder irgendwo auf die Liste ziehen oder auswählen. Klick die Person oder das Fahrzeug darin an, die Liste zeigt die Treffer wie oben. Gelesen wird das Bild mit den Plugins und Modellen der Kamera, der die meisten davon zugewiesen sind.
+In den [Aufnahmen](/de/recording/browsing#suche) nimmt **Suche per Bild** (nur Admins) ein Bild einer Person oder eines Fahrzeugs: auf das Feld oder irgendwo auf die Liste ziehen oder auswählen. Klick die Person oder das Fahrzeug darin an, die Liste zeigt die Treffer wie oben. Gelesen wird das Bild mit den Plugins und Modellen der Kamera, der die meisten davon zugewiesen sind.
 
 ## Die Modelle ausprobieren
 

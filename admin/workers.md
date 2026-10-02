@@ -117,7 +117,9 @@ Once paired, a worker appears in the **Workers** list showing its online/offline
 
 A worker that fails to link up at startup, or loses the link later, logs the reason in its [log](/admin/logs) instead of looking online. Cameras and plugins running on a worker show up in **Metrics** with the worker's name and its load.
 
-The [Updates page](/install/updating#the-updates-page) lists every lagging worker next to the server and the plugins, and a lagging worker shows an **Update** button right in the list too: the worker installs the version the master is heading for and restarts itself. Normally that is the version the master runs; when a server update is waiting, it is that one, so the worker does not have to be updated twice. Desktop-app workers update the same way. See [Updating](/install/updating).
+The [Updates page](/install/updating#the-updates-page) lists every lagging online worker next to the server and the plugins, and a lagging worker shows an **Update** button right in the list too: the worker installs the version the master is heading for and restarts itself. Normally that is the version the master runs; when a server update is waiting, it is that one, so the worker does not have to be updated twice. Desktop-app workers update the same way. See [Updating](/install/updating).
+
+A worker on a release that can no longer connect to this master stays offline, even while it runs, so neither the Updates page nor its **Update** button can reach it. The master's [log](/admin/logs) names the worker and the version to install. Update it on its own machine, see [Updating](/install/updating).
 
 ## Camera and plugin assignments
 

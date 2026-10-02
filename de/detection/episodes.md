@@ -16,12 +16,12 @@ Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions): Das NVR
 - **Quiet Time.** Die Episode schließt und bekommt ihre Story, sobald es so lange ruhig war. Standard 60 Sekunden.
 - **Wrap Up After.** Sobald eine Episode diese Länge erreicht, nimmt sie keine neue Aktivität mehr auf und schließt beim nächsten natürlichen Bruch: Was noch läuft, wird zuerst zu Ende geführt, spätere Aktivität startet die nächste Episode. Standard 10 Minuten.
 - **Custom Instructions.** Freitext-Vorgaben, die dem eingebauten Prompt für die Story hinzugefügt werden, etwa worauf zu achten ist oder wie formuliert werden soll.
-- **Video in Push.** Ob ein Episoden-Push den Episoden-Clip abspielt, der wie der [Episoden-Player](#der-episoden-player) zwischen Kameras wechselt. **Off** hängt ihn nie an, **Always** immer, und **Camera setting** hängt ihn an, wenn mindestens eine Kamera der Episode [Video in Push](/de/notifications/#woruber-jede-kamera-dich-alarmiert) aktiviert hat. Standard **Camera setting**.
+- **Video in Push.** Ob ein Episoden-Push den Episoden-Clip abspielt, der wie der [Episoden-Player](#der-episoden-player) zwischen Kameras wechselt. **Off** hängt ihn nie an, **Always** immer, und **Camera setting** hängt ihn an, wenn mindestens eine Kamera der Episode [Video in Push](/de/notifications/#worüber-jede-kamera-dich-alarmiert) aktiviert hat. Standard **Camera setting**.
 
 ## Wo Episoden erscheinen
 
 - **Home.** Episoden erscheinen in der **Recent Events**-Reihe als Mosaik-Karte, die zeigt, wie viele Kameras beteiligt waren.
-- **Aufnahmen.** Dieselbe Mosaik-Karte erscheint in der Liste. Eine Aufnahme, die zu einer Episode gehört, zeigt einen **Episode öffnen**-Button, der dorthin springt. Episoden-Karten folgen den Filtern für Kamera und Zeitraum; jeder andere Filter (Labels, Trigger, Attribute, Fahrzeuge, Suche) blendet sie aus.
+- **Aufnahmen.** Dieselbe Mosaik-Karte erscheint in der Liste. Eine Aufnahme, die zu einer Episode gehört, zeigt einen **Episode öffnen**-Button, der dorthin springt. Episoden-Karten folgen den Filtern für Kamera, Zeitraum, **Nur mit Aufnahme** und **Nur Favoriten**; jeder andere Filter (Labels, Trigger, Attribute, Fahrzeuge, Suche) blendet sie aus.
 - **Apple TV.** Episoden gibt es auch in der Apple-TV-App.
 
 <Shot src="/img/detection/episode-card.png" alt="Eine Episoden-Mosaik-Karte in der Aufnahmen-Ansicht" />
@@ -34,6 +34,6 @@ Deckt eine zweite Kamera denselben Raum im [Grundriss](/de/cameras/floor-plan) a
 
 ## Warum eine Episode so aussieht
 
-Das Verlaufs-Symbol an einer Episode, auf ihrer Karte und im Player, öffnet, was in sie eingeflossen ist: jedes Ereignis, das als Kandidat infrage kam, und ob es dabei blieb oder herausfiel, bei den herausgefallenen mit Grund, von „hat sich nie bewegt" bis „gehört zu einer anderen Episode". Darunter stehen die Verbindungen zwischen den verbliebenen Ereignissen, beide KI-Durchgänge mit den Bildern und Vorgaben, die das Modell bekommen hat, und seiner Antwort, sowie der entstandene Schnitt, inklusive eines Abschnitts, der herausfiel, weil ihn eine andere Kamera besser gesehen hat. **Bundle herunterladen** packt das zusammen mit dem Clip für einen Fehlerbericht.
+Admins öffnen mit dem Verlaufs-Symbol auf der Karte einer Episode und im Player, was in sie eingeflossen ist: jedes Ereignis, das als Kandidat infrage kam, und ob es dabei blieb oder herausfiel, bei den herausgefallenen mit Grund, von „hat sich nie bewegt" bis „gehört zu einer anderen Episode". Darunter stehen die Verbindungen zwischen den verbliebenen Ereignissen, beide KI-Durchgänge mit den Bildern und Vorgaben, die das Modell bekommen hat, und seiner Antwort, sowie der entstandene Schnitt, inklusive eines Abschnitts, der herausfiel, weil ihn eine andere Kamera besser gesehen hat. **Bundle herunterladen** packt das zusammen mit dem Clip für einen Fehlerbericht.
 
 <Shot src="/img/detection/episode-player.png" alt="Der Episoden-Player mit dem Kamera-Streifen unter dem Video" />
