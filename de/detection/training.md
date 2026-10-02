@@ -20,7 +20,7 @@ Die Sammlung ist standardmäßig an und bleibt auf deiner Platte. Zum Abschalten
 
 Ein Frame öffnet den Editor. Ziehen zeichnet eine Box, Tipp auf Box oder Label ändert sie, Doppeltipp zoomt. Mit Tastatur listet der Fragezeichen-Button im Editor die Shortcuts auf.
 
-**Boxen des vorherigen Bildes zeigen** (`V`) zeichnet die Boxen des Frames davor als Umrisse ein, das Plus an einem übernimmt ihn, `Shift` + `V` alle.
+**Boxen des vorherigen Bildes dieser Kamera zeigen** (`V`) zeichnet die Boxen als Umrisse ein, die du zuletzt auf einem Frame derselben Kamera hattest, das Plus an einem übernimmt ihn, `Shift` + `V` alle. **Boxen ausblenden** (`H`) blendet alle Boxen und Umrisse aus, damit das Bild darunter frei liegt.
 
 Erkennungen unter der Erkennungsschwelle der Kamera erscheinen gepunktet mit ihrem Score. Das Plus an einer beschriftet sie; lass die stehen, die nichts zeigen.
 

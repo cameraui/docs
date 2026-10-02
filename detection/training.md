@@ -20,7 +20,7 @@ Collection is on by default and stays on your disk. To stop it, open the gear me
 
 Opening a frame starts the editor. Drag to draw a box, tap a box or its label to change it, double tap to zoom. On a keyboard, the question mark button in the editor lists the shortcuts.
 
-**Show boxes of the previous image** (`V`) draws the boxes of the frame before as outlines, the plus on one takes it over, `Shift` + `V` takes all.
+**Show boxes of this camera's previous image** (`V`) outlines the boxes you last had on a frame of the same camera, the plus on one takes it over, `Shift` + `V` takes all. **Hide boxes** (`H`) hides every box and outline so the picture underneath shows.
 
 Detections below the camera's detection threshold show as dotted outlines with their score. The plus on one labels it; leave the ones that show nothing.
 
