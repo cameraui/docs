@@ -30,7 +30,7 @@ Einmal aktiviert, bietet der Login-Bildschirm **Mit Face ID anmelden** an. Der S
 
 ## Aktive Sitzungen
 
-Die Liste **Aktive Sitzungen** zeigt jedes an deinem Konto angemeldete Gerät, das aktuelle markiert. Du kannst ein einzelnes Gerät **abmelden** oder alle anderen auf einmal.
+Die Liste **Aktive Sitzungen** zeigt jedes an deinem Konto angemeldete Gerät, das aktuelle markiert. Du kannst ein einzelnes Gerät **abmelden** oder alle anderen auf einmal. Ein abgemeldetes Gerät verliert dabei sofort auch seine Live-Ansicht.
 
 ## API-Tokens
 
@@ -40,4 +40,4 @@ Ein Token hat vollen Zugriff auf dein Konto, behandle es also wie ein Passwort. 
 
 ## Passwort
 
-Ändere dein Passwort unter **Konto**. Das Ändern, auch deines Benutzernamens, meldet dich überall ab.
+Ändere dein Passwort unter **Konto**. Das Ändern, auch deines Benutzernamens, meldet dich überall sofort ab. Deine API-Tokens bleiben gültig.

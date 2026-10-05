@@ -18,7 +18,12 @@ Du kannst den vollen camera.ui-Server als App direkt in Home Assistant OS laufen
 
 Das **camera.ui**-App startet den kompletten Server: die UI, die Streaming-Engine, den NVR und alle Plugins, die du installierst. Es läuft im Host-Netzwerk, das es für WebRTC-Livebild, HomeKit-Pairing und Kamera-Erkennung braucht.
 
-Nach dem Start legt das App einen Eintrag **camera.ui** in der Home-Assistant-Seitenleiste an. Dieses Panel und der Button **Web-UI öffnen** des Apps öffnen die Oberfläche beide über den Ingress-Proxy von Home Assistant, also ohne zweiten Login und ohne Zertifikatswarnung.[^direct]
+Nach dem Start legt das App einen Eintrag **camera.ui** in der Home-Assistant-Seitenleiste an. Dieses Panel und der Button **Web-UI öffnen** des Apps öffnen die Oberfläche beide über den Ingress-Proxy von Home Assistant, also ohne zweiten Login und ohne Zertifikatswarnung.[^direct] Wie das Panel dich anmeldet, hängt von deinem Home-Assistant-Benutzer ab:
+
+- **Admins.** Home-Assistant-Admins meldet es als Benutzer `homeassistant` an, ein Master-Konto. Dieser Benutzer lässt sich nicht umbenennen.
+- **Andere Benutzer.** Wer sonst das Panel öffnet, bekommt ein eigenes camera.ui-Konto mit der Rolle [Benutzer](/de/admin/users#rollen), benannt nach dem Home-Assistant-Benutzernamen mit `ha-` davor, etwa `ha-anna`. Entfernt oder deaktiviert Home Assistant den Benutzer oder macht ihn zum Admin, meldet camera.ui das Konto überall ab, sobald jemand das Panel das nächste Mal nutzt.
+
+Abmelden, Benutzername und Passwort gibt es im Panel nicht, API-Tokens nur für den Master.
 
 Beim **ersten Start** lädt das App den camera.ui-Server und das Standard-Plugin herunter, was eine Internetverbindung braucht und ein paar Minuten dauert.[^firstboot] Den ersten Boot kannst du im Tab **Log** des Apps mitverfolgen.
 

@@ -15,6 +15,7 @@ The most common issues and where to look. The **[Logs](/admin/logs)** show what 
 
 ## Live view is black or won't play
 
+- If the player shows **Stream unavailable**, the line below it is the reason the streaming engine gave. Small players leave it out, the camera page shows it.
 - Check the source's **codec** in the Sources tab; very unusual codecs may need transcoding.
 - Try a different **streaming mode** in the camera's [interface settings](/cameras/settings).
 - Enable **[hot mode and preload](/cameras/add-camera#source-options)** on the source for faster, more reliable opening.

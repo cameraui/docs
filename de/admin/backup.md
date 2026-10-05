@@ -14,6 +14,8 @@ Wähle **Backup-Archiv herunterladen**, um ein einzelnes Archiv deines camera.ui
 
 Lade ein Archiv hoch und wähle **Backup-Archiv wiederherstellen**. Das ersetzt die aktuelle Konfiguration durch den Stand des Archivs und startet den Server neu. Lass das Fenster offen, bis es fertig ist; camera.ui meldet dich am Ende ab.
 
+Eine Wiederherstellung gibt dem Server eine neue Identität. Der Remote-Zugriff ist danach aus, Cloud-Registrierung und **Server-Adressen** sind geleert, und der Server erzeugt eine neue Zertifizierungsstelle. Richte den [Remote-Zugriff](/de/remote/) neu ein, registriere den Server erneut und installiere das neue [Zertifikat](/de/admin/system#zertifikate) auf Geräten, die dem alten vertraut haben.
+
 Archive größer als 200 MB werden beim Hochladen abgelehnt. Ist deins zu groß, schließe Medienordner vom Backup aus und erstelle ein neues.[^ignore]
 
 ## Geplante Backups

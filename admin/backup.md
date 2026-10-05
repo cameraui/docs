@@ -14,6 +14,8 @@ Choose **Download backup archive** to save a single archive of your camera.ui st
 
 Upload an archive and choose **Restore backup archive**. This replaces the current configuration with the archive's state and restarts the server. Leave the window open until it's done; camera.ui logs you out at the end.
 
+A restore gives the server a new identity. Remote access is off afterwards, the cloud registration and the **Server addresses** are cleared, and the server creates a new certificate authority. Set up [remote access](/remote/) and register the server again, and install the new [certificate](/admin/system#certificates) on devices that trusted the old one.
+
 Archives larger than 200 MB are rejected on upload. If yours is too big, exclude media folders from the backup and create a new one.[^ignore]
 
 ## Scheduled backups

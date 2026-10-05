@@ -18,7 +18,12 @@ You can run the full camera.ui server inside Home Assistant OS as an app. There 
 
 The **camera.ui** app runs the complete server: the UI, the streaming engine, the NVR, and any plugins you install. It runs on the host network, which it needs for WebRTC live view, HomeKit pairing, and camera discovery.
 
-Once started, the app adds a **camera.ui** entry to the Home Assistant sidebar. That panel, and the app's **Open Web UI** button, both open the interface through Home Assistant's ingress proxy, so there is no separate login and no certificate warning.[^direct]
+Once started, the app adds a **camera.ui** entry to the Home Assistant sidebar. That panel, and the app's **Open Web UI** button, both open the interface through Home Assistant's ingress proxy, so there is no separate login and no certificate warning.[^direct] The panel signs you in according to your Home Assistant user:
+
+- **Admins.** Home Assistant admins are signed in as the `homeassistant` user, a master account. That user can't be renamed.
+- **Other users.** Anyone else who opens the panel gets a camera.ui account of their own with the [user role](/admin/users#roles), named after their Home Assistant username with `ha-` in front, `ha-anna` for example. When Home Assistant removes or disables that user or makes it an admin, camera.ui signs the account out everywhere the next time someone uses the panel.
+
+Sign-out, username and password are not offered in the panel, and API tokens only to the master.
 
 On **first start** the app downloads the camera.ui server and the default plugin, which needs an internet connection and takes a few minutes.[^firstboot] Follow the first boot in the app's **Log** tab.
 

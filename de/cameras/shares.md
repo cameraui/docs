@@ -12,12 +12,14 @@ Wähle an einer Kamera **Kamera teilen** in der Player-Werkzeugleiste und lege f
 
 - **Quelle.** Welche Stream-Qualität geteilt wird (hohe, mittlere oder niedrige Auflösung).
 - **Gültig für.** Wie lange der Link gültig bleibt.
-- **Max. Zuschauer.** Wie viele Personen gleichzeitig zusehen können, oder unbegrenzt.
+- **Max. Zuschauer.** Wie viele Personen gleichzeitig zusehen können. **Unbegrenzt** endet bei 50.
 - **Bezeichnung.** Ein optionaler Name, um die Freigabe später wiederzuerkennen.
 
 Wähle **Erstellen**. camera.ui gibt dir einen **Share-Link** und einen **Zugangscode**. Der Zugangscode wird nur einmal angezeigt, kopiere ihn also vor dem Schließen.
 
 Die Zuschauer-Seite startet ohne Ton. Die Person kann ihn einschalten und bei Kameras mit Zwei-Wege-Audio über den Mikrofon-Button zurücksprechen.
+
+Im Hintergrund stoppt die Zuschauer-Seite den Stream und startet ihn bei der Rückkehr neu, außer er läuft im Bild-in-Bild. Nach einem Verbindungsabbruch verbindet sie sich von selbst neu. Wer über dem Limit von **Max. Zuschauer** liegt, sieht **Maximale Anzahl an Zuschauern erreicht**, und die Seite versucht es weiter, bis ein Platz frei wird.
 
 ::: tip Erfordert camera.ui Cloud
 Teilen setzt voraus, dass dein Server mit **camera.ui Cloud** verbunden ([Einstellungen → Remote](/de/remote/cloud)) und online ist. Die Cloud hostet den Link und hilft dem Zuschauer, deinen Server zu finden, aber das Video läuft über eine **direkte, Ende-zu-Ende-verschlüsselte Verbindung** zwischen Zuschauer und deinem Server. Es passiert nie camera.uis Server, und der Zugangscode wird nur auf deinem eigenen Server geprüft.
@@ -27,4 +29,4 @@ Teilen setzt voraus, dass dein Server mit **camera.ui Cloud** verbunden ([Einste
 
 ## Freigaben verwalten
 
-Der **Freigaben**-Tab einer Kamera listet ihre aktiven Share-Links: Bezeichnung, geteilte Quelle, Erstellzeitpunkt, Ablauf und wie viele Zuschauer gerade zusehen, gemessen am Limit. Der Link lässt sich erneut kopieren, der Zugangscode nicht mehr abrufen. Wähle **Widerrufen**, um eine Freigabe sofort zu beenden.
+Der **Freigaben**-Tab einer Kamera listet ihre aktiven Share-Links: Bezeichnung, geteilte Quelle, Erstellzeitpunkt, Ablauf und wie viele Zuschauer gerade zusehen, gemessen am Limit. Der Link lässt sich erneut kopieren, der Zugangscode nicht mehr abrufen. Wähle **Widerrufen**, um eine Freigabe sofort zu beenden: Wer gerade zusieht, wird getrennt und sieht **Dieser Share-Link ist abgelaufen**. Eine abgelaufene Freigabe endet genauso.

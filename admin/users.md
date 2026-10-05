@@ -18,11 +18,15 @@ Access is decided by role, not per camera; there are no per-camera permissions.
 
 <Shot src="/img/admin/users.png" alt="The registered users list" />
 
-The **Registered users** list creates, edits and removes accounts. A new account gets the role user or admin.
+The **Registered users** list creates, edits and removes accounts. A new account gets the role user or admin. Accounts named `ha-…` come from the [Home Assistant app](/home-assistant/app#the-camera-ui-app), one for each Home Assistant user without admin rights who opened its panel. Deleting an account or taking its admin rights away applies at once, also on devices where it is signed in.
 
 ## Logged in users
 
 Below the registered users, the **Logged in users** list shows every active session across all accounts, with the device, its address, and type. **Sign out** on a row ends that session.
+
+## Connection limit
+
+Each sign-in, meaning a browser or app you logged in with or an [API token](/admin/security#api-tokens), can have up to 64 live streams and about 32 camera.ui tabs or windows open at the same time. Past that, the server refuses new connections until others close.
 
 ## The first account
 

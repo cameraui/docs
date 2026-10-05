@@ -26,7 +26,7 @@ Solange die Cloud aktiv ist, behält dein Server zusätzlich eine öffentliche A
 
 Wenn du keine direkte Adresse eingerichtet hast oder die konfigurierte nicht erreichbar ist, startet camera.ui stattdessen einen temporären Cloudflare-Tunnel. Für eine eigene Adresse richte sie unter [Direkte Verbindung](/de/remote/) ein.
 
-Der Rückfall ist nicht dauerhaft. camera.ui prüft deine eigene Adresse weiter und geht zurück, sobald sie antwortet, eine eigene Domain jede Minute, einen Cloudflare-Tunnel etwa alle zehn Minuten. Ein Neustart ist nicht nötig. Solange der Rückfall aktiv ist, zeigt **Externe URL** die temporäre Adresse, und ein erneut fehlgeschlagener Cloudflare-Versuch vergibt eine neue.
+Der Rückfall ist nicht dauerhaft. camera.ui prüft deine eigene Adresse weiter und geht zurück, sobald sie antwortet, eine eigene Domain jede Minute, einen Cloudflare-Tunnel nach zehn Minuten und danach [seltener](/de/remote/cloudflare). Ein Neustart ist nicht nötig. Solange der Rückfall aktiv ist, zeigt **Externe URL** die temporäre Adresse, und ein erneut fehlgeschlagener Cloudflare-Versuch vergibt eine neue.
 
 ## Das Cloud-Dashboard
 
@@ -36,4 +36,4 @@ Das Papierkorb-Symbol neben einem Server entfernt ihn aus deinem Konto, auch wen
 
 ## Ausschalten
 
-Den Cloud-Zugriff zu deaktivieren beendet aktive Remote-Sitzungen. Lokale Verbindungen in deinem Netzwerk laufen weiter.
+Den Cloud-Zugriff zu deaktivieren beendet aktive Remote-Sitzungen, und [Share-Links](/de/cameras/shares) funktionieren nicht mehr. Lokale Verbindungen in deinem Netzwerk laufen weiter.

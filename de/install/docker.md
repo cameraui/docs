@@ -129,11 +129,11 @@ Nutze für `/recordings` eine dedizierte lokale Disk, keine Netzwerkfreigabe. Si
 
 ## Workers
 
-Ein Worker ist eine zweite Maschine, die Kamera-Arbeit (Decoding, Erkennung, Plugins) von deinem Hauptserver übernimmt. Er hat keine eigene UI und keine eigene Streaming-Engine. Er nutzt dasselbe Image wie der Server, gestartet im Worker-Modus mit `CAMERA_UI_WORKER=true`.
+Ein Worker ist eine zweite Maschine, die Kamera-Arbeit (Decoding, Plugins) von deinem Hauptserver übernimmt. Er hat keine eigene UI und keine eigene Streaming-Engine. Er nutzt dasselbe Image wie der Server, gestartet im Worker-Modus mit `CAMERA_UI_WORKER=true`.
 
 Aktiviere zuerst Workers auf dem Hauptserver und generiere dort einen Pairing-Code. compose-Datei, Umgebungsvariablen und Kamera-Zuweisung: [Worker](/de/admin/workers#worker-in-docker).
 
-`CAMERA_UI_WORKER_CAPABILITIES` legt fest, was der Worker übernimmt: `frameDecoding` für Decoding und Erkennung, `pluginHost` für das Ausführen von Plugins. Ohne den Wert bietet der Worker beides an.
+`CAMERA_UI_WORKER_CAPABILITIES` legt fest, was der Worker übernimmt: `frameDecoding` für das Decoding von Kameras, `pluginHost` für das Ausführen von Plugins. Ohne den Wert bietet der Worker beides an.
 
 ## Ports
 

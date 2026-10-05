@@ -47,6 +47,7 @@ When nothing is moving, the whole frame goes through. The **Zoom** column in the
 - **Decode**, the time for one frame: analysis stream first, then the high-resolution stream.
 - **Processing**, scaling to the model input and turning the results back into boxes. On a camera without an object detector it shows the scaling for motion.
 - **Transport**, the time the frame and the result spend on the way to the plugin and back.
+- **Network**, the bit rate of frames sent over the network to detection plugins on another machine, with those plugins behind it. See [Workers](/admin/workers#camera-and-plugin-assignments).
 - **Analysed**, frames per second analysed, again analysis stream then high-resolution stream.
 - **Active**, the share of time the camera analysed at all. A camera with a frame loop sits at 100%, a camera that reports motion itself only counts during events.
 - **Detections**, objects found per analysed frame.
@@ -58,7 +59,7 @@ When nothing is moving, the whole frame goes through. The **Zoom** column in the
 
 ### Benchmark
 
-**Benchmark** loads the object detector of the cameras you pick with test frames and reports how many detections per second the machine manages, in total and per camera, with each camera's plugin, model and device. **Copy** puts the result on the clipboard.
+**Benchmark** loads the object detector of the cameras you pick with test frames and reports how many detections per second the machine manages, in total and per camera, with each camera's plugin, model and device. **In the plugin at once** is how many of the calls **In flight** the plugin held at the same time on average: at 1 it takes one detection after the other. **Copy** puts the result on the clipboard.
 
 Detection pauses on every camera while the run is going, including the ones you did not pick, and continues when it is done. Only admins can run it.
 

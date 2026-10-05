@@ -10,7 +10,7 @@ Sie spricht den Server direkt über dein lokales Netzwerk an, Ereignisse kommen 
 
 ## Installation
 
-Die Integration wird über [HACS](https://hacs.xyz) als Custom-Repository verteilt.
+Die Integration wird über [HACS](https://hacs.xyz) als Custom-Repository verteilt und braucht Home Assistant 2026.3 oder neuer.
 
 1. Füge in HACS `cameraui/homeassistant-integration` als Custom-**Integration**-Repository hinzu.
 2. Installiere **camera.ui** aus HACS.
@@ -77,6 +77,8 @@ Fügst du in camera.ui einen Sensor hinzu, benennst ihn um, weist ihn neu zu, gi
 Jede Kamera bekommt einen **motion**-Binärsensor, der eingeschaltet ist, solange eine Erkennung aktiv ist.
 
 Kameras mit Objekterkennung bekommen zusätzlich je einen Binärsensor für **person**, **vehicle**, **animal** und **package**. Jeder ist eingeschaltet, solange das Objekt im Bild ist, und geht aus, wenn die Erkennung endet.[^objectclass]
+
+Bricht die Verbindung zu camera.ui ab, werden die Entitäten nicht verfügbar. Steht sie wieder, läuft eine noch aktive Erkennung ohne zweites `start` weiter. Eine, die in der Zwischenzeit geendet hat, endet dann: Bewegungs- und Objektsensoren gehen aus, Erkennungssensoren leeren sich und `cameraui_event` feuert `end`.
 
 [^objectclass]: Bewegungs- und Objekt-Binärsensoren werden mit der Geräteklasse `motion` registriert, sie erscheinen in Home Assistant also als Bewegungssensoren und nicht als eigene Objektklasse.
 
@@ -196,6 +198,8 @@ Drei Karten kommen mit der Integration und melden sich selbst an: eine Kamera, e
 ### Kartenzugriff
 
 Die Optionen der Integration legen fest, wer sie nutzen darf: standardmäßig **nur Administratoren**, wahlweise **alle Home-Assistant-Nutzer**. Die Karten erreichen camera.ui über Home Assistant mit dem Token der Integration, wer sie freigibt, gibt also jedem Home-Assistant-Nutzer das, was dieses Token sehen darf. **Viewer-Token** nimmt ein zweites camera.ui-Token, das für alle ohne Home-Assistant-Adminrechte verwendet wird, damit lässt sich ein eingeschränktes camera.ui-Konto dahinter setzen.
+
+Alle Dashboards, die dasselbe Token nutzen, teilen sich dessen [Verbindungslimit](/de/admin/users#verbindungslimit). Bei vielen Wanddisplays gibt ein **Viewer-Token** den Nutzern ohne Adminrechte ein eigenes Limit.
 
 ## Aufnahmen im Medien-Browser
 

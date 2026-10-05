@@ -30,7 +30,7 @@ Once enabled, the login screen offers **Sign in with Face ID**. The **Use Face I
 
 ## Active sessions
 
-The **Active sessions** list shows every device signed in to your account, with the current one marked. You can **sign out** a single device, or sign out all the others at once.
+The **Active sessions** list shows every device signed in to your account, with the current one marked. You can **sign out** a single device, or sign out all the others at once. A device you sign out also loses its live view right away.
 
 ## API tokens
 
@@ -40,4 +40,4 @@ A token has full access to your account, so treat it like a password. The list s
 
 ## Password
 
-Change your password under **Account**. Changing your password or username signs you out everywhere.
+Change your password under **Account**. Changing your password or username signs you out everywhere at once. Your API tokens keep working.

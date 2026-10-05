@@ -67,7 +67,7 @@ Du kannst außerdem mehr als einen Server als **Instanz** speichern und in derse
 
 ## Über mehrere Maschinen skalieren
 
-Zusätzliche Maschinen können als **Worker** mitarbeiten. Ein Worker übernimmt Dekodieren und Erkennung für einige Kameras oder führt ein ganzes Plugin aus (für einen Detektor, der Hardware braucht, die dem Hauptserver fehlt). Kameras und Plugins eines Workers fallen **zurück** auf den Hauptserver, solange der Worker offline ist, und wandern zurück, sobald er sich wieder verbindet. Siehe [Worker](/de/admin/workers).
+Zusätzliche Maschinen können als **Worker** mitarbeiten. Ein Worker dekodiert einige Kameras oder führt ein ganzes Plugin aus (für einen Detektor, der Hardware braucht, die dem Hauptserver fehlt). Kameras und Plugins eines Workers fallen **zurück** auf den Hauptserver, solange der Worker offline ist, und wandern zurück, sobald er sich wieder verbindet. Siehe [Worker](/de/admin/workers).
 
 ## Von außen erreichen
 

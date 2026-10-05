@@ -8,7 +8,7 @@ title: Workers
 
 A **worker** is a second machine that takes on part of a server's processing. The main server (the **master**) keeps the UI, the settings and the recordings; workers contribute compute. Manage them in **Workers** (in the menu).
 
-A worker takes over decoding and detection for selected cameras, or runs an entire plugin, for example a detection backend that needs a GPU the master doesn't have, or a plugin the master's platform can't load.
+A worker decodes the cameras assigned to it, or runs an entire plugin, for example a detection backend that needs a GPU the master doesn't have, or a plugin the master's platform can't load.
 
 ## How workers work
 
@@ -117,20 +117,22 @@ Once paired, a worker appears in the **Workers** list showing its online/offline
 
 A worker that fails to link up at startup, or loses the link later, logs the reason in its [log](/admin/logs) instead of looking online. Cameras and plugins running on a worker show up in **Metrics** with the worker's name and its load.
 
-The [Updates page](/install/updating#the-updates-page) lists every lagging online worker next to the server and the plugins, and a lagging worker shows an **Update** button right in the list too: the worker installs the version the master is heading for and restarts itself. Normally that is the version the master runs; when a server update is waiting, it is that one, so the worker does not have to be updated twice. Desktop-app workers update the same way. See [Updating](/install/updating).
+The [Updates page](/install/updating#the-updates-page) lists every lagging online worker next to the server and the plugins, and a lagging worker shows an **Update** button right in the list too: the worker installs the version the master is heading for and restarts itself. Normally that is the version the master runs; when a server update is waiting, it is that one, so the worker does not have to be updated twice. An update that [needs a newer Node.js](/install/linux#updating-node-js) on the master does not count until Node.js is updated. Desktop-app workers update the same way. See [Updating](/install/updating).
 
 A worker on a release that can no longer connect to this master stays offline, even while it runs, so neither the Updates page nor its **Update** button can reach it. The master's [log](/admin/logs) names the worker and the version to install. Update it on its own machine, see [Updating](/install/updating).
 
 ## Camera and plugin assignments
 
-Under **Camera Assignments**, choose which camera each worker decodes and detects on; cameras left as **Local** stay on the main server.
+Under **Camera Assignments**, choose which worker decodes each camera; cameras left as **Local** stay on the main server.
 
 Under **Plugin Assignments**, an entire plugin can run on a worker instead of the main server. Only workers whose platform is compatible with the plugin are offered. The worker installs and runs the plugin; it's still configured normally in the UI.
 
 A plugin on a worker uses the worker's own network addresses, not the **Server addresses** of the main server. Choose them with **Edit Worker** in the workers list; left empty, the plugin listens on all of them. Changing them restarts the plugins on that worker.
 
+Decoding runs where the camera is assigned, detection runs where the detection plugin runs. When a camera and a detection plugin that analyses its frames run on different machines, every analysed frame crosses the network: per active camera about 2.3 Mbit/s for motion and 12 to 74 Mbit/s for object detection at a 320 px model input, four times that at 640 px. Keep a camera and its detection plugins on the same machine.
+
 ## Failover
 
 Workers send a heartbeat every 5 seconds and are considered offline after 15 seconds without one. If a worker disconnects, its assigned cameras and plugins fall back to the main server automatically (a plugin only falls back if the main server's platform can run it). When the worker reconnects, its cameras and plugins are automatically re-homed to it.
 
-Removing a worker revokes its credentials and drops the connection; its assigned cameras and plugins fall back to the main server.
+Removing a worker revokes its credentials and drops the connection; its assigned cameras and plugins fall back to the main server. A removed worker that keeps running logs the rejection and tries again, on Linux and macOS about once a minute, until it is [paired](#pair-a-worker) again.

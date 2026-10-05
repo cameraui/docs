@@ -76,7 +76,7 @@ GNOME zeigt ein Tray-Symbol nur mit der AppIndicator-Erweiterung. **Modus wechse
 <Shot src="/img/install/desktop-tray-menu.png" alt="Tray-Menü der Desktop-App" />
 
 [^autostart]: Nur macOS und Windows.
-[^closetotray]: Nur Windows und Linux. Unter macOS bleibt die App beim Schließen des Fensters ohnehin im Tray, daher gibt es die Option dort nicht.
+[^closetotray]: Nur Windows und Linux. Unter macOS versteckt Schließen das Fenster immer nur, die App und ihre Desktop-Benachrichtigungen laufen weiter, bis du sie beendest.
 
 ## macOS-Berechtigungen
 

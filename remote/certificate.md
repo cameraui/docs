@@ -8,11 +8,11 @@ camera.ui generates its own certificate on first start and serves it on every co
 
 ## What the built-in certificate is for
 
-The mobile apps and remote workers verify the server against camera.ui's own certificate authority. They reach the server by IP address, and no public issuer signs certificates for private addresses, so that part keeps running on the internal certificate no matter what you upload.
+The mobile apps, the [Apple TV app](/install/tv) and remote workers verify the server against camera.ui's own certificate authority. They reach the server by IP address, and no public issuer signs certificates for private addresses, so that part keeps running on the internal certificate no matter what you upload.
 
 Your certificate is served only when a client asks for a name it covers. Everything else, including every connection to an IP address, still gets the internal one.
 
-The internal certificate covers `127.0.0.1`, the machine's private network addresses, and whatever you picked under **Settings → Remote Access → Network**: the server addresses and the local address. A public address is only included when you select it there. Changing those reissues the certificate, so a browser exception stored for the old one no longer applies and the warning returns.
+The internal certificate covers `127.0.0.1`, the machine's private network addresses, and whatever you picked under **Settings → Remote Access → Network**: the server addresses and the local address. A public address is only included when you select it there. Changing those reissues the certificate, so a browser exception stored for the old one no longer applies and the warning returns. Devices that installed the [downloaded certificate](/admin/system#certificates) keep trusting the server, because the certificate authority stays the same until a [backup restore](/admin/backup#restoring).
 
 ## Uploading your own
 

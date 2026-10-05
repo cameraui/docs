@@ -6,11 +6,11 @@ camera.ui hat zwei Teile, die aktualisiert werden: den **Server** und die **App*
 
 **Updates** in der Navigation sammelt alles, was aktualisiert werden kann, in drei Abschnitten: **Server**, **Plugins** und **Worker**. Eine Zeile mit einer neueren Version öffnet deren Release Notes, **Nach Updates suchen** prüft erneut. Nur für Admins.
 
-**Alle aktualisieren** installiert erst die Worker, dann die Plugins, den Server zuletzt, weil seine Installation ihn neu startet. Ein fehlgeschlagener Eintrag kann einzeln wiederholt werden. Es läuft immer nur ein Durchgang, der Button wartet also, solange ein per Hand gestartetes Plugin- oder Worker-Update läuft.
+**Alle aktualisieren** installiert erst die Worker, dann die Plugins, den Server zuletzt, weil seine Installation ihn neu startet. Scheitert ein Worker, wird der Server übersprungen, denn ein Worker auf der alten Version kann sich nicht mit der neuen verbinden. Ein fehlgeschlagener Eintrag kann einzeln wiederholt werden. Es läuft immer nur ein Durchgang, der Button wartet also, solange ein per Hand gestartetes Plugin- oder Worker-Update läuft.
 
 <Shot src="/img/admin/updates.png" alt="Updates-Seite mit den Abschnitten Server und Plugins" />
 
-Eine Zeile kann auch sagen, warum sie hier nicht aktualisiert werden kann. **Aktualisiert sich mit der Desktop-App** heißt, die App ist zu alt, um ihre Updates aus der Ferne zu installieren, aktualisiere sie also auf ihrer Maschine.
+Eine Zeile kann auch sagen, warum sie hier nicht aktualisiert werden kann. **Aktualisiert sich mit der Desktop-App** heißt, die App ist zu alt, um ihre Updates aus der Ferne zu installieren, aktualisiere sie also auf ihrer Maschine. **Erfordert Node.js …** heißt, die neue Version braucht ein neueres Node.js, als auf dieser Maschine läuft, siehe [Node.js aktualisieren](/de/install/linux#node-js-aktualisieren).
 
 camera.ui sucht alle 10 Minuten nach neuen Versionen und meldet sich, wenn Server, ein Plugin oder ein Worker eine hat.
 

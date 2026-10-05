@@ -6,7 +6,7 @@ title: Remote access
 
 Without remote access, camera.ui is reachable on your local network only. Remote access is free and doesn't need the recording subscription.[^free]
 
-Remote access is an admin setting, under **Settings → Remote Access**. The page shows your current **connection status** (local, local network, remote, or cloud) and the address you're connected on. The info button next to it opens **Connection details**: the address this app is using, what the server sees from its side, and every address the app tried in its last attempt with the time it took and why it failed. **Copy details** copies all of it for a support message. The same page holds the **Network** card, where you pick which of the server's IP addresses apps may use and can give it a **Local address** on your own network.
+Remote access is an admin setting, under **Settings → Remote Access**. The page shows your current **connection status** (local, local network, remote, or cloud) and the address you're connected on. The info button next to it opens **Connection details**: the address this app is using, what the server sees from its side, and every address the app tried in its last attempt with the time it took and why it failed. **Copy details** copies all of it for a support message. The same page holds the **Network** card, where you pick which of the server's IP addresses apps may use and can give it a **Local address** on your own network. Its list holds VPN addresses such as WireGuard too, but leaves out container and VM networks.
 
 On connecting, and whenever the path changes (you get home and the app leaves the internet path, say), a short notice at the bottom says **Connected via local network**, **Connected via internet** or **Connected via cloud**.
 

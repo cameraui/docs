@@ -8,7 +8,7 @@ title: Worker
 
 Ein **Worker** ist eine zweite Maschine, die einen Teil der Verarbeitung eines Servers übernimmt. Der Hauptserver (der **Master**) behält die Oberfläche, die Einstellungen und die Aufnahmen; Worker steuern Rechenleistung bei. Verwalte sie unter **Workers** (im Menü).
 
-Ein Worker übernimmt Dekodierung und Erkennung ausgewählter Kameras oder führt ein ganzes Plugin aus, etwa ein Erkennungs-Backend, das eine GPU braucht, die der Master nicht hat, oder ein Plugin, das die Plattform des Masters nicht laden kann.
+Ein Worker dekodiert die ihm zugewiesenen Kameras oder führt ein ganzes Plugin aus, etwa ein Erkennungs-Backend, das eine GPU braucht, die der Master nicht hat, oder ein Plugin, das die Plattform des Masters nicht laden kann.
 
 ## Wie Worker funktionieren
 
@@ -117,20 +117,22 @@ Sobald gekoppelt, erscheint ein Worker in der **Workers**-Liste mit Online-/Offl
 
 Ein Worker, der sich beim Start nicht anmelden kann oder die Verbindung später verliert, schreibt den Grund in sein [Log](/de/admin/logs), statt online auszusehen. Kameras und Plugins, die auf einem Worker laufen, tauchen in **Metrics** mit dem Namen des Workers und seiner Last auf.
 
-Die [Updates-Seite](/de/install/updating#die-updates-seite) listet jeden zurückhängenden Online-Worker neben Server und Plugins, und in der Workers-Liste zeigt er weiterhin einen **Aktualisieren**-Button: Der Worker installiert die Version, auf die der Master zusteuert, und startet sich selbst neu. Normalerweise ist das die Version, die der Master fährt; steht ein Server-Update an, ist es dieses, der Worker muss also nicht zweimal aktualisiert werden. Worker mit der Desktop-App laufen genauso. Siehe [Aktualisieren](/de/install/updating).
+Die [Updates-Seite](/de/install/updating#die-updates-seite) listet jeden zurückhängenden Online-Worker neben Server und Plugins, und in der Workers-Liste zeigt er weiterhin einen **Aktualisieren**-Button: Der Worker installiert die Version, auf die der Master zusteuert, und startet sich selbst neu. Normalerweise ist das die Version, die der Master fährt; steht ein Server-Update an, ist es dieses, der Worker muss also nicht zweimal aktualisiert werden. Ein Update, das auf dem Master ein [neueres Node.js braucht](/de/install/linux#node-js-aktualisieren), zählt erst, wenn Node.js aktualisiert ist. Worker mit der Desktop-App laufen genauso. Siehe [Aktualisieren](/de/install/updating).
 
 Ein Worker auf einem Release, das sich nicht mehr mit diesem Master verbinden kann, bleibt offline, auch wenn er läuft. Weder die Updates-Seite noch sein **Aktualisieren**-Button erreichen ihn dann. Das [Log](/de/admin/logs) des Masters nennt den Worker und die Version, die er braucht. Aktualisiere ihn auf seiner eigenen Maschine, siehe [Aktualisieren](/de/install/updating).
 
 ## Kamera- und Plugin-Zuweisungen
 
-Unter **Kamera-Zuweisungen** wählst du, welche Kamera jeder Worker dekodiert und auf der er erkennt; als **Lokal** belassene Kameras bleiben auf dem Hauptserver.
+Unter **Kamera-Zuweisungen** wählst du, welcher Worker jede Kamera dekodiert; als **Lokal** belassene Kameras bleiben auf dem Hauptserver.
 
 Unter **Plugin-Zuweisungen** kann ein ganzes Plugin auf einem Worker statt auf dem Hauptserver laufen. Es werden nur Worker angeboten, deren Plattform mit dem Plugin kompatibel ist. Der Worker installiert und startet das Plugin; konfiguriert wird es weiterhin ganz normal in der Oberfläche.
 
 Ein Plugin auf einem Worker nutzt die Netzwerkadressen des Workers, nicht die **Server-Adressen** des Hauptservers. Wähle sie über **Worker bearbeiten** in der Worker-Liste; leer lauscht das Plugin auf allen. Eine Änderung startet die Plugins auf diesem Worker neu.
 
+Dekodiert wird dort, wo die Kamera zugewiesen ist, erkannt dort, wo das Erkennungs-Plugin läuft. Laufen eine Kamera und ein Erkennungs-Plugin, das ihre Bilder auswertet, auf verschiedenen Maschinen, geht jedes ausgewertete Bild über das Netzwerk: pro aktiver Kamera etwa 2,3 Mbit/s für Bewegung und 12 bis 74 Mbit/s für Objekterkennung bei 320 px Modelleingabe, bei 640 px das Vierfache. Halte eine Kamera und ihre Erkennungs-Plugins auf derselben Maschine.
+
 ## Ausfallsicherung
 
 Worker senden alle 5 Sekunden einen Heartbeat und gelten nach 15 Sekunden ohne Heartbeat als offline. Trennt sich ein Worker, fallen seine zugewiesenen Kameras und Plugins automatisch auf den Hauptserver zurück (ein Plugin nur, wenn die Plattform des Hauptservers es ausführen kann). Verbindet sich der Worker erneut, werden seine Kameras und Plugins automatisch wieder zu ihm verschoben.
 
-Einen Worker zu entfernen widerruft seine Zugangsdaten und trennt die Verbindung; seine zugewiesenen Kameras und Plugins fallen auf den Hauptserver zurück.
+Einen Worker zu entfernen widerruft seine Zugangsdaten und trennt die Verbindung; seine zugewiesenen Kameras und Plugins fallen auf den Hauptserver zurück. Ein entfernter Worker, der weiterläuft, schreibt die Ablehnung in sein Log und versucht es erneut, unter Linux und macOS etwa einmal pro Minute, bis er neu [gekoppelt](#einen-worker-koppeln) wird.

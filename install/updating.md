@@ -6,11 +6,11 @@ camera.ui has two parts that update: the **server** and the **app** you installe
 
 **Updates** in the navigation collects everything that can be updated, in three sections: **Server**, **Plugins** and **Workers**. A row with a newer version opens that version's release notes, **Check for updates** looks again. Admins only.
 
-**Update all** installs workers first, then plugins, and the server last, because installing the server restarts it. A failed item can be retried on its own. Only one run happens at a time, so the button waits while a plugin or worker update you started by hand is running.
+**Update all** installs workers first, then plugins, and the server last, because installing the server restarts it. If a worker fails, the server is skipped, since a worker left on the old version cannot connect to the new one. A failed item can be retried on its own. Only one run happens at a time, so the button waits while a plugin or worker update you started by hand is running.
 
 <Shot src="/img/admin/updates.png" alt="Updates page with the server and plugin sections" />
 
-A row can also say why it cannot be updated from here. **Updates with the desktop app** means an app too old to install its own updates remotely, so update it on its machine.
+A row can also say why it cannot be updated from here. **Updates with the desktop app** means an app too old to install its own updates remotely, so update it on its machine. **Requires Node.js …** means the new version needs a newer Node.js than this machine runs, see [Updating Node.js](/install/linux#updating-node-js).
 
 camera.ui checks for new versions every 10 minutes and notifies you when the server, a plugin or a worker has one.
 

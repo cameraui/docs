@@ -8,11 +8,11 @@ camera.ui erzeugt beim ersten Start ein eigenes Zertifikat und liefert es bei je
 
 ## Wofür das eingebaute Zertifikat da ist
 
-Die mobilen Apps und entfernte Worker prüfen den Server gegen die eigene Zertifizierungsstelle von camera.ui. Sie erreichen den Server über IP-Adressen, und für private Adressen stellt kein öffentlicher Aussteller ein Zertifikat aus. Dieser Teil läuft deshalb weiter über das interne Zertifikat, egal was du hochlädst.
+Die mobilen Apps, die [Apple-TV-App](/de/install/tv) und entfernte Worker prüfen den Server gegen die eigene Zertifizierungsstelle von camera.ui. Sie erreichen den Server über IP-Adressen, und für private Adressen stellt kein öffentlicher Aussteller ein Zertifikat aus. Dieser Teil läuft deshalb weiter über das interne Zertifikat, egal was du hochlädst.
 
 Dein Zertifikat wird nur ausgeliefert, wenn ein Client nach einem Namen fragt, den es abdeckt. Alles andere, jede Verbindung über eine IP-Adresse eingeschlossen, bekommt weiterhin das interne.
 
-Das interne Zertifikat deckt `127.0.0.1` ab, die privaten Netzwerkadressen der Maschine und das, was du unter **Einstellungen → Remote Zugriff → Netzwerk** ausgewählt hast: die Serveradressen und die lokale Adresse. Eine öffentliche Adresse kommt nur hinein, wenn du sie dort auswählst. Eine Änderung dort stellt das Zertifikat neu aus, eine im Browser gespeicherte Ausnahme für das alte greift dann nicht mehr und die Warnung kommt zurück.
+Das interne Zertifikat deckt `127.0.0.1` ab, die privaten Netzwerkadressen der Maschine und das, was du unter **Einstellungen → Remote Zugriff → Netzwerk** ausgewählt hast: die Serveradressen und die lokale Adresse. Eine öffentliche Adresse kommt nur hinein, wenn du sie dort auswählst. Eine Änderung dort stellt das Zertifikat neu aus, eine im Browser gespeicherte Ausnahme für das alte greift dann nicht mehr und die Warnung kommt zurück. Geräte, die das [heruntergeladene Zertifikat](/de/admin/system#zertifikate) installiert haben, vertrauen dem Server weiter, denn die Zertifizierungsstelle bleibt bis zu einer [Wiederherstellung aus einem Backup](/de/admin/backup#wiederherstellen) dieselbe.
 
 ## Eigenes Zertifikat hochladen
 

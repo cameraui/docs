@@ -18,11 +18,15 @@ Der Zugriff wird über die Rolle bestimmt, nicht pro Kamera; es gibt keine kamer
 
 <Shot src="/img/admin/users.png" alt="Die Liste registrierter Benutzer" />
 
-In der Liste **Registrierte Benutzer** legst du Konten an, bearbeitest und entfernst sie. Ein neues Konto bekommt die Rolle Benutzer oder Admin.
+In der Liste **Registrierte Benutzer** legst du Konten an, bearbeitest und entfernst sie. Ein neues Konto bekommt die Rolle Benutzer oder Admin. Konten mit `ha-` am Anfang legt das [Home-Assistant-App](/de/home-assistant/app#das-camera-ui-app) an, eines pro Home-Assistant-Benutzer ohne Admin-Rechte, der sein Panel geöffnet hat. Ein Konto zu löschen oder ihm die Admin-Rechte zu nehmen, wirkt sofort, auch auf Geräten, auf denen es gerade angemeldet ist.
 
 ## Derzeit angemeldete Benutzer
 
 Unter den registrierten Benutzern zeigt die Liste **Derzeit angemeldete Benutzer** jede aktive Sitzung über alle Konten hinweg, mit Gerät, Adresse und Typ. **Abmelden** in einer Zeile beendet diese Sitzung.
+
+## Verbindungslimit
+
+Jede Anmeldung, also ein Browser oder eine App, mit der du dich angemeldet hast, oder ein [API-Token](/de/admin/security#api-tokens), kann bis zu 64 Live-Streams und etwa 32 camera.ui-Tabs oder -Fenster gleichzeitig offen haben. Darüber lehnt der Server neue Verbindungen ab, bis andere geschlossen werden.
 
 ## Das erste Konto
 

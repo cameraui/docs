@@ -47,6 +47,7 @@ Bewegt sich nichts, geht der ganze Frame durch. Die Spalte **Zoom** in den Metri
 - **Decode**, die Zeit für ein Bild: erst der Analyse-Stream, dann der hochauflösende.
 - **Verarbeitung**, das Skalieren auf die Modelleingabe und das Zurückrechnen in Boxen. Bei einer Kamera ohne Objekterkennung steht dort das Skalieren für die Bewegungserkennung.
 - **Transport**, die Zeit, die Bild und Ergebnis zum Plugin und zurück brauchen.
+- **Netzwerk**, die Bitrate der Bilder, die über das Netzwerk an Erkennungs-Plugins auf einer anderen Maschine gehen, dahinter diese Plugins. Siehe [Worker](/de/admin/workers#kamera-und-plugin-zuweisungen).
 - **Analysiert**, analysierte Bilder pro Sekunde, wieder Analyse-Stream und hochauflösender Stream.
 - **Aktiv**, der Anteil der Zeit, in dem die Kamera überhaupt analysiert hat. Eine Kamera mit Bildschleife liegt bei 100%, eine Kamera, die Bewegung selbst meldet, zählt nur während Ereignissen.
 - **Erkennungen**, gefundene Objekte pro analysiertem Bild.
@@ -58,7 +59,7 @@ Bewegt sich nichts, geht der ganze Frame durch. Die Spalte **Zoom** in den Metri
 
 ### Benchmark
 
-**Benchmark** belastet den Objekt-Detektor der gewählten Kameras mit Testbildern und meldet, wie viele Erkennungen pro Sekunde die Maschine schafft, insgesamt und je Kamera, mit Plugin, Modell und Gerät jeder Kamera. **Kopieren** legt das Ergebnis in die Zwischenablage.
+**Benchmark** belastet den Objekt-Detektor der gewählten Kameras mit Testbildern und meldet, wie viele Erkennungen pro Sekunde die Maschine schafft, insgesamt und je Kamera, mit Plugin, Modell und Gerät jeder Kamera. **Im Plugin gleichzeitig** zeigt, wie viele der Aufrufe unter **Unterwegs** das Plugin im Schnitt gleichzeitig angenommen hat: Bei 1 nimmt es eine Erkennung nach der anderen. **Kopieren** legt das Ergebnis in die Zwischenablage.
 
 Während des Laufs pausiert die Erkennung an jeder Kamera, auch an denen, die du nicht gewählt hast, und läuft danach weiter. Nur Admins können ihn starten.
 

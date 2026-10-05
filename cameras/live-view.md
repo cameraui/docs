@@ -51,11 +51,13 @@ The setting applies to the camera view. The small players elsewhere, the zone ed
 
 Each camera has an **Activity mode** that controls when its stream runs:
 
-- **Always On** keeps the stream live at all times.
+- **Always On** keeps the stream live while the player is in view.
 - **Standby** keeps the stream off until you click the video. It stops again a few seconds after your last click or after the picture appears, whichever is later. It stays on while you use the intercom, the PTZ controls, fullscreen, Picture-in-Picture or a menu of the player.
 - **Activity** keeps the stream running while there is activity and lets it rest otherwise.
 
 The setting applies to the camera view and to the [Home Assistant camera card](/home-assistant/card#camera-ui-camera) in `live` mode. [Camview](/cameras/camview) and the Home Assistant [view card](/home-assistant/card#camera-ui-view) follow it too, unless they are set to one mode for the whole view. The small players elsewhere always stay on: the zone editor, shortcut previews, the floor plan hover and the event dialog.
+
+Whatever the mode, a player scrolled out of view stops after about 10 seconds and shows its last picture until you scroll back, then starts again. The intercom, the PTZ controls, fullscreen, Picture-in-Picture and an open player menu keep it running, as in Standby.
 
 ## Shortcuts
 

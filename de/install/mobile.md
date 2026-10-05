@@ -44,6 +44,8 @@ Die **App-Sperre mit Face ID / Fingerabdruck** in den Einstellungen der App verl
 
 Die Apps aktualisieren sich über den App Store und Google Play (während der Beta: TestFlight auf iOS, der Testing-Track im Play Store auf Android), dazu kommen Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).
 
+Ist der Server oder sein NVR-Plugin älter, als die App braucht, zeigt sie **Update empfohlen** mit der nötigen und der installierten Version. Server und Plugin aktualisierst du auf der [Updates-Seite](/de/install/updating#die-updates-seite). **Verstanden** blendet den Hinweis für diese Versionen aus.
+
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe, Export, Gesichtserkennung, semantische Suche und KI-Beschreibungen, dazu Push-Benachrichtigungen. Live-Ansicht und Echtzeit-Erkennung sind kostenlos.
 [^appstore]: Mit dem öffentlichen Release wechselt die App in den App Store.
 [^androidbeta]: Google verlangt, dass Tester mindestens 14 Tage angemeldet bleiben, bevor die App öffentlich gehen kann, bleib also bitte dabei. Für Beta-Builds aktivierst du in der App unter **Einstellungen → System** die Option **Beta-Updates**.

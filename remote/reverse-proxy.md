@@ -14,6 +14,8 @@ Behind Apache, nginx, Traefik or any other reverse proxy, camera.ui needs more t
 
 **Connections stay open for a long time.** A live stream holds one connection for as long as you watch. Proxy timeouts in the low seconds cut the picture at regular intervals.
 
+**Only a trusted proxy passes on the client's address.** camera.ui reads `X-Forwarded-For` from a proxy on the same machine, which connects over `127.0.0.1` or `::1`, and from the addresses you [trust](#proxy-on-another-machine). Behind any other proxy, the session lists show the proxy's address.
+
 ## Apache
 
 Enable `proxy`, `proxy_http`, `proxy_wstunnel`, `ssl` and `headers`, then use this virtual host:
@@ -89,6 +91,17 @@ server {
 
 `client_max_body_size` matters if you restore a backup through the proxy, since nginx rejects uploads over 1 MB by default.
 
+## Proxy on another machine
+
+For the session lists to show the client's address behind a proxy on another host, add the proxy to `camera.ui.yaml` in your storage directory and restart the server:
+
+```yaml
+trustedProxies:
+  - 10.0.0.5
+```
+
+An entry is an IP address or a range like `10.0.0.0/24`. In Docker, `CAMERA_UI_TRUSTED_PROXIES=10.0.0.5` does the same, with several entries separated by commas. camera.ui skips anything else and names it in the log. A listed address can pass on any client address it likes, so list the proxy and nothing else.
+
 ## Plain HTTP instead
 
 camera.ui can open a second listener that speaks plain HTTP and forwards everything, WebSockets included, to the main port. Add a port to `camera.ui.yaml` in your storage directory:
@@ -113,7 +126,7 @@ With Pangolin, Authelia or another proxy that asks for its own login, page loads
 
 Once the proxy works, enter the public address under **Settings → Remote Access** as described in [Custom domain](/remote/custom-domain).
 
-If the proxy also answers on your own network, put its address into **Local address** in the **Network** card on the same page, for example `https://camera.home.lan`. Apps then talk to the proxy at home instead of the server's IP. The proxy needs a certificate for that name and has to pass WebSocket connections through, the same as for outside access. Camera streams keep using the IP addresses in **Server addresses** above, so leave those alone.
+If the proxy also answers on your own network, put its address into **Local address** in the **Network** card on the same page, for example `https://camera.home.lan`. Apps then talk to the proxy at home instead of the server's IP. Apps that connect through [camera.ui Cloud](/remote/cloud) do this only for a local name, one ending in `.lan`, `.local` or `.home.arpa` for example, or one without a dot. They treat any other name as an internet address. The proxy needs a certificate for that name and has to pass WebSocket connections through, the same as for outside access. It also has to forward `OPTIONS` requests to camera.ui and pass its `Access-Control-*` headers on unchanged, since the apps call it from another origin. Otherwise they take the internet path at home. Camera streams keep using the IP addresses in **Server addresses** above, so leave those alone.
 
 <Shot src="/img/remote/network-addresses.png" alt="The Network card with Server addresses and Local address" />
 

@@ -26,7 +26,7 @@ While Cloud is on, your server also keeps a public address for the apps, so the 
 
 If you haven't set up a direct address, or the one you configured can't be reached, camera.ui starts a temporary Cloudflare tunnel instead. To use your own address, set it up under [Direct connection](/remote/).
 
-The fallback is not permanent. camera.ui keeps checking your own address and goes back to it once it answers, a custom domain every minute and a Cloudflare tunnel about every ten minutes. No restart needed. While the fallback is up, **External URL** shows the temporary address, and a Cloudflare retry that fails again hands out a new one.
+The fallback is not permanent. camera.ui keeps checking your own address and goes back to it once it answers, a custom domain every minute and a Cloudflare tunnel after ten minutes, then [less often](/remote/cloudflare). No restart needed. While the fallback is up, **External URL** shows the temporary address, and a Cloudflare retry that fails again hands out a new one.
 
 ## The cloud dashboard
 
@@ -36,4 +36,4 @@ The bin icon next to a server removes it from your account, also when you can no
 
 ## Turning it off
 
-Disabling cloud access ends any active remote sessions. Local connections on your network keep working.
+Disabling cloud access ends any active remote sessions and stops [share links](/cameras/shares) from working. Local connections on your network keep working.

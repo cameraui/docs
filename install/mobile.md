@@ -44,6 +44,8 @@ A signed-in app receives push notifications for events. What you get alerted abo
 
 The apps update through the App Store and Google Play (during the beta: TestFlight on iOS, the Play Store testing track on Android), plus over-the-air updates to the interface. See [Updating](/install/updating).
 
+If the server or its NVR plugin is older than the app needs, the app shows **Update recommended** with the version it needs and the one installed. Update server and plugin on the [Updates page](/install/updating#the-updates-page). **Got it** hides the notice for these versions.
+
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback, export, face recognition, semantic search, and AI descriptions, plus push notifications. Live view and real-time detection are free.
 [^appstore]: The app moves to the App Store with the public release.
 [^androidbeta]: Google requires testers to stay enrolled for at least 14 days before the app can go public, so please stay opted in. For beta builds, turn on **Beta updates** under **Settings → System** in the app.

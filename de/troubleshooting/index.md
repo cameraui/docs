@@ -15,6 +15,7 @@ Die häufigsten Probleme und wo du nachsiehst. Die **[Logs](/de/admin/logs)** ze
 
 ## Live-Ansicht ist schwarz oder spielt nicht
 
+- Zeigt der Player **Stream nicht verfügbar**, steht in der Zeile darunter der Grund, den die Streaming-Engine gemeldet hat. Kleine Player lassen ihn weg, die Kameraseite zeigt ihn.
 - Prüfe den **Codec** der Quelle im Sources-Tab; sehr ungewöhnliche Codecs brauchen eventuell Transcoding.
 - Probiere einen anderen **Streaming-Modus** in den [Interface-Einstellungen](/de/cameras/settings) der Kamera.
 - Aktiviere **[Hot Modus und Vorladen](/de/cameras/add-camera#quellen-optionen)** für die Quelle, für schnelleres, zuverlässigeres Öffnen.

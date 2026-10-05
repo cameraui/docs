@@ -10,7 +10,7 @@ It talks to the server directly over your local network, and events arrive by pu
 
 ## Install
 
-The integration is distributed through [HACS](https://hacs.xyz) as a custom repository.
+The integration is distributed through [HACS](https://hacs.xyz) as a custom repository and needs Home Assistant 2026.3 or newer.
 
 1. In HACS, add `cameraui/homeassistant-integration` as a custom **Integration** repository.
 2. Install **camera.ui** from HACS.
@@ -77,6 +77,8 @@ Adding, renaming, re-assigning, exposing or deleting a sensor in camera.ui updat
 Every camera gets a **motion** binary sensor that turns on while a detection is active.
 
 Cameras with object detection also get one binary sensor each for **person**, **vehicle**, **animal** and **package**. Each turns on while that object is in view and clears when the detection ends.[^objectclass]
+
+If the connection to camera.ui drops, the entities become unavailable. Once it is back, a detection that is still running carries on without a second `start`. One that ended in the meantime ends then: motion and object sensors turn off, recognition sensors clear and `cameraui_event` fires `end`.
 
 [^objectclass]: Motion and object binary sensors are registered with the `motion` device class, so they present in Home Assistant as motion sensors rather than as a per-object class.
 
@@ -196,6 +198,8 @@ Three cards come with the integration and register themselves: a camera, a camvi
 ### Card access
 
 The integration's options decide who may use them: **Administrators only**, the default, or **All Home Assistant users**. The cards reach camera.ui through Home Assistant using the integration's own token, so opening them up hands every Home Assistant user what that token can see. **Viewer token** takes a second camera.ui token that is used for everyone who is not a Home Assistant administrator, which is how you point them at a restricted camera.ui account instead.
+
+All dashboards that use one token share its [connection limit](/admin/users#connection-limit). With many wall displays, a **Viewer token** gives the non-administrators a limit of their own.
 
 ## Recordings in the media browser
 

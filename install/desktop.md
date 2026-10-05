@@ -76,7 +76,7 @@ GNOME shows a tray icon only with the AppIndicator extension. **Switch mode…**
 <Shot src="/img/install/desktop-tray-menu.png" alt="Desktop tray menu" />
 
 [^autostart]: macOS and Windows only.
-[^closetotray]: Windows and Linux only. On macOS the app stays in the tray when you close the window anyway, so the option isn't there.
+[^closetotray]: Windows and Linux only. On macOS closing the window always only hides it, so the app and its desktop notifications keep running until you quit it.
 
 
 ## macOS permissions
