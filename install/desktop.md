@@ -71,7 +71,7 @@ The mode can also come from the command line, then the picker is skipped:
 | Viewer · Direct | `--mode=viewer-direct --server=192.168.1.10:3443` |
 | Viewer · Cloud | `--mode=viewer-cloud` |
 
-The app stores the mode as if it had been picked. Started with a different `--mode` while it runs, it switches over, the same mode again changes nothing. Values always follow an `=`. A missing or wrong value is noted in the log, and the app starts as if the option were not there.
+The app stores the mode as if it had been picked. Started with a different `--mode` while it runs, it switches over, the same mode again changes nothing.[^macosargs] Values always follow an `=`. A missing or wrong value is noted in the log, and the app starts as if the option were not there.
 
 ## The tray icon
 
@@ -84,12 +84,13 @@ The tray icon holds the app's own settings:
 
 On Windows, left-click the tray icon to open the window, right-click for the menu.
 
-GNOME shows a tray icon only with the AppIndicator extension. **Switch mode…** also sits in the app menu under **File**, and starting the app with `--switch-mode` opens the mode picker: in the running instance if one is up, otherwise on that launch. Both also work for a worker, which has no window of its own.
+GNOME shows a tray icon only with the AppIndicator extension. **Switch mode…** also sits in the app menu under **File**, and starting the app with `--switch-mode` opens the mode picker: in the running instance if one is up, otherwise on that launch.[^macosargs] Both also work for a worker, which has no window of its own.
 
 <Shot src="/img/install/desktop-tray-menu.png" alt="Desktop tray menu" />
 
 [^autostart]: macOS and Windows only.
 [^closetotray]: Windows and Linux only. On macOS closing the window always only hides it, so the app and its desktop notifications keep running until you quit it.
+[^macosargs]: On macOS, start it with `open -n -a camera.ui --args --mode=runtime`. Without `-n` a running app only comes to the front and never sees the options.
 
 
 ## macOS permissions

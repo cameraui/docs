@@ -71,7 +71,7 @@ Der Modus kann auch von der Kommandozeile kommen, dann entfällt die Auswahl:
 | Viewer · Direkt | `--mode=viewer-direct --server=192.168.1.10:3443` |
 | Viewer · Cloud | `--mode=viewer-cloud` |
 
-Die App speichert den Modus, als wäre er ausgewählt worden. Startest du sie mit einem anderen `--mode`, während sie läuft, wechselt sie, derselbe Modus noch einmal ändert nichts. Werte stehen immer hinter einem `=`. Fehlt ein Wert oder stimmt er nicht, steht das im Log, und die App startet, als gäbe es die Option nicht.
+Die App speichert den Modus, als wäre er ausgewählt worden. Startest du sie mit einem anderen `--mode`, während sie läuft, wechselt sie, derselbe Modus noch einmal ändert nichts.[^macosargs] Werte stehen immer hinter einem `=`. Fehlt ein Wert oder stimmt er nicht, steht das im Log, und die App startet, als gäbe es die Option nicht.
 
 ## Das Tray-Symbol
 
@@ -84,12 +84,13 @@ Im Tray-Symbol stecken die Einstellungen der App selbst:
 
 Unter Windows öffnet ein Linksklick auf das Tray-Symbol das Fenster, ein Rechtsklick das Menü.
 
-GNOME zeigt ein Tray-Symbol nur mit der AppIndicator-Erweiterung. **Modus wechseln…** steckt auch im App-Menü unter **Datei**, und ein Start der App mit `--switch-mode` öffnet die Modus-Auswahl: in der laufenden Instanz, wenn eine läuft, sonst bei diesem Start. Beides funktioniert auch für einen Worker, der kein eigenes Fenster hat.
+GNOME zeigt ein Tray-Symbol nur mit der AppIndicator-Erweiterung. **Modus wechseln…** steckt auch im App-Menü unter **Datei**, und ein Start der App mit `--switch-mode` öffnet die Modus-Auswahl: in der laufenden Instanz, wenn eine läuft, sonst bei diesem Start.[^macosargs] Beides funktioniert auch für einen Worker, der kein eigenes Fenster hat.
 
 <Shot src="/img/install/desktop-tray-menu.png" alt="Tray-Menü der Desktop-App" />
 
 [^autostart]: Nur macOS und Windows.
 [^closetotray]: Nur Windows und Linux. Unter macOS versteckt Schließen das Fenster immer nur, die App und ihre Desktop-Benachrichtigungen laufen weiter, bis du sie beendest.
+[^macosargs]: Unter macOS startest du sie mit `open -n -a camera.ui --args --mode=runtime`. Ohne `-n` kommt eine laufende App nur nach vorn und sieht die Optionen nie.
 
 ## macOS-Berechtigungen
 
