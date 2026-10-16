@@ -79,12 +79,14 @@ Set it up on the master first, then here:
 <Shot src="/img/home-assistant/worker-options.png" alt="The camera.ui Worker app options" />
 
 - **master_address.** IP or hostname of the camera.ui master. Required.
-- **pairing_code.** The one-time code generated on the master. Required for the first connection. A code is valid for 15 minutes and can be used once.
-- **worker_name.** Name shown for this worker on the master. Optional. Defaults to `worker`.
+- **pairing_code.** The one-time code generated on the master. Required for the first connection. A code is valid for 15 minutes and can be used once. It may stay set after pairing; once the worker was removed on the master, enter a new code and restart the app.
+- **worker_name.** Name shown for this worker on the master. Optional. Without it, the worker uses the app's host name.
 - **master_api_port.** The master's HTTPS API port. Optional. Defaults to `3443`.
+- **internal_avahi.** Runs the app's own mDNS stack. Off by default, the worker finds the master without it. Two avahi daemons on one machine, next to the camera.ui app for example, keep changing their host names. Turn it on only if a plugin on this worker needs avahi.
 
 ## Next steps
 
 - **[Hardware acceleration](/install/hardware-acceleration)** — how the streaming engine uses your GPU and accelerators, and how to verify it.
-- **[Workers](/admin/workers)** — the full picture of masters, workers, and camera assignments.
+- **[Workers](/admin/workers)** — masters, workers and pairing.
+- **[Worker assignments](/admin/worker-assignments)** — which cameras and plugins run on a worker, and failover.
 - **[Docker](/install/docker)** — run the server outside Home Assistant, including NVIDIA setups.

@@ -79,12 +79,14 @@ Richte es zuerst am Master ein, dann hier:
 <Shot src="/img/home-assistant/worker-options.png" alt="Die Optionen des camera.ui Worker-Apps" />
 
 - **master_address.** IP oder Hostname des camera.ui-Masters. Erforderlich.
-- **pairing_code.** Der einmalige Code, der am Master erzeugt wird. Für die erste Verbindung erforderlich. Ein Code ist 15 Minuten gültig und lässt sich einmal verwenden.
-- **worker_name.** Name, unter dem dieser Worker am Master angezeigt wird. Optional. Standard ist `worker`.
+- **pairing_code.** Der einmalige Code, der am Master erzeugt wird. Für die erste Verbindung erforderlich. Ein Code ist 15 Minuten gültig und lässt sich einmal verwenden. Er darf nach dem Pairing stehen bleiben; wurde der Worker am Master entfernt, trag einen neuen Code ein und starte die App neu.
+- **worker_name.** Name, unter dem dieser Worker am Master angezeigt wird. Optional. Ohne Eintrag nimmt der Worker den Hostnamen der App.
 - **master_api_port.** Der HTTPS-API-Port des Masters. Optional. Standard ist `3443`.
+- **internal_avahi.** Startet den eigenen mDNS-Stack des Apps. Standardmäßig aus, der Worker findet den Master auch ohne. Zwei avahi-Dienste auf einer Maschine, etwa neben dem camera.ui-App, ändern ständig ihre Hostnamen. Schalt es nur ein, wenn ein Plugin auf diesem Worker avahi braucht.
 
 ## Nächste Schritte
 
 - **[Hardwarebeschleunigung](/de/install/hardware-acceleration)** — wie die Streaming-Engine GPU und Beschleuniger nutzt und wie du es prüfst.
-- **[Workers](/de/admin/workers)** — das ganze Bild aus Master, Workern und Kamera-Zuweisungen.
+- **[Workers](/de/admin/workers)** — Master, Worker und Pairing.
+- **[Worker-Zuweisungen](/de/admin/worker-assignments)** — welche Kameras und Plugins auf einem Worker laufen, und die Ausfallsicherung.
 - **[Docker](/de/install/docker)** — den Server außerhalb von Home Assistant betreiben, inklusive NVIDIA-Setups.

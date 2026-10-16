@@ -26,7 +26,7 @@ Below the registered users, the **Logged in users** list shows every active sess
 
 ## Connection limit
 
-Each sign-in, meaning a browser or app you logged in with or an [API token](/admin/security#api-tokens), can have up to 64 live streams and about 32 camera.ui tabs or windows open at the same time. Past that, the server refuses new connections until others close.
+Each sign-in, meaning a browser or app you logged in with or an [API token](/admin/security#api-tokens), can have up to 64 live streams and about 32 camera.ui tabs or windows open at the same time. Past that, new connections wait and retry until others close. Connections of devices that stopped answering are closed to make room.
 
 ## The first account
 

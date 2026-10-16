@@ -29,7 +29,7 @@ Melde dich mit Benutzername und Passwort an, dazu einem Zwei-Faktor-Code, falls 
 
 Die App prüft das Zertifikat des Servers. Ab der ersten Anmeldung akzeptiert sie nur das Zertifikat, das sie dabei gesehen hat, weitere von der eigenen Zertifizierungsstelle des Servers und öffentlich vertrauenswürdige.
 
-Nimmt der Server die Anmeldung nicht mehr an, etwa nach einer Passwortänderung, zeigt der Status oben **Signed out**. Wähle **Sign out** unter **Settings** und füge den Server neu hinzu. Dasselbe gilt nach einer [Wiederherstellung aus einem Backup](/de/admin/backup#wiederherstellen), die dem Server eine neue Zertifizierungsstelle gibt.
+Nimmt der Server die Anmeldung nicht mehr an, etwa nach einer Passwortänderung, zeigt der Status oben **Signed out**. Wähle **Sign out** unter **Settings** und füge den Server neu hinzu. Dasselbe gilt nach einer [Wiederherstellung aus einem Backup](/de/admin/backup#wiederherstellen) als Kopie und nach einem Umzug, bei dem sich die Adresse des Servers geändert hat.
 
 Du kannst mehrere Server hinzufügen und unter **Settings → Switch server** zwischen ihnen wechseln. Mit nur einem Server öffnet die App ihn direkt. Mit mehreren startet sie in der Serverauswahl, außer **Open at launch** steht in den Settings eines Servers auf **This server**.
 

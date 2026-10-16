@@ -27,7 +27,7 @@ Environment variables:
 |---|---|---|
 | `CTID` | next free ID | container ID |
 | `CT_HOSTNAME` | `cameraui` | container hostname |
-| `CORES` / `RAM_MB` / `DISK_GB` | `4` / `4096` / `16` | container resources |
+| `CORES` / `RAM_MB` / `DISK_GB` | `4` / `4096` / `32` | container resources |
 | `BRIDGE` | `vmbr0` | network bridge (container gets its IP via DHCP) |
 | `STORAGE` | auto-detect | rootfs storage (prefers `local-lvm`, `local-zfs`, `local`, otherwise the first active storage that can hold a container rootfs) |
 | `TEMPLATE_STORAGE` | `local` | storage the LXC template is downloaded to (needs content type "Container template") |

@@ -50,7 +50,7 @@ Cleanup takes the oldest hours of all cameras side by side, so a quiet camera ca
 
 Independent of those limits, **Min Free Space (GB)** keeps part of the disk clear: cleanup works to keep at least that much available, and recording pauses at half of it. At 0 the reserve is a share of the whole volume.
 
-Set your own value when the recordings share a disk with other data, otherwise the derived reserve on a large disk can pause recording long before your storage cap is reached. Values below 10 GB count as 10.
+Set your own value when the recordings share a disk with other data, otherwise the derived reserve on a large disk can pause recording long before your storage cap is reached. Values below 10 GB count as 10, or as a quarter of the disk if that is less.
 
 ## Footage from removed cameras
 
@@ -66,7 +66,9 @@ To keep that footage, put an empty file named `.cameraui-keep` into the camera's
 
 **Metrics → Storage** shows disk usage in the **Storage Overview** and, in the **Camera Storage** table, per camera: size on disk, days of footage held, recording rate per day, and mode.
 
-A warning that the storage volume is small means most of it is held as headroom and recordings rotate out quickly. Usually the larger disk you meant to use isn't mounted, so check the storage path. Separate warnings appear when free space drops below 8% and once recording has paused for lack of space.
+A warning that the storage volume is small means it has little room for recordings, so they rotate out quickly. Usually the larger disk you meant to use isn't mounted, so check the storage path. Separate warnings appear when free space drops below 8% and once recording has paused for lack of space.
+
+If a custom storage path held recordings before and its disk is missing at startup, camera.ui records into its default folder instead of the empty mount point until the next start, and marks this on the timeline.
 
 ## Uninstalling the NVR
 

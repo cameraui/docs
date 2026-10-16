@@ -52,13 +52,26 @@ Nur die `.AppImage` aktualisiert sich selbst. Eine `.deb`-Installation bleibt au
 Beim ersten Start fragt die App **„Wie soll camera.ui laufen?"**:
 
 - **Server.** Betreibt den camera.ui-Server auf diesem Gerät. Die All-in-One-Option.
-- **Worker.** Übernimmt einen Teil der Arbeit für einen anderen camera.ui-Server in deinem Netzwerk. Braucht die Adresse des Hauptservers und einen Pairing-Code aus dessen **Workers**-Einstellungen. Siehe [Worker](/de/admin/workers#worker-mit-der-desktop-app).
+- **Worker.** Übernimmt einen Teil der Arbeit für einen anderen camera.ui-Server in deinem Netzwerk. Braucht die Adresse des Hauptservers und einen Pairing-Code aus dessen **Workers**-Einstellungen. Siehe [Worker einrichten](/de/admin/worker-setup#desktop-app).
 - **Viewer · Direkt.** Verbindet sich per Adresse mit einem vorhandenen Server.
 - **Viewer · Cloud.** Meldet sich über cloud.cameraui.com an, um einen Server über [camera.ui Cloud](/de/remote/cloud) zu erreichen.
 
 <Shot src="/img/install/desktop-mode-picker.png" alt="Erststart-Modus-Auswahl der Desktop-App" />
 
 Der **Server**-Modus geht weiter mit der [Ersteinrichtung](/de/intro/getting-started). Im **Worker**-Modus gibt es kein Fenster, nur das Tray-Symbol und eine Statusanzeige.
+
+### Ohne Auswahl starten
+
+Der Modus kann auch von der Kommandozeile kommen, dann entfällt die Auswahl:
+
+| Modus | Optionen |
+|---|---|
+| Server | `--mode=runtime` |
+| Worker | `--mode=worker --master=192.168.1.10 --pairing-code=XXXX-XXXX`, optional `--worker-name=nas` |
+| Viewer · Direkt | `--mode=viewer-direct --server=192.168.1.10:3443` |
+| Viewer · Cloud | `--mode=viewer-cloud` |
+
+Die App speichert den Modus, als wäre er ausgewählt worden. Startest du sie mit einem anderen `--mode`, während sie läuft, wechselt sie, derselbe Modus noch einmal ändert nichts. Werte stehen immer hinter einem `=`. Fehlt ein Wert oder stimmt er nicht, steht das im Log, und die App startet, als gäbe es die Option nicht.
 
 ## Das Tray-Symbol
 

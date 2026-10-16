@@ -88,7 +88,7 @@ Kameras mit dem passenden Detektor bekommen Wert-Sensoren für **face**, **licen
 
 ### Updates
 
-Home Assistant bekommt außerdem **Update-Entitäten** für den camera.ui-Server und seine Plugins. Verfügbare Updates erscheinen in der Updates-Liste von Home Assistant und lassen sich von dort installieren. Der Update-Dialog bietet an, vorher eine Sicherung anzulegen: Dann schreibt camera.ui zuerst ein [Backup](/de/admin/backup) und bricht das Update ab, wenn das schiefgeht. Schalte **Updates aus Home Assistant erlauben** in den Optionen der Integration aus, um die Updates sichtbar zu lassen, aber ohne Installieren-Knopf.
+Home Assistant bekommt außerdem **Update-Entitäten** für den camera.ui-Server und seine Plugins. Verfügbare Updates erscheinen in der Updates-Liste von Home Assistant und lassen sich von dort installieren. Der Update-Dialog bietet an, vorher eine Sicherung anzulegen: Dann schreibt camera.ui zuerst ein [Backup](/de/admin/backup) und bricht das Update ab, wenn das schiefgeht. Ein Server-Update, nach dem sich ein [Worker](/de/admin/workers) nicht mehr verbinden würde, bricht mit dem Namen des Workers ab: Aktualisiere zuerst diesen Worker oder starte das Update auf der Updates-Seite von camera.ui und bestätige es dort ([Aktualisieren](/de/install/updating)). Schalte **Updates aus Home Assistant erlauben** in den Optionen der Integration aus, um die Updates sichtbar zu lassen, aber ohne Installieren-Knopf.
 
 ## PTZ
 

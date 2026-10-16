@@ -33,7 +33,8 @@ The first sign-in opens a setup wizard:
 ### Welcome
 
 - **New Installation.** Set up a fresh server.
-- **Restore from Backup.** Upload a backup archive from another camera.ui install. camera.ui restores your settings and restarts.
+- **Restore from Backup.** Upload a backup archive from another camera.ui install. camera.ui shows what it holds and restores it after you confirm, see [Restoring](/admin/backup#restoring).
+- **From Another Server.** Enter the move code of the old server and fetch its backup directly, see [Moving to another server](/admin/backup#moving-to-another-server).
 
 ### Appearance
 

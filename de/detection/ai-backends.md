@@ -47,7 +47,7 @@ Bewegt sich nichts, geht der ganze Frame durch. Die Spalte **Zoom** in den Metri
 - **Decode**, die Zeit für ein Bild: erst der Analyse-Stream, dann der hochauflösende.
 - **Verarbeitung**, das Skalieren auf die Modelleingabe und das Zurückrechnen in Boxen. Bei einer Kamera ohne Objekterkennung steht dort das Skalieren für die Bewegungserkennung.
 - **Transport**, die Zeit, die Bild und Ergebnis zum Plugin und zurück brauchen.
-- **Netzwerk**, die Bitrate der Bilder, die über das Netzwerk an Erkennungs-Plugins auf einer anderen Maschine gehen, dahinter diese Plugins. Siehe [Worker](/de/admin/workers#kamera-und-plugin-zuweisungen).
+- **Netzwerk**, die Bitrate der Bilder, die über das Netzwerk an Erkennungs-Plugins auf einer anderen Maschine gehen, dahinter diese Plugins. Siehe [Worker-Zuweisungen](/de/admin/worker-assignments#kameras).
 - **Analysiert**, analysierte Bilder pro Sekunde, wieder Analyse-Stream und hochauflösender Stream.
 - **Aktiv**, der Anteil der Zeit, in dem die Kamera überhaupt analysiert hat. Eine Kamera mit Bildschleife liegt bei 100%, eine Kamera, die Bewegung selbst meldet, zählt nur während Ereignissen.
 - **Erkennungen**, gefundene Objekte pro analysiertem Bild.

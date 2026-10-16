@@ -26,7 +26,7 @@ Unter den registrierten Benutzern zeigt die Liste **Derzeit angemeldete Benutzer
 
 ## Verbindungslimit
 
-Jede Anmeldung, also ein Browser oder eine App, mit der du dich angemeldet hast, oder ein [API-Token](/de/admin/security#api-tokens), kann bis zu 64 Live-Streams und etwa 32 camera.ui-Tabs oder -Fenster gleichzeitig offen haben. Darüber lehnt der Server neue Verbindungen ab, bis andere geschlossen werden.
+Jede Anmeldung, also ein Browser oder eine App, mit der du dich angemeldet hast, oder ein [API-Token](/de/admin/security#api-tokens), kann bis zu 64 Live-Streams und etwa 32 camera.ui-Tabs oder -Fenster gleichzeitig offen haben. Darüber warten neue Verbindungen und versuchen es erneut, bis andere geschlossen werden. Verbindungen von Geräten, die nicht mehr antworten, schließt der Server, um Platz zu machen.
 
 ## Das erste Konto
 

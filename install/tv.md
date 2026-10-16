@@ -29,7 +29,7 @@ Sign in with your username and password, plus a two-factor code if you use one, 
 
 The app verifies the server's certificate. From the first sign-in on it accepts only the certificate it saw then, others signed by the server's own certificate authority, and publicly trusted ones.
 
-When the server no longer accepts the sign-in, after a password change for example, the status at the top shows **Signed out**. Choose **Sign out** under **Settings** and add the server again. The same applies after a [backup restore](/admin/backup#restoring), which gives the server a new certificate authority.
+When the server no longer accepts the sign-in, after a password change for example, the status at the top shows **Signed out**. Choose **Sign out** under **Settings** and add the server again. The same applies after a [backup restore](/admin/backup#restoring) as a copy, and after a move when the server's address changed.
 
 You can add several servers and switch between them under **Settings → Switch server**. With a single server the app opens it right away. With several it starts on the server picker, unless **Open at launch** in one server's settings is set to **This server**.
 

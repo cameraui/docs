@@ -52,13 +52,26 @@ Only the `.AppImage` updates itself. A `.deb` install stays on its version until
 On first launch the app asks **"How should camera.ui run?"**:
 
 - **Server.** Runs the camera.ui server on this machine. The all-in-one option.
-- **Worker.** Takes on part of the work for another camera.ui server on your network. Needs the main server's address and a pairing code from its **Workers** settings. See [Workers](/admin/workers#worker-with-the-desktop-app).
+- **Worker.** Takes on part of the work for another camera.ui server on your network. Needs the main server's address and a pairing code from its **Workers** settings. See [Worker setup](/admin/worker-setup#desktop-app).
 - **Viewer · Direct.** Connects to an existing server by address.
 - **Viewer · Cloud.** Signs in via cloud.cameraui.com to reach a server through [camera.ui Cloud](/remote/cloud).
 
 <Shot src="/img/install/desktop-mode-picker.png" alt="Desktop first-launch mode picker" />
 
 **Server** mode continues with [first-run setup](/intro/getting-started). **Worker** mode has no window, only the tray icon and a status screen.
+
+### Starting without the picker
+
+The mode can also come from the command line, then the picker is skipped:
+
+| Mode | Options |
+|---|---|
+| Server | `--mode=runtime` |
+| Worker | `--mode=worker --master=192.168.1.10 --pairing-code=XXXX-XXXX`, optionally `--worker-name=nas` |
+| Viewer · Direct | `--mode=viewer-direct --server=192.168.1.10:3443` |
+| Viewer · Cloud | `--mode=viewer-cloud` |
+
+The app stores the mode as if it had been picked. Started with a different `--mode` while it runs, it switches over, the same mode again changes nothing. Values always follow an `=`. A missing or wrong value is noted in the log, and the app starts as if the option were not there.
 
 ## The tray icon
 

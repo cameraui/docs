@@ -29,7 +29,9 @@ Die Karte **Lizenz & Cloud** unter **Einstellungen → Aufnahmen** zeigt, wie vi
 
 Die Slots gehen der Reihe nach an deine aktivierten Kameras. Eine Kamera über dem Limit erkennt weiter, behält Ereignisse und Live-Ansicht, nimmt aber nicht auf und warnt nicht. Fehlt bei einer Kamera Material, schau also auf diese Karte. Schaltest du die Aufnahme an einer Kamera aus, wird ihr Slot frei.
 
-Läuft dein Abo aus, stoppt die Aufnahme, und Wiedergabe, Export, Gesichtserkennung und Suche verlangen eine gültige Lizenz. **Auf der Platte wird nichts gelöscht**, alles ist wieder da, sobald die Lizenz wieder gültig ist. Eine fehlgeschlagene Cloud-Prüfung ist etwas anderes: Die Aufnahme läuft weiter, während camera.ui es erneut versucht.
+Läuft dein Abo aus, stoppt die Aufnahme, und Wiedergabe, Export, Gesichtserkennung und Suche verlangen eine gültige Lizenz. **Auf der Platte wird nichts gelöscht**, alles ist wieder da, sobald die Lizenz wieder gültig ist.
+
+Ohne Internet läuft die Lizenz weiter. In den ersten 14 Tagen ohne Verbindung zu cameraui.com ändert sich nichts. Danach pausieren Wiedergabe, Export, Gesichtserkennung und Suche, die Aufnahme läuft bis zum Ende des bezahlten Zeitraums weiter, bei einem Abo, das sich verlängert, 14 Tage länger. Dann stoppt auch die Aufnahme. **Einstellungen → Aufnahmen** zeigt das Datum, und Admins bekommen drei Tage vorher eine Benachrichtigung. Eine Verbindung bringt alles zurück. Für einen Server, der dauerhaft offline bleibt, passt das Jahresabo am besten.
 
 ## Aufnahme-Modi
 

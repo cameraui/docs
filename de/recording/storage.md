@@ -50,7 +50,7 @@ Die Bereinigung nimmt die ältesten Stunden aller Kameras nebeneinander, eine ru
 
 Unabhängig von diesen Grenzen hält **Min Free Space (GB)** einen Teil der Disk frei: Die Bereinigung hält mindestens so viel verfügbar, bei der Hälfte davon pausiert die Aufnahme. Bei 0 ist die Reserve ein Anteil am ganzen Volume.
 
-Setz einen eigenen Wert, wenn die Aufnahmen sich eine Disk mit anderen Daten teilen, sonst kann die abgeleitete Reserve auf einer großen Disk die Aufnahme lange vor deiner Speichergrenze pausieren. Werte unter 10 GB zählen als 10.
+Setz einen eigenen Wert, wenn die Aufnahmen sich eine Disk mit anderen Daten teilen, sonst kann die abgeleitete Reserve auf einer großen Disk die Aufnahme lange vor deiner Speichergrenze pausieren. Werte unter 10 GB zählen als 10, oder als ein Viertel der Disk, wenn das weniger ist.
 
 ## Aufnahmen entfernter Kameras
 
@@ -66,7 +66,9 @@ Um das Material zu behalten, lege eine leere Datei namens `.cameraui-keep` in de
 
 **Metrics → Speicher** zeigt die Belegung in der **Speicherübersicht** und pro Kamera in der Tabelle **Kameraspeicher**: Größe auf der Disk, gehaltene Tage Material, Aufnahme-Rate pro Tag und Modus.
 
-Eine Warnung, dass das Speichervolumen klein ist, heißt: Der größte Teil wird als Reserve freigehalten, Aufnahmen rotieren schnell heraus. Meist ist die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe den Speicherpfad. Eigene Warnungen erscheinen, wenn der freie Speicher unter 8% fällt und sobald die Aufnahme aus Platzmangel pausiert.
+Eine Warnung, dass das Speichervolumen klein ist, heißt: Es bleibt wenig Platz für Aufnahmen, sie rotieren schnell heraus. Meist ist die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe den Speicherpfad. Eigene Warnungen erscheinen, wenn der freie Speicher unter 8% fällt und sobald die Aufnahme aus Platzmangel pausiert.
+
+Hatte ein eigener Speicherpfad schon Aufnahmen und fehlt seine Disk beim Start, nimmt camera.ui bis zum nächsten Start im Standardordner auf statt im leeren Mount-Punkt und markiert das auf der Timeline.
 
 ## NVR deinstallieren
 

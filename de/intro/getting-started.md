@@ -33,7 +33,8 @@ Die erste Anmeldung öffnet einen Einrichtungs-Assistenten:
 ### Willkommen
 
 - **Neue Installation.** Einen frischen Server einrichten.
-- **Aus Backup wiederherstellen.** Ein Backup-Archiv einer anderen camera.ui-Installation hochladen. camera.ui stellt deine Einstellungen wieder her und startet neu.
+- **Aus Backup wiederherstellen.** Ein Backup-Archiv einer anderen camera.ui-Installation hochladen. camera.ui zeigt, was es enthält, und stellt es nach deiner Bestätigung wieder her, siehe [Wiederherstellen](/de/admin/backup#wiederherstellen).
+- **Von anderem Server.** Den Umzugscode des alten Servers eingeben und sein Backup direkt holen, siehe [Auf einen anderen Server umziehen](/de/admin/backup#auf-einen-anderen-server-umziehen).
 
 ### Erscheinungsbild
 

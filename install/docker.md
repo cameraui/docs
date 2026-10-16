@@ -22,6 +22,7 @@ services:
     image: ghcr.io/cameraui/camera.ui:latest
     container_name: cameraui
     restart: unless-stopped
+    stop_grace_period: 30s
     network_mode: host
     environment:
       - TZ=Europe/Berlin
@@ -131,7 +132,7 @@ Use a dedicated local disk for `/recordings`, not a network share. See [System r
 
 A worker is a second machine that takes over camera work (decoding, plugins) from your main server. It runs no UI and no streaming engine of its own. It uses the same image as the server, started in worker mode with `CAMERA_UI_WORKER=true`.
 
-Enable workers on the main server and generate a pairing code there first. Compose file, environment variables and camera assignment: [Workers](/admin/workers#worker-in-docker).
+Enable workers on the main server and generate a pairing code there first. Compose file and environment variables: [Worker setup](/admin/worker-setup#docker), camera assignment: [Worker assignments](/admin/worker-assignments).
 
 `CAMERA_UI_WORKER_CAPABILITIES` narrows what the worker takes on: `frameDecoding` for decoding cameras, `pluginHost` for running plugins. Leave it unset and the worker offers both.
 

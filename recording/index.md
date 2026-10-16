@@ -29,7 +29,9 @@ The **License & Cloud** card in **Settings → Recordings** shows how many recor
 
 Slots go to your enabled cameras in order. A camera past the limit keeps detecting, its events and its live view, but does not record and shows no warning, so check that card if footage is missing from one camera. Turning off recording on a camera frees its slot for another.
 
-If your subscription lapses, recording stops and playback, export, face recognition and search ask for a valid license. **Nothing on disk is deleted**, it all comes back when the license is valid again. A failed cloud check is not the same thing: recording carries on while camera.ui retries.
+If your subscription lapses, recording stops and playback, export, face recognition and search ask for a valid license. **Nothing on disk is deleted**, it all comes back when the license is valid again.
+
+Without internet the license keeps working. For the first 14 days without a connection to cameraui.com nothing changes. After that, playback, export, face recognition and search pause, while recording carries on until the paid period ends, plus 14 days for a subscription that renews. Then recording stops as well. **Settings → Recordings** shows the date, and admins get a notification three days before. One connection brings everything back. For a server that stays offline for good, the yearly plan fits best.
 
 ## Recording modes
 

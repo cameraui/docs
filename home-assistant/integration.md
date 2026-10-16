@@ -88,7 +88,7 @@ Cameras with the matching detector get value sensors for **face**, **license pla
 
 ### Updates
 
-Home Assistant also gets **update entities** for the camera.ui server and its plugins. Available updates show up in Home Assistant's updates list and install from there. The update dialog offers to create a backup first, which writes a camera.ui [backup](/admin/backup) and stops the update if that fails. Turn **Allow updates from Home Assistant** off in the integration options to keep the updates visible without an install button.
+Home Assistant also gets **update entities** for the camera.ui server and its plugins. Available updates show up in Home Assistant's updates list and install from there. The update dialog offers to create a backup first, which writes a camera.ui [backup](/admin/backup) and stops the update if that fails. A server update that a [worker](/admin/workers) would not survive stops with the worker's name: update that worker first, or start the update on camera.ui's Updates page and confirm it there ([Updating](/install/updating)). Turn **Allow updates from Home Assistant** off in the integration options to keep the updates visible without an install button.
 
 ## PTZ
 

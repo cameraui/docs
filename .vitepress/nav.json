@@ -653,6 +653,20 @@
             "de": "Worker"
           },
           "link": "/admin/workers"
+        },
+        {
+          "text": {
+            "en": "Worker setup",
+            "de": "Worker einrichten"
+          },
+          "link": "/admin/worker-setup"
+        },
+        {
+          "text": {
+            "en": "Worker assignments",
+            "de": "Worker-Zuweisungen"
+          },
+          "link": "/admin/worker-assignments"
         }
       ]
     },
