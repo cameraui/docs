@@ -30,7 +30,7 @@ A camera that reports detections without saying where in the frame they were, ma
 
 ## Stationary objects
 
-**Ignore stationary objects** is on by default in a camera's [Settings → Detection](/cameras/settings): once an object (a parked car, a bin) has held still for a while, camera.ui stops counting it as a detection, across later events too. Its box still shows in the live view. It counts again once it moves off the spot, or if the camera pans or tilts.
+**Ignore stationary objects** is on by default in a camera's [Settings → Detection](/cameras/settings): once an object (a parked car, a bin) has held still for a while, camera.ui stops counting it as a detection, across later events too. Its box still shows in the live view. It counts again once it moves off the spot, or if the camera pans or tilts. A person who keeps leaving their spot and coming back keeps counting. Small movements while sitting or standing are not enough for that.
 
 ## The detection trace
 

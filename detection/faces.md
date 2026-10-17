@@ -20,13 +20,16 @@ In the **Faces** view (sections **Known Faces** and **Unknown Faces**), **Add Fa
 - **Pictures per person.** At least 10 pictures are recommended, from different situations (daylight, night, with a cap). Every further look up to the maximum helps. With fewer the person is often missed, their card and their dialog point it out.
 - **Unclear faces get no name.** A face seen from the side, from above, or blurred is neither named nor collected under Unknown Faces. The person is recognized in the next picture that shows them clearly.
 - **Small faces.** A face smaller than about 40 pixels in the camera picture is too small to recognize.
-- **One picture is not enough.** A person the camera follows gets a name once three pictures of the face agree, and camera.ui keeps checking while they stay in view, so a clear look late in a long visit still counts. When the pictures disagree, the person stays unnamed rather than getting someone else's name. A picture about as close to two enrolled people counts for neither. On a camera whose own AI reports people, faces are only read on its reports, and one picture names them.
+- **One picture is not enough.** A person the camera follows gets a name once three pictures of the face agree, and camera.ui looks again whenever the face shows bigger or clearer, so a good view late in a long visit still counts. When the pictures disagree, the person stays unnamed rather than getting someone else's name. A picture about as close to two enrolled people counts for neither. On a camera whose own AI reports people, faces are only read on its reports, and one picture names them.
+- **A name in doubt waits for a new picture.** After two people cross, when someone starts moving again or comes back after the camera lost sight of them, and when a picture matches someone else, the name stays hidden until a new picture of the face confirms it. If that picture matches someone else too, the event gets a second face for that person, and the first keeps its name.
+- **Two faces, one person.** When two people are so close that the camera sees them as one person, each face gets only the name its own picture matches. The same goes for a face outside every detected person.
 
 ## A person's pictures
 
 A person under **Known Faces** opens with their training pictures. A mark on a picture says what it does to recognition, tap it for the reason:
 
 - **No clear face.** Turned away, from above or blurred. Such a picture makes recognition worse, remove it.
+- **Recognition can't link it.** To recognition the picture looks no more like the person's other pictures than a stranger's, usually a strong profile or a view from above. It stays with the person but isn't used to recognize anyone. If it shows someone else, remove it.
 - **Face partly visible.** Keep it only while better pictures of that view are missing.
 - **Also filed under …** The same picture is enrolled for someone else as well. Keep it for the right person only.
 - **Same as another picture.** One of the two is enough.

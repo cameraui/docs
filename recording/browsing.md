@@ -38,10 +38,10 @@ Behind the gear, top right:
 Each card is one moment.
 
 - **Time and camera.** Selecting the card opens playback at that moment.
-- **Faces and plates.** When a moment also has a recognized face or a read plate, arrows step through its pictures in place, one per face or plate, with the name or plate shown. The small tiles at the bottom jump to one. With several people in one moment, the main picture lists every name and counts the unknown faces, like Azra +1.
+- **Faces and plates.** When a moment also has a recognized face or a read plate, arrows step through its pictures in place, one per person or plate, with the name or plate shown. Someone the camera keeps losing and finding again still gets one picture. The small tiles at the bottom jump to one. With several people in one moment, the main picture lists every name and counts the unknown faces, like Azra +1.
 - **Grouped cards.** A grouped card shows the event's other moments as small previews at the bottom. Each opens its own moment.
 - **Split cards.** With **Ungroup** on, each card shows its place in the event, like 2/3. Hovering one highlights the other cards of the same event.
-- **The dots menu.** Holds what the card does not show itself: the [detection trace](/detection/events-and-detections#the-detection-trace) (admins only), **Ask the assistant**, the download, and [**Correct person**](/detection/faces#correcting-a-recognition) (admins only) when a face picture is on screen.
+- **The dots menu.** Holds what the card does not show itself: the [detection trace](/detection/events-and-detections#the-detection-trace) (admins only), **Ask the assistant**, the download, [**Correct person**](/detection/faces#correcting-a-recognition) (admins only) when a face picture is on screen, and **Delete event** and **Delete recording** (admins only, see below).
 - **Hold to preview.** On a phone or tablet, hold a card to play its short preview (lift to stop, tap to open). On a computer it plays on hover. The preview is zoomed to what the moment was about, with a clock for the frame's time. **No preview** means there is no playable footage, or it did not load in time. An episode card previews its cut: each camera in turn, with name and time.
 
 ## Favorites
@@ -50,7 +50,9 @@ The star on a recording or episode card keeps that moment: automatic [cleanup](/
 
 ## Selecting and deleting
 
-Admins can delete events here: the dots button in the corner enters select mode for single events, several, or all loaded ones. Deleted events disappear everywhere at once: Home, the timeline, this list, and every open browser.[^delete-disk]
+Admins can delete events here: **Delete event** in a card's dots menu removes that event, the dots button in the corner enters select mode for several or all loaded ones. Deleted events disappear everywhere at once: Home, the timeline, this list, and every open browser.[^delete-disk]
+
+**Delete recording** removes the event and its video right away. It works like [deleting a range](/recording/timeline-playback#deleting-a-range) on the timeline: per minute, so other events in those minutes go too, and the most recent minutes can't be deleted yet.
 
 ## Search
 

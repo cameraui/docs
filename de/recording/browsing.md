@@ -38,10 +38,10 @@ Hinter dem Zahnrad oben rechts:
 Jede Karte ist ein Moment.
 
 - **Zeit und Kamera.** Die Karte öffnet die Wiedergabe an diesem Moment.
-- **Gesichter und Kennzeichen.** Hat ein Moment auch ein erkanntes Gesicht oder ein gelesenes Kennzeichen, blättern Pfeile an Ort und Stelle durch seine Bilder, eines pro Gesicht oder Kennzeichen, mit Name oder Kennzeichen. Die kleinen Kacheln unten springen zu einem. Sind mehrere Personen im Moment, nennt das Hauptbild alle Namen und zählt die unbekannten Gesichter mit, etwa Azra +1.
+- **Gesichter und Kennzeichen.** Hat ein Moment auch ein erkanntes Gesicht oder ein gelesenes Kennzeichen, blättern Pfeile an Ort und Stelle durch seine Bilder, eines pro Person oder Kennzeichen, mit Name oder Kennzeichen. Wen die Kamera immer wieder verliert und wiederfindet, bekommt trotzdem nur ein Bild. Die kleinen Kacheln unten springen zu einem. Sind mehrere Personen im Moment, nennt das Hauptbild alle Namen und zählt die unbekannten Gesichter mit, etwa Azra +1.
 - **Gruppierte Karten.** Eine gruppierte Karte zeigt die anderen Momente des Ereignisses als kleine Vorschauen unten. Jede öffnet ihren eigenen Moment.
 - **Geteilte Karten.** Mit **Aufteilen** an zeigt jede Karte ihre Position im Ereignis, etwa 2/3. Zeigst du auf eine, werden die anderen Karten desselben Ereignisses hervorgehoben.
-- **Das Punkte-Menü.** Enthält, was die Karte nicht selbst zeigt: den [Erkennungsverlauf](/de/detection/events-and-detections#der-erkennungsverlauf) (nur für Admins), **Assistenten fragen**, den Download und [**Person korrigieren**](/de/detection/faces#eine-erkennung-korrigieren) (nur für Admins), wenn gerade ein Gesichtsbild zu sehen ist.
+- **Das Punkte-Menü.** Enthält, was die Karte nicht selbst zeigt: den [Erkennungsverlauf](/de/detection/events-and-detections#der-erkennungsverlauf) (nur für Admins), **Assistenten fragen**, den Download, [**Person korrigieren**](/de/detection/faces#eine-erkennung-korrigieren) (nur für Admins), wenn gerade ein Gesichtsbild zu sehen ist, sowie **Ereignis löschen** und **Aufnahme löschen** (nur für Admins, siehe unten).
 - **Halten für Vorschau.** Auf Handy oder Tablet hältst du eine Karte gedrückt, um ihre kurze Vorschau abzuspielen (loslassen stoppt, Tippen öffnet). Am Computer läuft sie beim Darüberfahren. Die Vorschau ist auf das herangezoomt, worum es in dem Moment ging, mit einer Uhr für das gezeigte Bild. **Keine Vorschau** heißt, es gibt kein abspielbares Material oder es ließ sich nicht rechtzeitig laden. Eine Episoden-Karte zeigt ihren Schnitt: eine Kamera nach der anderen, mit Name und Uhrzeit.
 
 ## Favoriten
@@ -50,7 +50,9 @@ Der Stern auf einer Aufnahme- oder Episoden-Karte behält diesen Moment: Die aut
 
 ## Auswählen und löschen
 
-Admins können Ereignisse hier löschen: Der Punkte-Button in der Ecke startet den Auswahlmodus für einzelne Ereignisse, mehrere oder alle geladenen. Gelöschte Ereignisse verschwinden überall auf einmal: Home, Timeline, diese Liste und jeder offene Browser.[^delete-disk]
+Admins können Ereignisse hier löschen: **Ereignis löschen** im Punkte-Menü einer Karte entfernt dieses Ereignis, der Punkte-Button in der Ecke startet den Auswahlmodus für mehrere oder alle geladenen. Gelöschte Ereignisse verschwinden überall auf einmal: Home, Timeline, diese Liste und jeder offene Browser.[^delete-disk]
+
+**Aufnahme löschen** entfernt das Ereignis samt Video sofort. Das funktioniert wie [Bereich löschen](/de/recording/timeline-playback#bereich-löschen) auf der Timeline: minutenweise, andere Ereignisse in diesen Minuten fallen also mit weg, und die letzten Minuten lassen sich noch nicht löschen.
 
 ## Suche
 

@@ -30,7 +30,7 @@ Eine Kamera, die Erkennungen meldet, ohne zu sagen, wo im Bild sie waren, etwa v
 
 ## Unbewegte Objekte
 
-**Statische Objekte ignorieren** ist in den [Einstellungen → Erkennung](/de/cameras/settings) einer Kamera standardmäßig an: Bleibt ein Objekt (ein geparktes Auto, eine Tonne) eine Weile unbewegt, zählt camera.ui es nicht mehr als Erkennung, auch über spätere Ereignisse hinweg. Die Box siehst du in der Live-Ansicht weiterhin. Sobald sich das Objekt von der Stelle bewegt oder die Kamera schwenkt oder neigt, zählt es wieder.
+**Statische Objekte ignorieren** ist in den [Einstellungen → Erkennung](/de/cameras/settings) einer Kamera standardmäßig an: Bleibt ein Objekt (ein geparktes Auto, eine Tonne) eine Weile unbewegt, zählt camera.ui es nicht mehr als Erkennung, auch über spätere Ereignisse hinweg. Die Box siehst du in der Live-Ansicht weiterhin. Sobald sich das Objekt von der Stelle bewegt oder die Kamera schwenkt oder neigt, zählt es wieder. Eine Person, die ihren Platz immer wieder verlässt und zurückkommt, zählt weiter. Kleinere Bewegungen im Sitzen oder Stehen reichen dafür nicht.
 
 ## Der Erkennungsverlauf
 

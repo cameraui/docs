@@ -20,13 +20,16 @@ In der **Gesichter**-Ansicht (Bereiche **Bekannte Gesichter** und **Unbekannte G
 - **Bilder pro Person.** Mindestens 10 Bilder sind empfohlen, aus verschiedenen Situationen (Tageslicht, Nacht, mit Mütze). Jeder weitere Blick bis zum Maximum hilft. Mit weniger wird die Person oft nicht erkannt, ihre Karte und ihr Dialog weisen darauf hin.
 - **Unklare Gesichter bekommen keinen Namen.** Ein Gesicht von der Seite, von oben oder verwischt wird weder benannt noch unter Unbekannte Gesichter gesammelt. Erkannt wird die Person im nächsten Bild, das sie klar zeigt.
 - **Kleine Gesichter.** Ein Gesicht, das im Kamerabild kleiner als etwa 40 Pixel ist, ist zum Erkennen zu klein.
-- **Ein Bild reicht nicht.** Eine Person, der die Kamera folgt, bekommt einen Namen, sobald drei Bilder ihres Gesichts übereinstimmen, und camera.ui prüft weiter, solange sie im Bild ist, ein klarer Blick spät in einem langen Besuch zählt also noch. Widersprechen sich die Bilder, bleibt die Person ohne Namen, statt den Namen eines anderen zu bekommen. Ein Bild, das zwei hinterlegten Personen etwa gleich nahe kommt, zählt für keine von beiden. Bei einer Kamera, deren eigene KI Personen meldet, werden Gesichter nur bei ihren Meldungen gelesen, und ein Bild benennt sie.
+- **Ein Bild reicht nicht.** Eine Person, der die Kamera folgt, bekommt einen Namen, sobald drei Bilder ihres Gesichts übereinstimmen, und camera.ui schaut erneut hin, sobald das Gesicht größer oder deutlicher zu sehen ist, ein guter Blick spät in einem langen Besuch zählt also noch. Widersprechen sich die Bilder, bleibt die Person ohne Namen, statt den Namen eines anderen zu bekommen. Ein Bild, das zwei hinterlegten Personen etwa gleich nahe kommt, zählt für keine von beiden. Bei einer Kamera, deren eigene KI Personen meldet, werden Gesichter nur bei ihren Meldungen gelesen, und ein Bild benennt sie.
+- **Ein unsicherer Name wartet auf ein neues Bild.** Nachdem sich zwei Personen gekreuzt haben, wenn sich jemand wieder in Bewegung setzt oder zurückkommt, nachdem die Kamera ihn aus den Augen verloren hat, und wenn ein Bild zu jemand anderem passt, bleibt der Name verborgen, bis ein neues Bild des Gesichts ihn bestätigt. Passt auch dieses Bild zu jemand anderem, bekommt das Ereignis ein zweites Gesicht für diese Person, und das erste behält seinen Namen.
+- **Zwei Gesichter, eine Person.** Stehen zwei Personen so dicht, dass die Kamera sie als eine Person sieht, bekommt jedes Gesicht nur den Namen, zu dem sein eigenes Bild passt. Dasselbe gilt für ein Gesicht außerhalb jeder erkannten Person.
 
 ## Die Bilder einer Person
 
 Eine Person unter **Bekannte Gesichter** öffnet sich mit ihren Trainingsbildern. Eine Markierung an einem Bild sagt, was es mit der Erkennung macht, ein Tipp darauf zeigt den Grund:
 
 - **Kein klares Gesicht.** Abgewandt, von oben oder verwischt. So ein Bild verschlechtert die Erkennung, entfern es.
+- **Die Erkennung kann es nicht zuordnen.** Für die Erkennung ähnelt das Bild den übrigen Bildern der Person nicht mehr als dem eines Fremden, meist ein starkes Profil oder ein Blick von oben. Es bleibt bei der Person, wird zum Erkennen aber nicht genutzt. Zeigt es jemand anderen, entfern es.
 - **Gesicht nur teilweise sichtbar.** Behalte es nur, solange bessere Bilder dieser Ansicht fehlen.
 - **Auch bei … hinterlegt.** Dasselbe Bild ist auch bei einer anderen Person hinterlegt. Behalte es nur bei der richtigen.
 - **Doppelt vorhanden.** Eins der beiden reicht.
