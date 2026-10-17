@@ -27,7 +27,7 @@ On the same network the app lists your server by itself. You can also add one by
 
 Sign in with your username and password, plus a two-factor code if you use one, or paste an API token.[^token]
 
-The app verifies the server's certificate. From the first sign-in on it accepts only the certificate it saw then, others signed by the server's own certificate authority, and publicly trusted ones.
+The app verifies the server's certificate. From the first sign-in on it accepts only the certificate it saw then, others signed by the server's own certificate authority, and publicly trusted ones. For any other certificate the status at the top shows **Certificate changed**: choose **Sign out** under **Settings** and add the server again to accept the new one.
 
 When the server no longer accepts the sign-in, after a password change for example, the status at the top shows **Signed out**. Choose **Sign out** under **Settings** and add the server again. The same applies after a [backup restore](/admin/backup#restoring) as a copy, and after a move when the server's address changed.
 

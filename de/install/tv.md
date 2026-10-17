@@ -27,7 +27,7 @@ Im selben Netzwerk listet die App deinen Server von selbst. Du kannst auch einen
 
 Melde dich mit Benutzername und Passwort an, dazu einem Zwei-Faktor-Code, falls du einen nutzt, oder füge einen API-Token ein.[^token]
 
-Die App prüft das Zertifikat des Servers. Ab der ersten Anmeldung akzeptiert sie nur das Zertifikat, das sie dabei gesehen hat, weitere von der eigenen Zertifizierungsstelle des Servers und öffentlich vertrauenswürdige.
+Die App prüft das Zertifikat des Servers. Ab der ersten Anmeldung akzeptiert sie nur das Zertifikat, das sie dabei gesehen hat, weitere von der eigenen Zertifizierungsstelle des Servers und öffentlich vertrauenswürdige. Bei jedem anderen Zertifikat zeigt der Status oben **Certificate changed**: Wähle **Sign out** unter **Settings** und füge den Server neu hinzu, um das neue zu akzeptieren.
 
 Nimmt der Server die Anmeldung nicht mehr an, etwa nach einer Passwortänderung, zeigt der Status oben **Signed out**. Wähle **Sign out** unter **Settings** und füge den Server neu hinzu. Dasselbe gilt nach einer [Wiederherstellung aus einem Backup](/de/admin/backup#wiederherstellen) als Kopie und nach einem Umzug, bei dem sich die Adresse des Servers geändert hat.
 
