@@ -23,6 +23,8 @@ If signing in ends with **Server limit reached for your plan**, the license is s
 
 With an active license, new cameras start recording on their own while a camera slot is free: continuously, in every stream quality. A battery camera that its plugin reports as one starts in **Ad-hoc** instead. Mode, qualities and on/off are in the camera's recording settings.
 
+Recording needs H.264 or H.265. A camera that sends another codec, MJPEG for example, records nothing, and its timeline shows a recording error that says so. [Live view](/cameras/live-view#streaming-modes) shows how to transcode such a camera on the server.
+
 ### Camera slots
 
 The **License & Cloud** card in **Settings → Recordings** shows how many recording slots your plan includes, how many cameras are active, and how many currently use a slot.

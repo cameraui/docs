@@ -6,11 +6,11 @@ title: Episoden
 
 Wenn mehrere Kameras dieselbe Aktivität etwa zur gleichen Zeit sehen, kann camera.ui diese Sichtungen zu einer **Episode** bündeln: ein einziger Titel und eine kurze Story, die dem Geschehen der Reihe nach über die Kameras folgt. Eine Person, die von der Einfahrt zur Haustür geht, wird zu einer Episode statt zu drei getrennten Ereignissen.
 
-Episoden brauchen [KI-Beschreibungen](/de/detection/genai-descriptions): Das NVR-Plugin braucht ein Modell, das die Story schreibt.
+Die Story kommt aus den [KI-Beschreibungen](/de/detection/genai-descriptions). Ohne sie bekommt eine Episode stattdessen einen Titel mit den Orten und den erkannten Namen und entsteht nur, wenn etwas die Sichtungen ohne Bilder verbindet: ein Gesicht oder Kennzeichen, das beide Kameras erkannt haben, oder ein Weg auf dem [Grundriss](/de/cameras/floor-plan), der mit höchstens kurzem Halt in die Zeit dazwischen passt.
 
 ## Einschalten
 
-Öffne unter **Einstellungen → [Aufnahmen](/de/recording/)** den Tab **Episodes** und aktiviere **Enabled**. Jede Kamera macht mit; eine Episode entsteht, sobald mindestens zwei verschiedene Kameras zusammenhängende Aktivität gesehen haben. Mit einem gezeichneten [Grundriss](/de/cameras/floor-plan) prüft camera.ui zusätzlich, ob die Sichtungen räumlich zusammenpassen: Unzusammenhängendes, das zeitgleich in verschiedenen Ecken des Grundstücks passiert, wird zu getrennten Episoden statt zu einer vermischten Story, und der Titel nennt die beteiligten Orte.
+Öffne unter **Einstellungen → [Aufnahmen](/de/recording/)** den Tab **Episodes** und aktiviere **Enabled**. Jede Kamera macht mit; eine Episode entsteht, sobald mindestens zwei verschiedene Kameras zusammenhängende Aktivität gesehen haben. Mit einem gezeichneten [Grundriss](/de/cameras/floor-plan) prüft camera.ui zusätzlich, ob die Sichtungen räumlich zusammenpassen: Unzusammenhängendes, das zeitgleich in verschiedenen Ecken des Grundstücks passiert, wird zu getrennten Episoden statt zu einer vermischten Story, und der Titel nennt die beteiligten Orte. Der Weg und die Zeit dazwischen entscheiden dann, welche Sichtungen zusammengehören, und die KI lässt nur eine Sichtung weg, die klar jemand anderen zeigt.
 
 - **Join Window.** Ein neues Ereignis schließt sich der offenen Episode an, wenn es so lange nach der letzten Aktivität startet. Standard 90 Sekunden.
 - **Quiet Time.** Die Episode schließt und bekommt ihre Story, sobald es so lange ruhig war. Standard 60 Sekunden.
