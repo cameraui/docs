@@ -20,8 +20,10 @@ camera.ui sucht alle 10 Minuten nach neuen Versionen und meldet sich, wenn Serve
 
 Wie der Server aktualisiert wird, hängt von der Installationsart ab:
 
-- **Docker oder Bare-Metal.** Die **Updates**-Seite installiert die neue Version und startet den Server neu. Ein neues Docker-Image aktualisiert den Server nicht (siehe [Das Docker-Image aktualisieren](#das-docker-image-aktualisieren)).
+- **Docker oder Bare-Metal.** Die **Updates**-Seite installiert die neue Version und startet den Server neu. Ein neues Docker-Image aktualisiert den Server nicht (siehe [Das Docker-Image aktualisieren](#das-docker-image-aktualisieren)). Auf Bare-Metal aktualisierst du den Launcher von Hand, siehe [Launcher aktualisieren](/de/install/linux#launcher-aktualisieren).
 - **Desktop-App.** App und Server gehören zusammen, die Zeile **Server** ist deshalb die App selbst. Siehe [Die Desktop-App aktualisieren](#die-desktop-app-aktualisieren).
+
+Mit Docker oder Bare-Metal braucht ein Server-Update rund 2 GB frei auf der Platte mit den Daten von camera.ui, auch auf Workern. Mit weniger startet es nicht, und die Meldung nennt den freien Platz.
 
 Die Benachrichtigung für eine Vorabversion trägt den Titel **Beta update**.
 
@@ -37,7 +39,7 @@ Plugins haben einen eigenen Schalter, die **Beta-Updates** des Servers erreichen
 
 ## Die Desktop-App aktualisieren
 
-Die [Desktop-App](/de/install/desktop) installiert Updates beim Start und prüft im laufenden Betrieb weiter. Ein gefundenes Update erscheint auf der **Updates**-Seite als Zeile **Server**: Installieren lädt es und startet die App neu, auch von einem anderen Gerät aus. Lässt du es liegen, installiert es sich beim nächsten Start.
+Die [Desktop-App](/de/install/desktop) prüft beim Start und im laufenden Betrieb alle 10 Minuten auf Updates. Beim Start bietet sie ein gefundenes Update 30 Sekunden lang auf ihrem Startbildschirm an und startet danach mit der bisherigen Version. Ein gefundenes Update erscheint außerdem auf der **Updates**-Seite als Zeile **Server**: Installieren lädt es und startet die App neu, auch von einem anderen Gerät aus. Ohne Klick installiert die App kein Update.
 
 Eine Ausnahme unter Linux: Nur die `.AppImage` aktualisiert sich selbst. Die `.deb` aktualisierst du, indem du die neue `.deb` von der [Download-Seite](https://cameraui.com) installierst.
 

@@ -99,7 +99,7 @@ On macOS 15 and newer, allow **local network** access on first launch, otherwise
 
 ## Updates
 
-The app checks for updates at startup and periodically while running, and installs them itself. In Server mode it updates the bundled server before starting it. The [Updates page](/install/updating#the-updates-page) triggers an update from any device.
+The app checks for updates at startup and while it runs. It installs one only after a click, on its start screen or on the [Updates page](/install/updating#updating-the-desktop-app) from any device. The bundled server updates with the app.
 
 On Linux only the `.AppImage` updates itself; a `.deb` is updated from the [download page](https://cameraui.com).
 

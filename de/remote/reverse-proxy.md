@@ -120,7 +120,7 @@ Kameras zeigen einen Platzhalter, die Event-Zeile füllt sich nie, nichts aktual
 
 ## Hinter einem Login-Proxy
 
-Mit Pangolin, Authelia oder einem anderen Proxy mit eigener Anmeldung laufen Seitenaufrufe immer über den Proxy, damit er erneut fragen kann, wenn seine Sitzung abläuft. Bleibt ein Browser trotzdem bei **Server nicht erreichbar** stehen, lösche dort einmal die Websitedaten von camera.ui und öffne die Seite neu.
+Mit Pangolin, Authelia oder einem anderen Proxy mit eigener Anmeldung laufen Seitenaufrufe immer über den Proxy, damit er erneut fragen kann, wenn seine Sitzung abläuft. Bleibt ein Browser trotzdem bei **Server nicht erreichbar** stehen, lösche dort einmal die Websitedaten von camera.ui und öffne die Seite neu. Wie du hinter so einem Proxy die Anmeldung von camera.ui überspringst, steht unter [Anmeldung über Proxy](/de/remote/proxy-sign-in).
 
 ## camera.ui die Adresse mitteilen
 

@@ -57,6 +57,17 @@ Die [Updates-Seite](/de/install/updating#die-updates-seite) macht dasselbe in de
 
 Auf einem älteren Node.js läuft der Server weiter, schreibt eine Warnung ins Log und hält Server-Updates zurück. Führe die NodeSource-Befehle aus den [Voraussetzungen](#voraussetzungen) erneut aus und starte dann den Service neu (`sudo cameraui restart --user cameraui`). Der erste Start auf einer neuen Node.js-Hauptversion installiert den Server dafür neu und dauert ein paar Minuten. Ein [Worker](/de/admin/workers) braucht dasselbe auf seiner eigenen Maschine.
 
+## Launcher aktualisieren
+
+Das Paket `camera.ui` von npm ist der Launcher: Es schreibt den Service, startet den Server und rollt ein Server-Update zurück, das nicht startet. Die **Updates**-Seite aktualisiert es nicht. Das machst du auf jeder Maschine:
+
+```bash
+sudo npm install -g camera.ui
+sudo cameraui reinstall
+```
+
+`reinstall` schreibt den Service mit dem aktuellen Launcher neu und übernimmt Nutzer, Datenverzeichnis und Worker-Einstellung des installierten Service.
+
 ## Daten
 
 Alles liegt im Home des Service-Users unter `~/.camera.ui` (Config, Datenbank, Aufnahmen, TLS-Zertifikate). Das ist das Verzeichnis fürs Backup. Ein anderer Ort lässt sich beim Install mit `-H <pfad>` setzen.

@@ -114,3 +114,13 @@ The reported size must match your real disk or pool. The small container root si
 ## Verify
 
 On every start the container logs which devices actually arrived. See [Verify from the container](/install/hardware-acceleration#verify-from-the-container). The camera.ui UI is available at `https://<container-ip>:3443` (the script prints the IP at the end).
+
+## Updating
+
+The server updates from the [Updates page](/install/updating#the-updates-page). The image (OS, GPU libraries, launcher) updates inside the container:
+
+```bash
+pct exec <CTID> -- sh -c 'cd /opt/cameraui && docker compose pull && docker compose up -d'
+```
+
+Older versions of the script wrote `/opt/cameraui/docker-compose.yml` without `stop_grace_period`. If yours lacks it, add `stop_grace_period: 30s` to the `cameraui` service once, as in the [Docker quick start](/install/docker#quick-start), so Docker gives camera.ui time to shut down.

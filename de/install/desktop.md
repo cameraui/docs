@@ -98,7 +98,7 @@ Auf macOS 15 und neuer erlaubst du beim ersten Start den Zugriff auf das **lokal
 
 ## Updates
 
-Die App prüft beim Start und regelmäßig im Betrieb auf Updates und installiert sie selbst. Im Server-Modus aktualisiert sie den gebündelten Server, bevor sie ihn startet. Die [Updates-Seite](/de/install/updating#die-updates-seite) stößt ein Update von jedem Gerät aus an.
+Die App prüft beim Start und im Betrieb auf Updates. Sie installiert eins nur nach einem Klick, auf ihrem Startbildschirm oder auf der [Updates-Seite](/de/install/updating#die-desktop-app-aktualisieren) von jedem Gerät aus. Der gebündelte Server wird mit der App aktualisiert.
 
 Unter Linux aktualisiert sich nur die `.AppImage` selbst; eine `.deb` aktualisierst du über die [Download-Seite](https://cameraui.com).
 

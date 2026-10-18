@@ -120,7 +120,7 @@ Cameras show a placeholder, the event row never fills, and nothing updates. That
 
 ## Behind a login proxy
 
-With Pangolin, Authelia or another proxy that asks for its own login, page loads always go through the proxy, so it can ask again once its session runs out. If a browser still stays on **Cannot reach your home server**, clear its site data for camera.ui once and open the page again.
+With Pangolin, Authelia or another proxy that asks for its own login, page loads always go through the proxy, so it can ask again once its session runs out. If a browser still stays on **Cannot reach your home server**, clear its site data for camera.ui once and open the page again. To skip the camera.ui login behind such a proxy, see [Sign-in through a proxy](/remote/proxy-sign-in).
 
 ## Telling camera.ui about the address
 

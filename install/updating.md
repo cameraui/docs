@@ -20,8 +20,10 @@ camera.ui checks for new versions every 10 minutes and notifies you when the ser
 
 How the server updates depends on the install method:
 
-- **Docker or bare-metal.** The **Updates** page installs the new version and restarts the server. Pulling a new Docker image does not update the server (see [Updating the Docker image](#updating-the-docker-image)).
+- **Docker or bare-metal.** The **Updates** page installs the new version and restarts the server. Pulling a new Docker image does not update the server (see [Updating the Docker image](#updating-the-docker-image)). On bare metal the launcher is updated by hand, see [Updating the launcher](/install/linux#updating-the-launcher).
 - **Desktop app.** The app and the server move together, so the **Server** row is the app itself. See [Updating the desktop app](#updating-the-desktop-app).
+
+With Docker or bare metal, a server update needs about 2 GB free on the disk with camera.ui's data, on workers too. With less it does not start, and the message says how much is free.
 
 A pre-release notification is titled **Beta update**.
 
@@ -37,7 +39,7 @@ Plugins have their own switch, and the server's **Beta updates** does not reach 
 
 ## Updating the desktop app
 
-The [desktop app](/install/desktop) installs updates at startup and keeps checking while it runs. A found update appears as the **Server** row on the **Updates** page: installing it downloads the update and relaunches the app, also from another device. Left alone, it installs on the next start.
+The [desktop app](/install/desktop) checks for updates at startup and every 10 minutes while it runs. At startup it offers a found update on its start screen for 30 seconds, then starts on the current version. A found update also appears as the **Server** row on the **Updates** page: installing it downloads the update and relaunches the app, also from another device. The app never installs an update without a click.
 
 One exception on Linux: only the `.AppImage` updates itself. The `.deb` is updated by installing the new `.deb` from the [download page](https://cameraui.com).
 

@@ -563,6 +563,13 @@
         },
         {
           "text": {
+            "en": "Sign-in through a proxy",
+            "de": "Anmeldung über Proxy"
+          },
+          "link": "/remote/proxy-sign-in"
+        },
+        {
+          "text": {
             "en": "Certificate",
             "de": "Zertifikat"
           },

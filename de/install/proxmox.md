@@ -114,3 +114,13 @@ Die angezeigte Größe muss zu deiner echten Platte oder deinem Pool passen. Zei
 ## Verifizieren
 
 Bei jedem Start loggt der Container, welche Devices tatsächlich angekommen sind. Siehe [Aus dem Container verifizieren](/de/install/hardware-acceleration#aus-dem-container-verifizieren). Die camera.ui-UI ist unter `https://<container-ip>:3443` erreichbar (das Script gibt die IP am Ende aus).
+
+## Aktualisieren
+
+Der Server aktualisiert sich über die [Updates-Seite](/de/install/updating#die-updates-seite). Das Image (OS, GPU-Bibliotheken, Launcher) aktualisierst du im Container:
+
+```bash
+pct exec <CTID> -- sh -c 'cd /opt/cameraui && docker compose pull && docker compose up -d'
+```
+
+Ältere Versionen des Scripts schrieben `/opt/cameraui/docker-compose.yml` ohne `stop_grace_period`. Fehlt die Zeile bei dir, trag einmal `stop_grace_period: 30s` beim Service `cameraui` ein, wie im [Docker-Schnellstart](/de/install/docker#schnellstart), damit Docker camera.ui Zeit zum Beenden lässt.

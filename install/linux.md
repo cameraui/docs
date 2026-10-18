@@ -57,6 +57,17 @@ The [Updates page](/install/updating#the-updates-page) does the same from the we
 
 On an older Node.js the server keeps running, logs a warning and holds back server updates. Run the NodeSource commands from [Prerequisites](#prerequisites) again, then restart the service (`sudo cameraui restart --user cameraui`). The first start on a new Node.js major version reinstalls the server for it, which takes a few minutes. A [worker](/admin/workers) needs the same on its own machine.
 
+## Updating the launcher
+
+The `camera.ui` package from npm is the launcher: it writes the service, starts the server and rolls back a server update that does not start. The **Updates** page does not update it. Do that on each machine:
+
+```bash
+sudo npm install -g camera.ui
+sudo cameraui reinstall
+```
+
+`reinstall` writes the service again with the current launcher and keeps the user, data directory and worker setting of the installed service.
+
 ## Data
 
 Everything lives in the service user's home under `~/.camera.ui` (config, database, recordings, TLS certs). That's the directory to back up. A different location can be set with `-H <path>` during install.
