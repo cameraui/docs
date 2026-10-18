@@ -57,7 +57,7 @@ Das Verzeichnis `/media` ist mit Schreibrechten ins App eingebunden. Mit dem Sta
 
 ## Backups und Updates
 
-Home Assistant sichert das Verzeichnis `/data` des Apps, in dem Konfiguration, Datenbank und TLS-Zertifikate liegen. Drei Unterbäume sind vom Backup **ausgeschlossen**: der heruntergeladene Server, die Python-Umgebung und die installierten Plugins. Die werden beim Wiederherstellen neu geladen, also braucht ein Restore eine Internetverbindung, genau wie ein erster Start.
+Home Assistant sichert das Verzeichnis `/data` des Apps, in dem Konfiguration, Datenbank und TLS-Zertifikate liegen. Drei Unterbäume sind vom Backup **ausgeschlossen**: der heruntergeladene Server, die Python-Umgebung und die installierten Plugins. Die werden beim Wiederherstellen neu geladen, also braucht ein Restore eine Internetverbindung, genau wie ein erster Start. Ebenfalls ausgenommen sind die [geplanten Backups](/de/admin/backup#geplante-backups) von camera.ui in ihrem Standardordner und unfertige Restore-Uploads.
 
 Der Server aktualisiert sich aus der App heraus, alltägliche Updates brauchen also kein neues App-Image. Aktualisier das App selbst, wenn eine neue Version veröffentlicht wird, um das Basis-Image (OS, Treiber und Launcher) zu erneuern.
 

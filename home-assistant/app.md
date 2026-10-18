@@ -57,7 +57,7 @@ The `/media` directory is mapped into the app with read-write access. With the d
 
 ## Backups and updates
 
-Home Assistant backs up the app's `/data` directory, which holds your configuration, database, and TLS certificates. Three subtrees are **excluded** from backups: the downloaded server, the Python environment, and installed plugins. These are re-downloaded on restore, so restoring a backup needs an internet connection, the same as a first start.
+Home Assistant backs up the app's `/data` directory, which holds your configuration, database, and TLS certificates. Three subtrees are **excluded** from backups: the downloaded server, the Python environment, and installed plugins. These are re-downloaded on restore, so restoring a backup needs an internet connection, the same as a first start. camera.ui's own [scheduled backups](/admin/backup#scheduled-backups) in their default folder and unfinished restore uploads are left out as well.
 
 The server updates itself from within the app, so day-to-day updates do not need a new app image. Update the app itself when a new version is published to refresh the base image (OS, drivers, and launcher).
 
