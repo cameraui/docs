@@ -51,7 +51,7 @@ Whoever connects from a trusted address, or with the secret, can sign in as any 
 
 The browser opens camera.ui signed in. All browsers of one user share one session, listed as **Reverse proxy** under **Logged in users**. A request without the header gets the normal login form.
 
-If the proxy names a user camera.ui doesn't have, the browser shows an error instead of the app and the log names the username. Since camera.ui finds the account by its username, the account settings hide the username while you are signed in through the proxy. If an admin renames the account, change the name on the proxy side too.
+If the proxy names a user camera.ui doesn't have, the browser shows an error instead of the app and the log names the username. Since camera.ui finds the account by its username, the account settings show the username but don't let you change it while you are signed in through the proxy. If an admin renames the account, change the name on the proxy side too.
 
 ## Signing out
 

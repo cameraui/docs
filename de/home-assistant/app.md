@@ -23,7 +23,7 @@ Nach dem Start legt das App einen Eintrag **camera.ui** in der Home-Assistant-Se
 - **Admins.** Home-Assistant-Admins meldet es als Benutzer `homeassistant` an, ein Master-Konto. Dieser Benutzer lässt sich nicht umbenennen.
 - **Andere Benutzer.** Wer sonst das Panel öffnet, bekommt ein eigenes camera.ui-Konto mit der Rolle [Benutzer](/de/admin/users#rollen), benannt nach dem Home-Assistant-Benutzernamen mit `ha-` davor, etwa `ha-anna`. Entfernt oder deaktiviert Home Assistant den Benutzer oder macht ihn zum Admin, meldet camera.ui das Konto überall ab, sobald jemand das Panel das nächste Mal nutzt.
 
-Abmelden, Benutzername und Passwort gibt es im Panel nicht, API-Tokens nur für den Master.
+Abmelden und Passwort gibt es im Panel nicht, den Benutzernamen kannst du dort nicht ändern, API-Tokens gibt es nur für den Master.
 
 Beim **ersten Start** lädt das App den camera.ui-Server und das Standard-Plugin herunter, was eine Internetverbindung braucht und ein paar Minuten dauert.[^firstboot] Den ersten Boot kannst du im Tab **Log** des Apps mitverfolgen.
 

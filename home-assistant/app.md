@@ -23,7 +23,7 @@ Once started, the app adds a **camera.ui** entry to the Home Assistant sidebar. 
 - **Admins.** Home Assistant admins are signed in as the `homeassistant` user, a master account. That user can't be renamed.
 - **Other users.** Anyone else who opens the panel gets a camera.ui account of their own with the [user role](/admin/users#roles), named after their Home Assistant username with `ha-` in front, `ha-anna` for example. When Home Assistant removes or disables that user or makes it an admin, camera.ui signs the account out everywhere the next time someone uses the panel.
 
-Sign-out, username and password are not offered in the panel, and API tokens only to the master.
+Sign-out and password are not offered in the panel, the username can't be changed there, and API tokens are offered only to the master.
 
 On **first start** the app downloads the camera.ui server and the default plugin, which needs an internet connection and takes a few minutes.[^firstboot] Follow the first boot in the app's **Log** tab.
 

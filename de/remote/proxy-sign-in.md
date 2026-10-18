@@ -51,7 +51,7 @@ Wer sich von einer vertrauten Adresse oder mit dem Secret verbindet, kann sich a
 
 Der Browser öffnet camera.ui angemeldet. Alle Browser eines Benutzers teilen sich eine Sitzung, die unter **Derzeit angemeldete Benutzer** als **Reverse proxy** erscheint. Eine Anfrage ohne den Header bekommt das normale Anmeldeformular.
 
-Nennt der Proxy einen Benutzer, den camera.ui nicht kennt, zeigt der Browser statt der App einen Fehler, und das Log nennt den Benutzernamen. Weil camera.ui das Konto über den Benutzernamen findet, blenden die Konto-Einstellungen ihn bei einer Anmeldung über den Proxy aus. Benennt ein Admin das Konto um, ändere den Namen auch beim Proxy.
+Nennt der Proxy einen Benutzer, den camera.ui nicht kennt, zeigt der Browser statt der App einen Fehler, und das Log nennt den Benutzernamen. Weil camera.ui das Konto über den Benutzernamen findet, lässt er sich bei einer Anmeldung über den Proxy in den Konto-Einstellungen nicht ändern. Benennt ein Admin das Konto um, ändere den Namen auch beim Proxy.
 
 ## Abmelden
 
