@@ -12,7 +12,7 @@ Before the server installs a new version, from **Update all** or on its own, cam
 
 <Shot src="/img/admin/updates.png" alt="Updates page with the server and plugin sections" />
 
-A row can also say why it cannot be updated from here. **Updates with the desktop app** means an app too old to install its own updates remotely, so update it on its machine. **No launcher, update it on its own machine** means a worker that runs without the camera.ui service, which is what installs new versions. **Requires Node.js …** means the new version needs a newer Node.js than this machine runs, see [Updating Node.js](/install/linux#updating-node-js).
+A row can also say why it cannot be updated from here. **Updates with the desktop app** means an app too old to install its own updates remotely, so update it on its machine. **No launcher, update it on its own machine** means a worker that runs without the camera.ui service, which is what installs new versions. **Update it once on its own machine** means a worker on a release too old to take updates from the master. **Requires Node.js …** means the new version needs a newer Node.js than this machine runs, see [Updating Node.js](/install/linux#updating-node-js).
 
 camera.ui checks for new versions every 10 minutes and notifies you when the server, a plugin or a worker has one.
 

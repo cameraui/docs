@@ -23,7 +23,7 @@ Koppelst du auf dem Gerät, auf dem camera.ui offen ist, nimm in der Home-App **
 
 Kameras mit HEVC-Hauptstream (H.265) nutzen Apples neuere Secure-Video-Dienste. Live-Ansicht zu Hause und unterwegs, Aufnahme und Gegensprechen laufen direkt auf dem HEVC-Stream der Kamera, ohne Transkodierung, eine 4K-Kamera kostet also keinen CPU-Kern. Dafür braucht es iOS 27 oder tvOS 27 auf den Geräten, mit denen du zuschaust, und auf der Steuerzentrale.
 
-Kameras mit H.264-Hauptstream bleiben auf den klassischen HomeKit-Kameradiensten, weil Apples neue Fernansicht nur HEVC annimmt. Welcher Weg genommen wird, entscheidet das Plugin beim Veröffentlichen der Kamera anhand des Codecs im Hauptstream.
+Kameras mit H.264-Hauptstream bleiben auf den klassischen HomeKit-Kameradiensten, weil Apples neue Fernansicht nur HEVC annimmt. Jeder andere Codec, etwa MJPEG, nutzt ebenfalls die klassischen Dienste, der Stream wird dann nach H.264 transkodiert. Welcher Weg genommen wird, entscheidet das Plugin beim Veröffentlichen der Kamera anhand des Codecs im Hauptstream.
 
 Bleibt dein Zuhause auf iOS 26 oder älter, schalte in den erweiterten Einstellungen der Kamera **Force legacy path** ein. Die Kamera nutzt dann die klassischen Dienste, und ihr HEVC-Stream wird nach H.264 transkodiert.
 

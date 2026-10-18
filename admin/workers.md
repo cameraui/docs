@@ -57,7 +57,7 @@ A worker that fails to link up at startup, or loses the link later, logs the rea
 
 The [Updates page](/install/updating#the-updates-page) lists every lagging online worker next to the server and the plugins, and a lagging worker shows an **Update** button right in the list too: the worker installs the version the master is heading for and restarts itself. The update counts as done once the worker runs that version; one that failed, or that the worker rolled back, shows why. A worker can't be restarted while it updates. Normally that is the version the master runs; when a server update is waiting, it is that one, so the worker does not have to be updated twice. An update that [needs a newer Node.js](/install/linux#updating-node-js) on the master does not count until Node.js is updated. Desktop-app workers update the same way. See [Updating](/install/updating).
 
-A worker on a release that can no longer connect to this master stays offline, even while it runs, so neither the Updates page nor its **Update** button can reach it. The master's [log](/admin/logs) names the worker and the version to install. Update it on its own machine, see [Updating](/install/updating).
+A worker on a release this master cannot work with shows **Outdated**. It runs nothing, its cameras and plugins run elsewhere until it is updated, and its **Update** button and the Updates page install the new version on it. If the worker refuses, the message says why: a desktop app that cannot install updates remotely, and a worker on a release too old to take updates from the master, are updated on their own machine, see [Updating](/install/updating).
 
 ## Remove or replace a worker
 

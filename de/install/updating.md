@@ -12,7 +12,7 @@ Bevor der Server eine neue Version installiert, über **Alle aktualisieren** ode
 
 <Shot src="/img/admin/updates.png" alt="Updates-Seite mit den Abschnitten Server und Plugins" />
 
-Eine Zeile kann auch sagen, warum sie hier nicht aktualisiert werden kann. **Aktualisiert sich mit der Desktop-App** heißt, die App ist zu alt, um ihre Updates aus der Ferne zu installieren, aktualisiere sie also auf ihrer Maschine. **Ohne Launcher, direkt auf seiner Maschine aktualisieren** heißt, der Worker läuft ohne den camera.ui-Service, der neue Versionen installiert. **Erfordert Node.js …** heißt, die neue Version braucht ein neueres Node.js, als auf dieser Maschine läuft, siehe [Node.js aktualisieren](/de/install/linux#node-js-aktualisieren).
+Eine Zeile kann auch sagen, warum sie hier nicht aktualisiert werden kann. **Aktualisiert sich mit der Desktop-App** heißt, die App ist zu alt, um ihre Updates aus der Ferne zu installieren, aktualisiere sie also auf ihrer Maschine. **Ohne Launcher, direkt auf seiner Maschine aktualisieren** heißt, der Worker läuft ohne den camera.ui-Service, der neue Versionen installiert. **Einmal direkt auf seiner Maschine aktualisieren** heißt, der Worker läuft auf einem Release, das zu alt für Updates vom Master ist. **Erfordert Node.js …** heißt, die neue Version braucht ein neueres Node.js, als auf dieser Maschine läuft, siehe [Node.js aktualisieren](/de/install/linux#node-js-aktualisieren).
 
 camera.ui sucht alle 10 Minuten nach neuen Versionen und meldet sich, wenn Server, ein Plugin oder ein Worker eine hat.
 
