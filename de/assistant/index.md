@@ -70,6 +70,8 @@ Er baut Automationen auch aus einer Beschreibung: „wenn nach 22:00 jemand auf 
 
 Ein geplanter Prompt ist eine Frage, die der Assistent nach Zeitplan beantwortet, etwa eine Zusammenfassung des Tages jeden Abend. Bitte im Chat darum oder leg einen unter **Geplante Prompts** an, mit Titel, Prompt, Uhrzeit und Zustellung: Push, gespeichertes Gespräch oder beides. Ein optionales **Profil** führt ihn mit dessen Modell, Werkzeugen und Anweisungen aus. **Modell** wählt das Modell nur für diesen Zeitplan, nachträglich über **Modell ändern** im Menü des Zeitplans; leer bleibt es beim Modell des Profils oder beim Standard. **Jetzt ausführen** probiert einen Zeitplan sofort. Geplante Läufe überspringen jedes Werkzeug, das nachfragen würde, und die Antwort kommt in der Sprache, in der du den Zeitplan angelegt hast. Bis zu 20 Zeitpläne pro Nutzer.
 
+Ein Push enthält zwei kurze Sätze, die auf den Sperrbildschirm passen. Bei Push und Gespräch zusammen trägt der Push den ersten Satz und das Gespräch die ganze Antwort, bei geplanten Prompts wie bei **Assistenten fragen**.
+
 Die Antworten kommen von einem Sprachmodell und können falsch sein. Wo es darauf ankommt, schau in die Aufnahme.
 
 ## Nächste Schritte

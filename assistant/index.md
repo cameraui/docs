@@ -70,6 +70,8 @@ It also builds automations from a description: "when someone is on the terrace a
 
 A scheduled prompt is a question the assistant answers on a schedule, a summary of the day every evening for example. Ask for it in the chat or add one under **Scheduled prompts** with a title, the prompt, the time and the delivery: a push notification, a saved conversation, or both. An optional **Profile** runs it with that profile's model, tools and instructions. **Model** picks the model for this schedule alone, later through **Change model** in the schedule's menu; left empty, the profile's model or the default answers. **Run now** tries a schedule right away. Scheduled runs skip every tool that would ask for confirmation, and the answer comes in the language you used when you created the schedule. Up to 20 schedules per user.
 
+A push holds two short sentences that fit the lock screen. With push and conversation together, the push carries the opening sentence and the conversation the whole answer, in scheduled prompts and in **Ask the assistant** alike.
+
 The answers come from a language model and can be wrong. Where it matters, check the recording.
 
 ## Next steps
