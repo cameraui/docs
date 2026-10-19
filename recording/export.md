@@ -16,6 +16,8 @@ On the [timeline](/recording/timeline-playback), drag the trim handles to the st
 
 The download button in the Recordings view opens **Export recordings**: one or more cameras, a time range across days, a quality (Best quality or Smallest files), and optionally a timelapse interval. You get one MP4 per camera per day (first and last day cut to the selected range, days in between in full) and a size estimate up front. Several files come as one ZIP, a single file as a plain MP4. The dialog's quality choice is independent of what you are watching.
 
+Both exports convert the recordings of an MJPEG camera to H.264. That takes longer, and the files end up well below the dialog's size estimate.
+
 ## Timelapse
 
 Both export flows can produce a **timelapse** instead, sampling frames at an interval to compress a long period into a short clip.

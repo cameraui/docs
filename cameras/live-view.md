@@ -47,7 +47,7 @@ You set the streaming mode per camera in its [settings](/cameras/settings), wher
 
 The setting applies to the camera view. The small players elsewhere, the zone editor, shortcut previews, the floor plan hover and the event dialog, always run on Auto.
 
-An **MJPEG** camera plays as MJPEG in every mode, in the browser and in the mobile apps. The picture arrives as single JPEG frames, the sound, if the camera has any, over MSE. The Apple TV app and [recording](/recording/) need H.264 or H.265. For those, set the source URL to an FFmpeg source that transcodes on the server, for example `ffmpeg:http://192.168.1.30/stream#video=h264#async#raw=-fps_mode passthrough`. `#async` gives the frames correct timestamps, `-fps_mode passthrough` keeps the camera's frame rate.
+An **MJPEG** camera plays as MJPEG in every mode, in the browser, the mobile apps and the Apple TV app. The picture arrives as single JPEG frames, the sound, if the camera has any, over MSE. [Recording](/recording/) takes MJPEG as it is.
 
 ## Activity mode: Always On and Standby
 

@@ -23,7 +23,7 @@ Endet die Anmeldung mit **Server-Limit deines Tarifs erreicht**, hält noch ein 
 
 Mit aktiver Lizenz nehmen neue Kameras von selbst auf, solange ein Kamera-Slot frei ist: durchgehend, in allen Stream-Qualitäten. Eine Akku-Kamera, die ihr Plugin als solche meldet, startet stattdessen in **Ad-hoc**. Modus, Qualitäten und An/Aus stehen in den Aufnahme-Einstellungen der Kamera.
 
-Aufnehmen braucht H.264 oder H.265. Eine Kamera mit einem anderen Codec, etwa MJPEG, nimmt nichts auf, und ihre Timeline zeigt dazu einen Aufnahmefehler. Wie du eine solche Kamera auf dem Server transkodierst, steht unter [Live-Ansicht](/de/cameras/live-view#streaming-modi).
+Aufnehmen geht mit H.264, H.265 und MJPEG. Eine MJPEG-Kamera nimmt ihre Bilder so auf, wie sie sie sendet. Das braucht ein [Mehrfaches an Speicher](/de/recording/storage#grobe-dimensionierung) gegenüber H.264, und ein Bild, das breiter oder höher als 2040 Pixel ist, wird mittig auf 2040 beschnitten. Eine Kamera mit einem anderen Codec nimmt nichts auf, und ihre Timeline zeigt dazu einen Aufnahmefehler. Wie du eine solche Kamera auf dem Server transkodierst, steht unter [Live-Ansicht](/de/cameras/live-view#streaming-modi).
 
 ### Kamera-Slots
 

@@ -23,7 +23,7 @@ If signing in ends with **Server limit reached for your plan**, the license is s
 
 With an active license, new cameras start recording on their own while a camera slot is free: continuously, in every stream quality. A battery camera that its plugin reports as one starts in **Ad-hoc** instead. Mode, qualities and on/off are in the camera's recording settings.
 
-Recording needs H.264 or H.265. A camera that sends another codec, MJPEG for example, records nothing, and its timeline shows a recording error that says so. [Live view](/cameras/live-view#streaming-modes) shows how to transcode such a camera on the server.
+Recording takes H.264, H.265 and MJPEG. An MJPEG camera records its pictures as it sends them, which needs [several times the storage](/recording/storage#rough-sizing) of H.264, and a picture wider or taller than 2040 pixels is cropped to 2040 around its center. A camera that sends another codec records nothing, and its timeline shows a recording error that says so. [Live view](/cameras/live-view#streaming-modes) shows how to transcode such a camera on the server.
 
 ### Camera slots
 

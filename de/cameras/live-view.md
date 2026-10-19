@@ -47,7 +47,7 @@ Den Streaming-Modus legst du pro Kamera in ihren [Einstellungen](/de/cameras/set
 
 Die Einstellung gilt für die Kameraansicht. Die kleinen Player an anderen Stellen, der Zonen-Editor, Shortcut-Vorschauen, das Livebild im Grundriss und der Ereignis-Dialog laufen immer auf Auto.
 
-Eine **MJPEG**-Kamera läuft in jedem Modus als MJPEG, im Browser und in den Mobil-Apps. Das Bild kommt als einzelne JPEG-Frames, der Ton, sofern die Kamera welchen hat, über MSE. Die Apple-TV-App und die [Aufnahme](/de/recording/) brauchen H.264 oder H.265. Setze dafür die Quell-URL auf eine FFmpeg-Quelle, die auf dem Server transkodiert, etwa `ffmpeg:http://192.168.1.30/stream#video=h264#async#raw=-fps_mode passthrough`. `#async` gibt den Frames korrekte Zeitstempel, `-fps_mode passthrough` behält die Bildrate der Kamera.
+Eine **MJPEG**-Kamera läuft in jedem Modus als MJPEG, im Browser, in den Mobil-Apps und in der Apple-TV-App. Das Bild kommt als einzelne JPEG-Frames, der Ton, sofern die Kamera welchen hat, über MSE. Die [Aufnahme](/de/recording/) nimmt MJPEG so auf, wie es kommt.
 
 ## Aktivitätsmodus: Immer An und Standby
 

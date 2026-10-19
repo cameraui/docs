@@ -31,6 +31,9 @@ Continuous recording size follows the stream's bitrate:
 | 1080p H.264 | 4 Mbit/s | ~43 GB | ~300 GB |
 | 4K H.264 | 8 Mbit/s | ~86 GB | ~600 GB |
 | H.265 (HEVC) | about half the bitrate | roughly half the above | roughly half the above |
+| 720p MJPEG, 15 fps | ~4 Mbit/s | ~40 GB | ~280 GB |
+
+MJPEG has no fixed bitrate, it follows the camera's resolution, frame rate and JPEG quality.
 
 Event recording uses a fraction of that, depending on how busy the scene is. When in doubt, set a retention window or storage cap and watch the per-camera rate (below) for a week.
 

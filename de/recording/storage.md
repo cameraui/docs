@@ -31,6 +31,9 @@ Bei durchgehender Aufnahme richtet sich die Größe nach der Bitrate des Streams
 | 1080p H.264 | 4 Mbit/s | ~43 GB | ~300 GB |
 | 4K H.264 | 8 Mbit/s | ~86 GB | ~600 GB |
 | H.265 (HEVC) | etwa halbe Bitrate | grob die Hälfte davon | grob die Hälfte davon |
+| 720p MJPEG, 15 fps | ~4 Mbit/s | ~40 GB | ~280 GB |
+
+MJPEG hat keine feste Bitrate, sie folgt Auflösung, Bildrate und JPEG-Qualität der Kamera.
 
 Ereignis-Aufnahme braucht einen Bruchteil davon, je nachdem wie belebt die Szene ist. Im Zweifel ein Aufbewahrungs-Fenster oder eine Speichergrenze setzen und die Pro-Kamera-Rate (unten) eine Woche beobachten.
 
