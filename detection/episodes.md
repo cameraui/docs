@@ -10,7 +10,7 @@ The story comes from [AI descriptions](/detection/genai-descriptions). Without t
 
 ## Turning it on
 
-In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and turn on **Enabled**. Every camera takes part; an episode forms once at least two different cameras saw related activity. With a drawn [floor plan](/cameras/floor-plan), camera.ui also checks whether the sightings fit together in space: unrelated things happening at the same time in different corners of the property become separate episodes instead of one mixed story, and the title names the places involved. The walk and the time in between then decide which sightings belong together, and the AI only leaves out a sighting that clearly shows someone else. Without a floor plan camera.ui learns the walks between cameras on its own, from faces and plates recognized on both and from the episodes it told, and uses those of the last 30 days the same way.
+In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and turn on **Enabled**. Every camera takes part unless its own **Episodes** toggle in the camera's settings is off; an episode forms once at least two different cameras saw related activity. With a drawn [floor plan](/cameras/floor-plan), camera.ui also checks whether the sightings fit together in space: unrelated things happening at the same time in different corners of the property become separate episodes instead of one mixed story, and the title names the places involved. The walk and the time in between then decide which sightings belong together, and the AI only leaves out a sighting that clearly shows someone else. Without a floor plan camera.ui learns the walks between cameras on its own, from faces and plates recognized on both and from the episodes it told, and uses those of the last 30 days the same way.
 
 - **Join Window.** A new event joins the open episode when it starts within this long after the last activity. Default 90 seconds.
 - **Quiet Time.** The episode closes and gets its story once it has been this quiet. Default 60 seconds.
@@ -23,6 +23,7 @@ In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and tur
 - **Home.** Episodes appear in the **Recent Events** row as a mosaic card, showing how many cameras took part.
 - **Recordings.** The same mosaic card appears in the list. A recording that belongs to an episode shows an **Open episode** button that jumps to it. Episode cards follow the camera, time range, **Only with recording** and **Favorites only** filters; any other filter (labels, triggers, attributes, vehicles, search) hides them.
 - **Apple TV.** Episodes are available in the Apple TV app too.
+- **Push.** An episode pushes once its story is ready, also from cameras with **Send notifications** turned off. With that switch off on every camera, you get pushes only for activity across several cameras. [Alert zones](/cameras/zones-and-masks#alert-zones) and their face and plate filters still count: an episode whose sightings all lie outside them stays in Recordings without a push.
 
 <Shot src="/img/detection/episode-card.png" alt="An episode mosaic card in the recordings view" />
 
