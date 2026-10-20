@@ -44,16 +44,16 @@ Event recording uses a fraction of that, depending on how busy the scene is. Whe
 
 When a limit is reached, the **Retention Mode** decides:
 
-- **Overwrite** (default). The oldest recordings are deleted to make room, so recording never stops.
+- **Overwrite** (default). The oldest recordings are deleted to make room. Recording only pauses when other data fills the disk and no older recordings are left to delete.
 - **Strict.** Nothing is deleted beyond the retention window. If the disk fills, recording pauses until you free space.
 
 Cleanup takes the oldest hours of all cameras side by side, so a quiet camera cannot lose its whole history while a busy one keeps everything, and it stops once enough space is free. [Favorites](/recording/browsing#favorites) are skipped and stay playable however old they are.
 
 ## Free disk space
 
-Independent of those limits, **Min Free Space (GB)** keeps part of the disk clear: cleanup works to keep at least that much available, and recording pauses at half of it. At 0 the reserve is a share of the whole volume.
+Independent of those limits, **Min Free Space (GB)** keeps part of the disk clear: cleanup works to keep at least that much available. Below half of it cleanup deletes faster, and recording pauses there with **Strict**, or with **Overwrite** once nothing is left to delete. At 0 the reserve is a share of the whole volume.
 
-Set your own value when the recordings share a disk with other data, otherwise the derived reserve on a large disk can pause recording long before your storage cap is reached. Values below 10 GB count as 10, or as a quarter of the disk if that is less.
+Set your own value when the recordings share a disk with other data, otherwise the derived reserve on a large disk can delete recordings, or with **Strict** pause recording, long before your storage cap is reached. Values below 10 GB count as 10, or as a quarter of the disk if that is less.
 
 ## Footage from removed cameras
 

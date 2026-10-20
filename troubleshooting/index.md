@@ -41,7 +41,7 @@ The OpenVINO plugin logs `libOpenCL.so.1: cannot open shared object file` when t
 
 - Recording needs an **active subscription**. See [Recording](/recording/).
 - Confirm the camera's **recording mode** is set, either continuous or event.
-- Check **[storage](/recording/storage)**: a full disk with **Strict** retention pauses recording until you free space.
+- Check **[storage](/recording/storage)**: a full disk with **Strict** retention pauses recording until you free space. **Overwrite** only pauses once other data fills the disk and no older recordings are left to delete.
 - If **Settings → Recordings** warns that the storage volume is small, recordings rotate away quickly. Either the disk really is that small, or a storage mount you expected never mounted: check the path in **[storage](/recording/storage)**.
 
 ## Can't reach the server remotely

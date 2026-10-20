@@ -44,16 +44,16 @@ Ereignis-Aufnahme braucht einen Bruchteil davon, je nachdem wie belebt die Szene
 
 Ist eine Grenze erreicht, entscheidet der **Retention Mode**:
 
-- **Overwrite** (Standard). Die ältesten Aufnahmen werden gelöscht, um Platz zu schaffen, sodass die Aufnahme nie stoppt.
+- **Overwrite** (Standard). Die ältesten Aufnahmen werden gelöscht, um Platz zu schaffen. Die Aufnahme pausiert nur, wenn andere Daten die Disk füllen und keine älteren Aufnahmen mehr zu löschen sind.
 - **Strict.** Nichts wird über das Aufbewahrungs-Fenster hinaus gelöscht. Läuft die Disk voll, pausiert die Aufnahme, bis du Platz freigibst.
 
 Die Bereinigung nimmt die ältesten Stunden aller Kameras nebeneinander, eine ruhige Kamera verliert also nicht ihren ganzen Verlauf, während eine belebte alles behält, und sie hört auf, sobald genug Platz frei ist. [Favoriten](/de/recording/browsing#favoriten) bleiben ausgespart und abspielbar, egal wie alt sie sind.
 
 ## Freier Speicher
 
-Unabhängig von diesen Grenzen hält **Min Free Space (GB)** einen Teil der Disk frei: Die Bereinigung hält mindestens so viel verfügbar, bei der Hälfte davon pausiert die Aufnahme. Bei 0 ist die Reserve ein Anteil am ganzen Volume.
+Unabhängig von diesen Grenzen hält **Min Free Space (GB)** einen Teil der Disk frei: Die Bereinigung hält mindestens so viel verfügbar. Unter der Hälfte davon löscht sie schneller, und die Aufnahme pausiert dort bei **Strict**, bei **Overwrite** erst, wenn nichts mehr zu löschen ist. Bei 0 ist die Reserve ein Anteil am ganzen Volume.
 
-Setz einen eigenen Wert, wenn die Aufnahmen sich eine Disk mit anderen Daten teilen, sonst kann die abgeleitete Reserve auf einer großen Disk die Aufnahme lange vor deiner Speichergrenze pausieren. Werte unter 10 GB zählen als 10, oder als ein Viertel der Disk, wenn das weniger ist.
+Setz einen eigenen Wert, wenn die Aufnahmen sich eine Disk mit anderen Daten teilen, sonst kann die abgeleitete Reserve auf einer großen Disk lange vor deiner Speichergrenze Aufnahmen löschen oder bei **Strict** die Aufnahme pausieren. Werte unter 10 GB zählen als 10, oder als ein Viertel der Disk, wenn das weniger ist.
 
 ## Aufnahmen entfernter Kameras
 
