@@ -34,7 +34,7 @@ Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui 
 - **Dieses Gerät.** Tippe auf dem Handy einmal auf **Dieses Gerät synchronisieren**, um Push zu erhalten. In der Desktop-App schaltest du hier die nativen Benachrichtigungen für diesen einen Computer an oder aus.
 - **Ruhezeiten.** Nicht-kritische Alarme in einem täglichen Zeitfenster stummschalten. Kritische Alarme kommen trotzdem durch, und die In-App-Liste bleibt aktuell.
 - **System-Benachrichtigungen.** Hinweise zu camera.ui selbst: Server- und App-Updates, Plugin-Updates, ein Plugin, das abstürzt oder sich wieder fängt, und ein gescheitertes [geplantes Backup](/de/admin/backup#geplante-backups). Jeder Eintrag hat einen eigenen Schalter.[^admin]
-- **Plugin-Benachrichtigungen.** Hinweise, die Plugins senden, etwa wenn eine Kamera offline geht oder der Speicher volläuft. Jedes Plugin hat einen eigenen Schalter. Tippst du auf einen Kamera-offline- oder -online-Alarm, öffnet sich das Log dieser Kamera, wo der Grund für den Ausfall meist zu sehen ist.
+- **Plugin-Benachrichtigungen.** Hinweise, die Plugins senden, etwa wenn eine Kamera offline geht oder der Speicher volläuft. Jedes Plugin hat einen eigenen Schalter. Tippst du auf einen Kamera-offline- oder -online-Alarm, öffnet sich das Log dieser Kamera, wo der Grund für den Ausfall meist zu sehen ist. Speicher-, Lizenz- und Cloud-Anmelde-Hinweise des NVR öffnen **Einstellungen → Aufnahmen**.
 - **Geräte.** Die Handys und anderen Ziele, an die deine Alarme gehen. Benenne eines um, schalte **Aktiv** aus, um es zu pausieren, oder entferne es ganz.
 
 ## Worüber jede Kamera dich alarmiert

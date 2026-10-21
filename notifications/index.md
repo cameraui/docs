@@ -34,7 +34,7 @@ Your server seals every alert before it leaves your network. camera.ui Cloud, Go
 - **This device.** On a phone, tap **Sync this device** once to start receiving push. In the desktop app, this switches native notifications on or off for that computer alone.
 - **Quiet hours.** Silence non-critical alerts during a daily window. Critical alerts still come through, and the in-app list stays current.
 - **System notifications.** Alerts about camera.ui itself: server and app updates, plugin updates, a plugin crashing or recovering, and a [scheduled backup](/admin/backup#scheduled-backups) that failed. Each one has its own switch.[^admin]
-- **Plugin notifications.** Alerts that plugins send, such as a camera going offline or storage filling up. Each plugin has its own switch. Tapping a camera offline or online alert opens that camera's log, where the reason for the outage is usually shown.
+- **Plugin notifications.** Alerts that plugins send, such as a camera going offline or storage filling up. Each plugin has its own switch. Tapping a camera offline or online alert opens that camera's log, where the reason for the outage is usually shown. The NVR's storage, license and cloud sign-in alerts open **Settings → Recordings**.
 - **Devices.** The phones and other targets your alerts go to. Rename one, switch **Active** off to pause it, or remove it to unregister it for good.
 
 ## What each camera alerts you about
