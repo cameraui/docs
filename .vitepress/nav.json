@@ -45,6 +45,13 @@
         },
         {
           "text": {
+            "en": "Quick start",
+            "de": "Schnellstart"
+          },
+          "link": "/intro/quick-start"
+        },
+        {
+          "text": {
             "en": "How it works",
             "de": "Wie es funktioniert"
           },

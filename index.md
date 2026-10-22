@@ -5,7 +5,7 @@
 There is no mandatory cloud, and no third party holds a copy of your recordings. Remote access is optional.
 
 ::: tip New here?
-Head to **[Getting started](/intro/getting-started)** for a guided first run, or jump straight to **[Installation](/install/)**.
+The **[Quick start](/intro/quick-start)** takes you from install to recording in seven steps. For the first run in detail see **[Getting started](/intro/getting-started)**.
 :::
 
 ::: info Work in progress

@@ -5,7 +5,7 @@
 Es gibt keine Cloud-Pflicht, und kein Dritter hält eine Kopie deiner Aufnahmen. Remote-Zugriff ist optional.
 
 ::: tip Neu hier?
-Starte mit den **[ersten Schritten](/de/intro/getting-started)** für eine geführte Einrichtung, oder geh direkt zur **[Installation](/de/install/)**.
+Der **[Schnellstart](/de/intro/quick-start)** führt in sieben Schritten von der Installation bis zur Aufnahme. Die erste Einrichtung im Detail steht in den **[ersten Schritten](/de/intro/getting-started)**.
 :::
 
 ::: info In Arbeit
