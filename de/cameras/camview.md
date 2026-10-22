@@ -51,7 +51,7 @@ Erkennt eine Kamera etwas, leuchtet ihre Kachel, und kleine Symbole benennen das
 
 ## Eine Kamera in den Fokus holen
 
-Klicke auf eine Kachel, um sie auf die ganze Ansicht zu vergrößern, und klicke erneut, um zurück zum Raster zu kommen. Eine schlafende Kachel (Mond-Symbol) wacht bei diesem Klick nur auf, erst der nächste vergrößert oder verkleinert sie. Ansichten mit nur einer Kamera bleiben, wie sie sind.
+Klicke auf eine Kachel, um sie auf die ganze Ansicht zu vergrößern, und klicke erneut, um zurück zum Raster zu kommen. Eine schlafende Kachel (Mond-Symbol) wacht bei diesem Klick nur auf, erst der nächste vergrößert oder verkleinert sie. Eine Ansicht mit nur einer Kachel bleibt, wie sie ist.
 
 Der Vollbild-Button in der Steuerleiste einer Kachel zeigt diese Kamera allein. Dort bieten die Punkte in der Steuerleiste zusätzlich **Shortcuts** und eine **Zeitleiste** für diese Kamera. Spielst du dort Aufnahmen ab, übernehmen die anderen Kameras beim Verlassen des Vollbilds denselben Zeitpunkt.
 

@@ -51,7 +51,7 @@ While a camera detects something its tile glows, and small icons name what was f
 
 ## Focus one camera
 
-Click a tile to expand it to the full view, click it again to go back to the grid. A sleeping tile (moon icon) only wakes on that click, the next one expands or collapses it. Views with a single camera stay as they are.
+Click a tile to expand it to the full view, click it again to go back to the grid. A sleeping tile (moon icon) only wakes on that click, the next one expands or collapses it. A view with a single tile stays as it is.
 
 The fullscreen button in a tile's control bar shows that camera alone. There the dots in the control bar also offer **Shortcuts** and a **Timeline** for this camera. If you play back recordings there, the other cameras pick up the same point in time when you leave fullscreen.
 
