@@ -20,6 +20,8 @@ Push aufs Handy braucht alles davon. Fehlt eines, landen Alarme nur in der In-Ap
 
 **Push repariert sich nach einer Neuinstallation selbst.** Neu installieren, App-Daten löschen oder ein neues Handy setzt den Push-Token zurück, und die App registriert sich im Hintergrund neu beim Server. Klappt das nicht (etwa weil die Benachrichtigungs-Berechtigung aus ist), erscheint auf jedem Bildschirm ein Hinweis **Push-Nachrichten kommen nicht mehr an** mit einem **Beheben**-Button. **Erneut synchronisieren** unter **Einstellungen → Benachrichtigungen** tut dasselbe. Die Zeile **Dieses Gerät** verlangt nur dann eine Synchronisierung, wenn der Server dieses Handy wirklich nicht kennt.
 
+**Stummschalten aus dem Push.** Halte einen Kamera-Push gedrückt und wähle **Diese Kamera 1 Stunde stummschalten** oder **Alle Kameras 1 Stunde stummschalten**. Beides gilt nur für dieses Handy, Alarme über camera.ui selbst kommen weiter an.
+
 ## Push bleibt privat
 
 Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui Cloud, Google und Apple reichen nur den versiegelten Umschlag weiter; Kameraname, Alarmtext und der Link darin sind für alle drei unlesbar. Das Vorschaubild macht gar keinen Umweg: dein Handy lädt es direkt von deinem Server. Ist **Video in Push** an, wird der Clip genauso zugestellt: Er bleibt im versiegelten Push und streamt von deinem eigenen Server, die Cloud sieht also nie ein Bild.

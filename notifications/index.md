@@ -20,6 +20,8 @@ Phone push needs all of these. If one is missing, alerts only land in the in-app
 
 **Push repairs itself after a reinstall.** Reinstalling the app, clearing its data or a new phone resets the push token, and the app re-registers with the server in the background. If it can't (the phone's notification permission is off, say), a **Push notifications stopped working** note with a **Fix** button appears on any screen. **Re-sync** in **Settings → Notifications** does the same. The **This device** row only asks for a sync when the server really doesn't know this phone.
 
+**Mute from the push.** Press and hold a camera push and pick **Mute this camera for 1 hour** or **Mute all cameras for 1 hour**. Both apply to this phone only, and alerts about camera.ui itself still come through.
+
 ## Push stays private
 
 Your server seals every alert before it leaves your network. camera.ui Cloud, Google and Apple only pass the sealed envelope along; the camera name, the alert text and the link inside are unreadable to all three. The thumbnail takes no detour at all: your phone loads it straight from your server. When **Video in Push** is on, the clip is delivered the same way: it stays inside the sealed push and streams from your own server, so the cloud never sees a frame.
