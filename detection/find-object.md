@@ -4,13 +4,18 @@ title: Find an object
 
 # Find an object
 
-Pause the live picture or a recording, click a person or a vehicle, and camera.ui lists the moments that show it.[^license]
+Open **Find** in the timeline, tap a person or a vehicle in the picture, and camera.ui lists the moments that show it.[^license]
 
 ## Picking an object
 
-**Find this object** sits in the control bar of the camera player, the recording player and the episode player (in the dots menu on a small player). It pauses the picture. Click a person or a vehicle: camera.ui looks at that spot with the detection assigned to the camera, frames the object it finds there, reads its face, clothing, plate or look, and lists the matches. The search stays on for the next click until you turn it off with the same button or <kbd>Esc</kbd>, then the picture plays on.
+While the **Find** view of the [timeline](/recording/timeline-playback#timeline-detections-and-find) is open, every picture can be picked. A tap or a click freezes the picture at that frame, pauses the player and picks the object at that spot with the detection assigned to the camera. Outlines then mark every person and vehicle in the frozen picture, and each further tap adds a pick.
 
-Only admins get the button, and only with the NVR plugin and object detection assigned to the camera. The picture is read with the models and confidences set for the camera. When the camera's own detection cannot read a picture, the AI backend set as its **Object Assist** reads it; without one the search says so.
+- **Find this object** in the player's control bar (in the dots menu on a small player) or <kbd>F</kbd> opens and closes the view. In [Camview](/cameras/camview#find-objects-across-the-grid) <kbd>F</kbd> also opens the grid's timeline.
+- **Press and hold** a picture, with a finger or the mouse, to freeze it and pick from any view, then Find opens.
+
+A frozen picture plays on with **Continue** at its top, play, going live, a match you open, <kbd>Esc</kbd> or **End search**. The picks stay unless you end the search. Scrubbing the timeline moves a frozen picture to the new moment, so you can pick a better frame of someone who looked away.
+
+Only admins can pick, and only with the NVR plugin and object detection assigned to the camera. A camera without object detection has no **Find**, in Camview its tile says **No object detection** while Find is open. The picture is read with the models and confidences set for the camera. When the camera's own detection cannot read a picture, the AI backend set as its **Object Assist** reads it; without one the search says so.
 
 With an AI backend as **Segmentation** in the camera's **Plugins** tab, the object gets its outline instead of a box, and where people or vehicles overlap, a click picks the one under the pointer.
 
@@ -25,12 +30,15 @@ How well people are found by name depends on [face recognition](/detection/faces
 
 ## The matches
 
-One card per moment, the surest first: the name or the plate, then the face, then the look-alikes by clothing or look, best match first. Where a match is a comparison, a slider from **More precise** to **Broader** sets how close it has to be.
+The Find view shows each pick with its crop and the matches of all picks in one list, one card per moment, the surest first: the name or the plate, then the face, then the look-alikes by clothing or look, best match first. With several picks each card shows the pick it came from. Where a match is a comparison, a slider from **More precise** to **Broader** sets how close it has to be. Removing a pick drops its matches, **End search** removes all of them.
 
-- **On the camera page** the matches replace the recordings below the player (on a phone in the sheet), and the timeline shows only the matching events. Turning off **Matches only** in the timeline's filter menu shows all events again. A card on this camera shows that moment as a still for the next click, a card of another camera opens that camera at the moment, with the matches still open.
-- **In the recording and the episode player** the matches open in a column beside the player (on a phone in place of the timeline). A card shows the moment in the same window, on the same camera as a still for the next click. A match outside the episode opens there as a recording.
+While a search runs, the timeline shows only the matching events. Turning off **Matches only** in the timeline's filter menu shows all events again.
 
-**Show all in Recordings** lists the matches in [Recordings](/recording/browsing), where the camera, room and time range filters narrow them and **End search** returns to the normal list.
+- **A card of a camera on screen** plays that moment there.
+- **A card of another camera** opens that camera at the moment, with its pick in Find.
+- **In the episode player** Find is a column beside the player (on a phone below it). A match inside the episode plays there, one outside opens as a recording.
+
+**Show all in Recordings** lists the matches of all picks in [Recordings](/recording/browsing), where the camera, room and time range filters narrow them and **End search** returns to the normal list.
 
 ## Search by picture
 

@@ -56,7 +56,7 @@ Ignorierst du ein Gesicht, das du nie wieder sehen willst (ein vorbeigehender Fr
 - **Ein Gesicht oder eine ganze Gruppe ignorieren.** Unbekannte Gesichter und Gruppen haben je einen Ignorieren-Button; im Auswahlmodus ignorierst du mehrere auf einmal.
 - **Neue Sichtungen werden verworfen.** Ist jemand ignoriert, tauchen spätere Aufnahmen nicht wieder als unbekannte Gesichter auf.
 - **Ignorierte Gesichter liegen in einer eigenen Liste.** Sie sammeln sich unter **Ignorierte Gesichter** am Ende des Bereichs Unbekannte Gesichter.
-- **Wiederherstellen zum Rückgängigmachen.** **Wiederherstellen** an einem ignorierten Gesicht lässt die Person wieder erscheinen.
+- **Wiederherstellen zum Rückgängigmachen.** **Wiederherstellen** legt ein ignoriertes Gesicht zurück zu den unbekannten Gesichtern. Neue Sichtungen der Person kommen wieder, sobald kein anderes Bild von ihr mehr ignoriert ist.
 
 ## Einstellungen
 

@@ -12,7 +12,7 @@ Eine lokale Disk oder ein Symlink darauf ist in Ordnung. Eine **Netzwerkfreigabe
 
 ## Aufnahmen auf eine andere Platte umziehen
 
-Den Speicherpfad zu ändern zieht deine Aufnahmen nicht um: camera.ui fängt am neuen Ort bei null an, der alte Ordner bleibt, wie er ist. So ziehst du die Daten um:
+Den Speicherpfad zu ändern zieht deine Aufnahmen nicht um: camera.ui fängt am neuen Ort bei null an, der alte Ordner bleibt, wie er ist. Einen neuen Pfad, den camera.ui nicht anlegen oder beschreiben kann, übernimmt es nicht, die Aufnahme bleibt im alten Ordner und eine Benachrichtigung nennt den Grund. So ziehst du die Daten um:
 
 1. Stoppe den Server.
 2. Verschiebe den kompletten Speicherordner auf die neue Platte, einschließlich der Ordner `events` und `clip`. Darin liegen Ereignisse, Zeitleisten-Marker und Suchindex zu diesem Material.
@@ -71,7 +71,7 @@ Um das Material zu behalten, lege eine leere Datei namens `.cameraui-keep` in de
 
 Eine Warnung, dass das Speichervolumen klein ist, heißt: Es bleibt wenig Platz für Aufnahmen, sie rotieren schnell heraus. Meist ist die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe den Speicherpfad. Eigene Warnungen erscheinen, wenn der freie Speicher unter 8% fällt und sobald die Aufnahme aus Platzmangel pausiert.
 
-Hatte ein eigener Speicherpfad schon Aufnahmen und fehlt seine Disk beim Start, nimmt camera.ui bis zum nächsten Start im Standardordner auf statt im leeren Mount-Punkt und markiert das auf der Timeline.
+Hatte ein eigener Speicherpfad schon Aufnahmen und fehlt seine Disk beim Start, nimmt camera.ui bis zum nächsten Start im Standardordner auf statt im leeren Mount-Punkt und markiert das auf der Timeline. Fällt die Disk während der Aufnahme weg, pausiert die Aufnahme, Admins bekommen eine Benachrichtigung, und die Aufnahme läuft von selbst weiter, sobald der Pfad wieder da ist.
 
 ## NVR deinstallieren
 

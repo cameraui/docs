@@ -12,7 +12,7 @@ A local disk, or a symlink to one, is fine. A **network share (NAS, SMB, NFS) is
 
 ## Moving recordings to another disk
 
-Changing the storage path does not move your recordings: camera.ui starts fresh at the new location and the old folder stays as it is. To move the data:
+Changing the storage path does not move your recordings: camera.ui starts fresh at the new location and the old folder stays as it is. A new path that camera.ui can't create or write to is not taken, recording stays in the old folder and a notification says why. To move the data:
 
 1. Stop the server.
 2. Move the whole storage folder to the new disk, including the `events` and `clip` folders. They hold your events, timeline markers and search index for that footage.
@@ -71,7 +71,7 @@ To keep that footage, put an empty file named `.cameraui-keep` into the camera's
 
 A warning that the storage volume is small means it has little room for recordings, so they rotate out quickly. Usually the larger disk you meant to use isn't mounted, so check the storage path. Separate warnings appear when free space drops below 8% and once recording has paused for lack of space.
 
-If a custom storage path held recordings before and its disk is missing at startup, camera.ui records into its default folder instead of the empty mount point until the next start, and marks this on the timeline.
+If a custom storage path held recordings before and its disk is missing at startup, camera.ui records into its default folder instead of the empty mount point until the next start, and marks this on the timeline. If the disk drops out while camera.ui records, recording pauses, admins get one notification, and recording resumes by itself once the path is back.
 
 ## Uninstalling the NVR
 

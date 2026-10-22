@@ -51,7 +51,7 @@ Ein Wert aus mehreren Teilen steht zusätzlich Feld für Feld bereit: eine PTZ-P
 | `system.status` | **Plugin gestartet**, **Plugin gestoppt**, **Plugin-Fehler** | `started`, `stopped` oder `error` |
 | `system.sensorId`, `system.sensorType`, `system.sensorName` | **Sensor hinzugefügt**, **Sensor gelöscht** | Der Sensor |
 
-**Plugin sendet eine Benachrichtigung** ergänzt `system.title`, `system.subtitle`, `system.body`, `system.tag`, `system.severity` (`info`, `warn`, `error` oder `critical`) und jedes Datenfeld, das das Plugin mitschickt. Das NVR-Plugin setzt `system.type` auf `detection`, `episode`, `text-alert`, `text-alert-end`, `camera_online`, `camera_offline`, `storage_paused`, `storage_resumed` oder `cloud_reauth`, und je nach Typ `system.cameraId`, `system.cameraName`, `system.eventId`, `system.episodeId`, `system.alertId` und `system.alertTitle`.
+**Plugin sendet eine Benachrichtigung** ergänzt `system.title`, `system.subtitle`, `system.body`, `system.tag`, `system.severity` (`info`, `warn`, `error` oder `critical`) und jedes Datenfeld, das das Plugin mitschickt. Das NVR-Plugin setzt `system.type` auf `detection`, `episode`, `text-alert`, `text-alert-end`, `camera_online`, `camera_offline`, `storage_paused`, `storage_resumed`, `storage_path_rejected` oder `cloud_reauth`, und je nach Typ `system.cameraId`, `system.cameraName`, `system.eventId`, `system.episodeId`, `system.alertId` und `system.alertTitle`.
 
 ## Webhook
 

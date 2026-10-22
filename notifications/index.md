@@ -33,7 +33,7 @@ Your server seals every alert before it leaves your network. camera.ui Cloud, Go
 - **Master switch.** All notifications on or off. Off for a new account, and the other sections only appear once it's on.
 - **This device.** On a phone, tap **Sync this device** once to start receiving push. In the desktop app, this switches native notifications on or off for that computer alone.
 - **Quiet hours.** Silence non-critical alerts during a daily window. Critical alerts still come through, and the in-app list stays current.
-- **System notifications.** Alerts about camera.ui itself: server and app updates, plugin updates, a plugin crashing or recovering, and a [scheduled backup](/admin/backup#scheduled-backups) that failed. Each one has its own switch.[^admin]
+- **System notifications.** Alerts about camera.ui itself: server and app updates, plugin updates, an update that failed, a plugin crashing or recovering, a worker with cameras or plugins that is offline for two minutes and comes back, remote access that is down for ten minutes and comes back,[^remote] and a [scheduled backup](/admin/backup#scheduled-backups) that failed. Each one has its own switch.[^admin]
 - **Plugin notifications.** Alerts that plugins send, such as a camera going offline or storage filling up. Each plugin has its own switch. Tapping a camera offline or online alert opens that camera's log, where the reason for the outage is usually shown. The NVR's storage, license and cloud sign-in alerts open **Settings → Recordings**.
 - **Devices.** The phones and other targets your alerts go to. Rename one, switch **Active** off to pause it, or remove it to unregister it for good.
 
@@ -68,6 +68,7 @@ An alert that is already on your lock screen is updated quietly when something b
 [^license]: Push notifications to the mobile apps require an active camera.ui subscription.
 [^device]: The **This device** row is the exception. It only affects the phone or computer you are on.
 [^admin]: Only admins see the system notifications section.
+[^remote]: camera.ui checks its connection to the camera.ui Cloud and its own Cloudflare tunnel. A custom domain behind your own proxy is not checked.
 [^nvr]: Sending the push is the NVR plugin's job, so a camera without one saves the settings and starts using them once a plugin is installed.
 [^ai]: AI descriptions come from the NVR plugin. Turn them on in its settings.
 [^androidframes]: Android notifications cannot play video, so the current app pulls frames from the clip and cycles them. Tapping still opens the recording.

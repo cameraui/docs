@@ -12,7 +12,7 @@ Each camera's **timeline** scrubs through its recorded footage, with marks where
 
 - **Scrub** along the timeline. Scrubbing uses the low-resolution stream.
 - **Play and pause**, skip 30 seconds back or forward, and change the **speed** between 0.25x and 8x.
-- **Find an object.** Admins only. Pause, click a person or a vehicle, and get the moments that show it. See [Find an object](/detection/find-object).
+- **Find an object.** Admins only. Open **Find**, tap a person or a vehicle in the picture, and get the moments that show it. See [Find an object](/detection/find-object).
 - **Event marks** show a thumbnail. Click one to jump to that moment.
 - **Rings and alarms.** A doorbell press, siren, security system or contact event shows as a full event bar with its own icon and a snapshot, even when the camera saw nothing. A ring during a running motion event appears right away, not after the motion ends.
 - **Filter by event type.** The filter button picks which event types show on the timeline and in the detections list. The choice is remembered.
@@ -37,9 +37,11 @@ A band spans exactly from where the recording stopped to where it resumed. Blips
 
 When an outage has phases (the high stream goes first, the rest follows, one comes back before the other), they sit side by side in one band, each in its own color, labeled with the total duration. Hover it to read the phases.
 
-## Timeline or detections
+## Timeline, detections and find
 
-The panel on the camera page switches between **Timeline** and **Detections**, a list of what was detected: day, time, duration, a preview image and icons for the detected types. Click an entry to jump to it.
+The panel switches between its views: **Timeline**, **Detections** and, for admins with the NVR plugin, **Find** for the [object search](/detection/find-object), with the number of matches next to it. **Detections** lists what was detected: day, time, duration, a preview image and icons for the detected types. Click an entry to jump to it.
+
+Above the vertical timeline the views are a switch, in the strip below the picture icons in its top row. A narrow strip shows only the icon of the current view, tap it for the others. On a phone, dots at the bottom of the timeline show the view, tap one or swipe sideways.
 
 ## Several cameras at once
 

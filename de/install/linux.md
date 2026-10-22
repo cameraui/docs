@@ -9,7 +9,7 @@ Für Always-on-Server ohne Docker: camera.ui wird über npm installiert und läu
 ## Voraussetzungen
 
 - 64-bit-Linux (x64 oder arm64) mit systemd
-- **Node.js 24.5 oder neuer**, z.B. via [NodeSource](https://github.com/nodesource/distributions):
+- **Node.js 22.18 oder neuer**, empfohlen 24.22.1 oder neuer, z.B. via [NodeSource](https://github.com/nodesource/distributions):
 
   ```bash
   curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
@@ -55,7 +55,7 @@ Die [Updates-Seite](/de/install/updating#die-updates-seite) macht dasselbe in de
 
 ## Node.js aktualisieren
 
-Auf einem älteren Node.js läuft der Server weiter, schreibt eine Warnung ins Log und hält Server-Updates zurück. Führe die NodeSource-Befehle aus den [Voraussetzungen](#voraussetzungen) erneut aus und starte dann den Service neu (`sudo cameraui restart --user cameraui`). Der erste Start auf einer neuen Node.js-Hauptversion installiert den Server dafür neu und dauert ein paar Minuten. Ein [Worker](/de/admin/workers) braucht dasselbe auf seiner eigenen Maschine.
+Unter Node.js 22.18 läuft der Server weiter, schreibt eine Warnung ins Log und hält Server-Updates zurück. Führe die NodeSource-Befehle aus den [Voraussetzungen](#voraussetzungen) erneut aus und starte dann den Service neu (`sudo cameraui restart --user cameraui`). Der erste Start auf einer neuen Node.js-Hauptversion installiert den Server dafür neu und dauert ein paar Minuten. Ein [Worker](/de/admin/workers) braucht dasselbe auf seiner eigenen Maschine.
 
 ## Launcher aktualisieren
 

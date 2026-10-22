@@ -12,7 +12,7 @@ Mit der **Zeitleiste** einer Kamera scrubbst du durch ihr aufgenommenes Material
 
 - **Scrubbe** entlang der Timeline. Zum Scrubben dient der niedrig aufgelöste Stream.
 - **Wiedergabe und Pause**, 30 Sekunden zurück oder vor springen und die **Geschwindigkeit** zwischen 0.25x und 8x ändern.
-- **Objekt suchen.** Nur für Admins. Anhalten, eine Person oder ein Fahrzeug anklicken und die Momente sehen, die es zeigen. Siehe [Objekt suchen](/de/detection/find-object).
+- **Objekt suchen.** Nur für Admins. **Suche** öffnen, im Bild auf eine Person oder ein Fahrzeug tippen und die Momente sehen, die es zeigen. Siehe [Objekt suchen](/de/detection/find-object).
 - **Ereignis-Markierungen** zeigen ein Vorschaubild. Ein Klick springt zu diesem Moment.
 - **Klingeln und Alarme.** Ein Türklingel-Druck, eine Sirene, eine Alarmanlage oder ein Kontakt-Ereignis erscheint als volle Ereignis-Leiste mit eigenem Icon und Vorschaubild, auch wenn die Kamera nichts gesehen hat. Ein Klingeln während eines laufenden Bewegungs-Ereignisses erscheint sofort, nicht erst wenn die Bewegung endet.
 - **Nach Ereignistyp filtern.** Der Filter-Button wählt, welche Ereignistypen auf der Timeline und in der Erkennungsliste erscheinen. Die Wahl bleibt erhalten.
@@ -37,9 +37,11 @@ Ein Band reicht genau von dort, wo die Aufnahme aufgehört hat, bis dort, wo sie
 
 Hat ein Ausfall Phasen (erst geht der High-Stream, dann der Rest, dann kommt einer vor dem anderen zurück), liegen sie nebeneinander in einem Band, jede in ihrer eigenen Farbe, beschriftet mit der Gesamtdauer. Zeig darauf, um die Phasen zu lesen.
 
-## Zeitleiste oder Erkennungen
+## Zeitleiste, Erkennungen und Suche
 
-Das Panel auf der Kameraseite wechselt zwischen **Zeitleiste** und **Erkennungen**, einer Liste dessen, was erkannt wurde: Tag, Uhrzeit, Dauer, ein Vorschaubild und Icons für die erkannten Typen. Ein Klick auf einen Eintrag springt dorthin.
+Das Panel wechselt zwischen seinen Ansichten: **Zeitleiste**, **Erkennungen** und, für Admins mit dem NVR-Plugin, **Suche** für die [Objektsuche](/de/detection/find-object), mit der Zahl der Treffer daneben. **Erkennungen** listet, was erkannt wurde: Tag, Uhrzeit, Dauer, ein Vorschaubild und Icons für die erkannten Typen. Ein Klick auf einen Eintrag springt dorthin.
+
+Über der senkrechten Zeitleiste sind die Ansichten ein Umschalter, im Streifen unter dem Bild Icons in seiner oberen Zeile. Ein schmaler Streifen zeigt nur das Icon der aktuellen Ansicht, ein Tipp darauf zeigt die anderen. Auf dem Handy zeigen Punkte unten in der Zeitleiste die Ansicht, tippe auf einen oder wische seitwärts.
 
 ## Mehrere Kameras gleichzeitig
 

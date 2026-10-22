@@ -59,6 +59,10 @@ The fullscreen button in a tile's control bar shows that camera alone. There the
 
 Open the timeline to scrub through recordings for the whole view at the same time, with playback kept in sync across every camera. See [Timeline & playback](/recording/timeline-playback).
 
+## Find objects across the grid
+
+Switch the grid's timeline to **Find** or press <kbd>F</kbd>. Every tile can be picked then, each one freezes on its own while the others keep playing, and the matches of all picks form one list. The tile of a camera without object detection says **No object detection**. A scrub moves every frozen tile to the new moment. A tile in fullscreen has **Find** in its own timeline, a match of another camera opens that camera. See [Find an object](/detection/find-object#picking-an-object).
+
 ## Performance
 
 Camview streams each camera at its **low resolution** so a full grid stays smooth. A single view holds up to **26** cameras. Give your cameras a low-resolution [source](/cameras/add-camera#sources-and-roles).

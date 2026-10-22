@@ -59,6 +59,10 @@ Der Vollbild-Button in der Steuerleiste einer Kachel zeigt diese Kamera allein. 
 
 Öffne die Timeline, um die Aufnahmen der ganzen Ansicht gleichzeitig zu durchsuchen, mit über alle Kameras synchroner Wiedergabe. Siehe [Timeline & Wiedergabe](/de/recording/timeline-playback).
 
+## Objekte im Raster suchen
+
+Stell die Zeitleiste des Rasters auf **Suche** oder drück <kbd>F</kbd>. Dann lässt sich auf jeder Kachel wählen, jede wird für sich festgehalten, während die anderen weiterlaufen, und die Treffer aller Auswahlen bilden eine Liste. Die Kachel einer Kamera ohne Objekterkennung zeigt **Keine Objekterkennung**. Scrubben holt jede festgehaltene Kachel an den neuen Moment. Eine Kachel im Vollbild hat **Suche** in ihrer eigenen Zeitleiste, ein Treffer einer anderen Kamera öffnet diese Kamera. Siehe [Objekt suchen](/de/detection/find-object#ein-objekt-wählen).
+
 ## Leistung
 
 Camview streamt jede Kamera in **niedriger Auflösung**, damit ein volles Raster flüssig bleibt. Eine einzelne Ansicht fasst bis zu **26** Kameras. Gib deinen Kameras dafür eine niedrig aufgelöste [Quelle](/de/cameras/add-camera#quellen-und-rollen).

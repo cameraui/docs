@@ -33,7 +33,7 @@ Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui 
 - **Hauptschalter.** Alle Benachrichtigungen an oder aus. Bei einem neuen Konto aus, die übrigen Bereiche erscheinen erst, wenn er an ist.
 - **Dieses Gerät.** Tippe auf dem Handy einmal auf **Dieses Gerät synchronisieren**, um Push zu erhalten. In der Desktop-App schaltest du hier die nativen Benachrichtigungen für diesen einen Computer an oder aus.
 - **Ruhezeiten.** Nicht-kritische Alarme in einem täglichen Zeitfenster stummschalten. Kritische Alarme kommen trotzdem durch, und die In-App-Liste bleibt aktuell.
-- **System-Benachrichtigungen.** Hinweise zu camera.ui selbst: Server- und App-Updates, Plugin-Updates, ein Plugin, das abstürzt oder sich wieder fängt, und ein gescheitertes [geplantes Backup](/de/admin/backup#geplante-backups). Jeder Eintrag hat einen eigenen Schalter.[^admin]
+- **System-Benachrichtigungen.** Hinweise zu camera.ui selbst: Server- und App-Updates, Plugin-Updates, ein gescheitertes Update, ein Plugin, das abstürzt oder sich wieder fängt, ein Worker mit Kameras oder Plugins, der zwei Minuten offline ist und wiederkommt, ein Fernzugriff, der zehn Minuten ausfällt und wiederkommt,[^remote] und ein gescheitertes [geplantes Backup](/de/admin/backup#geplante-backups). Jeder Eintrag hat einen eigenen Schalter.[^admin]
 - **Plugin-Benachrichtigungen.** Hinweise, die Plugins senden, etwa wenn eine Kamera offline geht oder der Speicher volläuft. Jedes Plugin hat einen eigenen Schalter. Tippst du auf einen Kamera-offline- oder -online-Alarm, öffnet sich das Log dieser Kamera, wo der Grund für den Ausfall meist zu sehen ist. Speicher-, Lizenz- und Cloud-Anmelde-Hinweise des NVR öffnen **Einstellungen → Aufnahmen**.
 - **Geräte.** Die Handys und anderen Ziele, an die deine Alarme gehen. Benenne eines um, schalte **Aktiv** aus, um es zu pausieren, oder entferne es ganz.
 
@@ -68,6 +68,7 @@ Ein Alarm, der schon auf dem Sperrbildschirm liegt, wird leise aktualisiert, wen
 [^license]: Push-Benachrichtigungen an die Mobile-Apps erfordern ein aktives camera.ui-Abo.
 [^device]: Die Zeile **Dieses Gerät** ist die Ausnahme. Sie betrifft nur das Handy oder den Computer, an dem du gerade bist.
 [^admin]: Den Bereich mit den System-Benachrichtigungen sehen nur Admins.
+[^remote]: camera.ui prüft die Verbindung zur camera.ui Cloud und den eigenen Cloudflare-Tunnel. Eine eigene Domain hinter deinem Proxy prüft camera.ui nicht.
 [^nvr]: Das Senden übernimmt das NVR-Plugin, eine Kamera ohne Plugin speichert die Einstellungen also und nutzt sie, sobald eins installiert ist.
 [^ai]: KI-Beschreibungen stammen vom NVR-Plugin. Schalte sie in dessen Einstellungen ein.
 [^androidframes]: Android-Benachrichtigungen können kein Video abspielen, deshalb zieht die aktuelle App Einzelbilder aus dem Clip und blättert sie durch. Antippen öffnet weiterhin die Aufnahme.

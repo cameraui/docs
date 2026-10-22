@@ -42,7 +42,7 @@ Manche Modelle bestehen beide Tests und rufen Werkzeuge trotzdem unzuverlässig 
 
 ## Plugin-Zugriff
 
-Plugins können deine Modelle ebenfalls nutzen, das NVR-Plugin für [Ereignisbeschreibungen](/de/detection/genai-descriptions) und zum Gegenprüfen von Textalarmen. Unter **Plugin-Zugriff** wählst du pro Plugin ein Modell oder **Kein Zugriff**. Das Plugin schickt seine Anfrage an camera.ui, das sie auf diesem Modell ausführt. Der Schlüssel bleibt so auf dem Server, und ein Plugin auf einem Worker braucht keinen eigenen Internetzugang. Seine Tokens stehen unter **Verbrauch** mit dem Namen des Plugins. Die Liste ist eine Entscheidung, kein Schutz: Plugins laufen mit den Rechten von camera.ui.
+Plugins können deine Modelle ebenfalls nutzen, das NVR-Plugin für [Ereignisbeschreibungen](/de/detection/genai-descriptions) und zum Gegenprüfen von Textalarmen. Unter **Plugin-Zugriff** wählst du pro Plugin ein Modell oder **Kein Zugriff**. Ein Textalarm kann seine Bilder mit einem anderen Modell prüfen, das NVR-Plugin braucht dafür trotzdem Zugriff. Das Plugin schickt seine Anfrage an camera.ui, das sie auf diesem Modell ausführt. Der Schlüssel bleibt so auf dem Server, und ein Plugin auf einem Worker braucht keinen eigenen Internetzugang. Seine Tokens stehen unter **Verbrauch** mit dem Namen des Plugins. Die Liste ist eine Entscheidung, kein Schutz: Plugins laufen mit den Rechten von camera.ui.
 
 ## Nachdenken, Kosten und Grenzen
 

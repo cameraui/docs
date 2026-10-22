@@ -42,7 +42,7 @@ Some models pass both tests and still call tools unreliably, with invented ids f
 
 ## Plugin access
 
-Plugins can use your models too, the NVR plugin for [event descriptions](/detection/genai-descriptions) and to double-check text alerts. Under **Plugin access** pick a model per plugin or **No access**. The plugin sends its request to camera.ui, which runs it on that model, so the key stays on the server and a plugin on a worker needs no internet access of its own. Its tokens show up under **Usage** with the plugin's name. The list is a decision, not a protection: plugins run with the rights of camera.ui.
+Plugins can use your models too, the NVR plugin for [event descriptions](/detection/genai-descriptions) and to double-check text alerts. Under **Plugin access** pick a model per plugin or **No access**. A text alert can check its pictures with another model, the NVR plugin still needs access for that. The plugin sends its request to camera.ui, which runs it on that model, so the key stays on the server and a plugin on a worker needs no internet access of its own. Its tokens show up under **Usage** with the plugin's name. The list is a decision, not a protection: plugins run with the rights of camera.ui.
 
 ## Thinking, cost and limits
 

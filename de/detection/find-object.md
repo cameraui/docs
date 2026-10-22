@@ -4,13 +4,18 @@ title: Objekt suchen
 
 # Objekt suchen
 
-Halte das Live-Bild oder eine Aufnahme an, klicke auf eine Person oder ein Fahrzeug, und camera.ui listet die Momente, in denen es zu sehen ist.[^license]
+Öffne **Suche** in der Zeitleiste, tippe im Bild auf eine Person oder ein Fahrzeug, und camera.ui listet die Momente, in denen es zu sehen ist.[^license]
 
 ## Ein Objekt wählen
 
-**Objekt suchen** liegt in der Steuerleiste des Kamera-Players, des Aufnahme-Players und des Episoden-Players (bei einem kleinen Player im Punkte-Menü). Es hält das Bild an. Klick auf eine Person oder ein Fahrzeug: camera.ui sieht sich diese Stelle mit der Erkennung an, die der Kamera zugewiesen ist, rahmt das Objekt dort ein, liest Gesicht, Kleidung, Kennzeichen oder Aussehen und listet die Treffer. Die Suche bleibt für den nächsten Klick an, bis du sie mit demselben Knopf oder <kbd>Esc</kbd> beendest, dann läuft das Bild weiter.
+Solange die Ansicht **Suche** der [Zeitleiste](/de/recording/timeline-playback#zeitleiste-erkennungen-und-suche) offen ist, lässt sich in jedem Bild wählen. Ein Tipp oder Klick hält das Bild genau bei diesem Frame fest, pausiert den Player und wählt das Objekt an dieser Stelle mit der Erkennung, die der Kamera zugewiesen ist. Danach markieren Umrisse jede Person und jedes Fahrzeug im festgehaltenen Bild, und jeder weitere Tipp fügt eine Auswahl hinzu.
 
-Den Knopf bekommen nur Admins, und nur mit dem NVR-Plugin und einer der Kamera zugewiesenen Objekterkennung. Das Bild wird mit den Modellen und Schwellen gelesen, die für die Kamera eingestellt sind. Kann die Erkennung der Kamera selbst kein Bild prüfen, liest es das KI-Backend, das als **Objekt-Assistenz** eingetragen ist; ohne sie sagt die Suche das.
+- **Objekt suchen** in der Steuerleiste des Players (bei einem kleinen Player im Punkte-Menü) oder <kbd>F</kbd> öffnet und schließt die Ansicht. In [Camview](/de/cameras/camview#objekte-im-raster-suchen) öffnet <kbd>F</kbd> auch die Zeitleiste des Rasters.
+- **Halte ein Bild gedrückt**, mit dem Finger oder der Maus, um es aus jeder Ansicht heraus festzuhalten und zu wählen, danach öffnet sich die Suche.
+
+Ein festgehaltenes Bild läuft weiter bei **Weiter** oben im Bild, bei Abspielen, Live, einem geöffneten Treffer, <kbd>Esc</kbd> oder **Suche beenden**. Die Auswahlen bleiben, bis du die Suche beendest. Scrubben in der Zeitleiste holt ein festgehaltenes Bild an den neuen Moment, so lässt sich ein besseres Bild von jemandem wählen, der weggeschaut hat.
+
+Wählen können nur Admins, und nur mit dem NVR-Plugin und einer der Kamera zugewiesenen Objekterkennung. Eine Kamera ohne Objekterkennung hat keine **Suche**, in Camview zeigt ihre Kachel bei offener Suche **Keine Objekterkennung**. Das Bild wird mit den Modellen und Schwellen gelesen, die für die Kamera eingestellt sind. Kann die Erkennung der Kamera selbst kein Bild prüfen, liest es das KI-Backend, das als **Objekt-Assistenz** eingetragen ist; ohne sie sagt die Suche das.
 
 Mit einem KI-Backend als **Segmentierung** im **Plugins**-Tab der Kamera bekommt das Objekt seinen Umriss statt eines Rahmens, und wo sich Personen oder Fahrzeuge überlagern, wählt ein Klick das unter dem Zeiger.
 
@@ -25,12 +30,15 @@ Wie gut Personen über ihren Namen gefunden werden, hängt an der [Gesichtserken
 
 ## Die Treffer
 
-Eine Karte pro Moment, die sichersten zuerst: Name oder Kennzeichen, dann das Gesicht, dann die ähnlich Aussehenden nach Kleidung oder Aussehen, der beste Treffer zuerst. Ist ein Treffer ein Vergleich, legt ein Regler von **Präziser** bis **Breiter** fest, wie nah er sein muss.
+Die Ansicht Suche zeigt jede Auswahl mit ihrem Ausschnitt und die Treffer aller Auswahlen in einer Liste, eine Karte pro Moment, die sichersten zuerst: Name oder Kennzeichen, dann das Gesicht, dann die ähnlich Aussehenden nach Kleidung oder Aussehen, der beste Treffer zuerst. Bei mehreren Auswahlen zeigt jede Karte, aus welcher sie stammt. Ist ein Treffer ein Vergleich, legt ein Regler von **Präziser** bis **Breiter** fest, wie nah er sein muss. Entfernst du eine Auswahl, fallen ihre Treffer weg, **Suche beenden** entfernt alle.
 
-- **Auf der Kameraseite** ersetzen die Treffer die Aufnahmen unter dem Player (auf dem Handy im Sheet), und die Zeitleiste zeigt nur die passenden Ereignisse. Ohne **Nur Treffer** im Filtermenü der Zeitleiste sind wieder alle Ereignisse zu sehen. Eine Karte dieser Kamera zeigt den Moment als Standbild für den nächsten Klick, eine Karte einer anderen Kamera öffnet diese Kamera zu dem Moment, die Treffer bleiben offen.
-- **Im Aufnahme- und im Episoden-Player** öffnen sich die Treffer in einer Spalte neben dem Player (auf dem Handy statt der Zeitleiste). Eine Karte zeigt den Moment im selben Fenster, bei derselben Kamera als Standbild für den nächsten Klick. Ein Treffer außerhalb der Episode öffnet sich dort als Aufnahme.
+Solange eine Suche läuft, zeigt die Zeitleiste nur die passenden Ereignisse. Ohne **Nur Treffer** im Filtermenü der Zeitleiste sind wieder alle Ereignisse zu sehen.
 
-**Alle in den Aufnahmen zeigen** listet die Treffer in den [Aufnahmen](/de/recording/browsing), dort grenzen die Filter für Kamera, Raum und Zeitraum sie ein, und **Suche beenden** führt zur normalen Liste zurück.
+- **Eine Karte einer Kamera auf dem Bildschirm** spielt den Moment dort ab.
+- **Eine Karte einer anderen Kamera** öffnet diese Kamera zu dem Moment, mit ihrer Auswahl in der Suche.
+- **Im Episoden-Player** ist die Suche eine Spalte neben dem Player (auf dem Handy darunter). Ein Treffer in der Episode spielt dort, einer außerhalb öffnet sich als Aufnahme.
+
+**Alle in den Aufnahmen zeigen** listet die Treffer aller Auswahlen in den [Aufnahmen](/de/recording/browsing), dort grenzen die Filter für Kamera, Raum und Zeitraum sie ein, und **Suche beenden** führt zur normalen Liste zurück.
 
 ## Suche per Bild
 

@@ -41,7 +41,7 @@ Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn
 
 - Aufnahmen brauchen ein **aktives Abo**. Siehe [Aufnahmen](/de/recording/).
 - Bestätige, dass der **Aufnahme-Modus** der Kamera gesetzt ist, Continuous oder Event.
-- Prüfe den **[Speicher](/de/recording/storage)**: eine volle Disk mit **Strict**-Retention pausiert die Aufnahme, bis du Platz freigibst. **Overwrite** pausiert erst, wenn andere Daten die Disk füllen und keine älteren Aufnahmen mehr zu löschen sind.
+- Prüfe den **[Speicher](/de/recording/storage)**: eine volle Disk mit **Strict**-Retention pausiert die Aufnahme, bis du Platz freigibst. **Overwrite** pausiert erst, wenn andere Daten die Disk füllen und keine älteren Aufnahmen mehr zu löschen sind. Die Aufnahme pausiert auch, solange der Speicherpfad nicht erreichbar ist.
 - Wenn **Einstellungen → Aufnahmen** warnt, dass das Speichervolumen klein ist, rotieren die Aufnahmen schnell weg. Entweder ist die Disk wirklich so klein, oder ein erwarteter Speicher-Mount wurde nie eingehängt: prüfe den Pfad unter **[Speicher](/de/recording/storage)**.
 
 ## Server remote nicht erreichbar
