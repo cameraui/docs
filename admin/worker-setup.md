@@ -69,6 +69,36 @@ For NVIDIA, take the `environment` and `deploy` blocks from the [NVIDIA override
 
 Which decoder a camera actually uses on a worker is set per camera, under **Frame Worker** in its [settings](/cameras/settings). The second selection there applies while the camera runs on a worker, so master and worker can sit on different hardware. [Hardware acceleration](/install/hardware-acceleration) covers host drivers and how to check what the container really got.
 
+### Docker Swarm
+
+Swarm services can't pass devices: `devices:` is ignored, and a device mounted as a volume shows up in the container but can't be opened. The container logs it as `blocked`, and detection falls back to the CPU. Run each worker as a plain container on its machine with the [compose file](#docker) above. Swarm scheduling is not needed, the master assigns the work.
+
+To keep a worker in the stack anyway, start it through a launcher service such as [swarm-launcher](https://gitlab.com/egos-tech/swarm-launcher). It runs the worker file as a normal compose project on the node, `devices:` included, and removes it when the service stops:
+
+```yaml
+configs:
+  worker-3:
+    file: ./docker-compose.worker.yml
+
+services:
+  worker-3:
+    image: registry.gitlab.com/egos-tech/swarm-launcher:latest
+    configs:
+      - source: worker-3
+        target: /docker-compose.yml
+    environment:
+      LAUNCH_PROJECT_NAME: cameraui-worker-3
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    stop_grace_period: 40s
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == swarm3
+```
+
+Keep `LAUNCH_PROJECT_NAME` fixed, the worker's data volume belongs to that project. Bind mounts in the worker file need absolute host paths.
+
 ## Environment variables
 
 The snippet values can also be set as environment variables. `CAMERA_UI_WORKER=true` starts worker mode without the `--worker` option, and `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` and `CAMERA_UI_WORKER_CAPABILITIES` (comma-separated) cover the rest of the snippet. No `camera.ui.yaml` is needed then, and if you set both, the environment variable wins.

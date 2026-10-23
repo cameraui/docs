@@ -69,6 +69,36 @@ Für NVIDIA kommen die Blöcke `environment` und `deploy` aus dem [NVIDIA-Overri
 
 Welchen Dekoder eine Kamera auf einem Worker nutzt, legst du pro Kamera unter **Frame Worker** in ihren [Einstellungen](/de/cameras/settings) fest. Die zweite Auswahl dort gilt, solange die Kamera auf einem Worker läuft, Master und Worker können also unterschiedliche Hardware nutzen. [Hardware-Beschleunigung](/de/install/hardware-acceleration) behandelt die Treiber auf dem Host und wie du prüfst, was im Container wirklich ankommt.
 
+### Docker Swarm
+
+Swarm-Dienste können keine Devices durchreichen: `devices:` wird ignoriert, und ein als Volume eingebundenes Device taucht im Container auf, lässt sich aber nicht öffnen. Der Container loggt es als `blocked`, die Erkennung fällt auf die CPU zurück. Starte jeden Worker als normalen Container auf seiner Maschine, mit der [Compose-Datei](#docker) oben. Die Verteilung durch Swarm braucht es nicht, die Arbeit weist der Master zu.
+
+Soll ein Worker trotzdem im Stack bleiben, starte ihn über einen Launcher-Dienst wie [swarm-launcher](https://gitlab.com/egos-tech/swarm-launcher). Er startet die Worker-Datei als normales Compose-Projekt auf dem Knoten, `devices:` inklusive, und räumt es ab, wenn der Dienst stoppt:
+
+```yaml
+configs:
+  worker-3:
+    file: ./docker-compose.worker.yml
+
+services:
+  worker-3:
+    image: registry.gitlab.com/egos-tech/swarm-launcher:latest
+    configs:
+      - source: worker-3
+        target: /docker-compose.yml
+    environment:
+      LAUNCH_PROJECT_NAME: cameraui-worker-3
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    stop_grace_period: 40s
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == swarm3
+```
+
+Lass `LAUNCH_PROJECT_NAME` fest, das Datenvolume des Workers gehört zu diesem Projekt. Bind-Mounts in der Worker-Datei brauchen absolute Pfade auf dem Host.
+
 ## Umgebungsvariablen
 
 Die Werte des Ausschnitts lassen sich auch als Umgebungsvariablen setzen. `CAMERA_UI_WORKER=true` startet den Worker-Modus ohne die Option `--worker`, und `CAMERA_UI_WORKER_MASTER`, `CAMERA_UI_WORKER_API_PORT`, `CAMERA_UI_WORKER_PAIRING_CODE`, `CAMERA_UI_WORKER_NAME` sowie `CAMERA_UI_WORKER_CAPABILITIES` (kommagetrennt) decken den Rest des Ausschnitts ab. Eine `camera.ui.yaml` ist dann nicht nötig, und wenn du beides setzt, gewinnt die Umgebungsvariable.

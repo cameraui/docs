@@ -51,7 +51,7 @@ On every start the container logs which device nodes it can actually see:
 [setup] accelerator devices: /dev/dri ✓ · /dev/kfd ✗ · /dev/accel ✗ · /dev/apex_0 ✓ · /dev/hailo0 ✗ · /dev/bus/usb ✗ · nvidia ✗
 ```
 
-If a device shows `✗` here but exists on the host, it is missing from your compose `devices:` list. The detection plugins additionally log what they found (`Available devices: …`) and what each model actually runs on (`Loaded model: … (AUTO -> CPU)`), and show it under **Active Hardware** in their plugin settings.
+If a device shows `✗` here but exists on the host, it is missing from your compose `devices:` list. `blocked` means the container sees the device but may not open it: it was mounted as a volume instead of listed under `devices:`, or the container runs as a [Docker Swarm](/admin/worker-setup#docker-swarm) service. The detection plugins additionally log what they found (`Available devices: …`) and what each model actually runs on (`Loaded model: … (AUTO -> CPU)`), and show it under **Active Hardware** in their plugin settings.
 
 ## Quick reference
 

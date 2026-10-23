@@ -51,7 +51,7 @@ Bei jedem Start loggt der Container, welche Device-Nodes er tatsächlich sieht:
 [setup] accelerator devices: /dev/dri ✓ · /dev/kfd ✗ · /dev/accel ✗ · /dev/apex_0 ✓ · /dev/hailo0 ✗ · /dev/bus/usb ✗ · nvidia ✗
 ```
 
-Zeigt ein Device hier `✗`, existiert aber auf dem Host, fehlt es in deiner Compose-`devices:`-Liste. Die Erkennungs-Plugins loggen zusätzlich, was sie gefunden haben (`Available devices: …`) und worauf jedes Modell wirklich läuft (`Loaded model: … (AUTO -> CPU)`), und zeigen es unter **Active Hardware** in ihren Plugin-Einstellungen.
+Zeigt ein Device hier `✗`, existiert aber auf dem Host, fehlt es in deiner Compose-`devices:`-Liste. `blocked` heißt, der Container sieht das Device, darf es aber nicht öffnen: Es wurde als Volume eingebunden statt unter `devices:` eingetragen, oder der Container läuft als [Docker-Swarm](/de/admin/worker-setup#docker-swarm)-Dienst. Die Erkennungs-Plugins loggen zusätzlich, was sie gefunden haben (`Available devices: …`) und worauf jedes Modell wirklich läuft (`Loaded model: … (AUTO -> CPU)`), und zeigen es unter **Active Hardware** in ihren Plugin-Einstellungen.
 
 ## Schnellreferenz
 
