@@ -27,7 +27,7 @@ Unterwegs bietet eine Kamera mit einer zweiten [Quelle](/de/cameras/add-camera#q
 
 Kameras mit H.264-Hauptstream bleiben auf den klassischen HomeKit-Kameradiensten, weil Apples neue Fernansicht nur HEVC annimmt. Jeder andere Codec, etwa MJPEG, nutzt ebenfalls die klassischen Dienste, der Stream wird dann nach H.264 transkodiert. Welcher Weg genommen wird, entscheidet das Plugin beim Veröffentlichen der Kamera anhand des Codecs im Hauptstream.
 
-Bleibt dein Zuhause auf iOS 26 oder älter, schalte in den Einstellungen der Kamera **Force legacy path** unter **Secure Video** ein. Die Kamera nutzt dann die klassischen Dienste, und ihr HEVC-Stream wird nach H.264 transkodiert.
+Bleibt dein Zuhause auf iOS 26 oder älter, schalte in den Einstellungen der Kamera **Force legacy path** unter **Secure Video** ein. Die Kamera nutzt dann die klassischen Dienste, und ihr HEVC-Stream wird nach H.264 transkodiert. Wie bei MJPEG ändert sich nur der Codec, das Bild behält Auflösung und Bildrate der Kamera.
 
 ## Was wo landet
 

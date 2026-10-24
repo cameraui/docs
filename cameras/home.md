@@ -43,7 +43,7 @@ Cards you never moved are sorted by name.
 
 ## Snapshots and how they refresh
 
-The card picture is a stored still image, reused across the app. When a camera takes a new one is set under **New picture** in the **Snapshot** section of the [camera settings](/cameras/settings):
+The card picture is a stored still image, reused across the app. The source it comes from is set with [Use for snapshot](/cameras/add-camera#source-options). When a camera takes a new one is set under **New picture** in the **Snapshot** section of the [camera settings](/cameras/settings):
 
 - **Regularly.** A timer takes a picture every 10 seconds to 1 hour (60 seconds by default). Looking at the camera never wakes it.
 - **When viewed.** A new picture only when someone looks at the camera and the stored one is older than the age you set.

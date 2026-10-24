@@ -27,7 +27,7 @@ Away from home, a camera with a second [source](/cameras/add-camera#sources-and-
 
 Cameras with an H.264 main stream stay on the classic HomeKit camera services, because Apple's new remote view only takes HEVC. Any other codec, MJPEG for example, uses the classic services too, with the stream transcoded to H.264. The plugin picks the path from the main stream's codec when the camera is published.
 
-If your home stays on iOS 26 or older, turn on **Force legacy path** under **Secure Video** in the camera's settings. The camera then uses the classic services and its HEVC stream is transcoded to H.264.
+If your home stays on iOS 26 or older, turn on **Force legacy path** under **Secure Video** in the camera's settings. The camera then uses the classic services and its HEVC stream is transcoded to H.264. As with MJPEG, only the codec changes: the picture keeps the camera's size and frame rate.
 
 ## What ends up where
 

@@ -52,6 +52,7 @@ One source is enough; a lower-resolution stream makes grids and playback lighter
 
 ### Source options
 
+- **Use for snapshot.** The camera's snapshots come from this source: the cards, Home Assistant, HomeKit, automations and the API. A source with the **Snapshot** role always comes first. Without either, snapshots come from the lowest resolution stream, so turn this on for the main stream if you want sharper ones.
 - **Hot mode.** Keeps the connection to the camera always active, so there's no reconnect delay when a stream is opened.
 - **Preload.** Preloads the stream so the camera view opens with minimal delay.
 - **Mute audio.** Removes the audio track from this source. Off by default.

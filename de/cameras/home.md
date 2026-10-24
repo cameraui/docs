@@ -43,7 +43,7 @@ Karten, die du nie verschoben hast, sind nach Namen sortiert.
 
 ## Snapshots und wie sie sich aktualisieren
 
-Das Kartenbild ist ein gespeichertes Standbild, das die ganze App wiederverwendet. Wann eine Kamera ein neues macht, legst du unter **Neues Bild** im Abschnitt **Snapshot** der [Kamera-Einstellungen](/de/cameras/settings) fest:
+Das Kartenbild ist ein gespeichertes Standbild, das die ganze App wiederverwendet. Von welcher Quelle es kommt, legst du mit [Für Snapshot verwenden](/de/cameras/add-camera#quellen-optionen) fest. Wann eine Kamera ein neues macht, legst du unter **Neues Bild** im Abschnitt **Snapshot** der [Kamera-Einstellungen](/de/cameras/settings) fest:
 
 - **Regelmäßig.** Ein Timer macht alle 10 Sekunden bis 1 Stunde ein Bild (Standard 60 Sekunden). Das Ansehen der Kamera weckt sie nie.
 - **Beim Ansehen.** Ein neues Bild nur, wenn jemand die Kamera ansieht und das gespeicherte älter ist als das eingestellte Alter.

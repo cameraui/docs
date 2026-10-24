@@ -52,6 +52,7 @@ Eine Quelle genügt; ein niedriger aufgelöster Stream entlastet Raster und Wied
 
 ### Quellen-Optionen
 
+- **Für Snapshot verwenden.** Die Snapshots der Kamera kommen von dieser Quelle: die Karten, Home Assistant, HomeKit, Automationen und die API. Eine Quelle mit der Rolle **Snapshot** geht immer vor. Ohne beides kommen sie vom Stream mit der niedrigsten Auflösung, schalte es also für den Hauptstream ein, wenn du schärfere willst.
 - **Hot Modus.** Hält die Verbindung zur Kamera dauerhaft aktiv, sodass es beim Öffnen eines Streams keine Reconnect-Verzögerung gibt.
 - **Vorladen.** Lädt den Stream vor, sodass die Kamera-Ansicht mit minimaler Verzögerung öffnet.
 - **Audio stummschalten.** Entfernt die Audiospur dieser Quelle. Standardmäßig aus.
