@@ -39,7 +39,7 @@ When an outage has phases (the high stream goes first, the rest follows, one com
 
 ## Timeline, detections and find
 
-The panel switches between its views: **Timeline**, **Detections** and, for admins with the NVR plugin, **Find** for the [object search](/detection/find-object), with the number of matches next to it. **Detections** lists what was detected: day, time, duration, a preview image and icons for the detected types. Click an entry to jump to it.
+The panel switches between its views: **Timeline**, **Detections** and, for admins with the NVR plugin, **Find** for the [object search](/detection/find-object), with the number of matches next to it. **Detections** lists what was detected: day, time, duration, a preview image and icons for the detected types. Click an entry to jump to it. Playback runs from one entry to the next, and a detection shorter than 5 seconds plays for 5 seconds.
 
 Above the vertical timeline the views are a switch, in the strip below the picture icons in its top row. A narrow strip shows only the icon of the current view, tap it for the others. On a phone, dots at the bottom of the timeline show the view, tap one or swipe sideways.
 

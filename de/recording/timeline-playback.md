@@ -39,7 +39,7 @@ Hat ein Ausfall Phasen (erst geht der High-Stream, dann der Rest, dann kommt ein
 
 ## Zeitleiste, Erkennungen und Suche
 
-Das Panel wechselt zwischen seinen Ansichten: **Zeitleiste**, **Erkennungen** und, für Admins mit dem NVR-Plugin, **Suche** für die [Objektsuche](/de/detection/find-object), mit der Zahl der Treffer daneben. **Erkennungen** listet, was erkannt wurde: Tag, Uhrzeit, Dauer, ein Vorschaubild und Icons für die erkannten Typen. Ein Klick auf einen Eintrag springt dorthin.
+Das Panel wechselt zwischen seinen Ansichten: **Zeitleiste**, **Erkennungen** und, für Admins mit dem NVR-Plugin, **Suche** für die [Objektsuche](/de/detection/find-object), mit der Zahl der Treffer daneben. **Erkennungen** listet, was erkannt wurde: Tag, Uhrzeit, Dauer, ein Vorschaubild und Icons für die erkannten Typen. Ein Klick auf einen Eintrag springt dorthin. Die Wiedergabe läuft von Eintrag zu Eintrag, eine Erkennung unter 5 Sekunden läuft 5 Sekunden lang.
 
 Über der senkrechten Zeitleiste sind die Ansichten ein Umschalter, im Streifen unter dem Bild Icons in seiner oberen Zeile. Ein schmaler Streifen zeigt nur das Icon der aktuellen Ansicht, ein Tipp darauf zeigt die anderen. Auf dem Handy zeigen Punkte unten in der Zeitleiste die Ansicht, tippe auf einen oder wische seitwärts.
 
