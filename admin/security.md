@@ -10,9 +10,9 @@ Each account has its own security settings, in **Settings → Account**. They ap
 
 <Shot src="/img/admin/2fa-setup.png" alt="Two-factor authentication setup" />
 
-Two-factor authentication (2FA) adds a code from an authenticator app, such as Google Authenticator or Authy, on top of your password.
+Two-factor authentication (2FA) adds a code from an authenticator app, such as Google Authenticator, Authy or Apple's Passwords app, on top of your password. Password managers that keep the code offer it at sign-in.
 
-**Set up 2FA** shows a QR code for your app (or a code to enter by hand); confirm with the 6-digit code. The **backup codes** shown afterwards are the way back in if you lose your phone.
+**Set up 2FA** shows a QR code for your app (or a code to enter by hand); on the device that keeps your codes, tap the QR code instead of scanning it. Confirm with the 6-digit code. The **backup codes** shown afterwards are the way back in if you lose your phone.
 
 Once enabled, you can **regenerate backup codes** or **disable 2FA**, both of which ask for a current code.
 

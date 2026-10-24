@@ -10,9 +10,9 @@ Jedes Konto hat eigene Sicherheits-Einstellungen unter **Einstellungen → Konto
 
 <Shot src="/img/admin/2fa-setup.png" alt="Einrichtung der Zwei-Faktor-Authentifizierung" />
 
-Die Zwei-Faktor-Authentifizierung (2FA) ergänzt dein Passwort um einen Code aus einer Authenticator-App, etwa Google Authenticator oder Authy.
+Die Zwei-Faktor-Authentifizierung (2FA) ergänzt dein Passwort um einen Code aus einer Authenticator-App, etwa Google Authenticator, Authy oder Apples Passwörter-App. Passwortmanager, die den Code speichern, bieten ihn bei der Anmeldung an.
 
-**2FA einrichten** zeigt einen QR-Code für deine App (oder einen Code zum Abtippen); bestätige mit dem 6-stelligen Code. Die danach angezeigten **Backup-Codes** sind dein Weg zurück, falls du dein Handy verlierst.
+**2FA einrichten** zeigt einen QR-Code für deine App (oder einen Code zum Abtippen); auf dem Gerät mit deinen Codes tippst du den QR-Code an, statt ihn zu scannen. Bestätige mit dem 6-stelligen Code. Die danach angezeigten **Backup-Codes** sind dein Weg zurück, falls du dein Handy verlierst.
 
 Einmal aktiviert, kannst du **Backup-Codes neu generieren** oder **2FA deaktivieren**, beides verlangt einen aktuellen Code.
 
