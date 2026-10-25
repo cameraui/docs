@@ -23,11 +23,13 @@ Koppelst du auf dem Gerät, auf dem camera.ui offen ist, nimm in der Home-App **
 
 Kameras mit HEVC-Hauptstream (H.265) nutzen Apples neuere Secure-Video-Dienste. Live-Ansicht zu Hause und unterwegs, Aufnahme und Gegensprechen laufen direkt auf dem HEVC-Stream der Kamera, ohne Transkodierung, eine 4K-Kamera kostet also keinen CPU-Kern. Dafür braucht es iOS 27 oder tvOS 27 auf den Geräten, mit denen du zuschaust, und auf der Steuerzentrale.
 
-Unterwegs bietet eine Kamera mit einer zweiten [Quelle](/de/cameras/add-camera#quellen-und-rollen) in **Niedrige Auflösung** oder **Mittlere Auflösung** zusätzlich ein kleines Bild daraus an, auf dem Server transkodiert, sofern diese Quelle nicht schon HEVC ist. Die Home-App wechselt bei langsamer Verbindung wie LTE darauf. Ohne eine solche Quelle zeigt die Live-Ansicht über LTE kein Bild.
+Unterwegs bietet eine Kamera mit einer zweiten [Quelle](/de/cameras/add-camera#quellen-und-rollen) in **Niedrige Auflösung** oder **Mittlere Auflösung** zusätzlich ein kleines Bild daraus an, auf dem Server transkodiert, sofern diese Quelle nicht schon HEVC ist. Das transkodierte Bild bekommt das Seitenverhältnis, das in den [Kamera-Einstellungen](/de/cameras/settings) unter **Interface** eingestellt ist. Die Home-App wechselt bei langsamer Verbindung wie LTE darauf. Ohne eine solche Quelle zeigt die Live-Ansicht über LTE kein Bild.
 
 Kameras mit H.264-Hauptstream bleiben auf den klassischen HomeKit-Kameradiensten, weil Apples neue Fernansicht nur HEVC annimmt. Jeder andere Codec, etwa MJPEG, nutzt ebenfalls die klassischen Dienste, der Stream wird dann nach H.264 transkodiert. Welcher Weg genommen wird, entscheidet das Plugin beim Veröffentlichen der Kamera anhand des Codecs im Hauptstream.
 
-Bleibt dein Zuhause auf iOS 26 oder älter, schalte in den Einstellungen der Kamera **Force legacy path** unter **Secure Video** ein. Die Kamera nutzt dann die klassischen Dienste, und ihr HEVC-Stream wird nach H.264 transkodiert. Wie bei MJPEG ändert sich nur der Codec, das Bild behält Auflösung und Bildrate der Kamera.
+Bleibt dein Zuhause auf iOS 26 oder älter, schalte in den Einstellungen der Kamera **Force legacy path** unter **Secure Video** ein. Die Kamera nutzt dann die klassischen Dienste, und ihr HEVC-Stream wird nach H.264 transkodiert. Wie bei MJPEG bekommt das Bild die Breite, die die Home-App anfragt, nie mehr als die Kamera liefert. Seitenverhältnis und Bildrate bleiben die der Kamera, die Bitrate richtet sich nach der Bildgröße.
+
+Auf den klassischen Diensten startet die Fernansicht klein, und die Home-App fragt mehr an, sobald die Verbindung hält. Bis dahin schickt eine Kamera mit einer Quelle in **Niedrige Auflösung** oder **Mittlere Auflösung** diese, bei Bedarf nach H.264 transkodiert, und wechselt dann ohne Unterbrechung auf den Hauptstream. Ein transkodiertes kleines Bild bekommt das Seitenverhältnis, das unter **Interface** eingestellt ist, wie bei Secure Video.
 
 ## Was wo landet
 
@@ -62,9 +64,12 @@ Die HomeKit-Einstellungen jeder Kamera umfassen:
 
 - **QR-Code und PIN.** Die Kopplungs-Details dieser Kamera.
 - **Force legacy path.** Unter **Secure Video**: hält die Kamera auf den klassischen HomeKit-Diensten, siehe [Secure Video ab iOS 27](#secure-video-ab-ios-27). Standardmäßig aus.
-- **Allow transcoding for mobile data.** Ebenfalls unter **Secure Video**: erlaubt camera.ui, eine Quelle in niedriger oder mittlerer Auflösung zu transkodieren, die kein HEVC ist, damit die Fernansicht über LTE funktioniert. Eine HEVC-Quelle geht immer unverändert raus. Standardmäßig an; ist es aus, zeigt so eine Kamera über LTE eventuell kein Bild. Das Log sagt bei jedem Start unterwegs, welche Quelle rausgeht und ob sie transkodiert wird.
+- **Allow transcoding for mobile data.** Ebenfalls unter **Secure Video**: erlaubt camera.ui, eine Quelle in niedriger oder mittlerer Auflösung zu transkodieren, die kein HEVC ist, damit die Fernansicht über LTE funktioniert. Eine HEVC-Quelle geht unverändert raus, außer **Always transcode** ist an. Standardmäßig an; ist es aus, zeigt so eine Kamera über LTE eventuell kein Bild. Das Log sagt bei jedem Start unterwegs, welche Quelle rausgeht und ob sie transkodiert wird.
 - **Use Hardware Acceleration.** Nutzt die GPU, sofern eine vorhanden ist, wenn ein Stream transkodiert werden muss. Standardmäßig an.
 - **Use Hardware Acceleration for HKSV.** Dasselbe für HomeKit-Secure-Video-Aufnahmen. Standardmäßig an; schalte es für eine Kamera aus, deren Aufnahmen abbrechen.
+- **Always transcode.** Unter **Advanced**: transkodiert die Live-Ansicht auch dann, wenn HomeKit den Stream der Kamera unverändert abspielen könnte, auf dem klassischen Weg und bei Secure Video. Belastet den Server zusätzlich. Für Aufnahmen gibt es einen eigenen Schalter. Standardmäßig aus.
+- **Stream as requested.** Ebenfalls unter **Advanced**: sendet die Live-Ansicht in der Größe, Bildrate und Bitrate, die HomeKit anfragt, jeder Live-Stream wird also transkodiert. Eine Quelle, die kleiner ist als angefragt, behält ihre Größe. Standardmäßig aus.
+- **Always transcode for HKSV.** Ebenfalls unter **Advanced**: transkodiert HomeKit-Secure-Video-Aufnahmen auch dann, wenn HomeKit den Stream der Kamera unverändert nehmen könnte. Sie sind dann H.264 in der Größe, Bildrate und Bitrate, die HomeKit anfragt. Belastet den Server zusätzlich. Standardmäßig aus.
 - **Override Port und mDNS advertiser.** Unter **Advanced**: ein fester Port statt eines automatischen (0) und das Backend, das die Kamera im Netzwerk ankündigt.
 - **Reset Pairing.** Einen neuen Code erzeugen und die Kamera neu hinzufügen, falls die Kopplung bricht.
 

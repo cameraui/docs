@@ -23,11 +23,13 @@ To pair on the device camera.ui is open on, choose **More options** in the Home 
 
 Cameras with an HEVC (H.265) main stream use Apple's newer secure video services. Live view at home and away, recording and two-way audio all run on the camera's own HEVC stream without transcoding, so a 4K camera doesn't cost a CPU core. This needs iOS 27 or tvOS 27 on the devices you watch on and on the home hub.
 
-Away from home, a camera with a second [source](/cameras/add-camera#sources-and-roles) in **Low Resolution** or **Mid Resolution** also offers a small picture from it, transcoded on the server unless that source is HEVC already. The Home app switches to it on slow connections such as LTE. Without such a source, live view over LTE shows no picture.
+Away from home, a camera with a second [source](/cameras/add-camera#sources-and-roles) in **Low Resolution** or **Mid Resolution** also offers a small picture from it, transcoded on the server unless that source is HEVC already. The transcoded picture takes the aspect ratio set under **Interface** in the [camera settings](/cameras/settings). The Home app switches to it on slow connections such as LTE. Without such a source, live view over LTE shows no picture.
 
 Cameras with an H.264 main stream stay on the classic HomeKit camera services, because Apple's new remote view only takes HEVC. Any other codec, MJPEG for example, uses the classic services too, with the stream transcoded to H.264. The plugin picks the path from the main stream's codec when the camera is published.
 
-If your home stays on iOS 26 or older, turn on **Force legacy path** under **Secure Video** in the camera's settings. The camera then uses the classic services and its HEVC stream is transcoded to H.264. As with MJPEG, only the codec changes: the picture keeps the camera's size and frame rate.
+If your home stays on iOS 26 or older, turn on **Force legacy path** under **Secure Video** in the camera's settings. The camera then uses the classic services and its HEVC stream is transcoded to H.264. As with MJPEG, the picture takes the width the Home app asks for, never more than the camera sends. Aspect ratio and frame rate stay the camera's, and the bitrate follows the picture size.
+
+On the classic services, remote view starts small and the Home app asks for more once the connection holds. Until then, a camera with a source in **Low Resolution** or **Mid Resolution** sends that one, transcoded to H.264 when needed, and then moves to the main stream without a break. A transcoded small picture takes the aspect ratio set under **Interface**, as on the Secure Video path.
 
 ## What ends up where
 
@@ -62,9 +64,12 @@ Each camera's HomeKit settings include:
 
 - **QR code and PIN.** The pairing details for that camera.
 - **Force legacy path.** Under **Secure Video**: keeps the camera on the classic HomeKit services, see [Secure Video on iOS 27](#secure-video-on-ios-27). Off by default.
-- **Allow transcoding for mobile data.** Under **Secure Video** as well: lets camera.ui transcode a low or mid resolution source that is not HEVC, so remote view works over LTE. An HEVC source always goes out as it is. On by default; when off, such a camera may show no picture over LTE. The log says on each remote start which source goes out and whether it is transcoded.
+- **Allow transcoding for mobile data.** Under **Secure Video** as well: lets camera.ui transcode a low or mid resolution source that is not HEVC, so remote view works over LTE. An HEVC source goes out as it is unless **Always transcode** is on. On by default; when off, such a camera may show no picture over LTE. The log says on each remote start which source goes out and whether it is transcoded.
 - **Use Hardware Acceleration.** Uses the GPU, if one is available, when a stream has to be transcoded. On by default.
 - **Use Hardware Acceleration for HKSV.** The same for HomeKit Secure Video recordings. On by default; turn it off for a camera whose recordings break up.
+- **Always transcode.** Under **Advanced**: transcodes live view even when HomeKit could play the camera's stream as it is, on the classic and the Secure Video path. Puts extra load on the server. Recordings have a switch of their own. Off by default.
+- **Stream as requested.** Under **Advanced** as well: sends live view in the size, frame rate and bitrate HomeKit asks for, so every live stream is transcoded. A source smaller than the request keeps its size. Off by default.
+- **Always transcode for HKSV.** Under **Advanced** as well: transcodes HomeKit Secure Video recordings even when HomeKit could take the camera's stream as it is. They are then H.264 in the size, frame rate and bitrate HomeKit asks for. Puts extra load on the server. Off by default.
 - **Override Port and mDNS advertiser.** Under **Advanced**: a fixed port instead of an automatic one (0), and the backend that announces the camera on the network.
 - **Reset Pairing.** Generate a new code and re-add the camera if pairing breaks.
 
