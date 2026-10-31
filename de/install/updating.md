@@ -58,4 +58,4 @@ Um den **Server** zu aktualisieren, nutze die **Updates**-Seite oder führe `cam
 
 ## Die Mobile-Apps aktualisieren
 
-Die [Mobile-Apps](/de/install/mobile) aktualisieren sich über den App Store und Google Play (während der Beta: TestFlight auf iOS, der Testing-Track im Play Store auf Android) und erhalten zusätzlich Over-the-Air-Updates der Oberfläche.
+Die [Mobile-Apps](/de/install/mobile) aktualisieren sich über den App Store und Google Play (auf iOS während der Beta: TestFlight) und erhalten zusätzlich Over-the-Air-Updates der Oberfläche.

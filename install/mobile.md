@@ -7,9 +7,9 @@ The iOS and Android apps are viewers for live view, recordings and notifications
 ## Download
 
 - **iOS / iPadOS.** Currently in **beta**. Join through [TestFlight](https://testflight.apple.com/join/wbzK69Wu): install Apple's TestFlight app, then open the invite link on your device.[^appstore]
-- **Android.** Currently in **beta**. Join the [beta group](https://groups.google.com/a/cameraui.com/g/cameraui-beta) with the Google account you use in the Play Store, become a [tester](https://play.google.com/apps/testing/com.cameraui.app), then install from [Google Play](https://play.google.com/store/apps/details?id=com.cameraui.app).[^androidbeta]
+- **Android.** Currently in **open beta**. Install it from [Google Play](https://play.google.com/store/apps/details?id=com.cameraui.app), no invite needed.[^androidbeta]
 
-<!-- TODO: swap the beta links (TestFlight, Play Store testing) for the public App Store and Play Store listings on release -->
+<!-- TODO: on release, swap the TestFlight link for the App Store listing and drop the beta wording for Android -->
 
 | Platform | Requirement |
 |---|---|
@@ -42,10 +42,10 @@ A signed-in app receives push notifications for events. What you get alerted abo
 
 ## Updates
 
-The apps update through the App Store and Google Play (during the beta: TestFlight on iOS, the Play Store testing track on Android), plus over-the-air updates to the interface. See [Updating](/install/updating).
+The apps update through the App Store and Google Play (on iOS during the beta: TestFlight), plus over-the-air updates to the interface. See [Updating](/install/updating).
 
 If the server or its NVR plugin is older than the app needs, the app shows **Update recommended** with the version it needs and the one installed. Update server and plugin on the [Updates page](/install/updating#the-updates-page). **Got it** hides the notice for these versions.
 
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback, export, face recognition, semantic search, and AI descriptions, plus push notifications. Live view and real-time detection are free.
 [^appstore]: The app moves to the App Store with the public release.
-[^androidbeta]: Google requires testers to stay enrolled for at least 14 days before the app can go public, so please stay opted in. For beta builds, turn on **Beta updates** under **Settings → System** in the app.
+[^androidbeta]: For beta builds, turn on **Beta updates** under **Settings → System** in the app.

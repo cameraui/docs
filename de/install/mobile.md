@@ -7,9 +7,9 @@ Die Apps für iOS und Android sind Viewer für Live-Ansicht, Aufnahmen und Benac
 ## Download
 
 - **iOS / iPadOS.** Derzeit in der **Beta**. Tritt über [TestFlight](https://testflight.apple.com/join/wbzK69Wu) bei: Apples TestFlight-App installieren, dann den Einladungslink auf dem Gerät öffnen.[^appstore]
-- **Android.** Derzeit in der **Beta**. Tritt der [Beta-Gruppe](https://groups.google.com/a/cameraui.com/g/cameraui-beta) mit dem Google-Konto bei, das du im Play Store nutzt, werde [Tester](https://play.google.com/apps/testing/com.cameraui.app), und installiere dann über [Google Play](https://play.google.com/store/apps/details?id=com.cameraui.app).[^androidbeta]
+- **Android.** Derzeit in der **offenen Beta**. Installiere die App über [Google Play](https://play.google.com/store/apps/details?id=com.cameraui.app), eine Einladung ist nicht nötig.[^androidbeta]
 
-<!-- TODO: swap the beta links (TestFlight, Play Store testing) for the public App Store and Play Store listings on release -->
+<!-- TODO: on release, swap the TestFlight link for the App Store listing and drop the beta wording for Android -->
 
 | Plattform | Voraussetzung |
 |---|---|
@@ -42,10 +42,10 @@ Die **App-Sperre mit Face ID / Fingerabdruck** in den Einstellungen der App verl
 
 ## Updates
 
-Die Apps aktualisieren sich über den App Store und Google Play (während der Beta: TestFlight auf iOS, der Testing-Track im Play Store auf Android), dazu kommen Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).
+Die Apps aktualisieren sich über den App Store und Google Play (auf iOS während der Beta: TestFlight), dazu kommen Over-the-Air-Updates der Oberfläche. Siehe [Aktualisieren](/de/install/updating).
 
 Ist der Server oder sein NVR-Plugin älter, als die App braucht, zeigt sie **Update empfohlen** mit der nötigen und der installierten Version. Server und Plugin aktualisierst du auf der [Updates-Seite](/de/install/updating#die-updates-seite). **Verstanden** blendet den Hinweis für diese Versionen aus.
 
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe, Export, Gesichtserkennung, semantische Suche und KI-Beschreibungen, dazu Push-Benachrichtigungen. Live-Ansicht und Echtzeit-Erkennung sind kostenlos.
 [^appstore]: Mit dem öffentlichen Release wechselt die App in den App Store.
-[^androidbeta]: Google verlangt, dass Tester mindestens 14 Tage angemeldet bleiben, bevor die App öffentlich gehen kann, bleib also bitte dabei. Für Beta-Builds aktivierst du in der App unter **Einstellungen → System** die Option **Beta-Updates**.
+[^androidbeta]: Für Beta-Builds aktivierst du in der App unter **Einstellungen → System** die Option **Beta-Updates**.

@@ -58,4 +58,4 @@ To update the **server**, use the **Updates** page, or run `cameraui update-serv
 
 ## Updating the mobile apps
 
-The [mobile apps](/install/mobile) update through the App Store and Google Play (during the beta: TestFlight on iOS, the Play Store testing track on Android), and also receive over-the-air updates to the interface.
+The [mobile apps](/install/mobile) update through the App Store and Google Play (on iOS during the beta: TestFlight), and also receive over-the-air updates to the interface.
