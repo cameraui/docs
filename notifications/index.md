@@ -45,6 +45,7 @@ Each camera has its own notification settings, in the camera's [settings](/camer
 
 - **Send notifications.** The camera's own switch. Off means this camera never pushes, while its events still land on the timeline and in the app. On by default.
 - **Which objects alert you.** Set by the camera's [alert zones](/cameras/zones-and-masks#alert-zones), not here. Without an alert zone the camera alerts on everything it detects. Draw one to narrow it down by type and by area.
+- **Cameras without object detection.** They push **Motion Detected** with a picture instead, once per event. Their [motion zones](/cameras/zones-and-masks#motion-zones) decide where motion counts, and the cooldown applies.
 - **Which faces and plates alert you.** Also set by the [alert zones](/cameras/zones-and-masks#who-exactly-and-which-plate). A zone can name the people it pushes for, with entries for unknown faces and for anyone enrolled, and the same for plates. Nothing selected notifies for everyone.
 - **Notify for sounds.** Which sounds, such as alarms or glass breaking.
 - **Notify for sensors.** A doorbell, a contact sensor, a siren, or a security system.

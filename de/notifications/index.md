@@ -45,6 +45,7 @@ Jede Kamera hat eigene Benachrichtigungs-Einstellungen, in den [Einstellungen](/
 
 - **Benachrichtigungen senden.** Der eigene Schalter der Kamera. Aus heißt, diese Kamera sendet nie einen Push, ihre Ereignisse landen aber weiter auf der Timeline und in der App. Standardmäßig an.
 - **Worüber du alarmiert wirst.** Legen die [Alarmzonen](/de/cameras/zones-and-masks#alarmzonen) der Kamera fest, nicht diese Einstellungen. Ohne Alarmzone alarmiert die Kamera bei allem, was sie erkennt. Zeichne eine, um es nach Typ und Bereich einzugrenzen.
+- **Kameras ohne Objekterkennung.** Sie senden stattdessen **Motion Detected** mit Bild, einmal pro Ereignis. Ihre [Bewegungszonen](/de/cameras/zones-and-masks#bewegungszonen) legen fest, wo Bewegung zählt, und die Sperrzeit gilt.
 - **Welche Gesichter und Kennzeichen dich alarmieren.** Legen ebenfalls die [Alarmzonen](/de/cameras/zones-and-masks#wer-genau-und-welches-kennzeichen) fest. Eine Zone kann benennen, für wen sie meldet, mit Einträgen für unbekannte Gesichter und für alle Hinterlegten, und dasselbe für Kennzeichen. Nichts ausgewählt meldet für alle.
 - **Bei Geräuschen melden.** Welche Geräusche, etwa Alarme oder Glasbruch.
 - **Bei Sensoren melden.** Eine Türklingel, ein Kontaktsensor, eine Sirene oder eine Alarmanlage.
