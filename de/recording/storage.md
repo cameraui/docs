@@ -40,14 +40,18 @@ Ereignis-Aufnahme braucht einen Bruchteil davon, je nachdem wie belebt die Szene
 ## Wie lange sie behalten werden
 
 - **Retention (Days).** Material bis zu so vielen Tagen behalten (0 bedeutet keine Tagesgrenze).
-- **Max Storage (GB).** Den gesamten Platz begrenzen, den Aufnahmen nutzen dürfen (0 bedeutet keine Grenze).
+- **Max Storage (GB).** Den gesamten Platz begrenzen, den Aufnahmen nutzen dürfen (0 bedeutet keine Grenze). Darüber werden die ältesten Aufnahmen gelöscht, auch mit **Strict**.
 
-Ist eine Grenze erreicht, entscheidet der **Retention Mode**:
+Wird der Platz auf der Disk knapp, entscheidet der **Retention Mode**:
 
 - **Overwrite** (Standard). Die ältesten Aufnahmen werden gelöscht, um Platz zu schaffen. Die Aufnahme pausiert nur, wenn andere Daten die Disk füllen und keine älteren Aufnahmen mehr zu löschen sind.
-- **Strict.** Nichts wird über das Aufbewahrungs-Fenster hinaus gelöscht. Läuft die Disk voll, pausiert die Aufnahme, bis du Platz freigibst.
+- **Strict.** Nichts, was jünger als das Aufbewahrungs-Fenster ist, wird gelöscht. Läuft die Disk voll, pausiert die Aufnahme, bis du Platz freigibst.
 
 Die Bereinigung nimmt die ältesten Stunden aller Kameras nebeneinander, eine ruhige Kamera verliert also nicht ihren ganzen Verlauf, während eine belebte alles behält, und sie hört auf, sobald genug Platz frei ist. [Favoriten](/de/recording/browsing#favoriten) bleiben ausgespart und abspielbar, egal wie alt sie sind.
+
+### Grenzen pro Kamera
+
+Mit **Own Storage Limits** in den Einstellungen einer Kamera bekommt sie eigene Werte für **Retention (Days)** und **Max Storage (GB)**. Ihre Aufbewahrung ersetzt die globale, kürzer oder länger, und ihre Ereignisse gehen mit ihren Aufnahmen. Ihre Grenze löscht nur ihre eigenen ältesten Aufnahmen, auch mit **Strict**. Das globale **Max Storage** und der freie Speicher gelten weiter für alle Kameras, eine längere Aufbewahrung hält also nur, solange beide Platz lassen.
 
 ## Freier Speicher
 
@@ -67,7 +71,7 @@ Um das Material zu behalten, lege eine leere Datei namens `.cameraui-keep` in de
 
 <Shot src="/img/recording/storage-stats.png" alt="Speicher-Nutzungsstatistik" />
 
-**Metrics → Speicher** zeigt die Belegung in der **Speicherübersicht** und pro Kamera in der Tabelle **Kameraspeicher**: Größe auf der Disk, gehaltene Tage Material, Aufnahme-Rate pro Tag und Modus.
+**Metrics → Speicher** zeigt die Belegung in der **Speicherübersicht** und pro Kamera in der Tabelle **Kameraspeicher**: Größe auf der Disk, gehaltene Tage Material, Aufnahme-Rate pro Tag, Modus und ihre eigenen Grenzen.
 
 Eine Warnung, dass das Speichervolumen klein ist, heißt: Es bleibt wenig Platz für Aufnahmen, sie rotieren schnell heraus. Meist ist die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe den Speicherpfad. Eigene Warnungen erscheinen, wenn der freie Speicher unter 8% fällt und sobald die Aufnahme aus Platzmangel pausiert.
 

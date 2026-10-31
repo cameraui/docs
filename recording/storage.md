@@ -40,14 +40,18 @@ Event recording uses a fraction of that, depending on how busy the scene is. Whe
 ## How long they're kept
 
 - **Retention (Days).** Keep footage for up to this many days (0 means no day limit).
-- **Max Storage (GB).** Cap the total space recordings may use (0 means no cap).
+- **Max Storage (GB).** Cap the total space recordings may use (0 means no cap). Beyond it the oldest recordings are deleted, also with **Strict**.
 
-When a limit is reached, the **Retention Mode** decides:
+When the disk runs low, the **Retention Mode** decides:
 
 - **Overwrite** (default). The oldest recordings are deleted to make room. Recording only pauses when other data fills the disk and no older recordings are left to delete.
-- **Strict.** Nothing is deleted beyond the retention window. If the disk fills, recording pauses until you free space.
+- **Strict.** Nothing younger than the retention window is deleted. If the disk fills, recording pauses until you free space.
 
 Cleanup takes the oldest hours of all cameras side by side, so a quiet camera cannot lose its whole history while a busy one keeps everything, and it stops once enough space is free. [Favorites](/recording/browsing#favorites) are skipped and stay playable however old they are.
+
+### Limits per camera
+
+With **Own Storage Limits** on in a camera's settings, the camera gets its own **Retention (Days)** and **Max Storage (GB)**. Its retention replaces the global one, shorter or longer, and its events go with its footage. Its cap deletes only its own oldest recordings, also with **Strict**. The global **Max Storage** and the free disk space still count for all cameras, so a longer retention only holds while they leave room.
 
 ## Free disk space
 
@@ -67,7 +71,7 @@ To keep that footage, put an empty file named `.cameraui-keep` into the camera's
 
 <Shot src="/img/recording/storage-stats.png" alt="Storage usage statistics" />
 
-**Metrics → Storage** shows disk usage in the **Storage Overview** and, in the **Camera Storage** table, per camera: size on disk, days of footage held, recording rate per day, and mode.
+**Metrics → Storage** shows disk usage in the **Storage Overview** and, in the **Camera Storage** table, per camera: size on disk, days of footage held, recording rate per day, mode, and its own limits.
 
 A warning that the storage volume is small means it has little room for recordings, so they rotate out quickly. Usually the larger disk you meant to use isn't mounted, so check the storage path. Separate warnings appear when free space drops below 8% and once recording has paused for lack of space.
 
