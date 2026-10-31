@@ -10,7 +10,7 @@
     "docs:dev": "vitepress dev",
     "docs:preview": "vitepress preview",
     "install-updates": "npm i --save",
-    "update": "updates -M npm,pypi,go,cargo,docker,make --update ./"
+    "update": "updates -M npm,pypi,go,cargo,docker --update ./"
   },
   "dependencies": {
     "medium-zoom": "^1.1.2",
