@@ -22,7 +22,9 @@ The plugin offers every Home Assistant entity it can map, under **Discovered** o
 - **Sensors.** Motion, occupancy, contact, doorbell, smoke, leak, gas, carbon monoxide, and other supported types become camera.ui [sensors](/sensors/).
 - **Controls.** Locks, garage doors, alarm panels, switches, lights, and sirens come in as controls. Operating one in camera.ui operates it in Home Assistant.
 
-Unsupported entity types never show up. To keep specific entities out of the offer as well, list them under **Excluded Entities**.
+Binary sensors with the device class Sound come in as audio sensors. Home Assistant has no doorbell class for binary sensors, so a doorbell button exposed as one goes under **Doorbell Entities** in the plugin settings, comma-separated. It is then offered as a doorbell that rings when the sensor turns on.
+
+Unsupported entity types never show up. Entities you don't want can be [hidden](/sensors/setup#the-sensors-page) in the Discovered list.
 
 ## Using imported sensors
 

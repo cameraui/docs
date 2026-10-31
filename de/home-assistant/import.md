@@ -22,7 +22,9 @@ Das Plugin bietet jede Home-Assistant-Entität an, die es abbilden kann, unter *
 - **Sensoren.** Bewegung, Belegung, Kontakt, Türklingel, Rauch, Wasser, Gas, Kohlenmonoxid und weitere unterstützte Typen werden zu camera.ui-[Sensoren](/de/sensors/).
 - **Steuerungen.** Schlösser, Garagentore, Alarmanlagen, Schalter, Lichter und Sirenen kommen als Steuerungen herein. Bedienst du eine in camera.ui, bedienst du sie in Home Assistant.
 
-Nicht unterstützte Entitätstypen tauchen gar nicht erst auf. Um bestimmte Entitäten auch aus dem Angebot herauszuhalten, trage sie unter **Excluded Entities** ein.
+Binärsensoren mit der Geräteklasse Sound kommen als Audiosensoren herein. Home Assistant kennt keine Türklingel-Klasse für Binärsensoren, ein Klingelknopf, der als Binärsensor erscheint, gehört deshalb unter **Doorbell Entities** in den Plugin-Einstellungen, durch Kommas getrennt. Er wird dann als Türklingel angeboten, die klingelt, sobald der Sensor einschaltet.
+
+Nicht unterstützte Entitätstypen tauchen gar nicht erst auf. Entitäten, die du nicht willst, kannst du in der Liste Entdeckt [ausblenden](/de/sensors/setup#die-sensoren-seite).
 
 ## Importierte Sensoren nutzen
 

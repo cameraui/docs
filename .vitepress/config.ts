@@ -165,6 +165,9 @@ export default withMermaid({
           pattern: EDIT_PATTERN,
           text: 'Edit this page on GitHub',
         },
+        footer: {
+          message: 'All product names, logos and brands belong to their respective owners. Naming them does not imply any affiliation or endorsement.',
+        },
       },
     },
     de: {
@@ -181,6 +184,9 @@ export default withMermaid({
         docFooter: {
           prev: 'Zurück',
           next: 'Weiter',
+        },
+        footer: {
+          message: 'Alle Produktnamen, Logos und Marken gehören ihren jeweiligen Inhabern. Ihre Nennung bedeutet keine Verbindung oder Empfehlung.',
         },
         outline: { label: 'Auf dieser Seite' },
         lastUpdated: { text: 'Zuletzt aktualisiert' },

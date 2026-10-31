@@ -4,7 +4,7 @@ Die Desktop-App ist die empfohlene Art, camera.ui auf **macOS und Windows** zu b
 
 ## Download
 
-Die Installer liegen hier und auf der [Download-Seite](https://cameraui.com/#download). Die Links zeigen immer auf das neueste Release.
+Die Installer liegen hier und auf der [Download-Seite](https://cameraui.com/download). Die Links zeigen immer auf das neueste Release.
 
 | Plattform | Download |
 |---|---|

@@ -115,3 +115,14 @@
 .DocSearch {
   --docsearch-primary-color: var(--cui-primary-500);
 }
+
+/* the default theme hides the footer on pages with a sidebar, the trademark note has to show there too */
+.Layout .VPFooter.has-sidebar {
+  display: block !important;
+}
+
+@media (min-width: 960px) {
+  .Layout .VPFooter.has-sidebar {
+    padding-left: var(--vp-sidebar-width);
+  }
+}
