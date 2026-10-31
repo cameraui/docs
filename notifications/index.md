@@ -48,7 +48,7 @@ Each camera has its own notification settings, in the camera's [settings](/camer
 - **Cameras without object detection.** They push **Motion Detected** with a picture instead, once per event. Their [motion zones](/cameras/zones-and-masks#motion-zones) decide where motion counts, and the cooldown applies.
 - **Which faces and plates alert you.** Also set by the [alert zones](/cameras/zones-and-masks#who-exactly-and-which-plate). A zone can name the people it pushes for, with entries for unknown faces and for anyone enrolled, and the same for plates. Nothing selected notifies for everyone.
 - **Notify for sounds.** Which sounds, such as alarms or glass breaking.
-- **Notify for sensors.** A doorbell, a contact sensor, a siren, or a security system.
+- **Notify for sensors.** Which sensor triggers push, such as a doorbell, a contact, a lock, a garage door or a smoke sensor. Switches, lights and power never push.
 - **Notification speed.** How long to wait for a good picture. **Immediate** sends right away, with a picture only if one is ready. **Balanced** (the default) waits up to 2 seconds, **Best** up to 4. A recognized face always sends immediately, and the picture is updated quietly afterwards.
 - **Cooldown (seconds).** A quiet period after an alert. 30 seconds by default, up to 600. Doorbell and alarms bypass it.
 - **Video in push.** Attach a short clip of the moment to the push. On iPhone it plays right in the notification, on Android the expanded notification animates the clip frame by frame,[^androidframes] and the in-app alert opens with a player. Uses the lowest recorded quality. Off by default.

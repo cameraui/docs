@@ -25,6 +25,8 @@ The other filters:
 - **Confidence.** Hide low-confidence detections.
 - **Grid search.** With a single camera selected, draw a region on its snapshot to only show events detected inside that part of the frame.
 
+Without a label or trigger picked, the list holds the events described in [What the views list](/detection/events-and-detections#what-the-views-list). The filters are saved to your account, the search and the time range are not.
+
 ## View options
 
 Behind the gear, top right:

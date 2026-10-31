@@ -25,6 +25,8 @@ Die weiteren Filter:
 - **Konfidenz.** Erkennungen mit niedriger Konfidenz ausblenden.
 - **Rastersuche.** Ist genau eine Kamera ausgewählt, kannst du einen Bereich auf ihrem Snapshot markieren, um nur Ereignisse anzuzeigen, die in diesem Teil des Bildes erkannt wurden.
 
+Ohne gewähltes Label und ohne Auslöser zeigt die Liste die Ereignisse aus [Was die Ansichten zeigen](/de/detection/events-and-detections#was-die-ansichten-zeigen). Die Filter werden in deinem Konto gespeichert, die Suche und der Zeitraum nicht.
+
 ## Ansichtsoptionen
 
 Hinter dem Zahnrad oben rechts:

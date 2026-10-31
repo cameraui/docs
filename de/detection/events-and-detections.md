@@ -22,6 +22,10 @@ Wenn Erkennung auslöst, gruppiert camera.ui das Gefundene zu einem **Ereignis**
 
 Du kannst auf einen Türklingel-Druck (Trigger) filtern und alarmieren oder nur, wenn eine Person gesehen wird (Erkennung).
 
+## Was die Ansichten zeigen
+
+Die [Startseite](/de/cameras/home) und [Aufnahmen](/de/recording/browsing) zeigen ein Ereignis, wenn es ein Objekt, einen Sensor-Trigger oder ein Alarmgeräusch enthält: Glasbruch, einen Schrei, einen Schuss, einen Alarm, eine Sirene, einen Rauch- oder Autoalarm oder eine Türklingel. Ereignisse mit nur Bewegung oder anderen Geräuschen, etwa Sprache oder Hundebellen, bleiben draußen, bis du nach ihnen filterst. Auf der [Timeline](/de/recording/timeline-playback) behalten sie ihre schmale Leiste.
+
 ## Das Bild eines Ereignisses
 
 Jede Karte, jeder Push und jede KI-Beschreibung zeigt ein Bild für den Moment, und camera.ui wählt Frame und Ausschnitt dafür. Es rahmt das Motiv, eine Person kommt also als ganze Person an und nicht als Nahaufnahme einer Schulter. Was sich zur selben Zeit im Bild bewegt, kommt mit in den Rahmen, was still steht, nicht. Wird später im selben Ereignis ein Gesicht erkannt, fällt der „Unknown"-Ausschnitt weg, statt neben dem Namen stehen zu bleiben.

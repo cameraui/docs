@@ -22,6 +22,10 @@ When detection fires, camera.ui groups what it finds into an **event**.
 
 You can filter and alert on a doorbell press (a trigger) or only when a person is seen (a detection).
 
+## What the views list
+
+[Home](/cameras/home) and [Recordings](/recording/browsing) list an event when it holds an object, a sensor trigger or an alarm sound: glass breaking, a scream, a gunshot, an alarm, a siren, a smoke or car alarm, or a doorbell. Events with only motion or other sounds, such as speech or a dog barking, stay out until you filter for them. On the [timeline](/recording/timeline-playback) they keep their thin bar.
+
 ## The picture an event carries
 
 Every card, push and AI description shows one picture for the moment, and camera.ui picks the frame and the crop for it. It frames the subject, so a person arrives as a whole person, not as a close-up of a shoulder. Whatever moves in the picture at the same time is framed with it, whatever stands still is not. When a face is recognized later in the same event, the "Unknown" crop is dropped rather than kept alongside the name.
