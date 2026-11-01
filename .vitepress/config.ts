@@ -10,6 +10,9 @@ import type { SiteConfig } from 'vitepress';
 
 type Lang = 'en' | 'de';
 
+const SITE_URL = 'https://docs.cameraui.com';
+const DESCRIPTION_LENGTH = 155;
+
 // Build a localized sidebar from the shared IA definition (nav.json).
 // `prefix` is '' for the English root locale and '/de' for German.
 function sidebar(lang: Lang, prefix = '') {
@@ -51,6 +54,32 @@ function pageFile(ids: Map<string, Set<string>>, path: string): string | undefin
   return candidates.find((file) => ids.has(file));
 }
 
+function plainText(markdown: string): string {
+  return markdown
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/\[\^[^\]]*\]/g, '')
+    .replace(/<[^>]+>|\*+|`/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function shorten(text: string): string {
+  if (text.length <= DESCRIPTION_LENGTH) return text;
+
+  const cut = text.slice(0, DESCRIPTION_LENGTH);
+  const sentenceEnd = cut.lastIndexOf('. ');
+
+  return sentenceEnd > DESCRIPTION_LENGTH / 2 ? cut.slice(0, sentenceEnd + 1) : `${cut.slice(0, cut.lastIndexOf(' '))}…`;
+}
+
+async function firstParagraph(file: string): Promise<string | undefined> {
+  const source = await readFile(file, 'utf8');
+  const blocks = source.replace(/^---\n[\s\S]*?\n---\n/, '').split(/\n\s*\n/);
+  const paragraph = blocks.find((block) => /^(\*\*|\[|`)?\p{L}/u.test(block.trim()));
+
+  return paragraph && shorten(plainText(paragraph));
+}
+
 // vitepress' dead-link check drops the #hash, so anchors are checked against the rendered ids
 async function checkAnchors(siteConfig: SiteConfig) {
   const { outDir } = siteConfig;
@@ -80,13 +109,28 @@ async function checkAnchors(siteConfig: SiteConfig) {
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
   title: 'camera.ui',
-  description: 'Self-hosted camera and NVR platform — documentation.',
+  description: 'Documentation for camera.ui, the self-hosted camera and NVR platform.',
   cleanUrls: true,
   lastUpdated: true,
   ignoreDeadLinks: false,
-  sitemap: { hostname: 'https://docs.cameraui.com' },
+  sitemap: { hostname: SITE_URL },
   srcExclude: ['README.md'],
   buildEnd: checkAnchors,
+
+  async transformPageData(pageData, { siteConfig }) {
+    pageData.description ||= await firstParagraph(join(siteConfig.srcDir, pageData.relativePath));
+  },
+
+  transformHead({ pageData, title, description }) {
+    const url = `${SITE_URL}/${pageData.relativePath.replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '')}`;
+
+    return [
+      ['link', { rel: 'canonical', href: url }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:url', content: url }],
+    ];
+  },
 
   head: [
     [
