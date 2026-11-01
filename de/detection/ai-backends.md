@@ -38,7 +38,7 @@ Darunter liegt **Statische Objekte ignorieren**, standardmäßig an, siehe [Unbe
 
 Ein Erkennungsmodell arbeitet auf einem kleinen Quadrat, oft 640 Pixel. In dieses Quadrat gequetscht, bleiben von einer Person am Ende der Einfahrt in einem 4K-Frame nur ein paar Pixel übrig. camera.ui schneidet deshalb die Bereiche mit Bewegung aus dem Frame in voller Auflösung heraus, bei verteilter Bewegung auch mehrere pro Frame, lässt das Modell darauf laufen und legt die Boxen zurück aufs Bild. So werden auch kleine und entfernte Objekte gefunden. Nichts einzurichten.
 
-Bewegt sich nichts, geht der ganze Frame durch. Die Spalte **Zoom** in den Metriken unten zeigt, wie oft eine Kamera so gearbeitet hat.
+Bewegt sich nichts, geht der ganze Frame durch. Das gilt auch, wenn jedes Fenster an den [Objektzonen](/de/cameras/zones-and-masks#objektzonen) vorbeiginge: Ein Fenster, das keine davon erreicht, fällt weg, denn was darin gefunden wird, zählt nicht. Die Spalte **Zoom** in den Metriken unten zeigt, wie oft eine Kamera so gearbeitet hat.
 
 ## Was Erkennung kostet
 

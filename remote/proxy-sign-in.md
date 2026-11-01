@@ -35,9 +35,10 @@ A variable takes precedence over the file. The port needs `trust`, `secret` or b
 |---|---|---|
 | Authelia | `Remote-User` | `https://auth.example.com/logout` |
 | Authentik | `X-authentik-username` | `https://nvr.example.com/outpost.goauthentik.io/sign_out` |
-| oauth2-proxy | `X-Forwarded-Preferred-Username` | `https://nvr.example.com/oauth2/sign_out` |
+| oauth2-proxy in front of camera.ui | `X-Forwarded-Preferred-Username` | `https://nvr.example.com/oauth2/sign_out` |
+| oauth2-proxy with forward auth | `X-Auth-Request-Preferred-Username` | `https://nvr.example.com/oauth2/sign_out` |
 
-With forward auth, the web server has to copy the header from the auth response onto the request: `copy_headers` in Caddy, `authResponseHeaders` in Traefik, `auth_request_set` plus `proxy_set_header` in nginx.
+With forward auth, the web server has to copy the header from the auth response onto the request: `copy_headers` in Caddy, `authResponseHeaders` in Traefik, `auth_request_set` plus `proxy_set_header` in nginx. oauth2-proxy only sends its header with `--set-xauthrequest`.
 
 ## Who may sign in
 

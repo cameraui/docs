@@ -38,7 +38,7 @@ Below it is **Ignore stationary objects**, on by default, see [Stationary object
 
 A detection model works on a small square, often 640 pixels. Squeezed into it, a 4K frame leaves a person at the end of the driveway a few pixels tall. camera.ui instead cuts the moving areas out of the full-resolution frame, several per frame if the movement is spread out, runs the model on those and maps the boxes back onto the picture, so small and distant objects get found. Nothing to set up.
 
-When nothing is moving, the whole frame goes through. The **Zoom** column in the metrics below shows how often a camera worked this way.
+When nothing is moving, the whole frame goes through. The same happens when every window would miss the [object zones](/cameras/zones-and-masks#object-zones): a window that reaches none of them is skipped, since nothing found in it would count. The **Zoom** column in the metrics below shows how often a camera worked this way.
 
 ## What detection costs
 
