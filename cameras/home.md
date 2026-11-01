@@ -59,7 +59,7 @@ The badge in the top right corner of a card shows how old its picture is, counti
 
 It reads `now` for the first second, then seconds (`14s`), minutes (`3min`), hours (`2h`), days (`5d`), months (`2m`), and years (`1y`).
 
-The badge resets with every new picture. On **Regularly** it stays around the interval, and a badge climbing well past it means the camera is not delivering, usually because it is unreachable. On **When viewed** and **Only on request** a high value is normal until the next picture is taken.[^badge]
+The badge resets with every new picture, and a small spinner next to the age shows the update. While a card is open it stays around the interval on **Regularly** and around the age you set on **When viewed**. A badge climbing well past that means the camera is not delivering, usually because it is unreachable. On **Only on request** a high value is normal until the next picture is taken.[^badge]
 
 ## Selection mode
 

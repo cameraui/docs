@@ -59,7 +59,7 @@ Das Abzeichen oben rechts auf einer Karte zeigt, wie alt ihr Bild ist, und zähl
 
 Es steht `now` in der ersten Sekunde, danach Sekunden (`14s`), Minuten (`3min`), Stunden (`2h`), Tage (`5d`), Monate (`2m`) und Jahre (`1y`).
 
-Der Wert springt bei jedem neuen Bild zurück. Bei **Regelmäßig** bleibt er etwa im Bereich des Intervalls, klettert er deutlich darüber, liefert die Kamera nicht, meist weil sie nicht erreichbar ist. Bei **Beim Ansehen** und **Nur auf Anfrage** ist ein hoher Wert bis zum nächsten Bild normal.[^badge]
+Der Wert springt bei jedem neuen Bild zurück, ein kleiner Spinner neben dem Alter zeigt die Aktualisierung. Solange eine Karte offen ist, bleibt er bei **Regelmäßig** etwa im Bereich des Intervalls und bei **Beim Ansehen** im Bereich des eingestellten Alters. Klettert er deutlich darüber, liefert die Kamera nicht, meist weil sie nicht erreichbar ist. Bei **Nur auf Anfrage** ist ein hoher Wert bis zum nächsten Bild normal.[^badge]
 
 ## Auswahlmodus
 
