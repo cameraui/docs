@@ -49,7 +49,7 @@ How much space [recordings](/recording/storage) need depends on your camera coun
 
 Use a **dedicated local disk** for recordings, separate from the system disk and not a network share (NAS). Continuous recording writes constantly, and the recordings folder also holds the databases that index your events, which network shares cannot lock reliably. See [Storage & retention](/recording/storage#where-recordings-are-stored).
 
-camera.ui shows each camera's recording rate per day and lets you cap usage with the **Quota** and **Retention** settings.
+camera.ui shows each camera's recording rate per day and lets you cap usage with **Retention (Days)** and **Max Storage (GB)**, globally or per camera.
 
 ## Desktop app
 

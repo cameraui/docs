@@ -6,7 +6,7 @@ camera.ui ist **server-zentral**: Ein einzelner Server, der auf deiner Hardware 
 
 Der camera.ui-Server bringt alles mit, was er zum Laufen braucht: die Weboberfläche, eine eingebaute **Streaming-Engine** (unser eigener go2rtc-Build) für Live-Video und eine eigene **Video-Verarbeitung** zum Dekodieren und Aufnehmen. Deine Einstellungen, Kameras, Benutzer und Ereignisse liegen in einer kleinen **lokalen Datenbank** auf derselben Maschine.
 
-Nichts verlässt dein Netzwerk, solange du nicht den [Remote-Zugriff](/de/remote/) aktivierst. Es gibt keine externe Datenbank, und für den Betrieb eines Servers ist kein Cloud-Account nötig.
+Es gibt keine externe Datenbank, und für den Betrieb eines Servers ist kein Cloud-Account nötig. [Remote-Zugriff](/de/remote/) ist optional.
 
 ## Das große Ganze
 
@@ -75,4 +75,4 @@ Von außerhalb deines Netzwerks nutzt du camera.ui Cloud, einen Cloudflare-Tunne
 
 [^detect]: Erkennung benötigt ein Detection-Plugin, das zu deiner Hardware passt (CoreML, ONNX, OpenVINO, NCNN oder einen Edge-Beschleuniger wie Coral oder Hailo). Siehe [Erkennung & KI](/de/detection/).
 [^license]: Ein aktives camera.ui-Abo deckt Aufnahmen (NVR) und die darauf aufbauenden Funktionen ab, etwa Wiedergabe, Export, Gesichtserkennung, semantische Suche und KI-Beschreibungen, dazu Push-Benachrichtigungen. Live-Ansicht und Echtzeit-Erkennung sind kostenlos.
-[^cloud-optional]: camera.ui Cloud ist optional. In deinem eigenen Netzwerk bleibt alles lokal, und dein Server muss sich nie mit der Cloud verbinden. Siehe [Von außen erreichen](#von-außen-erreichen).
+[^cloud-optional]: camera.ui Cloud ist optional. In deinem eigenen Netzwerk verbinden sich die Apps direkt mit deinem Server. Siehe [Von außen erreichen](#von-außen-erreichen).

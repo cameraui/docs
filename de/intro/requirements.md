@@ -49,7 +49,7 @@ Wie viel Platz [Aufnahmen](/de/recording/storage) brauchen, hängt von Kameraanz
 
 Nutze für Aufnahmen eine **dedizierte lokale Disk**, getrennt von der System-Disk und keine Netzwerkfreigabe (NAS). Durchgehende Aufnahme schreibt permanent, und im Aufnahmeordner liegen außerdem die Datenbanken, die deine Ereignisse indizieren, die Netzwerkfreigaben nicht zuverlässig sperren können. Siehe [Speicher & Aufbewahrung](/de/recording/storage#wo-aufnahmen-liegen).
 
-camera.ui zeigt für jede Kamera die Aufnahme-Rate pro Tag und lässt dich den Verbrauch über die Einstellungen **Kontingent** und **Aufbewahrung** begrenzen.
+camera.ui zeigt für jede Kamera die Aufnahme-Rate pro Tag und lässt dich den Verbrauch mit **Retention (Days)** und **Max Storage (GB)** begrenzen, global oder pro Kamera.
 
 ## Desktop-App
 

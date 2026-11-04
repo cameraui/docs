@@ -21,6 +21,8 @@ Recording comes from the **camera.ui NVR** plugin, which is installed by default
 
 If signing in ends with **Server limit reached for your plan**, the license is still held by another server, an earlier test install for example. Remove that server in the [cloud dashboard](/remote/cloud#the-cloud-dashboard) and sign in again.
 
+A license runs on one installation of a server at a time. If another installation signs in, the first one stops recording and shows a notice. Signing in there again moves the license back. A server you remove in the cloud dashboard stops recording.
+
 With an active license, new cameras start recording on their own while a camera slot is free: continuously, in every stream quality. A battery camera that its plugin reports as one starts in **Ad-hoc** instead. Mode, qualities and on/off are in the camera's recording settings.
 
 Recording takes H.264, H.265 and MJPEG. An MJPEG camera records its pictures as it sends them, which needs [several times the storage](/recording/storage#rough-sizing) of H.264, and a picture wider or taller than 2040 pixels is cropped to 2040 around its center. A camera that sends another codec records nothing, and its timeline shows a recording error that says so. [Live view](/cameras/live-view#streaming-modes) shows how to transcode such a camera on the server.
@@ -29,11 +31,13 @@ Recording takes H.264, H.265 and MJPEG. An MJPEG camera records its pictures as 
 
 The **License & Cloud** card in **Settings → Recordings** shows how many recording slots your plan includes, how many cameras are active, and how many currently use a slot.
 
-Slots go to your enabled cameras in order. A camera past the limit keeps detecting, its events and its live view, but does not record and shows no warning, so check that card if footage is missing from one camera. Turning off recording on a camera frees its slot for another.
+A camera without a free slot keeps detecting, its events and its live view, but does not record, so check that card if footage is missing from one camera. Turning off recording on a camera frees its slot for another.
 
-If your subscription lapses, recording stops and playback, export, face recognition and search ask for a valid license. **Nothing on disk is deleted**, it all comes back when the license is valid again.
+If your subscription or trial ends, recording stops and playback, export, face recognition and search ask for a valid license. Recordings stay on disk and come back when the license is valid again. [Retention and storage limits](/recording/storage) keep running, so older footage is still deleted, favorites excepted. Export what you want to keep before the end date. Three days before a trial ends, you get a reminder by email.
 
-Without internet the license keeps working. For the first 14 days without a connection to cameraui.com nothing changes. After that, playback, export, face recognition and search pause, while recording carries on until the paid period ends, plus 14 days for a subscription that renews. Then recording stops as well. **Settings → Recordings** shows the date, and admins get a notification three days before. One connection brings everything back. For a server that stays offline for good, the yearly plan fits best.
+You can cancel at any time in your account or without a login at [billing.cameraui.com/cancel](https://billing.cameraui.com/cancel). The plan runs until the end of the billing period. After its first year, a yearly plan ends one month after you cancel, and you get back what you paid for the time after.
+
+Without internet the license keeps working for a while. Before anything stops, **Settings → Recordings** shows the date and admins get a notification. One connection to cameraui.com brings everything back, so let a server that is mostly offline go online now and then.
 
 ## Recording modes
 

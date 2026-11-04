@@ -21,6 +21,8 @@ Aufnahmen kommen vom **camera.ui NVR**-Plugin (standardmäßig installiert) und 
 
 Endet die Anmeldung mit **Server-Limit deines Tarifs erreicht**, hält noch ein anderer Server die Lizenz, zum Beispiel eine frühere Testinstallation. Entferne diesen Server im [Cloud-Dashboard](/de/remote/cloud#das-cloud-dashboard) und melde dich erneut an.
 
+Eine Lizenz läuft immer nur auf einer Installation eines Servers. Meldet sich eine andere Installation an, stoppt die erste die Aufnahme und zeigt einen Hinweis. Meldest du dich dort wieder an, wandert die Lizenz zurück. Ein Server, den du im Cloud-Dashboard entfernst, stoppt die Aufnahme.
+
 Mit aktiver Lizenz nehmen neue Kameras von selbst auf, solange ein Kamera-Slot frei ist: durchgehend, in allen Stream-Qualitäten. Eine Akku-Kamera, die ihr Plugin als solche meldet, startet stattdessen in **Ad-hoc**. Modus, Qualitäten und An/Aus stehen in den Aufnahme-Einstellungen der Kamera.
 
 Aufnehmen geht mit H.264, H.265 und MJPEG. Eine MJPEG-Kamera nimmt ihre Bilder so auf, wie sie sie sendet. Das braucht ein [Mehrfaches an Speicher](/de/recording/storage#grobe-dimensionierung) gegenüber H.264, und ein Bild, das breiter oder höher als 2040 Pixel ist, wird mittig auf 2040 beschnitten. Eine Kamera mit einem anderen Codec nimmt nichts auf, und ihre Timeline zeigt dazu einen Aufnahmefehler. Wie du eine solche Kamera auf dem Server transkodierst, steht unter [Live-Ansicht](/de/cameras/live-view#streaming-modi).
@@ -29,11 +31,13 @@ Aufnehmen geht mit H.264, H.265 und MJPEG. Eine MJPEG-Kamera nimmt ihre Bilder s
 
 Die Karte **Lizenz & Cloud** unter **Einstellungen → Aufnahmen** zeigt, wie viele Aufnahme-Slots dein Tarif enthält, wie viele Kameras aktiv sind und wie viele gerade einen Slot belegen.
 
-Die Slots gehen der Reihe nach an deine aktivierten Kameras. Eine Kamera über dem Limit erkennt weiter, behält Ereignisse und Live-Ansicht, nimmt aber nicht auf und warnt nicht. Fehlt bei einer Kamera Material, schau also auf diese Karte. Schaltest du die Aufnahme an einer Kamera aus, wird ihr Slot frei.
+Eine Kamera ohne freien Slot erkennt weiter, behält Ereignisse und Live-Ansicht, nimmt aber nicht auf. Fehlt bei einer Kamera Material, schau also auf diese Karte. Schaltest du die Aufnahme an einer Kamera aus, wird ihr Slot frei.
 
-Läuft dein Abo aus, stoppt die Aufnahme, und Wiedergabe, Export, Gesichtserkennung und Suche verlangen eine gültige Lizenz. **Auf der Platte wird nichts gelöscht**, alles ist wieder da, sobald die Lizenz wieder gültig ist.
+Endet dein Abo oder deine Testphase, stoppt die Aufnahme, und Wiedergabe, Export, Gesichtserkennung und Suche verlangen eine gültige Lizenz. Die Aufnahmen bleiben auf der Platte und sind wieder da, sobald die Lizenz wieder gültig ist. [Aufbewahrung und Speichergrenzen](/de/recording/storage) laufen weiter, ältere Aufnahmen werden also trotzdem gelöscht, Favoriten ausgenommen. Exportiere, was du behalten möchtest, vor dem Enddatum. Drei Tage vor dem Ende einer Testphase bekommst du eine Erinnerung per Mail.
 
-Ohne Internet läuft die Lizenz weiter. In den ersten 14 Tagen ohne Verbindung zu cameraui.com ändert sich nichts. Danach pausieren Wiedergabe, Export, Gesichtserkennung und Suche, die Aufnahme läuft bis zum Ende des bezahlten Zeitraums weiter, bei einem Abo, das sich verlängert, 14 Tage länger. Dann stoppt auch die Aufnahme. **Einstellungen → Aufnahmen** zeigt das Datum, und Admins bekommen drei Tage vorher eine Benachrichtigung. Eine Verbindung bringt alles zurück. Für einen Server, der dauerhaft offline bleibt, passt das Jahresabo am besten.
+Kündigen kannst du jederzeit in deinem Konto oder ohne Anmeldung unter [billing.cameraui.com/cancel](https://billing.cameraui.com/cancel). Der Tarif läuft bis zum Ende der Abrechnungsperiode. Nach dem ersten Jahr endet ein Jahresabo einen Monat nach der Kündigung, und was du für die Zeit danach gezahlt hast, bekommst du zurück.
+
+Ohne Internet läuft die Lizenz eine Weile weiter. Bevor etwas stoppt, zeigt **Einstellungen → Aufnahmen** das Datum, und Admins bekommen eine Benachrichtigung. Eine Verbindung zu cameraui.com bringt alles zurück, ein meist offline laufender Server sollte also ab und zu online gehen.
 
 ## Aufnahme-Modi
 

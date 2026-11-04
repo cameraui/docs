@@ -16,7 +16,7 @@ Semantic search needs an AI backend that provides **CLIP** (CoreML, OpenVINO, or
 
 In [Recordings](/recording/browsing), open **AI Search** and describe what you're looking for. camera.ui ranks events by how well they match, and you can raise **Min. Match Score** to keep only close matches. The other filters in the sidebar narrow the matches too, and scrolling down loads more of them.
 
-If the count keeps its **+** at the end of the list, more pictures fit the description than one search reads, and matches in the chosen cameras or time range can be missing. Raise **Min. Match Score** until the + goes away.
+If the count keeps its **+** at the end of the list, more pictures fit the description than one search reads, and weaker matches in the chosen cameras and time range can be missing. Narrow the time range or raise **Min. Match Score** until the + goes away.
 
 The percentage is scaled per CLIP model, so a **Min. Match Score** means the same after a model change.
 

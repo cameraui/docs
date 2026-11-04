@@ -19,7 +19,7 @@ Die weiteren Filter:
 - **Kamera und Zeitraum.**
 - **Räume.** Wählt die Kameras aus, die im [Grundriss](/de/cameras/floor-plan) in diesen Räumen stehen.
 - **Labels.** Person, Fahrzeug, Tier oder Sonstige.
-- **Auslöser.** Bewegung, eine Türklingel, ein Sensor oder ein Alarmgeräusch.
+- **Auslöser.** Bewegung, eine Türklingel, ein Sensor oder ein Geräusch. Unter **Audio** lassen sich einzelne Geräusche wählen, etwa **Schuss** oder **Glasbruch**.
 - **Attribute.** Ereignisse, die ein Gesicht oder ein Kennzeichen enthalten.
 - **Fahrzeuge.** Farbe und Typ eines Fahrzeugs, aus dem Bild gelesen. Siehe [Objekt suchen](/de/detection/find-object#farbe-und-typ-von-fahrzeugen).
 - **Konfidenz.** Erkennungen mit niedriger Konfidenz ausblenden.

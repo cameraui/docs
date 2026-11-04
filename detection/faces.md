@@ -36,7 +36,7 @@ A person under **Known Faces** opens with their training pictures. A mark on a p
 
 The person's card already shows how many pictures carry a mark, in red when one of them is unclear or also filed under someone else.
 
-Assigning an unknown face warns when it is already filed under someone or only partly visible. Unclear faces never reach Unknown Faces in the first place.
+Unknown faces carry the mark too when they are already filed under someone or only partly visible, ignored faces when they are only partly visible. A group and the **Ungrouped** list show how many of their faces carry one, and assigning warns about the same. Unclear faces never reach Unknown Faces in the first place.
 
 ## Unknown faces
 
@@ -48,6 +48,10 @@ Faces that don't match anyone enrolled collect under **Unknown Faces**, grouped 
 ## Correcting a recognition
 
 When an event names the wrong person, open that face picture on its recording card, pick **Correct person** in the dots menu and assign the right name, or **Mark as unknown**. Only this face changes: other faces in the recording keep their names, even when they carry the same one. The crop is added to that person so recognition gets it right next time, unless it shows no clear face: then only the name changes. The dialog says so beforehand, and warns when the crop is only partly visible or already filed under someone else. Admins only.
+
+## Deleting a person
+
+**Delete Person** removes their pictures and takes their name out of everything recorded so far. Their faces in events turn unknown and no face search finds them anymore, descriptions and episodes say "Person" instead of the name. This runs in the background and goes on after a restart. Events and footage stay. Someone enrolled under the same name later starts clean.
 
 ## Ignoring a face
 

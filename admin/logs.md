@@ -16,7 +16,7 @@ Logs stream live. Filter by source (**All**, a system component such as **Server
 
 The **Console** (in the menu, available to every user) shows the log of the app itself, not the server: the place to look when a view stays empty, a stream won't play or a button does nothing.
 
-It only collects entries while **Record logs** is on, in **Settings → Appearance**. The same section has **Verbose logging**, which adds debug-level entries.
+It only collects entries while logging is on. The record button at the bottom right starts and stops it, debug-level entries included.
 
 The **Levels** menu filters by Debug, Log, Info, Warning and Error. **Export / share** saves the output as a text file.
 

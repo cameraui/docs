@@ -109,12 +109,12 @@ async function checkAnchors(siteConfig: SiteConfig) {
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
   title: 'camera.ui',
-  description: 'Documentation for camera.ui, the self-hosted camera and NVR platform.',
+  description: 'Documentation for camera.ui, the local-first camera and NVR platform.',
   cleanUrls: true,
   lastUpdated: true,
   ignoreDeadLinks: false,
   sitemap: { hostname: SITE_URL },
-  srcExclude: ['README.md'],
+  srcExclude: ['README.md', 'private/**'],
   buildEnd: checkAnchors,
 
   async transformPageData(pageData, { siteConfig }) {
@@ -166,6 +166,9 @@ export default withMermaid({
       llmstxt({
         generateLLMsFullTxt: true,
         title: 'camera.ui Documentation',
+        sidebar: sidebar('en'),
+        // the german pages repeat the english ones, their markdown per page stays
+        ignoreFilesPerOutput: { llmsTxt: ['de/**'], llmsFullTxt: ['de/**'] },
       }),
     ],
     optimizeDeps: {

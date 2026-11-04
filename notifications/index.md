@@ -24,7 +24,7 @@ Phone push needs all of these. If one is missing, alerts only land in the in-app
 
 ## Push stays private
 
-Your server seals every alert before it leaves your network. camera.ui Cloud, Google and Apple only pass the sealed envelope along; the camera name, the alert text and the link inside are unreadable to all three. The thumbnail takes no detour at all: your phone loads it straight from your server. When **Video in Push** is on, the clip is delivered the same way: it stays inside the sealed push and streams from your own server, so the cloud never sees a frame.
+Alerts are end-to-end encrypted before they leave your server. camera.ui Cloud, Google and Apple only forward them and cannot read them. Your phone loads pictures and clips, also with **Video in Push**, straight from your own server, so the cloud never sees a frame.
 
 ## Your notification settings
 

@@ -14,6 +14,7 @@ Wähle an einer Kamera **Kamera teilen** in der Player-Werkzeugleiste und lege f
 - **Gültig für.** Wie lange der Link gültig bleibt.
 - **Max. Zuschauer.** Wie viele Personen gleichzeitig zusehen können. **Unbegrenzt** endet bei 50.
 - **Bezeichnung.** Ein optionaler Name, um die Freigabe später wiederzuerkennen.
+- **TURN-Server mitgeben.** Erscheint mit eingerichtetem [TURN-Server](/de/remote/#webrtc). Der Browser des Zuschauers nutzt ihn dann ebenfalls, das hilft in Netzen, die direkte Verbindungen blockieren. Zuschauer erhalten sein Passwort und behalten es, auch wenn die Freigabe endet.
 
 Wähle **Erstellen**. camera.ui gibt dir einen **Share-Link** und einen **Zugangscode**. Der Zugangscode wird nur einmal angezeigt, kopiere ihn also vor dem Schließen.
 
@@ -22,7 +23,7 @@ Die Zuschauer-Seite startet ohne Ton. Die Person kann ihn einschalten und bei Ka
 Im Hintergrund stoppt die Zuschauer-Seite den Stream und startet ihn bei der Rückkehr neu, außer er läuft im Bild-in-Bild. Nach einem Verbindungsabbruch verbindet sie sich von selbst neu. Wer über dem Limit von **Max. Zuschauer** liegt, sieht **Maximale Anzahl an Zuschauern erreicht**, und die Seite versucht es weiter, bis ein Platz frei wird.
 
 ::: tip Erfordert camera.ui Cloud
-Teilen setzt voraus, dass dein Server mit **camera.ui Cloud** verbunden ([Einstellungen → Remote](/de/remote/cloud)) und online ist. Die Cloud hostet den Link und hilft dem Zuschauer, deinen Server zu finden, aber das Video läuft über eine **direkte, Ende-zu-Ende-verschlüsselte Verbindung** zwischen Zuschauer und deinem Server. Es passiert nie camera.uis Server, und der Zugangscode wird nur auf deinem eigenen Server geprüft.
+Teilen setzt voraus, dass dein Server mit **camera.ui Cloud** verbunden ([Einstellungen → Remote](/de/remote/cloud)) und online ist. Die Cloud hostet den Link und hilft dem Zuschauer, deinen Server zu finden, aber das Video läuft über eine **direkte, Ende-zu-Ende-verschlüsselte Verbindung** zwischen Zuschauer und deinem Server. Es passiert nie camera.uis Server.
 :::
 
 <Shot src="/img/cameras/share-dialog.png" alt="Freigabe-Dialog mit Link und Zugangscode" />

@@ -14,7 +14,7 @@ Die Apps für iOS und Android sind Viewer für Live-Ansicht, Aufnahmen und Benac
 | Plattform | Voraussetzung |
 |---|---|
 | iOS / iPadOS | 17.4 oder neuer |
-| Android | 8.0 oder neuer (API 26) |
+| Android | 8.0 oder neuer (API 26), Android System WebView 111 oder neuer |
 
 ## Mit deinem Server verbinden
 

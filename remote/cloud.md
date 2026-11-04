@@ -8,9 +8,9 @@ camera.ui Cloud lets you reach your server from anywhere without touching your r
 
 ## Your server stays yours
 
-camera.ui Cloud is a way to reach your own server, not a copy of it. Your cameras, recordings, settings, and the interface all stay on your server. The cloud's only job is to help your app and your server connect, and your session then runs directly to your own instance. Your video, credentials, and other data go straight to your server and are never visible to camera.ui.
+camera.ui Cloud is a way to reach your own server, not a copy of it. Your cameras, recordings, settings, and the interface all stay on your server. The cloud only helps your app and your server find each other. Your session then runs to your own instance, over your own address or a Cloudflare tunnel (see below), and your video, credentials, and other data never pass through camera.ui's servers.
 
-Push notifications are the one thing that does travel through the cloud, and they are end-to-end encrypted: your server seals every alert, only your phone can unlock it, and the cloud forwards the envelope without storing anything. See [Notifications](/notifications/).
+Push notifications are the one thing that does travel through the cloud. They are end-to-end encrypted, only your phone can read them, and the cloud stores nothing. See [Notifications](/notifications/).
 
 ## Enabling it
 

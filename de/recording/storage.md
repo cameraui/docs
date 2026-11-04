@@ -10,6 +10,10 @@ Standardmäßig liegen Aufnahmen bei den übrigen camera.ui-Daten. Ab mehr als e
 
 Eine lokale Disk oder ein Symlink darauf ist in Ordnung. Eine **Netzwerkfreigabe (NAS, SMB, NFS) nicht**: Erkennungs-Ereignisse, Timeline-Markierungen und Suchindex liegen als Datenbanken neben dem Material, und die brauchen Dateisperren, die Netzwerk-Dateisysteme nicht zuverlässig bereitstellen. Kaputt geht dort die Ereignis-Datenbank, nicht das Video. Liegt dein Speicher auf einem NAS, lass camera.ui auf dem NAS laufen und nimm dort lokal auf.
 
+Ein Verbund lokaler Disks mit mergerfs funktioniert. Mit `cache.files=off`, der Vorgabe seit mergerfs 2.41, öffnen sich diese Datenbanken nur mit mergerfs ab 2.41 auf Linux ab 6.6. Sonst meldet das NVR-Plugin beim Start `disk I/O error: no such device`. Nimm dort `cache.files=partial`.
+
+Fehlt beim Start eine Disk des Verbunds, nennt das Log die betroffene Datei und dass eine Disk fehlen kann. Das NVR-Plugin entfernt dann keine Reste aus dieser Datei, bis die Disk wieder da ist. Kommt die Meldung mit allen Disks bei jedem Start wieder, bleibt das so. Kaputt geht nichts, die Reste belegen nur Platz.
+
 ## Aufnahmen auf eine andere Platte umziehen
 
 Den Speicherpfad zu ändern zieht deine Aufnahmen nicht um: camera.ui fängt am neuen Ort bei null an, der alte Ordner bleibt, wie er ist. Einen neuen Pfad, den camera.ui nicht anlegen oder beschreiben kann, übernimmt es nicht, die Aufnahme bleibt im alten Ordner und eine Benachrichtigung nennt den Grund. So ziehst du die Daten um:
@@ -49,6 +53,8 @@ Wird der Platz auf der Disk knapp, entscheidet der **Retention Mode**:
 
 Die Bereinigung nimmt die ältesten Stunden aller Kameras nebeneinander, eine ruhige Kamera verliert also nicht ihren ganzen Verlauf, während eine belebte alles behält, und sie hört auf, sobald genug Platz frei ist. [Favoriten](/de/recording/browsing#favoriten) bleiben ausgespart und abspielbar, egal wie alt sie sind.
 
+Ereignisse folgen der Aufbewahrung ebenfalls, auch bei einer Kamera, die nichts aufnimmt. Favoriten bleiben auch hier.
+
 ### Grenzen pro Kamera
 
 Mit **Own Storage Limits** in den Einstellungen einer Kamera bekommt sie eigene Werte für **Retention (Days)** und **Max Storage (GB)**. Ihre Aufbewahrung ersetzt die globale, kürzer oder länger, und ihre Ereignisse gehen mit ihren Aufnahmen. Ihre Grenze löscht nur ihre eigenen ältesten Aufnahmen, auch mit **Strict**. Das globale **Max Storage** und der freie Speicher gelten weiter für alle Kameras, eine längere Aufbewahrung hält also nur, solange beide Platz lassen.
@@ -72,6 +78,8 @@ Um das Material zu behalten, lege eine leere Datei namens `.cameraui-keep` in de
 <Shot src="/img/recording/storage-stats.png" alt="Speicher-Nutzungsstatistik" />
 
 **Metrics → Speicher** zeigt die Belegung in der **Speicherübersicht** und pro Kamera in der Tabelle **Kameraspeicher**: Größe auf der Disk, gehaltene Tage Material, Aufnahme-Rate pro Tag, Modus und ihre eigenen Grenzen.
+
+Ist die Aufnahme einer Kamera aus, löscht **Aufnahmen löschen** am Ende ihrer Zeile ihre Aufnahmen. Mit **Ereignisse auch löschen** gehen auch alle ihre Ereignisse, Favoriten eingeschlossen, sonst bleiben sie ohne Aufnahme. Was nach deiner Bestätigung aufgenommen wird, bleibt.
 
 Eine Warnung, dass das Speichervolumen klein ist, heißt: Es bleibt wenig Platz für Aufnahmen, sie rotieren schnell heraus. Meist ist die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe den Speicherpfad. Eigene Warnungen erscheinen, wenn der freie Speicher unter 8% fällt und sobald die Aufnahme aus Platzmangel pausiert.
 

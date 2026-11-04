@@ -16,7 +16,7 @@ Die semantische Suche braucht ein KI-Backend, das **CLIP** bereitstellt (CoreML,
 
 Öffne in den [Aufnahmen](/de/recording/browsing) die **KI-Suche** und beschreibe, was du suchst. camera.ui ordnet Ereignisse danach, wie gut sie passen, und du kannst **Min. Übereinstimmung** erhöhen, um nur enge Treffer zu behalten. Die übrigen Filter in der Seitenleiste grenzen die Treffer ebenfalls ein, und beim Scrollen laden weitere nach.
 
-Bleibt das **+** an der Trefferzahl auch am Ende der Liste stehen, passen mehr Bilder zur Beschreibung, als eine Suche liest, und Treffer in den gewählten Kameras oder im Zeitraum können fehlen. Erhöhe dann **Min. Übereinstimmung**, bis das + verschwindet.
+Bleibt das **+** an der Trefferzahl auch am Ende der Liste stehen, passen mehr Bilder zur Beschreibung, als eine Suche liest, und schwächere Treffer in den gewählten Kameras und im Zeitraum können fehlen. Grenze dann den Zeitraum ein oder erhöhe **Min. Übereinstimmung**, bis das + verschwindet.
 
 Die Prozentzahl wird pro CLIP-Modell skaliert, eine **Min. Übereinstimmung** bedeutet nach einem Modellwechsel also dasselbe.
 

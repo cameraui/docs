@@ -24,7 +24,7 @@ Push aufs Handy braucht alles davon. Fehlt eines, landen Alarme nur in der In-Ap
 
 ## Push bleibt privat
 
-Dein Server versiegelt jeden Alarm, bevor er dein Netzwerk verlässt. camera.ui Cloud, Google und Apple reichen nur den versiegelten Umschlag weiter; Kameraname, Alarmtext und der Link darin sind für alle drei unlesbar. Das Vorschaubild macht gar keinen Umweg: dein Handy lädt es direkt von deinem Server. Ist **Video in Push** an, wird der Clip genauso zugestellt: Er bleibt im versiegelten Push und streamt von deinem eigenen Server, die Cloud sieht also nie ein Bild.
+Alarme werden Ende-zu-Ende-verschlüsselt, bevor sie deinen Server verlassen. camera.ui Cloud, Google und Apple leiten sie nur weiter und können sie nicht lesen. Bilder und Clips, auch mit **Video in Push**, lädt dein Handy direkt von deinem Server, die Cloud sieht also nie ein Bild.
 
 ## Deine Benachrichtigungs-Einstellungen
 

@@ -6,7 +6,7 @@ camera.ui is **server-centric**: one server, running on your hardware, does all 
 
 The camera.ui server bundles everything it needs to run: the web interface, a built-in **streaming engine** (our own go2rtc build) for live video, and its own **video processing** for decoding and recording. Your settings, cameras, users, and events live in a small **local database** on the same machine.
 
-Nothing leaves your network unless you turn on [remote access](/remote/). There is no external database, and no cloud account is required to run a server.
+There is no external database, and no cloud account is required to run a server. [Remote access](/remote/) is optional.
 
 ## The big picture
 
@@ -75,4 +75,4 @@ From outside your network you can use camera.ui Cloud, a Cloudflare tunnel, a cu
 
 [^detect]: Detection needs a detection plugin that matches your hardware (CoreML, ONNX, OpenVINO, NCNN, or an edge accelerator like Coral or Hailo). See [Detection & AI](/detection/).
 [^license]: An active camera.ui subscription covers recording (NVR) and the features built on it, such as playback, export, face recognition, semantic search, and AI descriptions, plus push notifications. Live view and real-time detection are free.
-[^cloud-optional]: camera.ui Cloud is optional. On your own network everything stays local, and your server never has to connect to the cloud. See [Reaching it from outside](#reaching-it-from-outside).
+[^cloud-optional]: camera.ui Cloud is optional. On your own network the apps connect to your server directly. See [Reaching it from outside](#reaching-it-from-outside).

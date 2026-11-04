@@ -43,7 +43,7 @@ Siehe **[Integration](/de/home-assistant/integration)** für die vollständige E
 
 ## MQTT discovery
 
-Für Setups, die schon einen MQTT-Broker betreiben. Es braucht kein Custom Component und kein HACS. Der camera.ui-Server veröffentlicht retained Discovery-Konfigurationen, und die eingebaute MQTT-Integration von Home Assistant greift sie auf.
+Für Setups, die schon einen MQTT-Broker betreiben. Es braucht kein Custom Component. Der camera.ui-Server veröffentlicht retained Discovery-Konfigurationen, und die eingebaute MQTT-Integration von Home Assistant greift sie auf.
 
 Du schaltest es in den MQTT-Einstellungen des camera.ui-Servers ein (HA discovery aktivieren). Du bekommst Status-, Bewegungs- und Objekt-Binärsensoren, ein Snapshot-Kamerabild und dieselben steuerbaren Sensor-Domains wie die Integration. Was du nicht bekommst: einen Live-Stream (nur Snapshot), den PTZ-Dienst, das Seitenleisten-Panel, die automatisch registrierten Karten oder die `cameraui_event`-Bus-Events. Dafür gibt es einen eigenen Konnektivitätssensor pro Kamera.
 
@@ -54,7 +54,7 @@ MQTT discovery ist zusammen mit den übrigen Broker-Einstellungen auf der [MQTT-
 | | Integration | MQTT discovery |
 |---|---|---|
 | Braucht einen MQTT-Broker | Nein | Ja |
-| Custom Component / HACS | Erforderlich | Nicht nötig |
+| Custom Component | Erforderlich | Nicht nötig |
 | Live-Kamera-Stream | Ja | Nur Snapshot |
 | Bewegungs- & Objektsensoren | Ja | Ja |
 | Steuerbare Sensoren | Ja | Ja |

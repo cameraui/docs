@@ -36,7 +36,7 @@ Eine Person unter **Bekannte Gesichter** öffnet sich mit ihren Trainingsbildern
 
 Schon die Karte der Person zeigt, wie viele Bilder eine Markierung tragen. Rot heißt, mindestens eins ist unklar oder auch bei jemand anderem hinterlegt.
 
-Beim Zuweisen eines unbekannten Gesichts warnt camera.ui, wenn es schon bei jemandem hinterlegt oder nur teilweise sichtbar ist. Unklare Gesichter landen gar nicht erst unter Unbekannte Gesichter.
+Unbekannte Gesichter tragen die Markierung ebenfalls, wenn sie schon bei jemandem hinterlegt oder nur teilweise sichtbar sind, ignorierte Gesichter, wenn sie nur teilweise sichtbar sind. Eine Gruppe und die Liste **Ungruppiert** zeigen, wie viele ihrer Gesichter eine tragen, und beim Zuweisen warnt camera.ui davor. Unklare Gesichter landen gar nicht erst unter Unbekannte Gesichter.
 
 ## Unbekannte Gesichter
 
@@ -48,6 +48,10 @@ Gesichter, die zu keiner angelegten Person passen, sammeln sich unter **Unbekann
 ## Eine Erkennung korrigieren
 
 Nennt ein Ereignis die falsche Person, öffne dieses Gesichtsbild auf seiner Aufnahme-Karte, wähl im Punkte-Menü **Person korrigieren** und vergib den richtigen Namen, oder **Als unbekannt markieren**. Nur dieses Gesicht ändert sich: Andere Gesichter der Aufnahme behalten ihren Namen, auch wenn sie denselben tragen. Der Ausschnitt wandert zu dieser Person, damit die Erkennung es beim nächsten Mal richtig macht, außer er zeigt kein klares Gesicht: Dann ändert sich nur der Name. Der Dialog sagt das vorher und warnt, wenn der Ausschnitt nur teilweise sichtbar oder schon bei jemand anderem hinterlegt ist. Nur für Admins.
+
+## Eine Person löschen
+
+**Person löschen** entfernt ihre Bilder und nimmt ihren Namen aus allem, was bis dahin aufgenommen wurde. Ihre Gesichter in Ereignissen werden unbekannt und keine Gesichtssuche findet sie mehr, Beschreibungen und Episoden sagen "Person" statt des Namens. Das läuft im Hintergrund und geht nach einem Neustart weiter. Ereignisse und Aufnahmen bleiben. Wer später unter demselben Namen angelegt wird, fängt sauber an.
 
 ## Ein Gesicht ignorieren
 

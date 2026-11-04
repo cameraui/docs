@@ -10,6 +10,10 @@ By default, recordings live with the rest of camera.ui's data. For more than a c
 
 A local disk, or a symlink to one, is fine. A **network share (NAS, SMB, NFS) is not**: detection events, timeline markers and the search index sit next to the footage as databases, and those need file locking that network filesystems do not provide reliably. What breaks there is the event database, not the video. If your storage lives on a NAS, run camera.ui on the NAS and record locally there.
 
+A pool of local disks with mergerfs works. With `cache.files=off`, the default since mergerfs 2.41, these databases only open with mergerfs 2.41 or newer on Linux 6.6 or newer. Otherwise the NVR plugin logs `disk I/O error: no such device` on start. Use `cache.files=partial` there.
+
+If a disk of the pool is missing when the NVR plugin starts, the log names the file concerned and says that a disk may be missing. The plugin then removes no leftovers from that file until the disk is back. If the message comes back at every start with all disks in place, that stays so. Nothing breaks, the leftovers only take space.
+
 ## Moving recordings to another disk
 
 Changing the storage path does not move your recordings: camera.ui starts fresh at the new location and the old folder stays as it is. A new path that camera.ui can't create or write to is not taken, recording stays in the old folder and a notification says why. To move the data:
@@ -49,6 +53,8 @@ When the disk runs low, the **Retention Mode** decides:
 
 Cleanup takes the oldest hours of all cameras side by side, so a quiet camera cannot lose its whole history while a busy one keeps everything, and it stops once enough space is free. [Favorites](/recording/browsing#favorites) are skipped and stay playable however old they are.
 
+Events follow the retention too, also those of a camera that records nothing. Favorites stay here as well.
+
 ### Limits per camera
 
 With **Own Storage Limits** on in a camera's settings, the camera gets its own **Retention (Days)** and **Max Storage (GB)**. Its retention replaces the global one, shorter or longer, and its events go with its footage. Its cap deletes only its own oldest recordings, also with **Strict**. The global **Max Storage** and the free disk space still count for all cameras, so a longer retention only holds while they leave room.
@@ -72,6 +78,8 @@ To keep that footage, put an empty file named `.cameraui-keep` into the camera's
 <Shot src="/img/recording/storage-stats.png" alt="Storage usage statistics" />
 
 **Metrics → Storage** shows disk usage in the **Storage Overview** and, in the **Camera Storage** table, per camera: size on disk, days of footage held, recording rate per day, mode, and its own limits.
+
+Once recording is off for a camera, **Delete recordings** at the end of its row removes its recordings. Turn on **Delete events too** to remove all its events as well, favorites included, otherwise they stay without footage. What is recorded after you confirm stays.
 
 A warning that the storage volume is small means it has little room for recordings, so they rotate out quickly. Usually the larger disk you meant to use isn't mounted, so check the storage path. Separate warnings appear when free space drops below 8% and once recording has paused for lack of space.
 

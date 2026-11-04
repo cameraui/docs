@@ -43,7 +43,7 @@ See **[Integration](/home-assistant/integration)** for the full setup.
 
 ## MQTT discovery
 
-For setups that already run an MQTT broker. It needs no custom component and no HACS: the camera.ui server publishes retained discovery configs, and Home Assistant's built-in MQTT integration picks them up.
+For setups that already run an MQTT broker. It needs no custom component: the camera.ui server publishes retained discovery configs, and Home Assistant's built-in MQTT integration picks them up.
 
 You turn it on in the camera.ui server's MQTT settings (enable HA discovery). You get status, motion, and object binary sensors, a snapshot camera image, and the same controllable sensor domains as the integration. What you do not get: a live stream (snapshot only), the PTZ service, the sidebar panel, the auto-registered cards, or the `cameraui_event` bus events. In return it adds a dedicated per-camera connectivity sensor.
 
@@ -54,7 +54,7 @@ MQTT discovery is documented with the rest of the broker settings on the [MQTT a
 | | Integration | MQTT discovery |
 |---|---|---|
 | Needs an MQTT broker | No | Yes |
-| Custom component / HACS | Required | Not needed |
+| Custom component | Required | Not needed |
 | Live camera stream | Yes | Snapshot only |
 | Motion & object sensors | Yes | Yes |
 | Controllable sensors | Yes | Yes |

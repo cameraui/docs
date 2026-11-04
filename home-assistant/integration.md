@@ -10,11 +10,12 @@ It talks to the server directly over your local network, and events arrive by pu
 
 ## Install
 
-The integration is distributed through [HACS](https://hacs.xyz) as a custom repository and needs Home Assistant 2026.3 or newer.
+The integration is a custom repository on GitHub and needs Home Assistant 2026.3 or newer. [This link](https://my.home-assistant.io/redirect/hacs_repository/?owner=cameraui&repository=homeassistant-integration&category=integration) opens it in your Home Assistant, or add it by hand:
 
-1. In HACS, add `cameraui/homeassistant-integration` as a custom **Integration** repository.
-2. Install **camera.ui** from HACS.
-3. Restart Home Assistant.
+1. Under **Settings → Marketplace**, choose **Add from link** and enter `https://github.com/cameraui/homeassistant-integration`. A custom repository needs a GitHub connection, the Marketplace asks for it the first time.
+2. Install **camera.ui** and restart Home Assistant.
+
+Without the Marketplace (Home Assistant before 2026.11), add the repository in [HACS](https://hacs.xyz) as a custom **Integration** repository.
 
 ## Connecting
 

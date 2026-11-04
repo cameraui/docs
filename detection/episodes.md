@@ -25,6 +25,8 @@ In **Settings → [Recordings](/recording/)**, open the **Episodes** tab and tur
 - **Apple TV.** Episodes are available in the Apple TV app too.
 - **Push.** An episode pushes once its story is ready, also from cameras with **Send notifications** turned off. With that switch off on every camera, you get pushes only for activity across several cameras. [Alert zones](/cameras/zones-and-masks#alert-zones) and their face and plate filters still count: an episode whose sightings all lie outside them stays in Recordings without a push.
 
+An episode stays as long as one of its recordings does. A recording that goes, by hand or through its camera's retention, leaves the episode and the mosaic follows.
+
 <Shot src="/img/detection/episode-card.png" alt="An episode mosaic card in the recordings view" />
 
 ## The episode player

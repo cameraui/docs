@@ -14,7 +14,7 @@ The iOS and Android apps are viewers for live view, recordings and notifications
 | Platform | Requirement |
 |---|---|
 | iOS / iPadOS | 17.4 or newer |
-| Android | 8.0 or newer (API 26) |
+| Android | 8.0 or newer (API 26), Android System WebView 111 or newer |
 
 ## Connecting to your server
 

@@ -1,8 +1,8 @@
 # Was ist camera.ui?
 
-**camera.ui** ist eine selbstgehostete Plattform für deine Überwachungskameras. Sie vereint Live-Ansicht, durchgehende und ereignisbasierte Aufnahme, KI-Erkennung direkt auf dem Gerät und Smart-Home-Integration in einer Oberfläche, komplett auf Hardware, die dir gehört.
+**camera.ui** ist die Local-first-Plattform für deine Überwachungskameras. Sie vereint Live-Ansicht, durchgehende und ereignisbasierte Aufnahme, KI-Erkennung direkt auf dem Gerät und Smart-Home-Integration in einer Oberfläche, komplett auf Hardware, die dir gehört.
 
-Es gibt keine Cloud-Pflicht, und kein Dritter hält eine Kopie deiner Aufnahmen. Remote-Zugriff ist optional.
+Kein Dritter hält eine Kopie deiner Aufnahmen, und Remote-Zugriff ist optional.
 
 ::: tip Neu hier?
 Der **[Schnellstart](/de/intro/quick-start)** führt in sieben Schritten von der Installation bis zur Aufnahme. Die erste Einrichtung im Detail steht in den **[ersten Schritten](/de/intro/getting-started)**.
@@ -20,10 +20,6 @@ Fehlt etwas oder ist unklar? Sag uns auf [Discord](https://discord.gg/bBGnGcbz8N
 - **Informiert bleiben.**[^license] Push-Benachrichtigungen pro Kamera, Alarme begrenzt auf Bereich, Objekttyp oder namentlich genannte Personen, Ruhezeiten und kritische Alarme, die immer durchkommen.
 - **Kameras verbinden.** Kameras über ONVIF und Dutzende weiterer Protokolle hinzufügen und per Apple HomeKit oder Home Assistant (über MQTT)[^smarthome] ins Smart Home einbinden.
 - **Erweitern.** Ein Plugin-System lässt dich Kameras, Detektoren und Integrationen aus einem In-App-Store hinzufügen.
-
-## Live-Demo
-
-Probier vor der Installation die **[Live-Demo](https://demo.cameraui.com/)** aus.
 
 ## Betreibe es, wie du willst
 

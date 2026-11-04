@@ -16,7 +16,7 @@ Logs streamen live. Filtere nach Quelle (**All**, eine Systemkomponente wie **Se
 
 Die **Konsole** (im Menü, für jeden Benutzer verfügbar) zeigt das Log der App selbst, nicht das des Servers: die Stelle zum Nachsehen, wenn eine Ansicht leer bleibt, ein Stream nicht startet oder ein Button nichts tut.
 
-Sie sammelt Einträge nur, solange **Protokolle aufzeichnen** unter **Einstellungen → Erscheinungsbild** aktiv ist. Im selben Abschnitt gibt es **Ausführliches Logging**, das Debug-Einträge ergänzt.
+Sie sammelt Einträge nur, solange das Logging läuft. Der Aufnahme-Button unten rechts startet und stoppt es, Debug-Einträge eingeschlossen.
 
 Das Menü **Level** filtert nach Debug, Log, Info, Warnung und Fehler. **Exportieren / teilen** speichert die Ausgabe als Textdatei.
 

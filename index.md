@@ -1,8 +1,8 @@
 # What is camera.ui?
 
-**camera.ui** is a self-hosted platform for your security cameras. It combines live viewing, continuous and event-based recording, on-device AI detection, and smart-home integration in one interface, all on hardware you own.
+**camera.ui** is the local-first platform for your security cameras. It combines live viewing, continuous and event-based recording, on-device AI detection, and smart-home integration in one interface, all on hardware you own.
 
-There is no mandatory cloud, and no third party holds a copy of your recordings. Remote access is optional.
+No third party holds a copy of your recordings, and remote access is optional.
 
 ::: tip New here?
 The **[Quick start](/intro/quick-start)** takes you from install to recording in seven steps. For the first run in detail see **[Getting started](/intro/getting-started)**.
@@ -20,10 +20,6 @@ If something is missing or unclear, tell us on [Discord](https://discord.gg/bBGn
 - **Stay informed.**[^license] Per-camera push notifications, alerts limited by area, object type or the people you name, quiet hours, and critical alerts that always get through.
 - **Connect your cameras.** Add cameras over ONVIF and dozens of other protocols, and bridge them into your smart home via Apple HomeKit or Home Assistant (over MQTT)[^smarthome].
 - **Extend it.** A plugin system lets you add cameras, detectors, and integrations from an in-app store.
-
-## Live demo
-
-Try the **[live demo](https://demo.cameraui.com/)** before installing.
 
 ## Run it your way
 

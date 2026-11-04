@@ -19,4 +19,15 @@ Beim Verbinden und wann immer sich der Pfad ändert (etwa wenn du nach Hause kom
 
 Du kannst den Zugriff auch **nur lokal** halten, indem du Remote-Zugriff aus lässt.
 
+## WebRTC
+
+Oberfläche, API und MSE-Wiedergabe laufen über die Verbindung, die du oben gewählt hast. WebRTC-Live-Ansicht und Gegensprechen öffnen einen eigenen Weg. Server und App ermitteln ihre öffentlichen Adressen über einen STUN-Server, der Server bietet seine mit Port **2004** an, und beide versuchen, einen direkten Weg durch ihre Router zu öffnen. Das klappt meist ohne Router-Einstellungen. Hinter manchen Routern und hinter Carrier-Grade-NAT, wie es im Mobilfunk üblich ist, kommt kein direkter Weg zustande. Eine Kamera auf [Auto](/de/cameras/live-view#streaming-modi) spielt dann über MSE, eine auf **WebRTC** zeigt kein Bild, und Gegensprechen verbindet nicht.
+
+Zwei Dinge helfen:
+
+- **Port 2004 weiterleiten.** UDP, mit TCP auf demselben Port als Fallback, auf den Server. Die Adresse, die der Server anbietet, ist dann von überall erreichbar.
+- **Ein TURN-Server.** Er leitet die Medien weiter, wenn kein direkter Weg zustande kommt, und ist der einzige Weg, wenn der Anschluss des Servers selbst hinter Carrier-Grade-NAT liegt (etwa DS-Lite) und sich kein Port weiterleiten lässt. camera.ui bringt keinen mit, betreibe einen eigenen (etwa coturn) oder nutze einen gehosteten.
+
+Die Karte **WebRTC** auf dieser Seite stellt die **STUN-Server** und die **TURN-Server** ein, für den Server und für die Apps. Jeder TURN-Server bekommt eigene Adressen, **Benutzername** und **Passwort**, weitere kommen über **TURN-Server hinzufügen** dazu. Speichern startet die Streaming-Engine neu, Live-Ansichten und Aufnahmen setzen dafür ein paar Sekunden aus. Bleibt die STUN-Liste leer, ermittelt keine Seite eine öffentliche Adresse, und von außen braucht WebRTC dann einen TURN-Server. Der Button am Ende des STUN-Felds holt die Standard-STUN-Server zurück, sie gelten nach **Speichern**.
+
 [^free]: Remote-Zugriff und Kamera-Freigaben sind kostenlos enthalten. Das Abo deckt [Aufnahmen (NVR)](/de/recording/) ab, nicht den Remote-Zugriff.

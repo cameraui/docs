@@ -19,7 +19,7 @@ The other filters:
 - **Camera and time range.**
 - **Rooms.** Selects the cameras placed in those rooms on the [floor plan](/cameras/floor-plan).
 - **Labels.** Person, vehicle, animal, or other.
-- **Trigger.** Motion, a doorbell, a sensor, or an audio alarm.
+- **Trigger.** Motion, a doorbell, a sensor, or a sound. Under **Audio** you can pick single sounds, such as **Gunshot** or **Glass Break**.
 - **Attributes.** Events that contain a face or a license plate.
 - **Vehicles.** Color and type of a vehicle, read from the picture. See [Find an object](/detection/find-object#vehicle-color-and-type).
 - **Confidence.** Hide low-confidence detections.

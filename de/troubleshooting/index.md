@@ -35,7 +35,7 @@ Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn
 
 - Prüfe die **[Benachrichtigungs-Einstellungen](/de/notifications/)** auf dem Gerät: Hauptschalter, Ruhezeiten und ob das Gerät registriert ist.
 - Prüfe die Benachrichtigungs-Einstellungen der **Kamera**: welche Objekte, Geräusche und Sensoren sie meldet.
-- Für **Push aufs Handy** brauchst du die native [Mobile-App](/de/install/mobile) (ein Browser bekommt keinen Push), eingerichtete [camera.ui Cloud](/de/remote/cloud) und einen Tipp auf **Dieses Gerät synchronisieren**. Ist Push verstummt, zeigt die App meist einen Hinweis mit einem **Beheben**-Button, der das Handy wieder einrichtet. Siehe [Push aufs Handy bekommen](/de/notifications/#push-aufs-handy-bekommen).
+- Für **Push aufs Handy** brauchst du die native [Mobile-App](/de/install/mobile) (ein Browser bekommt keinen Push), eingerichtete [camera.ui Cloud](/de/remote/cloud) und einen Tipp auf **Dieses Gerät synchronisieren**. Ist Push verstummt, zeigt die App meist einen Hinweis mit einem **Beheben**-Button, der das Handy wieder einrichtet. Eine veraltete App bekommt keinen Push: aktualisiere sie und öffne sie einmal. Siehe [Push aufs Handy bekommen](/de/notifications/#push-aufs-handy-bekommen).
 
 ## Aufnahme funktioniert nicht
 

@@ -25,6 +25,8 @@ Die Story kommt aus den [KI-Beschreibungen](/de/detection/genai-descriptions). O
 - **Apple TV.** Episoden gibt es auch in der Apple-TV-App.
 - **Push.** Eine Episode wird gepusht, sobald ihre Geschichte fertig ist, auch von Kameras, bei denen **Benachrichtigungen senden** aus ist. Ist der Schalter bei allen Kameras aus, bekommst du Pushes nur noch für Aktivität über mehrere Kameras. [Alarmzonen](/de/cameras/zones-and-masks#alarmzonen) und ihre Gesichter- und Kennzeichenfilter zählen trotzdem: Eine Episode, deren Sichtungen alle außerhalb liegen, bleibt ohne Push in den Aufnahmen.
 
+Eine Episode bleibt, solange eine ihrer Aufnahmen bleibt. Eine Aufnahme, die geht, von Hand oder durch die Aufbewahrung ihrer Kamera, verlässt die Episode, und das Mosaik zieht mit.
+
 <Shot src="/img/detection/episode-card.png" alt="Eine Episoden-Mosaik-Karte in der Aufnahmen-Ansicht" />
 
 ## Der Episoden-Player
