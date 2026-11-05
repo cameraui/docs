@@ -35,19 +35,20 @@ Die Wahl wird mit der Ansicht gespeichert, folgt also deinem Konto auf jedes Ger
 
 ## Alle Kameras auf einmal steuern
 
-Ein schwebendes Bedienelement in der Ecke wirkt auf jede Kamera der Ansicht gemeinsam:
+Eine Leiste unten im Raster steuert alle Kameras der Ansicht gemeinsam. Mit dem Mikrofon in ihrer Mitte sprichst du gleichzeitig mit allen Kameras, die Gegensprechen können, ein zweiter Klick beendet es. Daneben kannst du:
 
-- Das ganze Raster im Vollbild.
-- Alle stumm- oder lautschalten.
-- Mit allen Kameras gleichzeitig gegensprechen.
-- Den Streaming-Modus für alle umschalten.
-- Einen Aktivitätsmodus für alle setzen (Immer An, Standby, Aktivität) oder mit **Pro Kamera** jeder Kamera ihren eigenen [Aktivitätsmodus](/de/cameras/live-view#aktivitätsmodus-immer-an-und-standby) lassen. Pro Kamera ist die Vorgabe.
 - Die Auflösung für alle ändern.
+- Den Streaming-Modus für alle umschalten.
+- Alle stumm- oder lautschalten.
 - Die Erkennungs-Marker ein- oder ausschalten.
+- Einen Aktivitätsmodus für alle setzen (Immer An, Standby, Aktivität) oder mit **Pro Kamera** jeder Kamera ihren eigenen [Aktivitätsmodus](/de/cameras/live-view#aktivitätsmodus-immer-an-und-standby) lassen. Pro Kamera ist die Vorgabe.
+- Das ganze Raster im Vollbild zeigen.
+
+Der Pfeil am rechten Ende klappt die Leiste zu einem Button in der Ecke zusammen. Ein Klick auf den Button holt die Leiste zurück. Im Vollbild ist die Leiste zunächst ausgeblendet, der Button neben dem Beenden-Button blendet sie ein und aus.
 
 ## Was eine Kamera gerade sieht
 
-Erkennt eine Kamera etwas, leuchtet ihre Kachel, und kleine Symbole benennen das Erkannte: Bewegung, Person, Fahrzeug, Gesicht, Kennzeichen und so weiter. **Erkennungen** im schwebenden Bedienelement schaltet beides für die ganze Ansicht ab. Die Wahl bleibt an deinem Konto gespeichert.
+Erkennt eine Kamera etwas, leuchtet ihre Kachel, und kleine Symbole benennen das Erkannte: Bewegung, Person, Fahrzeug, Gesicht, Kennzeichen und so weiter. **Erkennungen** in der Leiste unten schaltet beides für die ganze Ansicht ab. Die Wahl bleibt an deinem Konto gespeichert.
 
 ## Eine Kamera in den Fokus holen
 
@@ -58,6 +59,8 @@ Der Vollbild-Button in der Steuerleiste einer Kachel zeigt diese Kamera allein. 
 ## Wiedergabe über das ganze Raster
 
 Öffne die Timeline, um die Aufnahmen der ganzen Ansicht gleichzeitig zu durchsuchen, mit über alle Kameras synchroner Wiedergabe. Siehe [Timeline & Wiedergabe](/de/recording/timeline-playback).
+
+Mit nur einer Kamera in der Ansicht oder einer vergrößerten Kachel hat die Timeline auch **Export** für diese Kamera, wie auf der Kameraseite. Der Clip wird in der höchsten aufgezeichneten Qualität gespeichert. Siehe [Export & Download](/de/recording/export).
 
 ## Objekte im Raster suchen
 

@@ -35,19 +35,20 @@ The choice is saved with the view, so it follows your account to every device, a
 
 ## Control all cameras at once
 
-A floating control in the corner acts on every camera in the view together:
+A bar at the bottom of the grid controls every camera in the view together. The microphone in its middle talks to all cameras with two-way audio at once, click it again to stop. Next to it you can:
 
-- Fullscreen the whole grid.
-- Mute or unmute all.
-- Two-way talk to all cameras at once.
-- Switch the streaming mode for all.
-- Set one activity mode for all (Always On, Standby, Activity), or **Per Camera** to let each camera keep its own [activity mode](/cameras/live-view#activity-mode-always-on-and-standby). Per Camera is the default.
 - Change the resolution for all.
+- Switch the streaming mode for all.
+- Mute or unmute all.
 - Turn the detection markers on or off.
+- Set one activity mode for all (Always On, Standby, Activity), or **Per Camera** to let each camera keep its own [activity mode](/cameras/live-view#activity-mode-always-on-and-standby). Per Camera is the default.
+- Fullscreen the whole grid.
+
+The arrow at the right end of the bar folds it into a button in the corner. Click that button to bring the bar back. In fullscreen the bar starts hidden, the button next to the exit button shows and hides it.
 
 ## What a camera is seeing
 
-While a camera detects something its tile glows, and small icons name what was found: motion, person, vehicle, face, plate and the rest. **Detections** in the floating control switches both off for the whole view. The choice is saved with your account.
+While a camera detects something its tile glows, and small icons name what was found: motion, person, vehicle, face, plate and the rest. **Detections** in the bar at the bottom switches both off for the whole view. The choice is saved with your account.
 
 ## Focus one camera
 
@@ -58,6 +59,8 @@ The fullscreen button in a tile's control bar shows that camera alone. There the
 ## Playback across the grid
 
 Open the timeline to scrub through recordings for the whole view at the same time, with playback kept in sync across every camera. See [Timeline & playback](/recording/timeline-playback).
+
+With a single camera in the view, or one tile expanded, the timeline also has **Export** for that camera, as on the camera page. The clip is saved in the highest recorded quality. See [Export & download](/recording/export).
 
 ## Find objects across the grid
 

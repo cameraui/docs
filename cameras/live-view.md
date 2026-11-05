@@ -73,6 +73,8 @@ Cameras with pan, tilt and zoom get their own bar at the top right of the player
 
 ## The camera page
 
-**Open camera** (or selecting a camera from the list) opens its full page: the live player, a **Recordings** tab, a list to switch between **Cameras**, **Shares** for admins, and a **Timeline** panel for jumping through footage. Drag the handle between the player and the tabs to give either more height; the browser keeps that split, a double-click on the handle resets it. The **Settings** cog (admins) opens the [camera settings](/cameras/settings) drawer, where a camera's sources, zones, PTZ, detection, and more live.
+**Open camera** (or selecting a camera from the list) opens its full page: the live player, a **Recordings** tab, a list to switch between **Cameras**, **Shares** for admins, and a **Timeline** panel for jumping through footage. The player takes up to half the height, a wide picture less, and the tabs get the rest. Drag the handle between the player and the tabs to give either more height; the browser keeps that split, a double-click on the handle resets it. The **Settings** cog (admins) opens the [camera settings](/cameras/settings) drawer, where a camera's sources, zones, PTZ, detection, and more live.
+
+The **Recordings** tab lists what the camera's [timeline filter](/recording/timeline-playback) shows, so a camera that only reports motion needs **Motion** turned on there. The filter button at its bottom right narrows the list further by text, day, confidence, label, the camera's sensors and sounds, and vehicle color and type while you stay on the page. The button above it turns on the zone filter: mark areas on the camera picture, the timeline filters by the same zone.
 
 To watch several cameras at once, use [Camview](/cameras/camview).
