@@ -67,7 +67,7 @@ MQTT discovery ist zusammen mit den übrigen Broker-Einstellungen auf der [MQTT-
 
 ## Home-Assistant-Sensoren hereinholen
 
-Integration und MQTT schicken camera.ui beide nach Home Assistant hinaus. Das **Home-Assistant-Plugin** geht den umgekehrten Weg: Es importiert Home Assistants eigene Sensoren und Steuerungen nach camera.ui, wo du sie Kameras zuweisen und als Erkennungs-Trigger nutzen kannst. Es kommt keinem der beiden Transporte in die Quere.
+Integration und MQTT schicken camera.ui beide nach Home Assistant hinaus. Das **Home-Assistant-Plugin** geht den umgekehrten Weg: Es importiert Kameras, Sensoren und Steuerungen aus Home Assistant nach camera.ui, wo du die Sensoren Kameras zuweisen und als Erkennungs-Trigger nutzen kannst. Es kommt keinem der beiden Transporte in die Quere.
 
 Siehe **[Import aus Home Assistant](/de/home-assistant/import)** für die Einrichtung.
 
@@ -82,5 +82,5 @@ Siehe **[Dashboard-Karten](/de/home-assistant/card)** für die Optionen.
 - **[App](/de/home-assistant/app)** — den camera.ui-Server in Home Assistant OS laufen lassen.
 - **[Integration](/de/home-assistant/integration)** — einen camera.ui-Server verbinden und Kameras, Sensoren und PTZ als HA-Entitäten bekommen.
 - **[Dashboard-Karten](/de/home-assistant/card)** — Kameras, eine Ansicht oder die letzten Ereignisse aufs Dashboard bringen.
-- **[Import aus Home Assistant](/de/home-assistant/import)** — die eigenen Sensoren und Steuerungen von Home Assistant in camera.ui holen.
+- **[Import aus Home Assistant](/de/home-assistant/import)** — Kameras, Sensoren und Steuerungen aus Home Assistant in camera.ui holen.
 

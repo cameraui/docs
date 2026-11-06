@@ -67,7 +67,7 @@ MQTT discovery is documented with the rest of the broker settings on the [MQTT a
 
 ## Bringing Home Assistant sensors in
 
-The integration and MQTT both send camera.ui out to Home Assistant. The **Home Assistant plugin** goes the other way: it imports Home Assistant's own sensors and controls into camera.ui, where you can assign them to cameras and use them as detection triggers. It does not clash with either transport.
+The integration and MQTT both send camera.ui out to Home Assistant. The **Home Assistant plugin** goes the other way: it imports cameras, sensors and controls from Home Assistant into camera.ui, where you can assign the sensors to cameras and use them as detection triggers. It does not clash with either transport.
 
 See **[Import from Home Assistant](/home-assistant/import)** for setup.
 
@@ -82,5 +82,5 @@ See **[Dashboard cards](/home-assistant/card)** for the options.
 - **[App](/home-assistant/app)** — run the camera.ui server inside Home Assistant OS.
 - **[Integration](/home-assistant/integration)** — connect a camera.ui server and get cameras, sensors, and PTZ as HA entities.
 - **[Dashboard cards](/home-assistant/card)** — put cameras, a view or recent events on your dashboard.
-- **[Import from Home Assistant](/home-assistant/import)** — bring Home Assistant's own sensors and controls into camera.ui.
+- **[Import from Home Assistant](/home-assistant/import)** — bring cameras, sensors and controls from Home Assistant into camera.ui.
 
