@@ -148,6 +148,7 @@ camera.ui uses these ports (already covered by host networking):
 | 2002 | tcp | SRTP |
 | 2003 | tcp | RTMP |
 | 2004 | tcp/udp | WebRTC |
+| 2005 | tcp | ONVIF, only if you [turn it on](/cameras/onvif-export) |
 | 1883 | tcp | MQTT broker, only if you enable the built-in one |
 
 WebRTC media runs over UDP on 2004, with TCP on the same port as fallback. Without host networking, map both.

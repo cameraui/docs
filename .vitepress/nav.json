@@ -219,6 +219,13 @@
             "de": "Freigaben"
           },
           "link": "/cameras/shares"
+        },
+        {
+          "text": {
+            "en": "ONVIF export",
+            "de": "ONVIF-Export"
+          },
+          "link": "/cameras/onvif-export"
         }
       ]
     },
