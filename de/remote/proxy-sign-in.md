@@ -8,26 +8,17 @@ Hinter Authelia, Authentik, oauth2-proxy oder einem anderen Login-Proxy kann cam
 
 ## Einrichten
 
-Füg in `camera.ui.yaml` in deinem Speicherverzeichnis einen Block `proxyAuth` hinzu und starte den Server neu:
+Schalte unter **Einstellungen → Remote Zugriff** in der Karte **Anmeldung über Proxy** den Schalter **Aktiviert** ein, füll die Felder aus und speichere:
 
-```yaml
-proxyAuth:
-  port: 8082
-  trust:
-    - 10.0.0.5
-```
+- **Port.** Der Port, mit dem sich der Proxy verbindet.
+- **Header.** Der Header mit dem Benutzernamen, `Remote-User`, solange du ihn nicht änderst.
+- **Proxy-Adressen.** Woher der Proxy kommt, als IP-Adressen oder Bereiche wie `10.0.0.0/24`.
+- **Geheimnis.** Mindestens 16 Zeichen, die der Proxy bei jeder Anfrage als `X-Proxy-Secret` mitschickt. Ein gespeichertes Geheimnis bleibt verborgen, ein leeres Feld behält es, und der Button daneben entfernt es.
+- **Abmeldeseite.** Die Abmeldeseite des Proxys, siehe [Abmelden](#abmelden).
 
-camera.ui öffnet dann einen eigenen Port mit reinem HTTP für den Proxy, gebunden an dieselbe Adresse wie der Hauptport. Richte den Proxy auf `http://10.0.0.27:8082` statt auf den Hauptport, mit WebSockets und langen Timeouts wie unter [Reverse-Proxy](/de/remote/reverse-proxy). Nur dieser Port liest den Header. Am Hauptport, am HTTP-Port oder über camera.ui Cloud bewirkt er nichts.
+Der Port braucht Proxy-Adressen, ein Geheimnis oder beides, und mit beidem muss eine Anfrage beide Prüfungen bestehen. camera.ui öffnet einen eigenen Port mit reinem HTTP für den Proxy, gebunden an dieselbe Adresse wie der Hauptport. Richte den Proxy auf diesen Port statt auf den Hauptport, `http://10.0.0.27:8082` für Port 8082, mit WebSockets und langen Timeouts wie unter [Reverse-Proxy](/de/remote/reverse-proxy). Nur dieser Port liest den Header. Am Hauptport, am HTTP-Port oder über camera.ui Cloud bewirkt er nichts.
 
-| Feld | Umgebungsvariable | Bedeutung |
-|---|---|---|
-| `port` | `CAMERA_UI_PROXY_AUTH_PORT` | Port, mit dem sich der Proxy verbindet. |
-| `header` | `CAMERA_UI_PROXY_AUTH_HEADER` | Header mit dem Benutzernamen, standardmäßig `Remote-User`. |
-| `trust` | `CAMERA_UI_PROXY_AUTH_TRUST` | Adressen des Proxys, als IP-Adressen oder Bereiche wie `10.0.0.0/24`. In der Variable durch Kommas getrennt. |
-| `secret` | `CAMERA_UI_PROXY_AUTH_SECRET` | Mindestens 16 Zeichen, die der Proxy bei jeder Anfrage als `X-Proxy-Secret` mitschickt. |
-| `logoutUrl` | `CAMERA_UI_PROXY_AUTH_LOGOUT_URL` | Abmeldeseite des Proxys, siehe [Abmelden](#abmelden). |
-
-Eine Variable hat Vorrang vor der Datei. Der Port braucht `trust`, `secret` oder beides, und mit beidem muss eine Anfrage beide Prüfungen bestehen. Eine Einstellung, mit der camera.ui nichts anfangen kann, lässt den Port geschlossen, und das Log nennt den Grund.
+In Docker können Umgebungsvariablen die Felder stattdessen setzen: `CAMERA_UI_PROXY_AUTH_PORT`, `CAMERA_UI_PROXY_AUTH_HEADER`, `CAMERA_UI_PROXY_AUTH_TRUST` (Adressen durch Kommas getrennt), `CAMERA_UI_PROXY_AUTH_SECRET` und `CAMERA_UI_PROXY_AUTH_LOGOUT_URL`. Ein so gesetztes Feld nennt seine Variable und bleibt gesperrt. Ergeben die Variablen eine Einrichtung, mit der camera.ui nichts anfangen kann, bleibt der Port geschlossen, und das Log nennt den Grund.
 
 ## Welcher Header
 
@@ -56,7 +47,7 @@ Nennt der Proxy einen Benutzer, den camera.ui nicht kennt, zeigt der Browser sta
 
 ## Abmelden
 
-Ohne `logoutUrl` hat das Menü kein **Abmelden**, weil der Proxy dich sofort wieder anmelden würde. Mit `logoutUrl` beendet **Abmelden** die Sitzung in camera.ui und öffnet diese Seite, die die Sitzung beim Proxy beendet.
+Ohne **Abmeldeseite** hat das Menü kein **Abmelden**, weil der Proxy dich sofort wieder anmelden würde. Mit einer beendet **Abmelden** die Sitzung in camera.ui und öffnet diese Seite, die die Sitzung beim Proxy beendet.
 
 ## Nächste Schritte
 

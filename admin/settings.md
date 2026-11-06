@@ -20,10 +20,12 @@ Available to admins:
 
 - **Users.** Accounts, roles, and active sessions. See [Users](/admin/users).
 - **Recordings.** Recording and storage options. See [Recording](/recording/).
-- **Remote access.** Reaching the server from outside, plus the addresses apps use to reach it on your own network. See [Remote access](/remote/).
-- **MQTT.** Connect camera.ui to an MQTT broker.
+- **Remote access.** Reaching the server from outside, the addresses apps use on your own network, and the reverse proxy and proxy sign-in settings. See [Remote access](/remote/).
+- **Streaming.** RTSP, ONVIF export, WebRTC and the other streaming ports. See [Streaming](/admin/streaming).
+- **MQTT.** Connect camera.ui to an MQTT broker. See [MQTT](/admin/mqtt).
+- **Assistant.** Models, behavior and tools of the assistant. See [Assistant setup](/admin/assistant-setup).
 - **Backup.** Back up and restore your setup, and schedule recurring backups. See [Backup](/admin/backup).
-- **System.** Version, updates, and server actions. See [System](/admin/system).
+- **System.** Version, updates, ports, logging and server actions. See [System](/admin/system).
 
 ## Admin tools
 
@@ -34,4 +36,3 @@ The menu has more admin tools:
 - **[Automations](/automations/)** for connecting events to actions.
 - **[Logs](/admin/logs)** and a **terminal** for troubleshooting.
 - **[Instances](/admin/instances)** for switching between several servers, and **[Workers](/admin/workers)** for sharing the load of this one.
-- A raw **configuration** editor for advanced changes.

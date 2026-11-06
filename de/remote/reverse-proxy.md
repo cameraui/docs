@@ -93,26 +93,19 @@ server {
 
 ## Proxy auf einer anderen Maschine
 
-Damit die Sitzungslisten hinter einem Proxy auf einem anderen Host die Adresse des Clients zeigen, trag den Proxy in der `camera.ui.yaml` in deinem Speicherverzeichnis ein und starte den Server neu:
+Damit die Sitzungslisten hinter einem Proxy auf einem anderen Host die Adresse des Clients zeigen, trag den Proxy unter **Vertrauenswürdige Proxys** in der Karte **Reverse-Proxy** unter **Einstellungen → Remote Zugriff** ein. Ein Eintrag ist eine IP-Adresse oder ein Bereich wie `10.0.0.0/24`, er gilt beim Speichern. Eine eingetragene Adresse kann jede beliebige Client-Adresse weiterreichen, trag also nur den Proxy ein.
 
-```yaml
-trustedProxies:
-  - 10.0.0.5
-```
-
-Ein Eintrag ist eine IP-Adresse oder ein Bereich wie `10.0.0.0/24`. In Docker erreichst du dasselbe mit `CAMERA_UI_TRUSTED_PROXIES=10.0.0.5`, mehrere Einträge durch Kommas getrennt. Alles andere überspringt camera.ui und nennt es im Log. Eine eingetragene Adresse kann jede beliebige Client-Adresse weiterreichen, trag also nur den Proxy ein.
+In Docker setzt `CAMERA_UI_TRUSTED_PROXIES=10.0.0.5` die Liste stattdessen, mehrere Einträge durch Kommas getrennt. Das Feld nennt dann die Variable und bleibt gesperrt, und einen Eintrag, den camera.ui nicht lesen kann, überspringt es und nennt ihn im Log.
 
 ## Stattdessen reines HTTP
 
-camera.ui kann einen zweiten Listener öffnen, der reines HTTP spricht und alles inklusive WebSockets an den Hauptport weiterreicht. Trage dazu einen Port in der `camera.ui.yaml` in deinem Speicherverzeichnis ein:
-
-```yaml
-insecurePort: 8081
-```
-
-In Docker kannst du stattdessen `CAMERA_UI_INSECURE_PORT=8081` setzen. Starte den Server neu, richte den Proxy dann auf `http://10.0.0.27:8081` und lass die `SSLProxy*`-Zeilen beziehungsweise `proxy_ssl_verify` weg.
+camera.ui kann einen zweiten Listener öffnen, der reines HTTP spricht und alles inklusive WebSockets an den Hauptport weiterreicht. Trag einen Port, etwa `8081`, als **HTTP-Port** unter **Einstellungen → [System](/de/admin/system#server)** ein und speichere, oder setze in Docker `CAMERA_UI_INSECURE_PORT=8081`. Richte den Proxy dann auf `http://10.0.0.27:8081` und lass die `SSLProxy*`-Zeilen beziehungsweise `proxy_ssl_verify` weg.
 
 Dieser Listener bindet sich an dieselbe Adresse wie der Hauptport, ist also in deinem gesamten Netzwerk unverschlüsselt erreichbar. Nutze ihn nur dort, wo dieser Verkehr vertrauenswürdig bleibt, etwa bei einem Proxy auf derselben Maschine oder in einem Netzsegment, das du kontrollierst.
+
+## Andere Websites
+
+Eine Seite unter einer anderen Adresse, etwa ein Dashboard, kann die API von camera.ui aus dem Browser nur aufrufen, wenn ihre Adresse unter **Erlaubte Websites** in der Karte **Reverse-Proxy** steht, als `https://dashboard.example.com`.
 
 ## Wenn die Oberfläche lädt, aber leer bleibt
 

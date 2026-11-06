@@ -20,10 +20,12 @@ Für Admins verfügbar:
 
 - **Benutzer.** Konten, Rollen und aktive Sitzungen. Siehe [Benutzer](/de/admin/users).
 - **Aufnahmen.** Aufnahme- und Speicher-Optionen. Siehe [Aufnahmen](/de/recording/).
-- **Remote Zugriff.** Den Server von außen erreichen, dazu die Adressen, über die Apps ihn im eigenen Netzwerk erreichen. Siehe [Remote-Zugriff](/de/remote/).
-- **MQTT.** Verbinde camera.ui mit einem MQTT-Broker.
+- **Remote Zugriff.** Den Server von außen erreichen, die Adressen, über die Apps ihn im eigenen Netzwerk erreichen, sowie Reverse-Proxy und Anmeldung über Proxy. Siehe [Remote-Zugriff](/de/remote/).
+- **Streaming.** RTSP, ONVIF-Export, WebRTC und die übrigen Streaming-Ports. Siehe [Streaming](/de/admin/streaming).
+- **MQTT.** Verbinde camera.ui mit einem MQTT-Broker. Siehe [MQTT](/de/admin/mqtt).
+- **Assistent.** Modelle, Verhalten und Werkzeuge des Assistenten. Siehe [Assistent einrichten](/de/admin/assistant-setup).
 - **Backup.** Dein Setup sichern und wiederherstellen, sowie wiederkehrende Backups planen. Siehe [Backup](/de/admin/backup).
-- **System.** Version, Updates und Server-Aktionen. Siehe [System](/de/admin/system).
+- **System.** Version, Updates, Ports, Protokollierung und Server-Aktionen. Siehe [System](/de/admin/system).
 
 ## Admin-Werkzeuge
 
@@ -34,4 +36,3 @@ Das Menü hat weitere Admin-Werkzeuge:
 - **[Automationen](/de/automations/)** zum Verbinden von Ereignissen mit Aktionen.
 - **[Logs](/de/admin/logs)** und ein **Terminal** zur Fehlersuche.
 - **[Instanzen](/de/admin/instances)** zum Wechseln zwischen mehreren Servern und **[Worker](/de/admin/workers)** zum Verteilen der Last dieses einen.
-- Ein roher **Konfigurations**-Editor für fortgeschrittene Änderungen.

@@ -93,26 +93,19 @@ server {
 
 ## Proxy on another machine
 
-For the session lists to show the client's address behind a proxy on another host, add the proxy to `camera.ui.yaml` in your storage directory and restart the server:
+For the session lists to show the client's address behind a proxy on another host, add the proxy under **Trusted proxies** in the **Reverse proxy** card under **Settings → Remote Access**. An entry is an IP address or a range like `10.0.0.0/24`, and it applies on save. A listed address can pass on any client address it likes, so list the proxy and nothing else.
 
-```yaml
-trustedProxies:
-  - 10.0.0.5
-```
-
-An entry is an IP address or a range like `10.0.0.0/24`. In Docker, `CAMERA_UI_TRUSTED_PROXIES=10.0.0.5` does the same, with several entries separated by commas. camera.ui skips anything else and names it in the log. A listed address can pass on any client address it likes, so list the proxy and nothing else.
+In Docker, `CAMERA_UI_TRUSTED_PROXIES=10.0.0.5` sets the list instead, with several entries separated by commas. The field then names the variable and stays locked, and camera.ui skips an entry it can't read and names it in the log.
 
 ## Plain HTTP instead
 
-camera.ui can open a second listener that speaks plain HTTP and forwards everything, WebSockets included, to the main port. Add a port to `camera.ui.yaml` in your storage directory:
-
-```yaml
-insecurePort: 8081
-```
-
-In Docker you can set `CAMERA_UI_INSECURE_PORT=8081` instead. Restart the server, then point the proxy at `http://10.0.0.27:8081` and drop the `SSLProxy*` lines or `proxy_ssl_verify`.
+camera.ui can open a second listener that speaks plain HTTP and forwards everything, WebSockets included, to the main port. Enter a port, `8081` for example, as **HTTP port** under **Settings → [System](/admin/system#server)** and save, or set `CAMERA_UI_INSECURE_PORT=8081` in Docker. Then point the proxy at `http://10.0.0.27:8081` and drop the `SSLProxy*` lines or `proxy_ssl_verify`.
 
 This listener binds to the same address as the main port, so it is unencrypted on your whole network. Use it only where that traffic stays trusted, such as a proxy on the same machine or a network segment you control.
+
+## Other websites
+
+A page on another address, a dashboard for example, can call the camera.ui API from the browser only when its address is listed under **Allowed websites** in the **Reverse proxy** card, as `https://dashboard.example.com`.
 
 ## When the interface loads but stays empty
 

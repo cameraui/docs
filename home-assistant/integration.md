@@ -21,7 +21,7 @@ Without the Marketplace (Home Assistant before 2026.11), add the repository in [
 
 ### Discovery
 
-camera.ui advertises itself on the local network over mDNS (`_camera-ui._tcp.local.`). When Home Assistant sees it, a **camera.ui found** card appears under **Settings → Devices & services**. Open it and enter your API token; the host and port are filled in from discovery.
+camera.ui advertises itself on the local network over mDNS (`_camera-ui._tcp.local.`), unless **Local discovery** is off under **Settings → [System](/admin/system#server)**. When Home Assistant sees it, a **camera.ui found** card appears under **Settings → Devices & services**. Open it and enter your API token; the host and port are filled in from discovery.
 
 <Shot src="/img/home-assistant/discovery-card.png" alt="The discovered camera.ui card in Home Assistant" />
 

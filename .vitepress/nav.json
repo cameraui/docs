@@ -642,6 +642,13 @@
         },
         {
           "text": {
+            "en": "Streaming",
+            "de": "Streaming"
+          },
+          "link": "/admin/streaming"
+        },
+        {
+          "text": {
             "en": "MQTT",
             "de": "MQTT"
           },

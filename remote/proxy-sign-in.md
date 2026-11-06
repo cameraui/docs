@@ -8,26 +8,17 @@ Behind Authelia, Authentik, oauth2-proxy or another login proxy, camera.ui can t
 
 ## Setup
 
-Add a `proxyAuth` block to `camera.ui.yaml` in your storage directory and restart the server:
+Under **Settings → Remote Access**, switch on **Enabled** in the **Sign-in through a proxy** card, fill in the fields and save:
 
-```yaml
-proxyAuth:
-  port: 8082
-  trust:
-    - 10.0.0.5
-```
+- **Port.** The port the proxy connects to.
+- **Header.** The header with the username, `Remote-User` unless you change it.
+- **Proxy addresses.** Where the proxy connects from, as IP addresses or ranges like `10.0.0.0/24`.
+- **Secret.** At least 16 characters the proxy sends as `X-Proxy-Secret` on every request. A stored secret stays hidden, an empty field keeps it and the button next to it removes it.
+- **Logout page.** The proxy's logout page, see [Signing out](#signing-out).
 
-camera.ui opens a separate plain HTTP port for the proxy, bound to the same address as the main port. Point the proxy at `http://10.0.0.27:8082` instead of the main port, with WebSockets and long timeouts as on [Reverse proxy](/remote/reverse-proxy). Only this port reads the header. Sent to the main port, the plain HTTP port or through camera.ui Cloud, it does nothing.
+The port needs proxy addresses, a secret or both, and with both set a request has to pass both. camera.ui opens a separate plain HTTP port for the proxy, bound to the same address as the main port. Point the proxy at that port instead of the main port, `http://10.0.0.27:8082` for port 8082, with WebSockets and long timeouts as on [Reverse proxy](/remote/reverse-proxy). Only this port reads the header. Sent to the main port, the plain HTTP port or through camera.ui Cloud, it does nothing.
 
-| Field | Environment variable | Meaning |
-|---|---|---|
-| `port` | `CAMERA_UI_PROXY_AUTH_PORT` | Port the proxy connects to. |
-| `header` | `CAMERA_UI_PROXY_AUTH_HEADER` | Header with the username, `Remote-User` by default. |
-| `trust` | `CAMERA_UI_PROXY_AUTH_TRUST` | Addresses of the proxy, as IP addresses or ranges like `10.0.0.0/24`. In the variable, separated by commas. |
-| `secret` | `CAMERA_UI_PROXY_AUTH_SECRET` | At least 16 characters the proxy sends as `X-Proxy-Secret` on every request. |
-| `logoutUrl` | `CAMERA_UI_PROXY_AUTH_LOGOUT_URL` | Logout page of the proxy, see [Signing out](#signing-out). |
-
-A variable takes precedence over the file. The port needs `trust`, `secret` or both, and with both set a request has to pass both. A setting camera.ui can't use keeps the port closed, and the log says why.
+In Docker, environment variables can set the fields instead: `CAMERA_UI_PROXY_AUTH_PORT`, `CAMERA_UI_PROXY_AUTH_HEADER`, `CAMERA_UI_PROXY_AUTH_TRUST` (addresses separated by commas), `CAMERA_UI_PROXY_AUTH_SECRET` and `CAMERA_UI_PROXY_AUTH_LOGOUT_URL`. A field set that way names its variable and stays locked. If the variables make a setup camera.ui can't use, the port stays closed and the log says why.
 
 ## Which header
 
@@ -56,7 +47,7 @@ If the proxy names a user camera.ui doesn't have, the browser shows an error ins
 
 ## Signing out
 
-Without `logoutUrl`, the menu has no **Logout**, since the proxy would sign you back in at once. With `logoutUrl`, **Logout** ends the camera.ui session and opens that page, which ends the session at the proxy.
+Without a **Logout page**, the menu has no **Logout**, since the proxy would sign you back in at once. With one, **Logout** ends the camera.ui session and opens that page, which ends the session at the proxy.
 
 ## Next steps
 

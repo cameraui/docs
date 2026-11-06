@@ -14,4 +14,4 @@ Mit aktiviertem Cloud-Zugriff hält camera.ui jederzeit eine öffentliche Adress
 
 Jede Variante verbindet sich nach außen zu Cloudflare per TCP auf Port 7844. Hinter einer Firewall, die ausgehenden Verkehr filtert, gib TCP auf diesem Port frei.
 
-Für QUIC trag `cloudflaredProtocol: quic` in der `camera.ui.yaml` in deinem Speicherverzeichnis ein und starte den Server neu. In Docker macht `CAMERA_UI_CLOUDFLARED_PROTOCOL` unter `environment:` dasselbe. `quic` braucht UDP auf Port 7844, `auto` versucht QUIC und weicht auf TCP aus. Über QUIC können ein paar hängende Zuschauer, etwa ein gesperrtes Handy mit offenen Live-Kameras, den Tunnel für alle einfrieren.
+Für QUIC wähle es unter **Protokoll** und speichere, der Tunnel verbindet sich sofort neu. In Docker setzt `CAMERA_UI_CLOUDFLARED_PROTOCOL` unter `environment:` es und sperrt das Feld. QUIC braucht UDP auf Port 7844, **Automatisch** versucht QUIC und weicht auf TCP aus. Über QUIC können ein paar hängende Zuschauer, etwa ein gesperrtes Handy mit offenen Live-Kameras, den Tunnel für alle einfrieren.

@@ -21,7 +21,7 @@ Ohne Marketplace (Home Assistant vor 2026.11) fügst du das Repository in [HACS]
 
 ### Erkennung
 
-camera.ui kündigt sich im lokalen Netz über mDNS an (`_camera-ui._tcp.local.`). Sobald Home Assistant den Server sieht, erscheint unter **Einstellungen → Geräte & Dienste** eine **camera.ui gefunden**-Karte. Öffne sie und gib deinen API-Token ein, Host und Port kommen aus der Erkennung.
+camera.ui kündigt sich im lokalen Netz über mDNS an (`_camera-ui._tcp.local.`), außer **Im Netzwerk auffindbar** ist unter **Einstellungen → [System](/de/admin/system#server)** aus. Sobald Home Assistant den Server sieht, erscheint unter **Einstellungen → Geräte & Dienste** eine **camera.ui gefunden**-Karte. Öffne sie und gib deinen API-Token ein, Host und Port kommen aus der Erkennung.
 
 <Shot src="/img/home-assistant/discovery-card.png" alt="Die gefundene camera.ui-Karte in Home Assistant" />
 
