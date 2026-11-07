@@ -25,3 +25,5 @@ For problems with the app, the Console export is the useful thing to attach. For
 ## Terminal
 
 There's also a **Terminal** in the menu, an interactive shell on the server for advanced troubleshooting. It's available on server installations, not in the desktop app.
+
+Each tab opens its own shell. Drag a tab to move it (on a phone, hold it briefly first), double-click or double-tap it to rename it. The pin in the menu at the bottom right keeps a tab and its shell running on the server: after a reload or on another device the tab opens that shell again. Tabs without the pin close on a reload. Closing a tab or restarting the server ends its shell.

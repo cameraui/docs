@@ -25,3 +25,5 @@ Bei Problemen mit der App hilft der Konsolen-Export, bei Problemen mit dem Serve
 ## Terminal
 
 Es gibt außerdem ein **Terminal** im Menü, eine interaktive Shell auf dem Server für fortgeschrittene Fehlersuche. Es ist auf Server-Installationen verfügbar, nicht in der Desktop-App.
+
+Jeder Tab öffnet eine eigene Shell. Einen Tab verschiebst du per Ziehen (am Handy erst kurz halten), ein Doppelklick oder Doppeltipp benennt ihn um. Die Pinnadel im Menü unten rechts hält einen Tab und seine Shell auf dem Server offen: Nach dem Neuladen oder auf einem anderen Gerät öffnet der Tab wieder diese Shell. Tabs ohne Pinnadel sind nach dem Neuladen weg. Schließt du einen Tab oder startet der Server neu, endet seine Shell.
