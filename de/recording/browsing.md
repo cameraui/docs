@@ -12,6 +12,8 @@ Sagt die Liste, dass Aufnahmen nicht verfügbar sind, läuft das NVR-Plugin nich
 
 **Anzeigen** oben in der Seitenleiste bestimmt, was die Liste hält: **Alle**, nur **Ereignisse** oder nur **Episoden**. Episoden haben keine eigenen Erkennungen, in dieser Ansicht grenzen sie also nur Kamera, Zeitraum, **Nur mit Aufnahme** und **Nur Favoriten** ein.
 
+Ein Punkt am Filter-Button zeigt, dass ein Filter die Liste eingrenzt, auch bei geschlossener Seitenleiste. **Filter zurücksetzen** unten in der Seitenleiste stellt alle Filter auf ihren Standard zurück.
+
 <Shot src="/img/recording/recordings-filters.png" alt="Die Filter-Seitenleiste mit dem Anzeigen-Schalter, der Suche und den Filtern für Raum und Kamera" />
 
 Die weiteren Filter:

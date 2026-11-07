@@ -37,10 +37,11 @@ Du kannst mehrere Server hinzufügen und unter **Settings → Switch server** zw
 
 - **Home.** Oben die neueste Aktivität, dazu Kamera- und Speicher-Status und die heutige Ereigniszahl. Eine Benachrichtigung öffnet ihre Aufnahme. Die neueste Aktivität folgt dem [Filter der Letzten Ereignisse](/de/cameras/home) deines Kontos.
 - **Camview.** Eine Live-Wand deiner Kameras. Raster oder gemischtes Layout, umsortierbare Kacheln, Vollbild pro Kamera. **Fill wall** lässt die Ränder weg und füllt den Bildschirm, **Whole picture** passt jede Kamera mit Balken in ihre Kachel ein, statt sie zu beschneiden. Beides bleibt pro Ansicht gespeichert.
-- **Ereignisse.** Deine Ereignisse nach Tag gruppiert, mit Filtern für Personen, Gesichter, Fahrzeuge, Tiere, Türklingel, Sensoren, Geräusche und Bewegung. Ein Ereignis spielt ab diesem Moment ab.
+- **Ereignisse.** Deine Ereignisse nach Tag gruppiert, mit Filtern für Personen, Gesichter, Fahrzeuge, Tiere, Türklingel, Sensoren, Geräusche und Bewegung. Ein Ereignis spielt ab diesem Moment ab. **Filter** grenzt die Liste auf Kameras oder Räume und auf Favoriten ein, unter All auf Ereignisse oder Episoden, unter Sounds auf einzelne Geräusche und unter Vehicles auf Typ und Farbe. Jedes Apple TV merkt sich seine eigene Auswahl.
 - **Episoden.** [Episoden](/de/detection/episodes) erscheinen als Mosaik-Karten zwischen deinen Ereignissen und auf dem Home-Screen. Öffnest du eine, spielt sie die ganze Story und wechselt von selbst zwischen den Kameras. Links und rechts springen zwischen den Kameras.
 - **Gegensprechen.** Im Vollbild-Player spricht der Mikrofon-Button über die Kamera, sofern sie Gegensprechen unterstützt.
 - **PTZ.** Eine Kamera, die schwenken, neigen oder zoomen kann, bekommt im Player einen Bewegen-Button. Halte eine Richtung, um weiter zu fahren, ein kurzer Druck rückt ein Stück. Home-Position und Presets erscheinen, wenn die Kamera sie hat. Nur für Admin-Konten. Siehe [PTZ & Autotrack](/de/sensors/ptz).
+- **Top Shelf.** Liegt die App in der obersten Reihe des Apple-TV-Home-Screens, zeigt das Top Shelf deine neuesten Erkennungen. **Settings → Top Shelf** wählt die Kameras, deren Ereignisse dort erscheinen, pro Apple TV.
 
 Die Wiedergabe folgt der [Wiedergabe-Quelle](/de/recording/timeline-playback#wiedergabequalität) jeder Kamera, Episoden eingeschlossen. Bei Auto spielt eine Lücke in der High-Aufnahme die nächste Qualität mit Material, genau wie im Webinterface.
 

@@ -12,6 +12,8 @@ When the list says recordings are unavailable, the NVR plugin is not running. Th
 
 **Show** at the top of the sidebar picks what the list holds: **All**, only **Events**, or only **Episodes**. Episodes have no detections of their own, so in that view only camera, time range, **Only with recording** and **Favorites only** narrow them down.
 
+A dot on the filter button shows that a filter narrows the list, also while the sidebar is closed. **Reset filters** at the bottom of the sidebar puts every filter back to its default.
+
 <Shot src="/img/recording/recordings-filters.png" alt="The filter sidebar with the Show switch, search and the room and camera filters" />
 
 The other filters:
