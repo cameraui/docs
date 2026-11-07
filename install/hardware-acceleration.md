@@ -15,9 +15,9 @@ camera.ui accelerates two things: the **video pipeline** (decoding camera stream
 | **macOS** (desktop app, Intel & Apple Silicon) | VideoToolbox (Apple GPU + media engine) | CoreML (Apple GPU + **Neural Engine**), ONNX |
 | **Windows** (desktop app, x64) | NVIDIA (CUDA/NVENC), Intel (QSV), and any GPU via Direct3D 11/12 | OpenVINO (Intel GPU/NPU), ONNX (NVIDIA CUDA) |
 | **Linux x64** (Docker, bare-metal, Proxmox) | NVIDIA (CUDA/NVENC), Intel (VA-API/QSV), AMD (VA-API), plus Vulkan/OpenCL | OpenVINO (Intel GPU/NPU), ONNX (CUDA/TensorRT), NCNN (Vulkan), Coral, Hailo |
-| **Linux arm64** (Rockchip) | Rockchip (RKMPP) | Coral, Hailo, NCNN (CPU/NEON) |
+| **Linux arm64** (Docker, bare-metal) | Rockchip (RKMPP) | Coral, Hailo, NCNN (CPU, Vulkan) |
 
-The table shows what camera.ui **can** use. The matching GPU driver still has to be installed on the host. A backend whose driver is missing is skipped silently, never an error.
+The table shows what camera.ui **can** use. The matching GPU driver still has to be installed on the host. A backend whose driver is missing is skipped silently, never an error. On a Raspberry Pi, NCNN leaves the GPU out and runs on the CPU, which is many times faster there.
 
 The **desktop app** needs no setup: macOS ships video acceleration with the OS, Windows uses the system graphics driver. Each detection plugin logs what every model runs on (`Loaded model: …`) and shows it under **Active Hardware** in its plugin settings.
 
