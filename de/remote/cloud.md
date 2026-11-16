@@ -8,9 +8,9 @@ camera.ui Cloud lässt dich deinen Server von überall erreichen, ohne am Router
 
 ## Dein Server bleibt deiner
 
-camera.ui Cloud ist ein Weg, deinen eigenen Server zu erreichen, keine Kopie davon. Deine Kameras, Aufnahmen, Einstellungen und die Oberfläche bleiben alle auf deinem Server. Die Cloud hilft deiner App und deinem Server nur, sich zu finden. Deine Session läuft dann zu deiner eigenen Instanz, über deine eigene Adresse oder einen Cloudflare-Tunnel (siehe unten), und dein Video, deine Zugangsdaten und andere Daten laufen nie über die Server von camera.ui.
+camera.ui Cloud ist ein Weg, deinen eigenen Server zu erreichen, keine Kopie davon. Deine Kameras, Aufnahmen, Einstellungen und die Oberfläche bleiben alle auf deinem Server. Die Cloud hilft deiner App und deinem Server nur, sich zu finden. Deine Session läuft dann zu deiner eigenen Instanz, über deine eigene Adresse oder einen Cloudflare-Tunnel (siehe unten), und deine Zugangsdaten und andere Daten laufen nie über die Server von camera.ui.
 
-Push-Benachrichtigungen sind das Einzige, das tatsächlich durch die Cloud läuft. Sie sind Ende-zu-Ende-verschlüsselt, nur dein Handy kann sie lesen, und die Cloud speichert nichts. Siehe [Benachrichtigungen](/de/notifications/).
+Zwei Dinge können durch die Cloud laufen. Push-Benachrichtigungen sind Ende-zu-Ende-verschlüsselt, nur dein Handy kann sie lesen, und die Cloud speichert nichts. Siehe [Benachrichtigungen](/de/notifications/). Live-Video und Gegensprechen laufen nur dann über das [Relay](/de/remote/#webrtc), wenn du es einschaltest und keine direkte Verbindung zustande kommt. Sie bleiben dort Ende-zu-Ende-verschlüsselt und werden nicht gespeichert.
 
 ## Aktivieren
 
@@ -18,7 +18,7 @@ Push-Benachrichtigungen sind das Einzige, das tatsächlich durch die Cloud läuf
 
 Öffne unter **Einstellungen → Remote Zugriff** die **Cloud**-Karte und schalte **Aktiviert** ein. Unter seinem **Namen** erscheint der Server in deinem Cloud-Dashboard.
 
-Die **Status**-Zeile zeigt, ob der Server **Registriert** ist, und eine **Tunnel**-Anzeige zeigt die Live-Verbindung. Um einen Server zu verbinden, wähle **Server registrieren** und schließe die Kopplung ab. Zeigt der Status **Neu-Authentifizierung nötig**, hat der Server seine Cloud-Zugangsdaten verloren: wähle **Neu verbinden** und koppel erneut. Einen registrierten Server nimmst du mit **Server deregistrieren** wieder aus deinem Konto. Denselben Ablauf auf dem Handy beschreibt [Mobile Apps koppeln](/de/remote/pairing).
+Die **Status**-Zeile zeigt, ob der Server **Registriert** ist, und eine **Tunnel**-Anzeige zeigt die Live-Verbindung. Um einen Server zu verbinden, wähle **Server registrieren** und schließe die Kopplung ab. Ist der Cloud-Zugriff dabei noch aus, fragt der Server gleich, ob er ihn einschalten soll. Zeigt der Status **Neu-Authentifizierung nötig**, hat der Server seine Cloud-Zugangsdaten verloren: wähle **Neu verbinden** und koppel erneut. Einen registrierten Server nimmst du mit **Server deregistrieren** wieder aus deinem Konto. Denselben Ablauf auf dem Handy beschreibt [Mobile Apps koppeln](/de/remote/pairing).
 
 ## Cloud hält die direkte Verbindung aktiv
 
@@ -32,7 +32,9 @@ Der Rückfall ist nicht dauerhaft. camera.ui prüft deine eigene Adresse weiter 
 
 Das Dashboard listet deine registrierten Server beim Namen, dort wählst du einen zum Verbinden. Im Browser liegt es unter [cloud.cameraui.com](https://cloud.cameraui.com/), in den mobilen Apps ist es die Cloud-Server-Liste. Per Einladung kannst du einen Server mit einem anderen camera.ui-Konto **teilen**, das sich dann mit eigenem Login anmeldet.
 
-Das Papierkorb-Symbol neben einem Server entfernt ihn aus deinem Konto, auch wenn du den Server selbst nicht mehr erreichst. Damit wird sein Platz in deinem Tarif frei, und ein neuer Server, der bei **Server-Limit deines Tarifs erreicht** hängen geblieben ist, lässt sich danach verbinden. Bei einem mit dir geteilten Server beendet der Papierkorb nur deinen eigenen Zugriff.
+Ein Server mit ausgeschaltetem Cloud-Zugriff steht in der Liste, lässt sich aber nicht öffnen: schalte **Aktiviert** in seiner **Cloud**-Karte ein. Ein Server, der länger offline ist, zeigt, wann er zuletzt online war.
+
+**Entfernen** im Menü neben einem Server nimmt ihn aus deinem Konto, auch wenn du den Server selbst nicht mehr erreichst. Damit wird sein Platz in deinem Tarif frei, und ein neuer Server, der bei **Server-Limit deines Tarifs erreicht** hängen geblieben ist, lässt sich danach verbinden. Bei einem mit dir geteilten Server beendet das nur deinen eigenen Zugriff.
 
 ## Ausschalten
 

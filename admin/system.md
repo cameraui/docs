@@ -10,6 +10,10 @@ The **Settings → System** page (admins only) handles the server's version, the
 
 It shows the **server** version, and the **app** version in the desktop and mobile apps. Installing updates happens on the [Updates page](/install/updating#the-updates-page); what stays here is **Manage**, which lists every published version to install a specific one, and **Beta updates**, the toggle at the top of the page that decides whether pre-releases are offered at all. When an installed version needs a restart to take effect, the version line shows both and offers **Restart**. See [Updating](/install/updating) for how updates work across platforms.
 
+## Instance language
+
+**Instance language** in the same card is the language of notifications and of the texts plugins write, such as [AI descriptions](/detection/genai-descriptions). Notification texts exist in English and German so far, with any other language they stay English. Each user picks their own interface language under **Appearance**.
+
 ## Server
 
 - **HTTPS port.** The port for the web interface and the apps, 3443 by default.[^desktop]
@@ -37,7 +41,7 @@ How much camera.ui and the streaming engine write to the [log](/admin/logs), fro
 **Certificate** downloads the server's own certificate, for adding it to a device's trust store. **Own certificate** takes a certificate you obtained for your domain and serves it for the names it covers. See [Certificate](/remote/certificate).
 
 ::: tip
-Looking for the server name or network addresses? Those are under [Remote access](/remote/). Theme and language are under **Appearance**.
+Looking for the server name or network addresses? Those are under [Remote access](/remote/). Theme and interface language are under **Appearance**.
 :::
 
 [^desktop]: The desktop app uses 3543.

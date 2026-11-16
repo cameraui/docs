@@ -10,7 +10,11 @@ Die **Logs**-Ansicht (im Menü, nur Admins) zeigt das Server-Log.
 
 ## Die Logs lesen
 
-Logs streamen live. Filtere nach Quelle (**All**, eine Systemkomponente wie **Server**, **go2rtc**, **nats**, **tunnel**, eine **Kamera** oder ein **Plugin**), **durchsuche** die sichtbaren Zeilen, oder **lade** das Log **herunter**, nutze **Alles kopieren** oder **lösche** es.
+Logs streamen live. Filtere nach Quelle (**All**, eine Systemkomponente wie **Server**, **go2rtc**, **nats**, **tunnel**, eine **Kamera** oder ein **Plugin**), **durchsuche** die geladenen Zeilen, oder **lade** das Log **herunter**, nutze **Alles kopieren** oder **lösche** es. Der Download enthält das ganze Log, **Alles kopieren** nur die Zeilen, die in der Ansicht geladen sind.
+
+Scrollst du nach oben, lädt die Ansicht ältere Zeilen nach, so weit das Log zurückreicht. Liest du weiter oben, schieben neue Zeilen die Ansicht nicht weg: Ein Button **neue Zeilen** zählt sie und bringt dich zurück ans Ende. Die Log-Dialoge einer Kamera- und einer Plugin-Karte funktionieren genauso.
+
+Jedes Log behält seine neuesten Einträge bis zu einer festen Größe, ältere fallen heraus. Logs entfernter Kameras und Plugins werden gelöscht.
 
 ## Konsole
 

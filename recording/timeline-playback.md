@@ -11,14 +11,15 @@ Each camera's **timeline** scrubs through its recorded footage, with marks where
 ## Reviewing footage
 
 - **Scrub** along the timeline. Scrubbing uses the low-resolution stream.
-- **Play and pause**, skip 30 seconds back or forward, and change the **speed** between 0.25x and 8x.
+- **Play and pause**, skip 30 seconds back or forward, and change the **speed** between 0.25x and 8x. When the connection or the device cannot keep a high speed, playback switches to the low-resolution recording until you slow down again.
 - **Find an object.** Admins only. Open **Find**, tap a person or a vehicle in the picture, and get the moments that show it. See [Find an object](/detection/find-object).
 - **Event marks** show a thumbnail. Click one, or a full event bar, to play from where it began.
 - **Motion, sounds, sensors and line crossings** within an event show as small dots, each where it began. Dots too close together for the zoom become one with a count next to its icon. Hover a dot to see what it was and when, click it to jump there.
 - **Rings and alarms.** A doorbell press, siren, security system, contact event or alarm sound shows as a full event bar with its own icon and a snapshot, even when the camera saw nothing. A ring during a running motion event appears right away, not after the motion ends.
-- **Filter by event type.** The filter button picks which event types get a picture or a dot on the timeline and a card in the detections list, the bars stay. **Motion** and **Other sound** are off by default. Where two pictures would overlap, an object wins over a sensor, then an alarm sound, another sound and motion. Each camera keeps its own filter, on its timeline, in its event dialogs and in the **Recordings** tab of its page. The Camview timeline over several cameras has a separate one. Both stay with your account.
+- **Filter, Export and Delete recordings** sit behind the arrow button in a corner of the timeline. A dot on the arrow means a filter is on.
+- **Filter by event type.** The filter button picks which event types get a picture or a dot on the timeline and a card in the detections list, the bars stay. **Other sound** is off by default, **Motion** on cameras with object detection. Where two pictures would overlap, an object wins over a sensor, then an alarm sound, another sound and motion. Each camera keeps its own filter, on its timeline and in its event dialogs. The Camview timeline over several cameras has a separate one. Both stay with your account.
 - **Filter by zone.** In the filter, turn on **Filter by zone** and mark areas on the camera picture to keep only events detected inside them.
-- **Zoom** from an overview down to seconds. At the deepest level scrubbing is frame-accurate in the playback quality and the timeline shows a **Fine Scrubbing** badge. When a full picture takes too long to load, dragging shows the low-resolution stream and the picture turns sharp when you let go.
+- **Zoom** from an overview down to seconds: pinch the timeline with two fingers or scroll with Ctrl held. Larger screens also have a zoom slider or buttons. At the deepest level scrubbing is frame-accurate in the playback quality and the timeline shows a **Fine Scrubbing** badge. When a full picture takes too long to load, dragging shows the low-resolution stream and the picture turns sharp when you let go.
 - **Jump to a day** with the calendar. Days with footage are highlighted.
 
 ## Playback quality

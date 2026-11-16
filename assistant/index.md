@@ -14,7 +14,7 @@ Once an admin has [set it up](/admin/assistant-setup), every user sees the Assis
 
 ## Asking
 
-The assistant answers in your interface language unless **Answer language** is set to a fixed one. Every tool it used appears as a card under the answer with its arguments and result.
+The assistant answers in the [instance language](/admin/system#instance-language) unless **Answer language** names another one. Every tool it used appears as a card under the answer with its arguments and result.
 
 It also works the app for you: "show me the garden camera", "open the recording of the gate from 7:12" or "go to the automations" opens the matching page, and on a camera page it moves and zooms the timeline. It does that only when you ask to see or do something, a plain question is answered in the chat. The recordings page has its own box for the assistant, see [Browsing recordings](/recording/browsing#search).
 
@@ -24,13 +24,13 @@ Next to the text box sits a microphone: the browser turns speech into text, came
 
 The paper clip attaches your own files, pasting a picture works too: pictures up to 12 MB, audio up to 25 MB, video up to 60 MB, eight files per message. The assistant hands them to the detection plugins. Audio and video never go to the language model, only to the plugins. Attached pictures stay with the conversation, audio and video are analyzed once and not kept.
 
-A recording card and a camera's menu both offer **Ask the assistant**, which opens the chat with that event or camera already named. During playback the camera's menu asks about the moment on screen instead of what the camera sees now.
+A recording card, a camera's toolbar and an alert in the [notification list](/notifications/#the-notification-list) offer **Ask the assistant**, which opens the chat with that event, camera or alert already named. For a plugin warning the question asks it to read the log of that plugin or camera. During playback the camera's button asks about the moment on screen instead of what the camera sees now.
 
 ## Working with a conversation
 
-Hover a message for its actions. A question can be edited and sent again, which discards everything after it. An answer can be regenerated, copied, or deleted together with its question. **Branch from here** copies the conversation up to that point into a new one. A stopped answer offers **Continue**. You can type the next message while an answer is still running; it waits below the text box and goes out when the answer is done.
+Hover a message for its actions. A question can be edited and sent again, which discards everything after it. An answer can be regenerated, copied, or deleted together with its question. **Branch from here** copies the conversation up to that point into a new one. A stopped answer, or one cut off at the model's length limit, offers **Continue**. An answer the provider blocked leaves a note instead. You can type the next message while an answer is still running; it waits below the text box and goes out when the answer is done.
 
-The sliders button in the text box opens the settings of this conversation. **Instructions** apply to every answer in it, "answer in one sentence" for example, and keep working in long conversations where early messages drop out of what the model sees. **Tools** lists the tool groups (camera.ui, the documentation, one per plugin); a removed group is hidden from the model in this conversation. With more than one model the panel also picks the **Model**, and the conversation keeps it instead of the default. A combination of model, tool groups and instructions can be saved as a **profile**; profiles belong to your account.
+The sliders button in the text box opens the settings of this conversation. **Instructions** apply to every answer in it, "answer in one sentence" for example, and keep working in long conversations where early messages drop out of what the model sees. **Tools** lists the tool groups (camera.ui, the documentation, web search, one per plugin); a removed group is hidden from the model in this conversation. With more than one model the panel also picks the **Model**, and the conversation keeps it instead of the default. A combination of model, tool groups and instructions can be saved as a **profile**; profiles belong to your account.
 
 Conversations are stored per user on the server, together with the pictures and the open-this buttons of the last tool calls. An answer that is still streaming survives a bad connection, a reload or a second tab: the browser picks the stream up where it broke off instead of asking the model again, and a confirmation that was waiting is shown again after a restart. **Stop** ends the run on the server too, closing the tab alone does not.
 
@@ -50,7 +50,7 @@ The assistant can also run a detection plugin (object, face, license plate or CL
 
 With the NVR plugin it reaches your recordings: events and episodes in a time range, a summary of a day or a whole week, events searched by description, event pictures, known faces and when someone was last seen. Ask for the clip of a moment and it builds one with a download button, or sends it to your phone as a video notification. Faces the recognition could not name can be named, ignored or corrected in the chat. It also lists the license plates read in a period, tells when a camera is busiest and where in the picture the activity was, and shows the stretches a camera did not record.[^license]
 
-The assistant also knows the user documentation: it looks up how a feature works and where it lives in the app, and points there when it cannot do something from the chat. It never asks for passwords in the chat.
+The assistant also knows the user documentation: it looks up how a feature works and where it lives in the app, and points there when it cannot do something from the chat. It never asks for passwords in the chat. With [web search](/admin/assistant-setup#web-search) on, it also looks things up on the internet and links the pages it used.
 
 Tools that change something (switching a sensor, running an automation, sending a notification, marking a favorite, adopting a device) are marked **asks first**. The chat shows what the assistant wants to do with which arguments, **Edit** lets you correct the values, and it runs after **Allow**. Tools marked **admin** are not offered to users with the user role.
 

@@ -61,6 +61,7 @@ Ignorierst du ein Gesicht, das du nie wieder sehen willst (ein vorbeigehender Fr
 - **Neue Sichtungen werden verworfen.** Ist jemand ignoriert, tauchen spätere Aufnahmen nicht wieder als unbekannte Gesichter auf.
 - **Ignorierte Gesichter liegen in einer eigenen Liste.** Sie sammeln sich unter **Ignorierte Gesichter** am Ende des Bereichs Unbekannte Gesichter.
 - **Wiederherstellen zum Rückgängigmachen.** **Wiederherstellen** legt ein ignoriertes Gesicht zurück zu den unbekannten Gesichtern. Neue Sichtungen der Person kommen wieder, sobald kein anderes Bild von ihr mehr ignoriert ist.
+- **Verwerfen zum Löschen.** **Verwerfen** löscht ein ignoriertes Gesicht direkt, ohne es vorher wiederherzustellen. Neue Sichtungen der Person kommen danach wieder wie nach dem Wiederherstellen.
 
 ## Einstellungen
 

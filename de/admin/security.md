@@ -12,7 +12,7 @@ Jedes Konto hat eigene Sicherheits-Einstellungen unter **Einstellungen → Konto
 
 Die Zwei-Faktor-Authentifizierung (2FA) ergänzt dein Passwort um einen Code aus einer Authenticator-App, etwa Google Authenticator, Authy oder Apples Passwörter-App. Passwortmanager, die den Code speichern, bieten ihn bei der Anmeldung an.
 
-**2FA einrichten** zeigt einen QR-Code für deine App (oder einen Code zum Abtippen); auf dem Gerät mit deinen Codes tippst du den QR-Code an, statt ihn zu scannen. Bestätige mit dem 6-stelligen Code. Die danach angezeigten **Backup-Codes** sind dein Weg zurück, falls du dein Handy verlierst.
+**2FA einrichten** fragt nach deinem aktuellen Passwort und zeigt dann einen QR-Code für deine App (oder einen Code zum Abtippen); auf dem Gerät mit deinen Codes tippst du den QR-Code an, statt ihn zu scannen. Bestätige mit dem 6-stelligen Code. Die danach angezeigten **Backup-Codes** sind dein Weg zurück, falls du dein Handy verlierst.
 
 Einmal aktiviert, kannst du **Backup-Codes neu generieren** oder **2FA deaktivieren**, beides verlangt einen aktuellen Code.
 
@@ -30,7 +30,7 @@ Einmal aktiviert, bietet der Login-Bildschirm **Mit Face ID anmelden** an. Der S
 
 ## Aktive Sitzungen
 
-Die Liste **Aktive Sitzungen** zeigt jedes an deinem Konto angemeldete Gerät, das aktuelle markiert. Du kannst ein einzelnes Gerät **abmelden** oder alle anderen auf einmal. Ein abgemeldetes Gerät verliert dabei sofort auch seine Live-Ansicht.
+Die Liste **Aktive Sitzungen** zeigt jedes an deinem Konto angemeldete Gerät, das aktuelle markiert. Du kannst ein einzelnes Gerät **abmelden** oder alle anderen auf einmal. Ein abgemeldetes Gerät verliert dabei sofort auch seine Live-Ansicht. Sitzungen des [Home-Assistant-Panels](/de/home-assistant/app) oder eines [Anmelde-Proxys](/de/remote/proxy-sign-in) lassen sich hier nicht abmelden, sie würden sich sofort wieder anmelden.
 
 ## API-Tokens
 
@@ -40,4 +40,6 @@ Ein Token hat vollen Zugriff auf dein Konto, behandle es also wie ein Passwort. 
 
 ## Passwort
 
-Ändere dein Passwort unter **Konto**. Das Ändern, auch deines Benutzernamens, meldet dich überall sofort ab. Deine API-Tokens bleiben gültig.
+**Benutzernamen ändern** und **Passwort ändern** unter **Konto** verlangen beide dein aktuelles Passwort und melden dich überall sofort ab. Deine API-Tokens bleiben gültig.
+
+Nach mehreren falschen Passwörtern in Folge pausiert camera.ui die Anmeldung für diesen Benutzer eine Weile. Warte kurz und melde dich dann erneut an.

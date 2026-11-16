@@ -61,6 +61,7 @@ Ignore a face you never want to see again (a passing stranger, the mail carrier)
 - **New sightings are dropped.** Once someone is ignored, their later shots don't come back as unknown faces.
 - **Ignored faces sit in their own list.** They collect under **Ignored Faces** at the bottom of the Unknown Faces section.
 - **Restore to undo.** **Restore** puts an ignored face back among the unknown faces. New sightings of that person come back once none of their other pictures is still ignored.
+- **Discard to delete.** **Discard** deletes an ignored face right away, without restoring it first. New sightings of that person come back as they do after a restore.
 
 ## Settings
 

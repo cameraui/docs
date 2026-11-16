@@ -10,7 +10,11 @@ The **Logs** view (in the menu, admins only) shows the server log.
 
 ## Reading the logs
 
-Logs stream live. Filter by source (**All**, a system component such as **Server**, **go2rtc**, **nats**, **tunnel**, a **camera** or a **plugin**), **search** the visible lines, or **download**, **copy all** or **delete** the log.
+Logs stream live. Filter by source (**All**, a system component such as **Server**, **go2rtc**, **nats**, **tunnel**, a **camera** or a **plugin**), **search** the loaded lines, or **download**, **copy all** or **delete** the log. The download holds the whole log, **copy all** only the lines loaded in the view.
+
+Scroll up to load older lines, as far back as the log goes. While you read further up, new lines don't push the view: a **new lines** button counts them and takes you back to the end. The log dialogs of a camera card and a plugin card work the same way.
+
+Each log keeps its most recent entries up to a fixed size, older ones drop out. Logs of removed cameras and plugins are deleted.
 
 ## Console
 

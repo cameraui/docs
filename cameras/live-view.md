@@ -40,7 +40,7 @@ The PiP Source can also be a stream of another camera, the list groups them by c
 
 You set the streaming mode per camera in its [settings](/cameras/settings), where a new camera starts on **Auto**. The player also has a button to switch between WebRTC and MSE while you watch.
 
-- **Auto** starts WebRTC and MSE together and keeps whichever connects first, so a network that blocks WebRTC still gets a picture. When the camera's codec cannot travel over WebRTC it goes straight to MSE.
+- **Auto** starts WebRTC and MSE together and keeps whichever connects first, so a network that blocks WebRTC still gets a picture. After falling back to MSE it tries WebRTC again in the background now and then and takes over once it connects. When the camera's codec cannot travel over WebRTC it goes straight to MSE.
 - **WebRTC** gives the lowest latency.
 - **MSE** is a broadly compatible fallback.
 - **webrtc/tcp** sends WebRTC over TCP only. Pick it in the camera settings if some networks block the ports WebRTC normally uses. It is not available from the player button.
@@ -65,16 +65,25 @@ Whatever the mode, a player scrolled out of view stops after about 10 seconds an
 
 **Shortcuts** are controls you place on the video to jump to another camera or operate a sensor. Turn on **Edit Shortcuts** on the player to add them. See [Shortcuts](/cameras/shortcuts).
 
-## More options
+## The toolbar
 
-The options menu (the dots) toggles **Zones**, **Heatmap** and **Edit Shortcuts**, plus **Detections** on cameras that run motion or object detection. **AI descriptions** appears when the NVR plugin is installed. **Export** appears once the timeline is open, and saves the range you trim there. See [Detection & AI](/detection/).
+The bar under the player holds **Shortcuts**, **Ask the assistant**, **Play on another screen** and, for admins, **Settings**, next to two menus. **Layers** toggles what shows over the picture: **Detections** on cameras that run motion or object detection, **Zones**, **Heatmap**, and **AI descriptions** when the NVR plugin is installed. The dots hold **Capture snapshot**, and for admins **Share Camera** and, during playback, **Show detection trace**. **Ask the assistant** shows once the [assistant](/assistant/) is set up, on a phone on the timeline next to the microphone. See [Detection & AI](/detection/).
 
 Cameras with pan, tilt and zoom get their own bar at the top right of the player, with the home position, the presets saved on the camera, and the **PTZ** button for the on-screen controls. See [PTZ & autotrack](/sensors/ptz).
+
+## Symbols on the player
+
+Symbols at the top right of the player tell you about the stream. Hover or tap one for its text. They hide while the on-screen PTZ controls are open.
+
+- **Red circle.** Live view is unavailable, the text gives the reason. The spinner shows that camera.ui keeps trying.
+- **Red info symbol.** The player shows another quality than you picked, because this device cannot play H.265 for example.
+- **Cloud.** Live view runs through the [relay](/remote/#webrtc). Admins only.
+- **White info symbol.** No direct connection formed, so live view has more delay. Switching on the relay can help. Admins only, while the relay is off.
 
 ## The camera page
 
 **Open camera** (or selecting a camera from the list) opens its full page: the live player, a **Recordings** tab, a list to switch between **Cameras**, **Shares** for admins, and a **Timeline** panel for jumping through footage. The player takes up to half the height, a wide picture less, and the tabs get the rest. Drag the handle between the player and the tabs to give either more height; the browser keeps that split, a double-click on the handle resets it. The **Settings** cog (admins) opens the [camera settings](/cameras/settings) drawer, where a camera's sources, zones, PTZ, detection, and more live.
 
-The **Recordings** tab lists what the camera's [timeline filter](/recording/timeline-playback) shows, so a camera that only reports motion needs **Motion** turned on there. The filter button at its bottom right narrows the list further by text, day, confidence, label, the camera's sensors and sounds, and vehicle color and type while you stay on the page. The button above it turns on the zone filter: mark areas on the camera picture, the timeline filters by the same zone.
+The **Recordings** tab lists the camera's events like the [Recordings](/recording/browsing) page: objects, sensors and alarm sounds, and motion too on a camera without object detection. The filter button at its bottom right narrows the list by text, day, confidence, label, the camera's sensors and sounds, and vehicle color and type. With a label, sensor or sound picked, the list shows exactly that, **Motion** for example. Each camera keeps its pick with your account, text and day are not saved. The button above it turns on the zone filter: mark areas on the camera picture, the timeline filters by the same zone.
 
 To watch several cameras at once, use [Camview](/cameras/camview).

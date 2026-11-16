@@ -79,6 +79,7 @@ The tray icon holds the app's own settings:
 
 - **Open At Login.** Starts camera.ui at login, straight to the tray without a window.[^autostart]
 - **Close to tray.** Off by default. When on, closing the window only hides it and a server on this machine keeps running.[^closetotray]
+- **Pause Live View.** Only with [Live view on the desktop](/notifications/#live-view-on-the-desktop) on. Stops the windows for one or eight hours, **Resume Live View** ends the pause early.
 - **Switch mode….** Changes how the app runs, without reinstalling.
 - **Quit.** Stops the app, and in Server mode the server with it.
 

@@ -14,7 +14,7 @@ Namen und Kennzeichen kommen aus dem, was [Gesichtserkennung](/de/detection/face
 
 Das Modell kommt aus **Einstellungen → [Assistent](/de/admin/assistant-setup)**: Gib dort unter **Plugin-Zugriff** das NVR-Plugin frei und wähle eines deiner Modelle. Das Plugin schickt seine Anfragen an camera.ui, der Schlüssel bleibt also auf dem Server. Jeder Anbieter, den der Assistent kennt, funktioniert, solange das Modell Bilder liest; das zeigt der Bildtest in der Modell-Liste.
 
-Beschreibungen entstehen in der **Antwortsprache** der Assistenten-Einstellungen, auf Englisch, wenn sie der Oberfläche folgt, und schauen sich bis zu vier Bilder pro Ereignis an. Aktiviere sie pro Kamera mit dem **KI-Beschreibungen**-Schalter der Kamera.
+Beschreibungen entstehen in der **Antwortsprache** der Assistenten-Einstellungen, der [Instanzsprache](/de/admin/system#instanzsprache), solange sie keine andere nennt, und schauen sich bis zu vier Bilder pro Ereignis an. Aktiviere sie pro Kamera mit dem **KI-Beschreibungen**-Schalter der Kamera.
 
 ## Moments und Episoden
 

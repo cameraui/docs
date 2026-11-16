@@ -24,7 +24,7 @@ Du kannst auf einen Türklingel-Druck (Trigger) filtern und alarmieren oder nur,
 
 ## Was die Ansichten zeigen
 
-Die [Startseite](/de/cameras/home) und [Aufnahmen](/de/recording/browsing) zeigen ein Ereignis, wenn es ein Objekt, einen Sensor-Trigger oder ein Alarmgeräusch enthält: Glasbruch, einen Schrei, einen Schuss, einen Alarm, eine Sirene, einen Rauch- oder Autoalarm oder eine Türklingel. Ereignisse mit nur Bewegung oder anderen Geräuschen, etwa Sprache oder Hundebellen, bleiben draußen, bis du nach ihnen filterst. Auf der [Timeline](/de/recording/timeline-playback) behalten sie ihre schmale Leiste.
+Die [Startseite](/de/cameras/home) und [Aufnahmen](/de/recording/browsing) zeigen ein Ereignis, wenn es ein Objekt, einen Sensor-Trigger oder ein Alarmgeräusch enthält: Glasbruch, einen Schrei, einen Schuss, einen Alarm, eine Sirene, einen Rauch- oder Autoalarm oder eine Türklingel. Ereignisse mit nur Bewegung oder anderen Geräuschen, etwa Sprache oder Hundebellen, bleiben draußen, bis du nach ihnen filterst. Eine Kamera ohne Objekterkennung zeigt auch ihre Ereignisse mit nur Bewegung. Auf der [Timeline](/de/recording/timeline-playback) behalten sie ihre schmale Leiste.
 
 ## Das Bild eines Ereignisses
 

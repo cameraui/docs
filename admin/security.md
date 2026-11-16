@@ -12,7 +12,7 @@ Each account has its own security settings, in **Settings → Account**. They ap
 
 Two-factor authentication (2FA) adds a code from an authenticator app, such as Google Authenticator, Authy or Apple's Passwords app, on top of your password. Password managers that keep the code offer it at sign-in.
 
-**Set up 2FA** shows a QR code for your app (or a code to enter by hand); on the device that keeps your codes, tap the QR code instead of scanning it. Confirm with the 6-digit code. The **backup codes** shown afterwards are the way back in if you lose your phone.
+**Set up 2FA** asks for your current password, then shows a QR code for your app (or a code to enter by hand); on the device that keeps your codes, tap the QR code instead of scanning it. Confirm with the 6-digit code. The **backup codes** shown afterwards are the way back in if you lose your phone.
 
 Once enabled, you can **regenerate backup codes** or **disable 2FA**, both of which ask for a current code.
 
@@ -30,7 +30,7 @@ Once enabled, the login screen offers **Sign in with Face ID**. The **Use Face I
 
 ## Active sessions
 
-The **Active sessions** list shows every device signed in to your account, with the current one marked. You can **sign out** a single device, or sign out all the others at once. A device you sign out also loses its live view right away.
+The **Active sessions** list shows every device signed in to your account, with the current one marked. You can **sign out** a single device, or sign out all the others at once. A device you sign out also loses its live view right away. Sessions of the [Home Assistant panel](/home-assistant/app) or a [sign-in proxy](/remote/proxy-sign-in) can't be signed out here, they would sign back in at once.
 
 ## API tokens
 
@@ -40,4 +40,6 @@ A token has full access to your account, so treat it like a password. The list s
 
 ## Password
 
-Change your password under **Account**. Changing your password or username signs you out everywhere at once. Your API tokens keep working.
+**Change username** and **Change password** under **Account** both ask for your current password and sign you out everywhere at once. Your API tokens keep working.
+
+After several wrong passwords in a row, camera.ui pauses the sign-in for that user for a while. Wait, then sign in again.

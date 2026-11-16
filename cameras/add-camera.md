@@ -55,8 +55,8 @@ One source is enough; a lower-resolution stream makes grids and playback lighter
 - **Use for snapshot.** The camera's snapshots come from this source: the cards, Home Assistant, HomeKit, automations and the API. A source with the **Snapshot** role always comes first. Without either, snapshots come from the lowest resolution stream, so turn this on for the main stream if you want sharper ones.
 - **Hot mode.** Keeps the connection to the camera always active, so there's no reconnect delay when a stream is opened.
 - **Preload.** Preloads the stream so the camera view opens with minimal delay.
-- **Mute audio.** Removes the audio track from this source. Off by default.
-- **Disable two-way audio.** Removes the talk channel from this source, camera.ui no longer requests it from the camera. Off by default.
+- **Audio track.** Switched off, the audio track of this source is removed. On by default.
+- **Two-way audio.** Switched off, the talk channel of this source is removed and camera.ui no longer requests it from the camera. On by default.
 - **Stream timeout.** Seconds without video before the stream is reconnected. Left empty it is 5 seconds for a camera you entered yourself and 60 for a source a plugin provides, since the plugin already watches its camera.
 - **Connection timeout.** Seconds the camera gets for each step of connecting. Raise it for cameras that wake up slowly, a battery model for example. Empty means 5.
 

@@ -55,8 +55,8 @@ Eine Quelle genügt; ein niedriger aufgelöster Stream entlastet Raster und Wied
 - **Für Snapshot verwenden.** Die Snapshots der Kamera kommen von dieser Quelle: die Karten, Home Assistant, HomeKit, Automationen und die API. Eine Quelle mit der Rolle **Snapshot** geht immer vor. Ohne beides kommen sie vom Stream mit der niedrigsten Auflösung, schalte es also für den Hauptstream ein, wenn du schärfere willst.
 - **Hot Modus.** Hält die Verbindung zur Kamera dauerhaft aktiv, sodass es beim Öffnen eines Streams keine Reconnect-Verzögerung gibt.
 - **Vorladen.** Lädt den Stream vor, sodass die Kamera-Ansicht mit minimaler Verzögerung öffnet.
-- **Audio stummschalten.** Entfernt die Audiospur dieser Quelle. Standardmäßig aus.
-- **Gegensprechen deaktivieren.** Entfernt den Rücksprechkanal dieser Quelle, camera.ui fordert ihn bei der Kamera gar nicht erst an. Standardmäßig aus.
+- **Audiospur.** Ausgeschaltet wird die Audiospur dieser Quelle entfernt. Standardmäßig an.
+- **Gegensprechen.** Ausgeschaltet wird der Rücksprechkanal dieser Quelle entfernt, camera.ui fordert ihn bei der Kamera gar nicht erst an. Standardmäßig an.
 - **Stream-Timeout.** Sekunden ohne Video, bevor der Stream neu verbunden wird. Leer sind es 5 Sekunden bei einer selbst eingetragenen Kamera und 60 bei einer Quelle aus einem Plugin, weil das Plugin seine Kamera ohnehin überwacht.
 - **Verbindungs-Timeout.** Sekunden, die die Kamera für jeden Verbindungsschritt bekommt. Für langsam aufwachende Kameras erhöhen, etwa ein Batteriemodell. Leer bedeutet 5.
 

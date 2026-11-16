@@ -15,7 +15,7 @@ The most common issues and where to look. The **[Logs](/admin/logs)** show what 
 
 ## Live view is black or won't play
 
-- If the player shows **Stream unavailable**, the line below it is the reason the streaming engine gave. Small players leave it out, the camera page shows it.
+- A red circle at the top right of the player means live view is unavailable. Hover or tap it for the reason the streaming engine gave.
 - Check the source's **codec** in the Sources tab; very unusual codecs may need transcoding.
 - Try a different **streaming mode** in the camera's [interface settings](/cameras/settings).
 - Enable **[hot mode and preload](/cameras/add-camera#source-options)** on the source for faster, more reliable opening.
@@ -35,7 +35,7 @@ The OpenVINO plugin logs `libOpenCL.so.1: cannot open shared object file` when t
 
 - Check the **[notification settings](/notifications/)** on the device: the master switch, quiet hours, and whether the device is registered.
 - Check the **camera's** notification settings: which objects, sounds, and sensors it alerts on.
-- For **push to a phone**, you need the native [mobile app](/install/mobile) (a browser gets no push), [camera.ui Cloud](/remote/cloud) set up, and a tap on **Sync this device**. If push went quiet, the app usually shows a note with a **Fix** button that sets the phone up again. An outdated app gets no push: update it and open it once. See [Getting push on your phone](/notifications/#getting-push-on-your-phone).
+- For **push to a phone**, you need the native [mobile app](/install/mobile) (a browser gets no push), [camera.ui Cloud](/remote/cloud) set up, and notifications turned on in **Settings → Notifications**. If push went quiet, the app usually shows a note with a **Fix** button that sets the phone up again. An outdated app gets no push: update it and open it once. See [Getting push on your phone](/notifications/#getting-push-on-your-phone).
 
 ## Recording isn't working
 
@@ -48,6 +48,7 @@ The OpenVINO plugin logs `libOpenCL.so.1: cannot open shared object file` when t
 
 - Open **[Settings → Remote Access](/remote/)** and select the info button next to the **connection status**. **Connection details** names the address in use, what the server sees, and every address that was tried with its timing and failure reason. **Copy details** copies the lot for a bug report.
 - Confirm cloud access is **enabled** and the server is **registered**, with the tunnel connected.
+- In the [cloud dashboard](/remote/cloud#the-cloud-dashboard), **Cloud access is turned off on the server** means the **Enabled** switch in the server's **Cloud** card is off. **Last online** marks a server that has not reached the cloud since then. If that is a leftover entry from an earlier install, remove it and open the current one.
 - For a direct connection, use **Test connection** to check the address is reachable.
 - The mobile apps need [camera.ui Cloud](/remote/cloud) to connect from outside your network.
 - Behind a login proxy such as Pangolin or Authelia, a browser stuck on **Cannot reach your home server** needs its site data for camera.ui cleared once, see [Reverse proxy](/remote/reverse-proxy#behind-a-login-proxy).

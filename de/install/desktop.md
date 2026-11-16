@@ -79,6 +79,7 @@ Im Tray-Symbol stecken die Einstellungen der App selbst:
 
 - **Beim Anmelden öffnen.** Startet camera.ui beim Anmelden, direkt in den Tray ohne Fenster.[^autostart]
 - **In den Tray schließen.** Standardmäßig aus. Eingeschaltet versteckt Schließen das Fenster nur, ein Server auf diesem Gerät läuft weiter.[^closetotray]
+- **Live-Bild pausieren.** Nur mit eingeschaltetem [Live-Bild am Computer](/de/notifications/#live-bild-am-computer). Stoppt die Fenster für eine oder acht Stunden, **Live-Bild fortsetzen** beendet die Pause vorher.
 - **Modus wechseln….** Ändert, wie die App läuft, ohne Neuinstallation.
 - **Beenden.** Stoppt die App, im Server-Modus auch den Server.
 

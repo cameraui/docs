@@ -34,7 +34,7 @@ See [Object detection & AI backends](/detection/ai-backends) for the other optio
 
 Recording and the mobile apps run on a camera.ui account, created at [cloud.cameraui.com](https://cloud.cameraui.com/).
 
-1. **Settings → Remote Access → Register server**, then sign in. The same screen pairs the [mobile apps](/remote/pairing).
+1. **Settings → Remote Access → Register server**, then sign in. The server then offers to turn on cloud access, which the [mobile apps](/remote/pairing) need.
 2. **Settings → Recordings**, card **License & Cloud**: click the cloud icon and sign in. The license activates on its own.
 
 See [Turning on recording](/recording/#turning-on-recording).

@@ -14,7 +14,7 @@ The camera's status and device info, plus a live view of its sensors and accesso
 
 ## Sources
 
-Manage the camera's stream [sources](/cameras/add-camera#sources-and-roles) as in [adding a camera](/cameras/add-camera): each source's name, role (high, mid, low resolution, or snapshot), stream URLs, and options such as hot mode, preload, and mute audio (drops the audio track from that source). Each source also shows its live status, its stream URL and the codecs the camera itself sends, with profile, level and sample rate where the camera reports them, for example "H.264 · High · 5.1" or "AAC · 16 kHz".
+Manage the camera's stream [sources](/cameras/add-camera#sources-and-roles) as in [adding a camera](/cameras/add-camera): each source's name, role (high, mid, low resolution, or snapshot), stream URLs, and options such as hot mode, preload, and the audio track. Each source also shows its live status and the codecs the camera itself sends, with profile, level and sample rate where the camera reports them, for example "H.264 · High · 5.1" or "AAC · 16 kHz". **Other apps** holds the stream's RTSP URL and the switches that keep it out of the [ONVIF export](/cameras/onvif-export) and off the [RTMP server](/admin/streaming#rtmp).
 
 ## Settings
 

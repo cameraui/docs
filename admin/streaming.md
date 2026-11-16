@@ -4,7 +4,7 @@ title: Streaming
 
 # Streaming
 
-**Settings → Streaming** (admins only) sets what the streaming engine offers other apps: the camera streams over RTSP, the ONVIF export, WebRTC for live view and two more ports. Most changes apply while everything keeps running. A new RTSP or WebRTC port restarts the streaming engine, the page asks first, and live views and recordings pause for a few seconds. Without host networking in Docker, publish a changed port as well.
+**Settings → Streaming** (admins only) sets what the streaming engine offers other apps: the camera streams over RTSP, the ONVIF export, the RTMP server, WebRTC for live view and the HomeKit port. Most changes apply while everything keeps running. A new RTSP or WebRTC port restarts the streaming engine, the page asks first, and live views and recordings pause for a few seconds. Without host networking in Docker, publish a changed port as well.
 
 ## RTSP
 
@@ -17,13 +17,17 @@ Other apps take each camera stream over RTSP, on port 2001 by default.[^desktop]
 
 **ONVIF export** starts the ONVIF server, on port 2005 by default, and **Address** shows what other apps enter. See [ONVIF export](/cameras/onvif-export).
 
+## RTMP
+
+**RTMP server** starts the RTMP server, on port 2003 by default. Apps send RTMP streams to camera.ui or take camera streams from it, with **Address** followed by the name of a stream, as in its RTSP URL. The RTMP server has no login: while it is on, anyone on your network can take the camera streams and send their own. A stream stays off the RTMP server when you switch off **RTMP** for it in the camera's **Sources** tab.
+
 ## WebRTC
 
-**Port** is where live view over WebRTC connects, 2004 by default. **Addresses** adds addresses with port that the apps try as well, a hostname or a second IP for example. `stun:2004` adds the server's public address. The **STUN** and **TURN** servers on the same card are explained under [Remote access](/remote/#webrtc).
+**Port** is where live view over WebRTC connects, 2004 by default. **Addresses** adds addresses with port that the apps try as well, a hostname or a second IP for example. `stun:2004` adds the server's public address. **Relay through cameraui.com** and the **STUN** and **TURN** servers on the same card are explained under [Remote access](/remote/#webrtc).
 
 ## Other ports
 
-**SRTP (HomeKit)** carries the video of the [HomeKit](/plugins/homekit) plugin, port 2002 by default. **RTMP** is for apps that send or take RTMP streams, port 2003 by default. Each port has to be free on the machine.
+**SRTP (HomeKit)** carries the video of the [HomeKit](/plugins/homekit) plugin, port 2002 by default. The port has to be free on the machine.
 
 ## Advanced
 

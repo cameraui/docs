@@ -50,7 +50,7 @@ Der Auswahl-Button funktioniert in beiden Ansichten: mehrere Plugins in einem Sc
 - **Vertrauen.** Jedes Plugin ist als **Offiziell** (von camera.ui veröffentlicht), **Verifiziert** (ein vom camera.ui-Team geprüftes Community-Plugin) oder **Community** (von beliebigen Personen veröffentlicht, nicht geprüft) gekennzeichnet. Du kannst nach Vertrauensstufe filtern.
 - **Sicherheit.** Als bösartig oder kompromittiert bekannte Plugins werden blockiert: Sie erscheinen nicht, lassen sich nicht installieren, und ein bereits installiertes wird automatisch deaktiviert, falls es später blockiert wird.
 - **Kompatibilität.** Der Store markiert ein Plugin, das ein neueres camera.ui braucht, und die Installation einer Version, die auf deinem Server nicht laufen kann, wird mit Begründung abgelehnt.
-- **Durchsuchen.** Filtere nach Kategorie, starte bei den empfohlenen Plugins und sortiere nach Name, wöchentlichen Downloads oder letzter Aktualisierung.
+- **Durchsuchen.** Filtere nach Kategorie, starte bei den empfohlenen Plugins und sortiere nach Name, wöchentlichen Downloads oder letzter Aktualisierung. Die Liste zeigt auch die Plugins, die du schon hast, als installiert markiert.
 
 Beim Installieren lässt sich eine bestimmte Version wählen. Danach das Plugin aktivieren und zuweisen, wo es gebraucht wird.
 
@@ -75,6 +75,8 @@ Der Store listet Pakete mit dem Namen `camera-ui-*` oder `@scope/camera-ui-*`, d
 ## Einstellungen
 
 Die eigenen Einstellungen eines Plugins liegen auf seiner Seite unter **Einstellungen** und gelten serverweit. Einstellungen, die eine einzelne Kamera betreffen, werden stattdessen in den [Einstellungen dieser Kamera](/de/cameras/settings) bearbeitet. Aufnahme-Plugin-Einstellungen liegen beim Rest der [Aufnahmen](/de/recording/).
+
+**Speichern** wird aktiv, sobald du etwas änderst. Buttons des Plugins selbst, etwa **Log In**, speichern zuerst die Felder und laufen dann. Vor dem Anmelden musst du also nicht speichern.
 
 ## Einrichtungs-Anleitungen
 

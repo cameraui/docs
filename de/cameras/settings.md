@@ -14,7 +14,7 @@ Status und Geräteinfo der Kamera, plus eine Live-Ansicht ihrer Sensoren und ihr
 
 ## Quellen
 
-Hier verwaltest du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus, Vorladen und Audio stummschalten (entfernt die Audiospur dieser Quelle). Jede Quelle zeigt außerdem ihren Live-Status, die Stream-URL und die Codecs, die die Kamera selbst sendet, mit Profil, Level und Abtastrate, soweit die Kamera sie meldet, etwa „H.264 · High · 5.1" oder „AAC · 16 kHz".
+Hier verwaltest du die Stream-[Quellen](/de/cameras/add-camera#quellen-und-rollen) der Kamera wie beim [Kamera hinzufügen](/de/cameras/add-camera): Name jeder Quelle, Rolle (Hohe, Mittlere, Niedrige Auflösung oder Snapshot), Stream-URLs und Optionen wie Hot Modus, Vorladen und die Audiospur. Jede Quelle zeigt außerdem ihren Live-Status und die Codecs, die die Kamera selbst sendet, mit Profil, Level und Abtastrate, soweit die Kamera sie meldet, etwa „H.264 · High · 5.1" oder „AAC · 16 kHz". Unter **Andere Apps** stehen die RTSP-URL des Streams und die Schalter, die ihn aus dem [ONVIF-Export](/de/cameras/onvif-export) und vom [RTMP-Server](/de/admin/streaming#rtmp) fernhalten.
 
 ## Einstellungen
 

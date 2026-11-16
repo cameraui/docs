@@ -14,7 +14,7 @@ Names and plates come from what [face recognition](/detection/faces) and [plate 
 
 The model comes from **Settings → [Assistant](/admin/assistant-setup)**: allow the NVR plugin under **Plugin access** and pick one of your models. The plugin sends its requests to camera.ui, so the key stays on the server. Any provider the assistant supports works, as long as the model reads pictures; the picture test in the model list tells you.
 
-Descriptions are written in the **Answer language** of the assistant settings, in English when it follows the interface, and look at up to four pictures per event. Enable them per camera with the camera's **AI descriptions** toggle.
+Descriptions are written in the **Answer language** of the assistant settings, the [instance language](/admin/system#instance-language) unless it names another one, and look at up to four pictures per event. Enable them per camera with the camera's **AI descriptions** toggle.
 
 ## Moments and Episodes
 

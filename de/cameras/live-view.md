@@ -40,7 +40,7 @@ Die Bild-in-Bild Quelle kann auch ein Stream einer anderen Kamera sein, die List
 
 Den Streaming-Modus legst du pro Kamera in ihren [Einstellungen](/de/cameras/settings) fest, eine neue Kamera startet auf **Auto**. Der Player hat außerdem einen Button, mit dem du beim Zuschauen zwischen WebRTC und MSE wechselst.
 
-- **Auto** startet WebRTC und MSE gleichzeitig und behält, was zuerst zustande kommt, ein Netz, das WebRTC blockiert, bekommt also trotzdem ein Bild. Kann der Codec der Kamera nicht über WebRTC laufen, geht es direkt auf MSE.
+- **Auto** startet WebRTC und MSE gleichzeitig und behält, was zuerst zustande kommt, ein Netz, das WebRTC blockiert, bekommt also trotzdem ein Bild. Nach dem Wechsel auf MSE versucht es WebRTC ab und zu im Hintergrund erneut und übernimmt, sobald es verbindet. Kann der Codec der Kamera nicht über WebRTC laufen, geht es direkt auf MSE.
 - **WebRTC** bietet die geringste Latenz.
 - **MSE** ist ein breit kompatibler Fallback.
 - **webrtc/tcp** überträgt WebRTC nur über TCP. Wähle das in den Kamera-Einstellungen, wenn Netzwerke die Ports blockieren, die WebRTC sonst nutzt. Über den Button im Player ist es nicht erreichbar.
@@ -65,16 +65,25 @@ In jedem Modus stoppt ein Player, den du aus dem sichtbaren Bereich scrollst, na
 
 **Shortcuts** sind Bedienelemente, die du aufs Video legst, um zu einer anderen Kamera zu springen oder einen Sensor zu bedienen. Aktiviere **Shortcuts bearbeiten** im Player, um sie hinzuzufügen. Siehe [Shortcuts](/de/cameras/shortcuts).
 
-## Weitere Optionen
+## Die Werkzeugleiste
 
-Das Optionen-Menü (die Punkte) schaltet **Zonen**, **Heatmap** und **Shortcuts bearbeiten** um, dazu **Erkennungen** bei Kameras mit Bewegungs- oder Objekterkennung. **KI-Beschreibungen** erscheint, wenn das NVR-Plugin installiert ist. **Export** erscheint, sobald die Zeitleiste offen ist, und sichert den Bereich, den du dort zuschneidest. Siehe [Erkennung & KI](/de/detection/).
+Die Leiste unter dem Player enthält **Shortcuts**, **Assistenten fragen**, **Auf anderem Bildschirm abspielen** und für Admins **Einstellungen**, daneben zwei Menüs. **Ebenen** schaltet um, was über dem Bild liegt: **Erkennungen** bei Kameras mit Bewegungs- oder Objekterkennung, **Zonen**, **Heatmap** und **KI-Beschreibungen**, wenn das NVR-Plugin installiert ist. Unter den Punkten liegen **Snapshot aufnehmen** und für Admins **Kamera teilen** und während der Wiedergabe **Erkennungsverlauf anzeigen**. **Assistenten fragen** erscheint, sobald der [Assistent](/de/assistant/) eingerichtet ist, auf dem Handy auf der Zeitleiste neben dem Mikrofon. Siehe [Erkennung & KI](/de/detection/).
 
 Kameras mit Schwenken, Neigen und Zoomen bekommen oben rechts im Player eine eigene Leiste, mit der Home-Position, den auf der Kamera gespeicherten Positionen und der **PTZ**-Schaltfläche für die Steuerung. Siehe [PTZ & Autotrack](/de/sensors/ptz).
+
+## Symbole im Player
+
+Symbole oben rechts im Player zeigen, wie es um den Stream steht. Fahr mit der Maus darüber oder tippe darauf, um ihren Text zu sehen. Solange die PTZ-Steuerung offen ist, sind sie ausgeblendet.
+
+- **Roter Kreis.** Die Live-Ansicht ist nicht verfügbar, der Text nennt den Grund. Der Spinner zeigt, dass camera.ui es weiter versucht.
+- **Rotes Info-Symbol.** Der Player zeigt eine andere Qualität als gewählt, etwa weil dieses Gerät kein H.265 abspielen kann.
+- **Wolke.** Die Live-Ansicht läuft über das [Relay](/de/remote/#webrtc). Nur für Admins.
+- **Weißes Info-Symbol.** Es kam keine direkte Verbindung zustande, die Live-Ansicht hat deshalb mehr Verzögerung. Das Relay einzuschalten kann helfen. Nur für Admins, solange das Relay aus ist.
 
 ## Die Kameraseite
 
 **Kamera öffnen** (oder eine Kamera aus der Liste wählen) öffnet ihre volle Seite: den Live-Player, einen **Aufnahmen**-Tab, eine Liste zum Wechseln zwischen **Kameras**, **Freigaben** für Admins und ein **Zeitleiste**-Panel zum Durchspringen des Materials. Der Player nimmt höchstens die halbe Höhe, ein breites Bild weniger, die Tabs bekommen den Rest. Mit dem Griff zwischen Player und Tabs verteilst du die Höhe zwischen beiden, der Browser merkt sich die Aufteilung, ein Doppelklick auf den Griff setzt sie zurück. Das **Einstellungen**-Zahnrad (Admins) öffnet den [Kamera-Einstellungen](/de/cameras/settings)-Drawer, in dem Quellen, Zonen, PTZ, Erkennung und mehr einer Kamera leben.
 
-Der **Aufnahmen**-Tab listet, was der [Filter der Zeitleiste](/de/recording/timeline-playback) dieser Kamera zeigt, eine Kamera, die nur Bewegung meldet, braucht dort also **Bewegung**. Der Filter-Button unten rechts grenzt die Liste weiter ein, nach Text, Tag, Konfidenz, Label, den Sensoren und Geräuschen der Kamera sowie Farbe und Typ von Fahrzeugen, solange du auf der Seite bleibst. Der Button darüber schaltet den Zonenfilter ein: Markiere Bereiche im Kamerabild, die Zeitleiste filtert nach derselben Zone.
+Der **Aufnahmen**-Tab listet die Ereignisse der Kamera wie die Seite [Aufnahmen](/de/recording/browsing): Objekte, Sensoren und Alarmgeräusche, bei einer Kamera ohne Objekterkennung auch Bewegung. Der Filter-Button unten rechts grenzt die Liste ein, nach Text, Tag, Konfidenz, Label, den Sensoren und Geräuschen der Kamera sowie Farbe und Typ von Fahrzeugen. Ist ein Label, Sensor oder Geräusch gewählt, zeigt die Liste genau das, etwa **Bewegung**. Jede Kamera behält ihre Auswahl an deinem Konto, Text und Tag werden nicht gespeichert. Der Button darüber schaltet den Zonenfilter ein: Markiere Bereiche im Kamerabild, die Zeitleiste filtert nach derselben Zone.
 
 Um mehrere Kameras gleichzeitig anzusehen, nutze [Camview](/de/cameras/camview).

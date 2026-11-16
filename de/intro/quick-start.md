@@ -34,7 +34,7 @@ Die übrigen Optionen stehen unter [Objekterkennung & KI-Backends](/de/detection
 
 Aufnahmen und die mobilen Apps laufen über ein camera.ui-Konto, das du unter [cloud.cameraui.com](https://cloud.cameraui.com/) anlegst.
 
-1. **Einstellungen → Remote Zugriff → Server registrieren**, dann anmelden. Derselbe Bildschirm koppelt auch die [mobilen Apps](/de/remote/pairing).
+1. **Einstellungen → Remote Zugriff → Server registrieren**, dann anmelden. Danach bietet der Server an, den Cloud-Zugriff einzuschalten, den die [mobilen Apps](/de/remote/pairing) brauchen.
 2. **Einstellungen → Aufnahmen**, Karte **Lizenz & Cloud**: auf das Cloud-Icon klicken und anmelden. Die Lizenz aktiviert sich von selbst.
 
 Siehe [Aufnahmen aktivieren](/de/recording/#aufnahmen-aktivieren).

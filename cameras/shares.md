@@ -8,7 +8,7 @@ A share lets someone watch a single camera's live stream without a camera.ui acc
 
 ## Creating a share
 
-From a camera, select **Share Camera** in the player toolbar, then set:
+From a camera, select **Share Camera** in the dots menu of the player toolbar, then set:
 
 - **Source.** Which stream quality to share (high, mid, or low resolution).
 - **Expires after.** How long the link stays valid.
@@ -23,7 +23,7 @@ The viewer page starts with the sound off. The recipient can turn it on, and on 
 In the background the viewer page stops the stream and starts it again on return, unless it plays in picture-in-picture. After a dropped connection it reconnects by itself. Someone over the **Max Viewers** limit sees **Maximum number of viewers reached**, and the page keeps trying until a seat is free.
 
 ::: tip Requires camera.ui Cloud
-Sharing needs your server connected to **camera.ui Cloud** ([Settings → Remote](/remote/cloud)) and online. The cloud hosts the link and helps the viewer find your server, but the video travels over a **direct, end-to-end-encrypted connection** between the viewer and your server. It never passes through camera.ui's servers.
+Sharing needs your server connected to **camera.ui Cloud** ([Settings → Remote](/remote/cloud)) and online. The cloud hosts the link and helps the viewer find your server. The video travels **end-to-end encrypted** between the viewer and your server, directly or, with the [relay](/remote/#webrtc) switched on and no direct path, through the relay.
 :::
 
 <Shot src="/img/cameras/share-dialog.png" alt="Share dialog with link and access code" />

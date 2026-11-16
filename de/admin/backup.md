@@ -8,7 +8,7 @@ Backups liegen unter **Einstellungen → Backup** (nur Admins) und lassen sich a
 
 ## Ein Backup erstellen
 
-Wähle **Backup-Archiv herunterladen**, um ein einzelnes verschlüsseltes Archiv (`.cuibackup`) deines camera.ui-Speicherverzeichnisses zu speichern: Konfiguration, Datenbank, Benutzerkonten und Plugin-Daten. Aufnahmen sind nicht enthalten.[^ignore] Der Server packt das Archiv zuerst und braucht dafür etwa so viel freien Platz, wie die Daten darin belegen.[^packing] Reicht er nicht, bricht das Backup ab und nennt den nötigen Platz. Die Karte zeigt, wann das letzte Backup entstand, ebenso **Einstellungen → System**.
+Wähle **Herunterladen**, um ein einzelnes verschlüsseltes Archiv (`.cuibackup`) deines camera.ui-Speicherverzeichnisses zu speichern: Konfiguration, Datenbank, Benutzerkonten und Plugin-Daten. Aufnahmen sind nicht enthalten.[^ignore] Der Server packt das Archiv zuerst und braucht dafür etwa so viel freien Platz, wie die Daten darin belegen.[^packing] Reicht er nicht, bricht das Backup ab und nennt den nötigen Platz. Die Karte zeigt, wann das letzte Backup entstand, ebenso **Einstellungen → System**.
 
 ## Backup-Schlüssel
 
@@ -18,7 +18,7 @@ Eine Wiederherstellung bringt den Backup-Schlüssel des Backups mit. Der wiederh
 
 ## Wiederherstellen
 
-Wähle ein Archiv und dann **Backup-Archiv wiederherstellen**, oder nimm die Schaltfläche **Wiederherstellen** eines Archivs unter **Vorhandene Backups**. Bricht die Verbindung ab, beginnt der Upload nicht von vorn: Er setzt dort fort, wo er stand, auch wenn du dieselbe Datei im selben Browser-Tab erneut wählst.
+Wähle ein Archiv und dann **Wiederherstellen**, oder nimm die gleichnamige Schaltfläche eines Archivs unter **Vorhandene Backups**. Bricht die Verbindung ab, beginnt der Upload nicht von vorn: Er setzt dort fort, wo er stand, auch wenn du dieselbe Datei im selben Browser-Tab erneut wählst.
 
 Ein Archiv eines anderen Servers fragt nach dessen Backup-Schlüssel: Gib ihn ein oder öffne die Schlüsseldatei. camera.ui prüft das Archiv dann und zeigt, was es enthält: wann es erstellt wurde, camera.ui-Version und Plattform, die Zahl der Kameras und Plugins und die Konten, mit denen du dich danach anmeldest. Außerhalb von Home Assistant lässt eine Wiederherstellung das Konto `homeassistant` der Home-Assistant-App weg, es meldet sich nur dort an. Bleibt kein anderes Master-Konto, wird ein Konto `admin` aus dem Backup zum Master und behält sein Passwort. Ohne ein solches Konto meldest du dich danach als `admin` mit dem Passwort `admin` an. Ports und Adressen, die zur alten Maschine gehören, etwa Port 3543 der Desktop-App oder eine IP, die dieser Server nicht hat, setzt camera.ui auf die Vorgaben dieses Servers zurück, und die Übersicht nennt jeden davon. Nichts ändert sich, bis du mit **Wiederherstellen** bestätigst. Ein Backup, das auf Bestätigung wartet, steht auch unter **Letzte Wiederherstellung** und wird nach 24 Stunden verworfen.
 

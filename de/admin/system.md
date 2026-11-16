@@ -10,6 +10,10 @@ Die Seite **Einstellungen → System** (nur Admins) kümmert sich um die Version
 
 Sie zeigt die **Server**-Version, und in der Desktop- und der mobilen App die **App**-Version. Installiert wird auf der [Updates-Seite](/de/install/updating#die-updates-seite); hier bleiben **Verwalten**, das jede veröffentlichte Version zum gezielten Installieren auflistet, und **Beta-Updates**, der Schalter oben auf der Seite, der entscheidet, ob Vorabversionen überhaupt angeboten werden. Braucht eine installierte Version einen Neustart, zeigt die Versionszeile beide an und bietet **Neustart**. Siehe [Aktualisieren](/de/install/updating), wie Updates plattformübergreifend funktionieren.
 
+## Instanzsprache
+
+**Instanzsprache** in derselben Karte ist die Sprache der Benachrichtigungen und der Texte, die Plugins schreiben, etwa der [KI-Beschreibungen](/de/detection/genai-descriptions). Benachrichtigungen gibt es bisher auf Englisch und Deutsch, bei jeder anderen Sprache bleiben sie englisch. Seine Oberflächensprache wählt jeder Nutzer selbst unter **Erscheinungsbild**.
+
 ## Server
 
 - **HTTPS-Port.** Der Port für die Weboberfläche und die Apps, standardmäßig 3443.[^desktop]
@@ -37,7 +41,7 @@ Wie ausführlich camera.ui und die Streaming-Engine ins [Log](/de/admin/logs) sc
 **Zertifikat** lädt das eigene Zertifikat des Servers herunter, etwa um es in den Zertifikatsspeicher eines Geräts zu legen. **Eigenes Zertifikat** nimmt ein Zertifikat, das du für deine Domain besorgt hast, und liefert es für die Namen aus, die es abdeckt. Siehe [Zertifikat](/de/remote/certificate).
 
 ::: tip
-Suchst du den Servernamen oder die Netzwerk-Adressen? Die liegen unter [Remote-Zugriff](/de/remote/). Design und Sprache liegen unter **Erscheinungsbild**.
+Suchst du den Servernamen oder die Netzwerk-Adressen? Die liegen unter [Remote-Zugriff](/de/remote/). Design und Oberflächensprache liegen unter **Erscheinungsbild**.
 :::
 
 [^desktop]: Die Desktop-App nutzt 3543.

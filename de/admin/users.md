@@ -18,11 +18,11 @@ Der Zugriff wird über die Rolle bestimmt, nicht pro Kamera; es gibt keine kamer
 
 <Shot src="/img/admin/users.png" alt="Die Liste registrierter Benutzer" />
 
-In der Liste **Registrierte Benutzer** legst du Konten an, bearbeitest und entfernst sie. Ein neues Konto bekommt die Rolle Benutzer oder Admin. Konten mit `ha-` am Anfang legt das [Home-Assistant-App](/de/home-assistant/app#das-camera-ui-app) an, eines pro Home-Assistant-Benutzer ohne Admin-Rechte, der sein Panel geöffnet hat. Ein Konto zu löschen oder ihm die Admin-Rechte zu nehmen, wirkt sofort, auch auf Geräten, auf denen es gerade angemeldet ist.
+In der Liste **Registrierte Benutzer** legst du Konten an, bearbeitest und entfernst sie. Ein neues Konto bekommt einen Namen und die Rolle Benutzer oder Admin. camera.ui zeigt danach einmal ein Startpasswort: Gib es weiter, der Benutzer ersetzt es beim ersten Anmelden durch sein eigenes. **Passwort zurücksetzen** im Menü einer Zeile macht dasselbe für ein bestehendes Konto und meldet es überall ab. Konten mit `ha-` am Anfang legt das [Home-Assistant-App](/de/home-assistant/app#das-camera-ui-app) an, eines pro Home-Assistant-Benutzer ohne Admin-Rechte, der sein Panel geöffnet hat. Ein Konto zu löschen oder ihm die Admin-Rechte zu nehmen, wirkt sofort, auch auf Geräten, auf denen es gerade angemeldet ist.
 
 ## Derzeit angemeldete Benutzer
 
-Unter den registrierten Benutzern zeigt die Liste **Derzeit angemeldete Benutzer** jede aktive Sitzung über alle Konten hinweg, mit Gerät, Adresse und Typ. **Abmelden** in einer Zeile beendet diese Sitzung.
+Unter den registrierten Benutzern zeigt die Liste **Derzeit angemeldete Benutzer** jede aktive Sitzung über alle Konten hinweg, mit Gerät, Adresse und Typ. **Abmelden** in einer Zeile beendet diese Sitzung. Deine eigene Sitzung und die des [Home-Assistant-Panels](/de/home-assistant/app) oder eines [Anmelde-Proxys](/de/remote/proxy-sign-in) haben dort kein **Abmelden**, Panel und Proxy würden sie sofort wieder anmelden.
 
 ## Verbindungslimit
 

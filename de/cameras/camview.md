@@ -44,7 +44,9 @@ Eine Leiste unten im Raster steuert alle Kameras der Ansicht gemeinsam. Mit dem 
 - Einen Aktivitätsmodus für alle setzen (Immer An, Standby, Aktivität) oder mit **Pro Kamera** jeder Kamera ihren eigenen [Aktivitätsmodus](/de/cameras/live-view#aktivitätsmodus-immer-an-und-standby) lassen. Pro Kamera ist die Vorgabe.
 - Das ganze Raster im Vollbild zeigen.
 
-Der Pfeil am rechten Ende klappt die Leiste zu einem Button in der Ecke zusammen. Ein Klick auf den Button holt die Leiste zurück. Im Vollbild ist die Leiste zunächst ausgeblendet, der Button neben dem Beenden-Button blendet sie ein und aus.
+Bei einer vergrößerten Kachel gelten Auflösung, Streaming-Modus, Ton und Mikrofon nur für diese Kamera.
+
+Der Pfeil am rechten Ende klappt die Leiste zu einem Button in der Ecke zusammen. Ein Klick auf den Button holt die Leiste zurück. Im Vollbild ist die Leiste zunächst ausgeblendet, der Button neben dem Beenden-Button blendet sie ein und aus. Der Timeline-Button daneben holt die Timeline unter das Raster.
 
 ## Was eine Kamera gerade sieht
 

@@ -4,7 +4,7 @@ title: Streaming
 
 # Streaming
 
-**Einstellungen → Streaming** (nur Admins) legt fest, was die Streaming-Engine anderen Apps anbietet: die Kamerastreams über RTSP, den ONVIF-Export, WebRTC für die Live-Ansicht und zwei weitere Ports. Die meisten Änderungen gelten, während alles weiterläuft. Ein neuer RTSP- oder WebRTC-Port startet die Streaming-Engine neu, die Seite fragt vorher, und Live-Ansichten und Aufnahmen setzen ein paar Sekunden aus. Läuft Docker ohne Host-Netzwerk, gib einen geänderten Port auch dort frei.
+**Einstellungen → Streaming** (nur Admins) legt fest, was die Streaming-Engine anderen Apps anbietet: die Kamerastreams über RTSP, den ONVIF-Export, den RTMP-Server, WebRTC für die Live-Ansicht und den HomeKit-Port. Die meisten Änderungen gelten, während alles weiterläuft. Ein neuer RTSP- oder WebRTC-Port startet die Streaming-Engine neu, die Seite fragt vorher, und Live-Ansichten und Aufnahmen setzen ein paar Sekunden aus. Läuft Docker ohne Host-Netzwerk, gib einen geänderten Port auch dort frei.
 
 ## RTSP
 
@@ -17,13 +17,17 @@ Andere Apps holen sich jeden Kamerastream über RTSP, standardmäßig auf Port 2
 
 **ONVIF-Export** startet den ONVIF-Server, standardmäßig auf Port 2005, und **Adresse** zeigt, was andere Apps eintragen. Siehe [ONVIF-Export](/de/cameras/onvif-export).
 
+## RTMP
+
+**RTMP-Server** startet den RTMP-Server, standardmäßig auf Port 2003. Apps senden RTMP-Streams an camera.ui oder holen Kamerastreams von dort ab, mit der **Adresse** und dahinter dem Namen eines Streams, wie in dessen RTSP-URL. Der RTMP-Server hat keine Anmeldung: Solange er läuft, kann jeder in deinem Netzwerk die Kamerastreams abholen und eigene senden. Ein Stream bleibt dem RTMP-Server fern, wenn du für ihn im Tab **Quellen** der Kamera **RTMP** ausschaltest.
+
 ## WebRTC
 
-**Port** ist der Port, über den die Live-Ansicht per WebRTC verbindet, standardmäßig 2004. **Adressen** ergänzt Adressen mit Port, die die Apps zusätzlich probieren, etwa einen Hostnamen oder eine zweite IP. `stun:2004` ergänzt die öffentliche Adresse des Servers. Die **STUN-Server** und **TURN-Server** derselben Karte erklärt [Remote-Zugriff](/de/remote/#webrtc).
+**Port** ist der Port, über den die Live-Ansicht per WebRTC verbindet, standardmäßig 2004. **Adressen** ergänzt Adressen mit Port, die die Apps zusätzlich probieren, etwa einen Hostnamen oder eine zweite IP. `stun:2004` ergänzt die öffentliche Adresse des Servers. **Relay über cameraui.com** und die **STUN-Server** und **TURN-Server** derselben Karte erklärt [Remote-Zugriff](/de/remote/#webrtc).
 
 ## Weitere Ports
 
-**SRTP (HomeKit)** trägt das Video des [HomeKit](/de/plugins/homekit)-Plugins, standardmäßig Port 2002. **RTMP** ist für Apps, die RTMP-Streams senden oder holen, standardmäßig Port 2003. Jeder Port muss auf dem Rechner frei sein.
+**SRTP (HomeKit)** trägt das Video des [HomeKit](/de/plugins/homekit)-Plugins, standardmäßig Port 2002. Der Port muss auf dem Rechner frei sein.
 
 ## Erweitert
 

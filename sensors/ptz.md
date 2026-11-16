@@ -8,6 +8,8 @@ PTZ cameras (pan, tilt, zoom) can be moved from camera.ui, and with **autotrack*
 
 PTZ is a [sensor](/sensors/) a plugin provides, the [ONVIF plugin](/plugins/) for example, enabled in the camera's [settings](/cameras/settings) under the **Plugins** tab. Only the moves the plugin reports (pan, tilt, zoom, presets and home) are shown.
 
+The ONVIF plugin needs the camera's ONVIF account and its address under **URL**: the IP with the ONVIF port if it isn't 80 (`http://192.168.1.100:8000`), or `https://` for a camera that only accepts encrypted connections.
+
 ## Controlling a PTZ camera
 
 Hovering a PTZ camera's player shows a bar at the top right:

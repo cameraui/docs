@@ -15,7 +15,7 @@ Abos sind noch nicht offen. Solange camera.ui in der Preview ist, sind Aufnahmen
 
 Aufnahmen kommen vom **camera.ui NVR**-Plugin (standardmäßig installiert) und laufen über ein Abo, das an dein camera.ui-Konto gebunden ist. So schaltest du sie frei:
 
-1. Wähle in **Einstellungen → Remote Zugriff** den Button **Server registrieren** und melde dich mit deinem camera.ui-Konto an. Das verknüpft den Server mit deinem Konto; den Remote-Cloud-Zugriff musst du dafür nicht aktivieren.
+1. Wähle in **Einstellungen → Remote Zugriff** den Button **Server registrieren** und melde dich mit deinem camera.ui-Konto an. Das verknüpft den Server mit deinem Konto. Aufnahmen brauchen den Cloud-Zugriff nicht, du kannst also abbrechen, wenn der Server anbietet, ihn einzuschalten.
 2. Öffne **Einstellungen → Aufnahmen** und klicke in der Karte **Lizenz & Cloud** auf das **Cloud-Icon** und melde dich an.
 3. Deine Lizenz aktiviert sich dann automatisch. Aktualisiert sich der Status nicht, nutze den **Refetch License**-Button.
 

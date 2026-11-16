@@ -18,6 +18,10 @@ Die Apps für iOS und Android sind Viewer für Live-Ansicht, Aufnahmen und Benac
 
 ## Mit deinem Server verbinden
 
+Die Anmeldeseite bietet zwei Wege: dein camera.ui-Konto oder **Direkt verbinden** mit der Adresse des Servers. Push braucht das Konto.
+
+### Mit deinem camera.ui-Konto
+
 Melde dich mit deinem camera.ui-Konto an (Google, Apple oder E-Mail), und deine gekoppelten Server erscheinen. Den Weg wählt die App selbst:
 
 - **Zu Hause.** Im Netzwerk des Servers verbindet sie sich direkt, Live-Ansicht startet also schneller. Dem Zertifikat des Servers für lokale Adressen vertraut sie automatisch.
@@ -28,9 +32,17 @@ Serverseitig braucht das:
 - [Remote-Zugriff über camera.ui Cloud](/de/remote/cloud) aktiviert.
 - Der Server mit deinem Konto [gekoppelt](/de/remote/pairing).
 
+### Direkt
+
+**Direkt verbinden** listet die camera.ui-Server, die es in deinem Netzwerk findet; unter iOS fragt die App vorher nach Zugriff auf das lokale Netzwerk. Ein Server in einem Docker-Bridge-Netzwerk taucht dort nicht auf. Wähle einen aus oder gib eine IP-Adresse, einen Hostnamen (die App ergänzt Port 3443) oder eine vollständige `https://`-Adresse ein. Die App verbindet sich nur über https. Beim ersten Verbinden zeigt sie das Zertifikat des Servers mit seinem Fingerabdruck: Vertraue ihm nur bei deinem eigenen Server. Ändert sich das Zertifikat, fragt die App erneut und zeigt den alten und den neuen Fingerabdruck.
+
+Danach meldest du dich mit deinem camera.ui-Benutzer an. Ab dann kennt die App alle Adressen des Servers und wählt den Weg selbst, zu Hause das lokale Netzwerk. Unterwegs braucht sie einen Weg von außen: einen [Cloudflare-Tunnel](/de/remote/cloudflare), eine [eigene Domain](/de/remote/custom-domain) oder ein VPN in dein Netzwerk. Fehlt er, sagt die App das nach der Anmeldung und markiert den Server mit **Nur Heimnetz oder VPN**. Ein Quick Tunnel bekommt einen eigenen Hinweis, weil sich seine Adresse bei jedem Neustart ändert.
+
+Deine direkten Server stehen unter **Deine Server** auf der Anmeldeseite und, wenn du mit deinem Konto angemeldet bist, unter **Direkt verbunden** in der Serverliste. **Entfernen** im **⋯**-Menü der Zeile nimmt einen samt Anmeldung vom Handy.
+
 ## Benachrichtigungen
 
-Eine angemeldete App erhält Push-Benachrichtigungen für Ereignisse. Worüber du alarmiert wirst, stellst du unter [Benachrichtigungen](/de/notifications/) ein.[^license]
+Eine mit deinem camera.ui-Konto angemeldete App erhält Push-Benachrichtigungen für Ereignisse. Ein Server, den du mit **Direkt verbinden** öffnest, sendet keinen Push, seine **Einstellungen → Benachrichtigungen** verlinken stattdessen auf die Konto-Anmeldung. Worüber du alarmiert wirst, stellst du unter [Benachrichtigungen](/de/notifications/) ein.[^license]
 
 ## Biometrische Anmeldung
 
@@ -38,7 +50,7 @@ Eine angemeldete App erhält Push-Benachrichtigungen für Ereignisse. Worüber d
 
 ## App-Sperre
 
-Die **App-Sperre mit Face ID / Fingerabdruck** in den Einstellungen der App verlangt bei jedem Start eine biometrische Prüfung (ersatzweise den Geräte-Passcode), und erneut nach ein paar Minuten im Hintergrund. Kurzes Wegwechseln fragt nicht neu. Sie ist unabhängig von der biometrischen Anmeldung.
+Die **App-Sperre mit Face ID / Fingerabdruck** unter **Konto** in der Serverliste der App verlangt bei jedem Start eine biometrische Prüfung (ersatzweise den Geräte-Passcode), und erneut nach ein paar Minuten im Hintergrund. Kurzes Wegwechseln fragt nicht neu. Sie ist unabhängig von der biometrischen Anmeldung.
 
 ## Updates
 

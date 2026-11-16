@@ -48,7 +48,7 @@ Plugins can use your models too, the NVR plugin for [event descriptions](/detect
 
 **Thinking** sets how long the model reasons before it answers. *Model default* sends nothing and leaves it to the provider, *Off* asks for a direct answer, *Brief* and *Thorough* request short or long reasoning. The setting is mapped to what each provider offers, and a model without reasoning ignores it. When the model shares its reasoning, the answer shows a collapsible **Thinking** block.
 
-Under every answer a small line shows the tokens sent and received, the time it took, the output speed and, for a model with a known list price, an estimated cost. **Usage** adds it up per user or plugin, model and month: chats, scheduled prompts, searches in **Recordings** and the short call that picks out facts to remember. The estimate uses public list prices and the tokens the provider reported; the invoice of your provider is what counts.
+Under every answer a small line shows the tokens sent and received, the time it took, the output speed and, for a model with a known list price, an estimated cost. **Usage** adds it up per user or plugin, model and month: chats, scheduled prompts, searches in **Recordings** and the short call that picks out facts to remember. The estimate uses public list prices and the tokens the provider reported; the invoice of your provider is what counts. **Reset** below the table deletes the recorded usage of all users and plugins.
 
 The **Behavior** card bounds a run:
 
@@ -65,6 +65,12 @@ The **Behavior** card bounds a run:
 
 Off by default. **Shell commands** lets admins ask the assistant for host diagnostics the other tools cannot answer: disk usage, whether a camera answers on the network, processes, container logs. The assistant runs one command at a time on the server that hosts camera.ui, and every command is shown with the exact command line to allow, edit or reject before it runs. Output is capped, a command is killed after 30 seconds by default, and the tool never appears in the MCP server, in scheduled prompts or in automations. What you allow runs with the rights of the camera.ui process. While the switch is off and a question would need it, the answer carries the switch, so an admin can turn it on in the chat.
 
+## Web search
+
+Off by default. **Web search** lets the assistant look things up on the internet: firmware for a camera model, an error message from a plugin, a product. The search runs at the provider of the model, so it works with models from Anthropic, Gemini, OpenAI and OpenRouter; Ollama and OpenAI-compatible servers have none. The queries go to that provider, and the assistant is told to use general terms in them, never camera names or other details of your instance. The pages an answer relies on show up as links below it.
+
+The provider charges each search on top of the tokens. The estimated cost under the answer includes searches at list price, without free allowances and without searches through OpenRouter. In the chat, web search is a group of its own that can be switched off per conversation, and scheduled prompts can search too. While the switch is off and a question would need it, the answer carries the switch.
+
 ## MCP: use the instance from other AI tools
 
 The assistant's tools are also available over the Model Context Protocol, so Claude Code, Claude Desktop, Cursor and similar tools can ask your instance directly, with their own model. Turn on **Enable MCP endpoint**, create an API token under Account, and paste the setup snippet the page shows for your client. The endpoint is `/api/assistant/mcp`, authenticated with the token as bearer.
@@ -75,7 +81,7 @@ By default only reading tools are offered: cameras, snapshots, system status, re
 
 ## External MCP servers
 
-Other systems that offer an MCP server can lend the assistant their tools. Add one under **External MCP servers** with a name, its URL and an access token; the token is stored encrypted. The state next to the name shows whether the server answered and how many tools it offers. **Accept a self-signed certificate** is there for servers in your own network. Before a tool of such a server runs, the user confirms it, unless the server marks the tool as read-only. Many servers mark nothing, Home Assistant for example. Under **Tools**, the tab of the server has the field **Run without asking**: the tools picked there run without confirmation, in scheduled prompts and automations too, so pick only tools that read. In the chat these tools form their own group that can be switched off per conversation.
+Other systems that offer an MCP server can lend the assistant their tools. Add one under **External MCP servers** with a name, its URL and an access token; the token is stored encrypted. The state next to the name shows whether the server answered and how many tools it offers. **Accept a self-signed certificate** is there for servers in your own network. The tools of a server are for admins only until **Available to users** is switched on for it. Before a tool of such a server runs, the user confirms it, unless the server marks the tool as read-only. Many servers mark nothing, Home Assistant for example. Under **Tools**, the tab of the server has the field **Run without asking**: the tools picked there run without confirmation, in scheduled prompts and automations too, so pick only tools that read. In the chat these tools form their own group that can be switched off per conversation.
 
 For Home Assistant enable the **Model Context Protocol Server** integration, create a long-lived access token in your Home Assistant profile and enter `http://<home-assistant>:8123/api/mcp` as the URL. The assistant can then read states and switch lights, scenes and climate through Home Assistant's own tools, and it can wire them into automations.
 

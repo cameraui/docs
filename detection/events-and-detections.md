@@ -24,7 +24,7 @@ You can filter and alert on a doorbell press (a trigger) or only when a person i
 
 ## What the views list
 
-[Home](/cameras/home) and [Recordings](/recording/browsing) list an event when it holds an object, a sensor trigger or an alarm sound: glass breaking, a scream, a gunshot, an alarm, a siren, a smoke or car alarm, or a doorbell. Events with only motion or other sounds, such as speech or a dog barking, stay out until you filter for them. On the [timeline](/recording/timeline-playback) they keep their thin bar.
+[Home](/cameras/home) and [Recordings](/recording/browsing) list an event when it holds an object, a sensor trigger or an alarm sound: glass breaking, a scream, a gunshot, an alarm, a siren, a smoke or car alarm, or a doorbell. Events with only motion or other sounds, such as speech or a dog barking, stay out until you filter for them. A camera without object detection lists its motion-only events too. On the [timeline](/recording/timeline-playback) they keep their thin bar.
 
 ## The picture an event carries
 

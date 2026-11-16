@@ -10,7 +10,7 @@ Home shows every camera you have access to as a card with a still image.
 
 Above the cards, **Recent Events** is a row of recent moments you can scroll sideways. A visit with several phases shows one card per moment, like the timeline, and selecting a card opens it at that moment. Cards with a recognized face or a read license plate get arrows to browse the pictures, and resting your finger on a card (or hovering on a computer) plays a short preview. [Episodes](/detection/episodes) appear here too, as a mosaic card showing how many cameras took part. See [Events & detections](/detection/events-and-detections).
 
-The filter button in the corner decides which cameras show which kinds of event there, each with its own list of cameras. Person, vehicle, animal, face, license plate, sensor and alarm sound show on every camera until you remove one. **Other sound** and **Motion** show on no camera until you pick some. An event only disappears when everything in it is hidden, so someone walking by while a car passes still shows. See [What the views list](/detection/events-and-detections#what-the-views-list). Hidden events are still detected, recorded and found in [Recordings](/recording/browsing). The choice belongs to your account.
+The filter button in the corner decides which cameras show which kinds of event there, each with its own list of cameras. Person, vehicle, animal, face, license plate, sensor and alarm sound show on every camera until you remove one. **Other sound** shows on no camera until you pick some. **Motion** shows on cameras without object detection, on the others once you pick them. An event only disappears when everything in it is hidden, so someone walking by while a car passes still shows. See [What the views list](/detection/events-and-detections#what-the-views-list). Hidden events are still detected, recorded and found in [Recordings](/recording/browsing). The choice belongs to your account.
 
 With no cameras yet, **Get started** takes admins to [add one](/cameras/add-camera).
 
@@ -25,7 +25,7 @@ Selecting a card opens the camera page with the [live view](/cameras/live-view),
 Three buttons sit in the bottom right of a card:
 
 - **Refresh snapshot.** Pulls a new picture from the camera right away.
-- **Log.** Opens that camera's log in a dialog, for admins. You can download it from there.
+- **Log.** Opens that camera's log in a dialog, for admins. It scrolls back like [Logs](/admin/logs#reading-the-logs), and you can download it from there.
 - **Settings.** Opens the [camera settings](/cameras/settings) drawer, for admins.
 
 A disabled camera only offers Settings.

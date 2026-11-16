@@ -146,7 +146,7 @@ camera.ui uses these ports (already covered by host networking):
 | 2000 | tcp | go2rtc |
 | 2001 | tcp | RTSP |
 | 2002 | tcp | SRTP |
-| 2003 | tcp | RTMP |
+| 2003 | tcp | RTMP, only if you [turn it on](/admin/streaming#rtmp) |
 | 2004 | tcp/udp | WebRTC |
 | 2005 | tcp | ONVIF, only if you [turn it on](/cameras/onvif-export) |
 | 1883 | tcp | MQTT broker, only if you enable the built-in one |

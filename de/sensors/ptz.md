@@ -8,6 +8,8 @@ PTZ-Kameras (Schwenken, Neigen, Zoomen) lassen sich in camera.ui bewegen, und mi
 
 PTZ ist ein [Sensor](/de/sensors/), den ein Plugin bereitstellt, etwa das [ONVIF-Plugin](/de/plugins/), aktiviert in den [Einstellungen](/de/cameras/settings) der Kamera unter dem **Plugins**-Tab. Angezeigt werden nur die Bewegungen, die das Plugin meldet (Schwenken, Neigen, Zoomen, Presets und Home).
 
+Das ONVIF-Plugin braucht das ONVIF-Konto der Kamera und unter **URL** ihre Adresse: die IP mit dem ONVIF-Port, wenn er nicht 80 ist (`http://192.168.1.100:8000`), oder `https://` bei einer Kamera, die nur verschlüsselte Verbindungen annimmt.
+
 ## Eine PTZ-Kamera steuern
 
 Über dem Player einer PTZ-Kamera erscheint beim Hovern oben rechts eine Leiste:

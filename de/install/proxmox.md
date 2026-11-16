@@ -33,6 +33,7 @@ Umgebungsvariablen:
 | `TEMPLATE_STORAGE` | `local` | Storage, auf den das LXC-Template geladen wird (braucht Content-Typ „Container-Template“) |
 | `FLAVOR` | `cpu` | `cpu`, `intel` oder `amd` (wählt den [Image-Flavor](/de/install/docker#hardware-beschleunigung)); `nvidia` ist [experimentell](#nvidia-im-lxc-experimentell) |
 | `GPU_PASSTHROUGH` | `1` wenn Flavor ≠ cpu | reicht `/dev/dri` in den Container |
+| `ACCEL_PASSTHROUGH` | `1` | reicht die Coral- und Hailo-Nodes des Hosts in den Container, mit jedem Flavor |
 | `TZ` | Zeitzone des Hosts | Zeitzone im Container |
 
 Beispiel für eine Intel-Maschine: `FLAVOR=intel bash install-cameraui-lxc.sh`
@@ -61,7 +62,14 @@ pct exec <CTID> -- passwd
 
 - **Intel / AMD iGPU.** `FLAVOR=intel` (oder `amd`) setzen. Das Script reicht den GPU-Render-Node durch den Container bis zu Docker, sonst ist nichts zu konfigurieren. Details: [Hardware-Beschleunigung](/de/install/hardware-acceleration).
 - **NVIDIA.** Nutze eine **VM mit PCIe-Passthrough** statt eines LXC. Darin folgst du dem Standard-[Docker-Setup](/de/install/docker) mit dem `nvidia`-Flavor. Ein LXC müsste Host-Treiber und Userspace-Bibliotheken im Container dauerhaft versionsgleich halten. Die VM monopolisiert dafür die Karte. Brauchen andere Dienste auf dem Host dieselbe GPU (Ollama, Jellyfin), siehe [NVIDIA im LXC](#nvidia-im-lxc-experimentell) unten.
-- **KI-Beschleuniger (Coral, Hailo).** Den [Host-Treiber](/de/install/hardware-acceleration#host-prüfen) auf dem Proxmox-Host installieren, dann den Device-Node (`/dev/apex_0`, `/dev/hailo0`) in den Container reichen.
+- **KI-Beschleuniger (Coral, Hailo).** Installiere den [Host-Treiber](/de/install/hardware-acceleration#host-prüfen) auf dem Proxmox-Host, bevor du das Script startest. Es reicht jeden `/dev/apex_*`- und `/dev/hailo*`-Node, den es findet, in den Container und weiter an Docker, mit jedem Flavor. Für einen bestehenden Container machst du das von Hand. Auf dem Proxmox-Host, mit einer `devN`-Nummer, die `pct config <CTID>` noch nicht zeigt:
+
+  ```bash
+  pct set <CTID> --dev1 path=/dev/apex_0,mode=0666
+  pct reboot <CTID>
+  ```
+
+  Danach trägst du den Node im Container in `/opt/cameraui/docker-compose.yml` unter `devices:` ein (`- /dev/apex_0:/dev/apex_0`) und führst in `/opt/cameraui` `docker compose up -d` aus. Ob er angekommen ist, zeigt das [Start-Log](/de/install/hardware-acceleration#aus-dem-container-verifizieren).
 
 ### NVIDIA im LXC (experimentell)
 

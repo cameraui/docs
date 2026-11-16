@@ -8,7 +8,7 @@ Backups live in **Settings → Backup** (admins only) and restore on any platfor
 
 ## Creating a backup
 
-Choose **Download backup archive** to save a single encrypted archive (`.cuibackup`) of your camera.ui storage directory: configuration, database, user accounts, and plugin data. Recordings are not included.[^ignore] The server packs the archive first and needs about as much free space as the data in it.[^packing] If that does not fit, the backup stops and names the space it needs. The card shows when the last backup was made, and so does **Settings → System**.
+Choose **Download** to save a single encrypted archive (`.cuibackup`) of your camera.ui storage directory: configuration, database, user accounts, and plugin data. Recordings are not included.[^ignore] The server packs the archive first and needs about as much free space as the data in it.[^packing] If that does not fit, the backup stops and names the space it needs. The card shows when the last backup was made, and so does **Settings → System**.
 
 ## Backup key
 
@@ -18,7 +18,7 @@ A restore brings the backup key of the backup along, so the restored server open
 
 ## Restoring
 
-Pick an archive and choose **Restore backup archive**, or use the restore button of an archive under **Available backups**. A dropped connection does not start the upload over: it continues where it stopped, also when you pick the same file again in the same browser tab.
+Pick an archive and choose **Restore**, or use the restore button of an archive under **Available backups**. A dropped connection does not start the upload over: it continues where it stopped, also when you pick the same file again in the same browser tab.
 
 An archive from another server asks for its backup key: enter it or open the key file. camera.ui then checks the archive and shows what it holds: when it was created, the camera.ui version and platform, the number of cameras and plugins, and the accounts to sign in with afterwards. A restore outside Home Assistant leaves out the `homeassistant` account of the Home Assistant app, which signs in only there. If no other master account remains, an account named `admin` from the backup becomes the master and keeps its password. Without such an account, sign in as `admin` with the password `admin` afterwards. Ports and addresses that belong to the old machine, such as port 3543 of the desktop app or an IP this server does not have, are reset to this server's defaults, and the summary lists each one. Nothing changes until you confirm with **Restore**. A backup that waits for confirmation also shows under **Last restore** and is discarded after 24 hours.
 

@@ -50,7 +50,7 @@ The select button works in both views: update, enable, disable or uninstall seve
 - **Trust.** Each plugin is marked **Official** (published by camera.ui), **Verified** (a community plugin the camera.ui team has reviewed), or **Community** (published by anyone, not reviewed). You can filter by trust level.
 - **Safety.** Plugins known to be malicious or compromised are blocked: they don't show up, can't be installed, and one you already have is disabled automatically if it's later blocked.
 - **Compatibility.** The store flags a plugin that needs a newer camera.ui, and installing a version that can't run on your server is refused with the reason.
-- **Browsing.** Filter by category, start from the featured plugins, and sort by name, weekly downloads, or last update.
+- **Browsing.** Filter by category, start from the featured plugins, and sort by name, weekly downloads, or last update. The list also shows the plugins you already have, marked as installed.
 
 A specific version can be picked at install. Afterwards, enable the plugin and assign it where it's needed.
 
@@ -75,6 +75,8 @@ The store lists packages named `camera-ui-*` or `@scope/camera-ui-*` that carry 
 ## Settings
 
 A plugin's own settings live on its page, under **Settings**, and apply server-wide. Settings that affect a single camera are edited in that [camera's settings](/cameras/settings) instead. Recording-plugin settings are kept with the rest of [recording](/recording/).
+
+**Save** becomes active once you change something. Buttons of the plugin itself, such as **Log In**, save the fields first and then run, so there is no need to save before logging in.
 
 ## Setup guides
 

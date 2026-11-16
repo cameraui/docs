@@ -44,7 +44,9 @@ A bar at the bottom of the grid controls every camera in the view together. The 
 - Set one activity mode for all (Always On, Standby, Activity), or **Per Camera** to let each camera keep its own [activity mode](/cameras/live-view#activity-mode-always-on-and-standby). Per Camera is the default.
 - Fullscreen the whole grid.
 
-The arrow at the right end of the bar folds it into a button in the corner. Click that button to bring the bar back. In fullscreen the bar starts hidden, the button next to the exit button shows and hides it.
+With a tile expanded, resolution, streaming mode, sound and the microphone act on that camera only.
+
+The arrow at the right end of the bar folds it into a button in the corner. Click that button to bring the bar back. In fullscreen the bar starts hidden, the button next to the exit button shows and hides it. The timeline button there brings the timeline in below the grid.
 
 ## What a camera is seeing
 

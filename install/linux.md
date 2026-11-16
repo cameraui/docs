@@ -4,17 +4,19 @@ title: Linux (bare-metal)
 
 # Linux (bare-metal)
 
-For always-on servers without Docker: camera.ui installs from npm and runs as a systemd service. Ubuntu 24.04 (or newer) is the tested baseline. See [System requirements](/intro/requirements).
+For always-on servers without Docker: camera.ui installs from npm and runs as a systemd or OpenRC service. Ubuntu 24.04 (or newer) is the tested baseline. See [System requirements](/intro/requirements).
 
 ## Prerequisites
 
-- 64-bit Linux (x64 or arm64) with systemd
+- 64-bit Linux (x64 or arm64) with systemd or OpenRC (Alpine)
 - **Node.js 22.18 or newer**, 24.22.1 or newer recommended, e.g. via [NodeSource](https://github.com/nodesource/distributions):
 
   ```bash
   curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
   sudo apt-get install -y nodejs
   ```
+
+  On Alpine: `apk add nodejs npm`.
 
 FFmpeg, go2rtc and a portable Python runtime for the detection plugins are downloaded and managed by camera.ui.
 
@@ -25,9 +27,9 @@ sudo npm install -g camera.ui
 sudo cameraui install --user cameraui
 ```
 
-`cameraui install` creates the service user if it doesn't exist, registers a systemd service named `cameraui` and starts it on boot. The first start downloads the server and takes a few minutes (`sudo cameraui logs --user cameraui` shows progress). The web UI then runs on `https://<host>:3443`.
+`cameraui install` creates the service user if it doesn't exist, registers a service named `cameraui` (systemd, OpenRC on Alpine) and starts it on boot. Alpine ships without sudo, run the commands on this page as root there. The first start downloads the server and takes a few minutes (`sudo cameraui logs --user cameraui` shows progress). The web UI then runs on `https://<host>:3443`.
 
-If the service user needs GPU access for hardware acceleration, add it to your distribution's `video`/`render` groups. `--group video` only applies when the install creates the user. For an existing user, run `sudo usermod -aG video cameraui` and restart the service.
+If the service user needs GPU access for hardware acceleration, add it to your distribution's `video`/`render` groups. `--group video` only applies when the install creates the user. For an existing user, run `sudo usermod -aG video cameraui` (Alpine: `addgroup cameraui video`) and restart the service.
 
 ## Worker mode
 
@@ -87,7 +89,7 @@ No device passthrough is needed. The detection plugins log what they found (`Ava
 ## Uninstall
 
 ```bash
-sudo cameraui uninstall        # removes the systemd service
+sudo cameraui uninstall        # removes the service
 sudo npm remove -g camera.ui
 ```
 

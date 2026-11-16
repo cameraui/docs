@@ -23,11 +23,14 @@ You can also keep access **local only** by leaving remote access off.
 
 The interface, the API and MSE playback use the connection you chose above. WebRTC live view and two-way audio open a path of their own. The server and the app look up their public addresses with a STUN server, the server offers its address with port **2004**, and both try to open a direct path through their routers. Usually that works without any router setup. Behind some routers and behind carrier-grade NAT, common on mobile networks, no direct path forms. A camera on [Auto](/cameras/live-view#streaming-modes) then plays over MSE, one set to **WebRTC** shows no picture, and two-way audio does not connect.
 
-Two things help:
+Three things help:
 
+- **The relay through cameraui.com.** On a server [linked to camera.ui Cloud](/remote/cloud), switch on **Relay through cameraui.com**. Live view and two-way audio from outside then go through the relay whenever no direct path forms. The video stays end-to-end encrypted, the relay only passes it on. **Status** below the switch shows whether the relay is ready. While a live view runs through it, admins see a [cloud symbol](/cameras/live-view#symbols-on-the-player) on the player.
 - **Forward port 2004.** UDP, with TCP on the same port as fallback, to the server. The address the server offers is then reachable from anywhere.
-- **A TURN server.** It relays the media when no direct path forms, and it is the only way when the server's own line sits behind carrier-grade NAT (DS-Lite, for example) and no port can be forwarded. camera.ui brings none, run your own (coturn, for example) or use a hosted one.
+- **A TURN server of your own.** It relays the media like the relay above. Run your own (coturn, for example) or use a hosted one.
 
-The **WebRTC** card under **Settings → [Streaming](/admin/streaming#webrtc)** sets the port and the **STUN servers** and **TURN servers**, for the server and for the apps. Each TURN server gets its own addresses, **Username** and **Password**, add more with **Add TURN server**. With the STUN list empty neither side looks up a public address, and from outside WebRTC then needs a TURN server. The button at the end of the STUN field brings back the default STUN servers, they apply after **Save**.
+When the server's own line sits behind carrier-grade NAT (DS-Lite, for example) and no port can be forwarded, only the relay or a TURN server gets WebRTC through.
+
+The **WebRTC** card under **Settings → [Streaming](/admin/streaming#webrtc)** holds the relay switch and sets the port and the **STUN servers** and **TURN servers**, for the server and for the apps. Each TURN server gets its own addresses, **Username** and **Password**, add more with **Add TURN server**. With the STUN list empty neither side looks up a public address, and from outside WebRTC then needs a TURN server. The button at the end of the STUN field brings back the default STUN servers, they apply after **Save**.
 
 [^free]: Remote access and camera sharing are included at no cost. The subscription covers [recording (NVR)](/recording/), not remote access.

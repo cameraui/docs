@@ -15,7 +15,7 @@ Die häufigsten Probleme und wo du nachsiehst. Die **[Logs](/de/admin/logs)** ze
 
 ## Live-Ansicht ist schwarz oder spielt nicht
 
-- Zeigt der Player **Stream nicht verfügbar**, steht in der Zeile darunter der Grund, den die Streaming-Engine gemeldet hat. Kleine Player lassen ihn weg, die Kameraseite zeigt ihn.
+- Ein roter Kreis oben rechts im Player heißt, die Live-Ansicht ist nicht verfügbar. Fahr mit der Maus darüber oder tippe darauf, dann siehst du den Grund, den die Streaming-Engine gemeldet hat.
 - Prüfe den **Codec** der Quelle im Sources-Tab; sehr ungewöhnliche Codecs brauchen eventuell Transcoding.
 - Probiere einen anderen **Streaming-Modus** in den [Interface-Einstellungen](/de/cameras/settings) der Kamera.
 - Aktiviere **[Hot Modus und Vorladen](/de/cameras/add-camera#quellen-optionen)** für die Quelle, für schnelleres, zuverlässigeres Öffnen.
@@ -35,7 +35,7 @@ Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn
 
 - Prüfe die **[Benachrichtigungs-Einstellungen](/de/notifications/)** auf dem Gerät: Hauptschalter, Ruhezeiten und ob das Gerät registriert ist.
 - Prüfe die Benachrichtigungs-Einstellungen der **Kamera**: welche Objekte, Geräusche und Sensoren sie meldet.
-- Für **Push aufs Handy** brauchst du die native [Mobile-App](/de/install/mobile) (ein Browser bekommt keinen Push), eingerichtete [camera.ui Cloud](/de/remote/cloud) und einen Tipp auf **Dieses Gerät synchronisieren**. Ist Push verstummt, zeigt die App meist einen Hinweis mit einem **Beheben**-Button, der das Handy wieder einrichtet. Eine veraltete App bekommt keinen Push: aktualisiere sie und öffne sie einmal. Siehe [Push aufs Handy bekommen](/de/notifications/#push-aufs-handy-bekommen).
+- Für **Push aufs Handy** brauchst du die native [Mobile-App](/de/install/mobile) (ein Browser bekommt keinen Push), eingerichtete [camera.ui Cloud](/de/remote/cloud) und eingeschaltete Benachrichtigungen unter **Einstellungen → Benachrichtigungen**. Ist Push verstummt, zeigt die App meist einen Hinweis mit einem **Beheben**-Button, der das Handy wieder einrichtet. Eine veraltete App bekommt keinen Push: aktualisiere sie und öffne sie einmal. Siehe [Push aufs Handy bekommen](/de/notifications/#push-aufs-handy-bekommen).
 
 ## Aufnahme funktioniert nicht
 
@@ -48,6 +48,7 @@ Das OpenVINO-Plugin loggt `libOpenCL.so.1: cannot open shared object file`, wenn
 
 - Öffne **[Einstellungen → Remote Zugriff](/de/remote/)** und wähle den Info-Button neben dem **Verbindungsstatus**. Die **Verbindungsdetails** nennen die genutzte Adresse, was der Server sieht, und jede probierte Adresse mit Dauer und Fehlergrund. **Details kopieren** kopiert alles für einen Fehlerbericht.
 - Bestätige, dass der Cloud-Zugriff **aktiviert** und der Server **registriert** ist, mit verbundenem Tunnel.
+- Im [Cloud-Dashboard](/de/remote/cloud#das-cloud-dashboard) heißt **Cloud-Zugriff ist am Server ausgeschaltet**, dass der Schalter **Aktiviert** in der **Cloud**-Karte des Servers aus ist. **Zuletzt online** markiert einen Server, der die Cloud seitdem nicht mehr erreicht hat. Ist das ein übrig gebliebener Eintrag einer früheren Installation, entferne ihn und öffne den aktuellen.
 - Nutze bei einer direkten Verbindung **Verbindung testen**, um zu prüfen, ob die Adresse erreichbar ist.
 - Die Mobile-Apps brauchen [camera.ui Cloud](/de/remote/cloud), um von außerhalb deines Netzwerks zu verbinden.
 - Hinter einem Login-Proxy wie Pangolin oder Authelia braucht ein Browser, der bei **Server nicht erreichbar** hängt, einmal gelöschte Websitedaten für camera.ui, siehe [Reverse-Proxy](/de/remote/reverse-proxy#hinter-einem-login-proxy).

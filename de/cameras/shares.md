@@ -8,7 +8,7 @@ Eine Freigabe lässt jemanden den Live-Stream einer einzelnen Kamera ohne camera
 
 ## Eine Freigabe erstellen
 
-Wähle an einer Kamera **Kamera teilen** in der Player-Werkzeugleiste und lege fest:
+Wähle an einer Kamera **Kamera teilen** im Punkte-Menü der Player-Werkzeugleiste und lege fest:
 
 - **Quelle.** Welche Stream-Qualität geteilt wird (hohe, mittlere oder niedrige Auflösung).
 - **Gültig für.** Wie lange der Link gültig bleibt.
@@ -23,7 +23,7 @@ Die Zuschauer-Seite startet ohne Ton. Die Person kann ihn einschalten und bei Ka
 Im Hintergrund stoppt die Zuschauer-Seite den Stream und startet ihn bei der Rückkehr neu, außer er läuft im Bild-in-Bild. Nach einem Verbindungsabbruch verbindet sie sich von selbst neu. Wer über dem Limit von **Max. Zuschauer** liegt, sieht **Maximale Anzahl an Zuschauern erreicht**, und die Seite versucht es weiter, bis ein Platz frei wird.
 
 ::: tip Erfordert camera.ui Cloud
-Teilen setzt voraus, dass dein Server mit **camera.ui Cloud** verbunden ([Einstellungen → Remote](/de/remote/cloud)) und online ist. Die Cloud hostet den Link und hilft dem Zuschauer, deinen Server zu finden, aber das Video läuft über eine **direkte, Ende-zu-Ende-verschlüsselte Verbindung** zwischen Zuschauer und deinem Server. Es passiert nie camera.uis Server.
+Teilen setzt voraus, dass dein Server mit **camera.ui Cloud** verbunden ([Einstellungen → Remote](/de/remote/cloud)) und online ist. Die Cloud hostet den Link und hilft dem Zuschauer, deinen Server zu finden. Das Video läuft **Ende-zu-Ende-verschlüsselt** zwischen Zuschauer und deinem Server, direkt oder, mit eingeschaltetem [Relay](/de/remote/#webrtc) und ohne direkten Weg, über das Relay.
 :::
 
 <Shot src="/img/cameras/share-dialog.png" alt="Freigabe-Dialog mit Link und Zugangscode" />

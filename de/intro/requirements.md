@@ -22,9 +22,11 @@ Was den Bedarf erhöht: mehr Kameras, höhere Auflösungen, durchgehende Aufnahm
 
 Du kannst den camera.ui-Server auf **Linux, macOS oder Windows** betreiben:
 
-- **Linux.** In [Docker](/de/install/docker), auf [Proxmox](/de/install/proxmox) oder [Bare-Metal](/de/install/linux). Ubuntu 24.04 (oder neuer) ist die getestete Basis. Eine Bare-Metal-Installation benötigt nur Node.js 22.18 oder neuer, da camera.ui alles Weitere (FFmpeg, go2rtc, eine portable Python-Runtime) selbst verwaltet; die Docker-Images bringen alles mit.
+- **Linux.** In [Docker](/de/install/docker), auf [Proxmox](/de/install/proxmox) oder [Bare-Metal](/de/install/linux). Ubuntu 24.04 (oder neuer) ist die getestete Basis.[^musl] Eine Bare-Metal-Installation benötigt nur Node.js 22.18 oder neuer, da camera.ui alles Weitere (FFmpeg, go2rtc, eine portable Python-Runtime) selbst verwaltet; die Docker-Images bringen alles mit.
 - **macOS.** Über die [Desktop-App](/de/install/desktop) im Server-Modus. Apple-Silicon-Macs (M1 und neuer) laufen mit geringem Stromverbrauch und voller Hardware-Beschleunigung inklusive Neural Engine.
 - **Windows.** Über die [Desktop-App](/de/install/desktop) im Server-Modus.
+
+[^musl]: Auf Alpine und anderen musl-basierten Distributionen werden Plugins, die glibc brauchen, als inkompatibel angezeigt. Von den KI-Backends läuft dort nur NCNN.
 
 ### Hardware-Beschleunigung
 
