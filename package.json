@@ -5,12 +5,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "audit": "npm audit fix",
+    "audit": "npm audit fix --min-release-age=0",
     "docs:build": "vitepress build",
     "docs:dev": "vitepress dev",
     "docs:preview": "vitepress preview",
     "install-updates": "npm i --save",
-    "update": "updates -M npm,pypi,go,cargo,docker --update ./"
+    "update": "updates -M npm,pypi,go,cargo,docker -u"
   },
   "dependencies": {
     "medium-zoom": "^1.1.2",
@@ -23,5 +23,9 @@
     "updates": "^20.0.1",
     "vitepress": "^1.6.4",
     "vitepress-plugin-mermaid": "^2.0.17"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "fsevents": true
   }
 }
