@@ -79,6 +79,8 @@ Um das Material zu behalten, lege eine leere Datei namens `.cameraui-keep` in de
 
 **Metrics → Speicher** zeigt die Belegung in der **Speicherübersicht** und pro Kamera in der Tabelle **Kameraspeicher**: Größe auf der Disk, gehaltene Tage Material, Aufnahme-Rate pro Tag, Modus und ihre eigenen Grenzen.
 
+Der Punkt vor jeder Kamera zeigt ihren Aufnahme-Zustand: grün, solange sie aufnimmt, blau, solange eine Kamera im Modus Event oder Ad-hoc auf das nächste Ereignis wartet, orange, wenn dein Tarif keinen [Kamera-Slot](/de/recording/#kamera-slots) mehr für sie hat, grau bei ausgeschalteter Aufnahme. Rot heißt, sie sollte aufnehmen und tut es nicht: Die Kamera oder alle ihre aufgenommenen Streams sind nicht erreichbar, oder die Aufnahme pausiert.
+
 Ist die Aufnahme einer Kamera aus, löscht **Aufnahmen löschen** am Ende ihrer Zeile ihre Aufnahmen. Mit **Ereignisse auch löschen** gehen auch alle ihre Ereignisse, Favoriten eingeschlossen, sonst bleiben sie ohne Aufnahme. Was nach deiner Bestätigung aufgenommen wird, bleibt.
 
 Eine Warnung, dass das Speichervolumen klein ist, heißt: Es bleibt wenig Platz für Aufnahmen, sie rotieren schnell heraus. Meist ist die größere Disk, die du nutzen wolltest, nicht gemountet, prüfe den Speicherpfad. Eigene Warnungen erscheinen, wenn der freie Speicher unter 8% fällt und sobald die Aufnahme aus Platzmangel pausiert.

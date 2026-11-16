@@ -79,6 +79,8 @@ To keep that footage, put an empty file named `.cameraui-keep` into the camera's
 
 **Metrics → Storage** shows disk usage in the **Storage Overview** and, in the **Camera Storage** table, per camera: size on disk, days of footage held, recording rate per day, mode, and its own limits.
 
+The dot in front of each camera shows its recording state: green while it records, blue while a camera in Event or Ad-hoc mode waits for the next event, orange when your plan has no [camera slot](/recording/#camera-slots) left for it, grey when recording is off. Red means it should record and doesn't: the camera or all its recorded streams are unreachable, or recording has paused.
+
 Once recording is off for a camera, **Delete recordings** at the end of its row removes its recordings. Turn on **Delete events too** to remove all its events as well, favorites included, otherwise they stay without footage. What is recorded after you confirm stays.
 
 A warning that the storage volume is small means it has little room for recordings, so they rotate out quickly. Usually the larger disk you meant to use isn't mounted, so check the storage path. Separate warnings appear when free space drops below 8% and once recording has paused for lack of space.
