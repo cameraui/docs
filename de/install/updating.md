@@ -43,6 +43,8 @@ Die [Desktop-App](/de/install/desktop) prüft beim Start und im laufenden Betrie
 
 Eine Ausnahme unter Linux: Nur die `.AppImage` aktualisiert sich selbst. Die `.deb` aktualisierst du, indem du die neue `.deb` von der [Download-Seite](https://cameraui.com) installierst.
 
+Unter Windows schließt sich die App, während das Update installiert wird, und öffnet sich nach ein paar Minuten von selbst wieder. Warte darauf, statt sie von Hand zu starten.
+
 ## Das Docker-Image aktualisieren
 
 Server und [Docker](/de/install/docker)-Image werden getrennt aktualisiert. Der Launcher installiert den Server beim ersten Start ins Volume und behält diese Version über jeden späteren Pull hinweg.

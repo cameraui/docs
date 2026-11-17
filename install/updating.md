@@ -43,6 +43,8 @@ The [desktop app](/install/desktop) checks for updates at startup and every 10 m
 
 One exception on Linux: only the `.AppImage` updates itself. The `.deb` is updated by installing the new `.deb` from the [download page](https://cameraui.com).
 
+On Windows the app closes while the update installs and opens again by itself after a few minutes. Wait for that instead of starting it by hand.
+
 ## Updating the Docker image
 
 The server and the [Docker](/install/docker) image update separately. The launcher installs the server into the volume on first start and keeps that version across every later pull.
