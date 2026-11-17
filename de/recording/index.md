@@ -15,9 +15,8 @@ Abos sind noch nicht offen. Solange camera.ui in der Preview ist, sind Aufnahmen
 
 Aufnahmen kommen vom **camera.ui NVR**-Plugin (standardmäßig installiert) und laufen über ein Abo, das an dein camera.ui-Konto gebunden ist. So schaltest du sie frei:
 
-1. Wähle in **Einstellungen → Remote Zugriff** den Button **Server registrieren** und melde dich mit deinem camera.ui-Konto an. Das verknüpft den Server mit deinem Konto. Aufnahmen brauchen den Cloud-Zugriff nicht, du kannst also abbrechen, wenn der Server anbietet, ihn einzuschalten.
-2. Öffne **Einstellungen → Aufnahmen** und klicke in der Karte **Lizenz & Cloud** auf das **Cloud-Icon** und melde dich an.
-3. Deine Lizenz aktiviert sich dann automatisch. Aktualisiert sich der Status nicht, nutze den **Refetch License**-Button.
+1. Öffne **Einstellungen → Aufnahmen**, klicke in der Karte **Lizenz & Cloud** auf das **Cloud-Icon** und melde dich mit deinem camera.ui-Konto an. Ist der Server noch nicht registriert, registriert ihn der Dialog zuerst bei deinem Konto und macht dann mit der Anmeldung weiter.
+2. Deine Lizenz aktiviert sich dann automatisch. Aktualisiert sich der Status nicht, nutze den **Refetch License**-Button.
 
 Endet die Anmeldung mit **Server-Limit deines Tarifs erreicht**, hält noch ein anderer Server die Lizenz, zum Beispiel eine frühere Testinstallation. Entferne diesen Server im [Cloud-Dashboard](/de/remote/cloud#das-cloud-dashboard) und melde dich erneut an.
 
@@ -29,9 +28,11 @@ Aufnehmen geht mit H.264, H.265 und MJPEG. Eine MJPEG-Kamera nimmt ihre Bilder s
 
 ### Kamera-Slots
 
-Die Karte **Lizenz & Cloud** unter **Einstellungen → Aufnahmen** zeigt, wie viele Aufnahme-Slots dein Tarif enthält, wie viele Kameras aktiv sind und wie viele gerade einen Slot belegen.
+Die Karte **Lizenz & Cloud** unter **Einstellungen → Aufnahmen** zeigt, wie viele Aufnahme-Slots dein Tarif enthält, wie viele Kameras aktiv sind und wie viele gerade einen Slot belegen. Im Browser und in der Desktop-App öffnet **Plan verwalten** in dieser Karte deinen Tarif in einem neuen Tab. Hast du mehrere Server, verteilst du dort auch die Slots auf sie.
 
 Eine Kamera ohne freien Slot erkennt weiter, behält Ereignisse und Live-Ansicht, nimmt aber nicht auf. Fehlt bei einer Kamera Material, schau also auf diese Karte. Schaltest du die Aufnahme an einer Kamera aus, wird ihr Slot frei.
+
+Haben mehr Kameras die Aufnahme an, als dein Tarif Slots hat, listet die Karte **Aufnahme-Slots** sie der Reihe nach. Die Kameras oben nehmen auf, die übrigen warten auf einen freien Slot. Schiebst du eine wartende Kamera nach oben, nimmt sie statt der Kamera auf, an der sie vorbeizieht. Eine Kamera, bei der du die Aufnahme einschaltest, kommt ans Ende.
 
 Endet dein Abo oder deine Testphase, stoppt die Aufnahme, und Wiedergabe, Export, Gesichtserkennung und Suche verlangen eine gültige Lizenz. Die Aufnahmen bleiben auf der Platte und sind wieder da, sobald die Lizenz wieder gültig ist. [Aufbewahrung und Speichergrenzen](/de/recording/storage) laufen weiter, ältere Aufnahmen werden also trotzdem gelöscht, Favoriten ausgenommen. Exportiere, was du behalten möchtest, vor dem Enddatum. Drei Tage vor dem Ende einer Testphase bekommst du eine Erinnerung per Mail.
 

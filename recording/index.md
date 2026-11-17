@@ -15,9 +15,8 @@ Subscriptions aren't open yet. While camera.ui is in preview, recording is free 
 
 Recording comes from the **camera.ui NVR** plugin, which is installed by default, and runs on a subscription tied to your camera.ui account. To turn it on:
 
-1. In **Settings → Remote Access**, choose **Register server** and sign in with your camera.ui account. This links the server to your account. Recording does not need cloud access, so you can cancel when the server offers to turn it on.
-2. Open **Settings → Recordings** and, in the **License & Cloud** card, click the **cloud icon** and sign in.
-3. Your license then activates automatically. If the status doesn't update, use the **Refetch License** button.
+1. Open **Settings → Recordings** and, in the **License & Cloud** card, click the **cloud icon** and sign in with your camera.ui account. If the server is not registered yet, the dialog registers it with your account first and then continues with the sign-in.
+2. Your license then activates automatically. If the status doesn't update, use the **Refetch License** button.
 
 If signing in ends with **Server limit reached for your plan**, the license is still held by another server, an earlier test install for example. Remove that server in the [cloud dashboard](/remote/cloud#the-cloud-dashboard) and sign in again.
 
@@ -29,9 +28,11 @@ Recording takes H.264, H.265 and MJPEG. An MJPEG camera records its pictures as 
 
 ### Camera slots
 
-The **License & Cloud** card in **Settings → Recordings** shows how many recording slots your plan includes, how many cameras are active, and how many currently use a slot.
+The **License & Cloud** card in **Settings → Recordings** shows how many recording slots your plan includes, how many cameras are active, and how many currently use a slot. In the browser and the desktop app, **Manage plan** in that card opens your plan in a new tab. With several servers, you also split its slots between them there.
 
 A camera without a free slot keeps detecting, its events and its live view, but does not record, so check that card if footage is missing from one camera. Turning off recording on a camera frees its slot for another.
+
+When more cameras have recording on than your plan has slots, the **Recording slots** card lists them in order. The cameras at the top record, the others wait for a free slot. Move a waiting camera up to record it instead of the one it passes. A camera you turn recording on for joins at the bottom.
 
 If your subscription or trial ends, recording stops and playback, export, face recognition and search ask for a valid license. Recordings stay on disk and come back when the license is valid again. [Retention and storage limits](/recording/storage) keep running, so older footage is still deleted, favorites excepted. Export what you want to keep before the end date. Three days before a trial ends, you get a reminder by email.
 
