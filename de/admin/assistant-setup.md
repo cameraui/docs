@@ -10,14 +10,14 @@ Alles, was der [Assistent](/de/assistant/) braucht, liegt unter **Einstellungen 
 
 Der Assistent nutzt Modelle, die du mitbringst; an camera.ui wird nichts gesendet. **Modell hinzufügen** nimmt beliebig viele auf, lokale und Cloud-Modelle nebeneinander.
 
-- **Ollama.** Läuft auf eigener Hardware, nichts verlässt dein Netzwerk. [Ollama](https://ollama.com) installieren, ein Modell mit Tool-Calling laden und die **Server-URL** eintragen, falls Ollama nicht auf der camera.ui-Maschine läuft.
+- **Ollama.** Läuft auf eigener Hardware. [Ollama](https://ollama.com) installieren, ein Modell mit Tool-Calling laden und die **Server-URL** eintragen, falls Ollama nicht auf der camera.ui-Maschine läuft. Gibt es ein Modell als Instruct- und als Thinking-Variante, die Instruct-Variante nehmen (`qwen3-vl:4b-instruct`, nicht `qwen3-vl:4b`): Ein kleines Thinking-Modell denkt vor jedem Werkzeugaufruf lange nach, eine Frage dauert damit Minuten.
 - **OpenAI-kompatibler Server.** Jeder Server mit OpenAI-Chat-Completions-API: LM Studio, vLLM, LiteLLM, llama.cpp. **Server-URL** eintragen und, falls nötig, einen **API-Schlüssel**.
 - **OpenAI, Anthropic, Google Gemini, OpenRouter.** Cloud-Anbieter. Den **API-Schlüssel** deines Kontos einfügen oder den Schlüssel eines schon hinzugefügten Modells desselben Anbieters übernehmen. Der Schlüssel liegt verschlüsselt auf dem Server und erreicht weder den Browser noch ein Plugin. Der Anbieter rechnet pro Token ab.
 - **Ein Plugin.** Plugin-Modelle erscheinen in der Anbieterliste, etwa **Apple LLM (Plugin)**, und antworten auf dem Rechner, auf dem das Plugin läuft. Das Apple-LLM-Plugin braucht einen Mac mit Apple Silicon und Apple Intelligence (macOS 26, Bilder ab macOS 27). Es fasst nur ein kurzes Gespräch: gut für Fragen zu Kameras und Doku, schwach bei langen Aufgaben mit vielen Schritten.
 
 <Shot src="/img/admin/assistant-models.png" alt="Die Modell-Liste mit Standard-Stern und den Badges für Werkzeuge und Bilder" />
 
-Das **Modell** aus der Liste des Anbieters wählen (der Pfeil lädt sie) oder den Namen eintippen. Beim Speichern testet camera.ui das Modell mit zwei kurzen Anfragen: ob es ein Werkzeug aufruft und ob es ein Bild annimmt. Das Ergebnis steht als Badges in der Liste (**Werkzeuge**, **Keine Werkzeuge**, **Bilder**, **Keine Bilder**, **Test fehlgeschlagen**), erneutes Speichern wiederholt den Test.
+Das **Modell** aus der Liste des Anbieters wählen (der Pfeil lädt sie) oder den Namen eintippen. Beim Speichern prüft camera.ui, ob das Modell Werkzeuge aufruft und Bilder annimmt: Ollama meldet beides für seine Modelle selbst, jedes andere Modell bekommt zwei kurze Testanfragen. Das Ergebnis steht als Badges in der Liste (**Werkzeuge**, **Keine Werkzeuge**, **Bilder**, **Keine Bilder**, **Test fehlgeschlagen**), erneutes Speichern wiederholt den Test. Ein Modell, das der Anbieter nicht mehr führt, ist als **Nicht verfügbar** markiert: Wähle in seinem Dialog ein anderes oder entferne es. OpenAI-kompatible Server werden nicht geprüft.
 
 Das Standardmodell antwortet überall, wo nichts anderes gewählt ist: in Gesprächen ohne Profil, bei geplanten Prompts, bei der Suche in den Aufnahmen und für das, was sich der Assistent merkt. Der Stern neben einem Modell macht es zum Standard; ist keiner gesetzt, antwortet das erste der Liste. Wird ein Modell gelöscht, wechseln Profile und Plugins, die es nutzen, auf das Standardmodell.
 
@@ -29,7 +29,7 @@ Ein Modell lässt sich Admins vorbehalten: **Für Nutzer verfügbar** in seinem 
 
 **Kontextfenster** im Modell-Dialog sagt, wie viel dieses Modell fasst. Ein Plugin-Modell bringt die Zahl selbst mit, sonst bleibt das Feld leer und es gilt das Kontextbudget aus den allgemeinen Einstellungen. Bei einem lokalen oder kleinen Modell trägst du es ein, für ein 8k-Modell also 8192, und camera.ui plant die Anfrage darum herum: Die Prozeduren wandern hinter einen `load_skill`-Aufruf, die Funktionsliste weicht einem Hinweis auf die Dokumentation, und Werkzeuge, mit denen die Frage nicht anfängt, stehen nur noch mit Namen da und werden geholt, wenn das Modell sie will. Dasselbe passiert bei einem großen Modell in einer großen Installation, wo viele Plugins und verbundene Server die Werkzeugliste über das Fenster hinaus wachsen lassen.
 
-**Werkzeuge vorab auswählen** im selben Dialog hilft Modellen, die sich in einer langen Werkzeugliste verlieren: Ein zusätzlicher Aufruf pro Frage fragt das Modell, welche Werkzeuge es braucht, und nur diese werden mit knappen Regeln angeboten. Ein Plugin-Modell schaltet es selbst ein, wenn es das braucht; bei großen Modellen bleibt es aus.
+**Werkzeuge vorab auswählen** im selben Dialog hilft Modellen, die sich in einer langen Werkzeugliste verlieren: Ein zusätzlicher Aufruf pro Frage fragt das Modell, welche Werkzeuge es braucht, und nur diese werden mit knappen Regeln angeboten. Bei Ollama-Modellen ist es von Anfang an an, ein Plugin-Modell schaltet es selbst ein, wenn es das braucht. Bei großen Modellen schaltest du es aus.
 
 ### Modelle ohne Werkzeuge oder Bilder
 
@@ -54,7 +54,7 @@ Die Karte **Verhalten** begrenzt einen Lauf:
 
 - **Modellrunden pro Frage.** Wie oft das Modell Werkzeuge aufrufen und erneut überlegen darf, bevor es antworten muss. Standard 8.
 - **Werkzeugaufrufe pro Frage.** Harter Stopp gegen ein Modell, das in einer Schleife hängt. Standard 25.
-- **Kontextbudget.** Wie viel von einem langen Gespräch das Modell sieht. Ollama-Modelle bekommen ein Kontextfenster dieser Größe plus Reserve für die Anweisungen und die Antwort, auf schwacher Hardware also niedriger setzen. Ohne diesen Wert nutzt Ollama seinen Standard von 4k, schneidet die Anweisungen ab, und der Assistent behauptet dann, er könne deine Kameras nicht ansehen.
+- **Kontextbudget.** Wie viel von einem langen Gespräch das Modell sieht. Ein Ollama-Modell ohne eigenes Kontextfenster bekommt ein Fenster dieser Größe plus Reserve für die Anweisungen und die Antwort, höchstens 32.768 Tokens. Ollama reserviert den Speicher für das ganze Fenster, auf schwacher Hardware also niedriger setzen, oder im Modell-Dialog ein größeres Fenster eintragen, wenn der Rechner den Speicher hat. Ohne Fenster nutzt Ollama seinen Standard von 4k, schneidet die Anweisungen ab, und der Assistent behauptet dann, er könne deine Kameras nicht ansehen.
 - **Gespräche pro Nutzer** und **Bilder pro Gespräch.** Was der Verlauf auf der Platte belegt. Die ältesten fallen zuerst weg. Standard 50 und 24.
 - **Zusätzliche Anweisungen.** Ergänzen die eingebauten Anweisungen, für Hausregeln und Kamera-Hinweise, etwa welche Kamera auf die Straße zeigt.
 - **Fakten über Nutzer merken.** Lässt den Assistenten Fakten wie Namen über Gespräche hinweg behalten. Standardmäßig an, und jeder Nutzer sieht und löscht seine eigene Liste im Chat. Ein Modell mit einem Fenster unter 16k Tokens merkt sich nur, was du ihm ausdrücklich sagst, nichts, was es selbst aufschnappt.

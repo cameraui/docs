@@ -10,14 +10,14 @@ Everything the [assistant](/assistant/) needs sits under **Settings → Assistan
 
 The assistant uses models you bring; nothing is sent to camera.ui. **Add model** takes as many as you like, local and cloud side by side.
 
-- **Ollama.** Runs on your own hardware, nothing leaves your network. Install [Ollama](https://ollama.com), pull a model that supports tool calling, and enter the **Server URL** if Ollama does not run on the camera.ui machine.
+- **Ollama.** Runs on your own hardware. Install [Ollama](https://ollama.com), pull a model that supports tool calling, and enter the **Server URL** if Ollama does not run on the camera.ui machine. Where a model comes as an instruct and a thinking variant, take the instruct one (`qwen3-vl:4b-instruct`, not `qwen3-vl:4b`): a small thinking model reasons at length before every tool call, and a question takes minutes.
 - **OpenAI-compatible server.** Any server speaking the OpenAI chat completions API: LM Studio, vLLM, LiteLLM, llama.cpp. Enter its **Server URL** and, if it requires one, an **API key**.
 - **OpenAI, Anthropic, Google Gemini, OpenRouter.** Cloud providers. Paste the **API key** of your account, or reuse the key of a model you already added for the same provider. The key is stored encrypted on the server and never reaches the browser or a plugin. The provider bills you per token.
 - **A plugin.** Plugin models show up in the provider list, **Apple LLM (plugin)** for example, and answer on the machine the plugin runs on. The Apple LLM plugin needs a Mac with Apple Silicon and Apple Intelligence (macOS 26, pictures from macOS 27). It holds only a short conversation: fine for questions about cameras and the docs, weak on long multi-step tasks.
 
 <Shot src="/img/admin/assistant-models.png" alt="The model list with the default star and the badges for tools and pictures" />
 
-Pick the **Model** from the list the provider offers (the arrow loads it) or type its name. Saving tests the model with two short requests: whether it calls a tool, and whether it accepts a picture. The result shows as badges in the list (**Tools**, **No tools**, **Pictures**, **No pictures**, **Test failed**), and saving again repeats the test.
+Pick the **Model** from the list the provider offers (the arrow loads it) or type its name. Saving checks whether the model calls tools and accepts pictures: Ollama reports both for its models, every other model gets two short test requests. The result shows as badges in the list (**Tools**, **No tools**, **Pictures**, **No pictures**, **Test failed**), and saving again repeats the test. A model the provider no longer lists is marked **Not available**: pick another one in its dialog or remove it. OpenAI-compatible servers are not checked.
 
 The default model answers wherever nothing else is picked: conversations without a profile, scheduled prompts, the recordings search and what the assistant remembers. The star next to a model makes it the default; with none picked, the first one in the list answers. Deleting a model moves the profiles and plugins that used it to the default.
 
@@ -29,7 +29,7 @@ A model can be kept for admins: switch off **Available to users** in its dialog 
 
 **Context window** in the model dialog says how much this model holds. A plugin model brings the number itself, for everything else it is empty and the context budget from the general settings applies. Set it for a local or small model, 8192 for an 8k model for example, and camera.ui plans the request around it: the procedures move behind a `load_skill` call, the feature list gives way to a hint at the documentation, and tools the question did not start from are listed by name and fetched when the model wants them. The same happens on a large model in a big installation, where many plugins and connected servers push the tool list past what the window can carry.
 
-**Pick the tools first** in the same dialog helps models that get lost in a long tool list: one extra call per question asks the model which tools it needs, and only those are offered, with a short set of rules. A plugin model switches it on by itself when it needs it; leave it off for large models.
+**Pick the tools first** in the same dialog helps models that get lost in a long tool list: one extra call per question asks the model which tools it needs, and only those are offered, with a short set of rules. It is on from the start for Ollama models, and a plugin model switches it on by itself when it needs it. Switch it off for large models.
 
 ### Models without tools or pictures
 
@@ -54,7 +54,7 @@ The **Behavior** card bounds a run:
 
 - **Model turns per question.** How often the model may call tools and think again before it has to answer. Default 8.
 - **Tool calls per question.** A hard stop against a model stuck in a loop. Default 25.
-- **Context budget.** How much of a long conversation the model sees. Ollama models get a context window of this size plus headroom for the instructions and the answer, so lower it on small hardware. Without it Ollama would use its 4k default and cut off the instructions, and the assistant would then claim it cannot look at your cameras.
+- **Context budget.** How much of a long conversation the model sees. An Ollama model without its own context window gets a window of this size plus headroom for the instructions and the answer, at most 32,768 tokens. Ollama reserves memory for the whole window, so lower the budget on small hardware, or enter a larger window in the model dialog if the machine has the memory. Without a window Ollama would use its 4k default and cut off the instructions, and the assistant would then claim it cannot look at your cameras.
 - **Conversations kept per user** and **Pictures kept per conversation.** What the history takes on disk. Older ones go first. Defaults 50 and 24.
 - **Additional instructions.** Appended to the built-in instructions, for house rules and camera hints, for example which camera points at the street.
 - **Remember facts about users.** Lets the assistant keep facts like names across conversations. On by default, and every user sees and clears their own list in the chat. A model with a window under 16k tokens only remembers what you ask it to remember, nothing it picks up on its own.

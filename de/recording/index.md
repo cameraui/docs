@@ -28,11 +28,11 @@ Aufnehmen geht mit H.264, H.265 und MJPEG. Eine MJPEG-Kamera nimmt ihre Bilder s
 
 ### Kamera-Slots
 
-Die Karte **Lizenz & Cloud** unter **Einstellungen → Aufnahmen** zeigt, wie viele Aufnahme-Slots dein Tarif enthält, wie viele Kameras aktiv sind und wie viele gerade einen Slot belegen. Im Browser und in der Desktop-App öffnet **Plan verwalten** in dieser Karte deinen Tarif in einem neuen Tab. Hast du mehrere Server, verteilst du dort auch die Slots auf sie.
+Die Karte **License** unter **Einstellungen → Aufnahmen** zeigt, wie viele Aufnahme-Slots dein Tarif enthält, wie viele Kameras aktiv sind und wie viele gerade einen Slot belegen. Im Browser und in der Desktop-App öffnet **Plan verwalten** in der Karte **Lizenz & Cloud** deinen Tarif in einem neuen Tab. Hast du mehrere Server, verteilst du dort auch die Slots auf sie.
 
-Eine Kamera ohne freien Slot erkennt weiter, behält Ereignisse und Live-Ansicht, nimmt aber nicht auf. Fehlt bei einer Kamera Material, schau also auf diese Karte. Schaltest du die Aufnahme an einer Kamera aus, wird ihr Slot frei.
+Eine Kamera ohne freien Slot erkennt weiter, behält Ereignisse und Live-Ansicht, nimmt aber nicht auf. Fehlt bei einer Kamera Material, schau also auf die Karte **License**. Schaltest du die Aufnahme an einer Kamera aus, wird ihr Slot frei.
 
-Haben mehr Kameras die Aufnahme an, als dein Tarif Slots hat, listet die Karte **Aufnahme-Slots** sie der Reihe nach. Die Kameras oben nehmen auf, die übrigen warten auf einen freien Slot. Schiebst du eine wartende Kamera nach oben, nimmt sie statt der Kamera auf, an der sie vorbeizieht. Eine Kamera, bei der du die Aufnahme einschaltest, kommt ans Ende.
+Haben mehr Kameras die Aufnahme an, als dein Tarif Slots hat, listet die Karte **Aufnahme-Slots** sie der Reihe nach. Die Kameras oben nehmen auf, die übrigen warten auf einen freien Slot. Schiebst du eine wartende Kamera nach oben, nimmt sie statt der Kamera auf, an der sie vorbeizieht. Der Doppelpfeil schiebt sie in einem Schritt ganz nach oben. Eine Kamera, bei der du die Aufnahme einschaltest, kommt ans Ende.
 
 Endet dein Abo oder deine Testphase, stoppt die Aufnahme, und Wiedergabe, Export, Gesichtserkennung und Suche verlangen eine gültige Lizenz. Die Aufnahmen bleiben auf der Platte und sind wieder da, sobald die Lizenz wieder gültig ist. [Aufbewahrung und Speichergrenzen](/de/recording/storage) laufen weiter, ältere Aufnahmen werden also trotzdem gelöscht, Favoriten ausgenommen. Exportiere, was du behalten möchtest, vor dem Enddatum. Drei Tage vor dem Ende einer Testphase bekommst du eine Erinnerung per Mail.
 

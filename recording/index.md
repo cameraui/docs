@@ -28,11 +28,11 @@ Recording takes H.264, H.265 and MJPEG. An MJPEG camera records its pictures as 
 
 ### Camera slots
 
-The **License & Cloud** card in **Settings → Recordings** shows how many recording slots your plan includes, how many cameras are active, and how many currently use a slot. In the browser and the desktop app, **Manage plan** in that card opens your plan in a new tab. With several servers, you also split its slots between them there.
+The **License** card in **Settings → Recordings** shows how many recording slots your plan includes, how many cameras are active, and how many currently use a slot. In the browser and the desktop app, **Manage plan** in the **License & Cloud** card opens your plan in a new tab. With several servers, you also split its slots between them there.
 
-A camera without a free slot keeps detecting, its events and its live view, but does not record, so check that card if footage is missing from one camera. Turning off recording on a camera frees its slot for another.
+A camera without a free slot keeps detecting, its events and its live view, but does not record, so check the **License** card if footage is missing from one camera. Turning off recording on a camera frees its slot for another.
 
-When more cameras have recording on than your plan has slots, the **Recording slots** card lists them in order. The cameras at the top record, the others wait for a free slot. Move a waiting camera up to record it instead of the one it passes. A camera you turn recording on for joins at the bottom.
+When more cameras have recording on than your plan has slots, the **Recording slots** card lists them in order. The cameras at the top record, the others wait for a free slot. Move a waiting camera up to record it instead of the one it passes. The double arrow moves it to the top in one step. A camera you turn recording on for joins at the bottom.
 
 If your subscription or trial ends, recording stops and playback, export, face recognition and search ask for a valid license. Recordings stay on disk and come back when the license is valid again. [Retention and storage limits](/recording/storage) keep running, so older footage is still deleted, favorites excepted. Export what you want to keep before the end date. Three days before a trial ends, you get a reminder by email.
 
