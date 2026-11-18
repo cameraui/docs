@@ -35,7 +35,7 @@ Der Button neben dem Plus wechselt zu einer kompakten **Tabellenansicht** mit St
 
 Installationen, Updates und Deinstallationen laufen über eine Warteschlange auf dem Server, zwei gleichzeitig. Jeder offene Browser sieht die Warteschlange, egal wer sie gestartet hat.
 
-Jedes Plugin läuft in einem eigenen Prozess, ein abstürzendes Plugin reißt also nicht den Rest mit. Ein Abzeichen auf der Karte zeigt die Sprache (Node, Python oder Go). Ein Plugin, das für eine andere Plugin-API gebaut wurde, startet nicht: Seine Karte sagt, ob das Plugin oder camera.ui ein Update braucht, und du bekommst eine Benachrichtigung.
+Jedes Plugin läuft in einem eigenen Prozess, ein abstürzendes Plugin reißt also nicht den Rest mit. Eines, das beim Start hängen bleibt, wird nach ein paar Minuten gestoppt, mit einem Fehler in seinem Log. Ein Abzeichen auf der Karte zeigt die Sprache (Node, Python oder Go). Ein Plugin, das für eine andere Plugin-API gebaut wurde, startet nicht: Seine Karte sagt, ob das Plugin oder camera.ui ein Update braucht, und du bekommst eine Benachrichtigung.
 
 ### Mehrere auf einmal verwalten
 

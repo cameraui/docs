@@ -35,7 +35,7 @@ The button next to the plus switches to a compact **table view** with status, ve
 
 Installs, updates and uninstalls run through a server-side queue, two at a time. Every open browser sees the queue, whoever started it.
 
-Each plugin runs in its own process, so a crashing plugin doesn't take down the rest. A badge on the card shows its language (Node, Python or Go). A plugin built for a different plugin API doesn't start: its card says whether the plugin or camera.ui needs an update, and you get a notification.
+Each plugin runs in its own process, so a crashing plugin doesn't take down the rest. One that hangs while starting is stopped after a few minutes, with an error in its log. A badge on the card shows its language (Node, Python or Go). A plugin built for a different plugin API doesn't start: its card says whether the plugin or camera.ui needs an update, and you get a notification.
 
 ### Managing several at once
 
