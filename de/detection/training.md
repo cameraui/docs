@@ -42,4 +42,4 @@ Was einen Frame wertvoll macht:
 
 Der Einreichen-Button unten rechts sendet jeden bestätigten Frame der gewählten Kamera, unabhängig vom Listenfilter. Um nur einige zu senden, nimm **Kandidaten auswählen**. Eingereichte Frames verschwinden aus der lokalen Liste. Zum Einreichen muss dein Server bei der [camera.ui Cloud](/de/remote/cloud) angemeldet sein.
 
-**Meine Beiträge** in der Werkzeugleiste listet alles Eingereichte, mit Frame, Labels und Status: noch wartend (**Eingereicht**) oder bereits verwendet (**Im Training**). Bilder und Labels sind deinem cameraui.com-Konto zugeordnet; das Löschen eines Beitrags entfernt ihn aus dem Pool.
+**Meine Beiträge** in der Werkzeugleiste listet alles Eingereichte, mit Frame und Labels. **Im Training** markiert einen Frame, der bereits verwendet wird. Bilder und Labels sind deinem cameraui.com-Konto zugeordnet: Die Liste umfasst alle Server des Kontos und lässt sich auf einen eingrenzen. Frames eines Servers, den du inzwischen entfernt hast, bleiben unter **Entfernte Server**. Das Löschen eines Beitrags entfernt ihn aus dem Pool.

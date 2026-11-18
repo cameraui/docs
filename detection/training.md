@@ -42,4 +42,4 @@ What makes a frame useful:
 
 The submit button at the bottom right sends every verified frame of the selected camera, whatever the list filter shows. To send only some, use **Select candidates**. Submitted frames leave the local list. Submitting requires your server to be signed in to [camera.ui Cloud](/remote/cloud).
 
-**My contributions** in the toolbar lists everything you have submitted, with the frame, its labels, and whether it is still waiting (**Submitted**) or already used (**In training**). Images and labels are tied to your cameraui.com account; deleting a contribution removes it from the pool.
+**My contributions** in the toolbar lists everything you have submitted, with the frame and its labels. **In training** marks a frame that is already used. Images and labels are tied to your cameraui.com account: the list covers every server on it and can be narrowed to one. Frames of a server you have since removed stay under **Removed servers**. Deleting a contribution removes it from the pool.
